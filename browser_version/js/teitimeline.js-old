@@ -1,0 +1,117 @@
+/**
+ * teitimeline.js
+ */
+
+if (typeof window === 'undefined') {
+	var teiTimeline = exports;
+} else
+	var teiTimeline = {};
+
+var dataAbs = {};
+
+/**
+ * indirect access to time reference using an id and the timeline
+ * @method timelineRef
+ * @param {string} name of reference to time
+ * @retunr {float} point in time
+ */
+teiTimeline.timelineRef = function(ref) {
+	if (ref !== '') {
+		var p = dataAbs[ref.substr(1)];
+		if (p === undefined) {
+			console.log('xml:id ' + ref + ' is unknown');
+			ref = '';
+		} else
+			ref = p;
+	}
+	return ref;
+};
+
+/**
+ * conversion of a float into seconds according to the unit of time
+ * @method convert_unit
+ * @param {float} value of time in the unit
+ * @param {string} unit of time
+ * @returns {float} result in seconds
+ */
+var convert_unit = function(val, unit) {
+	if (unit === 's')
+		return val;
+	else if (unit === 'ms')
+		return val / 1000;
+	else if (unit === 'min')
+		return val * 60;
+	else if (unit === 'h')
+		return val * 60 * 60;
+	else if (unit === 'd')
+		return val * 60 * 60 * 24;
+	else
+		return val;
+};
+
+/**
+ * load the timeline of a TEIML file (version 0.3/0.4/0.5/0.6)
+ * @method loadTimeline
+ */
+teiTimeline.loadTimeline = function(xmlData) {
+	var timeline = $(xmlData).find("timeline");
+	if (!timeline)
+		dataAbs = {};
+	else {
+		var globalUnit = timeline.attr('unit');
+		dataAbs = {};
+		// unit = d h min s ms
+		var tmns = timeline.children();
+		if (!tmns || tmns.length<1)
+			dataAbs = {};
+		else {
+            var i, id, unit;
+			for (i = 0; i < tmns.length; i++) {
+				var a = $(tmns[i]).attr('absolute');
+				if (a != null) {
+					a = parseFloat(a);
+					if (isNaN(a)) a = 0.0;
+					id = $(tmns[i]).attr('xml:id');
+					unit = $(tmns[i]).attr('unit');
+					dataAbs[id] = convert_unit(a, unit?unit:globalUnit);
+				}
+			}
+			var rel = {};
+			for (i = 0; i < tmns.length; i++) {
+				var a = $(tmns[i]).attr('interval');
+				if (a != null) {
+					a = parseFloat(a);
+					if (isNaN(a)) a = 0.0;
+					id = $(tmns[i]).attr('xml:id');
+					unit = $(tmns[i]).attr('unit');
+					var since = $(tmns[i]).attr('since');
+					rel[id] = { unit: unit, interval: a, since: since.substr(1), };  // remove #
+				}
+			}
+			for (i in rel) {
+				var w = dataAbs[rel[i].since];
+				if (w !== undefined)
+					dataAbs[i] = convert_unit(rel[i].interval-w, rel[i].unit?rel[i].unit:globalUnit);
+				else {
+					var x = i;
+					var found = false;
+					while (w === undefined) {
+						x = rel[x];
+						if (x === undefined)
+							break;
+						w = dataAbs[rel[x].since];
+						if (w !== undefined) {
+							dataAbs[x] = convert_unit(rel[x].interval-w, rel[x].unit?rel[x].unit:globalUnit, w);
+							found = true;
+							break;
+						}
+					}
+					if (found === false) {
+						console.log('ID not found: ' + i);
+						dataAbs[i] = ''; // set a default time
+					}
+				}
+			}
+		}
+	}
+};
