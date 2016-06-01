@@ -1,2 +1,2 @@
 # trjs
-Transcription tools with most features of Transcriber and Clan but written using javascript and html5
+Transcription tool with most features of Transcriber and Clan but written using javascript and html5
