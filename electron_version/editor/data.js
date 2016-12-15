@@ -270,7 +270,7 @@ trjs.data = {
 	setMediaRealFile: function(arg) {
 		if (this.media.length<1) {
 			this.media = new Array(1);
-			this.media[0] = new trjs.template.Media();
+			this.media[0] = new trjs.template.MediaDesc();
 		}
 		if (!trjs.utils.isNE(arg)) {
 			this.media[0].name = trjs.utils.lastName(arg);
@@ -284,7 +284,7 @@ trjs.data = {
 	setMediaName: function(arg) {
 		if (this.media.length<1) {
 			this.media = new Array(1);
-			this.media[0] = new trjs.template.Media();
+			this.media[0] = new trjs.template.MediaDesc();
 		}
 		if (!trjs.utils.isNE(arg)) {
 			this.media[0].name = arg;
@@ -305,7 +305,7 @@ trjs.data = {
 	setMediaLoc: function(arg) {
 		if (this.media.length<1) {
 			this.media = new Array(1);
-			this.media[0] = new trjs.template.Media();
+			this.media[0] = new trjs.template.MediaDesc();
 		}
 		if (!trjs.utils.isNE(arg)) {
 			if (trjs.utils.isNE(this.media[0].name))
@@ -319,7 +319,7 @@ trjs.data = {
 	setMediaNameLoc: function(arg1, arg2) {
 		if (this.media.length<1) {
 			this.media = new Array(1);
-			this.media[0] = new trjs.template.Media();
+			this.media[0] = new trjs.template.MediaDesc();
 		}
 		if (!trjs.utils.isNE(arg1) && !trjs.utils.isNE(arg2)) {
 			this.media[0].name = arg1;
@@ -332,7 +332,7 @@ trjs.data = {
 	setMediaRelLoc: function(arg) {
 		if (this.media.length<1) {
 			this.media = new Array(1);
-			this.media[0] = new trjs.template.Media();
+			this.media[0] = new trjs.template.MediaDesc();
 		}
 		if (!trjs.utils.isNE(arg)) {
 			this.media[0].relLoc = arg;

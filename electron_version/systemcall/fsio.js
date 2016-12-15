@@ -460,19 +460,58 @@ fsio.exportMedia = function(args, doneFunction, failFunction) {
     );
 };
 
+var openFromMenu = function(menuItem, browserWindow, event) {
+    fsio.openTranscript(0, menuItem.label);
+}
+
 fsio.setMRU = function(name) {
-    const remote = require('electron').remote;
+    //const remote = require('electron').remote;
     const Menu = remote.Menu;
     const MenuItem = remote.MenuItem;
-    var mn = new MenuItem({label: name, click() { fsio.openTranscript(0, name); }});
+    var mn = new MenuItem({label: name, click: openFromMenu});
     var topmn = Menu.getApplicationMenu();
-    var recentfiles = topmn.items[1].submenu.items[8].submenu;
-    recentfiles.insert(0, mn);
+    var recentfiles = (process.platform === 'darwin')
+        ? topmn.items[1].submenu.items[8].submenu
+        : topmn.items[0].submenu.items[8].submenu;
+    recentfiles.clear();
+    trjs.param.recentfiles.unshift(name);
+    recentfiles.append(mn);
+    for (var i=1; i<trjs.param.recentfiles.length && i<trjs.param.nbRecentFiles; i++) {
+        console.log("RF: ", i, trjs.param.recentfiles[i], name);
+        if (trjs.param.recentfiles[i] === name) {
+            trjs.param.recentfiles.splice(i,1);
+            continue;
+        }
+        mn = new MenuItem({label: trjs.param.recentfiles[i], click: openFromMenu});
+        recentfiles.append(mn);
+    }
+    // clear end of trjs.param.recentfiles
+    if (i < trjs.param.recentfiles.length)
+        trjs.param.recentfiles.splice(i,trjs.param.recentfiles.length-i);
+    Menu.setApplicationMenu(topmn);
+    trjs.param.saveStorage();
+};
+
+fsio.setMRUInitial = function() {
+    //const remote = require('electron').remote;
+    const Menu = remote.Menu;
+    const MenuItem = remote.MenuItem;
+
+    var topmn = Menu.getApplicationMenu();
+    var recentfiles = (process.platform === 'darwin')
+        ? topmn.items[1].submenu.items[8].submenu
+        : topmn.items[0].submenu.items[8].submenu;
+
+    var lg = trjs.param.recentfiles.length;
+    for (var i = 0; i < lg; i++) {
+        var mn = new MenuItem({label: trjs.param.recentfiles[i], click: openFromMenu});
+        recentfiles.append(mn);
+    }
     Menu.setApplicationMenu(topmn);
 };
 
 fsio.clearMRU = function() {
-    const remote = require('electron').remote;
+    //const remote = require('electron').remote;
     const Menu = remote.Menu;
     const MenuItem = remote.MenuItem;
     var topmn = Menu.getApplicationMenu();
@@ -480,3 +519,7 @@ fsio.clearMRU = function() {
     recentfiles.clear();
     Menu.setApplicationMenu(topmn);
 };
+
+fsio.openExternal = function(href) {
+    remote.shell.openExternal(href);
+}

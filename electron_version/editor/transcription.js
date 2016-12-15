@@ -997,7 +997,7 @@ trjs.transcription = (function () {
         var s = '';
         s += '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n';
         s += '<!DOCTYPE TEI SYSTEM "http://ct3.ortolang.fr/tei-corpo/tei_corpo.dtd">\n';
-        s += '<TEI version="0.9" subversion="transcriber.js" xmlns="http://www.tei-c.org/ns/1.0"';
+        s += '<TEI version="0.9" subversion="trjs" xmlns="http://www.tei-c.org/ns/1.0"';
         if (trjs.data.recordingLang())
             s += ' xml:lang="' + trjs.data.recordingLang() + '"';
         s += '>\n';

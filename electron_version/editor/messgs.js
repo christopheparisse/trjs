@@ -12,11 +12,11 @@ var trjs = {};
 trjs.messgs_eng = {
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     fileserver: 'File server',
-    namesoftware: 'transcriber.js',
+    namesoftware: 'TRJS',
 
     chooseaction: 'Choose Other Action for transcription files',
     display: 'Display and edit transcription (and/or media)',
-    backtrjs: 'Go back to transcriber.js without reloading a file',
+    backtrjs: 'Go back to TRJS without reloading a file',
     cvtteiml: 'Convert transcription to TEI',
     cvtclan: 'Convert transcription to CLAN',
     cvttrs: 'Convert transcription to Transcriber',
@@ -341,7 +341,7 @@ trjs.messgs_eng = {
     ediv: 'Must be on div to hide it.',
     emsg1: "A new version has been installed. Full installation will require a full restart. Partial update is possible with local restart. Do you want to do it now?",
     emsg2: "A new version has been installed. Do you want to restart now?",
-    emsg3: "A new version has been installed. It will take effect the new time Transcriber.js is started.",
+    emsg3: "A new version has been installed. It will take effect the new time TRJS is started.",
     ennv: "No new version available.",
     eerup: "Error updating TranscriberJS: ",
 
@@ -731,11 +731,11 @@ trjs.messgs_eng = {
 trjs.messgs_fra = {
     months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
     fileserver: 'Serveur de fichiers',
-    namesoftware: 'transcriber.js',
+    namesoftware: 'TRJS',
 
     chooseaction: 'Choisir une autre action pour les fichiers de transcription',
     display: 'Afficher ou éditer une transcription (et un média)',
-    backtrjs: 'Revenir à transcriber.js sans recharger de fichier',
+    backtrjs: 'Revenir à TRJS sans recharger de fichier',
     cvtteiml: 'Convertir une transcription vers le format TEI',
     cvtclan: 'Convert transcription to CLAN',
     cvttrs: 'Convert transcription to Transcriber',
@@ -1058,7 +1058,7 @@ trjs.messgs_fra = {
     ediv: 'Doit appartenir au \'div\' pour être masqué.',
     emsg1: "Une nouvelle version a été installée. L'installation complète nécessite un redémarrage. Il est possible de mettre à jour une version partielle en redémarrant en local. Voulez-vous redémarrer en local?",
     emsg2: "Une nouvelle version a été installée. Voulez-vous redémarrer maintenant?",
-    emsg3: "Une nouvelle version a été installée. Elle prendra effet au prochain démarrage de Transcriber.js.",
+    emsg3: "Une nouvelle version a été installée. Elle prendra effet au prochain démarrage de TRJS.",
     ennv: "Pas de nouvelle version disponible.",
     eerup: "Erreur de mise à jour de TranscriberJS: ",
 
@@ -1483,7 +1483,7 @@ trjs.messgs_fra.help =
     "</table>" +
     "<p>Le panneau de recherche de motif et de masquage/démasquage des données s'affiche directement en cliquant " +
     "sur \"Recherche\"</p>" +
-    "Aide complète disponible sur <a href='http://modyco.inist.fr/transcriberjs/doku.php?id=start'>http://modyco.inist.fr/transcriberjs/</a>";
+    "Aide complète disponible sur <a href='http://ct3.ortolang.fr/trjs/'>http://ct3.ortolang.fr/trjs/</a>";
 
 trjs.messgs_eng.help = trjs.messgs_fra.help;
 

@@ -558,6 +558,7 @@ trjs.keys.initBindings = function () {
     trjs.bindings.push([66, true, false, false, 'ctrl', trjs.media.playSlower, trjs.messgs.ctrlbin66]); // Ctrl B
     trjs.bindings.push([68, true, false, false, 'ctrl', trjs.events.deleteLineAndRedraw, trjs.messgs.ctrlbin68]); // Ctrl D
     trjs.bindings.push([69, true, false, false, 'ctrl', trjs.media.playFaster, trjs.messgs.ctrlbin69]); // Ctrl E
+    trjs.bindings.push([70, true, false, false, 'ctrl', trjs.editor.showSearch, trjs.messgs.ctrlaltbin70]); // Ctrl F
     trjs.bindings.push([71, true, false, false, 'ctrl', trjs.events.setDivPlusInsert, trjs.messgs.ctrlbin71]); // Ctrl G
     trjs.bindings.push([73, true, false, false, 'ctrl', trjs.events.insertBlankLineAndRedraw, trjs.messgs.ctrlbin73]); // Ctrl I
     trjs.bindings.push([74, true, false, false, 'ctrl', trjs.events.joinLine, trjs.messgs.ctrlbin74]); // Ctrl J
@@ -590,7 +591,7 @@ trjs.keys.initBindings = function () {
     trjs.bindings.push([66, true, true, false, 'ctrl', trjs.media.playReverse, trjs.messgs.ctrlaltbin66]); // Ctrl Alt B
     trjs.bindings.push([68, true, true, false, 'ctrl', trjs.events.deleteLineLocAndRedraw, trjs.messgs.ctrlaltbin68]); // Ctrl Alt D
     trjs.bindings.push([69, true, true, false, 'ctrl', trjs.media.playNormal, trjs.messgs.ctrlaltbin69]); // Ctrl Alt E
-    trjs.bindings.push([70, true, true, false, 'ctrl', trjs.editor.showSearch, trjs.messgs.ctrlaltbin70]); // Ctrl Alt F
+//    trjs.bindings.push([70, true, false, false, 'ctrl', trjs.editor.showSearch, trjs.messgs.ctrlaltbin70]); // Ctrl F
     trjs.bindings.push([71, true, true, false, 'ctrl', trjs.events.setDivMinusInsert, trjs.messgs.ctrlaltbin71]); // Ctrl Alt G
     trjs.bindings.push([73, true, true, false, 'ctrl', trjs.events.insertWithTimeAndRedraw, trjs.messgs.ctrlaltbin73]); // Ctrl Alt I
     if (trjs.utils.isWindows()) {

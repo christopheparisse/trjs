@@ -5,12 +5,12 @@ const app = electron.app;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-var mainWindow;
+// var process.mainWindow;
 
 app.on('open-file', function(event, path) {
     process.macosx_open_file = path;
-    if (mainWindow)
-        mainWindow.webContents.send('readtranscript', path);
+    if (process.mainWindow)
+        process.mainWindow.webContents.send('readtranscript', path);
 });
 
 // Module to create native browser window.
@@ -20,20 +20,20 @@ const Menu = electron.Menu;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    process.mainWindow = new BrowserWindow({width: 800, height: 600});
 
     // and load the index.html of the app.
-    mainWindow.loadURL('file://' + __dirname + '/index.html');
+    process.mainWindow.loadURL('file://' + __dirname + '/index.html');
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
+    // process.mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
-    mainWindow.on('closed', function () {
+    process.mainWindow.on('closed', function () {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
-        mainWindow = null;
+        process.mainWindow = null;
     });
 
     var template = [
@@ -174,7 +174,7 @@ function createWindow() {
         {
             label: 'Tools',
             submenu: [
-                {label: 'Search', accelerator: 'Shift+CmdOrCtrl+F', click: function () {
+                {label: 'Search', accelerator: 'CmdOrCtrl+F', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     window.webContents.send('search', 'main');
                 }
@@ -228,25 +228,12 @@ function createWindow() {
                         return 'Ctrl+Command+F';
                     else
                         return 'F11';
-                })(),
+                    })(),
                     click: function (item, focusedWindow) {
                         if (focusedWindow)
                             focusedWindow.setFullScreen(!focusedWindow.isFullScreen());
                     }
-                },
-                {
-                    label: 'Toggle Developer Tools', accelerator: (function () {
-                    if (process.platform == 'darwin')
-                        return 'Alt+Command+I';
-                    else
-                        return 'Ctrl+Shift+I';
-                })(),
-                    click: function (item, focusedWindow) {
-                        if (focusedWindow)
-                            focusedWindow.toggleDevTools();
-                    }
-                },
-                {type: 'separator'},
+                    },
                 {label: 'Minimize', accelerator: 'CmdOrCtrl+M', role: 'minimize'},
                 {label: 'Close', accelerator: 'CmdOrCtrl+W', role: 'close'},
                 {type: 'separator'},
@@ -270,7 +257,20 @@ function createWindow() {
                         }
                         },
                     ]
-                }
+                },
+                {type: 'separator'},
+                {
+                    label: 'Toggle Developer Tools', accelerator: (function () {
+                    if (process.platform == 'darwin')
+                        return 'Alt+Command+Z';
+                    else
+                        return 'Ctrl+Shift+Z';
+                })(),
+                    click: function (item, focusedWindow) {
+                        if (focusedWindow)
+                            focusedWindow.toggleDevTools();
+                    }
+                },
             ]
         },
         {
@@ -356,8 +356,8 @@ function createWindow() {
     });
     /*
     if (process.macosx_open_file !== undefined) {
-        if (mainWindow)
-            mainWindow.webContents.send('readtranscript', path);
+        if (process.mainWindow)
+            process.mainWindow.webContents.send('readtranscript', path);
         process.macosx_open_file = undefined;
     }
     */
@@ -365,6 +365,19 @@ function createWindow() {
 
 //var process = require(process);
 //console.log(process.argv);
+
+var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
+    // Someone tried to run a second instance, we should focus our window.
+    if (process.mainWindow) {
+        if (process.mainWindow.isMinimized()) process.mainWindow.restore();
+        process.mainWindow.focus();
+    }
+});
+
+if (shouldQuit) {
+    app.quit();
+    return;
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -383,7 +396,7 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (mainWindow === null) {
+    if (process.mainWindow === null) {
         createWindow();
     }
 });

@@ -1,11 +1,11 @@
 {
   "name": "trjs",
   "productName": "Trjs",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Oral transcription editor",
   "scripts": {
     "express": "node node/trjsexpress.js",
-    "electron": "electron index.js /corpusformat/transcriber/testcompact.tei_corpo_textgrid.trjs"
+    "electron": "electron index.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "author": "Christophe Parisse",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "http://ct3.ortolang.fr/trjs/issues"
+    "url": "http://ct3.ortolang.fr/tools/mantisbt/"
   },
   "homepage": "http://ct3.ortolang.fr/trjs",
   "dependencies": {

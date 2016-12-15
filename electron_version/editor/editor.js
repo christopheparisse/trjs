@@ -43,8 +43,8 @@ trjs.editor = (function () {
         var month = version.date.getMonth();
         var day = version.date.getDate();
         var datestring = (trjs.param.language === 'eng')
-            ? trjs.messgs.months[month - 1] + ' ' + day + ', ' + year
-            : day + ' ' + trjs.messgs.months[month - 1] + ' ' + year;
+            ? trjs.messgs.months[month] + ' ' + day + ', ' + year
+            : day + ' ' + trjs.messgs.months[month] + ' ' + year;
 
         var last = (trjs.param.lastversion ? trjs.param.lastversion : version.version);
         var vn = (last > version.version)
@@ -652,7 +652,8 @@ trjs.editor = (function () {
     function goHelp() {
         trjs.io.innerSave();
         // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
-        window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
+        fsio.openExternal("http://ct3.ortolang.fr/trjs/");
+        // window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
     }
 
     /**
@@ -805,7 +806,7 @@ trjs.editor = (function () {
                 if (args._ !== undefined) {
                     if (args._.length > 2 && (remote.process.defaultApp === true || args._[1] === 'index.js')) {
                         sURL += "?t=" + args._[2].replace(/\\/g, '/');
-                    } else if (args._.length > 1) {
+                    } else if (args._.length > 1 && args._[1] !== 'index.js') {
                         sURL += "?t=" + args._[1].replace(/\\/g, '/');
                     }
                 }
@@ -920,19 +921,6 @@ trjs.editor = (function () {
         trjs.dmz.initVisible();
         setInitParam();
 
-        var lg = trjs.param.recentfiles.length;
-//        if (lg === 0) {
-//            $('#recentfiles').attr('data-recent', 0);
-//        } else {
-        if (lg > 0) {
-//            $('#recentfiles').attr('data-recent', lg);
-//            $('#recentfiles').next().remove();
-            for (var i = lg - 1; i >= 0; i--) {
-                fsio.setMRU(trjs.param.recentfiles[i]);
-//                $('#recentfiles').after('<li><a href="#" onclick=\'trjs.io.loadRecentFile("' + trjs.param.recentfiles[i] + '");\'>' + trjs.param.recentfiles[i] + '</a></li>');
-            }
-        }
-
         //console.log(trjs.local.get('saved'));
         //console.log(uriLoad);
         /*
@@ -1024,6 +1012,7 @@ trjs.editor = (function () {
                 }
             }
         }
+        fsio.setMRUInitial();
     }
 
     /**

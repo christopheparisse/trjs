@@ -280,7 +280,7 @@ trjs.utils = ( function() {
 
 trjs.utils.printByID = function(strid) {
     var prtContent = document.getElementById(strid);
-    $('#printform').attr('src', 'transcriber.js-' + trjs.data.recName);
+    $('#printform').attr('src', 'trjs-' + trjs.data.recName);
     trjs.utils.printHTML(prtContent.innerHTML);
 };
 

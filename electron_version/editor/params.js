@@ -44,7 +44,7 @@ trjs.param = {
     reorder: false,
     showMedia: true,
     alwaysCheckOverlap: false,
-    nbRecentFiles: 10,
+    nbRecentFiles: 4,
     decalagePxProp: 5,
     nbVisible: 3,
     MINHEIGHTTRANSCRIPT: 500,
@@ -201,7 +201,7 @@ trjs.param = {
         this.reorder = false;
         this.showMedia = true;
         this.recentfiles = [];
-        this.nbRecentFiles = 10;
+        this.nbRecentFiles = 4;
         this.paletteFile = true;
         this.paletteEdit = true;
     },
@@ -244,7 +244,7 @@ trjs.param = {
         this.showLinkTime = this.testUndefBoolean(trjs.local.get('param_showLinkTime'), true);
         this.versionFormat = this.testUndefString(trjs.local.get('param_versionFormat'));
         this.nbdigits = this.testUndefInt(trjs.local.get('param_nbdigits'), 0);
-        this.nbRecentFiles = this.testUndefInt(trjs.local.get('param_nbRecentFiles'), 10);
+        this.nbRecentFiles = this.testUndefInt(trjs.local.get('param_nbRecentFiles'), 4);
         this.videoHeight = this.testUndefInt(trjs.local.get('param_videoHeight'), 240);
         this.mediaTime = this.testUndefFloat(trjs.local.get('param_mediaTime'), 0);
         this.lastDataLocation = this.testUndefString(trjs.local.get('param_lastDataLocation'), '');

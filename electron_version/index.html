@@ -85,6 +85,13 @@
     <link rel="stylesheet" type="text/css" href="style/global.css" />
 
 
+    <script>
+        //open links externally by default
+        $(document).on('click', 'a[href^="http"]', function(event) {
+            event.preventDefault();
+            fsio.openExternal(this.href);
+        });
+    </script>
 </head>
 <body onkeydown="trjs.events.eventKeydown(event);"
       onkeypress="trjs.events.eventKeypress(event);">

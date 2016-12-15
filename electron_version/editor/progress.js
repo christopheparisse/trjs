@@ -42,6 +42,8 @@ trjs.progress = (function () {
         //a.find('progress-right-'+idbox).css('width', 150 * ((100-nth)/100) ); // (100-nth)+'%');
         a.find('#progress-left-' + idbox).width(nth + '%'); // ', 150 * ((nth)/100) ); //);
         a.find('#progress-right-' + idbox).width((100 - nth) + '%'); // ', 150 * ((100-nth)/100) ); // );
+        const remote = require('electron').remote;
+        remote.process.mainWindow.setProgressBar(nth/100);
     }
 
     /**
