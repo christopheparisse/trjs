@@ -366,6 +366,7 @@ function createWindow() {
 //var process = require(process);
 //console.log(process.argv);
 
+/*
 var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
     // Someone tried to run a second instance, we should focus our window.
     if (process.mainWindow) {
@@ -383,6 +384,7 @@ if (shouldQuit) {
     app.quit();
     return;
 }
+*/
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

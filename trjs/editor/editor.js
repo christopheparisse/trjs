@@ -652,7 +652,7 @@ trjs.editor = (function () {
     function goHelp() {
         trjs.io.innerSave();
         // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
-        fsio.openExternal("http://ct3.ortolang.fr/trjs/");
+        fsio.openExternal("http://ct3.ortolang.fr/trjs/doku.php?id=doc:documentation");
         // window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
     }
 
