@@ -81,6 +81,10 @@ body {
 	position: absolute;
 	right: 40px;
 }
+#aide_fen2 {
+	position: absolute;
+	right: 40px;
+}
 .scrollit {
     overflow:scroll;
     height:350px;
@@ -160,6 +164,8 @@ p:nth-of-type(2n) {
 #param-numbers { display:none; }
 #param-nonumbers { display:none; }
 .sc { color: #084B8A; }
+#pinfomacrost { margin-left: 30px; }
+#pinfomacroval { margin-left: 30px; }
 
 #media-info {
 	display: block;

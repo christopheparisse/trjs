@@ -157,6 +157,24 @@ trjs.editor = (function () {
     }
 
     /**
+     * change the language spelling settings
+     */
+    function setLanguageSpelling() {
+        var val = $('input[name="language-spelling"]:checked').val();
+        if (val === '0') {
+            // this is English
+            trjs.param.checkLanguage = 'en-US';
+            trjs.log.alert('Language set for spelling: English');
+        } else {
+            // this is French
+            trjs.log.alert("Langue sélectionnée pour l'orthographe: Français");
+            trjs.param.checkLanguage = 'fr-FR';
+        }
+        trjs.param.saveStorage();
+        if (resetSpellCheckProvider !== undefined) resetSpellCheckProvider();
+    }
+
+    /**
      * set option about backward step
      * @method setBackwardStep
      */
@@ -204,9 +222,22 @@ trjs.editor = (function () {
         if (x >= 1 || x <= 7)
             trjs.param.nbVisible = x;
         else
-            $('#nb-saves').val(3);
+            $('#nb-visible').val(3);
         trjs.param.saveStorage();
         trjs.partition.redrawPartition();
+    }
+
+    /**
+     * set option about number of visible lines in the partition
+     * @method setNbRecentFiles
+     */
+    function setNbRecentFiles() {
+        var x = parseInt($('#nb-recent-files').val());
+        if (x >= 1 || x <= 7)
+            trjs.param.nbRecentFiles = x;
+        else
+            $('#nb-recent-files').val(5);
+        trjs.param.saveStorage();
     }
 
     /**
@@ -777,6 +808,13 @@ trjs.editor = (function () {
             trjs.messgs = trjs.messgs_fra;
             trjs.undo.setLang('fra');
         }
+        if (trjs.param.checkLanguage === 'en-US') {
+            $('input[name="language-spelling"][value=0]').prop('checked', true);
+            trjs.messgs = trjs.messgs_eng;
+        } else {
+            $('input[name="language-spelling"][value=1]').prop('checked', true);
+            trjs.messgs = trjs.messgs_fra;
+        }
         //trjs.messgs_init();
         if (version.serverImpl === 'php') { // conditions for php server (depend on the version)
             trjs.param.features.settingsTP();
@@ -787,22 +825,22 @@ trjs.editor = (function () {
         // if this is the case, then load the HTML file directly
         // else load an empty file and insert either the localStorage or an external file
         var sURL = window.document.URL.toString();
-        console.log(sURL);
-        console.log(trjs.param.mode);
-        console.log(trjs.param.location);
-        console.log(trjs.param.server);
+        //console.log(sURL);
+        //console.log(trjs.param.mode);
+        //console.log(trjs.param.location);
+        //console.log(trjs.param.server);
         if (trjs.param.server === 'electron') {
             var remote = require('electron').remote;
-            console.log(remote.process);
-            console.log("open_file: ", remote.process.macosx_open_file);
+            //console.log(remote.process);
+            //console.log("open_file: ", remote.process.macosx_open_file);
             if (remote.process.macosx_open_file) {
                 sURL += "?t=" + remote.process.macosx_open_file;
                 remote.process.macosx_open_file = undefined;
             } else {
                 var argv = remote.process.argv;
-                console.log(argv);
+                //console.log(argv);
                 var args = require('minimist')(remote.process.argv);
-                console.log(args);
+                //console.log(args);
                 if (args._ !== undefined) {
                     if (args._.length > 2 && (remote.process.defaultApp === true || args._[1] === 'index.js')) {
                         sURL += "?t=" + args._[2].replace(/\\/g, '/');
@@ -813,7 +851,7 @@ trjs.editor = (function () {
             }
         }
         var uri = parseUri(sURL);
-        console.log(uri);
+        //console.log(uri);
         //if (uri.file === 'transcriberjs.html')
         loadFromTranscriberjsHtml(uri);
         /*
@@ -975,7 +1013,7 @@ trjs.editor = (function () {
                 trjs.io.serverLoadMedia(v);
             } else if (uri.queryKey['t']) { // load a transcription from the server
                 lt = uri.queryKey['t']; // use the parameter
-                console.log('t= ' + lt);
+                //console.log('t= ' + lt);
                 var v = codefn.decodeFilename(lt);
                 trjs.local.put('recordingRealFile', v);
                 trjs.data.recordingUrlPath = trjs.utils.pathName(v);
@@ -1402,9 +1440,11 @@ trjs.editor = (function () {
         setInitParam: setInitParam,
         setInsert: setInsert,
         setLanguage: setLanguage,
+        setLanguageSpelling: setLanguageSpelling,
         setNbDigits: setNbDigits,
         setNbSaves: setNbSaves,
         setNbVisible: setNbVisible,
+        setNbRecentFiles: setNbRecentFiles,
         setLocNames: setLocNames,
         setMedia: setMedia,
         setNums: setNums,

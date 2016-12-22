@@ -716,6 +716,11 @@ trjs.messgs_eng = {
 // others
     api73: "Lengthening of vowel",
     api74: "Nasal vowel",
+    api75: "Front half closed unrounded nasal vowel brin",
+    api76: "Back closed rounded nasal vowel French ton",
+    api77: "Back open unrounded nasal vowel French temps",
+    api78: "Front half open rounded nasal vowel French brun",
+    api79: "R parisien",
 
     bincon: "Table of keys",
     apibincon: "Table of API keys",
@@ -726,6 +731,7 @@ trjs.messgs_eng = {
     tapikey: "Keys",
     tbin: "Bindings",
     tapibin: "API",
+    generic: "Basic macro menu",
 };
 
 trjs.messgs_fra = {
@@ -1436,6 +1442,10 @@ trjs.messgs_fra = {
     api73: "Allongement de voyelle",
     api74: "Voyelle nasale",
     api75: "Voyelle antérieure mi-ouverte non arrondie nasale French brin",
+    api76: "Voyelle moyenne supérieure antérieure arrondie nasale French ton",
+    api77: "Voyelle moyenne inférieure postérieure arrondie nasale French temps",
+    api78: "Voyelle postérieure postérieure non arrondie nasale French brun",
+    api79: "R parisien",
 
     bincon: "Tableau des raccourcis claviers",
     apibincon: "Tableau des raccourcis claviers API",
@@ -1446,6 +1456,7 @@ trjs.messgs_fra = {
     tapikey: "Raccourcis clavier",
     tbin: "Fonctions",
     tapibin: "API",
+    generic: "Menu macro de base",
 };
 
 trjs.messgs_fra.help =

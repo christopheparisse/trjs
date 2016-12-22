@@ -14,10 +14,10 @@ if (typeof exports !== 'undefined') {
 }
 
 version.appName = 'TRJS';
-version.version = 'v0.5.2';
+version.version = 'v0.5.4';
 version.versionLexFind = 'v0.0.1';
 version.versionMediaTools = 'v0.0.9';
-version.date = new Date(2016, 12, 15);
+version.date = new Date(2017, 01, 02);
 
 version.preservedPages = 3;
 
@@ -228,7 +228,7 @@ version.allExtensionForBrowser = function (browser, browserversion, format) {
     // console.log('allExtensionForBrowser ' + browser + ' ' + browserversion);
     if (browser.indexOf('Chrome') >= 0) { // chrome style
         if (format === 'html5MediaAudio')
-            return ['mp3'];
+            return ['wav', 'mp3'];
         else
             return ['mp4', 'webm'];
     } else if (browser.indexOf('Firefox') >= 0) { // firefox style

@@ -235,7 +235,7 @@ fsio.saveFileSync = function(args, callback) {
 */
 
 fsio.readFile = function(fname, callbackDone, callbackFail) {
-    console.log('LOADFILE: ' + fname);
+    //console.log('LOADFILE: ' + fname);
     try {
         fs.readFile(fname, 'utf-8', function (err, data) {
             if (!err)
@@ -250,7 +250,7 @@ fsio.readFile = function(fname, callbackDone, callbackFail) {
 };
 
 fsio.readBinaryFile = function(fname, callbackDone, callbackFail) {
-    console.log('READ BINARY FILE: ' + fname);
+    //console.log('READ BINARY FILE: ' + fname);
     try {
         fs.readFile(fname, function (err, data) {
             if (!err)
@@ -276,7 +276,7 @@ fsio.saveTranscript = function(args, callbackDone, callbackFail) {
 };
 
 fsio.saveFile = function(args, doneFunction, failFunction) {
-    console.log('SAVE FILE: ' + args.name);
+    //console.log('SAVE FILE: ' + args.name);
     try {
         fs.writeFile(args.name, args.data, function (err) {
             if (!err)
@@ -473,13 +473,13 @@ fsio.setMRU = function(name) {
     var mn = new MenuItem({label: name, click: openFromMenu});
     var topmn = Menu.getApplicationMenu();
     var recentfiles = (process.platform === 'darwin')
-        ? topmn.items[1].submenu.items[8].submenu
-        : topmn.items[0].submenu.items[8].submenu;
+        ? topmn.items[1].submenu.items[9].submenu
+        : topmn.items[0].submenu.items[9].submenu;
     recentfiles.clear();
     trjs.param.recentfiles.unshift(name);
     recentfiles.append(mn);
     for (var i=1; i<trjs.param.recentfiles.length && i<trjs.param.nbRecentFiles; i++) {
-        console.log("RF: ", i, trjs.param.recentfiles[i], name);
+        //console.log("RF: ", i, trjs.param.recentfiles[i], name);
         if (trjs.param.recentfiles[i] === name) {
             trjs.param.recentfiles.splice(i,1);
             continue;
@@ -501,8 +501,8 @@ fsio.setMRUInitial = function() {
 
     var topmn = Menu.getApplicationMenu();
     var recentfiles = (process.platform === 'darwin')
-        ? topmn.items[1].submenu.items[8].submenu
-        : topmn.items[0].submenu.items[8].submenu;
+        ? topmn.items[1].submenu.items[9].submenu
+        : topmn.items[0].submenu.items[9].submenu;
 
     var lg = trjs.param.recentfiles.length;
     for (var i = 0; i < lg; i++) {
@@ -517,7 +517,7 @@ fsio.clearMRU = function() {
     const Menu = remote.Menu;
     const MenuItem = remote.MenuItem;
     var topmn = Menu.getApplicationMenu();
-    var recentfiles = topmn.items[1].submenu.items[8].submenu;
+    var recentfiles = topmn.items[1].submenu.items[9].submenu;
     recentfiles.clear();
     Menu.setApplicationMenu(topmn);
 };

@@ -3,14 +3,16 @@ const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
 
+process.listWindows = [];
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 // var process.mainWindow;
 
 app.on('open-file', function(event, path) {
     process.macosx_open_file = path;
-    if (process.mainWindow)
-        process.mainWindow.webContents.send('readtranscript', path);
+    var nth = createWindow();
+    process.listWindows[nth].webContents.send('readtranscript', path);
 });
 
 // Module to create native browser window.
@@ -19,23 +21,36 @@ const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
 
 function createWindow() {
+    for (var i in process.listWindows) {
+        if (process.listWindows[i] === null || process.listWindows[i] === undefined) {
+            startWindow(i);
+            return i;
+        }
+    }
+    startWindow(i+1);
+    return i+1;
+}
+
+function startWindow(nth) {
     // Create the browser window.
-    process.mainWindow = new BrowserWindow({width: 800, height: 600});
+    process.listWindows[nth] = new BrowserWindow({width: 800, height: 800});
 
     // and load the index.html of the app.
-    process.mainWindow.loadURL('file://' + __dirname + '/index.html');
+    process.listWindows[nth].loadURL('file://' + __dirname + '/index.html');
 
     // Open the DevTools.
-    // process.mainWindow.webContents.openDevTools();
+    // process.listWindows[nth].webContents.openDevTools();
 
     // Emitted when the window is closed.
-    process.mainWindow.on('closed', function () {
+    process.listWindows[nth].on('closed', function () {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
-        process.mainWindow = null;
+        process.listWindows[nth]= null;
     });
+}
 
+function createMenu() {
     var template = [
         {
             label: 'File',
@@ -56,6 +71,12 @@ function createWindow() {
                     label: 'New transcription', accelerator: 'CmdOrCtrl+N', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     window.webContents.send('newtranscript', 'main');
+                }
+                },
+                {
+                    label: 'New window', accelerator: 'Shift+CmdOrCtrl+N', click: function () {
+                    var nth = createWindow()
+                    process.listWindows[nth].webContents.send('newtranscript', 'main');
                 }
                 },
                 {
@@ -115,6 +136,12 @@ function createWindow() {
                     label: 'Delete line', accelerator: 'CmdOrCtrl+D', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     window.webContents.send('deleteline', 'main');
+                }
+                },
+                {
+                    label: 'Insert macro', accelerator: 'CmdOrCtrl+F1', click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.webContents.send('insertmacro', 'main');
                 }
                 },
                 {type: 'separator'},
@@ -350,10 +377,12 @@ function createWindow() {
     }
     var localmenu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(localmenu);
+/*
     const globalShortcut = electron.globalShortcut;
     globalShortcut.register('CommandOrControl+Q', () => {
         app.quit();
     });
+*/
     /*
     if (process.macosx_open_file !== undefined) {
         if (process.mainWindow)
@@ -389,7 +418,10 @@ if (shouldQuit) {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', function () {
+    createWindow(0);
+    createMenu();
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

@@ -1204,7 +1204,7 @@ trjs.io = (function () {
     function serverSave(param) {
         if (trjs.param.level < 'level6') return;
         if (trjs.data.recordingName() == trjs.data.NEWRECNAME && param != 'nonew') {
-            trjs.log.alert(trjs.messgs.mustfn);
+            //trjs.log.alert(trjs.messgs.mustfn);
             trjs.io.doSaveAs();
             return;
         }
@@ -1237,7 +1237,7 @@ trjs.io = (function () {
         if (trjs.param.level < 'level4') return;
         var s = innerSave();
         if (trjs.data.recordingName() === trjs.data.NEWRECNAME) {
-            trjs.log.boxalert(trjs.messgs.mustfn);
+            //trjs.log.boxalert(trjs.messgs.mustfn);
             trjs.io.doSaveAs();
         }
         fsio.teiToFormat({
@@ -1282,7 +1282,7 @@ trjs.io = (function () {
         if (trjs.param.level < 'level6') return;
         var s = innerSave();
         if (trjs.data.recordingName() === trjs.data.NEWRECNAME) {
-            trjs.log.alert(trjs.messgs.mustfn);
+            //trjs.log.alert(trjs.messgs.mustfn);
             trjs.io.doSaveAs();
         }
         var fileoutput = trjs.utils.headName(trjs.data.recordingRealFile()) + version.MARK_EXT + extFormat(format);

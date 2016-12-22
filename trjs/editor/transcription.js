@@ -827,8 +827,8 @@ trjs.transcription = (function () {
         trjs.editor.testNotSave(function (yesno) {
             if (yesno === true) {  // the user does not want to save the modified file or the file is not modified since last save
                 freeGrid();
-                trjs.data.setRecordingName(null); // sets new file name
-                trjs.data.setMediaName(null); // sets new file name
+                trjs.data.setRecordingName(''); // sets new file name
+                trjs.data.setMediaName(''); // sets new file name
                 trjs.data.initMedia();
                 trjs.io.initEmptyMedia();
                 // get XML ready
@@ -1468,7 +1468,7 @@ trjs.transcription = (function () {
                 + '</td><td class="te">' + trjs.dataload.checknumber(te)
                 + '</td><td class="vts" contenteditable="true" onfocus="trjs.events.putTime(event);" onblur="trjs.events.checkTime(event);">' + trjs.dataload.checkstring(vts)
                 + '</td><td class="vte" contenteditable="true" onfocus="trjs.events.putTime(event);" onblur="trjs.events.checkTime(event);">' + trjs.dataload.checkstring(vte)
-                + '</td><td class="transcription" contenteditable="true" onfocus="trjs.undo.line.protect(event);" onblur="trjs.undo.line.check(event);">' + trjs.dataload.checkstring(tr)
+                + '</td><td class="transcription" contenteditable="true" onfocus="trjs.undo.line.protect(event);" onblur="trjs.macros.onblur(event);">' + trjs.dataload.checkstring(tr)
                 + '</td><td class="infosup"></td></tr>';
         }
 

@@ -16,6 +16,7 @@
  */
 trjs.param = {
     language: 'fra',
+    checkLanguage: 'fr-FR',
     versionFormat: "0.4",
     modeinsert: false,
     showLinkTime: true,

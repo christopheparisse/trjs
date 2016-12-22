@@ -28,6 +28,10 @@ trjs.log = ( function() {
 
 	var infoMsgDisplay = function() {
 	    if (nbInfoMsg > dispInfoMsg) {
+            if (arrayInfoMsgDuration[dispInfoMsg] < 1) {
+                dispInfoMsg++;
+                return;
+			}
 	    	if (arrayInfoMsgStyle[dispInfoMsg] === 'high') {
 	    		elem.attr('class', 'bb-alert alert alert-info high');
 				elem.find("span").html(arrayInfoMsg[dispInfoMsg]);
@@ -103,7 +107,7 @@ trjs.log = ( function() {
 		 */
 		boxalert: function(msg) {
 			bootbox.alert(msg, function() {});
-			infoMsgShow(msg, 1000);
+			infoMsgShow(msg, "normal", 0);
 		},
 		log: function(m) {
 			arrayLogMsg.push(m);

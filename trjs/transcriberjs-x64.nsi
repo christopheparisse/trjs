@@ -12,10 +12,10 @@
 ;--------------------------------
 
 ; The name of the installer
-Name "trjs-install-v0.5.0-x64"
+Name "trjs-install-v0.5.3-x64"
 
 ; The file to write
-OutFile "trjs-v0.5.0-x64.exe"
+OutFile "trjs-v0.5.3-x64.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES64\trjs"
@@ -41,13 +41,13 @@ UninstPage instfiles
 ;--------------------------------
 
 ; The stuff to install
-Section "trjs 64bits v0.5.0 (required)"
+Section "trjs 64bits v0.5.3 (required)"
 
   SectionIn RO
 
   ; Put file there
   SetOutPath $INSTDIR
-  File /r "c:\Users\cp\builds\Trjs-win32-x64\*.*"
+  File /r "c:\media\builds\Trjs-win32-x64\*.*"
  
   ; Write the installation path into the registry
   WriteRegStr HKLM SOFTWARE\trjs "Install_Dir" "$INSTDIR"
@@ -61,14 +61,14 @@ Section "trjs 64bits v0.5.0 (required)"
 
   CreateDirectory "$SMPROGRAMS\trjs"
   CreateShortCut "$SMPROGRAMS\trjs\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\trjs\trjs.lnk" "$INSTDIR\trjs.exe" 0
+  CreateShortCut "$SMPROGRAMS\trjs\trjs.lnk" "$INSTDIR\trjs.exe"
   
 SectionEnd
 
 ; Optional section (can be disabled by the user)
 Section "Desktop Shortcuts"
 
-  CreateShortCut "$DESKTOP\trjs.lnk" "$INSTDIR\trjs.exe" 0
+  CreateShortCut "$DESKTOP\trjs.lnk" "$INSTDIR\trjs.exe"
   
 SectionEnd
 
