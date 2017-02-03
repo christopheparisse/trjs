@@ -11,13 +11,15 @@ if (typeof exports !== 'undefined') {
     var os = require('os');
 } else {
     var version = {};
+    var path = require('path');
+    var os = require('os');
 }
 
 version.appName = 'TRJS';
-version.version = 'v0.5.4';
+version.version = 'v0.5.5';
 version.versionLexFind = 'v0.0.1';
 version.versionMediaTools = 'v0.0.9';
-version.date = new Date(2017, 01, 02);
+version.date = new Date(2017, 1, 2); // attention mettre -1 pour les mois : janvier === 0
 
 version.preservedPages = 3;
 
@@ -108,7 +110,10 @@ version.trjsLoc = function () {
     console.log("trjsLoc " + global.applicationTarget.type);
     if (__dirname !== undefined) {
         console.log('__dirname', __dirname);
-        htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/..";
+        if (global.applicationTarget.type === 'electron')
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g');
+        else
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/..";
     } else {
         console.log('process');
         htmlTrjsPath = process.cwd().replace(/\\/, '/', 'g');
@@ -122,7 +127,10 @@ version.ffmpegdirLoc = function () {
     console.log("ffmpegdirLoc " + global.applicationTarget.type);
     if (__dirname !== undefined) {
         console.log('__dirname', __dirname);
-        htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/../tools";
+        if (global.applicationTarget.type === 'electron')
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/tools";
+        else
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/../tools";
     } else {
         console.log('process');
         htmlTrjsPath = process.cwd().replace(/\\/, '/', 'g') + "/tools";

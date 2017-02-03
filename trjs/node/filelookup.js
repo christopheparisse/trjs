@@ -8,10 +8,10 @@ var path = require("path");
 var mime = require("mime");
 // var trash = require('trash');
 var os = require('os');
-
+/*
 var version = require("../editor/version.js");
 var codefn = require('../editor/codefn.js');
-
+*/
 var filelookup = exports;
 
 filelookup.DOMAIN_DEFAULT = '/Users';

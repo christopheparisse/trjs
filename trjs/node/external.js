@@ -14,8 +14,10 @@ var childproc = require('child_process');
 var filelookup = require('./filelookup.js');
 var docx = require("../js/teidocx.js");
 var teiTools = require("../js/teiconverttools.js");
+/*
 var version = require('../editor/version.js');
 var codefn = require('../editor/codefn.js');
+*/
 
 function chattotei() {
     return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.ClanToTei';

@@ -12,10 +12,10 @@
 ;--------------------------------
 
 ; The name of the installer
-Name "trjs-install-v0.5.3-x86"
+Name "trjs-install-v0.5.5-x86"
 
 ; The file to write
-OutFile "trjs-v0.5.3-x86.exe"
+OutFile "trjs-v0.5.5-x86.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES64\trjs"
@@ -41,13 +41,13 @@ UninstPage instfiles
 ;--------------------------------
 
 ; The stuff to install
-Section "trjs 64bits v0.5.3 (required)"
+Section "trjs 64bits v0.5.5 (required)"
 
   SectionIn RO
 
   ; Put file there
   SetOutPath $INSTDIR
-  File /r "C:\media\builds\Trjs-win32-ia32\*.*"
+  File /r "C:\devlopt\builds\Trjs-win32-ia32\*.*"
  
   ; Write the installation path into the registry
   WriteRegStr HKLM SOFTWARE\trjs "Install_Dir" "$INSTDIR"

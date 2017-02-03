@@ -28,10 +28,7 @@ trjs.transcription = (function () {
      * @return {string} formatted value
      */
     function intFormat2(v) {
-        if (v < 10)
-            return "0" + v;
-        else
-            return v;
+        return (v < 10) ? "0" + v : v;
     }
 
     /**
@@ -125,7 +122,7 @@ trjs.transcription = (function () {
      * @param default value of second field
      */
     function createDivEditField(ty, st) {
-        return '<table><tr><td class="divtxt ttype">' + ty + '</td><td class="divtxt tsubtype">' + st + '</td></tr></table>';
+        return '<table><tr><td class="divtxt ttype" contenteditable="true">' + ty + '</td><td class="divtxt tsubtype" contenteditable="true">' + st + '</td></tr></table>';
     }
 
     /**
@@ -135,7 +132,7 @@ trjs.transcription = (function () {
      * @param default value of second field
      */
     function createNoteEditField(ty, st) {
-        return '<table><tr><td class="notetxt ttype">' + ty + '</td><td class="notetxt tsubtype">' + st + '</td></tr></table>';
+        return '<table><tr><td class="notetxt ttype" contenteditable="true">' + ty + '</td><td class="notetxt tsubtype" contenteditable="true">' + st + '</td></tr></table>';
     }
 
     /**
@@ -288,12 +285,10 @@ trjs.transcription = (function () {
         if (trjs.data.multipleSelect === true) {
             trjs.data.multipleSelect = false;
             $('table td.info').hide();
-//		$('table td.info').css('display','none');
         }
         else {
             trjs.data.multipleSelect = true;
             $('table td.info').show();
-//		$('table td.info').css('display','block');
         }
     }
 
@@ -360,9 +355,6 @@ trjs.transcription = (function () {
         // console.log(d + ' ' + f + ' ' + v);
         for (var i = d; i <= f; i++) {
             var td = $(tablelines[i - 1]).find('td.info');
-//		console.log($(tablelines[i-1]));
-//		console.log(td);
-//		console.log(i + ' ' + td.length);
             if (v) {
                 td[0].data_select = true;
                 $(td[0]).html('<i class="fa fa-check-square-o" onclick="trjs.transcription.clickMS(event, ' + i + ');"></i>');
@@ -400,10 +392,7 @@ trjs.transcription = (function () {
     }
 
     function clickMS(e, l) {
-//	console.log("clickMS " + l + ' ' + e.shiftKey);
-//	console.log(e);
         var p = $(e.target).parent();
-//	console.log(p);
         if (p[0].data_select === true) {
             p[0].data_select = false;
             if (e.shiftKey === true && trjs.data.lastSelected !== -1)
@@ -427,7 +416,7 @@ trjs.transcription = (function () {
      * it is based dynamically upon the information of the number of utterances for each participants
      * @method updateCSS0
      */
-    function updateCSS0() {	//
+    function updateCSS0() {
         var nb = trjs.dmz.nbSortLoc();
         trjs.transcription.loc1 = '';
         trjs.transcription.loc2 = '';
@@ -446,7 +435,7 @@ trjs.transcription = (function () {
      * ::- adjust the place of the tier names
      * @method updateCSS1
      */
-    function updateCSS1() {	//
+    function updateCSS1() {
         if (trjs.data.imbrication) {
             var lns = $('td.prop');
             for (var i = 0; i < lns.length; i++) {
@@ -501,7 +490,7 @@ trjs.transcription = (function () {
      * ::- change the color of the locutor CHI and all the assotiated tiers
      * @method updateCSS2
      */
-    function updateCSS2() {	//
+    function updateCSS2() {
         $('tr.main.loc').each(function (index, elem) {
             if (codeTier($(elem)) === trjs.transcription.loc1) {
                 $(elem).css('border-top', '1px solid lightgray').css('background-color', '#DDD').attr('backcolor', '#DDD');
@@ -640,8 +629,8 @@ trjs.transcription = (function () {
                     return;
                 }
                 if (processed === 96) {
-                    trjs.dmz.freeLoc();	// count and sort the locutors
-                    trjs.dmz.countLoc();	// count and sort the locutors
+                    trjs.dmz.freeLoc(); // count and sort the locutors
+                    trjs.dmz.countLoc(); // count and sort the locutors
                     updateCSS0(); // compute the colors of the locutors
                     processed = 97;
                     return;
@@ -669,7 +658,6 @@ trjs.transcription = (function () {
                         trjs.dmz.init('partition');
                     var l = trjs.events.firstLoc();
                     if (l) trjs.events.setSelectedLine(l);
-//				trjs.log.resultLog();
                     initialLoadFlag = true;
                     if (trjs.param.goLine !== null)
                         trjs.events.goToLine(trjs.param.goLine);
@@ -763,7 +751,7 @@ trjs.transcription = (function () {
 
         initTable(trjsTable);
 
-        trjs.dmz.countLoc();	// count and sort the locutors
+        trjs.dmz.countLoc(); // count and sort the locutors
         updateCSS(); // compute the colors of the locutors
         // chargement à partir des valeurs stokées dans trjs.data.
         // load the headers (with the exception of template already read)
@@ -873,7 +861,7 @@ trjs.transcription = (function () {
                 // get container ready
                 newTable();
 
-                trjs.dmz.countLoc();	// count and sort the locutors
+                trjs.dmz.countLoc(); // count and sort the locutors
                 updateCSS(); // compute the colors of the locutors
                 // chargement à partir des valeurs stokées dans trjs.data.
                 trjs.template.loadPersons();
@@ -1074,8 +1062,6 @@ trjs.transcription = (function () {
             }
             if (its !== '' && parseFloat(its) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(its);
             if (ite !== '' && parseFloat(ite) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(ite);
-//		var code = codeTier( $(tablelines[i]) );
-//		code = trjs.events.trimMark(code);
 
             if (type === 'div') {
                 while (level > 1) {
@@ -1302,7 +1288,6 @@ trjs.transcription = (function () {
             if (trjs.param.locnames === true)
                 iloc = trjs.template.nameToCode(iloc);
             s += iloc + "\t" + '"' + itrans.replace('\"', '\"\"', 'g') + '"'; // data
-//		s += getValueProp(tablelines, i+1, 'phon'); // optional phonological data
             s += "\n";
         }
         return s;
@@ -1339,7 +1324,7 @@ trjs.transcription = (function () {
      */
     function newTable() {
         var hot = [
-            {loc: "+div+", ts: "", te: "", tx: "", stx: "", type: 'div'}, // trjs.messgs.initdiv
+            {loc: "+div+", ts: "", te: "", tx: "x", stx: "x", type: 'div'}, // trjs.messgs.initdiv
             {loc: "LOC", ts: 0, te: "", tx: "", type: 'loc'} // trjs.messgs.inittrs
         ];
         initTable(hot);
@@ -1355,7 +1340,7 @@ trjs.transcription = (function () {
         if (trjs.events.testMark(loc))
             loc = trjs.events.trimMark(loc);
         if (loc === '---') {
-            return '---';	// temporary fillers
+            return '---'; // temporary fillers
         } else if (loc === '+div+') {
             return 'div';
         } else if (loc === '+incident+') {
@@ -1468,8 +1453,13 @@ trjs.transcription = (function () {
                 + '</td><td class="te">' + trjs.dataload.checknumber(te)
                 + '</td><td class="vts" contenteditable="true" onfocus="trjs.events.putTime(event);" onblur="trjs.events.checkTime(event);">' + trjs.dataload.checkstring(vts)
                 + '</td><td class="vte" contenteditable="true" onfocus="trjs.events.putTime(event);" onblur="trjs.events.checkTime(event);">' + trjs.dataload.checkstring(vte)
-                + '</td><td class="transcription" contenteditable="true" onfocus="trjs.undo.line.protect(event);" onblur="trjs.macros.onblur(event);">' + trjs.dataload.checkstring(tr)
-                + '</td><td class="infosup"></td></tr>';
+                + '</td>';
+            if (loc === '+div+' || loc === '+note+') {
+                s += '<td class="transcription" onfocus="trjs.undo.line.protect(event);" onblur="trjs.macros.onblur(event);">' + trjs.dataload.checkstring(tr) + '</td>';
+            } else {
+                s += '<td class="transcription" contenteditable="true" onfocus="trjs.undo.line.protect(event);" onblur="trjs.macros.onblur(event);">' + trjs.dataload.checkstring(tr) + '</td>';
+            }
+            s += '<td class="infosup"></td></tr>';
         }
 
         return s;
@@ -1824,25 +1814,15 @@ trjs.transcription = (function () {
         s += '[Script Info]\n';
         s += '; Script generated by transcriberjs\n';
         s += '; http://modyco.inist.fr\n';
-//	s += 'Title: ' + trjs.data.recTitle + '\n';
         s += 'Original Script: Transcriberjs\n';
         s += 'ScriptType: v4.00\n';
         s += 'Collisions: Normal\n';
         s += 'PlayResY: 720\n';
         s += 'PlayResX: 1200\n';
-//	s += 'PlayDepth: 0\n';
-//	s += 'Timer: 100,0000\n';
-//	s += 'Video Aspect Ratio: 0';
-//	s += 'Video Zoom: 6';
-//	s += 'Video Position: 0';
 
         s += '[V4 Styles]\n';
         s += 'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, TertiaryColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, AlphaLevel, Encoding\n';
         s += 'Style: Default,Arial,40,&H00ffff,&H00ffff,&H00ffff,&H0,-1,0,1,3,0,2,30,30,30,0,0\n'; // first format
-
-//	s += '[V4+ Styles]';
-//	s += 'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding';
-//	s += 'Style: MainLine, Arial,28,&H00B4FCFC,&H00B4FCFC,&H00000008,&H80000008,-1,0,0,0,100,100,0.00,0.00,1,1.00,2.00,2,30,30,30,0';
 
         s += '[Events]\n';
         s += 'Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n';
@@ -2427,118 +2407,54 @@ trjs.transcription = (function () {
     }
 
     return {
-        clickMS: function (e, l) {
-            clickMS(e, l);
-        },
-        codeTier: function (p) {
-            return codeTier(p);
-        },
-        convertFromTxtToCsv: function (p) {
-            return convertFromTxtToCsv(p);
-        },
-        copyMultipleSelection: function () {
-            copyMultipleSelection();
-        },
-        createDivEditField: function (p1, p2) {
-            return createDivEditField(p1, p2);
-        },
-        cutMultipleSelection: function () {
-            cutMultipleSelection();
-        },
-        deselectAllMS: function (e) {
-            deselectAllMS(e);
-        },
-        doShiftTimeLinks: function () {
-            doShiftTimeLinks();
-        },
-        exportMStoCsv: function () {
-            exportMStoCsv();
-        },
-        exportMStoMedia: function () {
-            exportMStoMedia();
-        },
-        exportMStoMediaSubt: function (p) {
-            exportMStoMediaSubt(p);
-        },
-        exportMStoSubt: function (p1, p2) {
-            exportMStoSubt(p1, p2);
-        },
+        clickMS: clickMS,
+        codeTier: codeTier,
+        convertFromTxtToCsv: convertFromTxtToCsv,
+        copyMultipleSelection: copyMultipleSelection,
+        createDivEditField: createDivEditField,
+        cutMultipleSelection: cutMultipleSelection,
+        deselectAllMS: deselectAllMS,
+        doShiftTimeLinks: doShiftTimeLinks,
+        exportMStoCsv: exportMStoCsv,
+        exportMStoMedia: exportMStoMedia,
+        exportMStoMediaSubt: exportMStoMediaSubt,
+        exportMStoSubt: exportMStoSubt,
         exportMStoSubtSrt: function (p) {
             exportMStoSubt('srt', p);
         },
         exportMStoSubtAss: function (p) {
             exportMStoSubt('ass', p);
         },
-        exportMStoTei: function () {
-            exportMStoTei();
-        },
-        findCode: function (p) {
-            return findCode(p);
-        },
-        formatTime: function (p) {
-            return formatTime(p);
-        },
-        getCode: function (p) {
-            return getCode(p);
-        },
-        getLine: function (p) {
-            return getLine(p);
-        },
-        setType: function (p1, p2) {
-            setType(p1, p2);
-        },
+        exportMStoTei: exportMStoTei,
+        findCode: findCode,
+        formatTime: formatTime,
+        getCode: getCode,
+        getLine: getLine,
+        setType: setType,
         initialLoadFinished: function () {
             return initialLoadFlag;
         },
-        isEmptyRow: function (p) {
-            return isEmptyRow(p);
-        },
-        isnotbl: function (p) {
-            return isnotbl(p);
-        },
-        loadCsvIntoGrid: function (p1, p2) {
-            return loadCsvIntoGrid(p1, p2);
-        },
-        loadIntoGrid: function (p1, p2) {
-            return loadIntoGrid(p1, p2);
-        },
-        loadNewGrid: function () {
-            loadNewGrid();
-        },
-        nbMissingDiv: function (p1, p2) {
-            return nbMissingDiv(p1, p2);
-        },
-        pasteMultipleSelection: function () {
-            pasteMultipleSelection();
-        },
+        isEmptyRow: isEmptyRow,
+        isnotbl: isnotbl,
+        loadCsvIntoGrid: loadCsvIntoGrid,
+        loadIntoGrid: loadIntoGrid,
+        loadNewGrid: loadNewGrid,
+        nbMissingDiv: nbMissingDiv,
+        newTable: newTable,
+        pasteMultipleSelection: pasteMultipleSelection,
         print: function (range) {
             trjs.utils.printByID('transcript');
         },
-        readCsv: function (p) {
-            return readCsv(p);
-        },
-        saveTranscriptToCsvString: function () {
-            return saveTranscriptToCsvString();
-        },
+        readCsv: readCsv,
+        saveTranscriptToCsvString: saveTranscriptToCsvString,
         saveTranscriptToString: saveTranscriptToString,
-        saveTranscriptToText: function (p1, p2, p3) {
-            return saveTranscriptToText(p1, p2, p3);
-        },
-        saveTranscriptToRtf: function (p1, p2, p3, p4) {
-            return saveTranscriptToRtf(p1, p2, p3, p4);
-        },
+        saveTranscriptToRtf: saveTranscriptToRtf,
         saveTranscriptToHtml: saveTranscriptToHtml,
         selectAllMS: selectAllMS,
-        setCode: function (p1, p2) {
-            setCode(p1, p2);
-        },
-        setMultipleSelection: function () {
-            return setMultipleSelection();
-        },
+        setCode: setCode,
+        setMultipleSelection: setMultipleSelection,
         stringLineTranscript: stringLineTranscript,
-        sort: function () {
-            sort();
-        },
+        sort: sort,
         tablelines: function () {
             var table = $("#transcript");
             return $('tr.main', table[0]);
@@ -2547,23 +2463,11 @@ trjs.transcription = (function () {
             var table = $("#transcript");
             return $('tr.main.loc', table[0]);
         },
-        trUpdateCSS: function (p, q) {
-            trUpdateCSS(p, q);
-        },
-        typeTier: function (p) {
-            return typeTier(p);
-        },
-        updateCSS: function (p) {
-            updateCSS(p);
-        },
-        updateLocNames: function () {
-            updateLocNames();
-        },
-        updateTimecode: function () {
-            updateTimecode();
-        },
-        xmlEntitiesEncode: function (p) {
-            return xmlEntitiesEncode(p);
-        },
+        trUpdateCSS: trUpdateCSS,
+        typeTier: typeTier,
+        updateCSS: updateCSS,
+        updateLocNames: updateLocNames,
+        updateTimecode: updateTimecode,
+        xmlEntitiesEncode: xmlEntitiesEncode,
     };
 })();

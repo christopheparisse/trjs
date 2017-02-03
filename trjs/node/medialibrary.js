@@ -10,11 +10,11 @@ var path = require('path');
 var async = require("async");
 var glob = require("glob");
 var childproc = require('child_process');
-var filelookup = require('./filelookup.js');
+/*
 var version = require('../editor/version.js');
 var codefn = require('../editor/codefn.js');
 var progress = require('../editor/progress.js');
-
+*/
 var medialibrary = exports;
 
 var backgroundImage = 'style/black.png';
@@ -387,7 +387,7 @@ function chooseChannels(height, channels) {
 function emitMessage(io, content) {
     if (typeof io === 'string' && io === 'electron') {
         // mainWindow.webContents.send('media', content);
-        progress.handleMessage(content);
+        trjs.progress.handleMessage(content);
     } else if (io) {
         io.sockets.emit('media', content);
     } else {

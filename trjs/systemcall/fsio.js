@@ -9,7 +9,7 @@ var remote = require('electron').remote;
 var externals = require('./node/external.js');
 var medialibrary = require('./node/medialibrary.js');
 var filelookup = require('./node/filelookup.js');
-var version = require('./editor/version.js');
+// var version = require('./editor/version.js');
 // var codefn = require('./editor/codefn.js');
 
 var fsio = {};

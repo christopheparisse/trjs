@@ -2,6 +2,8 @@
 const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
+var isReady = false;
+var oneWindow = false;
 
 process.listWindows = [];
 
@@ -10,9 +12,24 @@ process.listWindows = [];
 // var process.mainWindow;
 
 app.on('open-file', function(event, path) {
+
+  function openFile() {
     process.macosx_open_file = path;
     var nth = createWindow();
     process.listWindows[nth].webContents.send('readtranscript', path);
+  }
+
+  function waitForReady() {
+    if (isReady === false) {
+        oneWindow = true; // the window will be create later. do not open one
+      setTimeout(waitForReady, 2000);
+    } else {
+      openFile(path);
+    }
+  }
+
+  waitForReady();
+
 });
 
 // Module to create native browser window.
@@ -32,6 +49,7 @@ function createWindow() {
 }
 
 function startWindow(nth) {
+    oneWindow = true;
     // Create the browser window.
     process.listWindows[nth] = new BrowserWindow({width: 800, height: 800});
 
@@ -419,8 +437,12 @@ if (shouldQuit) {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
-    createWindow(0);
+    isReady = true;
+    //createWindow(0);
     createMenu();
+    if (oneWindow === false) {
+        createWindow();
+    }
 });
 
 // Quit when all windows are closed.
@@ -435,7 +457,10 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (process.mainWindow === null) {
+    for (var i in process.listWindows) {
+        if (process.listWindows[i] !== null && process.listWindows[i] !== undefined) return;
+    }
+    if (isReady === true) {
         createWindow();
     }
 });

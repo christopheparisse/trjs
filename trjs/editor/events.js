@@ -655,6 +655,13 @@ trjs.events = (function () {
      * delete the line pointed by the parameter
      */
     function deleteSelectedLine(sel) {
+        // check if at last one line
+        var tablelines = trjs.transcription.tablelines();
+        if (tablelines.length < 2) {
+            // create a new empty file
+            trjs.transcription.newTable();
+            return;
+        }
         var ln = trjs.transcription.getLine(sel);
         var sl = sel.prev();
         if (sl == null || sl.length === 0) {

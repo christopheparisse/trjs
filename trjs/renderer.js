@@ -2,6 +2,7 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
+/*
 var SpellChecker = require('spellchecker');
 var webFrame = require('electron').webFrame;
 
@@ -13,7 +14,10 @@ webFrame.setSpellCheckProvider('en-US', false, {
     }
 });
 
-/*
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 var SpellChecker = require('electron-spellchecker');
 var SpellCheckHandler = SpellChecker.SpellCheckHandler;
 var ContextMenuListener = SpellChecker.ContextMenuListener;
@@ -23,13 +27,14 @@ window.spellCheckHandler = new SpellCheckHandler();
 window.spellCheckHandler.attachToInput();
 
 // Start off as US English, America #1 (lol)
-window.spellCheckHandler.switchLanguage('en-US');
+window.spellCheckHandler.switchLanguage(trjs.param.checkLanguage);
 
 var contextMenuBuilder = new ContextMenuBuilder(window.spellCheckHandler);
 var contextMenuListener = new ContextMenuListener(function (info) {
         contextMenuBuilder.showPopupMenu(info);
 });
-*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 // Enables spell-checking and the right-click context menu in text editors.
@@ -72,7 +77,7 @@ function resetSpellCheckProvider() {
                 if (suggestions.length > 5)
                     selection.spellingSuggestions = suggestions.slice(0, 5);
                 else
-                    selection.spellingSuggestions = suggestion;
+                    selection.spellingSuggestions = suggestions;
             }
         }));
 }
@@ -81,73 +86,6 @@ resetSpellCheckProvider();
 
 window.addEventListener('contextmenu', function(e) {
     // e.preventDefault();
-    // Only show the context menu in text editors.
-    if (!e.target.closest('textarea, input, [contenteditable="true"]')) return;
-
-    var menu = buildEditorContextMenu(selection);
-
-    // The 'contextmenu' event is emitted after 'selectionchange' has fired but possibly before the
-    // visible selection has changed. Try to wait to show the menu until after that, otherwise the
-    // visible selection will update after the menu dismisses and look weird.
-    setTimeout(function() {
-        menu.popup(remote.getCurrentWindow());
-    }, 30);
-});
-*/
-
-/*
-// Enables spell-checking and the right-click context menu in text editors.
-// Electron (`webFrame.setSpellCheckProvider`) only underlines misspelled words;
-// we must manage the menu ourselves.
-// Run this in the renderer process.
-
-var remote = require('electron').remote;
-var webFrame = require('electron').webFrame;
-var SpellChecker = require('spellchecker');
-var buildEditorContextMenu = require('electron-editor-context-menu');
-
-var selection;
-function resetSelection() {
-    selection = {
-        isMisspelled: false,
-        spellingSuggestions: []
-    };
-}
-resetSelection();
-
-// Reset the selection when clicking around, before the spell-checker runs and the context menu shows.
-window.addEventListener('mousedown', resetSelection);
-
-function resetSpellCheckProvider() {
-    // The spell-checker runs when the user clicks on text and before the 'contextmenu' event fires.
-    // Thus, we may retrieve spell-checking suggestions to put in the menu just before it shows.
-    webFrame.setSpellCheckProvider(
-        trjs.param.checkLanguage,
-        // Not sure what this parameter (`autoCorrectWord`) does: https://github.com/atom/electron/issues/4371
-        // The documentation for `webFrame.setSpellCheckProvider` passes `true` so we do too.
-        false,
-        {
-            spellCheck: function (text) {
-                //console.log('check', text);
-                //console.log(SpellChecker.isMisspelled(text));
-                if (SpellChecker.isMisspelled(text)) {
-                    selection.isMisspelled = true;
-                    // Take the first five suggestions if any.
-                    if (suggestions.length > 5)
-                        selection.spellingSuggestions = suggestions.slice(0, 5);
-                    else
-                        selection.spellingSuggestions = suggestion;
-                    return false;
-                } else
-                    return true;
-            }
-        });
-}
-
-resetSpellCheckProvider();
-
-window.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
     // Only show the context menu in text editors.
     if (!e.target.closest('textarea, input, [contenteditable="true"]')) return;
 

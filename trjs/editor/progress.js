@@ -44,7 +44,13 @@ trjs.progress = (function () {
         a.find('#progress-right-' + idbox).width((100 - nth) + '%'); // ', 150 * ((100-nth)/100) ); // );
         if (trjs.param.server === 'electron') {
             const remote = require('electron').remote;
-            remote.process.mainWindow.setProgressBar(nth/100);
+            var listWnd = remote.process.listWindows;
+            for (var i in listWnd) {
+                if (listWnd[i]) {
+                    listWnd[i].setProgressBar(nth/100);
+                    break;
+                }
+            }
         }
     }
 
@@ -121,7 +127,14 @@ trjs.progress = (function () {
         }
         if (trjs.param.server === 'electron') {
             const remote = require('electron').remote;
-            remote.process.mainWindow.setProgressBar(0.0);
+//            remote.process.mainWindow.setProgressBar(0.0);
+            var listWnd = remote.process.listWindows;
+            for (var i in listWnd) {
+                if (listWnd[i]) {
+                    listWnd[i].setProgressBar(-1);
+                    break;
+                }
+            }
         }
     }
 

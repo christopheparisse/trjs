@@ -1357,7 +1357,7 @@ trjs.template = (function () {
         if (trjs.data.media)
             for (var i = 0; i < trjs.data.media.length; i++) {
                 s += '<media url="' + trjs.data.media[i].loc + '/' + trjs.data.media[i].name
-                    + '" mediaType="' + mimeType(trjs.data.media[i].name, trjs.data.media[i].type) + '" />\n';
+                    + '" mimeType="' + mimeType(trjs.data.media[i].name, trjs.data.media[i].type) + '" />\n';
                 s += '<date dur="' + trjs.data.mediaDuration() + '">' + trjs.dataload.checkstring(trjs.data.recordingDate()) + '</date>\n';
             }
         s += '</recording>\n';

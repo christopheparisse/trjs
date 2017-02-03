@@ -24,25 +24,21 @@
   },
   "homepage": "http://ct3.ortolang.fr/trjs",
   "dependencies": {
-    "async": "^2.0.0",
-    "electron-spellchecker": "^0.6.1",
-    "express": "^4.14.0",
-    "glob": "^7.0.6",
-    "mime": "^1.3.4",
-    "minimist": "^1.2.0",
-    "send": "https://github.com/christopheparisse/send/tarball/master",
-    "serve-static": "^1.11.1",
-    "socket.io": "^1.4.8",
-    "spellchecker": "^3.3.1",
-    "xmldom": "^0.1.22"
+    "async": "latest",
+    "electron-spellchecker": "latest",
+    "glob": "latest",
+    "mime": "latest",
+    "minimist": "latest",
+    "xmldom": "latest"
   },
   "devDependencies": {
-    "electron": "1.4.12",
+    "electron": "^1.4.3",
+    "electron-builder": "latest",
     "electron-packager": "latest",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-html-tag-include": "^1.0.1",
-    "gulp-preprocess": "^2.0.0",
-    "electron-builder": "latest"
+    "electron-rebuild": "^1.5.7",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-html-tag-include": "latest",
+    "gulp-preprocess": "latest"
   }
 }
