@@ -2,15 +2,67 @@
 const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
+var isReady = false;
+var oneWindow = false;
+
+process.listWindows = [];
+process.argsOpenFile = null;
+
+// copy first instance command line
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 // var process.mainWindow;
 
+//var process = require(process);
+//console.log(process.argv);
+
+var secondInstance = app.makeSingleInstance(function(commandLine, workingDirectory) {
+    // Someone tried to run a second instance, we should focus our window.
+    commandLine.push('--secondInstance');
+    process.argsOpenFile = commandLine;
+    console.log('secondInstance', commandLine, workingDirectory);
+    var nth = createWindow();
+    // process.listWindows[nth].webContents.send('readtranscript', 'path');
+    /*
+    if (process.mainWindow) {
+        if (process.mainWindow.isMinimized()) process.mainWindow.restore();
+        process.mainWindow.focus();
+        if (commandLine.length>1 && commandLine[1] !== 'index.js') {
+            process.mainWindow.webContents.send('readtranscript', commandLine[1]);
+        } else if (commandLine.length>2) {
+            process.mainWindow.webContents.send('readtranscript', commandLine[2]);
+        }
+    }
+    */
+});
+
+if (secondInstance) {
+    //app.quit();
+    return;
+}
+
 app.on('open-file', function(event, path) {
-    process.macosx_open_file = path;
-    if (process.mainWindow)
-        process.mainWindow.webContents.send('readtranscript', path);
+    console.log('open-file', event, path);
+
+    function openFile() {
+        process.macosxOpenFile = path;
+        var nth = createWindow();
+        process.listWindows[nth].webContents.send('readtranscript', path);
+    }
+
+    function waitForReady() {
+        if (isReady === false) {
+            oneWindow = true; // the window will be create later. do not open one
+            setTimeout(waitForReady, 2000);
+        } else {
+            openFile();
+        }
+    }
+
+    waitForReady();
+
 });
 
 // Module to create native browser window.
@@ -19,23 +71,37 @@ const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
 
 function createWindow() {
+    for (var i in process.listWindows) {
+        if (process.listWindows[i] === null || process.listWindows[i] === undefined) {
+            startWindow(i);
+            return i;
+        }
+    }
+    startWindow(i+1);
+    return i+1;
+}
+
+function startWindow(nth) {
+    oneWindow = true;
     // Create the browser window.
-    process.mainWindow = new BrowserWindow({width: 800, height: 600});
+    process.listWindows[nth] = new BrowserWindow({width: 800, height: 800});
 
     // and load the index.html of the app.
-    process.mainWindow.loadURL('file://' + __dirname + '/index.html');
+    process.listWindows[nth].loadURL('file://' + __dirname + '/index.html');
 
     // Open the DevTools.
-    // process.mainWindow.webContents.openDevTools();
+    // process.listWindows[nth].webContents.openDevTools();
 
     // Emitted when the window is closed.
-    process.mainWindow.on('closed', function () {
+    process.listWindows[nth].on('closed', function () {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
-        process.mainWindow = null;
+        process.listWindows[nth]= null;
     });
+}
 
+function createMenu() {
     var template = [
         {
             label: 'File',
@@ -56,6 +122,12 @@ function createWindow() {
                     label: 'New transcription', accelerator: 'CmdOrCtrl+N', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     window.webContents.send('newtranscript', 'main');
+                }
+                },
+                {
+                    label: 'New window', accelerator: 'Shift+CmdOrCtrl+N', click: function () {
+                    var nth = createWindow()
+                    process.listWindows[nth].webContents.send('newtranscript', 'main');
                 }
                 },
                 {
@@ -115,6 +187,12 @@ function createWindow() {
                     label: 'Delete line', accelerator: 'CmdOrCtrl+D', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     window.webContents.send('deleteline', 'main');
+                }
+                },
+                {
+                    label: 'Insert macro', accelerator: 'CmdOrCtrl+F1', click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.webContents.send('insertmacro', 'main');
                 }
                 },
                 {type: 'separator'},
@@ -321,9 +399,19 @@ function createWindow() {
             {
                 label: name,
                 submenu: [
-                    {label: 'About ' + name, role: 'about'},
+                    {label: 'About ' + name,
+                        click: function () {
+                            var window = BrowserWindow.getFocusedWindow();
+                            window.webContents.send('about', 'main');
+                        }
+                    },
                     {type: 'separator'},
                     {label: 'Services', role: 'services', submenu: []},
+                    {type: 'separator'},
+                    {label: 'Parameters', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        window.webContents.send('showparameters', 'main');
+                    }},
                     {type: 'separator'},
                     {label: 'Hide ' + name, accelerator: 'Command+H', role: 'hide'},
                     {label: 'Hide Others', accelerator: 'Command+Shift+H', role: 'hideothers'},
@@ -350,10 +438,12 @@ function createWindow() {
     }
     var localmenu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(localmenu);
+/*
     const globalShortcut = electron.globalShortcut;
     globalShortcut.register('CommandOrControl+Q', () => {
         app.quit();
     });
+*/
     /*
     if (process.macosx_open_file !== undefined) {
         if (process.mainWindow)
@@ -363,26 +453,17 @@ function createWindow() {
     */
 }
 
-//var process = require(process);
-//console.log(process.argv);
-
-var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
-    // Someone tried to run a second instance, we should focus our window.
-    if (process.mainWindow) {
-        if (process.mainWindow.isMinimized()) process.mainWindow.restore();
-        process.mainWindow.focus();
-    }
-});
-
-if (shouldQuit) {
-    app.quit();
-    return;
-}
-
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', function () {
+    isReady = true;
+    //createWindow(0);
+    createMenu();
+    if (oneWindow === false) {
+        createWindow();
+    }
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -396,7 +477,10 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (process.mainWindow === null) {
+    for (var i in process.listWindows) {
+        if (process.listWindows[i] !== null && process.listWindows[i] !== undefined) return;
+    }
+    if (isReady === true) {
         createWindow();
     }
 });

@@ -13,6 +13,8 @@ else
 
 var version = require('../editor/version.js');
 var medialib = require('./medialibrary.js');
+global.applicationTarget = {};
+global.applicationTarget.type = 'nodejs';
 
 var usage = function (argument) {
 	console.log('Process video and audio files ' + version.versionMediaTools);
@@ -250,11 +252,11 @@ function main() {
 			console.log('the subtitle file is missing');
 			process.exit();
 		}
-		if (subtFile.toLowerCase().lastIndexOf('.srt') !== subtFile.length-4) {
+		if (subtFile.toLowerCase().lastIndexOf('.srt') !== subtFile.length-4 && subtFile.toLowerCase().lastIndexOf('.ass') !== subtFile.length-4) {
 			console.log('subt option expects SRT format');
 			process.exit();
 		}
-		medialib.burnSubtitles(argv._, output, [subtFile], percent, overwrite, begin, end, null, null, function(data) {
+		medialib.burnSubtitles(argv._[0], output, [subtFile], percent, overwrite, begin, end, null, null, function(data) {
 			// console.log(JSON.stringify(data));
 			if (data != 0) console.log('error: ' + data);
 		});

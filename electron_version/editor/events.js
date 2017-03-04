@@ -97,12 +97,13 @@ trjs.events = (function () {
     /**
      * find the next main line
      * @method getNextMainline
-     * @param a line
+     * @param sel line
      * @return line
      */
     function getNextMainline(sel) {
+        var nxt;
         while (true) {
-            var nxt = sel.next();
+            nxt = sel.next();
             if (nxt == null) return null;
             if (nxt.length < 1) return null;
             var t = trjs.transcription.typeTier(nxt);
@@ -118,8 +119,9 @@ trjs.events = (function () {
      * @return line
      */
     function getLastTierline(sel) {
+        var nxt;
         while (true) {
-            var nxt = sel.next();
+            nxt = sel.next();
             if (nxt == null) return sel;
             if (nxt.length < 1) return sel;
             var t = trjs.transcription.typeTier(nxt);
@@ -592,7 +594,7 @@ trjs.events = (function () {
     /**
      * move the current selected line to the top of the file
      * @method ctrlHome
-     * @param event
+     * @param e event
      * @param sel (selected line)
      */
     function ctrlHome(e, sel) {
@@ -604,7 +606,7 @@ trjs.events = (function () {
     /**
      * move the current selected line to bottom of the file
      * @method ctrlEnd
-     * @param event
+     * @param e event
      * @param sel (selected line)
      */
     function ctrlEnd(e, sel) {
@@ -617,7 +619,7 @@ trjs.events = (function () {
     /**
      * move the current selected line up to the previous main line
      * @method keyLocUp
-     * @param event
+     * @param e event
      * @param sel (selected line)
      */
     function keyLocUp(e, sel) {
@@ -634,7 +636,7 @@ trjs.events = (function () {
     /**
      * move the current selected line up to the next main line
      * @method keyLocDown
-     * @param event
+     * @param e event
      * @param sel (selected line)
      */
     function keyLocDown(e, sel) {
@@ -653,6 +655,13 @@ trjs.events = (function () {
      * delete the line pointed by the parameter
      */
     function deleteSelectedLine(sel) {
+        // check if at last one line
+        var tablelines = trjs.transcription.tablelines();
+        if (tablelines.length < 2) {
+            // create a new empty file
+            trjs.transcription.newTable();
+            return;
+        }
         var ln = trjs.transcription.getLine(sel);
         var sl = sel.prev();
         if (sl == null || sl.length === 0) {
@@ -1494,7 +1503,7 @@ trjs.events = (function () {
          console.log('meta '+ e.metaKey);
          console.log('ident ' + e.keyIdentifier);
          */
-//	var keyptr = trjs.keys.modifiersEvent(charCode, e);
+        // var keyptr = trjs.keys.modifiersEvent(charCode, e);
         switch (e.charCode) {
             case 10:
             case 13:
@@ -1503,11 +1512,11 @@ trjs.events = (function () {
                 return true;
             case 60:
                 e.preventDefault();
-                replaceSelectedText(trjs.data.leftBracket); //'\u27E8');
+                trjs.macros.replaceSelectedText(trjs.data.leftBracket); //'\u27E8');
                 return true;
             case 62:
                 e.preventDefault();
-                replaceSelectedText(trjs.data.rightBracket); // '\u27E9');
+                trjs.macros.replaceSelectedText(trjs.data.rightBracket); // '\u27E9');
                 return true;
             case 34:
                 e.preventDefault();
@@ -1518,7 +1527,7 @@ trjs.events = (function () {
                         trjs.events.setNthLoc3();
                 }
                 else
-                    replaceSelectedText('"');
+                    trjs.macros.replaceSelectedText('"');
                 return true;
             case 39:
                 e.preventDefault();
@@ -1529,7 +1538,7 @@ trjs.events = (function () {
                         trjs.events.setNthLoc4();
                 }
                 else
-                    replaceSelectedText("'");
+                    trjs.macros.replaceSelectedText("'");
                 return true;
             case 51:
                 if (e.ctrlKey) {
@@ -1952,7 +1961,8 @@ trjs.events = (function () {
         //console.log("checkLoc1");
         if (eltClickLoc != null) {
             //console.log("checkLoc2");
-            return;	// under firefox on windows onblur is called before the click on the context menu
+            // under firefox on windows onblur is called before the click on the context menu
+            return;
             //document.body.removeChild(eltClickLoc);
             //eltClickLoc = null;
         }
@@ -1988,9 +1998,9 @@ trjs.events = (function () {
                     trjs.transcription.setType(p, 'main loc');
                     trjs.transcription.setCode(p, event.target.textContent);
                 }
-//			$(event.target).attr('class', type);
-//			var p = $(event.target).parent();
-//			p.attr('class', type);
+            //$(event.target).attr('class', type);
+            //var p = $(event.target).parent();
+            //p.attr('class', type);
             }
             trjs.transcription.trUpdateCSS(p);
             trjs.dmz.redraw('partition');
@@ -2016,14 +2026,14 @@ trjs.events = (function () {
         var tablelines = $('tr', table[0]);
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
-//		m.push(icode.toUpperCase());
+        //m.push(icode.toUpperCase());
             m.push(icode);
         }
         table = $("#template-tier");
         tablelines = $('tr', table[0]);
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
-//		t.push(icode.toLowerCase());
+        //t.push(icode.toLowerCase());
             t.push(icode);
         }
         var l = m.length > t.length ? m.length : t.length;
@@ -2520,39 +2530,39 @@ trjs.events = (function () {
 trjs.events.setNthLoc1 = function (e) {
     trjs.events.setNthLoc(undefined, 1);
     trjs.dmz.redraw('partition');
-};	// Ctrl 1
+};  // Ctrl 1
 trjs.events.setNthLoc2 = function (e) {
     trjs.events.setNthLoc(undefined, 2);
     trjs.dmz.redraw('partition');
-};	// Ctrl 2
+};  // Ctrl 2
 trjs.events.setNthLoc3 = function (e) {
     trjs.events.setNthLoc(undefined, 3);
     trjs.dmz.redraw('partition');
-};	// Ctrl 3
+};  // Ctrl 3
 trjs.events.setNthLoc4 = function (e) {
     trjs.events.setNthLoc(undefined, 4);
     trjs.dmz.redraw('partition');
-};	// Ctrl 4
+};  // Ctrl 4
 trjs.events.setNthLoc5 = function (e) {
     trjs.events.setNthLoc(undefined, 5);
     trjs.dmz.redraw('partition');
-};	// Ctrl 5
+};  // Ctrl 5
 trjs.events.setNthLoc6 = function (e) {
     trjs.events.setNthLoc(undefined, 6);
     trjs.dmz.redraw('partition');
-};	// Ctrl 6
+};  // Ctrl 6
 trjs.events.setNthLoc7 = function (e) {
     trjs.events.setNthLoc(undefined, 7);
     trjs.dmz.redraw('partition');
-};	// Ctrl 7
+};  // Ctrl 7
 trjs.events.setNthLoc8 = function (e) {
     trjs.events.setNthLoc(undefined, 8);
     trjs.dmz.redraw('partition');
-};	// Ctrl 8
+};  // Ctrl 8
 trjs.events.setNthLoc9 = function (e) {
     trjs.events.setNthLoc(undefined, 9);
     trjs.dmz.redraw('partition');
-};	// Ctrl 9
+};  // Ctrl 9
 trjs.events.setNthTier1 = function (e) {
     trjs.events.setNthTier(undefined, 1);
     trjs.dmz.redraw('partition');

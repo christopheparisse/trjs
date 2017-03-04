@@ -14,20 +14,22 @@ var childproc = require('child_process');
 var filelookup = require('./filelookup.js');
 var docx = require("../js/teidocx.js");
 var teiTools = require("../js/teiconverttools.js");
+/*
 var version = require('../editor/version.js');
 var codefn = require('../editor/codefn.js');
+*/
 
 function chattotei() {
-    return version.javaLoc() + ' -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.ClanToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.ClanToTei';
 };
 function elantotei() {
-    return version.javaLoc() + ' -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.ElanToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.ElanToTei';
 };
 function trstotei() {
-    return version.javaLoc() + ' -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TranscriberToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TranscriberToTei';
 };
 function praattotei() {
-    return version.javaLoc() + ' -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.PraatToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.PraatToTei';
 };
 
 /**
@@ -145,7 +147,11 @@ exports.compatible_files = function (file, browser, browserversion, format, call
     }
     ;
     // if not found
-    callback(0, '');
+    var ok = version.testExtensionForBrowser(browser, browserversion, format, path.extname(file));
+    if (ok)
+        callback(0, '');
+    else
+        callback(0, 'notcompatible');
 };
 
 exports.test_media_file = function (file, browser, browserversion, format, quality, callback) {
@@ -236,7 +242,7 @@ var do_test_media_file = function (file, browser, browserversion, format, fuzzy)
 //				return codefn.encodeFilename(newfn);
         }
 
-        if (allext.indexOf(realext) >= 0)
+        if (allext.indexOf(realext.substr(1)) >= 0)
             return '*notexist*';
         else
             return '*notcompatible*';
@@ -255,16 +261,16 @@ exports.test_file_exists = function (fn, callback) {
 };
 
 function teitotrs() {
-    return 'java -cp "' + process.cwd() + '/tools/conversions.jar" fr.ortolang.teicorpo.TeiToTranscriber';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToTranscriber';
 };
 function teitochat() {
-    return 'java -cp "' + process.cwd() + '/tools/conversions.jar" fr.ortolang.teicorpo.TeiToClan';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToClan';
 };
 function teitoelan() {
-    return 'java -cp "' + process.cwd() + '/tools/conversions.jar" fr.ortolang.teicorpo.TeiToElan';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToElan';
 };
 function teitopraat() {
-    return 'java -cp "' + process.cwd() + '/tools/conversions.jar" fr.ortolang.teicorpo.TeiToPraat';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToPraat';
 };
 
 /**

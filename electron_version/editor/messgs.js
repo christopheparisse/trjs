@@ -233,9 +233,12 @@ trjs.messgs_eng = {
     notcompatibleHTMLMedia2: " is not in a compatible Transcriberjs format (HTML5 format). You can either choose another file, or wait for file conversion (this might take some time)",
     notcompatTitle: "Non compatible media format",
     convertMediaTitle: "Converting a media file",
-    notcompatibleNotexistHTMLMedia1: "The media file ",
-    notcompatibleNotexistHTMLMedia2: " is not in a compatible Transcriberjs format (HTML5 format) or the file does not exist. You must choose another file or convert it by other means",
-    notcompatNotexistTitle: "Non compatible media format or not existing media",
+    notcompatibleConvertHTMLMedia1: "The media file ",
+    notcompatibleConvertHTMLMedia2: " is not in a compatible Transcriberjs format (HTML5 format). You must choose another file or convert it by other means.",
+    notcompatibleNotexist1: "The media file ",
+    notcompatibleNotexist2: " does not exist. You must choose another file.",
+    notcompatNotexistTitle: "Non compatible media format",
+    notcompatCompatibleTitle: "Not existing media",
     labelotherfile: "Choose another file",
     labelsmallvideo: "Small format",
     labelmediumvideo: "Medium format",
@@ -330,11 +333,12 @@ trjs.messgs_eng = {
     + 'is available under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">'
     + ' Creative Commons Attribution Licence -  Share as Conditions 4.0 International</a>.<br />'
     + 'Created at <a xmlns:dct="http://purl.org/dc/terms/" href="http://ct3.ortolang.fr/trjs/" rel="dct:source">http://ct3.ortolang.fr/trjs/</a>.<br />'
-    + 'Download the complete version: <a href="http://ct3.ortolang.fr/trjs/download/">http://ct3.ortolang.fr/trjs/download/</a><br />'
+    + 'Download the full version: <a href="http://ct3.ortolang.fr/trjs/">http://ct3.ortolang.fr/trjs/</a><br />'
+    + 'Download the beta version under development: <a href="http://ct3.ortolang.fr/trjs/doku.php?id=doc:vbeta">http://ct3.ortolang.fr/trjs/doku.php?id=doc:vbeta</a><br />'
     + 'Inserm/Modyco (CNRS/Université Paris Ouest Nanterre) - DGLFLF - Ortolang (<a href="http://www.ortolang.fr">www.ortolang.fr</a>)<br />',
     aboutlib: 'Tools and external librairies used to develop the software:<br />'
     + 'HTML5, Node.js, jQuery, Bootstrap, Ffmpeg<br />'
-    + 'FileSaver.js, parseUri, Bootbox.js, Rangy, Socket.IO<br />'
+    + 'FileSaver.js, parseUri, Electron, Bootbox.js, Rangy<br />'
     + 'Font Awesome by Dave Gandy - http://fontawesome.io<br />',
 
     esff: 'Uncorrect searching pattern format: search unable',
@@ -716,6 +720,11 @@ trjs.messgs_eng = {
 // others
     api73: "Lengthening of vowel",
     api74: "Nasal vowel",
+    api75: "Front half closed unrounded nasal vowel brin",
+    api76: "Back closed rounded nasal vowel French ton",
+    api77: "Back open unrounded nasal vowel French temps",
+    api78: "Front half open rounded nasal vowel French brun",
+    api79: "R parisien",
 
     bincon: "Table of keys",
     apibincon: "Table of API keys",
@@ -726,6 +735,7 @@ trjs.messgs_eng = {
     tapikey: "Keys",
     tbin: "Bindings",
     tapibin: "API",
+    generic: "Basic macro menu",
 };
 
 trjs.messgs_fra = {
@@ -952,9 +962,12 @@ trjs.messgs_fra = {
     notcompatibleHTMLMedia2: " n\'est pas compatible avec TranscriberJS (format HTML5). Vous pouvez choisir un autre fichier ou attendre la fin de la conversion (ceci peut prendre du temps)",
     notcompatTitle: "Format média non compatible",
     convertMediaTitle: "Convertir un fichier media",
-    notcompatibleNotexistHTMLMedia1: "Le format du média ",
-    notcompatibleNotexistHTMLMedia2: " n\'est pas compatible avec TranscriberJS (HTML5 format) ou le fichier n'existe pas. Vous devez choisir un autre fichier.",
-    notcompatNotexistTitle: "Format média incompatible ou fichier inexistant",
+    notcompatibleConvertHTMLMedia1: "Le format du média ",
+    notcompatibleConvertHTMLMedia2: " n\'est pas compatible avec TranscriberJS (HTML5 format). Vous devez le convertir.",
+    notcompatibleNotexist1: "Le média ",
+    notcompatibleNotexist2: " n'existe pas. Vous devez choisir un autre fichier.",
+    notcompatNotexistTitle: "Fichier inexistant",
+    notcompatCompatibleTitle: "Format média incompatible",
     labelotherfile: "Choisir un autre fichier",
     labelsmallvideo: "Petit format", // "Convertir dans un format vidéo de petite taille",
     labelmediumvideo: "Format moyen",
@@ -1047,11 +1060,12 @@ trjs.messgs_fra = {
     + 'est mis à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">'
     + 'licence Creative Commons Attribution -  Partage dans les mêmes Conditions 4.0 International</a>.<br />'
     + 'Fondé(e) sur une œuvre à <a xmlns:dct="http://purl.org/dc/terms/" href="http://ct3.ortolang.fr/trjs/" rel="dct:source">http://ct3.ortolang.fr/trjs/</a>.<br />'
-    + 'Téléchargement de la version complète: <a href="http://ct3.ortolang.fr/trjs/download/">http://ct3.ortolang.fr/trjs/download/</a><br />'
+    + 'Téléchargement de la version complète: <a href="http://ct3.ortolang.fr/trjs/">http://ct3.ortolang.fr/trjs/</a><br />'
+    + 'Téléchargement de la version beta en développement: <a href="http://ct3.ortolang.fr/trjs/doku.php?id=doc:vbeta">http://ct3.ortolang.fr/trjs/doku.php?id=doc:vbeta</a><br />'
     + 'Soutien Inserm/Modyco (CNRS/Université Paris Ouest Nanterre) - DGLFLF - Ortolang (<a href="http://www.ortolang.fr">www.ortolang.fr</a>)<br />',
     aboutlib: 'Outils et libraires externes utilisées pour la réalisation du logiciel:<br />'
     + 'HTML5, Node.js, jQuery, Bootstrap, Ffmpeg<br />'
-    + 'FileSaver.js, parseUri, Bootbox.js, Rangy, Socket.IO<br />'
+    + 'FileSaver.js, parseUri, Electron, Bootbox.js, Rangy<br />'
     + 'Font Awesome by Dave Gandy - http://fontawesome.io<br />',
 
     esff: 'Mauvais format de motif de recherche: recherche impossible.',
@@ -1436,6 +1450,10 @@ trjs.messgs_fra = {
     api73: "Allongement de voyelle",
     api74: "Voyelle nasale",
     api75: "Voyelle antérieure mi-ouverte non arrondie nasale French brin",
+    api76: "Voyelle moyenne supérieure antérieure arrondie nasale French ton",
+    api77: "Voyelle moyenne inférieure postérieure arrondie nasale French temps",
+    api78: "Voyelle postérieure postérieure non arrondie nasale French brun",
+    api79: "R parisien",
 
     bincon: "Tableau des raccourcis claviers",
     apibincon: "Tableau des raccourcis claviers API",
@@ -1446,6 +1464,7 @@ trjs.messgs_fra = {
     tapikey: "Raccourcis clavier",
     tbin: "Fonctions",
     tapibin: "API",
+    generic: "Menu macro de base",
 };
 
 trjs.messgs_fra.help =

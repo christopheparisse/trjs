@@ -42,8 +42,16 @@ trjs.progress = (function () {
         //a.find('progress-right-'+idbox).css('width', 150 * ((100-nth)/100) ); // (100-nth)+'%');
         a.find('#progress-left-' + idbox).width(nth + '%'); // ', 150 * ((nth)/100) ); //);
         a.find('#progress-right-' + idbox).width((100 - nth) + '%'); // ', 150 * ((100-nth)/100) ); // );
-        const remote = require('electron').remote;
-        remote.process.mainWindow.setProgressBar(nth/100);
+        if (trjs.param.server === 'electron') {
+            const remote = require('electron').remote;
+            var listWnd = remote.process.listWindows;
+            for (var i in listWnd) {
+                if (listWnd[i]) {
+                    listWnd[i].setProgressBar(nth/100);
+                    break;
+                }
+            }
+        }
     }
 
     /**
@@ -117,6 +125,17 @@ trjs.progress = (function () {
             $('#progress').hide();
             //trjs.editor.resizeTranscript();
         }
+        if (trjs.param.server === 'electron') {
+            const remote = require('electron').remote;
+//            remote.process.mainWindow.setProgressBar(0.0);
+            var listWnd = remote.process.listWindows;
+            for (var i in listWnd) {
+                if (listWnd[i]) {
+                    listWnd[i].setProgressBar(-1);
+                    break;
+                }
+            }
+        }
     }
 
     /**
@@ -138,17 +157,17 @@ trjs.progress = (function () {
      */
     function setIO(idbox) {
         setnth(idbox, 0);
-        console.log("set box: " + idbox);
+        // console.log("set box: " + idbox);
         var f = (global.applicationTarget.type === 'electron') ? require('electron').ipcRenderer : trjs.progress.socket;
         var a = f.on('media', handleMessage);
-        console.log('setIO Ok: ' + a);
+        // console.log('setIO Ok: ' + a);
     }
 
     function handleMessage(data) {
         // data --> start end processed+name
-        console.log('DATA: ' + data.box, data);
+        // console.log('DATA: ' + data.box, data);
         if (data.start) {
-            console.log("START: " + data.start);
+            // console.log("START: " + data.start);
             if (trjs && trjs.log)
                 trjs.log.alert(data.start); // attention à l'empilement des alertes
             else
@@ -158,7 +177,7 @@ trjs.progress = (function () {
             else
                 console.log('handleMessage:start: not in renderer (no trjs)');
         } else if (data.end) {
-            console.log("END: " + data.end);
+            // console.log("END: " + data.end);
             close(data.box);
             if (trjs && trjs.log)
                 trjs.log.alert(data.end);
@@ -170,7 +189,7 @@ trjs.progress = (function () {
             else
                 console.log('handleMessage:end: not in renderer (no trjs)');
         } else {
-            console.log("PC: " + data.processed + ' ' + data.name);
+            // console.log("PC: " + data.processed + ' ' + data.name);
             setnth(data.box, data.processed);
             setmsg(data.box, data.name + ' ' + data.processed + '%');
         }

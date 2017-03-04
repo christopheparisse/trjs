@@ -9,7 +9,7 @@ var remote = require('electron').remote;
 var externals = require('./node/external.js');
 var medialibrary = require('./node/medialibrary.js');
 var filelookup = require('./node/filelookup.js');
-var version = require('./editor/version.js');
+// var version = require('./editor/version.js');
 // var codefn = require('./editor/codefn.js');
 
 var fsio = {};
@@ -23,8 +23,8 @@ fsio.selectedPath = null; // current selected path + end value
  * available in all files
  */
 fsio.startChooseFile = function(dest, type) {
-    if (dest === 'transcript' && type === 'transcript') trjs.aidecontextuelle('op-trs',false);
-    if (dest === 'media' && type === 'media') trjs.aidecontextuelle('choose-media',false);
+    if (dest === 'transcript' && type === 'transcript') trjs.aidecontextuelle('new-trs',false);
+    if (dest === 'media' && type === 'media') trjs.aidecontextuelle('boutons-media',false);
     if (type === 'transcriptsaveas') {
         fsio.__chooseSaveFile('Save transcript as',
             [
@@ -40,6 +40,7 @@ fsio.startChooseFile = function(dest, type) {
     } else if (type === 'mediaconvert') {
         fsio.__chooseOpenFile('Choose media',
             [
+                { name: 'Media Files', extensions: ['mp4', 'webm', 'ogg', 'ogv', 'mov', 'avi', 'mpg', 'mpeg', 'wav', 'mp3', 'aif', 'oga', 'flac'] },
                 { name: 'Video Files', extensions: ['mp4', 'webm', 'ogg', 'ogv', 'mov', 'avi', 'mpg', 'mpeg'] },
                 { name: 'Audio Files', extensions: ['wav', 'mp3', 'aif', 'oga', 'flac'] },
                 { name: 'All Files', extensions: ['*'] }
@@ -49,6 +50,7 @@ fsio.startChooseFile = function(dest, type) {
     } else if (dest === 'media') {
         fsio.__chooseOpenFile('Choose media',
             [
+                { name: 'Media Files', extensions: ['mp4', 'webm', 'ogg', 'ogv', 'wav', 'mp3', 'oga'] },
                 { name: 'Video Files', extensions: ['mp4', 'webm', 'ogg', 'ogv'] },
                 { name: 'Audio Files', extensions: ['wav', 'mp3'] },
                 { name: 'All Files', extensions: ['*'] }
@@ -235,7 +237,7 @@ fsio.saveFileSync = function(args, callback) {
 */
 
 fsio.readFile = function(fname, callbackDone, callbackFail) {
-    console.log('LOADFILE: ' + fname);
+    //console.log('LOADFILE: ' + fname);
     try {
         fs.readFile(fname, 'utf-8', function (err, data) {
             if (!err)
@@ -250,7 +252,7 @@ fsio.readFile = function(fname, callbackDone, callbackFail) {
 };
 
 fsio.readBinaryFile = function(fname, callbackDone, callbackFail) {
-    console.log('READ BINARY FILE: ' + fname);
+    //console.log('READ BINARY FILE: ' + fname);
     try {
         fs.readFile(fname, function (err, data) {
             if (!err)
@@ -276,7 +278,7 @@ fsio.saveTranscript = function(args, callbackDone, callbackFail) {
 };
 
 fsio.saveFile = function(args, doneFunction, failFunction) {
-    console.log('SAVE FILE: ' + args.name);
+    //console.log('SAVE FILE: ' + args.name);
     try {
         fs.writeFile(args.name, args.data, function (err) {
             if (!err)
@@ -427,10 +429,10 @@ fsio.exportMediaSubt = function(args, doneFunction, failFunction) {
         //console.log('test de ' + dirpath);
         if (!fs.existsSync(dirpath)) fs.mkdir(dirpath);
         tempfn = version.generateName(dirpath, 'subtitles', args['type'] === 'srt' ? '.srt' : '.ass').replace(/\\/g, '/');
-        //if (version.debug(__filename))
-        // console.log('ecriture de ' + tempfn);
+        // if (version.debug(__filename))
+        //console.log('ecriture de ' + tempfn);
         fs.writeFileSync(tempfn, args['subtitles']);
-        return medialibrary.burnSubtitles([args['media']], null, [tempfn], 2, true, parseInt(args['tmin']), parseInt(args['tmax']), 'electron', args['box'],
+        return medialibrary.burnSubtitles(args['media'], null, tempfn, 2, true, parseInt(args['tmin']), parseInt(args['tmax']), 'electron', args['box'],
             function (err, mess) {
                 if (!err)
                     doneFunction(mess);
@@ -442,11 +444,13 @@ fsio.exportMediaSubt = function(args, doneFunction, failFunction) {
     } catch (e) {
         // Path does not exist, it is ok
         console.log('error: cannot create temporary file before subtitles burning' + tempfn + ' ' + e.toString());
-        callback(0, 'error: cannot create temporary file before subtitles burning' + tempfn);
+        failFunction('error: cannot create temporary file before subtitles burning' + tempfn);
     }
+    /*
     $.post('export_media_subt', args)
         .done( doneFunction )
         .fail( failFunction );
+    */
 };
 
 fsio.exportMedia = function(args, doneFunction, failFunction) {
@@ -460,23 +464,66 @@ fsio.exportMedia = function(args, doneFunction, failFunction) {
     );
 };
 
+var openFromMenu = function(menuItem, browserWindow, event) {
+    fsio.openTranscript(0, menuItem.label);
+}
+
 fsio.setMRU = function(name) {
-    const remote = require('electron').remote;
+    //const remote = require('electron').remote;
     const Menu = remote.Menu;
     const MenuItem = remote.MenuItem;
-    var mn = new MenuItem({label: name, click() { fsio.openTranscript(0, name); }});
+    var mn = new MenuItem({label: name, click: openFromMenu});
     var topmn = Menu.getApplicationMenu();
-    var recentfiles = topmn.items[1].submenu.items[8].submenu;
-    recentfiles.insert(0, mn);
+    var recentfiles = (process.platform === 'darwin')
+        ? topmn.items[1].submenu.items[9].submenu
+        : topmn.items[0].submenu.items[9].submenu;
+    recentfiles.clear();
+    trjs.param.recentfiles.unshift(name);
+    recentfiles.append(mn);
+    for (var i=1; i<trjs.param.recentfiles.length && i<trjs.param.nbRecentFiles; i++) {
+        //console.log("RF: ", i, trjs.param.recentfiles[i], name);
+        if (trjs.param.recentfiles[i] === name) {
+            trjs.param.recentfiles.splice(i,1);
+            continue;
+        }
+        mn = new MenuItem({label: trjs.param.recentfiles[i], click: openFromMenu});
+        recentfiles.append(mn);
+    }
+    // clear end of trjs.param.recentfiles
+    if (i < trjs.param.recentfiles.length)
+        trjs.param.recentfiles.splice(i,trjs.param.recentfiles.length-i);
+    Menu.setApplicationMenu(topmn);
+    trjs.param.saveStorage();
+};
+
+fsio.setMRUInitial = function() {
+    //const remote = require('electron').remote;
+    const Menu = remote.Menu;
+    const MenuItem = remote.MenuItem;
+
+    var topmn = Menu.getApplicationMenu();
+    var recentfiles = (process.platform === 'darwin')
+        ? topmn.items[1].submenu.items[9].submenu
+        : topmn.items[0].submenu.items[9].submenu;
+
+    var lg = trjs.param.recentfiles.length;
+    for (var i = 0; i < lg; i++) {
+        var mn = new MenuItem({label: trjs.param.recentfiles[i], click: openFromMenu});
+        recentfiles.append(mn);
+    }
     Menu.setApplicationMenu(topmn);
 };
 
 fsio.clearMRU = function() {
-    const remote = require('electron').remote;
+    //const remote = require('electron').remote;
     const Menu = remote.Menu;
     const MenuItem = remote.MenuItem;
     var topmn = Menu.getApplicationMenu();
-    var recentfiles = topmn.items[1].submenu.items[8].submenu;
+    var recentfiles = topmn.items[1].submenu.items[9].submenu;
     recentfiles.clear();
     Menu.setApplicationMenu(topmn);
 };
+
+fsio.openExternal = function(href) {
+    remote.shell.openExternal(href);
+}

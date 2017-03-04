@@ -1,11 +1,12 @@
 {
   "name": "trjs",
   "productName": "Trjs",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Oral transcription editor",
   "scripts": {
     "express": "node node/trjsexpress.js",
-    "electron": "electron index.js /corpusformat/transcriber/testcompact.tei_corpo_textgrid.trjs"
+    "electron": "electron index.js",
+    "arg": "electron index.js /corpusformat/clan/antoine-34-2_03_05.tei_corpo.xml --tm=100 --play"
   },
   "repository": {
     "type": "git",
@@ -20,29 +21,25 @@
   "author": "Christophe Parisse",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "http://ct3.ortolang.fr/trjs/issues"
+    "url": "http://ct3.ortolang.fr/tools/mantisbt/"
   },
   "homepage": "http://ct3.ortolang.fr/trjs",
   "dependencies": {
-    "async": "^2.0.0",
-    "electron-spell-check-provider": "^1.0.0",
-    "express": "^4.14.0",
-    "glob": "^7.0.6",
-    "mime": "^1.3.4",
-    "minimist": "^1.2.0",
-    "send": "https://github.com/christopheparisse/send/tarball/master",
-    "serve-static": "^1.11.1",
-    "socket.io": "^1.4.8",
-    "spellchecker": "^3.3.1",
-    "xmldom": "^0.1.22"
+    "async": "latest",
+    "electron-spellchecker": "latest",
+    "glob": "latest",
+    "mime": "latest",
+    "minimist": "latest",
+    "xmldom": "latest"
   },
   "devDependencies": {
-    "electron": "latest",
+    "electron": "^1.4.3",
+    "electron-builder": "latest",
     "electron-packager": "latest",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-html-tag-include": "^1.0.1",
-    "gulp-preprocess": "^2.0.0",
-    "electron-builder": "latest"
+    "electron-rebuild": "^1.5.7",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-html-tag-include": "latest",
+    "gulp-preprocess": "latest"
   }
 }

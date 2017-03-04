@@ -31,59 +31,6 @@ var keysToString = function (k, ctrl, alt, shift, meta) {
     return s;
 };
 
-function replaceSelectedText(text) {
-    var sel, range, textNode;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            textNode = document.createTextNode(text);
-            range.insertNode(textNode);
-
-            // Move caret to the end of the newly inserted text node
-            range.setStart(textNode, textNode.length);
-            range.setEnd(textNode, textNode.length);
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
-    } else if (document.selection && document.selection.createRange) {
-        range = document.selection.createRange();
-        range.pasteHTML(text);
-    }
-}
-
-function formatSelectedText(style) {
-    var sel, range, textNode;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            var selected = $(range.startContainer).text();
-            var endselected = $(range.endContainer).text();
-            if (endselected !== selected)
-                return;
-            // var newtext = selected.substring(0,range.startOffset) + '<' + style + '>' + selected.substring(range.startOffset, range.endOffset) + '</' + style + '>' + + selected.substring(range.endOffset);
-            var currentline = trjs.events.getSelectedLine();
-            var node = document.createElement(style);
-            node.innerHTML = selected.substring(range.startOffset, range.endOffset);
-            range.deleteContents();
-            range.insertNode(node);
-
-            /*
-             // Move caret to the end of the newly inserted text node
-             range.setStart(textNode, textNode.length);
-             range.setEnd(textNode, textNode.length);
-             sel.removeAllRanges();
-             sel.addRange(range);
-             */
-        }
-    } else if (document.selection && document.selection.createRange) {
-        range = document.selection.createRange();
-        range.pasteHTML(stylehead + selected + styletail);
-    }
-}
-
 trjs.keys = {};
 
 trjs.keys.CTRLKEYS = 300;
@@ -121,51 +68,55 @@ trjs.keys.modifiersEvent = function (charCode, e) {
     return trjs.keys.modifiersFlags(charCode, ctrl, e.altKey, e.shiftKey, meta);
 };
 
+trjs.keys.insertBinding = function (bind) {
+    if (bind[0] !== -1) {
+        if (!bind[5]) {
+            console.log('bindings key=' + keysToString(bind[0], bind[1], bind[2], bind[3], bind[4]) + ' is undefined');
+        }
+        if (bind[4] === 'ctrl') {
+            // extends control to metakey for compatibility between windows/unix and mac
+            trjs.tablekeys[trjs.keys.modifiersFlags(bind[0], true,
+                bind[2], bind[3], false)] = bind[5];
+        } else {
+            // put value dirrectly as it is in the table of codes
+            trjs.tablekeys[trjs.keys.modifiersFlags(bind[0], bind[1],
+                bind[2], bind[3], bind[4])] = bind[5];
+        }
+    }
+};
+
 trjs.keys.init = function () {
     if (trjs.tablekeys !== undefined && trjs.tablekeys !== null) {
         delete trjs.tablekeys;
     }
     trjs.tablekeys = {};
     for (var i in trjs.bindings) {
-        if (trjs.bindings[i][0] !== -1) {
-            if (!trjs.bindings[i][5]) {
-                console.log('bindings(' + i + ') key=' + keysToString(trjs.bindings[i][0], trjs.bindings[i][1], trjs.bindings[i][2], trjs.bindings[i][3], trjs.bindings[i][4]) + ' is undefined');
-            }
-            if (trjs.bindings[i][4] === 'ctrl') {
-                // extends control to metakey for compatibility between windows/unix and mac
-                trjs.tablekeys[trjs.keys.modifiersFlags(trjs.bindings[i][0], true,
-                    trjs.bindings[i][2], trjs.bindings[i][3], false)] = trjs.bindings[i][5];
-            } else {
-                // put value dirrectly as it is in the table of codes
-                trjs.tablekeys[trjs.keys.modifiersFlags(trjs.bindings[i][0], trjs.bindings[i][1],
-                    trjs.bindings[i][2], trjs.bindings[i][3], trjs.bindings[i][4])] = trjs.bindings[i][5];
-            }
-        }
+        trjs.keys.insertBinding(trjs.bindings[i]);
     }
 };
 
 trjs.keys.colorRed = function () {
-    formatSelectedText('red');
+    trjs.macros.formatSelectedText('red');
 };
 
 trjs.keys.colorGreen = function () {
-    formatSelectedText('green');
+    trjs.macros.formatSelectedText('green');
 };
 
 trjs.keys.colorBlue = function () {
-    formatSelectedText('blue');
+    trjs.macros.formatSelectedText('blue');
 };
 
 trjs.keys.bold = function () {
-    formatSelectedText('b');
+    trjs.macros.formatSelectedText('b');
 };
 
 trjs.keys.italics = function () {
-    formatSelectedText('i');
+    trjs.macros.formatSelectedText('i');
 };
 
 trjs.keys.emphasis = function () {
-    formatSelectedText('em');
+    trjs.macros.formatSelectedText('em');
 };
 
 trjs.keys.toHtml = function () {
@@ -242,26 +193,14 @@ trjs.keys.ispress = function (e) {
     return false;
 };
 
-/**
- * structure containing the macro keys
- */
-trjs.macros = {};
-
-trjs.macros.key = function (k) {
-    replaceSelectedText(trjs.macros.table[k][0]);
-    return true;
+trjs.keys.initMacrosBindings = function() {
+    trjs.macros.loadTable();
+    // Ctrl F2 === 113 et Ctrl F12 = 123
+    for (var i=0; i<11; i++) {
+        if (trjs.macros.table[i] && trjs.macros.table[i][0])
+            trjs.bindings.push([113+i, true, false, false, 'ctrl', trjs.macros.macrofunction(i), trjs.macros.desc(i) ] ); // Ctrl F(2+i)
+    }
 };
-
-trjs.macros.desc = function (k) {
-    return trjs.macros.table[k][1];
-};
-
-/**
- * full macros list table
- */
-trjs.macros.table = [
-    ["copyright Christophe Parisse (2016) - sponsored by Ortolang/Modyco/DGLFLF", "copyright of software"],
-];
 
 /**
  * structure containing the api keys
@@ -269,7 +208,7 @@ trjs.macros.table = [
 trjs.api = {};
 
 trjs.api.key = function (k) {
-    replaceSelectedText(trjs.api.table[k][1]);
+    trjs.macros.replaceSelectedText(trjs.api.table[k][1]);
     return true;
 };
 
@@ -352,18 +291,19 @@ trjs.api.table = [
     /* 65 */ ["4", "ɾ", trjs.messgs.api65],
     /* 66 */ ["r", "r", trjs.messgs.api66],
     /* 67 */ ["r\\", "ɹ", trjs.messgs.api67],
-    /* 68 */ ["R", "ʀ", trjs.messgs.api68],
+    /* 68 */ ["R", "ʁ", trjs.messgs.api68],
     /* 69 */ ["P", "ʋ", trjs.messgs.api69],
     /* 70 */ ["w", "w", trjs.messgs.api70],
     /* 71 */ ["H", "ɥ", trjs.messgs.api71],
     /* 72 */ ["j", "j", trjs.messgs.api72],
 // others
     /* 73 */ [":", "ː", trjs.messgs.api73],
-    /* 74 */ ["~", "\u0303", trjs.messgs.api74],
-    /* 75 */ ["~E", "\u0303ɛ", trjs.messgs.api75],
-    /* 76 */ ["~9", "\u0303œ", trjs.messgs.api76],
-    /* 77 */ ["~O", "\u0303ɔ", trjs.messgs.api77],
-    /* 78 */ ["~A", "\u0303ɑ", trjs.messgs.api78],
+    /* 74 */ ["~", "~", trjs.messgs.api74],
+    /* 75 */ ["~E", "ɛ̃", trjs.messgs.api75],
+    /* 76 */ ["~9", "œ̃", trjs.messgs.api76],
+    /* 77 */ ["~O", "ɔ̃", trjs.messgs.api77],
+    /* 78 */ ["~A", "ɑ̃", trjs.messgs.api78],
+    /* 79 */ ["^R", "ʀ", trjs.messgs.api79],
 ];
 
 
@@ -620,6 +560,9 @@ trjs.keys.initBindings = function () {
     trjs.bindings.push([122, true, true, false, 'ctrl', trjs.transcription.exportMStoMediaSubt, trjs.messgs.ctrlaltbin122]); // Ctrl Alt F11
     trjs.bindings.push([123, true, true, false, 'ctrl', trjs.transcription.exportMStoMedia, trjs.messgs.ctrlaltbin123]); // Ctrl Alt F12
 
+    trjs.bindings.push([112, false, true, true, false, trjs.macros.generic, trjs.messgs.generic ] ); // Ctrl F1
+    /* 113 à 123 pour Ctrl F2 à F12 à converser pour les macros */
+
     trjs.bindings.push([37, false, true, false, false, trjs.media.backwardStep, trjs.messgs.altbin37]); // Alt Left
     trjs.bindings.push([38, false, true, false, false, trjs.events.keyLocUp, trjs.messgs.altbin38]); // Alt Up
     trjs.bindings.push([39, false, true, false, false, trjs.media.forwardStep, trjs.messgs.altbin39]); // Alt Right
@@ -638,8 +581,8 @@ trjs.keys.initBindings = function () {
     /*
      trjs.keys.special1 = function() { console.timeEnd("page"); };
      trjs.bindings.push( [114, false, false, true, false, trjs.keys.special1, trjs.messgs.shiftbin114 ] ); // Shift F3
+     trjs.bindings.push([115, false, false, true, false, trjs.io.htmlSave, trjs.messgs.shiftbin115]); // Shift F4
      */
-    trjs.bindings.push([115, false, false, true, false, trjs.io.htmlSave, trjs.messgs.shiftbin115]); // Shift F4
 };
 
 trjs.keys.initApiBindings = function () {
@@ -710,29 +653,18 @@ trjs.keys.initApiBindings = function () {
     trjs.bindings.push([69, false, true, true, false, function () {
         trjs.api.key(75);
     }, trjs.api.desc(75)]); // Shift Alt E
-    trjs.bindings.push([58, false, true, true, false, function () {
+    trjs.bindings.push([57, false, true, true, false, function () {
         trjs.api.key(76);
     }, trjs.api.desc(76)]); // Shift Alt 9
-    trjs.bindings.push([81, false, true, true, false, function () {
+    trjs.bindings.push([79, false, true, true, false, function () {
         trjs.api.key(77);
     }, trjs.api.desc(77)]); // Shift Alt O
-    trjs.bindings.push([43, false, true, true, false, function () {
+    trjs.bindings.push([65, false, true, true, false, function () {
         trjs.api.key(78);
     }, trjs.api.desc(78)]); // Shift Alt A
+    trjs.bindings.push([82, false, true, true, false, function () {
+        trjs.api.key(79);
+    }, trjs.api.desc(79)]); // Shift Alt R
 
 // liste des caractère nom de domaine internationaux pour le français : ß à á â ã ä å æ ç è é ê ë ì í î ï ñ ò ó ô õ ö ù ú û ü ý ÿ œ
-
-//trjs.bindings.push( [57, ALTSHIFTKEYS, function() { trjs.api.key(?) } "" ] ); // Alt Shift 9
-//trjs.bindings.push( [65, ALTSHIFTKEYS, function() { trjs.api.key(?) } "" ] ); // Alt Shift A
-//trjs.bindings.push( [69, ALTSHIFTKEYS, function() { trjs.api.key(?) } "" ] ); // Alt Shift E
-//trjs.bindings.push( [79, ALTSHIFTKEYS, function() { trjs.api.key(?) } "" ] ); // Alt Shift O
-//trjs.bindings.push( [81, ALTSHIFTKEYS, function() { trjs.api.key(?) } "" ] ); // Alt Shift Q
-//trjs.bindings.push( [82, ALTSHIFTKEYS, function() { trjs.api.key(?) } "" ] ); // Alt Shift R
-};
-
-trjs.keys.initMacrosBindings = function () {
-    /* clé - ctrl alt shift meta function description */
-    trjs.bindings.push([48, true, true, true, false, function () {
-        trjs.macros.key(0);
-    }, trjs.macros.desc(0)]); // ctrl+alt+shift 0
 };

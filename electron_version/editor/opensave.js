@@ -978,11 +978,11 @@ trjs.io = (function () {
             }
             if (mediaFormat === 'otherMediaVideo')
                 convertMediaFile(name, 'notcompat-load');
-            else
+            else if (newname === 'notcompatible')
             // ask the used for a new file
                 bootbox.dialog({
-                    message: (trjs.messgs.notcompatibleNotexistHTMLMedia1 + name + trjs.messgs.notcompatibleNotexistHTMLMedia2),
-                    title: trjs.messgs.notcompatNotexistTitle,
+                    message: (trjs.messgs.notcompatibleConvertHTMLMedia1 + name + trjs.messgs.notcompatibleConvertHTMLMedia2),
+                    title: trjs.messgs.notcompatCompatibleTitle,
                     buttons: {
                         cancel: {
                             label: trjs.messgs.labelcancel,
@@ -996,6 +996,29 @@ trjs.io = (function () {
                             className: "btn-success",
                             callback: function () {
                                 convertMediaFile(name, 'notcompat-load');
+                            }
+                        },
+                        otherfile: {
+                            label: trjs.messgs.labelotherfile,
+                            className: "btn-success",
+                            callback: function () {
+                                $('#openfile').modal();
+                                fsio.chooseFile('media', 'media');
+                            }
+                        },
+                    }
+                });
+            else
+            // ask the used for a new file
+                bootbox.dialog({
+                    message: (trjs.messgs.notcompatibleNotexist1 + name + trjs.messgs.notcompatibleNotexist2),
+                    title: trjs.messgs.notcompatNotexistTitle,
+                    buttons: {
+                        cancel: {
+                            label: trjs.messgs.labelcancel,
+                            className: "btn-default",
+                            callback: function () {
+                                return;
                             }
                         },
                         otherfile: {
@@ -1133,7 +1156,7 @@ trjs.io = (function () {
                     // trjs.log.boxalert(s);
                     // ask the used for conversion or a new file
                     bootbox.dialog({
-                        message: (trjs.messgs.notcompatibleNotexistHTMLMedia1 + name + trjs.messgs.notcompatibleNotexistHTMLMedia2),
+                        message: (trjs.messgs.notcompatibleConvertHTMLMedia1 + name + trjs.messgs.notcompatibleConvertHTMLMedia2),
                         title: trjs.messgs.notcompatNotexistTitle,
                         buttons: {
                             cancel: {
@@ -1204,7 +1227,7 @@ trjs.io = (function () {
     function serverSave(param) {
         if (trjs.param.level < 'level6') return;
         if (trjs.data.recordingName() == trjs.data.NEWRECNAME && param != 'nonew') {
-            trjs.log.alert(trjs.messgs.mustfn);
+            //trjs.log.alert(trjs.messgs.mustfn);
             trjs.io.doSaveAs();
             return;
         }
@@ -1237,7 +1260,7 @@ trjs.io = (function () {
         if (trjs.param.level < 'level4') return;
         var s = innerSave();
         if (trjs.data.recordingName() === trjs.data.NEWRECNAME) {
-            trjs.log.boxalert(trjs.messgs.mustfn);
+            //trjs.log.boxalert(trjs.messgs.mustfn);
             trjs.io.doSaveAs();
         }
         fsio.teiToFormat({
@@ -1282,7 +1305,7 @@ trjs.io = (function () {
         if (trjs.param.level < 'level6') return;
         var s = innerSave();
         if (trjs.data.recordingName() === trjs.data.NEWRECNAME) {
-            trjs.log.alert(trjs.messgs.mustfn);
+            //trjs.log.alert(trjs.messgs.mustfn);
             trjs.io.doSaveAs();
         }
         var fileoutput = trjs.utils.headName(trjs.data.recordingRealFile()) + version.MARK_EXT + extFormat(format);

@@ -47,6 +47,7 @@
     <script src="editor/dataload.js"></script>
     <script src="editor/transcription.js"></script>
     <script src="editor/events.js"></script>
+    <script src="editor/macros.js"></script>
     <script src="editor/tablekeyboard.js"></script>
     <script src="editor/drawmovezoom.js"></script>
     <script src="editor/sliders.js"></script>
@@ -406,6 +407,12 @@
 								<div class="row">
 									<div class="col-xs-6 col-md-4"><input name="language-version" id="french-version" type="radio" onchange="trjs.editor.setLanguage();" value="1" /> <label for="french-version">Version française</label> <img height="12px" src="style/fr.png"></img></div>
 								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="english-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="0" checked="checked" /> <label for="english-version">English spellchecker</label> <img height="12px" src="style/gb.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="french-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="1" /> <label for="french-version">Correcteur d'orthographe français</label> <img height="12px" src="style/fr.png"></img></div>
+								</div>
 							</div>
 							<div role="tabpanel" class="tab-pane" id="paffich"><br/>
 								<div class="row">
@@ -505,6 +512,20 @@
 											<option value="5">5</option>
 											<option value="6">6</option>
 											<option value="7">7</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='nb-recent-files'>Number of recent files</span>
+										<select class="nb-recent-files" id="nb-recent-files" onchange="trjs.editor.setNbRecentFiles();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
 										</select></p>
 									</div>
 								</div>

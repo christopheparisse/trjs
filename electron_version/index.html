@@ -55,6 +55,7 @@
     <script src="editor/dataload.js"></script>
     <script src="editor/transcription.js"></script>
     <script src="editor/events.js"></script>
+    <script src="editor/macros.js"></script>
     <script src="editor/tablekeyboard.js"></script>
     <script src="editor/drawmovezoom.js"></script>
     <script src="editor/sliders.js"></script>
@@ -362,6 +363,12 @@
 								<div class="row">
 									<div class="col-xs-6 col-md-4"><input name="language-version" id="french-version" type="radio" onchange="trjs.editor.setLanguage();" value="1" /> <label for="french-version">Version française</label> <img height="12px" src="style/fr.png"></img></div>
 								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="english-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="0" checked="checked" /> <label for="english-version">English spellchecker</label> <img height="12px" src="style/gb.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="french-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="1" /> <label for="french-version">Correcteur d'orthographe français</label> <img height="12px" src="style/fr.png"></img></div>
+								</div>
 							</div>
 							<div role="tabpanel" class="tab-pane" id="paffich"><br/>
 								<div class="row">
@@ -464,6 +471,20 @@
 										</select></p>
 									</div>
 								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='nb-recent-files'>Number of recent files</span>
+										<select class="nb-recent-files" id="nb-recent-files" onchange="trjs.editor.setNbRecentFiles();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+										</select></p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -474,6 +495,88 @@
 			</div>
 		</div>
 	</div>
+
+<!-- MODAL FOR PARAMETERS -->
+<div class="modal" id="insertmacro">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="aide_fen2">
+                    <span id='aide_macro' title="">
+                    <i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-macro',true);"></i>
+                    </span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span id="pparam"> Macros (events & shortcuts)</span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content">
+                    <div class="col-md-6">
+                        <p><span id='pkeyshortcut'>Shortcut: </span>
+                            <select class="ckeyshortcut" id="keyshortcut" onchange='trjs.macros.choice();'>
+                                <option value="0">Ctrl F2</option>
+                                <option value="1">Ctrl F3</option>
+                                <option value="2">Ctrl F4</option>
+                                <option value="3">Ctrl F5</option>
+                                <option value="4">Ctrl F6</option>
+                                <option value="5">Ctrl F7</option>
+                                <option value="6">Ctrl F8</option>
+                                <option value="7">Ctrl F9</option>
+                                <option value="8">Ctrl F10</option>
+                                <option value="9">Ctrl F11</option>
+                                <option value="10">Ctrl F12</option>
+                            </select></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><span id='ptypeevent'>Type: </span>
+                            <select class="ctypevent" id="event-type">
+                                <option value="noise">noise</option>
+                                <option value="event">event</option>
+                                <option value="language">language</option>
+                                <option value="comment">comment</option>
+                                <option value="vocal">vocal</option>
+                                <option value="shortpause">short pause</option>
+                                <option value="middlepause">middle pause</option>
+                                <option value="longpause">long pause</option>
+                                <option value="verylongpause">very long pause</option>
+                                <option value="lexical">lexical</option>
+                                <option value="entities">entities</option>
+                                <option value="value">value</option>
+                            </select></p>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <span id="pinfomacrost">Subtype: </span>
+                            <input type="info" placeholder="..." id="event-subtype" type="info" name="event-subtype"
+                                   onchange=""/>
+                        </div><!-- /input-group -->
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <span id="pinfomacroval">Value: </span>
+                            <input type="info" placeholder="..." id="event-content" type="info" name="event-content"
+                                   onchange=""/>
+                        </div><!-- /input-group -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            Save shortcut
+                            <button class="btn btn-default" type="button" onclick='trjs.macros.save();'><i
+                                    class="fa fa-check"></i></button>
+                            Insert
+                            <button class="btn btn-default" type="button" onclick='trjs.macros.insert();'><i
+                                    class="fa fa-beer"></i></button>
+                        </div><!-- /input-group -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- MODAL FOR EXPORTS -->
 <div class="modal" id="openexports">
@@ -800,6 +903,6 @@
 </script>
 <script>
     // You can also require other files to run in this process
-    // require('./init.js')
+    require('./renderer.js');
 </script>
 </html>

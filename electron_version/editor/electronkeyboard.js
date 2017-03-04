@@ -17,6 +17,9 @@ trjs.init.electronkeyboard = function () {
     /*
      $('body').keydown(bodyKeys);
      */
+    ipcRenderer.on('debug', function(event, arg) {
+        console.log(event, arg);
+    });
     ipcRenderer.on('newtranscript', function(event, arg) {
         trjs.transcription.loadNewGrid(true);
     });
@@ -63,6 +66,9 @@ trjs.init.electronkeyboard = function () {
     });
     ipcRenderer.on('delete', function(event, arg) {
         trjs.event.deleteLine();
+    });
+    ipcRenderer.on('insertmacro', function(event, arg) {
+        trjs.macros.generic();
     });
     ipcRenderer.on('undo', function(event, arg) {
         trjs.undo.undo();

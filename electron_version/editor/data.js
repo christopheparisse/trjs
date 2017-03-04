@@ -23,7 +23,7 @@ trjs.data = {
 	leftCode: '⌜', // 231C - '⁌', // 204C // ▷ 25B7
 	rightCode: '⌟', // 231F - '⁍', // 204D, // ◁ 25C1
 
-	NEWRECNAME: 'new.teiml',
+	NEWRECNAME: 'new.trjs',
 	NOMEDIA: '*NoMedia*',
 	LOCALDIR: '*Local*',
     UNKNOWNDIR: '*Unknown*',

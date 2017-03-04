@@ -11,13 +11,15 @@ if (typeof exports !== 'undefined') {
     var os = require('os');
 } else {
     var version = {};
+    var path = require('path');
+    var os = require('os');
 }
 
 version.appName = 'TRJS';
-version.version = 'v0.5.2';
-version.versionLexFind = 'v0.0.1';
-version.versionMediaTools = 'v0.0.9';
-version.date = new Date(2016, 12, 15);
+version.version = 'v0.5.6';
+version.versionLexFind = 'v0.2.0';
+version.versionMediaTools = 'v0.1.0';
+version.date = new Date(2017, 2, 2); // attention mettre -1 pour les mois : janvier === 0
 
 version.preservedPages = 3;
 
@@ -105,29 +107,35 @@ version.WAVESAMPLING = 500;
 
 version.trjsLoc = function () {
     var htmlTrjsPath;
-    console.log("trjsLoc " + global.applicationTarget.type);
+    //console.log("trjsLoc " + global.applicationTarget.type);
     if (__dirname !== undefined) {
-        console.log('__dirname', __dirname);
-        htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/..";
+        //console.log('__dirname', __dirname);
+        if (global.applicationTarget.type === 'electron')
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g');
+        else
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/..";
     } else {
-        console.log('process');
+        //console.log('process');
         htmlTrjsPath = process.cwd().replace(/\\/, '/', 'g');
     }
-    console.log('path= ' + htmlTrjsPath);
+    //console.log('path= ' + htmlTrjsPath);
     return htmlTrjsPath;
 };
 
 version.ffmpegdirLoc = function () {
     var htmlTrjsPath;
-    console.log("ffmpegdirLoc " + global.applicationTarget.type);
+    //console.log("ffmpegdirLoc " + global.applicationTarget.type);
     if (__dirname !== undefined) {
-        console.log('__dirname', __dirname);
-        htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/../tools";
+        //console.log('__dirname', __dirname);
+        if (global.applicationTarget.type === 'electron')
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/tools";
+        else
+            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/../tools";
     } else {
-        console.log('process');
+        //console.log('process');
         htmlTrjsPath = process.cwd().replace(/\\/, '/', 'g') + "/tools";
     }
-    console.log('path= ' + htmlTrjsPath);
+    //console.log('path= ' + htmlTrjsPath);
     return htmlTrjsPath;
 };
 
@@ -228,7 +236,7 @@ version.allExtensionForBrowser = function (browser, browserversion, format) {
     // console.log('allExtensionForBrowser ' + browser + ' ' + browserversion);
     if (browser.indexOf('Chrome') >= 0) { // chrome style
         if (format === 'html5MediaAudio')
-            return ['mp3'];
+            return ['wav', 'mp3'];
         else
             return ['mp4', 'webm'];
     } else if (browser.indexOf('Firefox') >= 0) { // firefox style
