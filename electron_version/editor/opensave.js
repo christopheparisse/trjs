@@ -1315,9 +1315,9 @@ trjs.io = (function () {
             transcript: s,
         }, function (data) {
             // $("#save-server-response").html(data);
-            trjs.log.alert('save to ' + format + ' format - file ' + fileoutput);
+            trjs.log.boxalert(trjs.messgs.exporttrans + format + trjs.messgs.exportname + fileoutput);
         }, function (data) {
-            trjs.log.alert('tei_to_format ' + format + ': error: ' + data.status + ' ' + data.responseText);
+            trjs.log.boxalert(trjs.messgs.exporterror + " " + format + " " + data);
         });
     }
 

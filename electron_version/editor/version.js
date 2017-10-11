@@ -16,10 +16,10 @@ if (typeof exports !== 'undefined') {
 }
 
 version.appName = 'TRJS';
-version.version = 'v0.5.6';
+version.version = 'v0.5.8';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
-version.date = new Date(2017, 2, 2); // attention mettre -1 pour les mois : janvier === 0
+version.date = new Date(2017, 9, 10); // attention mettre -1 pour les mois : janvier === 0
 
 version.preservedPages = 3;
 
@@ -106,34 +106,40 @@ version.KNOWN_EXTENSIONS_SUP = '-240p|-480p|-720p|-1080p';
 version.WAVESAMPLING = 500;
 
 version.trjsLoc = function () {
-    var htmlTrjsPath;
-    //console.log("trjsLoc " + global.applicationTarget.type);
+    var htmlTrjsPath = process.cwd().replace(/\\/g, '/');
+    console.log("ffmpegdirLoc:type " + global.applicationTarget.type);
+    console.log("ffmpegdirLoc:process " + htmlTrjsPath);
+    console.log("ffmpegdirLoc:dirname " + __dirname);
     if (__dirname !== undefined) {
-        //console.log('__dirname', __dirname);
-        if (global.applicationTarget.type === 'electron')
-            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g');
+        var dirname = __dirname.replace(/\\/g, '/');
+        console.log('dirname (v2) ', dirname);
+        if (dirname.indexOf('/editor') > 0 || dirname.indexOf('/node') > 0)
+            htmlTrjsPath = dirname + "/..";
         else
-            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/..";
+            htmlTrjsPath = dirname;
     } else {
-        //console.log('process');
-        htmlTrjsPath = process.cwd().replace(/\\/, '/', 'g');
+        console.log('process');
+        // nothing to do
     }
     //console.log('path= ' + htmlTrjsPath);
     return htmlTrjsPath;
 };
 
 version.ffmpegdirLoc = function () {
-    var htmlTrjsPath;
-    //console.log("ffmpegdirLoc " + global.applicationTarget.type);
+    var htmlTrjsPath = process.cwd().replace(/\\/g, '/');
+    console.log("ffmpegdirLoc:type " + global.applicationTarget.type);
+    console.log("ffmpegdirLoc:process " + htmlTrjsPath);
+    console.log("ffmpegdirLoc:dirname " + __dirname);
     if (__dirname !== undefined) {
-        //console.log('__dirname', __dirname);
-        if (global.applicationTarget.type === 'electron')
-            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/tools";
+        var dirname = __dirname.replace(/\\/g, '/');
+        console.log('dirname (v2) ', dirname);
+        if (dirname.indexOf('/editor') > 0 || dirname.indexOf('/node') > 0)
+            htmlTrjsPath = dirname + "/../tools";
         else
-            htmlTrjsPath = __dirname.replace(/\\/, '/', 'g') + "/../tools";
+            htmlTrjsPath = dirname + "/tools";
     } else {
-        //console.log('process');
-        htmlTrjsPath = process.cwd().replace(/\\/, '/', 'g') + "/tools";
+        console.log('process');
+        htmlTrjsPath = htmlTrjsPath + "/tools";
     }
     //console.log('path= ' + htmlTrjsPath);
     return htmlTrjsPath;

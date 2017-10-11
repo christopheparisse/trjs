@@ -834,13 +834,14 @@ trjs.editor = (function () {
         //console.log(trjs.param.server);
         if (trjs.param.server === 'electron') {
             var remote = require('electron').remote;
-            //console.log(remote.process);
-            //console.log("open_file: ", remote.process.macosx_open_file);
             if (remote.process.macosxOpenFile) {
+                console.log("open_file: ", remote.process.argsOpenFile);
+                console.log("open_file: ", remote.process.macosxOpenFile);
                 sURL += "?t=" + remote.process.macosxOpenFile;
                 remote.process.macosxOpenFile = undefined;
-/*                if (remote.process.macosx_open_file_cmd) {
-                    var args = require('minimist')(remote.process.macosx_open_file_cmd);
+                var args;
+                if (remote.process.argsOpenFile) {
+                    args = require('minimist')(remote.process.argsOpenFile);
                 }
                 if (args.tm !== undefined) {
                     var tm = (typeof args.tm === 'string' || typeof args.tm === 'number') ? args.tm : args.tm[0];
@@ -849,7 +850,6 @@ trjs.editor = (function () {
                 if (args.play !== undefined) {
                     sURL += '&play';
                 }
-*/
             } else {
                 var argv = (remote.process.argsOpenFile)  ? remote.process.argsOpenFile : remote.process.argv;
                 console.log('normal call', argv);

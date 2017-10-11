@@ -79,6 +79,9 @@ trjs.messgs_eng = {
     alertmessages: 'Alert messages',
     help: 'Help',
     newfile: "new document",
+    exporttrans: "Export as ",
+    exportname: " named as ",
+    exporterror: " Export error ",
 
     reload: 'RELOAD',
     up: 'UP',
@@ -810,6 +813,9 @@ trjs.messgs_fra = {
     alertmessages: "Messages d'alerte",
     help: 'Aide',
     newfile: "nouveau document",
+    exporttrans: "Exporté comme ",
+    exportname: " sous le nom ",
+    exporterror: " Erreur d'export ",
 
     reload: 'RECHARGER',
     up: 'REMONTER',

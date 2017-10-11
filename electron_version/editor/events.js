@@ -2221,36 +2221,15 @@ trjs.events = (function () {
     }
 
     return {
-        checkFinal: function () {
-            return checkFinal();
-        },
-        checkLine: function (e) {
-            return checkLine(e);
-        },
-        checkLoc: function (p) {
-            return checkLoc(p);
-        },
-        checkTime: function (p) {
-            return checkTime(p);
-        },
-        clickLoc: function (p) {
-            return clickLoc(p);
-        },
-        copyLine: function (e) {
-            return copyLine(e);
-        },
-        createRowAfterWith: function (s, t, l, ts, te, tr) {
-            return createRowAfterWith(s, t, l, ts, te, tr);
-        },
-        ctrlEnd: function (e, p) {
-            return ctrlEnd(e, p);
-        },
-        ctrlHome: function (e, p) {
-            return ctrlHome(e, p);
-        },
-        deleteLine: function (e, p) {
-            return deleteLine(e, p);
-        },
+        checkFinal: checkFinal,
+        checkLoc: checkLoc,
+        checkTime: checkTime,
+        clickLoc: clickLoc,
+        copyLine: copyLine,
+        createRowAfterWith: createRowAfterWith,
+        ctrlEnd: ctrlEnd,
+        ctrlHome: ctrlHome,
+        deleteLine: deleteLine,
         deleteLineAndRedraw: function (e, p) {
             trjs.undo.opinit('deleteLineAndRedraw');
             deleteLine(e, p);
@@ -2265,48 +2244,19 @@ trjs.events = (function () {
             trjs.undo.opclose('deleteLineLocAndRedraw');
             return true;
         },
-        deleteSelectedLine: function (p) {
-            deleteSelectedLine(p);
-        },
-        enter: function (e, p) {
-            return enter(e, p);
-        },
-        eventKeydown: function (p) {
-            return eventKeydown(p);
-        },
-        eventKeypress: function (p) {
-            return eventKeypress(p);
-        },
-        eventKeydownTranscript: function (p) {
-            return eventKeydownTranscript(p);
-        },
-        escape: function (e) {
-            return escape(e);
-        },
-        findLineToFollow: function (p) {
-            return findLineToFollow(p);
-        },
-        findLineToStart: function (p) {
-            return findLineToStart(p);
-        },
-        firstLoc: function () {
-            return firstLoc();
-        },
-        getSelectedLine: function () {
-            return getSelectedLine();
-        },
-        goCheck: function () {
-            return goCheck();
-        },
-        goContinuous: function (e, p) {
-            return goContinuous(e, p);
-        },
-        goToLine: function (p) {
-            return goToLine(p);
-        },
-        goToTime: function (o, t, p1, p2) {
-            return goToTime(o, t, p1, p2);
-        },
+        deleteSelectedLine: deleteSelectedLine,
+        enter: enter,
+        eventKeydown: eventKeydown,
+        eventKeypress: eventKeypress,
+        escape: escape,
+        findLineToFollow: findLineToFollow,
+        findLineToStart: findLineToStart,
+        firstLoc: firstLoc,
+        getSelectedLine: getSelectedLine,
+        goCheck: goCheck,
+        goContinuous: goContinuous,
+        goToLine: goToLine,
+        goToTime: goToTime,
         insertBlankLineAndRedraw: function (e, p) {
             trjs.undo.opinit('insertBlankLineAndRedraw');
             insertBlankLine(e, p);
@@ -2321,9 +2271,7 @@ trjs.events = (function () {
             trjs.undo.opclose('insertBlankLineLocAndRedraw');
             return true;
         },
-        insertLineLoc: function (p, l) {
-            insertLineLoc(p, l);
-        },
+        insertLineLoc: insertLineLoc,
         insertWithTimeAndRedraw: function (e, p) {
             trjs.undo.opinit('insertWithTimeAndRedraw');
             insertWithTime(e, p);
@@ -2352,48 +2300,19 @@ trjs.events = (function () {
             trjs.undo.opclose('joinLineLoc');
             return true;
         },
-        keyUp: function (e, p) {
-            return keyUp(e, p);
-        },
-        keyDown: function (e, p) {
-            return keyDown(e, p);
-        },
-        keyLocUp: function (e, p) {
-            return keyLocUp(e, p);
-        },
-        keyLocDown: function (e, p) {
-            return keyLocDown(e, p);
-        },
-        lineGetCell: function (p1, p2) {
-            return lineGetCell(p1, p2);
-        },
-        lineGetCellHtml: function (p1, p2) {
-            return lineGetCellHtml(p1, p2);
-        },
-        lineSetCell: function (p1, p2, p3) {
-            lineSetCell(p1, p2, p3);
-        },
-        lineSetCellHtml: function (p1, p2, p3) {
-            lineSetCellHtml(p1, p2, p3);
-        },
-        nextCheck: function (e) {
-            return nextCheck(e);
-        },
-        pageUp: function (e, p) {
-            return pageUp(e, p);
-        },
-        pageDown: function (e, p) {
-            return pageDown(e, p);
-        },
-        prevCheck: function (e) {
-            return prevCheck(e);
-        },
-        protectLine: function (e) {
-            protectLine(e);
-        },
-        putTime: function (p) {
-            return putTime(p);
-        },
+        keyUp: keyUp,
+        keyDown: keyDown,
+        keyLocUp: keyLocUp,
+        keyLocDown: keyLocDown,
+        lineGetCell: lineGetCell,
+        lineGetCellHtml: lineGetCellHtml,
+        lineSetCell: lineSetCell,
+        lineSetCellHtml: lineSetCellHtml,
+        nextCheck: nextCheck,
+        pageUp: pageUp,
+        pageDown: pageDown,
+        prevCheck: prevCheck,
+        putTime: putTime,
         replicateLineAndRedraw: function (e, p) {
             trjs.undo.opinit('replicateLineAndRedraw');
             replicateLine(e, p);
@@ -2401,12 +2320,8 @@ trjs.events = (function () {
             trjs.undo.opclose('replicateLineAndRedraw');
             return true;
         },
-        runCurrentLine: function (e, p) {
-            return runCurrentLine(e, p);
-        },
-        runThreeLines: function (e, p) {
-            return runThreeLines(e, p);
-        },
+        runCurrentLine: runCurrentLine,
+        runThreeLines: runThreeLines,
         setDivPlus: function (e, p) {
             trjs.undo.opinit('setDivPlus');
             var r = setDivPlus(e, p);
@@ -2437,9 +2352,7 @@ trjs.events = (function () {
             trjs.undo.opinit('setDivMinusInsert');
             return r;
         },
-        setEnd: function (e) {
-            return setEnd(e);
-        },
+        setEnd: setEnd,
         setEndAndRedraw: function (e) {
             trjs.undo.opinit('setEndAndRedraw');
             setEnd(e);
@@ -2447,9 +2360,7 @@ trjs.events = (function () {
             trjs.undo.opclose('setEndAndRedraw');
             return true;
         },
-        setMark: function (p) {
-            return setMark(p);
-        },
+        setMark: setMark,
         setNthLoc: function (e, p) {
             trjs.undo.opinit('setNthLoc');
             var r = setNthLoc(e, p);
@@ -2462,9 +2373,7 @@ trjs.events = (function () {
             trjs.undo.opclose('setNthTier');
             return r;
         },
-        setSelectedLine: function (p, origin) {
-            return setSelectedLine(p, origin);
-        },
+        setSelectedLine: setSelectedLine,
         setStart: function (e) {
             return setStart(e);
         },
@@ -2489,12 +2398,8 @@ trjs.events = (function () {
             trjs.undo.opclose('setTimeReplaceLocAndRedraw');
             return true;
         },
-        setTimeSelectedLine: function (p1, p2) {
-            return setTimeSelectedLine(p1, p2);
-        },
-        shiftTab: function (e) {
-            return shiftTab(e);
-        },
+        setTimeSelectedLine: setTimeSelectedLine,
+        shiftTab: shiftTab,
         splitLineAndRedraw: function (e, p) {
             trjs.undo.opinit('splitLineAndRedraw');
             splitLine(e, p);
@@ -2509,18 +2414,10 @@ trjs.events = (function () {
             trjs.undo.opclose('splitLineLocAndRedraw');
             return true;
         },
-        tab: function (e) {
-            return tab(e);
-        },
-        testMark: function (p) {
-            return testMark(p);
-        },
-        transcriptGotFocus: function (p) {
-            return transcriptGotFocus(p);
-        },
-        trimMark: function (p) {
-            return trimMark(p);
-        },
+        tab: tab,
+        testMark: testMark,
+        transcriptGotFocus: transcriptGotFocus,
+        trimMark: trimMark,
     };
 })();
 
