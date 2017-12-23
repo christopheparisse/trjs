@@ -1,0 +1,17 @@
+<div id="check-bench" class="roundshadow hidetjs benchfull">
+    <div id="search-title" class="modal-header">
+        <button type="button" class="close" onclick='trjs.editor.showCheck();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="check-span" class="modal-title">Check current file</h4>
+    </div><br/>
+    <div class='benchfull'>
+    <p><button type="button" class="btn btn-success">
+            &nbsp;<span id='icheck'>Check file </span><i class='iconcur fa fa-repeat' onclick='trjs.check.checkFinal();'></i>
+        </button>
+        &nbsp;&nbsp;&nbsp; <span id="checkfe">Founded errors:</span> <span id="check-nb-results" class="bred">0</span>
+        &nbsp;<i class='iconcur fa fa-arrow-left' onclick='trjs.check.prevCheck();'></i>
+        &nbsp;<i class='iconcur fa fa-arrow-right' onclick='trjs.check.nextCheck();'></i>
+        &nbsp;<span id="check-posx" class="bred">0</span>/<span id="check-nbx">0</span>
+        &nbsp;<span id="check-valx" class="bred"></span>
+    </p>
+    </div>
+</div>

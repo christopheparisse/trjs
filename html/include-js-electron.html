@@ -1,0 +1,32 @@
+<!--
+	include-js.html
+	set of thrid party javascript include files or external library files (tei...js)
+-->
+
+<script type="text/javascript" language="javascript">
+	window.$ = window.jQuery = require('./js/jquery.js');
+</script>
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-submenu.js"></script>
+<script src="js/bootbox.js"></script>
+<script src="js/jquery.csv-0.71.js"></script>
+<script src="js/filesaver.js"></script>
+<script src="js/parseuri.js"></script>
+<script src="js/sprintf.js"></script>
+<script src="js/html-docx.js"></script>
+<script src="js/jszip.js"></script>
+<script src="js/xlsx_array.js"></script>
+<script src="js/teiconverttools.js"></script>
+<script src="js/teidocx.js"></script>
+<script src="js/teiexportxlsx.js"></script>
+<script src="js/rangy-core.js"></script>
+
+<!-- @if VERSION = 'client' -->
+<script src="js/socket.io.js"></script>
+<script src="js/tree.jquery.js"></script>
+<!-- @endif -->
+
+<!-- @if VERSION = 'electron' -->
+<script src="systemcall/fsio.js"></script>
+<!-- @endif -->

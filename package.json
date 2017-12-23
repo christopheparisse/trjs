@@ -1,0 +1,48 @@
+{
+  "name": "trjs",
+  "productName": "Trjs",
+  "version": "0.6.0",
+  "description": "Oral transcription editor",
+  "scripts": {
+    "express": "node node/trjsexpress.js",
+    "electron": "electron index.js",
+    "arg": "electron index.js /corpusformat/clan/antoine-34-2_03_05.tei_corpo.xml --tm=100 --play",
+    "pegjs": "pegjs editor/checkclanmain.pegjs",
+    "cleanpegjs": "pegjs editor/cleansentence.pegjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopheparisse/trjs.git"
+  },
+  "keywords": [
+    "trjs",
+    "client",
+    "electron",
+    "readteifile"
+  ],
+  "author": "Christophe Parisse",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "http://ct3.ortolang.fr/tools/mantisbt/"
+  },
+  "homepage": "http://ct3.ortolang.fr/trjs",
+  "dependencies": {
+    "async": "latest",
+    "electron-spellchecker": "^1.1.2",
+    "glob": "latest",
+    "mime": "latest",
+    "minimist": "latest",
+    "xmldom": "latest"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest",
+    "electron-packager": "latest",
+    "electron-rebuild": "latest",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-html-tag-include": "latest",
+    "gulp-preprocess": "latest",
+    "pegjs": "^0.10.0"
+  }
+}

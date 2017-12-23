@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang=en>
+<head>
+	<title>transcriber.js</title>
+	<meta charset=utf-8 />
+<!-- 	<script>
+		// Prevent error dialogs from displaying -which is the window's normal
+		// behavior- by overriding the default event handler for error events that
+		// go to the window.
+		// window.onerror = null;
+
+		// Development handling of errors
+		var gOldOnError = window.onerror;
+		// Override previous handler.
+		window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+			bootboxalert("window.onerror: " + errorMsg + " " + url + " " + lineNumber);
+			if (gOldOnError)
+				// Call previous handler.
+				return gOldOnError(errorMsg, url, lineNumber);
+
+			// Just let default handler run.
+			return false;
+		};
+ 	</script>
+-->
+
+.......
+
+ 	<script>
+ 		trjs.init();
+	</script>
+</head>
+<body onkeydown="trjs.events.eventKeydown(event);" onkeypress="trjs.events.eventKeypress(event);" ondragover="trjs.drag.drag_over(event)" ondrop="trjs.drag.drop(event)">
+
+........
+
+</body>
+</html>

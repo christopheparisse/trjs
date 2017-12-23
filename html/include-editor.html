@@ -1,0 +1,48 @@
+<!--
+	include-editor.html
+	set of transcriberjs javascript include files
+-->
+
+<script src="editor/messgs.js"></script>
+<script src="editor/version.js"></script>
+<script src="editor/codefn.js"></script>
+
+<script src="editor/data.js"></script>
+<script src="editor/params.js"></script>
+<script src="editor/editor.js"></script>
+<script src="editor/utils.js"></script>
+<script src="editor/media.js"></script>
+<script src="editor/opensave.js"></script>
+<script src="editor/local.js"></script>
+<script src="editor/templates.js"></script>
+<script src="editor/dataload.js"></script>
+<script src="editor/transcription.js"></script>
+<script src="editor/events.js"></script>
+<script src="editor/macros.js"></script>
+<script src="editor/tablekeyboard.js"></script>
+<script src="editor/drawmovezoom.js"></script>
+<script src="editor/sliders.js"></script>
+<script src="editor/partition.js"></script>
+<script src="editor/progress.js"></script>
+<script src="editor/logs.js"></script>
+<script src="editor/aidecontextuelle.js"></script>
+<script src="editor/undo.js"></script>
+<script src="editor/check.js"></script>
+<script src="editor/init.js"></script>
+
+<!-- @if VERSION != 'readonly' -->
+<script src="editor/wave.js"></script>
+<script src="editor/decim.js"></script>
+<script src="editor/drag.js"></script>
+<!-- @endif -->
+
+<!-- @if VERSION = 'client' -->
+<script src="systemcall/fsioserver.js"></script>
+<script src="systemcall/filetree.js"></script>
+
+<script src="editor/dataload05.js"></script>
+<!-- @endif -->
+
+<!-- @if VERSION = 'electron' -->
+<script src="editor/electronkeyboard.js"></script>
+<!-- @endif -->

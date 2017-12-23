@@ -1,0 +1,163 @@
+<!-- MODAL FOR EXPORTS -->
+<div class="modal" id="openexports">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span id="exporttit">Export et téléchargement</span></h4>
+            </div>
+            <div class="modal-body">
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#expfic" aria-controls="expfic" role="tab" data-toggle="tab"><i class="fa fa-file-o"></i> <span id="exportfile">Fichier</span></a></li>
+                        <li role="presentation"><a href="#expsel" aria-controls="expsel" role="tab" data-toggle="tab"><span id="exportselect">Sélection multiple</span></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="expfic"><br/>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button class="btn btn-primary" type="button" onclick='trjs.io.localSave();'><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fdownload">Local export to TEI (.tei_corpo.xml)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"><span id="exportmenufile">Export to... </span></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText(true);"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Text - Format droite (.txt)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText(false);"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Text - Format gauche (.txt)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportRtf();"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to RTF (.rtf)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+								</div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportDocx('table');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Docx table (.docx)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportDocx('tab');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Docx tabulation (.docx)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary"  onclick="trjs.io.exportCsv();"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportcsv">to Csv (.csv)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary"  onclick="trjs.io.exportXlsx();"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportexcel">to Excel (.xlsx)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <!-- @if VERSION = 'client' || VERSION = 'electron' -->
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('transcriber');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttrs">to Transcriber (.trs)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('clan');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportclan">to Clan (.cha)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('elan');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportelan">to Elan (.eaf)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('praat');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportpraat">to Praat (.textgrid)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><br/><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-default" onclick="trjs.transcription.exportMStoMediaSubt('all');"><i class="fa fa-file-audio-o"></i> <i class="fa fa-file-movie-o"></i> </button>
+                                    &nbsp;<span id="fmulttosubtall">all media with subtitles</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"><span id="exportmediafile">Export to media... </span></div>
+                            </div>
+                            <!-- @endif -->
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-default" onclick="trjs.transcription.exportMStoSubtSrt('all');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fmulttosubttextonlyallsrt">all subtitles without media (.srt file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-default" onclick="trjs.transcription.exportMStoSubtAss('all');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fmulttosubttextonlyallass">all subtitles without media (.ass file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="expsel"><br/>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoTei();">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttotei"> Export selection to TEI (.tei_corpo.xml)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <!-- @if VERSION = 'client' || VERSION = 'electron' -->
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle"  onclick="trjs.transcription.exportMStoMediaSubt();">
+                                    <i class="fa fa-download"></i> <i class="fa fa-file-audio-o"></i> <i class="fa fa-file-movie-o"></i></button>
+                                    <span id="fmulttosubt">Export selection to media with subtitles</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoMedia();">
+                                    <i class="fa fa-download"></i> <i class="fa fa-file-audio-o"></i> <i class="fa fa-file-movie-o"></i></button>
+                                    <span id="fmulttomedia">Export selection to media without subtitles</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <!-- @endif -->
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoSubtSrt();">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttosubttextonlysrt">Export selection to subtitles without media (.srt file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoSubtAss();">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttosubttextonlyass">Export selection to subtitles without media (.ass file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span id="exportclose">Close</span></button>
+            </div>
+        </div>
+    </div>
+</div>

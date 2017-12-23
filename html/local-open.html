@@ -1,0 +1,20 @@
+<div id='opensave-bench-transcript' class='roundshadow hidetjs benchfull'>
+    <div id="opensave-title-transcript" class="modal-header">
+        <button type="button" class="close" onclick='trjs.editor.showOpensaveTranscript();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="opensavespan" class="modal-title">Load and save data</h4>
+    </div><br/>
+    <div class='benchfull'>
+        <p class="hz"><span id='o1'>Load Transcription from local file : </span><input id="upload-input-transcript" type="file" name="file-transcript" onchange="trjs.io.localLoadTranscript();" /> <span id="trsize">size: </span><span id="transcript-file-size">0</span></p>
+        <p class='info-opensave'><span id='o3'>Please click above to select a transcript file on your computer or drag a file in the input field above.</span></p>
+    </div>
+</div>
+<div id='opensave-bench-media' class='roundshadow hidetjs benchfull'>
+    <div id="opensave-title-media" class="modal-header">
+        <button type="button" class="close" onclick='trjs.editor.showOpensaveMedia();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="opensave-span" class="modal-title">Load and save data</h4>
+    </div><br/>
+    <div class='benchfull'>
+        <p class="hz"><span id='o2'>Load Media from local file : </span><input id="upload-media" type="file" name="file-media" onchange="trjs.io.localLoadMedia();" /> size: <span id="media-file-size">0</span></p>
+        <p class='info-opensave'><span id='o3'>Please click above to select a media file on your computer or drag a file in the input field above.</span></p>
+    </div>
+</div>

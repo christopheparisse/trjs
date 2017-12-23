@@ -1,0 +1,52 @@
+	<!-- MODAL FOR OPENING FILES (note: pd clavier  onkeydown="filetree.keyboard(event);" )-->
+	<div class="modal-jqtree modal" id="openfile">
+	   <div class="modal-content">
+	      <div class="modal-header">
+			<div id="aide_fen"><span id='aide_open' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-trs',true);"></i></span></div>
+	        <button type="button" class="close" data-dismiss="modal" data-keyboard="true"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4><span class="modal-title" id="openfilelabel">Open a transcript file</span><span id='selection-folder'></span></h4>
+	      </div>
+	      <div class="modal-body">
+	        <!-- 3 setup a container element -->
+			<div id="containerjqtree" role="main">
+				<div id="tree"></div>
+				<div id="data">
+					<div class="content default" style="text-align:left;"><span id="tree"></span></div>
+				</div>
+			</div>
+
+	      </div>
+	      <div class="modal-footer">
+
+			<div class="input-group" style="float:left" id="qualselect">
+					<p id="qualchoicep1"><span id='pusequality' title="">Method for quality selection: </span><input name="use-quality" id="use-quality" type="checkbox" onchange="trjs.editor.setUseQuality();" /><label for="use-quality">Automatic quality</label></p>
+                    <p id="qualchoicep2"><span id="pquality" title="">Video quality: </span>
+                        <input name="video-quality" id="masterQuality" type="radio" onchange="trjs.param.setMediaQuality('master');" value="5" checked="checked" /><label for="masterQuality">master</label>
+                        <input name="video-quality" id="1080p" type="radio" onchange="trjs.param.setMediaQuality('1080p');" value="0" checked="checked" /><label for="1080p">1080p</label>
+                        <input name="video-quality" id="720p" type="radio" onchange="trjs.param.setMediaQuality('720p');" value="1" checked="checked" /><label for="720p">720p</label>
+                        <input name="video-quality" id="576p" type="radio" onchange="trjs.param.setMediaQuality('576p');" value="2" checked="checked" /><label for="576p">576p</label>
+                        <input name="video-quality" id="480p" type="radio" onchange="trjs.param.setMediaQuality('480p');" value="3" checked="checked" /><label for="480p">480p</label>
+                        <input name="video-quality" id="240p" type="radio" onchange="trjs.param.setMediaQuality('240p');" value="4" checked="checked" /><label for="240p">240p</label>
+                    </p>
+			</div>
+
+			<div class="input-group" style="float:right">
+				<span id="transcriptfiles_namelabel" class="input-group-addon">Name</span>
+				<input type="text" id="transcriptfiles_name" class="form-control" placeholder="Filename" style="width:60%;">
+				<div id="ctrls_names">
+			 		<label class="radio-inline" id="transcriptfiles_label">
+					  <input type="radio" name="inlineRadioOptions" id="transcriptfiles_choice" value="option1" onclick="fsio.chooseFile(undefined, 'transcript');"><span id="transcriptionFiles"> Transcripts</span>
+					</label>
+					<label class="radio-inline" id="mediafiles_label">
+					  <input type="radio" name="inlineRadioOptions" id="mediafiles_choice" value="option2" onclick="fsio.chooseFile(undefined, 'media');"><span id="mediaFiles"> Media</span>
+					</label>
+					<label class="radio-inline" id="allfiles_label" style="margin-right: 20px;">
+					  <input type="radio" name="inlineRadioOptions" id="allfiles_choice" value="option3" onclick="fsio.chooseFile(undefined, 'all');"><span id="allFiles"> All files</span>
+					</label>
+			        <button id="cancelChoice" type="button" class="btn btn-default" data-dismiss="modal" onclick="$('#openfile').hide(); trjs.aideclose();"><span id="annul">Cancel</span></button>
+			        <button id="validateFileChoice" type="button" class="btn btn-primary" data-dismiss="modal" onclick="fsio.endChooseFile(); $('#openfile').hide();">OK</button>
+		        </div>
+			</div>
+		  </div>
+	   </div>
+	</div>

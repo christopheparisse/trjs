@@ -1,3 +1,0 @@
-FC_CONFIG_DIR=C:\transcriberjs\tools
-FONTCONFIG_FILE=C:\transcriberjs\tools\fonts.conf
-FONTCONFIG_PATH=C:\transcriberjs\tools

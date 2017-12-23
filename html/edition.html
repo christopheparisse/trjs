@@ -1,0 +1,24 @@
+<div id='edition'>
+    <div id='transcription-head'>
+    <div id='media-info'>
+        <span id='currenttime'></span>&nbsp;(<span id='starttime'></span>&nbsp;-&nbsp;<span id='stoptime'></span>)
+        <span id='timewindow'>&nbsp;(<span id='startwindow'></span>&nbsp;-&nbsp;<span id='stopwindow'></span>)&nbsp;</span>
+        <!--
+        <span id='timewave'>&nbsp;(<span id='startwave'></span>&nbsp;-&nbsp;<span id='stopwave'></span>)&nbsp;</span>
+        -->
+        <!--<span id='insertreplacemode' onclick="trjs.editor.toggleInsert();">Insert mode</span>-->
+    </div>
+    <table class="transcribertable" id="transcript-head">
+        <thead><th class="num">-</th><th class="info">-</th><th class="code">Loc</th><th class="ts">Ts</th><th class="te">Te</th><th class="vts">Ts</th><th class="vte">Te</th><th class="transcription">Transcription</th></thead>
+        <tr><td id='table-loading'></td></tr>
+    </table>
+</div>
+    <div id='transcription-bench'>
+        <table class="transcribertable" id="transcript" onclick="trjs.events.transcriptGotFocus(event);">
+        </table>
+    </div>
+</div>
+<!-- Indication for background processes -->
+<div id="progress" class='clearfix'></div>
+<!-- Special part for printing purposes -->
+<iframe id="printframe" name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>

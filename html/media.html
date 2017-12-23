@@ -1,0 +1,79 @@
+<div id='media-visual'>
+
+    <div id="media-block">
+        <!-- @if VERSION != 'readonly' -->
+        <div id="palette-file">
+            <i class="iconcur fa fa-folder-open-o fa-lg" onclick="fsio.chooseFile('transcript', 'transcript');" alt="Ctrl O" id="tp1" title=""></i>
+            <i class="iconcur fa fa-file-sound-o fa-lg" onclick="fsio.chooseFile('media', 'media');" alt="Ctrl Alt O" id="tp2" title=""></i>
+            <i class="iconcur fa fa-save fa-lg" onclick="trjs.editor.save();" alt="Ctrl S" id="tp3" title=""></i>
+            <i class="iconcur fa fa-search fa-lg" onclick="trjs.editor.showSearch();" alt="Ctrl F" id="tp4" title=""></i>
+            <i class="iconcur fa fa-mail-reply fa-lg" onclick="trjs.undo.undo()" alt="Ctrl Z" id="tp6" title=""></i>
+            <i class="iconcur fa fa-mail-forward fa-lg" onclick="trjs.undo.redo()" alt="Ctrl Y" id="tp7" title=""></i>
+            <i class="iconcur fa fa-list fa-lg" onclick="trjs.events.insertBlankLineAndRedraw()" alt="Ctrl I" id="tp8" title=""></i>
+            <i class="iconcur fa fa-indent fa-lg" onclick="trjs.events.insertWithTimeAndRedraw()" alt="Ctrl Alt I" id="tp8b" title=""></i>
+            <i class="iconcur fa fa-outdent fa-lg" onclick="trjs.events.setTimeReplaceLocAndRedraw()" alt="Ctrl M" id="tp9" title=""></i>
+            <i class="iconcur fa fa-eraser fa-lg" onclick="trjs.events.deleteLineAndRedraw()" alt="Ctrl D" id="tp10" title=""></i>
+            <i class="iconcur fa fa-compress fa-lg" onclick="trjs.events.joinLine()" alt="Ctrl J" id="tp11" title=""></i>
+            <i class="iconcur fa fa-copy fa-lg" onclick="trjs.events.replicateLineAndRedraw()" alt="Ctrl R" id="tp12" title=""></i>
+            <!--<i class="iconcur fa fa-expand fa-lg" onclick="trjs.events.splitLineAndRedraw()" alt="Ctrl Alt R" id="tp13" title=""></i>-->
+            <i class="iconcur fa fa-angle-double-right fa-lg" onclick="trjs.media.playSlower()" alt="Ctrl B" id="tp14" title=""></i>&nbsp;&nbsp;
+            <i class="iconcur fa fa-forward fa-lg" onclick="trjs.media.playFaster()" alt="Ctrl E" id="tp15" title=""></i>
+            <i class="iconcur fa fa-plus-square fa-lg" onclick="trjs.media.makeBig()" alt="Alt F3" id="tp16" title=""></i>
+            <i class="iconcur fa fa-minus-square fa-lg" onclick="trjs.media.makeSmall()" alt="Alt F2" id="tp17" title=""></i>
+        </div>
+
+        <div id="palette-edit">
+            <i class="iconcur fa fa-th-list fa-lg" onclick="trjs.transcription.setMultipleSelection();" alt="" id="tpp1" title=""></i>
+            <i class="iconcur fa fa-check-square-o fa-lg" onclick="trjs.transcription.selectAllMS();" alt="" id="tpp2" title=""></i>
+            <i class="iconcur fa fa-square-o fa-lg" onclick="trjs.transcription.deselectAllMS();" alt="" id="tpp3" title=""></i>
+            <i class="iconcur fa fa-cut fa-lg" onclick="trjs.transcription.cutMultipleSelection();" alt="" id="tpp4" title=""></i>
+            <i class="iconcur fa fa-copy fa-lg" onclick="trjs.transcription.copyMultipleSelection();" alt="" id="tpp5" title=""></i>
+            <i class="iconcur fa fa-paste fa-lg" onclick="trjs.transcription.pasteMultipleSelection();" alt="" id="tpp6" title=""></i>
+            <i class="iconcur fa fa-download fa-lg" onclick="trjs.transcription.exportMStoTei();" alt="" id="tpp7" title=""></i>
+        </div>
+        <!-- @endif -->
+
+        <div id="media-cell">
+            <i class="imedia fa fa-step-backward fa-2x" onclick="trjs.media.backwardStep();" alt="Backward 4 sec Alt Left" title="Backward jump: Alt left"></i>
+            <div id="media-display">
+                <!--
+                <i class="iconcur fa fa-play-circle fa-2x button-slider" onclick="trjs.events.tab();"></i>
+                -->
+                <div id="nomedia-available" style="{ height:40px; width:100px; background-color:blue; }"></div>
+            </div>
+            <i class="imedia fa fa-step-forward fa-2x" onclick="trjs.media.forwardStep();" alt="Forward 4 sec Alt Right" title="Forward jump: Alt right"></i>
+        </div>
+
+    </div>
+
+    <!-- @if VERSION = 'client' || VERSION = 'electron' -->
+    <div id='wave' onmousedown="trjs.wave.mouse.downWave(event);" onmousemove="trjs.wave.mouse.moveWave(event);" onmouseup="trjs.wave.mouse.upWave(event);">
+    </div>
+    <!-- @endif -->
+
+    <div id='partition' onmousedown="trjs.partition.mouseDownPartition(event);">
+    </div>
+    <div id='slider-partition' class='slider'title='Jump to transcription locations'>
+        <div id='canvas-partition' class='canvas-slider'></div>
+    </div>
+    <div id='buttons-middle'>
+        <i id='button-page-left' title="" class="iconcur fa fa-hand-o-left fa-2x" onclick="trjs.partition.pageleft();"></i>
+        <span id='aide_quest' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('transcribe',true);"></i></span>
+        <span id="t1" title=""><i class="iconcur fa fa-play-circle fa-2x" onclick="trjs.media.playFromWave();" alt="Play/Pause TAB"></i></span>
+        <!-- @if VERSION != 'readonly' -->
+        <span id="t1bis" title=""><i class="iconcur fa fa-level-up fa-2x" onclick="trjs.events.enter();" alt="Mark time and go next line"></i></span>
+        <span id="t4" title=""><i class="iconcur fa fa-edit fa-2x" onclick="trjs.events.insertBlankLineAndRedraw();" alt="Insert blank line F6"></i></span>
+        <span id="t2" title=""><i class="iconcur fa fa-arrow-up fa-2x" onclick="trjs.events.setStart();" alt="Set time start F4"></i></span>
+        <span id="t3" title=""><i class="iconcur fa fa-arrow-down fa-2x" onclick="trjs.events.setEnd();" alt="Set time end F5"></i></span>
+        <!-- @endif -->
+        <span id="t5" title=""><i class="iconcur fa fa-refresh fa-2x" onclick="trjs.events.runCurrentLine();" alt="Play current line F7"></i></span>
+        <span id="t6" title=""><i class="iconcur fa fa-repeat fa-2x" onclick="trjs.events.goContinuous();" alt="Play continuous F8"></i></span>
+        &nbsp;&nbsp;
+        <span id='iconzoomout' title=""><i class="iconcur fa fa-search-minus fa-lg" onclick="trjs.dmz.zoomOut();"></i></span>
+        <span id='zoomvalue'></span>
+        <span id='iconzoomin' title=""><i class="iconcur fa fa-search-plus fa-lg" onclick="trjs.dmz.zoomIn();"></i></span>
+        <span id='aide_quest' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('boutons-media',true);"></i></span>
+        <span id='aide_quest_compl' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('transcription-compl',true);"></i></span>
+        <i id='button-page-right' title="" class="iconcur fa fa-hand-o-right fa-2x" onclick="trjs.partition.pageright();"></i>
+    </div>
+</div>

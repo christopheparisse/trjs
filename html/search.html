@@ -1,0 +1,193 @@
+    <div id="search-bench" class="roundshadow hidetjs benchfull">
+        <div id="search-title" class="modal-header">
+            <div id="aide_fen"><span id='aide_search' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-search',true);"></i></span></div>
+            <button type="button" class="close" onclick='trjs.editor.showSearch();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="search-span" class="modal-title">Search current file</h4>
+        </div>
+        <div class='benchfull' >
+        <br/><div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" id="myTab2">
+                <li role="presentation" class="active"><a href="#pssearch" aria-controls="ssearch" role="tab" data-toggle="tab"><span id="sssearch"> Recherche</span></a></li>
+                <li role="presentation"><a href="#pssearchrepl" aria-controls="ssearchrepl" role="tab" data-toggle="tab"><span id="ssearchrepl"> Remplace</span></a></li>
+                <li role="presentation"><a href="#psdisplay" aria-controls="sdisplay" role="tab" data-toggle="tab"><span id="sdisplay"> Affichage</span></a></li>
+                <li role="presentation"><a href="#psgoto" aria-controls="sgoto" role="tab" data-toggle="tab"><span id="sgoto"> Aller à</span></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="pssearch"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="ssearch">Search word or string: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="search-elts" type="search" name="search-elts" onchange="trjs.editor.goSearch();" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.goSearch();'><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.prevSearch();'><i class='fa fa-arrow-left' ></i></button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextSearch();'><i class='fa fa-arrow-right' ></i></button>
+                            &nbsp;&nbsp;<span id="search-posx" class="bgreen">0</span>/<span id="search-nbx">0</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="sfields">Dans le champs: </span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="search-flag-loc" id="search-flag-loc" value=2 />
+                            <label for="search-flag-loc"><span id="sloc">Locutors</span></label>
+                            &nbsp;&nbsp;<input type="checkbox" name="search-flag-tr" id="search-flag-tr" value=1 />
+                            <label for="search-flag-tr">Transcription</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="search-casenocase" id="search-casenocase" value=3 />
+                            <label for="search-casenocase"><span id="signore">Ignorer minuscules/majuscules</span></label>
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="modal-footer">
+                        &nbsp;<span id="sresu" class="green">Founded results: </span>
+                        &nbsp; &nbsp;<span id="search-nb-results" class="bgreen">0</span>&nbsp;
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="pssearchrepl"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="ssearchrep">Search word or string: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="search-elts" type="search" name="search-elts" onchange="" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick=''><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class="col-md-4">
+                            &nbsp;<button class="btn btn-success" type="button"  onclick=''><i class='fa fa-arrow-left'></i></button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick=''><i class='fa fa-arrow-right' onclick=''></i></button>
+                            &nbsp;&nbsp;<span id="search-posx" class="bgreen">0</span>/<span id="search-nbx">0</span>
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="sreplfields">Dans le champs: </span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="searchrep-flag-loc" id="searchrep-flag-loc" value=2 />
+                            <label for="searchrep-flag-loc"><span id="sreplloc">Locutors</span></label>
+                            &nbsp;&nbsp;<input type="checkbox" name="searchrep-flag-tr" id="searchrep-flag-tr" value=1 />
+                            <label for="searchrep-flag-tr"><span id="srepltrs">Transcription</span></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="searchrep-casenocase" id="searcreph-casenocase" value=3 />
+                            <label for="searchrep-casenocase"><span id="sreplignore">Ignorer minuscules/majuscules</span></label>
+                        </div>
+                    </div><!-- /.row --><br/><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="sreplrep">Replace by word or string: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="search-elts" type="search" name="search-elts" onchange="" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick=''><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="modal-footer">
+                        &nbsp;<span id="sreplresu" class="green">Founded results: </span>
+                        &nbsp; &nbsp;<span id="search-nb-results" class="bgreen">0</span>&nbsp;
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="psdisplay"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="sshow" >Show locutors or tiers: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="show-elts" type="text" name="show-elts"/>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.showElements();'><i class="fa fa-check" ></i></button>
+                                    <button type="button" class="btn btn-default dropdown-toggle" onclick='trjs.editor.resetElements();'><i class="fa fa-refresh"></i></button>
+                                </div>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="sshowfields">Dans le champs:</span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="show-flag-loc" id="show-flag-loc" value=2 />
+                            <label for="show-flag-loc"><span id="sshowloc">Locutors</span></label>
+                            &nbsp;<input type="checkbox" name="show-flag-tr" id="show-flag-tr" value=1 />
+                            <label for="show-flag-tr"><span id="sshowtrs">Transcription</span></label>
+                        </div>
+                    </div><!-- /.row --><br/><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="shide">Hide locutors or tiers: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="hide-elts" type="text" name="hide-elts"/>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.hideElements();'><i class="fa fa-check" ></i></button>
+                                    <button type="button" class="btn btn-default dropdown-toggle" onclick='trjs.editor.resetElements();'><i class="fa fa-refresh"></i></button>
+                                </div>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="shidefields">Dans le champs:</span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="hide-flag-loc" id="hide-flag-loc" value=2 />
+                            <label for="hide-flag-loc"><span id="shideloc">Locutors</span></label>
+                            &nbsp;<input type="checkbox" name="hide-flag-tr" id="hide-flag-tr" value=1 />
+                            <label for="hide-flag-tr"><span id="shidetrs">Transcription</span></label>
+                        </div>
+                    </div><!-- /.row -->
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="psgoto"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            <span id="sgotoline" title="">Go to line: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." onchange="trjs.editor.userGoLine();" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.userGoLine();'><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            <span id="sgototime" title="">Go to time: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." onchange="trjs.editor.userGoTime();" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.userGoTime();'><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TRJS - Editeur</title>
+    <script>
+        global.applicationTarget = { type: 'electron', server:'electron', location: 'renderer', html: 'index.html' };
+    </script>
+    <include src="include-js.html"></include>
+    <include src="include-editor.html"></include>
+    <include src="include-styles.html"></include>
+    <script>
+        //open links externally by default
+        $(document).on('click', 'a[href^="http"]', function(event) {
+            event.preventDefault();
+            fsio.openExternal(this.href);
+        });
+    </script>
+</head>
+<body onkeydown="trjs.events.eventKeydown(event);"
+      onkeypress="trjs.events.eventKeypress(event);">
+<include src="annex.html"></include>
+<include src="local-open.html"></include>
+<include src="search.html"></include>
+<include src="check.html"></include>
+<include src="modal-parameters.html"></include>
+<include src="insert-macro.html"></include>
+<include src="modal-exports.html"></include>
+<include src="modal-keyboard-info.html"></include>
+<include src="meta-part-templ.html"></include>
+<include src="media.html"></include>
+<include src="edition.html"></include>
+</body>
+
+<script>
+    trjs.init('electron');
+</script>
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js');
+</script>
+</html>

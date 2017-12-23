@@ -1,0 +1,168 @@
+	<!-- MODAL FOR PARAMETERS -->
+	<div class="modal" id="openparam">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div id="aide_fen"><span id='aide_param' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-param',true);"></i></span></div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title"><span id="pparam"> Parameters</span></h4>
+				</div>
+				<div class="modal-body">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#plang" aria-controls="plang" role="tab" data-toggle="tab"><span id="pplang"> Language</span></a></li>
+							<li role="presentation"><a href="#paffich" aria-controls="paffich" role="tab" data-toggle="tab"><i class="fa fa-desktop"></i><span id="ppdisplay"> Display</span></a></li>
+							<li role="presentation"><a href="#pmodes" aria-controls="pmodes" role="tab" data-toggle="tab"><span id="ppem"> Edition modes</span></a></li>
+							<li role="presentation"><a href="#pregl" aria-controls="pregl" role="tab" data-toggle="tab"><i class="fa fa-cog"></i><span id="ppsettings"> Settings</span></a></li>
+							<li role="presentation"><a href="#pverif" aria-controls="pverif" role="tab" data-toggle="tab"><i class="fa fa-legal"></i><span id="ppchecking"> Checking</span></a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="plang"><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-version" id="english-version" type="radio" onchange="trjs.editor.setLanguage();" value="0" checked="checked" /> <label for="english-version">English version</label> <img height="12px" src="style/gb.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-version" id="french-version" type="radio" onchange="trjs.editor.setLanguage();" value="1" /> <label for="french-version">Version française</label> <img height="12px" src="style/fr.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="english-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="0" checked="checked" /> <label for="english-version">English spellchecker</label> <img height="12px" src="style/gb.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="french-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="1" /> <label for="french-version">Correcteur d'orthographe français</label> <img height="12px" src="style/fr.png"></img></div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="paffich"><br/>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-partition" id="show-partition" type="checkbox" onchange="trjs.editor.setPartition();" /><label for="show-partition">&nbsp;<span id='ppartition'>Display partition</span></label></div>
+									<div class="col-md-3 col-md-pull-9">Partition</div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-wave" id="show-wave" type="checkbox" onchange="trjs.editor.setWave();" /><label for="show-wave">&nbsp;<span id='pwave'>Display wave intensity</span></label></div>
+									<div class="col-md-3 col-md-pull-9"><span id="wavei">Wave intensity</span></div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-num" id="show-num" type="checkbox" onchange="trjs.editor.setNums();" /><label for="show-num">&nbsp;<span id='pshownumbers'>Show line numbers</span></label></div>
+									<div class="col-md-3 col-md-pull-9">Transcription</div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-names" id="show-names" type="checkbox" onchange="trjs.editor.setLocNames();" /><label for="show-names">&nbsp;<span id='pshownames'>Show names or codes</span></label></div>
+									<div class="col-md-3 col-md-pull-9"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="mode-showlinktime" id="mode-showlinktime" type="checkbox" onchange="trjs.editor.setShowLinkTime();" /><label for="mode-showlinktime">&nbsp;<span id='pshowlinktime'>Show link time</span></label></div>
+									<div class="col-md-3 col-md-pull-9"></div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="pmodes"><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><span id="pmode">Mode : </span></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="synchro-version" id="control-version" type="radio" onchange="trjs.data.synchro.control(true);" value="0" checked="checked" /><label for="control-version" >&nbsp;<span id="controlm" title="">Control mode</span></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="synchro-version" id="block-version" type="radio" onchange="trjs.data.synchro.block(true);" value="1" /><label for="block-version" >&nbsp;<span id="lockm" title="">Lock mode</span></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="synchro-version" id="free-version" type="radio" onchange="trjs.data.synchro.free(true);" value="2" /><label for="free-version" >&nbsp;<span id="freem" title="">Free mode</span></label>
+									</div>
+								</div><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="reorder-dynamic" id="reorder-dynamic" type="checkbox" onchange="trjs.editor.setReorder();" /><label for="reorder-dynamic">&nbsp;<span id='preorder'>Reorder lines dynamically </span></label>
+									</div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="pregl"><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><p><span id='pfmtlinktime'>Format of linked time: </span>
+										<select class="format-parameters" id="format-time" onchange="trjs.editor.setFormatTime();">
+											<option value="hms">0h00m00s</option>
+											<option value="00:00">00:00</option>
+											<option value="?:00:00">?:00:00</option>
+											<option value="0:00:00">0:00:00</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pdigitlinktime'>Number of digits displayed for milliseconds: </span>
+										<select class="nb-digits" id="nb-digits" onchange="trjs.editor.setNbDigits();">
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pbackstep'> Value for backward step (F2) : </span> <input name="backward-step" id="backward-step" onchange="trjs.editor.setBackwardStep();" /> ms</p></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pforwstep'> Value for forward step (F3) : </span> <input name="forward-step" id="forward-step" onchange="trjs.editor.setForwardStep();" /> ms</p></div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="pverif"><br/>
+								<div class="row">
+									<div class="col-md-6"><p><input name="check-at-save" id="check-at-save" type="checkbox" onchange="trjs.editor.setCheckAtSave();" /><label for="check-at-save">&nbsp;<span id='pcheckatsave'>Check transcription when saving </span></label></p></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pchecktype'>Type of transcription check</span>
+									</p>
+									<select class="check-type" id="check-type" onchange="trjs.editor.setCheckType();">
+										<option value="CHAT">CHAT</option>
+<!--										<option value="Valibel">Valibel</option>-->
+										<option value="None">None</option>
+									</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pnbsaves'>Number of save versions: </span>
+									<select class="nb-saves" id="nb-saves" onchange="trjs.editor.setNbSaves();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pnbvisible'>Number of visible lines in partition: </span>
+									<select class="nb-visible" id="nb-visible" onchange="trjs.editor.setNbVisible();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='nb-recent-files'>Number of recent files</span>
+										<select class="nb-recent-files" id="nb-recent-files" onchange="trjs.editor.setNbRecentFiles();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+										</select></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" >OK</button>
+				</div>
+			</div>
+		</div>
+	</div>

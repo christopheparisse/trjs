@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TRJS - Editeur</title>
+    <script>
+        global.applicationTarget = { type: 'electron', server:'electron', location: 'renderer', html: 'index.html' };
+    </script>
+    <!--
+    	include-js.html
+    	set of thrid party javascript include files or external library files (tei...js)
+    -->
+
+
+    <script type="text/javascript" language="javascript">
+        window.$ = window.jQuery = require('./js/jquery.js');
+    </script>
+
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-submenu.js"></script>
+    <script src="js/bootbox.js"></script>
+    <script src="js/jquery.csv-0.71.js"></script>
+    <script src="js/filesaver.js"></script>
+    <script src="js/parseuri.js"></script>
+    <script src="js/sprintf.js"></script>
+    <script src="js/html-docx.js"></script>
+    <script src="js/jszip.js"></script>
+    <script src="js/xlsx_array.js"></script>
+    <script src="js/teiconverttools.js"></script>
+    <script src="js/teidocx.js"></script>
+    <script src="js/teiexportxlsx.js"></script>
+    <script src="js/rangy-core.js"></script>
+
+
+    <script src="systemcall/fsio.js"></script>
+
+    <!--
+    	include-editor.html
+    	set of transcriberjs javascript include files
+    -->
+
+    <script src="editor/messgs.js"></script>
+    <script src="editor/version.js"></script>
+    <script src="editor/codefn.js"></script>
+
+    <script src="editor/data.js"></script>
+    <script src="editor/params.js"></script>
+    <script src="editor/editor.js"></script>
+    <script src="editor/utils.js"></script>
+    <script src="editor/media.js"></script>
+    <script src="editor/opensave.js"></script>
+    <script src="editor/local.js"></script>
+    <script src="editor/templates.js"></script>
+    <script src="editor/dataload.js"></script>
+    <script src="editor/transcription.js"></script>
+    <script src="editor/events.js"></script>
+    <script src="editor/macros.js"></script>
+    <script src="editor/tablekeyboard.js"></script>
+    <script src="editor/drawmovezoom.js"></script>
+    <script src="editor/sliders.js"></script>
+    <script src="editor/partition.js"></script>
+    <script src="editor/progress.js"></script>
+    <script src="editor/logs.js"></script>
+    <script src="editor/aidecontextuelle.js"></script>
+    <script src="editor/undo.js"></script>
+    <script src="editor/check.js"></script>
+    <script src="editor/init.js"></script>
+
+    <script src="editor/wave.js"></script>
+    <script src="editor/decim.js"></script>
+    <script src="editor/drag.js"></script>
+
+
+    <script src="editor/electronkeyboard.js"></script>
+
+    <!--
+    	include-styles.html
+    	set of css include files
+    -->
+
+    <link rel="stylesheet" type="text/css" href="style/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style/utils.css" />
+    <link rel="stylesheet" type="text/css" href="style/bootstrap-submenu.css" />
+    <link rel="stylesheet" type="text/css" href="style/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="style/global.css" />
+
+
+    <script>
+        //open links externally by default
+        $(document).on('click', 'a[href^="http"]', function(event) {
+            event.preventDefault();
+            fsio.openExternal(this.href);
+        });
+    </script>
+</head>
+<body onkeydown="trjs.events.eventKeydown(event);"
+      onkeypress="trjs.events.eventKeypress(event);">
+	<div id="aidecontext" >
+		<button type="button" class="close" aria-label="Close" onclick="trjs.aideclose();"><span aria-hidden="true">&times;</span></button>
+		<div id="aideid"></div>
+	</div>
+	<div id='trjs-msg' title='Messages' class='messages'></div>
+	<div id='bb-info' class="bb-alert alert alert-info">
+		<span>to be filled</span>
+	</div>
+
+<div id='opensave-bench-transcript' class='roundshadow hidetjs benchfull'>
+    <div id="opensave-title-transcript" class="modal-header">
+        <button type="button" class="close" onclick='trjs.editor.showOpensaveTranscript();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="opensavespan" class="modal-title">Load and save data</h4>
+    </div><br/>
+    <div class='benchfull'>
+        <p class="hz"><span id='o1'>Load Transcription from local file : </span><input id="upload-input-transcript" type="file" name="file-transcript" onchange="trjs.io.localLoadTranscript();" /> <span id="trsize">size: </span><span id="transcript-file-size">0</span></p>
+        <p class='info-opensave'><span id='o3'>Please click above to select a transcript file on your computer or drag a file in the input field above.</span></p>
+    </div>
+</div>
+<div id='opensave-bench-media' class='roundshadow hidetjs benchfull'>
+    <div id="opensave-title-media" class="modal-header">
+        <button type="button" class="close" onclick='trjs.editor.showOpensaveMedia();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="opensave-span" class="modal-title">Load and save data</h4>
+    </div><br/>
+    <div class='benchfull'>
+        <p class="hz"><span id='o2'>Load Media from local file : </span><input id="upload-media" type="file" name="file-media" onchange="trjs.io.localLoadMedia();" /> size: <span id="media-file-size">0</span></p>
+        <p class='info-opensave'><span id='o3'>Please click above to select a media file on your computer or drag a file in the input field above.</span></p>
+    </div>
+</div>
+
+    <div id="search-bench" class="roundshadow hidetjs benchfull">
+        <div id="search-title" class="modal-header">
+            <div id="aide_fen"><span id='aide_search' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-search',true);"></i></span></div>
+            <button type="button" class="close" onclick='trjs.editor.showSearch();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 id="search-span" class="modal-title">Search current file</h4>
+        </div>
+        <div class='benchfull' >
+        <br/><div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" id="myTab2">
+                <li role="presentation" class="active"><a href="#pssearch" aria-controls="ssearch" role="tab" data-toggle="tab"><span id="sssearch"> Recherche</span></a></li>
+                <li role="presentation"><a href="#pssearchrepl" aria-controls="ssearchrepl" role="tab" data-toggle="tab"><span id="ssearchrepl"> Remplace</span></a></li>
+                <li role="presentation"><a href="#psdisplay" aria-controls="sdisplay" role="tab" data-toggle="tab"><span id="sdisplay"> Affichage</span></a></li>
+                <li role="presentation"><a href="#psgoto" aria-controls="sgoto" role="tab" data-toggle="tab"><span id="sgoto"> Aller à</span></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="pssearch"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="ssearch">Search word or string: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="search-elts" type="search" name="search-elts" onchange="trjs.editor.goSearch();" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.goSearch();'><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.prevSearch();'><i class='fa fa-arrow-left' ></i></button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextSearch();'><i class='fa fa-arrow-right' ></i></button>
+                            &nbsp;&nbsp;<span id="search-posx" class="bgreen">0</span>/<span id="search-nbx">0</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="sfields">Dans le champs: </span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="search-flag-loc" id="search-flag-loc" value=2 />
+                            <label for="search-flag-loc"><span id="sloc">Locutors</span></label>
+                            &nbsp;&nbsp;<input type="checkbox" name="search-flag-tr" id="search-flag-tr" value=1 />
+                            <label for="search-flag-tr">Transcription</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="search-casenocase" id="search-casenocase" value=3 />
+                            <label for="search-casenocase"><span id="signore">Ignorer minuscules/majuscules</span></label>
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="modal-footer">
+                        &nbsp;<span id="sresu" class="green">Founded results: </span>
+                        &nbsp; &nbsp;<span id="search-nb-results" class="bgreen">0</span>&nbsp;
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="pssearchrepl"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="ssearchrep">Search word or string: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="search-elts" type="search" name="search-elts" onchange="" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick=''><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class="col-md-4">
+                            &nbsp;<button class="btn btn-success" type="button"  onclick=''><i class='fa fa-arrow-left'></i></button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick=''><i class='fa fa-arrow-right' onclick=''></i></button>
+                            &nbsp;&nbsp;<span id="search-posx" class="bgreen">0</span>/<span id="search-nbx">0</span>
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="sreplfields">Dans le champs: </span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="searchrep-flag-loc" id="searchrep-flag-loc" value=2 />
+                            <label for="searchrep-flag-loc"><span id="sreplloc">Locutors</span></label>
+                            &nbsp;&nbsp;<input type="checkbox" name="searchrep-flag-tr" id="searchrep-flag-tr" value=1 />
+                            <label for="searchrep-flag-tr"><span id="srepltrs">Transcription</span></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="searchrep-casenocase" id="searcreph-casenocase" value=3 />
+                            <label for="searchrep-casenocase"><span id="sreplignore">Ignorer minuscules/majuscules</span></label>
+                        </div>
+                    </div><!-- /.row --><br/><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="sreplrep">Replace by word or string: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="search-elts" type="search" name="search-elts" onchange="" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick=''><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="modal-footer">
+                        &nbsp;<span id="sreplresu" class="green">Founded results: </span>
+                        &nbsp; &nbsp;<span id="search-nb-results" class="bgreen">0</span>&nbsp;
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="psdisplay"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="sshow" >Show locutors or tiers: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="show-elts" type="text" name="show-elts"/>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.showElements();'><i class="fa fa-check" ></i></button>
+                                    <button type="button" class="btn btn-default dropdown-toggle" onclick='trjs.editor.resetElements();'><i class="fa fa-refresh"></i></button>
+                                </div>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="sshowfields">Dans le champs:</span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="show-flag-loc" id="show-flag-loc" value=2 />
+                            <label for="show-flag-loc"><span id="sshowloc">Locutors</span></label>
+                            &nbsp;<input type="checkbox" name="show-flag-tr" id="show-flag-tr" value=1 />
+                            <label for="show-flag-tr"><span id="sshowtrs">Transcription</span></label>
+                        </div>
+                    </div><!-- /.row --><br/><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            &nbsp;<span id="shide">Hide locutors or tiers: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." id="hide-elts" type="text" name="hide-elts"/>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.hideElements();'><i class="fa fa-check" ></i></button>
+                                    <button type="button" class="btn btn-default dropdown-toggle" onclick='trjs.editor.resetElements();'><i class="fa fa-refresh"></i></button>
+                                </div>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="shidefields">Dans le champs:</span></div>
+                        <div class="col-md-4">
+                            &nbsp;<input type="checkbox" name="hide-flag-loc" id="hide-flag-loc" value=2 />
+                            <label for="hide-flag-loc"><span id="shideloc">Locutors</span></label>
+                            &nbsp;<input type="checkbox" name="hide-flag-tr" id="hide-flag-tr" value=1 />
+                            <label for="hide-flag-tr"><span id="shidetrs">Transcription</span></label>
+                        </div>
+                    </div><!-- /.row -->
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="psgoto"><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            <span id="sgotoline" title="">Go to line: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." onchange="trjs.editor.userGoLine();" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.userGoLine();'><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><br/>
+                    <div class="row">
+                        <div class="col-md-4" id="r">
+                            <span id="sgototime" title="">Go to time: </span>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="..." onchange="trjs.editor.userGoTime();" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.userGoTime();'><i class="fa fa-check" ></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+    </div>
+</div>
+
+<div id="check-bench" class="roundshadow hidetjs benchfull">
+    <div id="search-title" class="modal-header">
+        <button type="button" class="close" onclick='trjs.editor.showCheck();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="check-span" class="modal-title">Check current file</h4>
+    </div><br/>
+    <div class='benchfull'>
+    <p><button type="button" class="btn btn-success">
+            &nbsp;<span id='icheck'>Check file </span><i class='iconcur fa fa-repeat' onclick='trjs.check.checkFinal();'></i>
+        </button>
+        &nbsp;&nbsp;&nbsp; <span id="checkfe">Founded errors:</span> <span id="check-nb-results" class="bred">0</span>
+        &nbsp;<i class='iconcur fa fa-arrow-left' onclick='trjs.check.prevCheck();'></i>
+        &nbsp;<i class='iconcur fa fa-arrow-right' onclick='trjs.check.nextCheck();'></i>
+        &nbsp;<span id="check-posx" class="bred">0</span>/<span id="check-nbx">0</span>
+        &nbsp;<span id="check-valx" class="bred"></span>
+    </p>
+    </div>
+</div>
+
+	<!-- MODAL FOR PARAMETERS -->
+	<div class="modal" id="openparam">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div id="aide_fen"><span id='aide_param' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-param',true);"></i></span></div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title"><span id="pparam"> Parameters</span></h4>
+				</div>
+				<div class="modal-body">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#plang" aria-controls="plang" role="tab" data-toggle="tab"><span id="pplang"> Language</span></a></li>
+							<li role="presentation"><a href="#paffich" aria-controls="paffich" role="tab" data-toggle="tab"><i class="fa fa-desktop"></i><span id="ppdisplay"> Display</span></a></li>
+							<li role="presentation"><a href="#pmodes" aria-controls="pmodes" role="tab" data-toggle="tab"><span id="ppem"> Edition modes</span></a></li>
+							<li role="presentation"><a href="#pregl" aria-controls="pregl" role="tab" data-toggle="tab"><i class="fa fa-cog"></i><span id="ppsettings"> Settings</span></a></li>
+							<li role="presentation"><a href="#pverif" aria-controls="pverif" role="tab" data-toggle="tab"><i class="fa fa-legal"></i><span id="ppchecking"> Checking</span></a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="plang"><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-version" id="english-version" type="radio" onchange="trjs.editor.setLanguage();" value="0" checked="checked" /> <label for="english-version">English version</label> <img height="12px" src="style/gb.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-version" id="french-version" type="radio" onchange="trjs.editor.setLanguage();" value="1" /> <label for="french-version">Version française</label> <img height="12px" src="style/fr.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="english-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="0" checked="checked" /> <label for="english-version">English spellchecker</label> <img height="12px" src="style/gb.png"></img></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><input name="language-spelling" id="french-spelling" type="radio" onchange="trjs.editor.setLanguageSpelling();" value="1" /> <label for="french-version">Correcteur d'orthographe français</label> <img height="12px" src="style/fr.png"></img></div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="paffich"><br/>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-partition" id="show-partition" type="checkbox" onchange="trjs.editor.setPartition();" /><label for="show-partition">&nbsp;<span id='ppartition'>Display partition</span></label></div>
+									<div class="col-md-3 col-md-pull-9">Partition</div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-wave" id="show-wave" type="checkbox" onchange="trjs.editor.setWave();" /><label for="show-wave">&nbsp;<span id='pwave'>Display wave intensity</span></label></div>
+									<div class="col-md-3 col-md-pull-9"><span id="wavei">Wave intensity</span></div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-num" id="show-num" type="checkbox" onchange="trjs.editor.setNums();" /><label for="show-num">&nbsp;<span id='pshownumbers'>Show line numbers</span></label></div>
+									<div class="col-md-3 col-md-pull-9">Transcription</div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="show-names" id="show-names" type="checkbox" onchange="trjs.editor.setLocNames();" /><label for="show-names">&nbsp;<span id='pshownames'>Show names or codes</span></label></div>
+									<div class="col-md-3 col-md-pull-9"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-9 col-md-push-3"><input name="mode-showlinktime" id="mode-showlinktime" type="checkbox" onchange="trjs.editor.setShowLinkTime();" /><label for="mode-showlinktime">&nbsp;<span id='pshowlinktime'>Show link time</span></label></div>
+									<div class="col-md-3 col-md-pull-9"></div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="pmodes"><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><span id="pmode">Mode : </span></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="synchro-version" id="control-version" type="radio" onchange="trjs.data.synchro.control(true);" value="0" checked="checked" /><label for="control-version" >&nbsp;<span id="controlm" title="">Control mode</span></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="synchro-version" id="block-version" type="radio" onchange="trjs.data.synchro.block(true);" value="1" /><label for="block-version" >&nbsp;<span id="lockm" title="">Lock mode</span></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="synchro-version" id="free-version" type="radio" onchange="trjs.data.synchro.free(true);" value="2" /><label for="free-version" >&nbsp;<span id="freem" title="">Free mode</span></label>
+									</div>
+								</div><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<input name="reorder-dynamic" id="reorder-dynamic" type="checkbox" onchange="trjs.editor.setReorder();" /><label for="reorder-dynamic">&nbsp;<span id='preorder'>Reorder lines dynamically </span></label>
+									</div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="pregl"><br/>
+								<div class="row">
+									<div class="col-xs-6 col-md-4"><p><span id='pfmtlinktime'>Format of linked time: </span>
+										<select class="format-parameters" id="format-time" onchange="trjs.editor.setFormatTime();">
+											<option value="hms">0h00m00s</option>
+											<option value="00:00">00:00</option>
+											<option value="?:00:00">?:00:00</option>
+											<option value="0:00:00">0:00:00</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pdigitlinktime'>Number of digits displayed for milliseconds: </span>
+										<select class="nb-digits" id="nb-digits" onchange="trjs.editor.setNbDigits();">
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pbackstep'> Value for backward step (F2) : </span> <input name="backward-step" id="backward-step" onchange="trjs.editor.setBackwardStep();" /> ms</p></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pforwstep'> Value for forward step (F3) : </span> <input name="forward-step" id="forward-step" onchange="trjs.editor.setForwardStep();" /> ms</p></div>
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="pverif"><br/>
+								<div class="row">
+									<div class="col-md-6"><p><input name="check-at-save" id="check-at-save" type="checkbox" onchange="trjs.editor.setCheckAtSave();" /><label for="check-at-save">&nbsp;<span id='pcheckatsave'>Check transcription when saving </span></label></p></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pchecktype'>Type of transcription check</span>
+									</p>
+									<select class="check-type" id="check-type" onchange="trjs.editor.setCheckType();">
+										<option value="CHAT">CHAT</option>
+<!--										<option value="Valibel">Valibel</option>-->
+										<option value="None">None</option>
+									</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pnbsaves'>Number of save versions: </span>
+									<select class="nb-saves" id="nb-saves" onchange="trjs.editor.setNbSaves();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pnbvisible'>Number of visible lines in partition: </span>
+									<select class="nb-visible" id="nb-visible" onchange="trjs.editor.setNbVisible();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+										</select></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='nb-recent-files'>Number of recent files</span>
+										<select class="nb-recent-files" id="nb-recent-files" onchange="trjs.editor.setNbRecentFiles();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+										</select></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" >OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- MODAL FOR PARAMETERS -->
+<div class="modal" id="insertmacro">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="aide_fen2">
+                    <span id='aide_macro' title="">
+                    <i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-macro',true);"></i>
+                    </span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span id="pparam"> Macros (events & shortcuts)</span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content">
+                    <div class="col-md-6">
+                        <p><span id='pkeyshortcut'>Shortcut: </span>
+                            <select class="ckeyshortcut" id="keyshortcut" onchange='trjs.macros.choice();'>
+                                <option value="0">Ctrl F2</option>
+                                <option value="1">Ctrl F3</option>
+                                <option value="2">Ctrl F4</option>
+                                <option value="3">Ctrl F5</option>
+                                <option value="4">Ctrl F6</option>
+                                <option value="5">Ctrl F7</option>
+                                <option value="6">Ctrl F8</option>
+                                <option value="7">Ctrl F9</option>
+                                <option value="8">Ctrl F10</option>
+                                <option value="9">Ctrl F11</option>
+                                <option value="10">Ctrl F12</option>
+                            </select></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><span id='ptypeevent'>Type: </span>
+                            <select class="ctypevent" id="event-type">
+                                <option value="noise">noise</option>
+                                <option value="event">event</option>
+                                <option value="language">language</option>
+                                <option value="comment">comment</option>
+                                <option value="vocal">vocal</option>
+                                <option value="shortpause">short pause</option>
+                                <option value="middlepause">middle pause</option>
+                                <option value="longpause">long pause</option>
+                                <option value="verylongpause">very long pause</option>
+                                <option value="lexical">lexical</option>
+                                <option value="entities">entities</option>
+                                <option value="value">value</option>
+                            </select></p>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <span id="pinfomacrost">Subtype: </span>
+                            <input type="info" placeholder="..." id="event-subtype" type="info" name="event-subtype"
+                                   onchange=""/>
+                        </div><!-- /input-group -->
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <span id="pinfomacroval">Value: </span>
+                            <input type="info" placeholder="..." id="event-content" type="info" name="event-content"
+                                   onchange=""/>
+                        </div><!-- /input-group -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            Save shortcut
+                            <button class="btn btn-default" type="button" onclick='trjs.macros.save();'><i
+                                    class="fa fa-check"></i></button>
+                            Insert
+                            <button class="btn btn-default" type="button" onclick='trjs.macros.insert();'><i
+                                    class="fa fa-beer"></i></button>
+                        </div><!-- /input-group -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL FOR EXPORTS -->
+<div class="modal" id="openexports">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><span id="exporttit">Export et téléchargement</span></h4>
+            </div>
+            <div class="modal-body">
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#expfic" aria-controls="expfic" role="tab" data-toggle="tab"><i class="fa fa-file-o"></i> <span id="exportfile">Fichier</span></a></li>
+                        <li role="presentation"><a href="#expsel" aria-controls="expsel" role="tab" data-toggle="tab"><span id="exportselect">Sélection multiple</span></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="expfic"><br/>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button class="btn btn-primary" type="button" onclick='trjs.io.localSave();'><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fdownload">Local export to TEI (.tei_corpo.xml)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"><span id="exportmenufile">Export to... </span></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText(true);"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Text - Format droite (.txt)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText(false);"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Text - Format gauche (.txt)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportRtf();"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to RTF (.rtf)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+								</div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportDocx('table');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Docx table (.docx)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportDocx('tab');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttext">to Docx tabulation (.docx)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary"  onclick="trjs.io.exportCsv();"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportcsv">to Csv (.csv)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary"  onclick="trjs.io.exportXlsx();"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportexcel">to Excel (.xlsx)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('transcriber');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttrs">to Transcriber (.trs)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('clan');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportclan">to Clan (.cha)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('elan');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportelan">to Elan (.eaf)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportTrans('praat');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexportpraat">to Praat (.textgrid)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><br/><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-default" onclick="trjs.transcription.exportMStoMediaSubt('all');"><i class="fa fa-file-audio-o"></i> <i class="fa fa-file-movie-o"></i> </button>
+                                    &nbsp;<span id="fmulttosubtall">all media with subtitles</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"><span id="exportmediafile">Export to media... </span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-default" onclick="trjs.transcription.exportMStoSubtSrt('all');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fmulttosubttextonlyallsrt">all subtitles without media (.srt file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-default" onclick="trjs.transcription.exportMStoSubtAss('all');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fmulttosubttextonlyallass">all subtitles without media (.ass file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="expsel"><br/>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoTei();">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttotei"> Export selection to TEI (.tei_corpo.xml)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle"  onclick="trjs.transcription.exportMStoMediaSubt();">
+                                    <i class="fa fa-download"></i> <i class="fa fa-file-audio-o"></i> <i class="fa fa-file-movie-o"></i></button>
+                                    <span id="fmulttosubt">Export selection to media with subtitles</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoMedia();">
+                                    <i class="fa fa-download"></i> <i class="fa fa-file-audio-o"></i> <i class="fa fa-file-movie-o"></i></button>
+                                    <span id="fmulttomedia">Export selection to media without subtitles</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoSubtSrt();">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttosubttextonlysrt">Export selection to subtitles without media (.srt file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div><div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoSubtAss();">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttosubttextonlyass">Export selection to subtitles without media (.ass file)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span id="exportclose">Close</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL FOR KEYBOARD INFO -->
+<div class="modal" id="message-bindings" tabindex="-1" role="dialog" aria-labelledby="message-title" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Ok</span></button>
+				<h4 class="modal-title" id="message-title">Bindings for the keyboard</h4>
+			</div>
+			<div class="modal-body">
+				<div role="tabpanel">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#bindings-content" aria-controls="bindings-content" role="tab" data-toggle="tab"><span id="bincon"> Bindings content</span></a></li>
+						<li role="presentation"><a href="#apibindings-content" aria-controls="apibindings-content" role="tab" data-toggle="tab"><span id="apibincon"> API bindings content</span></a></li>
+						<li role="presentation"><a href="#F1F2bindings-content" aria-controls="F1F2bindings-content" role="tab" data-toggle="tab"><span id="F1F2bincon"> F1/F2 bindings content (/fb/ means followed by)</span></a></li>
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="bindings-content"><br/></div>
+						<div role="tabpanel" class="tab-pane" id="apibindings-content"><br/></div>
+						<div role="tabpanel" class="tab-pane" id="F1F2bindings-content"><br/></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" >OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id='metadata-bench' class='roundshadow hidetjs benchfull'>
+    <div id="metadata-title" class="modal-header">
+        <div id="aide_fen"><span id='aide_metadata' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-metadata',true);"></i></span></div>
+        <button type="button" class="close" onclick='trjs.editor.showMetadata();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="metadata-span" class="modal-title">Metadata</h4>
+        <a href='http://www.bnf.fr/fr/professionnels/formats_catalogage/a.f_dublin_core.html'><span id="infodc">(info about Dublin-Core)</span></a>
+    </div><br/>
+    <table class="paramtable" id="metadata" onkeydown="trjs.template.eventKeydownTMMeta(event);">
+        <thead><td class="textcell">Type</td><td class="textcell">Property</td><td class="textcell">Value</td><td class="textcell">Info</td></thead>
+    </table>
+</div>
+<div id="participant-bench" class="roundshadow hidetjs benchfull">
+    <div id="participant-title" class="modal-header">
+        <div id="aide_fen"><span id='aide_part' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-part',true);"></i></span></div>
+        <button type="button" class="close" onclick='trjs.editor.showParticipant();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="participant-span" class="modal-title">List of participants</h4>
+    </div><br/>
+    <table class="paramtable" id="participant" onkeydown="trjs.template.eventKeydownParticipant(event);">
+        <thead><td class="textcell">ID</td><td class="textcell">Name</td><td class="textcell">Age</td></thead>
+    </table>
+</div>
+<div id="template-bench" class="roundshadow hidetjs benchfull">
+    <div id="template-title" class="modal-header">
+        <div id="aide_fen"><span id='aide_struc' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-struc',true);"></i></span></div>
+        <button type="button" class="close" onclick='trjs.editor.showTemplate();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="template-span" class="modal-title">List of templates</h4>
+    </div><br/>
+    <table class="paramtable" id="template-code" onkeydown="trjs.template.eventKeydownTMCode(event);">
+        <thead><td class="textcell">Code</td><td class="textcell">N°</td><td class="textcell">Template</td><td class="textcell">Description</td></thead>
+    </table>
+    <table class="paramtable" id="template-tier" onkeydown="trjs.template.eventKeydownTMTier(event);">
+        <thead><td class="textcell">Tier</td><td class="textcell">N°</td><td class="textcell">Type</td><td class="textcell">Parent</td><td class="textcell">Description</td></thead>
+    </table>
+</div>
+
+<div id='media-visual'>
+
+    <div id="media-block">
+        <div id="palette-file">
+            <i class="iconcur fa fa-folder-open-o fa-lg" onclick="fsio.chooseFile('transcript', 'transcript');" alt="Ctrl O" id="tp1" title=""></i>
+            <i class="iconcur fa fa-file-sound-o fa-lg" onclick="fsio.chooseFile('media', 'media');" alt="Ctrl Alt O" id="tp2" title=""></i>
+            <i class="iconcur fa fa-save fa-lg" onclick="trjs.editor.save();" alt="Ctrl S" id="tp3" title=""></i>
+            <i class="iconcur fa fa-search fa-lg" onclick="trjs.editor.showSearch();" alt="Ctrl F" id="tp4" title=""></i>
+            <i class="iconcur fa fa-mail-reply fa-lg" onclick="trjs.undo.undo()" alt="Ctrl Z" id="tp6" title=""></i>
+            <i class="iconcur fa fa-mail-forward fa-lg" onclick="trjs.undo.redo()" alt="Ctrl Y" id="tp7" title=""></i>
+            <i class="iconcur fa fa-list fa-lg" onclick="trjs.events.insertBlankLineAndRedraw()" alt="Ctrl I" id="tp8" title=""></i>
+            <i class="iconcur fa fa-indent fa-lg" onclick="trjs.events.insertWithTimeAndRedraw()" alt="Ctrl Alt I" id="tp8b" title=""></i>
+            <i class="iconcur fa fa-outdent fa-lg" onclick="trjs.events.setTimeReplaceLocAndRedraw()" alt="Ctrl M" id="tp9" title=""></i>
+            <i class="iconcur fa fa-eraser fa-lg" onclick="trjs.events.deleteLineAndRedraw()" alt="Ctrl D" id="tp10" title=""></i>
+            <i class="iconcur fa fa-compress fa-lg" onclick="trjs.events.joinLine()" alt="Ctrl J" id="tp11" title=""></i>
+            <i class="iconcur fa fa-copy fa-lg" onclick="trjs.events.replicateLineAndRedraw()" alt="Ctrl R" id="tp12" title=""></i>
+            <!--<i class="iconcur fa fa-expand fa-lg" onclick="trjs.events.splitLineAndRedraw()" alt="Ctrl Alt R" id="tp13" title=""></i>-->
+            <i class="iconcur fa fa-angle-double-right fa-lg" onclick="trjs.media.playSlower()" alt="Ctrl B" id="tp14" title=""></i>&nbsp;&nbsp;
+            <i class="iconcur fa fa-forward fa-lg" onclick="trjs.media.playFaster()" alt="Ctrl E" id="tp15" title=""></i>
+            <i class="iconcur fa fa-plus-square fa-lg" onclick="trjs.media.makeBig()" alt="Alt F3" id="tp16" title=""></i>
+            <i class="iconcur fa fa-minus-square fa-lg" onclick="trjs.media.makeSmall()" alt="Alt F2" id="tp17" title=""></i>
+        </div>
+
+        <div id="palette-edit">
+            <i class="iconcur fa fa-th-list fa-lg" onclick="trjs.transcription.setMultipleSelection();" alt="" id="tpp1" title=""></i>
+            <i class="iconcur fa fa-check-square-o fa-lg" onclick="trjs.transcription.selectAllMS();" alt="" id="tpp2" title=""></i>
+            <i class="iconcur fa fa-square-o fa-lg" onclick="trjs.transcription.deselectAllMS();" alt="" id="tpp3" title=""></i>
+            <i class="iconcur fa fa-cut fa-lg" onclick="trjs.transcription.cutMultipleSelection();" alt="" id="tpp4" title=""></i>
+            <i class="iconcur fa fa-copy fa-lg" onclick="trjs.transcription.copyMultipleSelection();" alt="" id="tpp5" title=""></i>
+            <i class="iconcur fa fa-paste fa-lg" onclick="trjs.transcription.pasteMultipleSelection();" alt="" id="tpp6" title=""></i>
+            <i class="iconcur fa fa-download fa-lg" onclick="trjs.transcription.exportMStoTei();" alt="" id="tpp7" title=""></i>
+        </div>
+
+        <div id="media-cell">
+            <i class="imedia fa fa-step-backward fa-2x" onclick="trjs.media.backwardStep();" alt="Backward 4 sec Alt Left" title="Backward jump: Alt left"></i>
+            <div id="media-display">
+                <!--
+                <i class="iconcur fa fa-play-circle fa-2x button-slider" onclick="trjs.events.tab();"></i>
+                -->
+                <div id="nomedia-available" style="{ height:40px; width:100px; background-color:blue; }"></div>
+            </div>
+            <i class="imedia fa fa-step-forward fa-2x" onclick="trjs.media.forwardStep();" alt="Forward 4 sec Alt Right" title="Forward jump: Alt right"></i>
+        </div>
+
+    </div>
+
+    <div id='wave' onmousedown="trjs.wave.mouse.downWave(event);" onmousemove="trjs.wave.mouse.moveWave(event);" onmouseup="trjs.wave.mouse.upWave(event);">
+    </div>
+
+    <div id='partition' onmousedown="trjs.partition.mouseDownPartition(event);">
+    </div>
+    <div id='slider-partition' class='slider'title='Jump to transcription locations'>
+        <div id='canvas-partition' class='canvas-slider'></div>
+    </div>
+    <div id='buttons-middle'>
+        <i id='button-page-left' title="" class="iconcur fa fa-hand-o-left fa-2x" onclick="trjs.partition.pageleft();"></i>
+        <span id='aide_quest' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('transcribe',true);"></i></span>
+        <span id="t1" title=""><i class="iconcur fa fa-play-circle fa-2x" onclick="trjs.media.playFromWave();" alt="Play/Pause TAB"></i></span>
+        <span id="t1bis" title=""><i class="iconcur fa fa-level-up fa-2x" onclick="trjs.events.enter();" alt="Mark time and go next line"></i></span>
+        <span id="t4" title=""><i class="iconcur fa fa-edit fa-2x" onclick="trjs.events.insertBlankLineAndRedraw();" alt="Insert blank line F6"></i></span>
+        <span id="t2" title=""><i class="iconcur fa fa-arrow-up fa-2x" onclick="trjs.events.setStart();" alt="Set time start F4"></i></span>
+        <span id="t3" title=""><i class="iconcur fa fa-arrow-down fa-2x" onclick="trjs.events.setEnd();" alt="Set time end F5"></i></span>
+        <span id="t5" title=""><i class="iconcur fa fa-refresh fa-2x" onclick="trjs.events.runCurrentLine();" alt="Play current line F7"></i></span>
+        <span id="t6" title=""><i class="iconcur fa fa-repeat fa-2x" onclick="trjs.events.goContinuous();" alt="Play continuous F8"></i></span>
+        &nbsp;&nbsp;
+        <span id='iconzoomout' title=""><i class="iconcur fa fa-search-minus fa-lg" onclick="trjs.dmz.zoomOut();"></i></span>
+        <span id='zoomvalue'></span>
+        <span id='iconzoomin' title=""><i class="iconcur fa fa-search-plus fa-lg" onclick="trjs.dmz.zoomIn();"></i></span>
+        <span id='aide_quest' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('boutons-media',true);"></i></span>
+        <span id='aide_quest_compl' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('transcription-compl',true);"></i></span>
+        <i id='button-page-right' title="" class="iconcur fa fa-hand-o-right fa-2x" onclick="trjs.partition.pageright();"></i>
+    </div>
+</div>
+
+<div id='edition'>
+    <div id='transcription-head'>
+    <div id='media-info'>
+        <span id='currenttime'></span>&nbsp;(<span id='starttime'></span>&nbsp;-&nbsp;<span id='stoptime'></span>)
+        <span id='timewindow'>&nbsp;(<span id='startwindow'></span>&nbsp;-&nbsp;<span id='stopwindow'></span>)&nbsp;</span>
+        <!--
+        <span id='timewave'>&nbsp;(<span id='startwave'></span>&nbsp;-&nbsp;<span id='stopwave'></span>)&nbsp;</span>
+        -->
+        <!--<span id='insertreplacemode' onclick="trjs.editor.toggleInsert();">Insert mode</span>-->
+    </div>
+    <table class="transcribertable" id="transcript-head">
+        <thead><th class="num">-</th><th class="info">-</th><th class="code">Loc</th><th class="ts">Ts</th><th class="te">Te</th><th class="vts">Ts</th><th class="vte">Te</th><th class="transcription">Transcription</th></thead>
+        <tr><td id='table-loading'></td></tr>
+    </table>
+</div>
+    <div id='transcription-bench'>
+        <table class="transcribertable" id="transcript" onclick="trjs.events.transcriptGotFocus(event);">
+        </table>
+    </div>
+</div>
+<!-- Indication for background processes -->
+<div id="progress" class='clearfix'></div>
+<!-- Special part for printing purposes -->
+<iframe id="printframe" name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+
+</body>
+
+<script>
+    trjs.init('electron');
+</script>
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js');
+</script>
+</html>

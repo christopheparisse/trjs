@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang=en>
+<head>
+    <title>transcriber.js - editor</title>
+    <meta charset=utf-8/>
+    <!-- 	<script>
+            // Prevent error dialogs from displaying -which is the window's normal
+            // behavior- by overriding the default event handler for error events that
+            // go to the window.
+            // window.onerror = null;
+
+            // Development handling of errors
+            var gOldOnError = window.onerror;
+            // Override previous handler.
+            window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+                bootboxalert("window.onerror: " + errorMsg + " " + url + " " + lineNumber);
+                if (gOldOnError)
+                    // Call previous handler.
+                    return gOldOnError(errorMsg, url, lineNumber);
+
+                // Just let default handler run.
+                return false;
+            };
+         </script>
+    -->
+    <script>
+        var global = global || {};
+        global.applicationTarget = {type: 'client', server: 'html', location: 'local', html: 'trjsclient.html'};
+    </script>
+    <include src="include-js.html"></include>
+    <include src="include-editor.html"></include>
+    <script>
+        trjs.init('e6');
+    </script>
+    <include src="include-styles.html"></include>
+</head>
+<body onkeydown="trjs.events.eventKeydown(event);" onkeypress="trjs.events.eventKeypress(event);"
+      ondragover="trjs.drag.drag_over(event)" ondrop="trjs.drag.drop(event)">
+<include src="annex.html"></include>
+<include src="local-open.html"></include>
+<include src="menu.html"></include>
+<include src="search.html"></include>
+<include src="check.html"></include>
+<include src="modal-parameters.html"></include>
+<include src="modal-opening-files.html"></include>
+<include src="modal-exports.html"></include>
+<include src="modal-keyboard-info.html"></include>
+<include src="meta-part-templ.html"></include>
+<include src="media.html"></include>
+<include src="edition.html"></include>
+</body>
+</html>
