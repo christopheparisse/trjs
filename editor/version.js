@@ -16,7 +16,7 @@ if (typeof exports !== 'undefined') {
 }
 
 version.appName = 'TRJS';
-version.version = 'v0.6.0';
+version.version = 'v0.6.1';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
 version.date = new Date(2017, 10, 27); // year, month, day : warning minus 1 (-1) for months : janvier === 0

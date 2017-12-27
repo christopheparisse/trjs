@@ -53,7 +53,7 @@ gulp.task('readonly-src', function(cb) {
         './editor/partition.js',
         './editor/progress.js',
         './editor/logs.js',
-        './editor/aidecontextuelle.js',
+        './editor/help.js',
         './editor/undo.js',
         './editor/init.js'
     ])

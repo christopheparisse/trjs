@@ -17,7 +17,7 @@ body {
 .bgreen {font-weight: bold; color: green;}
 .bred {font-weight: bold; color: red;}
 .fa-check {color: green;}
-.fa-question-circle {color: red;}
+.fa-colorred {color: red;}
 #fkey {color: grey; text-align: right; font-size:70%;}
 #qualchoicep1 {
       background-color: #FFF;

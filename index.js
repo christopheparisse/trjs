@@ -355,17 +355,38 @@ function createMenu() {
             label: 'Help', role: 'help',
             submenu: [
             {
-                label: 'Short help',
+                label: 'Start/open a transcription',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('helplocal', 'main');
+                    window.webContents.send('helpstart', 'main');
                 }
             },
             {
-                label: 'Layout help',
+                label: 'Transcribing new data',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('helplayout', 'main');
+                    window.webContents.send('helptranscribe', 'main');
+                }
+            },
+            {
+                label: 'Editing a previous transcription',
+                click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.webContents.send('helpedit', 'main');
+                }
+            },
+            {
+                label: 'Import and export',
+                click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.webContents.send('helpimportexport', 'main');
+                }
+            },
+            {
+                label: 'Parameters and special features',
+                click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.webContents.send('helpparams', 'main');
                 }
             },
             {

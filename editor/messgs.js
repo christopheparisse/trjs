@@ -1473,60 +1473,6 @@ trjs.messgs_fra = {
     generic: "Menu macro de base",
 };
 
-trjs.messgs_fra.transcribe =
-    "<p><b>Transcrire rapidement:</b> Se positionner sur une ligne locuteur. Si cette ligne ne présente pas de marqueur " +
-    "de temps de début, se déplacer sur le média pour aller au point de départ désiré puis appuyer sur F4 (ou éditer " +
-    "directement le temps de départ dans le première colonne après le locuteur).<br/>" +
-    "<u>A partir de ce moment la touche TAB va démarrer ou arrêter le son ou la vidéo</u>. Les touches ALT+flèche gauche et " +
-    "ALT+flèche droite permettre de reculer ou avancer le média rapidement. <u>Il est possible de taper la transcription " +
-    "en temps réel</u>, que le média soit en train de jouer ou non. Lorqu'un ligne de transcription est finie, appuyer sur " +
-    "la touche RETURN (ENTREE) lorsque le média joue la fin de la ligne transcrite. Le curseur marquera le temps de fin, " +
-    "passera à la ligne suivante, y marquera le temps de début et le processus pourra continuer.<br/><br/>" +
-    "Si le curseur est en fin de fichier, des lignes seront insérées. Sinon les lignes existantes seront modifiées, ce qui " +
-    "permet d'ajuster un marquage temporel incorrect. Pour insérer des lignes blanches en milieu de corpus, faire " +
-    "F6 autant de fois que nécessaire pour insérer plusieurs lignes à l'avance, ou utiliser CTRL+M pour insérer des " +
-    "lignes en temps réel." +
-    "</p>";
-
-trjs.messgs_fra.help =
-    "<p>TRJS permet de réaliser des transcriptions rapidement à partir d'un média vidéo ou audio." +
-    "Il a été optimisé pour qu'il ne soit pas nécessaire d'utiliser de souris et permettre ainsi une utilisation" +
-    "efficace du clavier y compris pour manipuler la video ou le son et une transcriptions très rapide</p>" +
-    "<p>TRJS permet aussi une utilisation classique en utilisant la souris et en découpant les sons et" +
-    "images au préalable ou au fur et à mesure. TRJS permet aussi d'aligner un texte brut ne présentant" +
-    "pas d'alignement préalable mais correctement divisé en locuteurs.</p>" + trjs.messgs_fra.transcribe;
-
-trjs.messgs_fra.helpLayout =
-    "<h2>Organisation de l'écran</h2>" +
-    "<p>L'écran se divise en trois parties visibles en permanence:</p><br/>" +
-    "<ol>" +
-    "<li>Les accès aux <span style='color: red; font-weight: bold;'>paramètres, menus et fonctions annexes</span></li>" +
-    "<li>Le champ <span style='color: green; font-weight: bold;'>média</span> contenant la vidéo et/ou l'audio</li>" +
-    "<li>La <span style='color: blue; font-weight: bold;'>transcription</span> comprenant une suite de lignes dans un tableau permettant l'édition du document</li>" +
-    "</ol>" +
-    "<img align='middle' height='500px' src='doc/general.png' />" +
-    "<h3>Accès paramètres, menus et fonctions annexes</h3>" +
-    "<p>Les paneaux de présentation et d'édition des paramètres s'affichent de manière optionnelle en cliquant" +
-    "sur le menu \"Outils\" puis le menus correspondants.</p>" +
-    "<ol>" +
-    "<li>Recherche</li>" +
-    "<li>Metadonnées</li>" +
-    "<li>Participants</li>" +
-    "<li>Templates</li>" +
-    "<li>Paramètres</li>" +
-    "<li>Vérifier la transcription</li>" +
-    "<li>Décaler des repères temporels</li>" +
-    "<li>Convertir des médias</li>" +
-    "</ol>" +
-    "<table style='border-top: solid 2px black; border-bottom: solid 2px black;'>" +
-    "<tr><td style='background: salmon; font-weight: bold;'>Panneau paramètres</td><td style='background: salmon; font-weight: bold;'>Sous-panneau metadonéées</td></tr>" +
-    "<tr><td><img align='middle' height='200px' src='doc/params.png' /></td><td><img align='middle' height='200px' src='doc/metadata.png' /></td></tr>" +
-    "</table>" +
-    "Aide complète disponible sur <a href='http://ct3.ortolang.fr/trjs/'>http://ct3.ortolang.fr/trjs/</a>";
-
-trjs.messgs_eng.help = trjs.messgs_fra.help;
-trjs.messgs_eng.helpLayout = trjs.messgs_fra.helpLayout;
-
 trjs.messgs = trjs.messgs_eng;
 
 trjs.messgs_init = function () {

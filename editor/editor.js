@@ -151,9 +151,11 @@ trjs.editor = (function () {
         trjs.param.saveStorage();
         if (trjs.param.language === 'eng') {
             trjs.messgs = trjs.messgs_eng;
+            trjs.help = trjs.help_eng;
             trjs.undo.setLang('eng');
         } else {
             trjs.messgs = trjs.messgs_fra;
+            trjs.help = trjs.help_fra;
             trjs.undo.setLang('fra');
         }
         trjs.messgs_init();
@@ -174,7 +176,7 @@ trjs.editor = (function () {
             trjs.param.checkLanguage = 'fr-FR';
         }
         trjs.param.saveStorage();
-        if (resetSpellCheckProvider !== undefined) resetSpellCheckProvider();
+        if (typeof resetSpellCheckProvider !== "undefined") resetSpellCheckProvider();
     }
 
     /**
@@ -477,7 +479,7 @@ trjs.editor = (function () {
         if (div.is(':visible')) {
             if (forcevisible === true) return;
             div.hide();
-            if (aide) trjs.aideclose();
+            if (aide) trjs.helpclose();
             nbToogleParametersArea--;
             if (nbToogleParametersArea <= 0) {
                 nbToogleParametersArea = 0;
@@ -486,7 +488,7 @@ trjs.editor = (function () {
             }
         } else {
             div.show();
-            if (aide) trjs.aidecontextuelle(aide, false);
+            if (aide) trjs.contextualhelp(aide, false);
             nbToogleParametersArea++;
             $('#parameters-area').show();
             // $('body').height('2000px');
@@ -712,26 +714,47 @@ trjs.editor = (function () {
     }
 
     /**
-     * jumps to the local help page.
-     * @method goHelpLocal
+     * display the start help page.
+     * @method goHelpStart
      */
-    function goHelpLocal() {
-        // trjs.io.innerSave();
-        // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
-        // window.open("doc/help.html",'_blank');
-        bootbox.alert(trjs.messgs.help, function () {
+    function goHelpStart() {
+        bootbox.alert(trjs.help.helpStart, function () {
         });
     }
 
     /**
-     * jumps to the layout help page.
-     * @method goHelpLayout
+     * display the transcription help page.
+     * @method goHelpTranscribe
      */
-    function goHelpLayout() {
-        // trjs.io.innerSave();
-        // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
-        // window.open("doc/help.html",'_blank');
-        bootbox.alert(trjs.messgs.helpLayout, function () {
+    function goHelpTranscribe() {
+        bootbox.alert(trjs.help.transcribe, function () {
+        });
+    }
+
+    /**
+     * display the transcription help page.
+     * @method goHelpEdit
+     */
+    function goHelpEdit() {
+        bootbox.alert(trjs.help.helpEdit, function () {
+        });
+    }
+
+    /**
+     * display the transcription help page.
+     * @method goHelpImportExport
+     */
+    function goHelpImportExport() {
+        bootbox.alert(trjs.help.importexport, function () {
+        });
+    }
+
+    /**
+     * display the transcription help page.
+     * @method goHelpParams
+     */
+    function goHelpParams() {
+        bootbox.alert(trjs.help.helpParams, function () {
         });
     }
 
@@ -828,18 +851,18 @@ trjs.editor = (function () {
         if (trjs.param.language === 'eng') {
             $('input[name="language-version"][value=0]').prop('checked', true);
             trjs.messgs = trjs.messgs_eng;
+            trjs.help = trjs.help_eng;
             trjs.undo.setLang('eng');
         } else {
             $('input[name="language-version"][value=1]').prop('checked', true);
             trjs.messgs = trjs.messgs_fra;
+            trjs.help = trjs.help_fra;
             trjs.undo.setLang('fra');
         }
         if (trjs.param.checkLanguage === 'en-US') {
             $('input[name="language-spelling"][value=0]').prop('checked', true);
-            trjs.messgs = trjs.messgs_eng;
         } else {
             $('input[name="language-spelling"][value=1]').prop('checked', true);
-            trjs.messgs = trjs.messgs_fra;
         }
         //trjs.messgs_init();
         if (version.serverImpl === 'php') { // conditions for php server (depend on the version)
@@ -1455,8 +1478,11 @@ trjs.editor = (function () {
         about: about,
         finalizeLoad: finalizeLoad,
         goHelp: goHelp,
-        goHelpLocal: goHelpLocal,
-        goHelpLayout: goHelpLayout,
+        goHelpStart: goHelpStart,
+        goHelpTranscribe: goHelpTranscribe,
+        goHelpEdit: goHelpEdit,
+        goHelpImportExport: goHelpImportExport,
+        goHelpParams: goHelpParams,
         goSearch: goSearch,
         userGoLine: userGoLine,
         userGoTime: userGoTime,

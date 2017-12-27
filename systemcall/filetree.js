@@ -88,8 +88,8 @@ filetree.__initChooseFile = function (dest, type) {
     $('#openfile').modal();
     if (dest !== undefined) filetree.destChooseFile = dest;
     if (type !== undefined) filetree.typeChooseFile = type;
-    if (dest === 'transcript' && type === 'transcript') trjs.aidecontextuelle('op-trs', false);
-    if (dest === 'media' && type === 'media') trjs.aidecontextuelle('choose-media', false);
+    if (dest === 'transcript' && type === 'transcript') trjs.contextualhelp('op-trs', false);
+    if (dest === 'media' && type === 'media') trjs.contextualhelp('choose-media', false);
     if (filetree.typeChooseFile === 'transcriptsaveas') {
         $('#transcriptfiles_namelabel').show();
         $('#transcriptfiles_name').show();

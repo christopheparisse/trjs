@@ -130,11 +130,20 @@ trjs.init.electronkeyboard = function () {
     ipcRenderer.on('search', function(event, arg) {
         trjs.editor.showSearch();
     });
-    ipcRenderer.on('helplocal', function(event, arg) {
-        trjs.editor.goHelpLocal();
+    ipcRenderer.on('helpstart', function(event, arg) {
+        trjs.editor.goHelpStart();
     });
-    ipcRenderer.on('helplayout', function(event, arg) {
-        trjs.editor.goHelpLayout();
+    ipcRenderer.on('helptranscribe', function(event, arg) {
+        trjs.editor.goHelpTranscribe();
+    });
+    ipcRenderer.on('helpedit', function(event, arg) {
+        trjs.editor.goHelpEdit();
+    });
+    ipcRenderer.on('helpimportexport', function(event, arg) {
+        trjs.editor.goHelpImportExport();
+    });
+    ipcRenderer.on('helpparams', function(event, arg) {
+        trjs.editor.goHelpParams();
     });
     ipcRenderer.on('help', function(event, arg) {
         trjs.editor.goHelp();

@@ -879,7 +879,7 @@ trjs.transcription = (function () {
                 trjs.dmz.init('partition');
                 trjs.dmz.sliderPopulate();
                 trjs.io.innerSave();
-                trjs.aidecontextuelle('new-trs', false);
+                trjs.contextualhelp('new-trs', false);
                 trjs.param.changed = false;
                 if (askformedia === true) {
                     //$('#openfile').modal();

@@ -46,7 +46,7 @@ trjs.filetree.keyboard = function(e) {
 		trjs.filetree.endChooseFile();
 		$('#openfile').modal('hide');
 	} else if (charCode === 27) {
-		trjs.aideclose();
+		trjs.closehelp();
 		$('#openfile').modal('hide');
 	}
 };
@@ -86,8 +86,8 @@ trjs.filetree.__initChooseFile = function(dest, type) {
 	$('#openfile').modal();
 	if (dest !== undefined) trjs.filetree.destChooseFile = dest;
 	if (type !== undefined) trjs.filetree.typeChooseFile = type;
-	if (dest === 'transcript' && type === 'transcript') trjs.aidecontextuelle('op-trs',false);
-	if (dest === 'media' && type === 'media') trjs.aidecontextuelle('choose-media',false);
+	if (dest === 'transcript' && type === 'transcript') trjs.contextualhelp('op-trs',false);
+	if (dest === 'media' && type === 'media') trjs.contextualhelp('choose-media',false);
 	if (trjs.filetree.destChooseFile === 'transcriptsaveas') {
 		$('#transcriptfiles_namelabel').show();
 		$('#transcriptfiles_name').show();
@@ -204,7 +204,7 @@ trjs.filetree.chooseIconFile = function(fn) {
  */
 trjs.filetree.endChooseFile = function() {
 //	alert(trjs.filetree.selectedPath + ' !!! ' + trjs.filetree.selection);
-	trjs.aideclose();
+	trjs.closehelp();
 	if (!trjs.filetree.selectedPath) return;
 	if (trjs.filetree.destChooseFile === 'transcriptsaveas') {
 		var result = $('#transcriptfiles_name').val();

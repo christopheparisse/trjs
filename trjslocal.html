@@ -54,7 +54,7 @@
     <script src="editor/partition.js"></script>
     <script src="editor/progress.js"></script>
     <script src="editor/logs.js"></script>
-    <script src="editor/aidecontextuelle.js"></script>
+    <script src="editor/help.js"></script>
     <script src="editor/undo.js"></script>
     <script src="editor/check.js"></script>
     <script src="editor/init.js"></script>
@@ -85,7 +85,7 @@
 <body onkeydown="trjs.events.eventKeydown(event);" onkeypress="trjs.events.eventKeypress(event);"
       ondragover="trjs.drag.drag_over(event)" ondrop="trjs.drag.drop(event)">
 	<div id="aidecontext" >
-		<button type="button" class="close" aria-label="Close" onclick="trjs.aideclose();"><span aria-hidden="true">&times;</span></button>
+		<button type="button" class="close" aria-label="Close" onclick="trjs.closehelp();"><span aria-hidden="true">&times;</span></button>
 		<div id="aideid"></div>
 	</div>
 	<div id='trjs-msg' title='Messages' class='messages'></div>
@@ -182,7 +182,7 @@
             <li><a href="#" onclick='trjs.editor.about();'><span id='sabouttrjs'> About TranscriberJS</span></a></li>
             </ul>
         </li>
-        <li><a href="#"><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('new-trs',true);"></i></a></li>
+        <li><a href="#"><i class="fa fa-question-circle fa-lg fa-colorred" onclick="trjs.contextualhelp('new-trs',true);"></i></a></li>
         </ul>
     </div><!--/.nav-collapse -->
     </div>
@@ -190,7 +190,7 @@
 
     <div id="search-bench" class="roundshadow hidetjs benchfull">
         <div id="search-title" class="modal-header">
-            <div id="aide_fen"><span id='aide_search' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-search',true);"></i></span></div>
+            <div id="aide_fen"><span id='aide_search' title=""><i class="fa fa-question-circle fa-lg fa-colorred" onclick="trjs.contextualhelp('op-search',true);"></i></span></div>
             <button type="button" class="close" onclick='trjs.editor.showSearch();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 id="search-span" class="modal-title">Search current file</h4>
         </div>
@@ -387,7 +387,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<div id="aide_fen"><span id='aide_param' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('op-param',true);"></i></span></div>
+					<div id="aide_fen"><span id='aide_param' title=""><i class="fa fa-question-circle fa-lg fa-colorred" onclick="trjs.contextualhelp('op-param',true);"></i></span></div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title"><span id="pparam"> Parameters</span></h4>
 				</div>
@@ -748,7 +748,7 @@
     </div>
     <div id='buttons-middle'>
         <i id='button-page-left' title="" class="iconcur fa fa-hand-o-left fa-2x" onclick="trjs.partition.pageleft();"></i>
-        <span id='aide_quest' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('transcribe',true);"></i></span>
+        <span id='aide_quest'" title=""><i class="fa fa-plane fa-lg fa-colorred" onclick="trjs.contextualhelp('transcribe',true);"></i></span>
         <span id="t1" title=""><i class="iconcur fa fa-play-circle fa-2x" onclick="trjs.media.playFromWave();" alt="Play/Pause TAB"></i></span>
         <span id="t1bis" title=""><i class="iconcur fa fa-level-up fa-2x" onclick="trjs.events.enter();" alt="Mark time and go next line"></i></span>
         <span id="t4" title=""><i class="iconcur fa fa-edit fa-2x" onclick="trjs.events.insertBlankLineAndRedraw();" alt="Insert blank line F6"></i></span>
@@ -760,8 +760,8 @@
         <span id='iconzoomout' title=""><i class="iconcur fa fa-search-minus fa-lg" onclick="trjs.dmz.zoomOut();"></i></span>
         <span id='zoomvalue'></span>
         <span id='iconzoomin' title=""><i class="iconcur fa fa-search-plus fa-lg" onclick="trjs.dmz.zoomIn();"></i></span>
-        <span id='aide_quest' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('boutons-media',true);"></i></span>
-        <span id='aide_quest_compl' title=""><i class="fa fa-question-circle fa-lg" onclick="trjs.aidecontextuelle('transcription-compl',true);"></i></span>
+        <span id='aide_quest' title=""><i class="fa fa-rocket fa-lg fa-colorred" onclick="trjs.contextualhelp('boutons-media',true);"></i></span>
+        <span id='aide_quest_compl' title=""><i class="fa fa-space-shuttle fa-lg fa-colorred" onclick="trjs.contextualhelp('transcription-compl',true);"></i></span>
         <i id='button-page-right' title="" class="iconcur fa fa-hand-o-right fa-2x" onclick="trjs.partition.pageright();"></i>
     </div>
 </div>

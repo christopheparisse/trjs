@@ -23,8 +23,8 @@ fsio.selectedPath = null; // current selected path + end value
  * available in all files
  */
 fsio.startChooseFile = function(dest, type) {
-    if (dest === 'transcript' && type === 'transcript') trjs.aidecontextuelle('new-trs',false);
-    if (dest === 'media' && type === 'media') trjs.aidecontextuelle('boutons-media',false);
+    if (dest === 'transcript' && type === 'transcript') trjs.contextualhelp('new-trs',false);
+    if (dest === 'media' && type === 'media') trjs.contextualhelp('boutons-media',false);
     if (type === 'transcriptsaveas') {
         fsio.__chooseSaveFile('Save transcript as',
             [
