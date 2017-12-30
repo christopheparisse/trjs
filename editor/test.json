@@ -1,0 +1,20 @@
+{
+	"op-trs": "<b>Left side :</b><br/>\
+You can navigate the file tree: <br/>
+Open a folder with double click, all the folder will be displayed in the left side of the window.<br/><br/>
+<b>Right side:</b><br/>
+Select a file: <ul><li>with double clic</li><li>using the RETURN key</li>
+<li>or clic on <b>Choose the file</b></li></ul><br/>
+Several <b>display options</b> are available in the bottom of the window:<br/>
+You can ask to display all files or only transcription files.",
+
+    "choose-media": "<b>Left side :</b><br/>\
+You can navigate the file tree: <br/>\
+Open a folder with double click, all the folder will be displayed in the left side of the window.<br/><br/>\
+<b>Right side:</b><br/>\
+Select a file: <ul><li>with double clic</li><li>using the RETURN key</li>\
+<li>or clic on <b>Choose the file</b></li></ul><br/>\
+Several <b>display options</b> are available in the bottom of the window:<br/>\
+You can ask to display all files or only media files.<br/><br/>\
+<b>Media quality</b> can be selected automatically (default) or manually."
+}

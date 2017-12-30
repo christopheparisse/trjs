@@ -718,8 +718,8 @@ trjs.editor = (function () {
      * @method goHelpStart
      */
     function goHelpStart() {
-        bootbox.alert(trjs.help.helpStart, function () {
-        });
+//        bootbox.alert(trjs.help.helpStart, function () {});
+        trjs.displayhelp("helpStart");
     }
 
     /**
@@ -727,8 +727,8 @@ trjs.editor = (function () {
      * @method goHelpTranscribe
      */
     function goHelpTranscribe() {
-        bootbox.alert(trjs.help.transcribe, function () {
-        });
+//        bootbox.alert(trjs.help.transcribe, function () {});
+        trjs.displayhelp("transcribe");
     }
 
     /**
@@ -736,8 +736,8 @@ trjs.editor = (function () {
      * @method goHelpEdit
      */
     function goHelpEdit() {
-        bootbox.alert(trjs.help.helpEdit, function () {
-        });
+//        bootbox.alert(trjs.help.helpEdit, function () {});
+        trjs.displayhelp("helpEdit");
     }
 
     /**
@@ -745,8 +745,8 @@ trjs.editor = (function () {
      * @method goHelpImportExport
      */
     function goHelpImportExport() {
-        bootbox.alert(trjs.help.importexport, function () {
-        });
+//        bootbox.alert(trjs.help.importexport, function () {});
+        trjs.displayhelp("importexport");
     }
 
     /**
@@ -754,8 +754,8 @@ trjs.editor = (function () {
      * @method goHelpParams
      */
     function goHelpParams() {
-        bootbox.alert(trjs.help.helpParams, function () {
-        });
+//        bootbox.alert(trjs.help["op-param"], function () {});
+        trjs.displayhelp("op-param");
     }
 
     /**

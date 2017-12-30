@@ -81,10 +81,6 @@ trjs.help_eng["new-trs"] = "You can start or edit your transcription.<br/>"
     + "	<ul><li>Les nuances de gris sur les lignes correspondent aux locuteurs : plus le gris est foncé, plus la fréquence du temps de parole du locuteur est élevée.</li>"
     + "		<li>La ligne sélectionnée est surlignée en bleu (en bleu clair pour une ligne dépendante)</li></ul></ol>" ;
 
-trjs.help_fra["transcribe"] = trjs.help_fra.transcribe;
-
-trjs.help_eng["transcribe"] = trjs.help_eng.transcribe;
-
 trjs.help_fra["op-metadata"] = "Remplissez les <b>métadonnées</b> liées au fichier.<br/><br/>"
     + "Seules les <b>parties grisées</b> sont <b>éditables</b> :<br/>"
     + "Vous pouvez ici renommer le fichier de transcription, et renseigner les métadonnées décrites selon le format <a href=\"http://www.bnf.fr/fr/professionnels/formats_catalogage/a.f_dublin_core.html\">Dublin Core</a>.<br/>"
@@ -324,7 +320,13 @@ trjs.help_eng.transcribe =
     "RETURN key but with inserting a new line." +
     "</p>";
 
-trjs.help_fra.helpLayout =
+trjs.help_fra.helpStart =
+    "<p>TRJS permet de réaliser des transcriptions rapidement à partir d'un média vidéo ou audio." +
+    "Il a été optimisé pour qu'il ne soit pas nécessaire d'utiliser de souris et permettre ainsi une utilisation" +
+    "efficace du clavier y compris pour manipuler la video ou le son et une transcriptions très rapide</p>" +
+    "<p>TRJS permet aussi une utilisation classique en utilisant la souris et en découpant les sons et" +
+    "images au préalable ou au fur et à mesure. TRJS permet aussi d'aligner un texte brut ne présentant" +
+    "pas d'alignement préalable mais correctement divisé en locuteurs.</p>" +
     "<h2>Organisation de l'écran</h2>" +
     "<p>L'écran se divise en trois parties visibles en permanence:</p><br/>" +
     "<ol>" +
@@ -352,16 +354,21 @@ trjs.help_fra.helpLayout =
     // "</table>" +
     "Aide complète disponible sur <a href='http://ct3.ortolang.fr/trjs/'>http://ct3.ortolang.fr/trjs/</a>";
 
-trjs.help_fra.helpStart =
-    "<p>TRJS permet de réaliser des transcriptions rapidement à partir d'un média vidéo ou audio." +
-    "Il a été optimisé pour qu'il ne soit pas nécessaire d'utiliser de souris et permettre ainsi une utilisation" +
-    "efficace du clavier y compris pour manipuler la video ou le son et une transcriptions très rapide</p>" +
-    "<p>TRJS permet aussi une utilisation classique en utilisant la souris et en découpant les sons et" +
-    "images au préalable ou au fur et à mesure. TRJS permet aussi d'aligner un texte brut ne présentant" +
-    "pas d'alignement préalable mais correctement divisé en locuteurs.</p>" +
-    trjs.help_fra.helpLayout;
-
-trjs.help_eng.helpLayout =
+trjs.help_eng.helpStart =
+    "<p>TRJS allows you to transcribe very quickly and effciently from a sound or a video. " +
+    "It was optimized so that using a mouse is not necassary and it is possible to use only " +
+    "the keyboard to manipulate the video or the sound very quickly.</p>" +
+    "<p>TRJS makes it also possible to split and link sound and media with the mouse with a more " +
+    "visual approach. It is also possible to align a raw text that not previously link to " +
+    "sound or video.</p>" +
+    "<p>Starting a transcripion you should:<br/>" +
+    "<ul><li>Create a new transcription with menu File + New transcription</li>" +
+    "<li>Open a previous transcription with File + Open</li>" +
+    "<li>If necessary open a media with File + Open media</li>" +
+    "<li>Edit metadata with menu Tools + Metadata</li></ul>" +
+    "<li>Edit participants with menu Tools + Participants</li></ul>" +
+    "<li>Edit document structure with menu Tools + Template</li></ul>" +
+    "</p>" +
     "<h2>Organisation of the screen</h2>" +
     "<p>The screen is divided in three parts:</p><br/>" +
     "<ol>" +
@@ -390,33 +397,16 @@ trjs.help_eng.helpLayout =
     //    "</table>" +
     "Full help available on <a href='http://ct3.ortolang.fr/trjs/'>http://ct3.ortolang.fr/trjs/</a>";
 
-trjs.help_eng.helpStart =
-    "<p>TRJS allows you to transcribe very quickly and effciently from a sound or a video. " +
-    "It was optimized so that using a mouse is not necassary and it is possible to use only " +
-    "the keyboard to manipulate the video or the sound very quickly.</p>" +
-    "<p>TRJS makes it also possible to split and link sound and media with the mouse with a more " +
-    "visual approach. It is also possible to align a raw text that not previously link to " +
-    "sound or video.</p>" +
-    "<p>Starting a transcripion you should:<br/>" +
-    "<ul><li>Create a new transcription with menu File + New transcription</li>" +
-    "<li>Open a previous transcription with File + Open</li>" +
-    "<li>If necessary open a media with File + Open media</li>" +
-    "<li>Edit metadata with menu Tools + Metadata</li></ul>" +
-    "<li>Edit participants with menu Tools + Participants</li></ul>" +
-    "<li>Edit document structure with menu Tools + Template</li></ul>" +
-    "</p>" + trjs.help_eng.helpLayout;
-
-trjs.help_fra.helpEdit = "FRA HELP EDIT";
-trjs.help_eng.helpEdit = "ENG HELP EDIT";
+trjs.help_fra.helpEdit = trjs.help_fra["boutons-media"] +
+    trjs.help_fra["transcription-compl"];
+trjs.help_eng.helpEdit = trjs.help_eng["boutons-media"] +
+    trjs.help_eng["transcription-compl"];
 
 trjs.help_fra.importexport = "FRA HELP importexport";
 trjs.help_eng.importexport = "ENG HELP importexport";
 
 trjs.help_fra.helpParams = "FRA HELP helpParams";
 trjs.help_eng.helpParams = "ENG HELP helpParams";
-
-trjs.help_eng.help = trjs.help_fra.help;
-trjs.help_eng.helpLayout = trjs.help_fra.helpLayout;
 
 trjs.help = trjs.help_fra;
 
@@ -434,6 +424,11 @@ trjs.contextualhelp = function (theme, forcer) {
 	}
 	console.log("aide non trouvée: " + theme);
 };
+
+trjs.displayhelp = function (theme) {
+    $('#aideid').html(trjs.help[theme]);
+    $('#aidecontext').show();
+}
 
 trjs.closehelp = function () {
 	$('#aidecontext').hide();
