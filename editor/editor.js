@@ -699,7 +699,7 @@ trjs.editor = (function () {
     function goHelp() {
         trjs.io.innerSave();
         // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
-        fsio.openExternal("http://ct3.ortolang.fr/transcriberjs/documentation/trjs_pp.html");
+        fsio.openExternal("http://ct3.ortolang.fr/trjs/documentation/trjs_pp.html");
         // window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
     }
 

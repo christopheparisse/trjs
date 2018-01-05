@@ -2,55 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/doc/doc.css" afterPath="$PROJECT_DIR$/doc/doc.css" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/css/font-awesome.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/bordered-pulled.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/core.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/fixed-width.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/font-awesome.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/icons.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/larger.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/list.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/mixins.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/path.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/rotated-flipped.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/spinning.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/stacked.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/less/variables.less" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_bordered-pulled.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_core.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_fixed-width.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_icons.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_larger.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_list.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_path.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_rotated-flipped.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_spinning.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_stacked.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/_variables.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/style/font-awesome-4.2.0/scss/font-awesome.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/trjs_pp.html" afterPath="$PROJECT_DIR$/doc/trjs_pp.html" />
       <change beforePath="$PROJECT_DIR$/editor/editor.js" afterPath="$PROJECT_DIR$/editor/editor.js" />
-      <change beforePath="$PROJECT_DIR$/editor/help.js" afterPath="$PROJECT_DIR$/editor/help.js" />
-      <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" afterPath="$PROJECT_DIR$/editor/version.js" />
-      <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/style/font-awesome.css" afterPath="$PROJECT_DIR$/style/font-awesome.css" />
-      <change beforePath="$PROJECT_DIR$/style/global.css" afterPath="$PROJECT_DIR$/style/global.css" />
+      <change beforePath="$PROJECT_DIR$/majpgmct3.sh" afterPath="$PROJECT_DIR$/majpgmct3.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/editor/help.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+              <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
               <folding>
                 <marker date="1515173682509" expanded="true" signature="11079:11085" ph=" " />
                 <marker date="1515173682509" expanded="true" signature="12967:12973" ph=" " />
@@ -83,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/version.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editor.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/editor/editor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="757" column="34" lean-forward="false" selection-start-line="757" selection-start-column="29" selection-end-line="757" selection-end-column="34" />
+            <state relative-caret-position="64">
+              <caret line="701" column="52" lean-forward="false" selection-start-line="701" selection-start-column="52" selection-end-line="701" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -173,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/doc/doc.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="517">
-              <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+              <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -252,10 +205,10 @@
         <option value="$PROJECT_DIR$/style/font-awesome.css" />
         <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/doc/trjs_pp.html" />
-        <option value="$PROJECT_DIR$/editor/editor.js" />
         <option value="$PROJECT_DIR$/doc/doc.css" />
         <option value="$PROJECT_DIR$/editor/help.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
+        <option value="$PROJECT_DIR$/editor/editor.js" />
       </list>
     </option>
   </component>
@@ -396,12 +349,12 @@
       <workItem from="1514501863930" duration="3056000" />
       <workItem from="1514933193648" duration="930000" />
       <workItem from="1515151232105" duration="71000" />
-      <workItem from="1515151382929" duration="11436000" />
+      <workItem from="1515151382929" duration="11785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31873000" />
+    <option name="totallyTimeSpent" value="32222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1032" y="47" width="1376" height="1177" extended-state="0" />
@@ -834,7 +787,7 @@
     <entry file="file://$PROJECT_DIR$/doc/doc.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
-          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -855,18 +808,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="757" column="34" lean-forward="false" selection-start-line="757" selection-start-column="29" selection-end-line="757" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/help.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
           <folding>
             <marker date="1515173682509" expanded="true" signature="11079:11085" ph=" " />
             <marker date="1515173682509" expanded="true" signature="12967:12973" ph=" " />
@@ -883,7 +828,15 @@
     <entry file="file://$PROJECT_DIR$/editor/version.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="701" column="52" lean-forward="false" selection-start-line="701" selection-start-column="52" selection-end-line="701" selection-end-column="52" />
           <folding />
         </state>
       </provider>
