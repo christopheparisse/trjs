@@ -4,11 +4,13 @@
   "version": "0.6.0",
   "description": "Oral transcription editor",
   "scripts": {
+    "start": "gulp ; electron index.js",
     "express": "node node/trjsexpress.js",
     "electron": "electron index.js",
     "arg": "electron index.js /corpusformat/clan/antoine-34-2_03_05.tei_corpo.xml --tm=100 --play",
     "pegjs": "pegjs editor/checkclanmain.pegjs",
-    "cleanpegjs": "pegjs editor/cleansentence.pegjs"
+    "cleanpegjs": "pegjs editor/cleansentence.pegjs",
+    "rebuild": "node_modules/.bin/electron-rebuild"
   },
   "repository": {
     "type": "git",

@@ -716,16 +716,17 @@ trjs.keys.initBindings = function () {
     trjs.bindings.push([nkey("up arrow"), false, true, false, false, trjs.events.keyLocUp, trjs.messgs.altbin38]); // Alt Up
     trjs.bindings.push([nkey("right arrow"), false, true, false, false, trjs.media.forwardStep, trjs.messgs.altbin39]); // Alt Right
     trjs.bindings.push([nkey("down arrow"), false, true, false, false, trjs.events.keyLocDown, trjs.messgs.altbin40]); // Alt Down
-    trjs.bindings.push([nkey("f1"), false, true, false, false, trjs.media.playCurrent, trjs.messgs.altbin112]); // Alt F1
+
+    trjs.bindings.push([nkey("f1"), false, true, false, false, trjs.events.tab, trjs.messgs.bin9]); // Alt F1
     trjs.bindings.push([nkey("f2"), false, true, false, false, trjs.media.makeSmall, trjs.messgs.altbin113]); // Alt F2
     trjs.bindings.push([nkey("f3"), false, true, false, false, trjs.media.makeBig, trjs.messgs.altbin114]); // Alt F3
     trjs.bindings.push([nkey("f6"), false, true, false, false, trjs.events.insertWithTimeLocAndRedraw, trjs.messgs.altbin117]); // Alt F6
-    trjs.bindings.push([nkey("f5"), false, true, false, false, trjs.events.runThreeLines, trjs.messgs.altbin118]); // Alt F7
+    trjs.bindings.push([nkey("f7"), false, true, false, false, trjs.events.runThreeLines, trjs.messgs.altbin118]); // Alt F7
     trjs.bindings.push([nkey("f11"), false, true, false, false, trjs.transcription.sort, "sort all lines by times"]); // Alt F11
     trjs.bindings.push([nkey("f12"), false, true, false, false, trjs.undo.undoList, "display undo/redo list"]); // Alt F12
 
     trjs.bindings.push([nkey("tab"), false, false, true, false, trjs.events.shiftTab, trjs.messgs.shiftbin9]); // Shift Tab
-    trjs.bindings.push([nkey("f1"), false, false, true, false, trjs.media.playPause, trjs.messgs.shiftbin112]); // Shift F1
+    trjs.bindings.push([nkey("f1"), true, false, false, false, trjs.media.playPause, trjs.messgs.shiftbin112]); // Shift F1
 
     /*
      trjs.keys.special1 = function() { console.timeEnd("page"); };

@@ -308,6 +308,7 @@ em { font-variant: small-caps; }
 
 .modal { width: 90%; }
 
+#aidecontext { overflow-y: auto; }
 /*
 #files-readonly { display:none; }
 */

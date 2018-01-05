@@ -213,11 +213,10 @@ trjs.help_eng["transcription-compl"] = "Other shortcut for transcription editing
     + "<tr><td>Ctrl+Alt+R</td><td>Split a line with time</td></tr>"
     + "</tbody></table><br/>" ;
 
-trjs.help_fra["op-param"] = "<p>Dans le menu <b>Paramètres</b>, les paramètres suivants sont modifiables :<br/>"
+trjs.help_fra["op-param"] = "Dans le menu <b>Paramètres</b>, les paramètres suivants sont modifiables :<br/>"
 	+ "Lorsqu'on passe la souris sur un paramètre, une <b>bulle d'information</b> apparaît pour rappeler sa <b>fonction principale</b>, ainsi que son raccourci clavier éventuel associé."
 	+ "<table><thead><tr><th>Paramètre</th><th>Descriptif</th><th>Localisation</th></tr></thead>"
-	+ "<tbody><tr><td colspan='3'><div class='scrollit'>"
-	+ "<table><tr><td>Version</td><td>Français ou Anglais</td><td>Onglet <bl>LANGUE</bl></td></tr>"
+	+ "<tbody><tr><td>Version</td><td>Français ou Anglais</td><td>Onglet <bl>LANGUE</bl></td></tr>"
 	+ "<tr><td>Visualisation de la partition</td><td>Coché par défaut</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>"
 	+ "<tr><td>Visualisation du signal sonore</td><td>Coché par défaut</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>"
 	+ "<tr><td>Affichage des numéros en début de ligne</td><td>Par défaut pas affichés</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>"
@@ -231,14 +230,12 @@ trjs.help_fra["op-param"] = "<p>Dans le menu <b>Paramètres</b>, les paramètres
 	+ "<tr><td>Valeur de saut en avant (en ms)</td><td>Raccourci clavier :  ALT + -></td><td>Onglet <bl>REGLAGES</bl></td></tr>"
 	+ "<tr><td>Vérification de la transcription lors de la sauvegarde</td><td>Coché par défaut</td><td>Onglet <bl>VERIFICATION</bl></td></tr>"
 	+ "<tr><td>Nombre de versions précédentes</td><td>Lors de la sauvergarde, de 1 à 3</td><td>Onglet <bl>VERIFICATION</bl></td></tr>"
-	+ "</table></div></td></tr>"
-	+ "</tbody></table></p>" ;
+	+ "</tbody></tbody>" ;
 
-trjs.help_eng["op-param"] = "<p>Changes available in the <b>Parameter</b> menu:<br/>"
+trjs.help_eng["op-param"] = "Changes available in the <b>Parameter</b> menu:<br/>"
     + "<b>Tooltip information</b> are available on individual tabs."
     + "<table><thead><tr><th>Parameter</th><th>Description</th><th>Localisation</th></tr></thead>"
-    + "<tbody><tr><td colspan='3'><div class='scrollit'>"
-    + "<table><tr><td>Version</td><td>French ou English</td><td>Tab<bl>LANGUAGE</bl></td></tr>"
+    + "<tbody><tr><td>Version</td><td>French ou English</td><td>Tab<bl>LANGUAGE</bl></td></tr>"
     + "<tr><td>Display the partition</td><td>Set by default</td><td>Tab <bl>Display</bl></td></tr>"
     + "<tr><td>Visualising sound signal</td><td>Set by default</td><td>Tab <bl>Display</bl></td></tr>"
     + "<tr><td>Display number at the start of the lines</td><td>By default not displayed</td><td>Tab <bl>Display</bl></td></tr>"
@@ -252,8 +249,7 @@ trjs.help_eng["op-param"] = "<p>Changes available in the <b>Parameter</b> menu:<
     + "<tr><td>Forward time step (in ms)</td><td>Keyboard shorcut :  ALT + -></td><td>Tab <bl>Setting</bl></td></tr>"
     + "<tr><td>Checking transcription when saving</td><td>Set by default</td><td>Tab <bl>CHECK</bl></td></tr>"
     + "<tr><td>Number of saved previous versions</td><td>From 1 to 3</td><td>Tab <bl>CHECK</bl></td></tr>"
-    + "</table></div></td></tr>"
-    + "</tbody></table></p>" ;
+	+ "</tbody></table>" ;
 
 trjs.help_fra["op-search"] = "<p>L'onglet de recherche s'affiche sous forme de panneau.<br/>"
 	+ "On peut y accéder par le raccourci clavier : CTRL + F<br/><br/>"
@@ -427,6 +423,9 @@ trjs.contextualhelp = function (theme, forcer) {
 
 trjs.displayhelp = function (theme) {
     $('#aideid').html(trjs.help[theme]);
+    // limit the size of aidecontext
+	var wdh = $(window).height();
+    $('#aidecontext').height(wdh - (80+5));
     $('#aidecontext').show();
 }
 

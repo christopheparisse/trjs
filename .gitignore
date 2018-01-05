@@ -17,7 +17,6 @@
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
@@ -38,4 +37,7 @@
 ehthumbs.db
 Thumbs.db
 /bin/
+/java-osx/
+/java-x64/
+/java-x86/
 /node_modules/

@@ -1,6 +1,16 @@
 		body {
 			font:13px Helvetica, sans-serif;
+			counter-reset: h1counter;
 			}
+		h1:before {
+			content: counter(h1counter) ".\0000a0\0000a0";
+			counter-increment: h1counter;
+			counter-reset: h2counter;
+		}
+		h2:before {
+			content: counter(h1counter) "." counter(h2counter) ".\0000a0\0000a0";
+			counter-increment: h2counter;
+		}
 		header {
 			position: fixed;
 			top: 0%;
@@ -11,7 +21,7 @@
 			color: white;
 			}
 		main {
-			width: 85%;
+			width: 90%;
 			height: auto;
 			float: left;
 			margin-top: 8%;
@@ -43,10 +53,8 @@
 			color: black
 			}
 		#menu2 {
-			width: 50%;
+			width: 85%;
 			height: auto;
-			margin-left: 15%;
-			margin-right: 45%;
 			margin-bottom: 3%;
 			float:left;
 			}
@@ -76,14 +84,14 @@
 			border-bottom: 1px;
 			}
 		nav {font: 12px Helvetica, sans-serif;}
-		nav h1 {
+		nav span {
 			font: 16px Helvetica, sans-serif;
 			font-weight: bold;
 			margin: 0.2em 1em 0.3em 0;
 			background-color: #E6E6E6;
 			width: 50%;
 			}
-		nav h1:hover {background-color: white;}
+		nav span:hover {background-color: white;}
 		nav ul {
 			list-style-type: none;
 			margin: 0 0 0 0;
@@ -109,6 +117,7 @@
 			font:12px Helvetica, sans-serif;
 			}
 		h1 {
+            padding-top: 35px;
 			margin-top: 2em;
 			color: #0B4C5F;
 			}
