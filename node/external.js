@@ -580,7 +580,8 @@ exports.convert_to_shortaudio = function (file, callback) {
     cmd1.push('1');
     cmd1.push(audioname);
 
-    if (version.debug(__filename)) console.log(version.ffmpegLoc() + ' ' + cmd1.join(' '));
+    //if (version.debug(__filename))
+        console.log(version.ffmpegLoc() + ' ' + cmd1.join(' '));
     //callFFMPEG(base, basedisp, myio, '-shortdisplay.wav', box, cmd1);
     var ffmpeg = childproc.spawn(version.ffmpegLoc(), cmd1);
     ffmpeg.stdout.on('data', function (data) {

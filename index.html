@@ -375,15 +375,36 @@
 							<div role="tabpanel" class="tab-pane" id="paffich"><br/>
 								<div class="row">
 									<div class="col-md-9 col-md-push-3"><input name="show-partition" id="show-partition" type="checkbox" onchange="trjs.editor.setPartition();" /><label for="show-partition">&nbsp;<span id='ppartition'>Display partition</span></label></div>
-									<div class="col-md-3 col-md-pull-9">Partition</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pnbvisible'>Number of visible lines in partition: </span>
+										<select class="nb-visible" id="nb-visible" onchange="trjs.editor.setNbVisible();">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+										</select></p>
+									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-9 col-md-push-3"><input name="show-wave" id="show-wave" type="checkbox" onchange="trjs.editor.setWave();" /><label for="show-wave">&nbsp;<span id='pwave'>Display wave intensity</span></label></div>
-									<div class="col-md-3 col-md-pull-9"><span id="wavei">Wave intensity</span></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><p><span id='pwavesample'>Number of samples per second</span>
+										<select class="number-sample" id="number-sample" onchange="trjs.editor.setWaveSample();">
+											<option value="8000">8000</option>
+											<option value="4000">4000</option>
+											<option value="2000">2000</option>
+											<option value="1000">1000</option>
+											<option value="500">500</option>
+										</select></p>
+									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-9 col-md-push-3"><input name="show-num" id="show-num" type="checkbox" onchange="trjs.editor.setNums();" /><label for="show-num">&nbsp;<span id='pshownumbers'>Show line numbers</span></label></div>
-									<div class="col-md-3 col-md-pull-9">Transcription</div>
 								</div>
 								<div class="row">
 									<div class="col-md-9 col-md-push-3"><input name="show-names" id="show-names" type="checkbox" onchange="trjs.editor.setLocNames();" /><label for="show-names">&nbsp;<span id='pshownames'>Show names or codes</span></label></div>
@@ -421,7 +442,7 @@
 							</div>
 							<div role="tabpanel" class="tab-pane" id="pregl"><br/>
 								<div class="row">
-									<div class="col-xs-6 col-md-4"><p><span id='pfmtlinktime'>Format of linked time: </span>
+									<div class="col-md-6"><p><span id='pfmtlinktime'>Format of linked time: </span>
 										<select class="format-parameters" id="format-time" onchange="trjs.editor.setFormatTime();">
 											<option value="hms">0h00m00s</option>
 											<option value="00:00">00:00</option>
@@ -453,7 +474,6 @@
 								</div>
 								<div class="row">
 									<div class="col-md-6"><p><span id='pchecktype'>Type of transcription check</span>
-									</p>
 									<select class="check-type" id="check-type" onchange="trjs.editor.setCheckType();">
 										<option value="CHAT">CHAT</option>
 <!--										<option value="Valibel">Valibel</option>-->
@@ -467,19 +487,6 @@
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
-										</select></p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6"><p><span id='pnbvisible'>Number of visible lines in partition: </span>
-									<select class="nb-visible" id="nb-visible" onchange="trjs.editor.setNbVisible();">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
 										</select></p>
 									</div>
 								</div>

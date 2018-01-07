@@ -425,7 +425,7 @@ trjs.displayhelp = function (theme) {
     $('#aideid').html(trjs.help[theme]);
     // limit the size of aidecontext
 	var wdh = $(window).height();
-    $('#aidecontext').height(wdh - (80+5));
+    $('#aidecontext').height(wdh - (80+10));
     $('#aidecontext').show();
 }
 

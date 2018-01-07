@@ -53,6 +53,7 @@ trjs.param = {
     paletteFile: true,
     paletteEdit: true,
     final: true,
+    wavesampling: version.WAVESAMPLINGINITIAL,
     format: 'CHAT',
 
     mode: 'readwrite',
@@ -145,7 +146,10 @@ trjs.param = {
             $('#id-edit-media').hide();
         }
 
+        trjs.local.init();
+        trjs.param.loadStorage();
         trjs.keys.init();
+        version.WAVESAMPLING = trjs.param.wavesampling;
 
         trjs.editor.init();
         if (trjs.param.level >= 'level2' && global.applicationTarget.type !== 'electron' && filetree) {
@@ -182,6 +186,7 @@ trjs.param = {
 
     resetDefault: function () {
         this.language = 'fra';
+        this.checkLanguage = 'fr-FR';
         this.versionFormat = "0.4";
         this.modeinsert = false;
         this.showLinkTime = true;
@@ -207,6 +212,7 @@ trjs.param = {
         this.paletteEdit = true;
         this.final = true;
         this.format = 'CHAT';
+        this.wavesampling = 4000;
     },
     resetWarnings: function () {
         this.warningLocalTranscript = true;
@@ -228,6 +234,7 @@ trjs.param = {
             return;
         }
         this.language = this.testUndefString(trjs.local.get('param_language'), "fra");
+        this.checkLanguage = this.testUndefString(trjs.local.get('param_checklanguage'), 'fr-FR');
         this.modeinsert = this.testUndefBoolean(trjs.local.get('param_modeinsert'), false);
         this.number = this.testUndefBoolean(trjs.local.get('param_number'), false);
         this.locnames = this.testUndefBoolean(trjs.local.get('param_locnames'), false);
@@ -258,6 +265,8 @@ trjs.param = {
         this.nbVisible = this.testUndefInt(trjs.local.get('param_nbVisible'), 3);
         this.final = this.testUndefBoolean(trjs.local.get('param_final'), true);
         this.format = this.testUndefString(trjs.local.get('param_format'), 'CHAT');
+        this.wavesampling = this.testUndefInt(trjs.local.get('param_wavesampling'), version.WAVESAMPLINGINITIAL);
+        if (this.wavesampling > version.WAVESAMPLINGMAX) this.wavesampling = version.WAVESAMPLINGMAX;
         var rf = this.testUndefString(trjs.local.get('param_recentfiles'), '');
         if (rf === '')
             this.recentfiles = [];
@@ -269,6 +278,7 @@ trjs.param = {
         if (!trjs.local.id)
             trjs.local.init();
         trjs.local.put('param_language', this.language);
+        trjs.local.put('param_checklanguage', this.checkLanguage);
         trjs.local.put('param_modeinsert', this.modeinsert);
         trjs.local.put('param_backwardskip', this.backwardskip);
         trjs.local.put('param_forwardskip', this.forwardskip);
@@ -297,6 +307,7 @@ trjs.param = {
         trjs.local.put('param_paletteEdit', this.paletteEdit);
         trjs.local.put('param_nbVisible', this.nbVisible);
         trjs.local.put('param_final', this.final);
+        trjs.local.put('param_wavesampling', this.wavesampling);
         trjs.local.put('param_format', this.format);
 
         var media = $('#media-display')[0].firstElementChild;

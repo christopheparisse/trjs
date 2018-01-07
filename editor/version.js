@@ -19,7 +19,7 @@ version.appName = 'TRJS';
 version.version = 'v0.6.1';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
-version.date = new Date(2018, 0, 5); // year, month, day : warning minus 1 (-1) for months : janvier === 0
+version.date = new Date(2018, 0, 9); // year, month, day : warning minus 1 (-1) for months : janvier === 0
 
 version.preservedPages = 3;
 
@@ -103,7 +103,9 @@ version.KNOWN_EXTENSIONS_TRANSCRIPTION_CONVERSIONS = '|.cha|.trs|.eaf|.textgrid|
 version.KNOWN_EXTENSIONS_TRANSCRIPTIONS = version.BASIC_EXT + version.KNOWN_EXTENSIONS_TRANSCRIPTION_CONVERSIONS;
 version.KNOWN_EXTENSIONS = version.BASIC_EXT + version.KNOWN_EXTENSIONS_TRANSCRIPTION_CONVERSIONS + version.KNOWN_EXTENSIONS_MEDIA;
 version.KNOWN_EXTENSIONS_SUP = '-240p|-480p|-720p|-1080p';
-version.WAVESAMPLING = 500;
+version.WAVESAMPLINGINITIAL = 1000;
+version.WAVESAMPLINGMAX = 8000;
+version.WAVESAMPLING = version.WAVESAMPLINGINITIAL;
 
 version.trjsLoc = function () {
     var htmlTrjsPath = process.cwd().replace(/\\/g, '/');

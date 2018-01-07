@@ -90,7 +90,7 @@ function startWindow(nth) {
     process.listWindows[nth].loadURL('file://' + __dirname + '/index.html');
 
     // Open the DevTools.
-    //process.listWindows[nth].webContents.openDevTools();
+    // process.listWindows[nth].webContents.openDevTools();
 
     // Emitted when the window is closed.
     process.listWindows[nth].on('closed', function () {

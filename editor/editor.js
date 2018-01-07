@@ -69,6 +69,7 @@ trjs.editor = (function () {
         $('#backward-step').val(trjs.param.backwardskip * 1000);
         $('#forward-step').val(trjs.param.forwardskip * 1000);
         $('#nb-saves').val(trjs.param.nbversions);
+        $('#nb-visible').val(trjs.param.nbVisible);
         $('#nb-digits').val(trjs.param.nbdigits);
         $('#format-time').val(trjs.param.formatTime);
 
@@ -110,6 +111,7 @@ trjs.editor = (function () {
         $('#use-quality').prop('checked', trjs.param.useQuality);
         $('#check-at-save').prop('checked', trjs.param.checkAtSave);
         $('#check-type').val(trjs.param.format);
+        $('#number-sample').val(trjs.param.wavesampling);
 
         if (trjs.param.number) {
             $('#param-numbers').show();
@@ -288,7 +290,7 @@ trjs.editor = (function () {
      * @method setCheckType
      */
     function setCheckType() {
-        var x = $('check-type').val();
+        var x = $('#check-type').val();
         if (x === "None") {
             trjs.param.final = false;
             trjs.param.format = "";
@@ -296,6 +298,17 @@ trjs.editor = (function () {
             trjs.param.final = true;
             trjs.param.format = x;
         }
+        trjs.param.saveStorage();
+    }
+
+    /**
+     * set option about wave samples
+     * @method setWaveSample
+     */
+    function setWaveSample() {
+        var x = $('#number-sample').val();
+        trjs.param.wavesampling = parseInt(x);
+        version.WAVESAMPLING = trjs.param.wavesampling;
         trjs.param.saveStorage();
     }
 
@@ -847,7 +860,6 @@ trjs.editor = (function () {
         $('#files-readwrite').hide();
         // init params
         trjs.local.init();
-        trjs.param.loadStorage();
         if (trjs.param.language === 'eng') {
             $('input[name="language-version"][value=0]').prop('checked', true);
             trjs.messgs = trjs.messgs_eng;
@@ -1506,6 +1518,8 @@ trjs.editor = (function () {
             trjs.io.serverSave();
         },
         setBackwardStep: setBackwardStep,
+        setCheckAtSave: setCheckAtSave,
+        setCheckType: setCheckType,
         setForwardStep: setForwardStep,
         setFormatTime: setFormatTime,
         setInitParam: setInitParam,
@@ -1522,6 +1536,7 @@ trjs.editor = (function () {
         setPartition: setPartition,
         setShowLinkTime: setShowLinkTime,
         setUseQuality: setUseQuality,
+        setWaveSample: setWaveSample,
         setWave: setWave,
         showCheck: showCheck,
         showDiv: showDiv,
