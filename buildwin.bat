@@ -1,3 +1,8 @@
-cd \devlopt\builds
-cmd /c electron-packager trjs-x64 --platform=win32 --arch=x64 --overwrite --icon=trjs-x64\style\trjs.ico
-cmd /c electron-packager trjs-x86 --platform=win32 --arch=ia32 --overwrite --icon=trjs-x86\style\trjs.ico
+cd \devlopt\builds\trjs-x64
+cmd /c electron-packager app --platform=win32 --asar=true --arch=x64 --overwrite --icon=app\style\trjs.ico
+md Trjs-win32-x64\resources\tools
+xcopy /s/y/c tools\*.* Trjs-win32-x64\resources\tools
+cd \devlopt\builds\trjs-x86
+cmd /c electron-packager app --platform=win32 --asar=true --arch=ia32 --overwrite --icon=app\style\trjs.ico
+md Trjs-win32-ia32\resources\tools
+xcopy /s/y/c tools\*.* Trjs-win32-ia32\resources\tools

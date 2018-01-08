@@ -2,180 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/editor/editor.js" afterPath="$PROJECT_DIR$/editor/editor.js" />
-      <change beforePath="$PROJECT_DIR$/editor/help.js" afterPath="$PROJECT_DIR$/editor/help.js" />
-      <change beforePath="$PROJECT_DIR$/editor/params.js" afterPath="$PROJECT_DIR$/editor/params.js" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" afterPath="$PROJECT_DIR$/editor/version.js" />
-      <change beforePath="$PROJECT_DIR$/html/modal-parameters.html" afterPath="$PROJECT_DIR$/html/modal-parameters.html" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change beforePath="$PROJECT_DIR$/node/external.js" afterPath="$PROJECT_DIR$/node/external.js" />
-      <change beforePath="$PROJECT_DIR$/tools/conversions.jar" afterPath="$PROJECT_DIR$/tools/conversions.jar" />
-      <change beforePath="$PROJECT_DIR$/tools/ffmpeg" afterPath="$PROJECT_DIR$/tools/ffmpeg" />
-      <change beforePath="$PROJECT_DIR$/tools/ffmpeg2theora" afterPath="$PROJECT_DIR$/tools/ffmpeg2theora" />
-      <change beforePath="$PROJECT_DIR$/tools/ffmpeg_10_6" afterPath="$PROJECT_DIR$/tools/ffmpeg_10_6" />
-      <change beforePath="$PROJECT_DIR$/tools/ffprobe" afterPath="$PROJECT_DIR$/tools/ffprobe" />
-      <change beforePath="$PROJECT_DIR$/tools/ffprobe_10_6" afterPath="$PROJECT_DIR$/tools/ffprobe_10_6" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/COPYRIGHT" afterPath="$PROJECT_DIR$/tools/java-osx/COPYRIGHT" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/LICENSE" afterPath="$PROJECT_DIR$/tools/java-osx/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/README" afterPath="$PROJECT_DIR$/tools/java-osx/README" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/THIRDPARTYLICENSEREADME-JAVAFX.txt" afterPath="$PROJECT_DIR$/tools/java-osx/THIRDPARTYLICENSEREADME-JAVAFX.txt" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/THIRDPARTYLICENSEREADME.txt" afterPath="$PROJECT_DIR$/tools/java-osx/THIRDPARTYLICENSEREADME.txt" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/Welcome.html" afterPath="$PROJECT_DIR$/tools/java-osx/Welcome.html" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/java" afterPath="$PROJECT_DIR$/tools/java-osx/bin/java" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/jjs" afterPath="$PROJECT_DIR$/tools/java-osx/bin/jjs" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/keytool" afterPath="$PROJECT_DIR$/tools/java-osx/bin/keytool" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/orbd" afterPath="$PROJECT_DIR$/tools/java-osx/bin/orbd" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/pack200" afterPath="$PROJECT_DIR$/tools/java-osx/bin/pack200" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/policytool" afterPath="$PROJECT_DIR$/tools/java-osx/bin/policytool" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/rmid" afterPath="$PROJECT_DIR$/tools/java-osx/bin/rmid" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/rmiregistry" afterPath="$PROJECT_DIR$/tools/java-osx/bin/rmiregistry" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/servertool" afterPath="$PROJECT_DIR$/tools/java-osx/bin/servertool" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/tnameserv" afterPath="$PROJECT_DIR$/tools/java-osx/bin/tnameserv" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/bin/unpack200" afterPath="$PROJECT_DIR$/tools/java-osx/bin/unpack200" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/calendars.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/calendars.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/classlist" afterPath="$PROJECT_DIR$/tools/java-osx/lib/classlist" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/cmm/CIEXYZ.pf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/cmm/CIEXYZ.pf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/cmm/GRAY.pf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/cmm/GRAY.pf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/cmm/LINEAR_RGB.pf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/cmm/LINEAR_RGB.pf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/cmm/PYCC.pf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/cmm/PYCC.pf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/cmm/sRGB.pf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/cmm/sRGB.pf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/content-types.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/content-types.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/currency.data" afterPath="$PROJECT_DIR$/tools/java-osx/lib/currency.data" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/ext/meta-index" afterPath="$PROJECT_DIR$/tools/java-osx/lib/ext/meta-index" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/flavormap.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/flavormap.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fontconfig.bfc" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fontconfig.bfc" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fontconfig.properties.src" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fontconfig.properties.src" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightDemiBold.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightDemiBold.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightDemiItalic.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightDemiItalic.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightItalic.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightItalic.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightRegular.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaBrightRegular.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaSansDemiBold.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaSansDemiBold.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaSansRegular.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaSansRegular.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaTypewriterBold.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaTypewriterBold.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaTypewriterRegular.ttf" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/LucidaTypewriterRegular.ttf" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/fonts/fonts.dir" afterPath="$PROJECT_DIR$/tools/java-osx/lib/fonts/fonts.dir" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/hijrah-config-umalqura.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/hijrah-config-umalqura.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/cursors.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/cursors.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/invalid32x32.gif" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/invalid32x32.gif" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_CopyDrop32x32.gif" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_CopyDrop32x32.gif" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_CopyNoDrop32x32.gif" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_CopyNoDrop32x32.gif" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_LinkDrop32x32.gif" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_LinkDrop32x32.gif" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_LinkNoDrop32x32.gif" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_LinkNoDrop32x32.gif" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_MoveDrop32x32.gif" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_MoveDrop32x32.gif" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_MoveNoDrop32x32.gif" afterPath="$PROJECT_DIR$/tools/java-osx/lib/images/cursors/motif_MoveNoDrop32x32.gif" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/javafx.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/javafx.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/jfr/default.jfc" afterPath="$PROJECT_DIR$/tools/java-osx/lib/jfr/default.jfc" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/jfr/profile.jfc" afterPath="$PROJECT_DIR$/tools/java-osx/lib/jfr/profile.jfc" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/jli/libjli.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/jli/libjli.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/jspawnhelper" afterPath="$PROJECT_DIR$/tools/java-osx/lib/jspawnhelper" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/jvm.cfg" afterPath="$PROJECT_DIR$/tools/java-osx/lib/jvm.cfg" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/jvm.hprof.txt" afterPath="$PROJECT_DIR$/tools/java-osx/lib/jvm.hprof.txt" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libAppleScriptEngine.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libAppleScriptEngine.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libattach.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libattach.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libawt.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libawt.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libawt_lwawt.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libawt_lwawt.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libbci.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libbci.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libdcpr.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libdcpr.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libdecora_sse.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libdecora_sse.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libdt_socket.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libdt_socket.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libfontmanager.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libfontmanager.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libfxplugins.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libfxplugins.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libglass.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libglass.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libglib-lite.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libglib-lite.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libgstreamer-lite.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libgstreamer-lite.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libhprof.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libhprof.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libinstrument.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libinstrument.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libj2gss.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libj2gss.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libj2pcsc.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libj2pcsc.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libj2pkcs11.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libj2pkcs11.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjaas_unix.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjaas_unix.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjava.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjava.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjava_crw_demo.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjava_crw_demo.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjavafx_font.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjavafx_font.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjavafx_font_t2k.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjavafx_font_t2k.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjavafx_iio.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjavafx_iio.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjawt.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjawt.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjdwp.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjdwp.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjfr.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjfr.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjfxmedia.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjfxmedia.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjfxmedia_avf.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjfxmedia_avf.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjfxmedia_qtkit.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjfxmedia_qtkit.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjfxwebkit.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjfxwebkit.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjpeg.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjpeg.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjsdt.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjsdt.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjsig.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjsig.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libjsound.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libjsound.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libkcms.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libkcms.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/liblcms.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/liblcms.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libmanagement.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libmanagement.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libmlib_image.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libmlib_image.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libnet.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libnet.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libnio.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libnio.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libnpt.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libnpt.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libosx.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libosx.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libosxapp.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libosxapp.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libosxkrb5.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libosxkrb5.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libosxui.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libosxui.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libprism_common.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libprism_common.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libprism_es2.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libprism_es2.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libprism_sw.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libprism_sw.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libresource.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libresource.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libsaproc.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libsaproc.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libsplashscreen.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libsplashscreen.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libsunec.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libsunec.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libt2k.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libt2k.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libunpack.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libunpack.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libverify.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libverify.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/libzip.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/libzip.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/logging.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/logging.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/management/jmxremote.access" afterPath="$PROJECT_DIR$/tools/java-osx/lib/management/jmxremote.access" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/management/jmxremote.password.template" afterPath="$PROJECT_DIR$/tools/java-osx/lib/management/jmxremote.password.template" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/management/management.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/management/management.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/management/snmp.acl.template" afterPath="$PROJECT_DIR$/tools/java-osx/lib/management/snmp.acl.template" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/meta-index" afterPath="$PROJECT_DIR$/tools/java-osx/lib/meta-index" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/net.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/net.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/psfont.properties.ja" afterPath="$PROJECT_DIR$/tools/java-osx/lib/psfont.properties.ja" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/psfontj2d.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/psfontj2d.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/security/blacklist" afterPath="$PROJECT_DIR$/tools/java-osx/lib/security/blacklist" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/security/blacklisted.certs" afterPath="$PROJECT_DIR$/tools/java-osx/lib/security/blacklisted.certs" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/security/cacerts" afterPath="$PROJECT_DIR$/tools/java-osx/lib/security/cacerts" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/security/java.policy" afterPath="$PROJECT_DIR$/tools/java-osx/lib/security/java.policy" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/security/java.security" afterPath="$PROJECT_DIR$/tools/java-osx/lib/security/java.security" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/security/trusted.libraries" afterPath="$PROJECT_DIR$/tools/java-osx/lib/security/trusted.libraries" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/server/Xusage.txt" afterPath="$PROJECT_DIR$/tools/java-osx/lib/server/Xusage.txt" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/server/libjsig.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/server/libjsig.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/server/libjvm.dylib" afterPath="$PROJECT_DIR$/tools/java-osx/lib/server/libjvm.dylib" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/sound.properties" afterPath="$PROJECT_DIR$/tools/java-osx/lib/sound.properties" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/lib/tzdb.dat" afterPath="$PROJECT_DIR$/tools/java-osx/lib/tzdb.dat" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/java.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/java.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/javaws.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/javaws.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/jjs.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/jjs.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/keytool.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/keytool.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/orbd.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/orbd.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/pack200.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/pack200.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/policytool.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/policytool.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/rmid.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/rmid.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/rmiregistry.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/rmiregistry.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/servertool.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/servertool.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/tnameserv.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/tnameserv.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/unpack200.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/ja_JP.UTF-8/man1/unpack200.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/java.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/java.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/javaws.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/javaws.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/jjs.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/jjs.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/keytool.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/keytool.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/orbd.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/orbd.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/pack200.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/pack200.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/policytool.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/policytool.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/rmid.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/rmid.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/rmiregistry.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/rmiregistry.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/servertool.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/servertool.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/tnameserv.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/tnameserv.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/man/man1/unpack200.1" afterPath="$PROJECT_DIR$/tools/java-osx/man/man1/unpack200.1" />
-      <change beforePath="$PROJECT_DIR$/tools/java-osx/release" afterPath="$PROJECT_DIR$/tools/java-osx/release" />
-      <change beforePath="$PROJECT_DIR$/trjsclient.html" afterPath="$PROJECT_DIR$/trjsclient.html" />
-      <change beforePath="$PROJECT_DIR$/trjslocal.html" afterPath="$PROJECT_DIR$/trjslocal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buildwin.bat" afterPath="$PROJECT_DIR$/buildwin.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mktrjs-macos.sh" afterPath="$PROJECT_DIR$/mktrjs-macos.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mktrjs-x64.sh" afterPath="$PROJECT_DIR$/mktrjs-x64.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mktrjs-x86.sh" afterPath="$PROJECT_DIR$/mktrjs-x86.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transcriberjs-x64.nsi" afterPath="$PROJECT_DIR$/transcriberjs-x64.nsi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transcriberjs-x86.nsi" afterPath="$PROJECT_DIR$/transcriberjs-x86.nsi" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -189,114 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="help.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/help.js">
+      <file leaf-file-name="transcriberjs-x64.nsi" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/transcriberjs-x64.nsi">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6435">
-              <caret line="429" column="1" lean-forward="false" selection-start-line="429" selection-start-column="1" selection-end-line="429" selection-end-column="1" />
-              <folding>
-                <marker date="1515234584576" expanded="true" signature="11079:11085" ph=" " />
-                <marker date="1515234584576" expanded="true" signature="12967:12973" ph=" " />
-                <marker date="1515234584576" expanded="true" signature="25352:25382" ph="..." />
-                <marker date="1515234584576" expanded="true" signature="25469:25501" ph="..." />
-                <marker date="1515234584576" expanded="true" signature="25582:25613" ph="..." />
-                <marker date="1515234584576" expanded="true" signature="28043:28073" ph="..." />
-                <marker date="1515234584576" expanded="true" signature="28144:28176" ph="..." />
-                <marker date="1515234584576" expanded="true" signature="28251:28282" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="external.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node/external.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8655">
-              <caret line="577" column="21" lean-forward="false" selection-start-line="577" selection-start-column="14" selection-end-line="577" selection-end-column="21" />
+            <state relative-caret-position="528">
+              <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/editor/version.js">
+      <file leaf-file-name="transcriberjs-x86.nsi" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/transcriberjs-x86.nsi">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal-parameters.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/modal-parameters.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="175" lean-forward="false" selection-start-line="27" selection-start-column="156" selection-end-line="27" selection-end-column="175" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="params.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/params.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4140">
-              <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="local.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/local.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="92" column="7" lean-forward="false" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/editor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2445">
-              <caret line="172" column="36" lean-forward="false" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="partition.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/partition.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5535">
-              <caret line="374" column="28" lean-forward="false" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drawmovezoom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/drawmovezoom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
+            <state relative-caret-position="1127">
+              <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -306,7 +47,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.aide</find>
       <find>resetSpellCheckProvider</find>
       <find>language</find>
       <find>helpcontextuelle</find>
@@ -336,6 +76,7 @@
       <find>nbVisible</find>
       <find>setLanguageSpelling</find>
       <find>checkLanguage</find>
+      <find>0.6.0</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -344,6 +85,7 @@
       <replace>2.</replace>
       <replace>3.</replace>
       <replace>span</replace>
+      <replace>0.6.1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -381,6 +123,12 @@
         <option value="$PROJECT_DIR$/html/modal-parameters.html" />
         <option value="$PROJECT_DIR$/editor/params.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
+        <option value="$PROJECT_DIR$/mktrjs-x64.sh" />
+        <option value="$PROJECT_DIR$/mktrjs-x86.sh" />
+        <option value="$PROJECT_DIR$/mktrjs-macos.sh" />
+        <option value="$PROJECT_DIR$/buildwin.bat" />
+        <option value="$PROJECT_DIR$/transcriberjs-x64.nsi" />
+        <option value="$PROJECT_DIR$/transcriberjs-x86.nsi" />
       </list>
     </option>
   </component>
@@ -401,10 +149,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="80" />
-    <option name="y" value="22" />
-    <option name="width" value="1774" />
-    <option name="height" value="1041" />
+    <option name="x" value="1073" />
+    <option name="y" value="115" />
+    <option name="width" value="2306" />
+    <option name="height" value="1706" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -421,6 +169,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -428,42 +177,11 @@
               <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
               <item name="trjs" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="node" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="systemcall" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -490,7 +208,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="help.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="help.js" working-dir="$PROJECT_DIR$/editor" />
+    <configuration name="help.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="help.js" working-dir="$PROJECT_DIR$/editor" />
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Node.js.help.js" />
@@ -519,24 +237,25 @@
       <workItem from="1515271417342" duration="4203000" />
       <workItem from="1515366864129" duration="20000" />
       <workItem from="1515366906012" duration="20000" />
+      <workItem from="1515372248163" duration="2766000" />
+      <workItem from="1515399909568" duration="130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41917000" />
+    <option name="totallyTimeSpent" value="44813000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="80" y="22" width="1774" height="1041" extended-state="0" />
+    <frame x="1073" y="115" width="2306" height="1706" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19281232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14717652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -546,6 +265,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17124736" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -587,83 +307,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/editor/help.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6405">
-          <caret line="427" column="16" lean-forward="false" selection-start-line="427" selection-start-column="5" selection-end-line="427" selection-end-column="16" />
-          <folding>
-            <marker date="1515234584576" expanded="true" signature="11079:11085" ph=" " />
-            <marker date="1515234584576" expanded="true" signature="12967:12973" ph=" " />
-            <marker date="1515234584576" expanded="true" signature="25352:25382" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="25469:25501" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="25582:25613" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28043:28073" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28144:28176" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28251:28282" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10935">
-          <caret line="729" column="51" lean-forward="false" selection-start-line="729" selection-start-column="51" selection-end-line="729" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/doc.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/media.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="78" lean-forward="false" selection-start-line="75" selection-start-column="78" selection-end-line="75" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/trjs_pp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" column="58" lean-forward="false" selection-start-line="97" selection-start-column="55" selection-end-line="97" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/media.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="78" lean-forward="false" selection-start-line="75" selection-start-column="78" selection-end-line="75" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/help.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3765">
-          <caret line="251" column="0" lean-forward="false" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-          <folding>
-            <marker date="1515234584576" expanded="true" signature="11079:11085" ph=" " />
-            <marker date="1515234584576" expanded="true" signature="12967:12973" ph=" " />
-            <marker date="1515234584576" expanded="true" signature="25352:25382" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="25469:25501" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="25582:25613" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28043:28073" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28144:28176" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28251:28282" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/tdiff.sh" />
     <entry file="file://$PROJECT_DIR$/LICENSE.md">
       <provider selected="true" editor-type-id="text-editor">
@@ -884,34 +527,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/help.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6435">
+        <state relative-caret-position="9867">
           <caret line="429" column="1" lean-forward="false" selection-start-line="429" selection-start-column="1" selection-end-line="429" selection-end-column="1" />
-          <folding>
-            <marker date="1515234584576" expanded="true" signature="11079:11085" ph=" " />
-            <marker date="1515234584576" expanded="true" signature="12967:12973" ph=" " />
-            <marker date="1515234584576" expanded="true" signature="25352:25382" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="25469:25501" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="25582:25613" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28043:28073" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28144:28176" ph="..." />
-            <marker date="1515234584576" expanded="true" signature="28251:28282" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node/external.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8655">
+        <state relative-caret-position="13271">
           <caret line="577" column="21" lean-forward="false" selection-start-line="577" selection-start-column="14" selection-end-line="577" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/drawmovezoom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,29 +546,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/local.js">
+    <entry file="file://$PROJECT_DIR$/editor/editor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="1389">
+          <caret line="172" column="36" lean-forward="false" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/editor/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="92" column="7" lean-forward="false" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/partition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5535">
-          <caret line="374" column="28" lean-forward="false" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="33">
+          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -952,32 +564,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="175" lean-forward="false" selection-start-line="27" selection-start-column="156" selection-end-line="27" selection-end-column="175" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2445">
-          <caret line="172" column="36" lean-forward="false" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/params.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4140">
+        <state relative-caret-position="1389">
           <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
+    <entry file="file://$PROJECT_DIR$/editor/local.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="253">
+          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="92" column="7" lean-forward="false" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/partition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1389">
+          <caret line="374" column="28" lean-forward="false" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/drawmovezoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1389">
+          <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mktrjs-x86.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildwin.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildmacos.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildallmac.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mktrjs-macos.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mktrjs-x64.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transcriberjs-x64.nsi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transcriberjs-x86.nsi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
           <folding />
         </state>
       </provider>
