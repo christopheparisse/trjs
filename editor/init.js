@@ -87,19 +87,41 @@ trjs.init = function(force) {
 			$(document).ready(function() {
 				// version.setDebug('__all__', true)
 				trjs.param.init('readwrite', 'electron', 'electron', 'level6');
+/*
+                var remote = require('remote');
+                remote.getCurrentWindow().on('close', function() {
+                    console.log('I test to be closed');
+                    trjs.param.saveStorage();
+                    if (trjs.param.changed === true) {
+                        trjs.io.innerSave();
+                        if (trjs.editor.testNotSave() === false) {
+                            e.returnValue = true;
+                        } else {
+                            e.returnValue = false;
+                            remote.getCurrentWindow().destroy();
+                        }
+                    }
+                });
+
                 window.onbeforeunload = function (e) {
                     console.log('I test to be closed');
                     trjs.param.saveStorage();
                     if (trjs.param.changed === true) {
                         trjs.io.innerSave();
-                        if (trjs.editor.testNotSave() === false)
-                        	e.returnValue = false;
+                        if (trjs.editor.testNotSave() === false) {
+                            e.returnValue = true;
+						} else {
+                            e.returnValue = false;
+                            var remote = require('electron').remote;
+                            remote.process.destroy();
+                        }
                     }
                     // Unlike usual browsers that a message box will be prompted to users, returning
                     // a non-void value will silently cancel the close.
                     // It is recommended to use the dialog API to let the user confirm closing the
                     // application.
                 };
+*/
 			});
 			break;
 /*

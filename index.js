@@ -2,6 +2,7 @@
 const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
+app.showExitPrompt = true;
 var isReady = false;
 var oneWindow = false;
 
@@ -98,6 +99,24 @@ function startWindow(nth) {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         process.listWindows[nth]= null;
+    });
+
+    // Emitted when the window is closing.
+    process.listWindows[nth].on('close', function (e) {
+        if (app.showExitPrompt) {
+            e.preventDefault(); // Prevents the window from closing
+            electron.dialog.showMessageBox({
+                type: 'question',
+                buttons: ['Yes', 'No'],
+                title: 'Confirm',
+                message: 'Unsaved data will be lost. Are you sure you want to quit?'
+            }, function (response) {
+                if (response === 0) { // Runs the following if 'Yes' is clicked
+                    app.showExitPrompt = false;
+                    process.listWindows[nth].close();
+                }
+            });
+        }
     });
 }
 

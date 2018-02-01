@@ -686,6 +686,7 @@ trjs.editor = (function () {
             if (callback) callback(true);
             return true;
         }
+
         if (!callback) {
             if (window.confirm(trjs.messgs.mustsave)) {
                 //trjs.param.changed = false;
