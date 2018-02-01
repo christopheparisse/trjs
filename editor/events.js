@@ -216,7 +216,7 @@ trjs.events = (function () {
         lineSetCell(trjs.data.selectedLine, trjs.data.TECOL, end);
         lineSetCell(trjs.data.selectedLine, trjs.data.VTECOL, trjs.transcription.formatTime(end));
         if (start !== '') reorder(l); // check if l is at right position and reorder if necessary
-        if (trjs.param.alwaysCheckOverlap === true) checkOverlap(trjs.data.selectedLine);
+        if (trjs.param.alwaysCheckOverlap === true) trjs.check.checkOverlap(trjs.data.selectedLine);
         trjs.dmz.redraw('partition'); // TODO: check if this works correctly
     }
 
@@ -415,7 +415,7 @@ trjs.events = (function () {
         setSelectedLine(sel);
         // flash the number so that a feedback is seen
         lineNotify(sel, trjs.data.VTSCOL, 'cyan');
-        checkOverlap(sel);
+        trjs.check.checkOverlap(sel);
     }
 
     /**
@@ -444,7 +444,7 @@ trjs.events = (function () {
         setSelectedLine(sel);
         // flash the number so that a feedback is seen
         lineNotify(sel, trjs.data.VTECOL, 'cyan');
-        checkOverlap(sel);
+        trjs.check.checkOverlap(sel);
     }
 
     /**
@@ -897,7 +897,7 @@ trjs.events = (function () {
         trjs.undo.replaceTE(linenumber + 1, '', te);
         $('.transcription', nextsel.next()).focus();
         if (tm !== '') reorder(linenumber + 1); // check if l is at right position and reorder if necessary
-        if (trjs.param.alwaysCheckOverlap === true) checkOverlap(nextsel);
+        if (trjs.param.alwaysCheckOverlap === true) trjs.check.checkOverlap(nextsel);
     }
 
     /**
@@ -1173,7 +1173,7 @@ trjs.events = (function () {
         $('.transcription', nextline[0]).focus();
         setSelectedLine(nextline);
         reorder(linenumber); // check if l is at right position and reorder if necessary
-        if (trjs.param.alwaysCheckOverlap === true) checkOverlap(nextline);
+        if (trjs.param.alwaysCheckOverlap === true) trjs.check.checkOverlap(nextline);
     }
 
     /**
@@ -1294,7 +1294,7 @@ trjs.events = (function () {
             trjs.transcription.trUpdateCSS(nextline, code);
             $('.transcription', nextline[0]).focus();
             if (tm !== '') reorder(linenumber + 1); // check if l is at right position and reorder if necessary
-            if (trjs.param.alwaysCheckOverlap === true) checkOverlap(nextline);
+            if (trjs.param.alwaysCheckOverlap === true) trjs.check.checkOverlap(nextline);
         } else {
             setTimeReplaceLoc(undefined, sel);
         }
@@ -1841,7 +1841,7 @@ trjs.events = (function () {
             trjs.undo.te.check(event);  // store undo information
             trjs.dmz.redraw('partition');
         }
-        checkOverlap(sel);
+        trjs.check.checkOverlap(sel);
     }
 
     /**

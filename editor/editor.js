@@ -492,7 +492,7 @@ trjs.editor = (function () {
         if (div.is(':visible')) {
             if (forcevisible === true) return;
             div.hide();
-            if (aide) trjs.helpclose();
+            if (aide) trjs.closehelp();
             nbToogleParametersArea--;
             if (nbToogleParametersArea <= 0) {
                 nbToogleParametersArea = 0;

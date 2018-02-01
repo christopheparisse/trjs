@@ -271,6 +271,7 @@ trjs.check = (function () {
 
     return {
         checkFinal: checkFinal,
+        checkOverlap: checkOverlap,
         currentLineCheck: currentLineCheck,
         goCheck: goCheck,
         nextCheck: nextCheck,
