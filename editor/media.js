@@ -308,10 +308,16 @@ trjs.media = (function () {
      */
     function getTime() {
         var media = $('#media-display')[0].firstElementChild;
-        if (media && media.currentTime)
+        if (media) {
+            if (media.currentTime === "NaN") {
+                trjs.log.alert('The media is not working. Cannot insert time mark.');
+                return '';
+            }
             return media.currentTime;
-        else
+        } else {
+            trjs.log.alert('The media is not initiatized. Cannot insert time mark.');
             return '';
+        }
     }
 
     /**

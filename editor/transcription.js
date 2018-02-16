@@ -1324,8 +1324,9 @@ trjs.transcription = (function () {
      */
     function newTable() {
         var hot = [
-            {loc: "+div+", ts: "", te: "", tx: "x", stx: "x", type: 'div'}, // trjs.messgs.initdiv
-            {loc: "LOC", ts: 0, te: "", tx: "", type: 'loc'} // trjs.messgs.inittrs
+            // don't insert div automatically
+            // {loc: "+div+", ts: "", te: "", tx: "x", stx: "x", type: 'div'}, // trjs.messgs.initdiv
+            {loc: "---", ts: 0, te: "", tx: "", type: 'loc'} // trjs.messgs.inittrs
         ];
         initTable(hot);
     }

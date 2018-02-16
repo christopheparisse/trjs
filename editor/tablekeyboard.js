@@ -915,17 +915,37 @@ trjs.keys.initF2Bindings = function () {
     trjs.F2Bindings.push([nkey("single quote"), false, false, false, false, function () { trjs.F2.key(14); }, trjs.F2.desc(14), trjs.F2.keyValue(14)]); //
     trjs.F2Bindings.push([nkey("double quote"), false, false, false, false, function () { trjs.F2.key(15); }, trjs.F2.desc(15), trjs.F2.keyValue(15)]); //
 
-    trjs.F2Bindings.push( [nkey("f3"), false, false, false, false, trjs.keys.colorRed, trjs.messgs.ctrlaltbin113, 'RED' ] ); // F2 F3
-    trjs.F2Bindings.push( [nkey("f4"), false, false, false, false, trjs.keys.colorGreen, trjs.messgs.ctrlaltbin114, 'GREEN' ] ); // F2 F4
-    trjs.F2Bindings.push( [nkey("f5"), false, false, false, false, trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115, 'BLUE' ] ); // F2 F5
-    trjs.F2Bindings.push( [nkey("f6"), false, false, false, false, trjs.keys.bold, trjs.messgs.ctrlaltbin116, 'BOLD' ] ); // F2 F6
-    trjs.F2Bindings.push( [nkey("f7"), false, false, false, false, trjs.keys.italics, trjs.messgs.ctrlaltbin117, 'ITALICS' ] ); // F2 F7
-    trjs.F2Bindings.push( [nkey("f8"), false, false, false, false, trjs.keys.emphasis, trjs.messgs.ctrlaltbin118, 'EMPHASIS' ] ); // F2 F8
+    trjs.F2Bindings.push( [nkey("f3"), false, false, false, false, trjs.events.setNthLoc1, trjs.messgs.ctrlbin49]); // F2 F3
+    trjs.F2Bindings.push( [nkey("f4"), false, false, false, false, trjs.events.setNthLoc2, trjs.messgs.ctrlbin50]); // F2 F4
+    trjs.F2Bindings.push( [nkey("f5"), false, false, false, false, trjs.events.setNthLoc3, trjs.messgs.ctrlbin51]); // F2 F5
+    trjs.F2Bindings.push( [nkey("f6"), false, false, false, false, trjs.events.setNthLoc4, trjs.messgs.ctrlbin52]); // F2 F6
+    trjs.F2Bindings.push( [nkey("f7"), false, false, false, false, trjs.events.setNthLoc5, trjs.messgs.ctrlbin53]); // F2 F7
+    trjs.F2Bindings.push( [nkey("f8"), false, false, false, false, trjs.events.setNthLoc6, trjs.messgs.ctrlbin54]); // F2 F8
+    trjs.F2Bindings.push( [nkey("f9"), false, false, false, false, trjs.events.setNthLoc7, trjs.messgs.ctrlbin55]); // F2 F9
+    trjs.F2Bindings.push([nkey("f10"), false, false, false, false, trjs.events.setNthLoc8, trjs.messgs.ctrlbin56]); // F2 F10
+    trjs.F2Bindings.push([nkey("f11"), false, false, false, false, trjs.events.setNthLoc9, trjs.messgs.ctrlbin57]); // F2 F11
 
-    trjs.F2Bindings.push([nkey("f9"), false, false, false, false, trjs.media.playSlower, trjs.messgs.ctrlaltbin115]); // F2 F9
-    trjs.F2Bindings.push([nkey("f10"), false, false, false, false, trjs.media.playFaster, trjs.messgs.ctrlaltbin116]); // F2 F10
-    trjs.F2Bindings.push([nkey("f11"), false, false, false, false, trjs.media.playReverse, trjs.messgs.ctrlaltbin66]); // F2 F11
-    trjs.F2Bindings.push([nkey("f12"), false, false, false, false, trjs.media.playNormal, trjs.messgs.ctrlaltbin69]); // F2 F12
+    trjs.F2Bindings.push( [nkey("1"), false, false, false, false, trjs.events.setNthLoc1, trjs.messgs.ctrlbin49]); // F2 1
+    trjs.F2Bindings.push( [nkey("2"), false, false, false, false, trjs.events.setNthLoc2, trjs.messgs.ctrlbin50]); // F2 2
+    trjs.F2Bindings.push( [nkey("3"), false, false, false, false, trjs.events.setNthLoc3, trjs.messgs.ctrlbin51]); // F2 3
+    trjs.F2Bindings.push( [nkey("4"), false, false, false, false, trjs.events.setNthLoc4, trjs.messgs.ctrlbin52]); // F2 4
+    trjs.F2Bindings.push( [nkey("5"), false, false, false, false, trjs.events.setNthLoc5, trjs.messgs.ctrlbin53]); // F2 5
+    trjs.F2Bindings.push( [nkey("6"), false, false, false, false, trjs.events.setNthLoc6, trjs.messgs.ctrlbin54]); // F2 6
+    trjs.F2Bindings.push( [nkey("7"), false, false, false, false, trjs.events.setNthLoc7, trjs.messgs.ctrlbin55]); // F2 7
+    trjs.F2Bindings.push([nkey("8"), false, false, false, false, trjs.events.setNthLoc8, trjs.messgs.ctrlbin56]); // F2 8
+    trjs.F2Bindings.push([nkey("9"), false, false, false, false, trjs.events.setNthLoc9, trjs.messgs.ctrlbin57]); // F2 9
+
+    trjs.F2Bindings.push( [nkey("f3"), true, false, false, false, trjs.keys.colorRed, trjs.messgs.ctrlaltbin113, 'RED' ] ); // F2 F3
+    trjs.F2Bindings.push( [nkey("f4"), true, false, false, false, trjs.keys.colorGreen, trjs.messgs.ctrlaltbin114, 'GREEN' ] ); // F2 F4
+    trjs.F2Bindings.push( [nkey("f5"), true, false, false, false, trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115, 'BLUE' ] ); // F2 F5
+    trjs.F2Bindings.push( [nkey("f6"), true, false, false, false, trjs.keys.bold, trjs.messgs.ctrlaltbin116, 'BOLD' ] ); // F2 F6
+    trjs.F2Bindings.push( [nkey("f7"), true, false, false, false, trjs.keys.italics, trjs.messgs.ctrlaltbin117, 'ITALICS' ] ); // F2 F7
+    trjs.F2Bindings.push( [nkey("f8"), true, false, false, false, trjs.keys.emphasis, trjs.messgs.ctrlaltbin118, 'EMPHASIS' ] ); // F2 F8
+
+    trjs.F2Bindings.push([nkey("f9"), true, false, false, false, trjs.media.playSlower, trjs.messgs.ctrlaltbin115]); // F2 F9
+    trjs.F2Bindings.push([nkey("f10"), true, false, false, false, trjs.media.playFaster, trjs.messgs.ctrlaltbin116]); // F2 F10
+    trjs.F2Bindings.push([nkey("f11"), true, false, false, false, trjs.media.playReverse, trjs.messgs.ctrlaltbin66]); // F2 F11
+    trjs.F2Bindings.push([nkey("f12"), true, false, false, false, trjs.media.playNormal, trjs.messgs.ctrlaltbin69]); // F2 F12
 
     //trjs.F2Bindings.push([119, false, false, false, false, trjs.transcription.setMultipleSelection, trjs.messgs.ctrlaltbin119]); // Ctrl Alt F8
     //trjs.F2Bindings.push([120, false, false, false, false, trjs.transcription.exportMStoSubtSrt, trjs.messgs.ctrlaltbin120]); // Ctrl Alt F9

@@ -60,6 +60,7 @@ trjs.io = (function () {
         var media = $('#media-element')[0].firstElementChild;
         if (media)
             media.addEventListener('timeupdate', trjs.media.timeUpdateListener, false);
+        trjs.media.setTime(0);
         trjs.editor.showOpensaveMedia('hide');
     }
 
@@ -71,6 +72,7 @@ trjs.io = (function () {
      */
     function innerLoadMedia(name, obj) {
         var ext = trjs.utils.extensionName(name).toLowerCase();
+        trjs.media.setTime(0);
         if (ext === ".mp3" || ext === ".oga" || ext === ".wav" || ext === "aif" || ext === "aiff") {
             // sets the audio
             setAudio();
@@ -544,6 +546,7 @@ trjs.io = (function () {
     }
 
     function finalizeLoadMedia() {
+        trjs.media.setTime(0);
         trjs.editor.resizeTranscript();
         trjs.dmz.sliderPopulate();
     }

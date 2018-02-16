@@ -393,6 +393,8 @@ trjs.events = (function () {
      */
     function setStart() {
         var sel = trjs.data.selectedLine;
+        // put current line in focus if this is not the case
+        $('.transcription', sel).focus();
         trjs.param.changed = true;
         var t = trjs.media.getTime();
         if (t === '') return;
@@ -425,8 +427,10 @@ trjs.events = (function () {
      * @param {object} line of transcription table
      */
     function setEnd() {
-        trjs.param.changed = true;
         var sel = trjs.data.selectedLine;
+        // put current line in focus if this is not the case
+        $('.transcription', sel).focus();
+        trjs.param.changed = true;
         var t = trjs.media.getTime();
         if (t === '') return;
         var l = trjs.transcription.getLine(sel);
@@ -687,6 +691,7 @@ trjs.events = (function () {
         var tablelines = trjs.transcription.tablelines();
         if (tablelines.length < 2) {
             // create a new empty file
+            trjs.log.boxalert("You removed the last line. The file is automatically initialized with an empty line.");
             trjs.transcription.newTable();
             return;
         }
