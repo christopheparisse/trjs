@@ -1199,16 +1199,16 @@ trjs.io = (function () {
     }
 
     function setMediaNone() {
-        $('#media-element').html('<div class="nomedia-div"><p class="nomedia-text">' + trjs.messgs.nomedia + '</p></div>');
+        $('#media-display').html('<div class="nomedia-div"><p class="nomedia-text">' + trjs.messgs.nomedia + '</p></div>');
         trjs.media.display('notloaded');
     }
 
     function initEmptyMedia(audio) {
         if (audio === true) {
-            setAudio();
+            //setAudio();
             setMediaNone();
         } else {
-            setVideo();
+            //setVideo();
             setMediaNone();
         }
     }

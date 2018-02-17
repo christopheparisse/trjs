@@ -915,6 +915,7 @@ trjs.events = (function () {
     function insertWithTimeLoc(e, sel) {
         trjs.param.changed = true;
         if (sel === undefined) sel = trjs.data.selectedLine;
+        $('.transcription', sel).focus();
         __insertWithTimeHere(sel, getLastTierline(sel));
     }
 
@@ -928,6 +929,7 @@ trjs.events = (function () {
     function insertWithTime(e, sel) {
         trjs.param.changed = true;
         if (sel === undefined) sel = trjs.data.selectedLine;
+        $('.transcription', sel).focus();
         __insertWithTimeHere(sel, sel);
     }
 
@@ -940,6 +942,7 @@ trjs.events = (function () {
     function insertBlankLineLoc(e, sel) {
         trjs.param.changed = true;
         if (sel === undefined) sel = trjs.data.selectedLine;
+        $('.transcription', sel).focus();
         var type = trjs.transcription.typeTier(sel);
         if (type === 'prop') sel = getPreviousMainline(sel);
         type = trjs.transcription.typeTier(sel);
@@ -961,6 +964,7 @@ trjs.events = (function () {
     function insertBlankLine(e, sel) {
         trjs.param.changed = true;
         if (sel === undefined) sel = trjs.data.selectedLine;
+        $('.transcription', sel).focus();
         var type = trjs.transcription.typeTier(sel);
         if (type === 'div') type = 'main loc';
         var linenumber = trjs.transcription.getLine(sel);

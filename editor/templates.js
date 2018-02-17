@@ -562,7 +562,15 @@ trjs.template = (function () {
      * @param hdata data stored in memory
      */
     function initTableCodes(data) {
-        var s = '<thead><td class="textcell1">Code</td><td class="textcell4"><span id="pmetaname">Name</span></td><td class="textcell6">Content</td><td class="textcell5">Description</td></thead>';
+        var s = '<thead><td class="textcell1">'
+            + trjs.messgs.codecode
+            + '</td><td class="textcell4">'
+            + trjs.messgs.codespeaker
+            + '</td><td class="textcell6">'
+            + trjs.messgs.codecontent
+            + '</td><td class="textcell5">'
+            + trjs.messgs.codedesc
+            + '</td></thead>';
         s += '<tbody>';
         if (data.length < 1) {
             s += stringLineCodes('---', '', '', '');
@@ -582,7 +590,19 @@ trjs.template = (function () {
      * @param hdata data stored in memory
      */
     function initTableTiers(data) {
-        var s = '<thead><td class="textcell1">Tiers</td><td class="textcell2">Type</td><td class="textcell3">Parent</td><td class="textcell4"><span id="pmetaname">Name</span></td><td class="textcell6">Content</td><td class="textcell5">Description</td></thead>';
+        var s = '<thead><td class="textcell1">'
+            + trjs.messgs.tierstier
+            + '</td><td class="textcell2">'
+            + trjs.messgs.tierstype
+            + '</td><td class="textcell3">'
+            + trjs.messgs.tiersparent
+            + '</td><td class="textcell4">'
+            + trjs.messgs.tiersspeaker
+            + '</td><td class="textcell6">'
+            + trjs.messgs.tierscontent
+            + '</td><td class="textcell5">'
+            + trjs.messgs.tiersdesc
+            + '</td></thead>';
         s += '<tbody>';
         if (data.length < 1) {
             s += stringLineTiers('---', '', '', '', '', '');

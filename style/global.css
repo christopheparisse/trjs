@@ -270,6 +270,7 @@ table td.te {display: none;}
 table td.ts {display: none;}
 table td.vte {width:4em;}
 table td.vts {width:4em;}
+table td.infosup {width:3px;}
 
 table th.code {width:6em;}
 table th.div {width:6em;}
@@ -283,6 +284,7 @@ table th.te {display: none;}
 table th.ts {display: none;}
 table th.vte {width:4em;}
 table th.vts {width:4em;}
+table th.infosup {width:3px;}
 
 #trjsnav { margin-bottom: 3px; }
 

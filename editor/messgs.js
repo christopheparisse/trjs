@@ -284,8 +284,8 @@ trjs.messgs_eng = {
 
     metadataspan: "Metadata",
     infodc: "(informations about Dublin-Core)",
-    participantspan: "List of participants",
-    templatespan: "List of templates",
+    participantspan: "List of speakers",
+    templatespan: "List of tiers",
     searchspan: "Search current file",
     ssearch: "Search word or string :  ",
     tisgotoline: "Ctrl L",
@@ -427,6 +427,18 @@ trjs.messgs_eng = {
     tempcov: "Coverage",
     temprig: "Rights",
 
+    codecode: "Code",
+    codespeaker: "Speaker's Name",
+    codecontent: "Content",
+    codedesc: "Description",
+
+    tierstier: "Tier",
+    tierstype: "Type",
+    tiersparent: "Parent",
+    tiersspeaker: "Speaker's Name",
+    tierscontent: "Content",
+    tiersdesc: "Description",
+
     tititle: "Title of the document",
     ticreator: "Creator of the document",
     tisubject: "Subject and key-words",
@@ -530,7 +542,6 @@ trjs.messgs_eng = {
     mval: "Value",
 
     ppname: "Name",
-    pmetaname: "Name",
     ppsex: "Sex",
     pplangu: "Language",
     ppgroup: "Group",
@@ -1016,8 +1027,8 @@ trjs.messgs_fra = {
 
     metadataspan: "Métadonnées",
     infodc: "(informations sur le format Dublin-Core)",
-    participantspan: "Liste des participants",
-    templatespan: "Liste des structures",
+    participantspan: "Liste des locuteurs",
+    templatespan: "Liste des tiers",
     searchspan: "Rechercher dans le fichier courant",
     ssearch: "Chercher un mot ou une chaîne de caractère : ",
 
@@ -1159,6 +1170,18 @@ trjs.messgs_fra = {
     tempcov: "Couverture",
     temprig: "Droits",
 
+    codecode: "Code",
+    codespeaker: "Nom locuteur",
+    codecontent: "Contenu",
+    codedesc: "Description",
+
+    tierstier: "Tier",
+    tierstype: "Type",
+    tiersparent: "Parent",
+    tiersspeaker: "Nom locuteur",
+    tierscontent: "Contenu",
+    tiersdesc: "Description",
+
     tititle: "Titre du document",
     ticreator: "Créateur du document",
     tisubject: "Sujet et mots-clefs",
@@ -1262,7 +1285,6 @@ trjs.messgs_fra = {
     mval: "Valeur",
 
     ppname: "Nom",
-    pmetaname: "Nom",
     ppsex: "Sexe",
     pplangu: "Langue",
     ppgroup: "Groupe",
@@ -1791,7 +1813,6 @@ trjs.messgs_init = function () {
     $('#pplangu').text(trjs.messgs.pplangu);
     $('#ppgroup').text(trjs.messgs.ppgroup);
     $('#tree').text(trjs.messgs.tree);
-    $('#pmetaname').text(trjs.messgs.pmetaname);
 
     $('#pusequality').text(trjs.messgs.pusequality);
     $('#pquality').text(trjs.messgs.pquality);

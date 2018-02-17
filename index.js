@@ -103,6 +103,7 @@ function startWindow(nth) {
 
     // Emitted when the window is closing.
     process.listWindows[nth].on('close', function (e) {
+        console.log(process.listWindows[nth]);
         if (app.showExitPrompt) {
             e.preventDefault(); // Prevents the window from closing
             electron.dialog.showMessageBox({
@@ -277,20 +278,25 @@ function createMenu() {
                 }
                 },
                 {type: 'separator'},
-                {label: 'Metadata', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('showmeta', 'main');
-                }
-                },
-                {label: 'Participants', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('showpart', 'main');
-                }
-                },
-                {label: 'Templates', click: function () {
+                {label: 'Tiers', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     window.webContents.send('showtemp', 'main');
                 }
+                },
+                {
+                    label: 'Other information',
+                    submenu: [
+                        {label: 'Metadata', click: function () {
+                            var window = BrowserWindow.getFocusedWindow();
+                            window.webContents.send('showmeta', 'main');
+                        }
+                        },
+                        {label: 'Speaker data', click: function () {
+                            var window = BrowserWindow.getFocusedWindow();
+                            window.webContents.send('showpart', 'main');
+                            }
+                        }
+                    ]
                 },
                 {type: 'separator'},
                 {label: 'Parameters', click: function () {
@@ -331,6 +337,21 @@ function createMenu() {
                             focusedWindow.setFullScreen(!focusedWindow.isFullScreen());
                     }
                     },
+                {label: 'Zoom in (all window)', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        window.webContents.send('wndzoomin', 'main');
+                    }
+                },
+                {label: 'Zoom out (all window)', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        window.webContents.send('wndzoomout', 'main');
+                    }
+                },
+                {label: 'Zoom reset (all window)', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        window.webContents.send('wndzoomreset', 'main');
+                    }
+                },
                 {label: 'Minimize', accelerator: 'CmdOrCtrl+M', role: 'minimize'},
                 {label: 'Close', accelerator: 'CmdOrCtrl+W', role: 'close'},
                 {type: 'separator'},

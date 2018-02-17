@@ -881,6 +881,9 @@ trjs.transcription = (function () {
                 trjs.io.innerSave();
                 trjs.contextualhelp('new-trs', false);
                 trjs.param.changed = false;
+                trjs.io.initEmptyMedia('audio');
+                var l = trjs.events.firstLoc();
+                if (l) trjs.events.setSelectedLine(l);
                 if (askformedia === true) {
                     //$('#openfile').modal();
                     fsio.chooseFile('media', 'media');
@@ -1446,8 +1449,8 @@ trjs.transcription = (function () {
                 + '</td><td class="te">' + trjs.dataload.checknumber(te)
                 + '</td><td class="vts">' + trjs.dataload.checkstring(vts)
                 + '</td><td class="vte">' + trjs.dataload.checkstring(vte)
-                + '</td><td class="transcription">' + trjs.dataload.checkstring(tr)
-                + '</td><td class="infosup"></td></tr>';
+                + '</td><td class="transcription">' + trjs.dataload.checkstring(tr);
+                // + '</td><td class="infosup"></td></tr>';
         } else {
             s += '<td class="' + type + '" contenteditable="true" oncontextmenu="trjs.events.clickLoc(event);" onfocus="trjs.undo.code.protect(event);" onblur="trjs.events.checkLoc(event);">' + loc;
             s += '</td><td class="ts">' + trjs.dataload.checknumber(ts)
@@ -1460,7 +1463,7 @@ trjs.transcription = (function () {
             } else {
                 s += '<td class="transcription" contenteditable="true" onfocus="trjs.undo.line.protect(event);" onblur="trjs.macros.onblur(event);">' + trjs.dataload.checkstring(tr) + '</td>';
             }
-            s += '<td class="infosup"></td></tr>';
+            // s += '<td class="infosup"></td></tr>';
         }
 
         return s;
@@ -1491,7 +1494,10 @@ trjs.transcription = (function () {
      * @param hdata data stored in memory (array for version 0.0.1, html string otherwise)
      */
     function initTable(data) {
-        var s = '<thead><th class="num">-</th><th class="info"></th><th class="loc"><span id="headloc">Locutor</span></th><th class="ts">Ts</th><th class="te">Te</th><th class="vts"><span id="headts">Start</span></th><th class="vte"><span id="headte">End</span></th><th class="transcription">Transcription</th><th class="infosup"></th></thead>';
+        var s = '<thead><th class="num">-</th><th class="info"></th><th class="loc"><span id="headloc">Locutor</span></th>' +
+            '<th class="ts">Ts</th><th class="te">Te</th><th class="vts"><span id="headts">Start</span></th><th class="vte"><span id="headte">End</span></th>' +
+            '<th class="transcription">Transcription</th>';
+            // + '<th class="infosup"></th></thead>';
         $('#transcript-head').html(s);
         if (!data || !data.length) {
             s = stringLineTranscript('loc', 'xxx', '', '', '', '', '', '');
