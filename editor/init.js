@@ -87,41 +87,44 @@ trjs.init = function(force) {
 			$(document).ready(function() {
 				// version.setDebug('__all__', true)
 				trjs.param.init('readwrite', 'electron', 'electron', 'level6');
-/*
-                var remote = require('remote');
-                remote.getCurrentWindow().on('close', function() {
-                    console.log('I test to be closed');
+
+                var remote = require('electron').remote;
+                console.log(remote);
+                console.log(remote.getCurrentWindow());
+                console.log(remote.getCurrentWindow().id);
+                remote.getCurrentWindow().on('close', function(e) {
+                    e.preventDefault(); // Prevents the window from closing
+                    console.log("Remote: oncClose : changed = " + trjs.param.ischanged());
                     trjs.param.saveStorage();
-                    if (trjs.param.changed === true) {
-                        trjs.io.innerSave();
-                        if (trjs.editor.testNotSave() === false) {
-                            e.returnValue = true;
-                        } else {
-                            e.returnValue = false;
-                            remote.getCurrentWindow().destroy();
-                        }
+                    //trjs.log.boxalert("Remote: OnClose : changed = " + trjs.param.ischanged());
+                    if (trjs.param.ischanged()) {
+                        trjs.init.testNotSave( function(val) {
+                            if (val === true) {
+                                console.log('Remote: onclose: destroy after test');
+                                remote.getCurrentWindow().destroy();
+                            }
+                            else console.log("remote on close: nothing do not close");
+                        });
+                    } else {
+                        console.log('Remote: onclose: destroy direct');
+                        remote.getCurrentWindow().destroy();
                     }
+                    e.returnValue = true;
+                    return true;
                 });
 
                 window.onbeforeunload = function (e) {
-                    console.log('I test to be closed');
+                    // console.log('Remote: onbefore: I test to be closed');
                     trjs.param.saveStorage();
-                    if (trjs.param.changed === true) {
-                        trjs.io.innerSave();
-                        if (trjs.editor.testNotSave() === false) {
-                            e.returnValue = true;
-						} else {
-                            e.returnValue = false;
-                            var remote = require('electron').remote;
-                            remote.process.destroy();
-                        }
-                    }
+                    trjs.log.boxalert("Remote: OnBefore : changed = " + trjs.param.ischanged());
+                    /*
                     // Unlike usual browsers that a message box will be prompted to users, returning
                     // a non-void value will silently cancel the close.
                     // It is recommended to use the dialog API to let the user confirm closing the
                     // application.
+                    */
                 };
-*/
+
 			});
 			break;
 /*
@@ -155,3 +158,35 @@ trjs.init = function(force) {
 		});
 	}
 };
+
+
+/**
+ * test is save has to be done (and ask the user if necessary).
+ * @method testNotSave
+ * @param {string} conditions
+ */
+trjs.init.testNotSave = function(callback) {
+    trjs.io.innerSave();
+    if (!trjs.param.ischanged()) {
+        if (callback) callback(true);
+        return true;
+    }
+
+    if (!callback) {
+        if (window.confirm(trjs.messgs.mustsave)) {
+            // trjs.param.change(false);
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        bootbox.confirm(trjs.messgs.mustsave, function (result) {
+            if (result === true) {
+                // trjs.param.change(false);
+                if (callback) callback(true);
+            } else {
+                if (callback) callback(false);
+            }
+        });
+    }
+}

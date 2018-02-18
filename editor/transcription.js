@@ -652,7 +652,7 @@ trjs.transcription = (function () {
                     trjs.data.setNamesInEdit();
                     trjs.editor.resizeTranscript();
                     trjs.messgs_init();
-                    trjs.param.changed = false;
+                    trjs.param.change(false);
                     trjs.local.put('saved', 'yes');
                     if (trjs.param.features.partition() === true)
                         trjs.dmz.init('partition');
@@ -812,7 +812,7 @@ trjs.transcription = (function () {
      * @method loadNewGrid
      */
     function loadNewGrid(askformedia) {
-        trjs.editor.testNotSave(function (yesno) {
+        trjs.init.testNotSave(function (yesno) {
             if (yesno === true) {  // the user does not want to save the modified file or the file is not modified since last save
                 freeGrid();
                 trjs.data.setRecordingName(''); // sets new file name
@@ -880,7 +880,7 @@ trjs.transcription = (function () {
                 trjs.dmz.sliderPopulate();
                 trjs.io.innerSave();
                 trjs.contextualhelp('new-trs', false);
-                trjs.param.changed = false;
+                trjs.param.change(false);
                 trjs.io.initEmptyMedia('audio');
                 var l = trjs.events.firstLoc();
                 if (l) trjs.events.setSelectedLine(l);

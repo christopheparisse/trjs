@@ -111,7 +111,7 @@ trjs.io = (function () {
      * @method localLoadTranscript
      */
     function localLoadTranscript() {
-        trjs.editor.testNotSave(function (yesno) {
+        trjs.init.testNotSave(function (yesno) {
             if (yesno === true) {  // the user does not want to save the modified file or the file is not modified since last save
                 var nBytes = 0,
                     oFiles = $("#upload-input-transcript")[0].files,
@@ -174,6 +174,7 @@ trjs.io = (function () {
     function doSaveAs() {
         innerSave();
         fsio.chooseFile("transcript", "transcriptsaveas");
+        fsio.setMRU(trjs.data.recordingRealFile());
     }
 
     /**
@@ -191,7 +192,8 @@ trjs.io = (function () {
         trjs.local.put('recordingName', trjs.data.recordingName());
         trjs.local.put('recordingRealFile', trjs.data.recordingRealFile());
         trjs.local.put('mediaRealFile', trjs.data.mediaRealFile());
-        if (nosaveperm === undefined && trjs.param.changed === true)
+        trjs.local.put('crashed', 'no');
+        if (nosaveperm === undefined && trjs.param.ischanged())
             trjs.local.put('saved', 'no');
         return s;
     }
@@ -1248,7 +1250,7 @@ trjs.io = (function () {
             nbsave: trjs.param.nbversions
         }, function (data) {
             $("#save-server-response").html(data);
-            trjs.param.changed = false;
+            trjs.param.change(false);
             trjs.local.put('saved', 'yes');
             trjs.log.alert(data);
         }, function (data) {
@@ -1274,7 +1276,7 @@ trjs.io = (function () {
             transcript: s
         }, function (data) {
             // $("#save-server-response").html(data);
-            trjs.param.changed = false;
+            trjs.param.change(false);
             trjs.local.put('saved', 'yes');
             // local export
             var blob = new Blob([s], {
@@ -1405,7 +1407,7 @@ trjs.io = (function () {
         initEmptyMedia: initEmptyMedia,
         innerSave: innerSave,
         loadRecentFile: function (fn) {
-            trjs.editor.testNotSave(function (yesno) {
+            trjs.init.testNotSave(function (yesno) {
                 if (yesno === true) {  // the user does not want to save the modified file or the file is not modified since last save
                     serverLoadTeiml(fn, true, function (err) {
                         if (!err)

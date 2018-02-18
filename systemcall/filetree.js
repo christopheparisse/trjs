@@ -76,7 +76,7 @@ filetree.initChooseFile = function (dest, type) {
         filetree.__initChooseFile(dest, type);
         return;
     }
-    trjs.editor.testNotSave(function (yesno) {
+    trjs.init.testNotSave(function (yesno) {
         if (yesno === true) {  // the user does not want to save the modified file or the file is not modified since last save
             filetree.__initChooseFile(dest, type);
         }
@@ -269,7 +269,7 @@ filetree.endChooseFile = function () {
             alert('media' + f);
     } else if (filetree.destChooseFile === 'media') {
         if (typeof trjs !== undefined) {
-            trjs.param.changed = true;
+            trjs.param.change(true);
             trjs.local.put('mediaRealFile', fn);
             // console.log('>>media destChooseFile ' + fn + ' :-: encoded ' + fn);
             trjs.io.serverLoadMedia(fn);

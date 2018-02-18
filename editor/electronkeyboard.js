@@ -27,7 +27,7 @@ trjs.init.electronkeyboard = function () {
         fsio.chooseFile('transcript', 'transcript');
     });
     ipcRenderer.on('readtranscript', function(event, arg) {
-        trjs.editor.testNotSave(function (yesno) {
+        trjs.init.testNotSave(function (yesno) {
             if (yesno === true) {  // the user does not want to save the modified file or the file is not modified since last save
                 if (typeof arg === 'object') {
                     if (arg.commandline.length > 1 && arg.commandline[1] !== 'index.js')

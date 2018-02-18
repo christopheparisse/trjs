@@ -232,7 +232,7 @@ function init() {
 				}
 			}
 		}
-		trjs.param.changed = false;
+	    trjs.param.change(false);
 		trjs.local.put('saved', 'yes');
 /*	} catch(e) {
 		trjs.log.boxalert(trjs.messgs.errorfile + e.name + ' - ' + e.message + ' - ' + e.lineNumber);

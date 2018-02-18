@@ -151,7 +151,7 @@ trjs.events = (function () {
      * @method fillRowWith
      */
     function fillRowWith(sel, type, loc, ts, te, tr) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         trjs.transcription.setCode(sel, loc);
         trjs.transcription.setType(sel, type); // adjust the attributes according to the value of the code in the loc part
         lineSetCell(sel, trjs.data.TSCOL, ts);
@@ -172,7 +172,7 @@ trjs.events = (function () {
      * @param {string} transcription
      */
     function createRowAfterWith(sel, type, loc, ts, te, tr) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         var ln = trjs.transcription.getLine(sel);
         ln++;
         var s = trjs.transcription.stringLineTranscript(type, loc, ts, te, trjs.transcription.formatTime(ts), trjs.transcription.formatTime(te), tr, ln);
@@ -180,6 +180,30 @@ trjs.events = (function () {
         var next = sel.next();
         trjs.transcription.trUpdateCSS(next, loc);
         next = next.next();
+        while (next != null && next.length > 0) {
+            ln++;
+            lineSetCell(next, trjs.data.LINECOL, ln);
+            next = next.next();
+        }
+    }
+
+    /**
+     * insert a row to a table before the current selected element
+     * @method createRowBeforeWith
+     * @param {object} current line
+     * @param {string} type of line
+     * @param {string} locutor
+     * @param {string} time start
+     * @param {string} time end
+     * @param {string} transcription
+     */
+    function createRowBeforeWith(sel, type, loc, ts, te, tr) {
+        trjs.param.change(true);
+        var ln = trjs.transcription.getLine(sel);
+        var s = trjs.transcription.stringLineTranscript(type, loc, ts, te, trjs.transcription.formatTime(ts), trjs.transcription.formatTime(te), tr, ln);
+        sel.before(s); // inserts before current sibbling
+        trjs.transcription.trUpdateCSS(sel, loc);
+        next = sel.next();
         while (next != null && next.length > 0) {
             ln++;
             lineSetCell(next, trjs.data.LINECOL, ln);
@@ -198,7 +222,7 @@ trjs.events = (function () {
      * @param {string} transcription
      */
     function createRowAtEnd(sel, type, loc, ts, te, tr) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         var ln = trjs.transcription.getLine(sel);
         ln++;
         var s = trjs.transcription.stringLineTranscript(type, loc, ts, te, trjs.transcription.formatTime(ts), trjs.transcription.formatTime(te), tr, ln);
@@ -395,7 +419,7 @@ trjs.events = (function () {
         var sel = trjs.data.selectedLine;
         // put current line in focus if this is not the case
         $('.transcription', sel).focus();
-        trjs.param.changed = true;
+        trjs.param.change(true);
         var t = trjs.media.getTime();
         if (t === '') return;
         var l = trjs.transcription.getLine(sel);
@@ -430,7 +454,7 @@ trjs.events = (function () {
         var sel = trjs.data.selectedLine;
         // put current line in focus if this is not the case
         $('.transcription', sel).focus();
-        trjs.param.changed = true;
+        trjs.param.change(true);
         var t = trjs.media.getTime();
         if (t === '') return;
         var l = trjs.transcription.getLine(sel);
@@ -728,7 +752,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function deleteLine(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         trjs.undo.deleteLine(trjs.transcription.getLine(sel), trjs.undo.getContentOfLine(sel));
         deleteSelectedLine(sel);
@@ -741,7 +765,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function deleteLineLoc(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var type = trjs.transcription.typeTier(sel);
         if (type != 'loc' && type != 'div') sel = getPreviousMainline(sel);
@@ -800,7 +824,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function replicateLine(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var line = trjs.transcription.getLine(sel);
         var code = lineGetCell(sel, trjs.data.CODECOL);
@@ -844,7 +868,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function joinLine(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var next = sel.next();
         if (next != null && next.length > 0)
@@ -858,7 +882,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function joinLineLoc(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var type = trjs.transcription.typeTier(sel);
         if (type != 'loc' && type != 'div') sel = getPreviousMainline(sel);
@@ -913,7 +937,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function insertWithTimeLoc(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         __insertWithTimeHere(sel, getLastTierline(sel));
@@ -927,7 +951,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function insertWithTime(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         __insertWithTimeHere(sel, sel);
@@ -940,7 +964,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function insertBlankLineLoc(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         var type = trjs.transcription.typeTier(sel);
@@ -956,13 +980,35 @@ trjs.events = (function () {
     }
 
     /**
+     * insert a new empty main line before the current or above main line
+     * @method insertBlankLineLocBefore
+     * @param event
+     * @param sel (selected line)
+     */
+    function insertBlankLineLocBefore(e, sel) {
+        trjs.param.change(true);
+        if (sel === undefined) sel = trjs.data.selectedLine;
+        $('.transcription', sel).focus();
+        var type = trjs.transcription.typeTier(sel);
+        if (type === 'prop') sel = getPreviousMainline(sel);
+        type = trjs.transcription.typeTier(sel);
+        if (type === 'div') type = 'main loc';
+        var nl = getLastTierline(sel);
+        var linenumber = trjs.transcription.getLine(nl);
+        createRowBeforeWith(nl, type, '---', '', '', "");
+        trjs.undo.insertLine(linenumber);
+        $('.transcription', getLastTierline(sel).prev()).focus();
+        return getLastTierline(sel).prev();
+    }
+
+    /**
      * insert a new empty main line after the current line
      * @method insertBlankLine
      * @param event
      * @param sel (selected line)
      */
     function insertBlankLine(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         var type = trjs.transcription.typeTier(sel);
@@ -981,7 +1027,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function setDivPlus(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var linenumber = trjs.transcription.getLine(sel);
         var pc = lineGetCell(sel, trjs.data.CODECOL);
@@ -1001,7 +1047,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function setDivMinus(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var linenumber = trjs.transcription.getLine(sel);
         var pc = lineGetCell(sel, trjs.data.CODECOL);
@@ -1027,7 +1073,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function setDivPlusInsert(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         var linenumber = trjs.transcription.getLine(sel);
         if (sel === undefined) sel = trjs.data.selectedLine;
         createRowAfterWith(sel, 'main div', '+div+', '', '', trjs.transcription.createDivEditField('', ''));
@@ -1043,7 +1089,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function setDivMissingMinus(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var tablelines = trjs.transcription.tablelines();
         var nbm = trjs.transcription.nbMissingDiv(tablelines, sel) - 1;
@@ -1065,7 +1111,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function setDivMinusInsert(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var linenumber = trjs.transcription.getLine(sel);
         var tablelines = trjs.transcription.tablelines();
@@ -1087,7 +1133,7 @@ trjs.events = (function () {
      * @param int (nth locutor)
      */
     function setNthLoc(sel, nth) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var table = $("#template-code");
         var tablelines = $('tr', table[0]);
@@ -1123,7 +1169,7 @@ trjs.events = (function () {
      * @param int (nth tier)
      */
     function setNthTier(sel, nth) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var table = $("#template-tier");
         var tablelines = $('tr', table[0]);
@@ -1192,7 +1238,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function setTimeReplace(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var nextline = sel.next();
         if (nextline.length >= 1)
@@ -1206,7 +1252,7 @@ trjs.events = (function () {
      * @param sel (selected line)
      */
     function setTimeReplaceLoc(e, sel) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         if (sel === undefined) sel = trjs.data.selectedLine;
         var type = trjs.transcription.typeTier(sel);
         var prevline = (type == 'loc' || type == 'div') ? sel : getPreviousMainline(sel);
@@ -1319,7 +1365,7 @@ trjs.events = (function () {
      * @param line to be splitted
      */
     function splitLine(e, line) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         var range = rangy.createRange();
         // All DOM Range methods and properties supported
         range.selectNodeContents(document.body);
@@ -1354,7 +1400,7 @@ trjs.events = (function () {
      * @param line to be splitted
      */
     function splitLineLoc(e, line) {
-        trjs.param.changed = true;
+        trjs.param.change(true);
         var tm = trjs.media.getTime();
         var range = rangy.createRange();
         // All DOM Range methods and properties supported
@@ -2218,6 +2264,13 @@ trjs.events = (function () {
             insertBlankLineLoc(e, p);
             trjs.dmz.redraw('partition');
             trjs.undo.opclose('insertBlankLineLocAndRedraw');
+            return true;
+        },
+        insertBlankLineLocBeforeAndRedraw: function (e, p) {
+            trjs.undo.opinit('insertBlankLineLocAfterAndRedraw');
+            insertBlankLineLocBefore(e, p);
+            trjs.dmz.redraw('partition');
+            trjs.undo.opclose('insertBlankLineLocAfterAndRedraw');
             return true;
         },
         insertLineLoc: insertLineLoc,

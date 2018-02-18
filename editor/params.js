@@ -29,7 +29,21 @@ trjs.param = {
     goLine: null,
     goTime: null,
     goPlay: false,
-    changed: false,
+    __changed: false,
+    change: function(val) {
+        this.__changed = val;
+        var remote = require('electron').remote;
+        var id = remote.getCurrentWindow().id;
+        for (var i=0; i < remote.process.listWindows.length; i++) {
+            if (remote.process.idWindows[i] === id) {
+                remote.process.ischangedWindows[i] = val;
+                return;
+            }
+        }
+    },
+    ischanged: function() {
+        return this.__changed;
+    },
     locnames: true,
     isContinuousPlaying: false,
     showPartition: true,

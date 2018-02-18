@@ -676,37 +676,6 @@ trjs.editor = (function () {
     }
 
     /**
-     * test is save has to be done (and ask the user if necessary).
-     * @method testNotSave
-     * @param {string} conditions
-     */
-    function testNotSave(callback) {
-        trjs.io.innerSave();
-        if (trjs.param.changed === false) {
-            if (callback) callback(true);
-            return true;
-        }
-
-        if (!callback) {
-            if (window.confirm(trjs.messgs.mustsave)) {
-                //trjs.param.changed = false;
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            bootbox.confirm(trjs.messgs.mustsave, function (result) {
-                if (result === true) {
-                    //trjs.param.changed = false;
-                    if (callback) callback(true);
-                } else {
-                    if (callback) callback(false);
-                }
-            });
-        }
-    }
-
-    /**
      * jumps to the help page.
      * @method goHelp
      */
@@ -824,13 +793,13 @@ trjs.editor = (function () {
     }
 
     function finalizeLoad() {
-        trjs.param.changed = false;
+        trjs.param.change(false);
         trjs.local.put('saved', 'yes');
 
         // console.log('finalized load');
         var closeTest = function () {
             trjs.param.saveStorage();
-            if (trjs.param.changed === true) {
+            if (trjs.param.ischanged()) {
                 trjs.io.innerSave();
                 // return trjs.messgs.wantback;
                 return;
@@ -1560,7 +1529,6 @@ trjs.editor = (function () {
             showSearch();
             $('#gotime').focus()
         },
-        testNotSave: testNotSave,
         toggleInsert: toggleInsert,
         updateCheck: updateCheck,
         updateClean: updateClean,

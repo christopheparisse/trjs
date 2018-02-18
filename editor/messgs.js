@@ -655,7 +655,8 @@ trjs.messgs_eng = {
     shiftbin112: "Play from the current media time", // Shift F1
 
 //	shiftbin114: "Specific function (trjs.keys.special1)" , // Shift F3
-    shiftbin1115: "Local save in HTML format", // Shift F4
+    shiftbin115: "Local save in HTML format", // Shift F4
+    shiftbin117: "Insert a blank line with current locutor before the current line", // shift F6
 
     api0: "Front closed unrounded vowel English see, Spanish sí, French vite, German mi.e.ten, Italian visto",
     api1: "(small capital I) Front closed unrounded vowel, but somewhat more centralised and relaxed English city, German mit",
@@ -1399,6 +1400,7 @@ trjs.messgs_fra = {
 
 //	shiftbin114: "specific function (trjs.keys.special1)" , // Shift F3
     shiftbin115: "Sauvegarde locale au format HTML", // Shift F4
+    shiftbin117: "Inserer une ligne blanche au dessus de la ligne courante", // shift F6
 
     api0: "Voyelle antérieure fermée non arrondie English see, Spanish sí, French vite, German mi.e.ten, Italian visto",
     api1: "Voyelle quasi-antérieure non arrondie ",

@@ -2,11 +2,13 @@
 const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
-app.showExitPrompt = true;
+app.stopExit = true;
 var isReady = false;
 var oneWindow = false;
 
 process.listWindows = [];
+process.ischangedWindows = [];
+process.idWindows = [];
 process.argsOpenFile = null;
 
 // copy first instance command line
@@ -74,51 +76,84 @@ const Menu = electron.Menu;
 function createWindow() {
     for (var i in process.listWindows) {
         if (process.listWindows[i] === null || process.listWindows[i] === undefined) {
-            startWindow(i);
+            process.listWindows[i] = startWindow();
+            process.ischangedWindows[i] = false;
+            process.idWindows[i] = process.listWindows[i].id;
+
+            // Emitted when the window is closed.
+            process.listWindows[i].on('closed', function () {
+                // Dereference the window object, usually you would store windows
+                // in an array if your app supports multi windows, this is the time
+                // when you should delete the corresponding element.
+                process.listWindows[i] = null;
+                process.ischangedWindows[i] = false;
+                // test whether there are other opened windows
+                console.log("w.on CLOSED: test");
+                for (var k=0; k < process.listWindows.length; k++) {
+                    if (process.listWindows[k] !== null) {
+                        return;
+                    }
+                    console.log("NO windows opened");
+                    if (process.platform !== 'darwin') {
+                        app.quit();
+                    }
+                }
+            });
             return i;
         }
     }
-    startWindow(i+1);
-    return i+1;
-}
 
-function startWindow(nth) {
-    oneWindow = true;
-    // Create the browser window.
-    process.listWindows[nth] = new BrowserWindow({width: 800, height: 800});
-
-    // and load the index.html of the app.
-    process.listWindows[nth].loadURL('file://' + __dirname + '/index.html');
-
-    // Open the DevTools.
-    // process.listWindows[nth].webContents.openDevTools();
+    process.listWindows.push(startWindow());
+    process.ischangedWindows.push(false);
+    i = process.listWindows.length-1;
+    process.idWindows.push(process.listWindows[i].id);
 
     // Emitted when the window is closed.
-    process.listWindows[nth].on('closed', function () {
+    process.listWindows[i].on('closed', function () {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
-        process.listWindows[nth]= null;
+        process.listWindows[i] = null;
     });
+    return i;
+}
+
+function startWindow() {
+    oneWindow = true;
+    // Create the browser window.
+    var w = new BrowserWindow({width: 800, height: 800});
+    //console.log(w);
+    //console.log(w.id);
+
+    // and load the index.html of the app.
+    w.loadURL('file://' + __dirname + '/index.html');
+
+    // Open the DevTools.
+    // w.webContents.openDevTools();
 
     // Emitted when the window is closing.
-    process.listWindows[nth].on('close', function (e) {
-        console.log(process.listWindows[nth]);
-        if (app.showExitPrompt) {
+    w.on('close', function (e) {
+        if (app.stopExit) {
             e.preventDefault(); // Prevents the window from closing
+            console.log("w.on close");
+
+            /*
             electron.dialog.showMessageBox({
                 type: 'question',
                 buttons: ['Yes', 'No'],
                 title: 'Confirm',
-                message: 'Unsaved data will be lost. Are you sure you want to quit?'
+                message: 'Main: Unsaved data will be lost. Are you sure you want to quit?'
             }, function (response) {
                 if (response === 0) { // Runs the following if 'Yes' is clicked
-                    app.showExitPrompt = false;
-                    process.listWindows[nth].close();
+                    app.stopExit = false;
+                    w.close();
                 }
             });
+            */
         }
     });
+
+    return w;
 }
 
 function createMenu() {
@@ -127,10 +162,16 @@ function createMenu() {
             label: 'File',
             submenu: [
                 {
+                    /*
                     label: 'Open ...', accelerator: 'CmdOrCtrl+O', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('opentranscript', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        window.webContents.send('opentranscript', 'main');
+                    }
+                    */
+                    label: 'Open Ctrl+O ...', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        window.webContents.send('opentranscript', 'main');
+                    }
                 },
                 {
                     label: 'Open media ...', accelerator: 'Shift+CmdOrCtrl+O', click: function () {
@@ -544,8 +585,9 @@ app.on('ready', function () {
 app.on('window-all-closed', function () {
     // On OS X it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
+    console.log('window-all-closed');
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
 });
 

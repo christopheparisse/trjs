@@ -61,7 +61,7 @@ var replace = function(field, line, old, code) {
 	history.push(Object.create(modification).init(field, line, old, code));
 	pointer++;
 	historyLastLine = line;
-	trjs.param.changed = true;
+    trjs.param.change(true);
 };
 var insertLine = function(line) {
 	if (history.length !== pointer) { // undo redo ongoing

@@ -85,7 +85,7 @@ fsio.chooseFile = function(dest, type) {
         fsio.startChooseFile(dest, type);
         return;
     }
-    trjs.editor.testNotSave( function(yesno) {
+    trjs.init.testNotSave( function(yesno) {
         if (yesno === true ) {  // the user does not want to save the modified file or the file is not modified since last save
             fsio.startChooseFile(dest, type);
         }
