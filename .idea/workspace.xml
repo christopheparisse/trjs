@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/editor/editor.js" afterPath="$PROJECT_DIR$/editor/editor.js" />
-      <change beforePath="$PROJECT_DIR$/editor/params.js" afterPath="$PROJECT_DIR$/editor/params.js" />
-      <change beforePath="$PROJECT_DIR$/editor/transcription.js" afterPath="$PROJECT_DIR$/editor/transcription.js" />
-      <change beforePath="$PROJECT_DIR$/systemcall/fsio.js" afterPath="$PROJECT_DIR$/systemcall/fsio.js" />
+      <change beforePath="$PROJECT_DIR$/editor/version.js" afterPath="$PROJECT_DIR$/editor/version.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -73,6 +69,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="version.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/editor/version.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="params.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/params.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,7 +112,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fsio.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fsio.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/systemcall/fsio.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="885">
@@ -195,7 +201,6 @@
         <option value="$PROJECT_DIR$/editor/check.js" />
         <option value="$PROJECT_DIR$/editor/media.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/html/media.html" />
         <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/html/meta-part-templ.html" />
@@ -215,6 +220,7 @@
         <option value="$PROJECT_DIR$/editor/editor.js" />
         <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/systemcall/fsio.js" />
+        <option value="$PROJECT_DIR$/editor/version.js" />
       </list>
     </option>
   </component>
@@ -352,12 +358,12 @@
       <workItem from="1518473524837" duration="300000" />
       <workItem from="1518473881160" duration="2446000" />
       <workItem from="1518773485391" duration="620000" />
-      <workItem from="1518788984850" duration="32880000" />
+      <workItem from="1518788984850" duration="32944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87296000" />
+    <option name="totallyTimeSpent" value="87360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="28" width="2188" height="1355" extended-state="0" />
@@ -685,14 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3449">
-          <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/kwiclex.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="752">
@@ -836,6 +834,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="124" column="24" lean-forward="false" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/version.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
