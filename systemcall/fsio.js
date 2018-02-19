@@ -28,12 +28,12 @@ fsio.startChooseFile = function(dest, type) {
     if (type === 'transcriptsaveas') {
         fsio.__chooseSaveFile('Save transcript as',
             [
-                { name: 'Transcription Files', extensions: ['cha', 'cex', 'textgrid', 'eaf', 'trs', 'tei_corpo.xml', 'trjs'] },
+                { name: 'Transcription Files', extensions: ['cha', 'cex', 'textgrid', 'eaf', 'trs', 'xml', 'trjs'] },
                 { name: 'Chat Files', extensions: ['cha', 'cex'] },
                 { name: 'Praat Files', extensions: ['textgrid'] },
                 { name: 'Elan Files', extensions: ['eaf'] },
                 { name: 'Transcriber Files', extensions: ['trs'] },
-                { name: 'All Files', extensions: ['xml'] }
+                { name: 'Trjs Files', extensions: ['trjs'] }
             ],
             fsio.writeTranscript
         );
@@ -60,13 +60,13 @@ fsio.startChooseFile = function(dest, type) {
     } else if (dest === 'transcript') {
         fsio.__chooseOpenFile('Choose transcript',
             [
-                { name: 'Transcription Files', extensions: ['cha', 'cex', 'textgrid', 'eaf', 'trs', 'tei_corpo.xml', 'trjs'] },
+                { name: 'Transcription Files', extensions: ['cha', 'cex', 'textgrid', 'eaf', 'trs', 'xml', 'trjs'] },
                 { name: 'Chat Files', extensions: ['cha', 'cex'] },
                 { name: 'Praat Files', extensions: ['textgrid'] },
                 { name: 'Elan Files', extensions: ['eaf'] },
                 { name: 'Transcriber Files', extensions: ['trs'] },
                 { name: 'Text Files', extensions: ['txt'] },
-                { name: 'All Files', extensions: ['xml'] }
+                { name: 'Trjs Files', extensions: ['trjs'] }
             ],
             fsio.openTranscript
         );
@@ -95,7 +95,7 @@ fsio.chooseFile = function(dest, type) {
 fsio.openTranscript = function(code, data) {
     if (code === 0) {
         data = data.replace(/\\/g, '/');
-        trjs.local.put('Transcription: trjs.data.recordingRealFile', data);
+        trjs.local.put('recordingRealFile', data);
         //console.log('>>recording openTranscript ' + data);
         trjs.io.serverLoadTranscript(data, true, function(err) {
             trjs.data.setNamesInEdit();
@@ -119,7 +119,7 @@ function toLowerCaseSystem(str) {
 
 fsio.writeTranscript = function(code, data) {
     if (code === 0) {
-        trjs.local.put('save to recordingRealFile', data);
+        trjs.local.put('recordingRealFile', data);
         var exts = version.BASIC_EXT.split('|');
         var withExt = false;
         for (var i in exts) {

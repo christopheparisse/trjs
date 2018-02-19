@@ -40,6 +40,11 @@ trjs.param = {
                 return;
             }
         }
+        if (val === true) {
+            trjs.local.put('crashed', 'yes');
+        } else {
+            trjs.local.put('crashed', 'no');
+        }
     },
     ischanged: function() {
         return this.__changed;
