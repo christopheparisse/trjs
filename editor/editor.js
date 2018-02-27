@@ -127,6 +127,22 @@ trjs.editor = (function () {
             $('#param-showLinkTime').hide();
             $('#param-hideLinkTime').show();
         }
+        if (trjs.param.paletteFile) {
+            trjs.palette.file(true);
+        } else {
+            trjs.palette.file(false);
+            var remote = require('electron').remote;
+            var mpf = remote.process.localmenu.getMenuItemById('palettefile');
+            mpf.checked = false;
+        }
+        if (trjs.param.paletteEdit) {
+            trjs.palette.edit(true);
+        } else {
+            var remote = require('electron').remote;
+            var mpf = remote.process.localmenu.getMenuItemById('paletteedit');
+            mpf.checked = false;
+            trjs.palette.edit(false);
+        }
 
         if (trjs.param.modeinsert) {
             $('#insertreplacemode').text(trjs.messgs.insertreplacemodeInsert);
@@ -509,8 +525,25 @@ trjs.editor = (function () {
         }
     }
 
+    function zoomGlobalIn() {
+        const webFrame = require('electron').webFrame;
+        var f = webFrame.getZoomFactor();
+        webFrame.setZoomFactor(f * 1.2);
+    }
+
+    function zoomGlobalOut() {
+        const webFrame = require('electron').webFrame;
+        var f = webFrame.getZoomFactor();
+        webFrame.setZoomFactor(f / 1.2);
+    }
+
+    function zoomGlobalReset() {
+        const webFrame = require('electron').webFrame;
+        webFrame.setZoomFactor(1);
+    }
+
     /**
-     * toggle viewing of the open save div
+     * show open save dialog
      * @method showOpensave
      */
     function showOpensaveTranscript() {
@@ -1548,5 +1581,8 @@ trjs.editor = (function () {
         toggleInsert: toggleInsert,
         updateCheck: updateCheck,
         updateClean: updateClean,
+        zoomGlobalIn: zoomGlobalIn,
+        zoomGlobalOut: zoomGlobalOut,
+        zoomGlobalReset: zoomGlobalReset,
     };
 })();

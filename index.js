@@ -402,6 +402,7 @@ function createMenu() {
                         {   label: 'File Toolbox',
                             type: 'checkbox',
                             checked: true,
+                            id: 'palettefile',
                             click: function () {
                             var window = BrowserWindow.getFocusedWindow();
                             window.webContents.send('palettefile', 'main');
@@ -410,6 +411,7 @@ function createMenu() {
                         {   label: 'Edit Toolbox',
                             type: 'checkbox',
                             checked: true,
+                            id: 'paletteedit',
                             click: function () {
                             var window = BrowserWindow.getFocusedWindow();
                             window.webContents.send('paletteedit', 'main');
@@ -552,8 +554,8 @@ function createMenu() {
             }
         });
     }
-    var localmenu = Menu.buildFromTemplate(template);
-    Menu.setApplicationMenu(localmenu);
+    process.localmenu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(process.localmenu);
 /*
     const globalShortcut = electron.globalShortcut;
     globalShortcut.register('CommandOrControl+Q', () => {

@@ -69,8 +69,8 @@ trjs.param = {
     nbVisible: 3,
     MINHEIGHTTRANSCRIPT: 500,
     NORMALHEIGHTTRANSCRIPT: 800,
-    paletteFile: true,
-    paletteEdit: true,
+    paletteFile: false,
+    paletteEdit: false,
     final: true,
     wavesampling: version.WAVESAMPLINGINITIAL,
     format: 'CHAT',
@@ -227,8 +227,8 @@ trjs.param = {
         this.showMedia = true;
         this.recentfiles = [];
         this.nbRecentFiles = 4;
-        this.paletteFile = true;
-        this.paletteEdit = true;
+        this.paletteFile = false;
+        this.paletteEdit = false;
         this.final = true;
         this.format = 'CHAT';
         this.wavesampling = 4000;
@@ -279,8 +279,8 @@ trjs.param = {
         this.checkAtSave = this.testUndefBoolean(trjs.local.get('param_checkAtSave'), true);
         // this.reorder = this.testUndefBoolean(trjs.local.get('param_reorder'), false);
         this.showMedia = this.testUndefBoolean(trjs.local.get('param_showMedia'), true);
-        this.paletteFile = this.testUndefBoolean(trjs.local.get('param_paletteFile'), true);
-        this.paletteEdit = this.testUndefBoolean(trjs.local.get('param_paletteEdit'), true);
+        this.paletteFile = this.testUndefBoolean(trjs.local.get('param_paletteFile'), false);
+        this.paletteEdit = this.testUndefBoolean(trjs.local.get('param_paletteEdit'), false);
         this.nbVisible = this.testUndefInt(trjs.local.get('param_nbVisible'), 3);
         this.final = this.testUndefBoolean(trjs.local.get('param_final'), true);
         this.format = this.testUndefString(trjs.local.get('param_format'), 'CHAT');

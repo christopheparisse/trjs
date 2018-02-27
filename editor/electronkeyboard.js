@@ -56,18 +56,13 @@ trjs.init.electronkeyboard = function () {
         fsio.clearMRU();
     });
     ipcRenderer.on('wndzoomin', function(event, arg) {
-        const webFrame = require('electron').webFrame;
-        let f = webFrame.getZoomFactor();
-        webFrame.setZoomFactor(f * 1.2);
+        trjs.editor.zoomGlobalIn();
     });
     ipcRenderer.on('wndzoomout', function(event, arg) {
-        const webFrame = require('electron').webFrame;
-        let f = webFrame.getZoomFactor();
-        webFrame.setZoomFactor(f / 1.2);
+        trjs.editor.zoomGlobalOut();
     });
     ipcRenderer.on('wndzoomreset', function(event, arg) {
-        const webFrame = require('electron').webFrame;
-        webFrame.setZoomFactor(1);
+        trjs.editor.zoomGlobalReset();
     });
     ipcRenderer.on('export', function(event, arg) {
         $("#openexports").modal();

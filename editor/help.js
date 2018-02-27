@@ -437,6 +437,17 @@ trjs.closehelp = function () {
 trjs.palette = {};
 
 trjs.palette.file = function (style) {
+	if (style !== undefined) {
+		if (style === true) {
+            $('#palette-file').show();
+            trjs.param.paletteFile = true;
+		} else {
+            $('#palette-file').hide();
+            trjs.param.paletteFile = false;
+		}
+		trjs.param.saveStorage();
+		return;
+	}
 	if (trjs.param.paletteFile === false) {
         $('#palette-file').show();
         trjs.param.paletteFile = true;
@@ -445,9 +456,21 @@ trjs.palette.file = function (style) {
         $('#palette-file').hide();
         trjs.param.paletteFile = false;
 	}
+    trjs.param.saveStorage();
 };
 
 trjs.palette.edit = function (style) {
+    if (style !== undefined) {
+        if (style === true) {
+            $('#palette-edit').show();
+            trjs.param.paletteEdit = true;
+        } else {
+            $('#palette-edit').hide();
+            trjs.param.paletteEdit = false;
+        }
+        trjs.param.saveStorage();
+        return;
+    }
     if (trjs.param.paletteEdit === false) {
         $('#palette-edit').show();
         trjs.param.paletteEdit = true;
@@ -456,4 +479,5 @@ trjs.palette.edit = function (style) {
         $('#palette-edit').hide();
         trjs.param.paletteEdit = false;
     }
+    trjs.param.saveStorage();
 };

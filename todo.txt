@@ -1,0 +1,7 @@
+npm install
+npm update
+npm rebuild
+npm run rebuild
+sh buildpc.sh
+buildwin.bat
+sh majpgmwin.sh
