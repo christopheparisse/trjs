@@ -563,13 +563,13 @@ trjs.template = (function () {
      */
     function initTableCodes(data) {
         var s = '<thead><td class="textcell1">'
-            + trjs.messgs.codecode
+            + '<span id="initTCcode">' + trjs.messgs.codecode + '</span>'
             + '</td><td class="textcell4">'
-            + trjs.messgs.codespeaker
+            + '<span id="initTCspeaker">' + trjs.messgs.codespeaker + '</span>'
             + '</td><td class="textcell6">'
-            + trjs.messgs.codecontent
+            + '<span id="initTCcontent">' + trjs.messgs.codecontent + '</span>'
             + '</td><td class="textcell5">'
-            + trjs.messgs.codedesc
+            + '<span id="initTCdesc">' + trjs.messgs.codedesc + '</span>'
             + '</td></thead>';
         s += '<tbody>';
         if (data.length < 1) {
@@ -584,6 +584,13 @@ trjs.template = (function () {
         $('#template-code').html(s);
     }
 
+    function initTableCodesLanguage() {
+        $("#initTCcode").text(trjs.messgs.codecode);
+        $("#initTCspeaker").text(trjs.messgs.codespeaker);
+        $("#initTCcontent").text(trjs.messgs.codecontent);
+        $("#initTCdesc").text(trjs.messgs.codedesc);
+    }
+
     /**
      * initialize editing table for templates
      * @method initTableTiers
@@ -591,17 +598,17 @@ trjs.template = (function () {
      */
     function initTableTiers(data) {
         var s = '<thead><td class="textcell1">'
-            + trjs.messgs.tierstier
+            + '<span id="initTTtier">' + trjs.messgs.tierstier + '</span>'
             + '</td><td class="textcell2">'
-            + trjs.messgs.tierstype
+            + '<span id="initTTtype">' + trjs.messgs.tierstype + '</span>'
             + '</td><td class="textcell3">'
-            + trjs.messgs.tiersparent
+            + '<span id="initTTparent">' + trjs.messgs.tiersparent + '</span>'
             + '</td><td class="textcell4">'
-            + trjs.messgs.tiersspeaker
+            + '<span id="initTTspeaker">' + trjs.messgs.tiersspeaker + '</span>'
             + '</td><td class="textcell6">'
-            + trjs.messgs.tierscontent
+            + '<span id="initTTcontent">' + trjs.messgs.tierscontent + '</span>'
             + '</td><td class="textcell5">'
-            + trjs.messgs.tiersdesc
+            + '<span id="initTTdesc">' + trjs.messgs.tiersdesc + '</span>'
             + '</td></thead>';
         s += '<tbody>';
         if (data.length < 1) {
@@ -614,6 +621,21 @@ trjs.template = (function () {
             }
         s += '</tbody>';
         $('#template-tier').html(s);
+    }
+
+    function initTableTiersLanguage() {
+        $("#initTTtier").text(trjs.messgs.tierstier);
+        $("#initTTtype").text(trjs.messgs.tierstype);
+        $("#initTTparent").text(trjs.messgs.tiersparent);
+        $("#initTTspeaker").text(trjs.messgs.tiersspeaker);
+        $("#initTTcontent").text(trjs.messgs.tierscontent);
+        $("#initTTdesc").text(trjs.messgs.tiersdesc);
+    }
+
+    function loadTemplateLanguage() {
+        initTableCodesLanguage();
+        initTableTiersLanguage();
+        initTablePersonsLanguage();
     }
 
     /**
@@ -703,6 +725,7 @@ trjs.template = (function () {
          type: 'autocomplete',
          source: ['Symbolic Association', 'Time Subdivision', 'Symbolic Subdivision','Included In'],
          */
+        loadTemplateLanguage();
     }
 
     /**
@@ -1177,6 +1200,9 @@ trjs.template = (function () {
         $('#participant').html(s);
     }
 
+    function initTablePersonsLanguage() {
+
+    }
     /**
      * slits the text of a div into type and subtype
      * @method splitDoubleText
@@ -1624,6 +1650,8 @@ trjs.template = (function () {
         eventKeydownTMTier: eventKeydownTMTier,
         eventKeydownTMMeta: eventKeydownTMMeta,
         imbricationLevels: imbricationLevels,
+        initTableCodesLanguage: initTableCodesLanguage,
+        initTableTiersLanguage: initTableTiersLanguage,
         loadMetadata: loadMetadata,
         loadPersons: loadPersons,
         loadTemplates: loadTemplates,

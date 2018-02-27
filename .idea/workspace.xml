@@ -7,16 +7,9 @@
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/editor/editor.js" afterPath="$PROJECT_DIR$/editor/editor.js" />
-      <change beforePath="$PROJECT_DIR$/editor/electronkeyboard.js" afterPath="$PROJECT_DIR$/editor/electronkeyboard.js" />
-      <change beforePath="$PROJECT_DIR$/editor/help.js" afterPath="$PROJECT_DIR$/editor/help.js" />
-      <change beforePath="$PROJECT_DIR$/editor/params.js" afterPath="$PROJECT_DIR$/editor/params.js" />
+      <change beforePath="$PROJECT_DIR$/editor/messgs.js" afterPath="$PROJECT_DIR$/editor/messgs.js" />
       <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" afterPath="$PROJECT_DIR$/editor/version.js" />
-      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change beforePath="$PROJECT_DIR$/maj.bat" afterPath="$PROJECT_DIR$/maj.bat" />
-      <change beforePath="$PROJECT_DIR$/maj.sh" afterPath="$PROJECT_DIR$/maj.sh" />
-      <change beforePath="$PROJECT_DIR$/majpgmwin.sh" afterPath="$PROJECT_DIR$/majpgmwin.sh" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/editor/templates.js" afterPath="$PROJECT_DIR$/editor/templates.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,17 +23,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editor.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/editor/editor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="974">
-              <caret line="1588" column="0" lean-forward="true" selection-start-line="1588" selection-start-column="0" selection-end-line="1588" selection-end-column="0" />
+            <state relative-caret-position="1246">
+              <caret line="180" column="44" lean-forward="false" selection-start-line="180" selection-start-column="22" selection-end-line="180" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/version.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="431">
@@ -92,9 +85,32 @@
       <file leaf-file-name="tablekeyboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="1312">
               <caret line="662" column="0" lean-forward="true" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="templates.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/templates.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="767">
+              <caret line="1654" column="0" lean-forward="false" selection-start-line="1654" selection-start-column="0" selection-end-line="1654" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messgs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="812">
+              <caret line="1187" column="0" lean-forward="true" selection-start-line="1187" selection-start-column="0" selection-end-line="1187" selection-end-column="0" />
+              <folding>
+                <marker date="1519772675414" expanded="true" signature="13539:13553" ph="..." />
+                <marker date="1519772675414" expanded="true" signature="52640:52654" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,14 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>changed</find>
-      <find>testNotSave</find>
-      <find>testNo</find>
-      <find>all-c</find>
-      <find>startWindow</find>
-      <find>zoom</find>
-      <find>showExitPrompt</find>
-      <find>quit</find>
       <find>console.log</find>
       <find>mustsave</find>
       <find>innerSave</find>
@@ -143,6 +151,14 @@
       <find>6.2</find>
       <find>paletteFile</find>
       <find>wndzoomin</find>
+      <find>ctrlaltbin85</find>
+      <find>Speaker's Name</find>
+      <find>Speaker</find>
+      <find>codecode</find>
+      <find>initTableCodes</find>
+      <find>initTablePersons</find>
+      <find>cod</find>
+      <find>setLanguage</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -188,7 +204,6 @@
         <option value="$PROJECT_DIR$/html/media.html" />
         <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/html/meta-part-templ.html" />
-        <option value="$PROJECT_DIR$/editor/templates.js" />
         <option value="$PROJECT_DIR$/editor/kwiclex.js" />
         <option value="$PROJECT_DIR$/editor/undo.js" />
         <option value="$PROJECT_DIR$/editor/jqtree.js" />
@@ -196,7 +211,6 @@
         <option value="$PROJECT_DIR$/editor/init.js" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
         <option value="$PROJECT_DIR$/editor/events.js" />
-        <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/systemcall/fsio.js" />
         <option value="$PROJECT_DIR$/transcriberjs-x64.nsi" />
@@ -205,10 +219,12 @@
         <option value="$PROJECT_DIR$/editor/help.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/editor/editor.js" />
         <option value="$PROJECT_DIR$/editor/electronkeyboard.js" />
-        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
         <option value="$PROJECT_DIR$/maj.sh" />
+        <option value="$PROJECT_DIR$/editor/messgs.js" />
+        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
+        <option value="$PROJECT_DIR$/editor/editor.js" />
+        <option value="$PROJECT_DIR$/editor/templates.js" />
       </list>
     </option>
   </component>
@@ -334,12 +350,12 @@
       <workItem from="1518788984850" duration="33105000" />
       <workItem from="1519683544054" duration="67000" />
       <workItem from="1519683763753" duration="65000" />
-      <workItem from="1519683873076" duration="4646000" />
+      <workItem from="1519683873076" duration="7111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92299000" />
+    <option name="totallyTimeSpent" value="94764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="113" y="-13" width="2780" height="1826" extended-state="6" />
@@ -354,7 +370,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16236162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2444018" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2444018" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39970717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -609,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/templates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="1421" column="31" lean-forward="false" selection-start-line="1421" selection-start-column="20" selection-end-line="1421" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/media.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -670,13 +679,6 @@
         <state relative-caret-position="568">
           <caret line="1631" column="22" lean-forward="true" selection-start-line="1631" selection-start-column="22" selection-end-line="1631" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="668" column="84" lean-forward="true" selection-start-line="668" selection-start-column="84" selection-end-line="668" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -762,10 +764,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+    <entry file="file://$PROJECT_DIR$/maj.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="974">
-          <caret line="1588" column="0" lean-forward="true" selection-start-line="1588" selection-start-column="0" selection-end-line="1588" selection-end-column="0" />
+        <state relative-caret-position="93">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/version.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -778,26 +788,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maj.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="1312">
           <caret line="662" column="0" lean-forward="true" selection-start-line="662" selection-start-column="0" selection-end-line="662" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
+    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="812">
+          <caret line="1187" column="0" lean-forward="true" selection-start-line="1187" selection-start-column="0" selection-end-line="1187" selection-end-column="0" />
+          <folding>
+            <marker date="1519772675414" expanded="true" signature="13539:13553" ph="..." />
+            <marker date="1519772675414" expanded="true" signature="52640:52654" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/templates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="1654" column="0" lean-forward="false" selection-start-line="1654" selection-start-column="0" selection-end-line="1654" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1246">
+          <caret line="180" column="44" lean-forward="false" selection-start-line="180" selection-start-column="22" selection-end-line="180" selection-end-column="44" />
           <folding />
         </state>
       </provider>

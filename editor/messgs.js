@@ -627,6 +627,9 @@ trjs.messgs_eng = {
     ctrlaltbin82: "Split the line at the cursor", // Ctrl Alt R
     ctrlaltbin85: "Show the hidden div", // Ctrl Alt U
 
+    ctrlbin119: "Zoom Out (all window)", // Ctrl F8
+    ctrlbin120: "Zoom In (all window)", // Ctrl F9
+
     ctrlaltbin113: "Set the color of the selected text to red", // Ctrl Alt F2
     ctrlaltbin114: "Set the color of the selected text to green", // Ctrl Alt F3
     ctrlaltbin115: "Set the color of the selected text to blue", // Ctrl Alt F4
@@ -1370,6 +1373,9 @@ trjs.messgs_fra = {
     ctrlaltbin79: "Charger un média", // Ctrl Alt O
     ctrlaltbin82: "Scinder une ligne en deux (à l'endroit où se trouve le curseur) sans indication temporelle", // Ctrl Alt R
     ctrlaltbin85: "Montrer les divisions cachées", // Ctrl Alt U
+
+    ctrlbin119: "Diminuer le zoom (toute la fenêtre)", // Ctrl F8
+    ctrlbin120: "Augmenter le zoom (toute la fenêtre)", // Ctrl F9
 
     ctrlaltbin113: "Colorer le texte sélectionné en rouge", // Ctrl Alt F2
     ctrlaltbin114: "Colorer le texte sélectionné en vert", // Ctrl Alt F3

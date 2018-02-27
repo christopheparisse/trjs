@@ -658,8 +658,8 @@ trjs.keys.initBindings = function () {
     trjs.bindings.push([nkey("y"), true, false, false, 'ctrl', trjs.undo.redo, trjs.messgs.ctrlbin89]); // Ctrl Y
     trjs.bindings.push([nkey("z"), true, false, false, 'ctrl', trjs.undo.undo, trjs.messgs.ctrlbin90]); // Ctrl Z
 
-    trjs.bindings.push([nkey("f8"), true, false, false, 'ctrl', trjs.editor.zoomGlobalOut, trjs.messgs.ctrlbin107]); // Ctrl F8
-    trjs.bindings.push([nkey("f9"), true, false, false, 'ctrl', trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin109]); // Ctrl F9
+    trjs.bindings.push([nkey("f8"), true, false, false, 'ctrl', trjs.editor.zoomGlobalOut, trjs.messgs.ctrlbin119]); // Ctrl F8
+    trjs.bindings.push([nkey("f9"), true, false, false, 'ctrl', trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin120]); // Ctrl F9
 
     trjs.bindings.push([nkey("1"), true, false, true, 'ctrl', trjs.events.setDivPlus, trjs.messgs.ctrlshiftbin49]); // Ctrl Shift 1
     trjs.bindings.push([nkey("2"), true, false, true, 'ctrl', trjs.events.setDivMinus, trjs.messgs.ctrlshiftbin50]); // Ctrl Shift 2

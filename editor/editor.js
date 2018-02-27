@@ -177,6 +177,8 @@ trjs.editor = (function () {
             trjs.undo.setLang('fra');
         }
         trjs.messgs_init();
+        trjs.template.initTableCodesLanguage();
+        trjs.template.initTableTiersLanguage();
     }
 
     /**
