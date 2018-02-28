@@ -1,4 +1,4 @@
-; transcriberjs-x86.nsi
+; transcriberjs-x64.nsi
 ;
 ; This script is based on example1.nsi, but it remember the directory,
 ; has uninstall support and (optionally) installs start menu shortcuts.
@@ -12,10 +12,10 @@
 ;--------------------------------
 
 ; The name of the installer
-Name "trjs-install-v0.6.4-x86"
+Name "trjs-install-v__version__-x64"
 
 ; The file to write
-OutFile "trjs-v0.6.4-x86.exe"
+OutFile "trjs-v__version__-x64.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES64\trjs"
@@ -41,13 +41,13 @@ UninstPage instfiles
 ;--------------------------------
 
 ; The stuff to install
-Section "trjs 64bits v0.6.4 (required)"
+Section "trjs 64bits v__version__ (required)"
 
   SectionIn RO
 
   ; Put file there
   SetOutPath $INSTDIR
-  File /r "C:\devlopt\builds\trjs-x86\Trjs-win32-ia32\*.*"
+  File /r "c:\devlopt\builds\trjs-x64\Trjs-win32-x64\*.*"
  
   ; Write the installation path into the registry
   WriteRegStr HKLM SOFTWARE\trjs "Install_Dir" "$INSTDIR"
