@@ -476,10 +476,10 @@ trjs.messgs_eng = {
     intidate: "Date of an event in the life cycle of the document : creation date or the date of availability. It is recommended to specify the date in the W3CDTF format (AAAA-MM-JJ).",
     intitype: "Nature or genre of the content : major categories of document. It is recommended to use clearly defined terms of its organization. For example, the Dublin Core defines a few types in the vocabulary DCMITypes.",
     intiformat: "Document format: physical or electronic format of the document. For example, media type or size (size, duration). You can specify the hardware and software necessary to access the document. It is recommended to use clear terms, eg MIME types.",
-    intiid: "Unambiguous identifier : It is recommended to use an accurate reference system, for example, the URI or ISBN numbers.",
+    intiid: "Unambiguous identifier : it is recommended to use an accurate reference system, for example, the URI or ISBN numbers.",
     intisrc: "Resource that document drift : the document may result in whole or in part of the resource. It is recommended to use a formal naming of resources, such as their URI.",
     intilang: "Language of the document: it is recommended to use a language code conforms to RFC4646 format.",
-    intirel: "Link to a related resource: It is recommended to use a formal naming of resources, such as their URI.",
+    intirel: "Link to a related resource: it is recommended to use a formal naming of resources, such as their URI.",
     inticov: "Document Scope : The scope includes a geographic domain, a time, or jurisdiction (name of an administrative entity). It is recommended to use standardized representations of these types of data, such TGN ( Thesaurus of Geographic Names, a place names dictionary), ISO3166, or Box Point for the spatial range, or W3CDTF Period for the temporal scope.",
     intirig: "Rights to the resource : to provide information on the status of the rights of the document, such as the presence of a copyright or a link to the copyright holder . The absence of this property does not assume that the document is copyright free.",
 
