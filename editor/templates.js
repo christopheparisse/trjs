@@ -1182,9 +1182,17 @@ trjs.template = (function () {
      * @param hdata data stored in memory
      */
     function initTablePersons(data) {
-        var s = '<thead><td class="textcell2">ID</td><td class="textcell3"><span id="ppname">Name</span></td><td class="textcell4">Age</td>';
-        s += '<td class="textcell5">Role</td><td class="textcell6"><span id="ppsex">Sex</span></td><td class="textcell7"><span id="pplangu">Lang</span></td><td class="textcell8"><span id="ppgroup">Group</span></td>';
-        s += '<td class="textcell9">SES</td><td class="textcell10">Education</td><td class="textcell11">Source</td><td class="textcell12">Information</td></thead>';
+        var s = '<thead><td class="textcell2"><span id="personID">ID</span></td>'
+            + '<td class="textcell3"><span id="personname">Name</span></td>'
+            + '<td class="textcell4"><span id="personage">Age</span></td>';
+        s += '<td class="textcell5"><span id="personrole">Role</span></td>'
+            + '<td class="textcell6"><span id="personsex">Sex</span></td>'
+            + '<td class="textcell7"><span id="personlanguage">Lang</span></td>'
+            + '<td class="textcell8"><span id="persongroup">Group</span></td>';
+        s += '<td class="textcell9"><span id="personSES">SES</span></td>'
+            + '<td class="textcell10"><span id="personeduc">Education</span></td>'
+            + '<td class="textcell11"><span id="personsrc">Source</span></td>'
+            + '<td class="textcell12"><span id="personinfo">Information</span></td></thead>';
         s += '<tbody>';
         if (data.length < 1)
             s += stringLine11Val('-', '---', '',
@@ -1201,7 +1209,17 @@ trjs.template = (function () {
     }
 
     function initTablePersonsLanguage() {
-
+        $("#personID").text(trjs.mssgs.personID);
+        $("#personage").text(trjs.mssgs.personage);
+        $("#personname").text(trjs.mssgs.personname);
+        $("#personsex").text(trjs.mssgs.personsex);
+        $("#personlanguage").text(trjs.mssgs.personlanguage);
+        $("#persongroup").text(trjs.mssgs.persongroup);
+        $("#personrole").text(trjs.mssgs.personrole);
+        $("#personSES").text(trjs.mssgs.personSES);
+        $("#personeduc").text(trjs.mssgs.personeduc);
+        $("#personsrc").text(trjs.mssgs.personsrc);
+        $("#personinfo").text(trjs.mssgs.personinfo);
     }
     /**
      * slits the text of a div into type and subtype
@@ -1652,6 +1670,7 @@ trjs.template = (function () {
         imbricationLevels: imbricationLevels,
         initTableCodesLanguage: initTableCodesLanguage,
         initTableTiersLanguage: initTableTiersLanguage,
+        initTablePersonsLanguage: initTablePersonsLanguage,
         loadMetadata: loadMetadata,
         loadPersons: loadPersons,
         loadTemplates: loadTemplates,

@@ -439,6 +439,18 @@ trjs.messgs_eng = {
     tierscontent: "Content",
     tiersdesc: "Description",
 
+    personID: "ID",
+    personage: "Age",
+    personname: "Name",
+    personsex: "Sex",
+    personlanguage: "Language",
+    persongroup: "Group",
+    personrole: "Role",
+    personSES: "SES",
+    personeduc: "Education",
+    personsrc: "Source",
+    personinfo: "Information",
+
     tititle: "Title of the document",
     ticreator: "Creator of the document",
     tisubject: "Subject and key-words",
@@ -540,11 +552,6 @@ trjs.messgs_eng = {
 
     mprop: "Property",
     mval: "Value",
-
-    ppname: "Name",
-    ppsex: "Sex",
-    pplangu: "Language",
-    ppgroup: "Group",
 
     tree: "Select a file from the tree.",
 
@@ -1186,6 +1193,18 @@ trjs.messgs_fra = {
     tierscontent: "Contenu",
     tiersdesc: "Description",
 
+    personID: "ID",
+    personage: "Age",
+    personname: "Nom",
+    personsex: "Sexe",
+    personlanguage: "Langue",
+    persongroup: "Groupe",
+    personrole: "Role",
+    personSES: "SES",
+    personeduc: "Education",
+    personsrc: "Source",
+    personinfo: "Information",
+
     tititle: "Titre du document",
     ticreator: "Créateur du document",
     tisubject: "Sujet et mots-clefs",
@@ -1287,11 +1306,6 @@ trjs.messgs_fra = {
 
     mprop: "Propriété",
     mval: "Valeur",
-
-    ppname: "Nom",
-    ppsex: "Sexe",
-    pplangu: "Langue",
-    ppgroup: "Groupe",
 
     tree: "Choisir un fichier dans l'arborescence.",
 
@@ -1816,10 +1830,6 @@ trjs.messgs_init = function () {
 
     $('#mprop').text(trjs.messgs.mprop);
     $('#mval').text(trjs.messgs.mval);
-    $('#ppname').text(trjs.messgs.ppname);
-    $('#ppsex').text(trjs.messgs.ppsex);
-    $('#pplangu').text(trjs.messgs.pplangu);
-    $('#ppgroup').text(trjs.messgs.ppgroup);
     $('#tree').text(trjs.messgs.tree);
 
     $('#pusequality').text(trjs.messgs.pusequality);

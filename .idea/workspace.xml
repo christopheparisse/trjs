@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/editor/editor.js" afterPath="$PROJECT_DIR$/editor/editor.js" />
       <change beforePath="$PROJECT_DIR$/editor/messgs.js" afterPath="$PROJECT_DIR$/editor/messgs.js" />
-      <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" />
       <change beforePath="$PROJECT_DIR$/editor/templates.js" afterPath="$PROJECT_DIR$/editor/templates.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,8 +24,8 @@
       <file leaf-file-name="editor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/editor/editor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1246">
-              <caret line="180" column="44" lean-forward="false" selection-start-line="180" selection-start-column="22" selection-end-line="180" selection-end-column="44" />
+            <state relative-caret-position="874">
+              <caret line="177" column="9" lean-forward="true" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -95,8 +93,8 @@
       <file leaf-file-name="templates.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/templates.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="1654" column="0" lean-forward="false" selection-start-line="1654" selection-start-column="0" selection-end-line="1654" selection-end-column="0" />
+            <state relative-caret-position="1263">
+              <caret line="1691" column="0" lean-forward="true" selection-start-line="1691" selection-start-column="0" selection-end-line="1691" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,10 +104,10 @@
         <entry file="file://$PROJECT_DIR$/editor/messgs.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="812">
-              <caret line="1187" column="0" lean-forward="true" selection-start-line="1187" selection-start-column="0" selection-end-line="1187" selection-end-column="0" />
+              <caret line="452" column="0" lean-forward="true" selection-start-line="441" selection-start-column="0" selection-end-line="452" selection-end-column="0" />
               <folding>
-                <marker date="1519772675414" expanded="true" signature="13539:13553" ph="..." />
-                <marker date="1519772675414" expanded="true" signature="52640:52654" ph="..." />
+                <marker date="1519805648214" expanded="true" signature="13539:13553" ph="..." />
+                <marker date="1519805648214" expanded="true" signature="52832:52846" ph="..." />
               </folding>
             </state>
           </provider>
@@ -129,10 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.log</find>
-      <find>mustsave</find>
-      <find>innerSave</find>
-      <find>saveAs</find>
       <find>insert</find>
       <find>insertLineLoc</find>
       <find>createRowAfterWith</find>
@@ -159,6 +153,10 @@
       <find>initTablePersons</find>
       <find>cod</find>
       <find>setLanguage</find>
+      <find>initTablePersonsLanguage</find>
+      <find>person</find>
+      <find>ppna</find>
+      <find>personname</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -221,10 +219,10 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/editor/electronkeyboard.js" />
         <option value="$PROJECT_DIR$/maj.sh" />
-        <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
-        <option value="$PROJECT_DIR$/editor/editor.js" />
+        <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/templates.js" />
+        <option value="$PROJECT_DIR$/editor/editor.js" />
       </list>
     </option>
   </component>
@@ -350,12 +348,12 @@
       <workItem from="1518788984850" duration="33105000" />
       <workItem from="1519683544054" duration="67000" />
       <workItem from="1519683763753" duration="65000" />
-      <workItem from="1519683873076" duration="7111000" />
+      <workItem from="1519683873076" duration="8636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94764000" />
+    <option name="totallyTimeSpent" value="96289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="113" y="-13" width="2780" height="1826" extended-state="6" />
@@ -799,26 +797,26 @@
     <entry file="file://$PROJECT_DIR$/editor/messgs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="812">
-          <caret line="1187" column="0" lean-forward="true" selection-start-line="1187" selection-start-column="0" selection-end-line="1187" selection-end-column="0" />
+          <caret line="452" column="0" lean-forward="true" selection-start-line="441" selection-start-column="0" selection-end-line="452" selection-end-column="0" />
           <folding>
-            <marker date="1519772675414" expanded="true" signature="13539:13553" ph="..." />
-            <marker date="1519772675414" expanded="true" signature="52640:52654" ph="..." />
+            <marker date="1519805648214" expanded="true" signature="13539:13553" ph="..." />
+            <marker date="1519805648214" expanded="true" signature="52832:52846" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/templates.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="1654" column="0" lean-forward="false" selection-start-line="1654" selection-start-column="0" selection-end-line="1654" selection-end-column="0" />
+        <state relative-caret-position="1263">
+          <caret line="1691" column="0" lean-forward="true" selection-start-line="1691" selection-start-column="0" selection-end-line="1691" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/editor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1246">
-          <caret line="180" column="44" lean-forward="false" selection-start-line="180" selection-start-column="22" selection-end-line="180" selection-end-column="44" />
+        <state relative-caret-position="874">
+          <caret line="177" column="9" lean-forward="true" selection-start-line="177" selection-start-column="9" selection-end-line="177" selection-end-column="9" />
           <folding />
         </state>
       </provider>

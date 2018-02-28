@@ -179,6 +179,7 @@ trjs.editor = (function () {
         trjs.messgs_init();
         trjs.template.initTableCodesLanguage();
         trjs.template.initTableTiersLanguage();
+        trjs.template.initTablePersonsLanguage();
     }
 
     /**
