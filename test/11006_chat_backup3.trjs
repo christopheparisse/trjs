@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE TEI SYSTEM "http://ct3.ortolang.fr/tei-corpo/tei_corpo.dtd">
-<TEI version="0.9" subversion="trjs" xmlns="http://www.tei-c.org/ns/1.0" xml:lang="eng">
+<TEI version="0.9" subversion="trjs" xmlns="http://www.tei-c.org/ns/1.0" xml:lang="eng ger spa">
 <teiHeader>
 <fileDesc>
 <titleStmt>
-<title>Fichier TEI obtenu à partir du fichier CLAN 11006.cha</title>
+<title>11006 (from brian)</title>
 </titleStmt>
 <publicationStmt>
 <distributor xmlns="http://www.tei-c.org/ns/1.0">tei_corpo</distributor>
@@ -15,34 +15,34 @@
 </note>
 <note type="METADATA_DESC">
 <note>
-<note type="property">Titre</note>
+<note type="property">Title</note>
 <note type="type">DublinCore</note>
 <note type="value">Fichier TEI obtenu à partir du fichier CLAN 11006.cha</note>
-<note type="info">Titre du document</note>
+<note type="info">Title of the document</note>
 </note>
 <note>
-<note type="property">Créateur</note>
+<note type="property">Creator</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Créateur du document</note>
+<note type="info">Creator of the document</note>
 </note>
 <note>
-<note type="property">Sujet</note>
+<note type="property">Subject</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Sujet et mots-clefs</note>
+<note type="info">Subject and key-words</note>
 </note>
 <note>
 <note type="property">Description</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Description du document</note>
+<note type="info">Description of the document</note>
 </note>
 <note>
-<note type="property">Editeur</note>
+<note type="property">Publisher</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Editeur du document</note>
+<note type="info">Publisher of the document</note>
 </note>
 <note>
 <note type="property">-</note>
@@ -54,55 +54,61 @@
 <note type="property">Date</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Date d'un événement dans le cycle de vie du document</note>
+<note type="info">Date of an event in the cycle life of the document</note>
 </note>
 <note>
-<note type="property">Type de ressource</note>
+<note type="property">Type</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Nature ou genre du contenu</note>
+<note type="info">Nature or genre of the content</note>
 </note>
 <note>
 <note type="property">Format</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Format du document</note>
+<note type="info">Format of the document</note>
 </note>
 <note>
-<note type="property">Identifiant de la ressource</note>
+<note type="property">Identifier</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Identificateur non ambigu</note>
+<note type="info">Unambiguous identifier</note>
 </note>
 <note>
 <note type="property">Source</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Ressource dont dérive le document</note>
+<note type="info">Resource that document drift</note>
 </note>
 <note>
-<note type="property">Langue</note>
+<note type="property">Languages</note>
 <note type="type">DublinCore</note>
-<note type="value"></note>
-<note type="info">Langue du document</note>
+<note type="value">eng spa ner afr</note>
+<note type="info">Language of the document</note>
 </note>
 <note>
-<note type="property">Relation</note>
+<note type="property">Relationship</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Lien vers une ressource liée</note>
+<note type="info">Link to a related resource</note>
 </note>
 <note>
-<note type="property">Couverture</note>
+<note type="property">Coverage</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
-<note type="info">Portée du document</note>
+<note type="info">Document Scope</note>
 </note>
 <note>
 <note type="property">-</note>
 <note type="type">DublinCore</note>
 <note type="value"></note>
 <note type="info">-</note>
+</note>
+<note>
+<note type="property"></note>
+<note type="type">---</note>
+<note type="value"></note>
+<note type="info"></note>
 </note>
 </note>
 <note type="TEMPLATE_DESC">
@@ -143,7 +149,7 @@
 </notesStmt>
 <sourceDesc>
 <recordingStmt><recording>
-<media url="/devlopt/trjs/test/" mimeType="" />
+<media url="/devlopt/trjs/test/////" mimeType="" />
 <date dur=""></date>
 </recording>
 </recordingStmt>
@@ -155,7 +161,7 @@
 <placeName></placeName>
 </place>
 </settingDesc>
-<langUsage><language ident="eng">eng</language><language ident="spa">spa</language><language ident="ner">ner</language></langUsage><particDesc><listPerson>
+<langUsage><language ident="eng">eng</language><language ident="ger">ger</language><language ident="spa">spa</language><language ident="wap">wap</language><language ident="kor">kor</language></langUsage><particDesc><listPerson>
 <person
 xml:id="x"
 role="Target_Child"
@@ -182,10 +188,10 @@ source="Weismer42ec"
 </encodingDesc>
 <revisionDesc>
 <list>
-<item>original TeiCorpo</item>
-<item>lastsave: Mon Mar 05 2018 01:11:55 GMT+0100 (CET)</item>
+<item>original TRJS</item>
+<item>lastsave: Sun Mar 04 2018 23:37:39 GMT+0100 (CET)</item>
 <item>url: /devlopt/trjs/test/11006_chat.trjs</item>
-<item>name: Fichier TEI obtenu à partir du fichier CLAN 11006.cha</item>
+<item>name: 11006 (from brian)</item>
 </list>
 </revisionDesc>
 </teiHeader>
@@ -367,7 +373,7 @@ det:art|the n|sink~poss|s prep|in det:art|the n|kitchen .</span>
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u19" >
-<u>and &lt;the I mean&gt; [/?] this is the dish+washer with the towel .</u>
+<u>and ❮the I mean❯ [/?] this is the dish+washer with the towel .</u>
 <spanGrp type="mor"><span>
 coord|and pro:dem|this cop|be&amp;amp;3S det:art|the n|+n|dish+n|washer prep|with det:art|the n|towel .</span>
 </spanGrp>
@@ -523,7 +529,7 @@ adv|there .</span>
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u37" >
-<u>&lt;here that goes in&gt; [*] .</u>
+<u>❮here that goes in❯ [*] .</u>
 <spanGrp type="mor"><span>
 adv|here pro:rel|that v|go-3S adv|in .</span>
 </spanGrp>
@@ -739,7 +745,7 @@ noises .</span>
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u62" >
-<u>(0.10)  there&#39;s [/?] where&#39;s mommy ?</u>
+<u>#0.10  there&#39;s [/?] where&#39;s mommy ?</u>
 <spanGrp type="mor"><span>
 adv:int|where~cop|be&amp;amp;3S n|mommy ?</span>
 </spanGrp>
@@ -967,7 +973,7 @@ co|oh adv|there .</span>
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u89" >
-<u>&lt;what&#39;s foods&gt; [*] ?</u>
+<u>❮what&#39;s foods❯ [*] ?</u>
 <spanGrp type="mor"><span>
 pro:int|what~aux|be&amp;amp;3S n|food-PL ?</span>
 </spanGrp>
@@ -1510,7 +1516,7 @@ v|thank pro:per|you .</span>
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u150" >
-<u>&lt;oh this gonna lose&gt; [*] .</u>
+<u>❮oh this gonna lose❯ [*] .</u>
 <spanGrp type="mor"><span>
 co|oh det:dem|this part|go-PRESP~inf|to v|lose .</span>
 </spanGrp>
@@ -1618,7 +1624,7 @@ co|well co|yeah pro:exist|there~cop|be&amp;amp;3S det:art|a n|lot prep|to n|talk
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u162" >
-<u>(0.3)  it won&#39;t go on .</u>
+<u>#0.3  it won&#39;t go on .</u>
 <spanGrp type="mor"><span>
 pro:per|it mod|will~neg|not v|go adv|on .</span>
 </spanGrp>
@@ -1681,7 +1687,7 @@ co|yes .</span>
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="INV" xml:id="u169" >
-<u>see the circle &lt;in there&gt; [&gt;] ?</u>
+<u>see the circle ❮in there❯ [❯] ?</u>
 <spanGrp type="mor"><span>
 v|see det:art|the n|circle prep|in adv|there ?</span>
 </spanGrp>
@@ -1690,7 +1696,7 @@ v|see det:art|the n|circle prep|in adv|there ?</span>
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u170" >
-<u>xxx [&lt;] .</u>
+<u>xxx [❮] .</u>
 </annotationBlock>
 <annotationBlock who="INV" xml:id="u171" >
 <u>and this is the headboard that your head goes on ?</u>
@@ -2404,7 +2410,7 @@ pro:sub|I v|think pro:indef|someone~cop|be&amp;amp;3S adv|upstairs prep|with pro
 </spanGrp>
 </annotationBlock>
 <annotationBlock who="CHI" xml:id="u253" >
-<u>&lt;&amp;amp;-uh do you have&gt; [/?] is there a puppy dog and a cat ?</u>
+<u>❮&amp;amp;-uh do you have❯ [/?] is there a puppy dog and a cat ?</u>
 <spanGrp type="mor"><span>
 cop|be&amp;amp;3S adv|there det:art|a n|puppy n|dog coord|and det:art|a n|cat ?</span>
 </spanGrp>

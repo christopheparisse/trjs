@@ -331,7 +331,7 @@ trjs.template = (function () {
     }
 
     /**
-     * Load metadata from the object trjs.data.metadata wich contains information store in the XML file.
+     * Load metadata from the object trjs.data.metadata which contains information store in the XML file.
      * @method loadMetadata
      * @return : none
      */
@@ -339,10 +339,11 @@ trjs.template = (function () {
         var s = '<thead><td class="textcell1">Type</td><td class="textcell2"><span id="mprop"></span></td><td class="textcell3"><span id="mval"></span></td><td class="textcell4">Information</td></thead>';
         s += '<tbody>';
         s += stringLine4Val('codeMetadata', '<span id="tytitle">-</span>', '-', '', '<span id="infotytitle">-</span>', 'writehalf');
-        s += stringLine4Val('codeMetadata', 'Transcription', '<span id="tyname">-</span>', '', '<span id="infotyname">-</span>', 'writehalf'); // put 'readonly' if edit the filename in metadata is not permitted anymore
+        s += stringLine4Val('codeMetadata', 'Transcription', '<span id="tyname">-</span>', '', '<span id="infotyname">-</span>', 'readonly'); // put 'readonly' if edit the filename in metadata is not permitted anymore
         s += stringLine4Val('codeMetadata', 'Transcription', '<span id="tyloc">-</span>', '', '<span id="infotyloc">-</span>', 'readonly');
         s += stringLine4Val('codeMetadata', 'Transcription', '<span id="tydate">-</span>', '', '<span id="infotydate">-</span>', 'writehalf');
         s += stringLine4Val('codeMetadata', 'Transcription', '<span id="typlacen">-</span>', '', '<span id="infoplacen">-</span>', 'writehalf');
+        s += stringLine4Val('codeMetadata', 'Transcription', '<span id="tylangs">Languages</span>', '', '<span id="infolangs">-</span>', 'writehalf');
         s += stringLine4Val('codeMetadata', 'Media', '<span id="tymname">-</span>', '', '<span id="infotymname">-</span>', 'readonly');
         s += stringLine4Val('codeMetadata', 'Media', '<span id="tymrelloc">-</span>', '', '<span id="infotymrelloc">-</span>', 'readonly');
         s += stringLine4Val('codeMetadata', 'Media', '<span id="tymloc">-</span>', '', '<span id="infotymloc">-</span>', 'readonly');
@@ -825,7 +826,7 @@ trjs.template = (function () {
     function readMediaInfo(xml) {
         var elt = $(xml).find("TEI");
         if (!elt || elt.length < 1) {
-            trjs.data.setRecordingLang('unk');
+            trjs.data.setRecordingLang('unkown');
             /*
              if (trjs.log)
              trjs.log.alert(trjs.messgs.noteif);
@@ -835,7 +836,6 @@ trjs.template = (function () {
             return;
         }
         elt = $(elt[0]);
-        trjs.data.setRecordingLang(elt.attr('xml:lang'));
         var ver = elt.attr('version');
         if (ver)
             trjs.data.version = ver;
@@ -873,9 +873,12 @@ trjs.template = (function () {
         /*
          * load the headers (with the exception of template already read)
          */
-        elt = xml.getElementsByTagName("title");
-        if (elt != null && elt.length > 0)
-            trjs.data.setRecordingTitle(trjs.dataload.checkstring(elt[0].textContent));
+        var titleStmt = xml.getElementsByTagName("titleStmt");
+        if (titleStmt != null && titleStmt.length > 0) {
+            elt = titleStmt[0].getElementsByTagName("title");
+            if (elt != null && elt.length > 0)
+                trjs.data.setRecordingTitle(trjs.dataload.checkstring(elt[0].textContent));
+        }
         var eltStmt = xml.getElementsByTagName("recordingStmt");
         if (eltStmt != null && eltStmt.length > 0) {
             elt = eltStmt[0].getElementsByTagName("recording");
@@ -945,6 +948,30 @@ trjs.template = (function () {
                 }
             }
         }
+
+        /*
+         * load the language information (information about the language in the file)
+         */
+        trjs.data.languages = [];
+        elt = xml.getElementsByTagName("langUsage");
+        if (elt != null && elt.length != 0) {
+            elt = elt[0].getElementsByTagName("language");
+            if (elt != null && elt.length != 0) {
+                for (var k = 0; k < elt.length; k++) {
+                    var a = elt[k].getAttribute('ident');
+                    if (a) {
+                        trjs.data.languages.push(a);
+                    } else {
+                        var c = elt[k].textContent;
+                        if (c)
+                            trjs.data.languages.push(c);
+                    }
+                }
+            }
+        }
+        if (trjs.data.languages.length > 0)
+            trjs.data.setRecordingLang(trjs.data.languages[0]);
+
         if (trjs.data.getAppInfo() !== trjs.data.appName) {
             trjs.data.revision.push({type: 'original', value: trjs.data.getAppInfo()});
             trjs.data.setAppInfo(trjs.data.appName);
@@ -1209,17 +1236,17 @@ trjs.template = (function () {
     }
 
     function initTablePersonsLanguage() {
-        $("#personID").text(trjs.mssgs.personID);
-        $("#personage").text(trjs.mssgs.personage);
-        $("#personname").text(trjs.mssgs.personname);
-        $("#personsex").text(trjs.mssgs.personsex);
-        $("#personlanguage").text(trjs.mssgs.personlanguage);
-        $("#persongroup").text(trjs.mssgs.persongroup);
-        $("#personrole").text(trjs.mssgs.personrole);
-        $("#personSES").text(trjs.mssgs.personSES);
-        $("#personeduc").text(trjs.mssgs.personeduc);
-        $("#personsrc").text(trjs.mssgs.personsrc);
-        $("#personinfo").text(trjs.mssgs.personinfo);
+        $("#personID").text(trjs.messgs.personID);
+        $("#personage").text(trjs.messgs.personage);
+        $("#personname").text(trjs.messgs.personname);
+        $("#personsex").text(trjs.messgs.personsex);
+        $("#personlanguage").text(trjs.messgs.personlanguage);
+        $("#persongroup").text(trjs.messgs.persongroup);
+        $("#personrole").text(trjs.messgs.personrole);
+        $("#personSES").text(trjs.messgs.personSES);
+        $("#personeduc").text(trjs.messgs.personeduc);
+        $("#personsrc").text(trjs.messgs.personsrc);
+        $("#personinfo").text(trjs.messgs.personinfo);
     }
     /**
      * slits the text of a div into type and subtype
@@ -1333,7 +1360,7 @@ trjs.template = (function () {
      */
     function saveTEIHeaderToString() {
         trjs.data.getNamesFromEdit();
-        var s = '<teiHeader>\n<fileDesc>\n<titleStmt>\n<title>' + trjs.dataload.checkstring(trjs.data.title) + '</title>\n</titleStmt>\n';
+        var s = '<teiHeader>\n<fileDesc>\n<titleStmt>\n<title>' + trjs.dataload.checkstring(trjs.data.recTitle) + '</title>\n</titleStmt>\n';
         s += '<publicationStmt>';
         s += trjs.utils.notnull(trjs.data.publicationStmt);
         s += '</publicationStmt>\n';
@@ -1461,6 +1488,21 @@ trjs.template = (function () {
                 s += '<activity>' + trjs.data.textDesc[i]["text"] + '</activity></setting>\n';
             }
         s += '</settingDesc>\n';
+        s += '<langUsage>';
+        var listlang = trjs.data.languages;
+        if (listlang.length < 1) {
+            s += '<language ident="eng">eng</language>';
+        } else {
+            var ndone=0;
+            for (var i = 0; i < listlang.length; i++) {
+                if (!listlang[i]) continue;
+                s += '<language ident="' + listlang[i] + '">' + listlang[i] + '</language>';
+                ndone++;
+            }
+            if (ndone===0) // multiple comma at begining or end of the field
+                s += '<language ident="eng">eng</language>';
+        }
+        s += '</langUsage>';
         s += '<particDesc><listPerson>\n';
 
         table = $("#participant");

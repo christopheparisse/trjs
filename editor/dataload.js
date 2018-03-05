@@ -229,19 +229,19 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 				}
 			} else if (childs[i].nodeName === 'pause') {
 				if ($(childs[i]).attr('type') === 'short') {
-			    	elt += ' # ';
+			    	elt += ' (.) ';
 				} else if ($(childs[i]).attr('type') === 'long') {
-			    	elt += ' ## ';
+			    	elt += ' (..) ';
 				} else if ($(childs[i]).attr('type') === 'verylong') {
-			    	elt += ' ### ';
+			    	elt += ' (...) ';
 				} else if ($(childs[i]).attr('type') === 'chrono') {
 					var dur = $(childs[i]).attr('dur');
 					if (dur)
-				    	elt += ' #' + dur + ' ';
+				    	elt += ' (' + dur + ') ';
 				    else
-				    	elt += ' # ';
+				    	elt += ' (.) ';
 				} else {
-			    	elt += ' # ';
+			    	elt += ' (.) ';
 				}
 			} else if (childs[i].nodeName !== 'span') {
 	    		a = transcriptDecoding(childs[i]);
@@ -457,19 +457,19 @@ function loadDiv(div, body) {
 			} else if (elts[i].nodeName === 'pause') {
                 var elt = '';
 				if ($(elts[i]).attr('type') === 'short') {
-			    	elt += ' #';
+			    	elt += ' (.)';
 				} else if ($(elts[i]).attr('type') === 'long') {
-			    	elt += ' ##';
+			    	elt += ' (..)';
 				} else if ($(elts[i]).attr('type') === 'verylong') {
-			    	elt += ' ###';
+			    	elt += ' (...)';
 				} else if ($(elts[i]).attr('type') === 'chrono') {
 					var dur = $(elts[i]).attr('dur');
 					if (dur)
-				    	elt += ' #' + dur;
+				    	elt += ' (' + dur + ')';
 				    else
-				    	elt += ' #';
+				    	elt += ' (.)';
 				} else {
-			    	elt += ' #';
+			    	elt += ' (.)';
 				}
                 ts = checknumber(timelineRef($(elts[i]).attr("start")));
                 te = checknumber(timelineRef($(elts[i]).attr("end")));

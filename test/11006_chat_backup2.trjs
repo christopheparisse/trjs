@@ -1,0 +1,3026 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE TEI SYSTEM "http://www.tei-c.org/Vault/P5/current/xml/tei/custom/schema/dtd/tei_all.dtd">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" version="0.9">
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>
+<desc>Fichier TEI obtenu à partir du fichier CLAN 11006.cha</desc>
+</title>
+</titleStmt>
+<publicationStmt>
+<distributor>tei_corpo</distributor>
+</publicationStmt>
+<notesStmt>
+<note type="COMMENTS_DESC">
+<note type="comment">Transcript ends but video continues</note>
+</note>
+<note type="TEMPLATE_DESC">
+<note>
+<note type="type">-</note>
+<note type="parent">-</note>
+<note type="code">CHI</note>
+</note>
+<note>
+<note type="type">-</note>
+<note type="parent">-</note>
+<note type="code">INV</note>
+</note>
+<note>
+<note type="code">mor</note>
+<note type="type">Symbolic_Association</note>
+<note type="parent">annotationBlock</note>
+</note>
+<note>
+<note type="code">act</note>
+<note type="type">Symbolic_Association</note>
+<note type="parent">annotationBlock</note>
+</note>
+<note>
+<note type="code">gra</note>
+<note type="type">Symbolic_Association</note>
+<note type="parent">annotationBlock</note>
+</note>
+</note>
+</notesStmt>
+<sourceDesc>
+<recordingStmt>
+<recording>
+<media dur-iso="0.0"/>
+</recording>
+</recordingStmt>
+</sourceDesc>
+</fileDesc>
+<profileDesc>
+<settingDesc>
+<setting xml:id="d0">
+<activity/>
+</setting>
+</settingDesc>
+<langUsage>
+<language ident="eng">eng</language>
+<language ident="spa">spa</language>
+<language ident="ner">ner</language>
+</langUsage>
+<particDesc>
+<listPerson>
+<person role="Target_Child" sex="2" source="Weismer42ec">
+<persName>Leah</persName>
+<altGrp>
+<alt type="CHI"/>
+</altGrp>
+<langKnowledge>
+<langKnown tag="eng">eng</langKnown>
+</langKnowledge>
+<age value="3.66">3;8.</age>
+<note type="group">TD</note>
+</person>
+<person role="Investigator" source="Weismer42ec">
+<altGrp>
+<alt type="INV"/>
+</altGrp>
+<langKnowledge>
+<langKnown tag="eng">eng</langKnown>
+</langKnowledge>
+<age value="40.01">40.01</age>
+</person>
+</listPerson>
+</particDesc>
+</profileDesc>
+<encodingDesc>
+<appInfo>
+<application ident="TeiCorpo" version="1.37">
+<desc>Transcription converted with TeiCorpo to TEI_CORPO - Soft: 1.37</desc>
+</application>
+</appInfo>
+<transcriptionDesc ident="clan" version="1.0">
+<desc>standard CHAT format</desc>
+</transcriptionDesc>
+</encodingDesc>
+<revisionDesc>
+<list>
+<item>2018-03-05:01:08:04<desc>date</desc>
+</item>
+<item>/devlopt/trjs/test/11006.cha<desc>from</desc>
+</item>
+<item>/devlopt/trjs/test/11006.tei_corpo.xml<desc>to</desc>
+</item>
+<item>11006_chat.trjs<desc>docname</desc>
+</item>
+</list>
+</revisionDesc>
+</teiHeader>
+<text>
+<timeline unit="s">
+<when absolute="0" xml:id="T0"/>
+</timeline>
+<body>
+<div subtype="d0">
+<head>
+<note type="start"/>
+<note type="end"/>
+</head>
+<annotationBlock who="INV" xml:id="au0">
+<u>
+<seg>alright . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|alright .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au1">
+<u>
+<seg>how 0does this go out ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|how 0v|does pro:dem|this v|go adv|out ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|4|SUBJ 4|2|XCOMP 5|4|JCT 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au2">
+<u>
+<seg>&amp;-um there we go . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there pro:sub|we v|go .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au3">
+<u>
+<seg>and there's the stairs and here's the +... </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and pro:exist|there~cop|be&amp;3S det:art|the n|stair-PL coord|and pro:exist|here~cop|be&amp;3S det:art|the +...</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|SUBJ 3|0|ROOT 4|5|DET 5|3|PRED 6|8|LINK 7|8|SUBJ 8|5|CMOD 9|8|PRED 10|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au4">
+<u>
+<seg>uhhuh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|uhhuh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au5">
+<u>
+<seg>porch around xxx . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|porch adv|around .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|JCT 3|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au6">
+<u>
+<seg>here I'm just gonna +/. </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|here pro:sub|I~aux|be&amp;1S adv|just part|go-PRESP~inf|to +/.</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|5|JCT 2|5|SUBJ 3|5|AUX 4|5|JCT 5|0|ROOT 6|5|OBJ 7|5|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au7">
+<u>
+<seg>what is that ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what cop|be&amp;3S pro:dem|that ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au8">
+<u>
+<seg>oh that's just the lid to the +... </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:dem|that~cop|be&amp;3S adv|just det:art|the n|lid prep|to det:art|the +...</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|6|JCT 5|6|DET 6|3|PRED 7|6|NJCT 8|7|POBJ 9|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au9">
+<u>
+<seg>I'm just gonna dump this out . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|be&amp;1S adv|just part|go-PRESP~inf|to v|dump pro:dem|this adv|out .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|JCT 4|0|ROOT 5|6|INF 6|4|XCOMP 7|6|OBJ 8|6|JCT 9|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au10">
+<u>
+<seg>there we go . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there pro:sub|we v|go .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au11">
+<u>
+<seg>now this goes with the baby . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|now pro:dem|this v|go-3S prep|with det:art|the n|baby .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|JCT 5|6|DET 6|4|POBJ 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au12">
+<u>
+<seg>mhm . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yes .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au13">
+<u>
+<seg>where's the baby room ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|where~cop|be&amp;3S det:art|the n|baby n|room ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|5|DET 4|5|MOD 5|2|PRED 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au14">
+<u>
+<seg>that looks good . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|that cop|look-3S adj|good .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au15">
+<u>
+<seg>yep . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yep .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au16">
+<u>
+<seg>and the light is not turned off . </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and det:art|the n|light aux|be&amp;3S neg|not part|turn-PASTP adv|off .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|6|LINK 2|3|DET 3|6|SUBJ 4|6|AUX 5|4|NEG 6|0|ROOT 7|6|JCT 8|6|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au17">
+<u>
+<seg>what would happen ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what mod|will&amp;COND v|happen ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|AUX 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au18">
+<u>
+<seg>the sink's in the kitchen . </seg>
+</u>
+<spanGrp type="mor">
+<span>det:art|the n|sink~poss|s prep|in det:art|the n|kitchen .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|DET 2|3|SUBJ 3|0|ROOT 4|3|JCT 5|6|DET 6|4|POBJ 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au19">
+<u>
+<seg>and &lt;the I mean&gt; [/?] this is the dish+washer with the towel . </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and pro:dem|this cop|be&amp;3S det:art|the n|+n|dish+n|washer prep|with det:art|the n|towel .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|SUBJ 3|0|ROOT 4|5|DET 5|3|PRED 6|5|NJCT 7|8|DET 8|6|POBJ 9|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au20">
+<u>
+<seg>I think that's their bath+room sink . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think pro:rel|that~aux|be&amp;3S det:poss|their n|+n|bath+n|room n|sink .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|7|LINK 4|7|AUX 5|7|MOD 6|7|MOD 7|2|COMP 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au21">
+<u>
+<seg>I think so . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think co|so .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|COM 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au22">
+<u>
+<seg>where's the bath+room ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|where~cop|be&amp;3S det:art|the n|+n|bath+n|room ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|4|DET 4|2|PRED 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au23">
+<u>
+<seg>I think it's right up in that corner . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think pro:per|it~cop|be&amp;3S adv|right adv|up prep|in pro:dem|that n|corner .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|OBJ 4|2|COMP 5|6|JCT 6|4|JCT 7|4|JCT 8|9|DET 9|7|POBJ 10|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au24">
+<u>
+<seg>but where's the potty ? </seg>
+</u>
+<spanGrp type="mor">
+<span>conj|but adv:int|where~cop|be&amp;3S det:art|the adj|pot&amp;dn-Y ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|LINK 3|0|ROOT 4|5|DET 5|3|PRED 6|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au25">
+<u>
+<seg>oh good question . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adj|good n|question .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|MOD 3|0|INCROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au26">
+<u>
+<seg>I bet we have it here somewhere . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|bet&amp;ZERO pro:sub|we v|have pro:per|it adv|here adv|somewhere .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|SUBJ 4|2|COMP 5|4|OBJ 6|7|JCT 7|4|JCT 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au27">
+<u>
+<seg>here . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|here .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au28">
+<u>
+<seg>there we got one . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there pro:sub|we v|get&amp;PAST pro:indef|one .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|OBJ 5|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au29">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au30">
+<u>
+<seg>I think so . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think co|so .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|COM 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au31">
+<u>
+<seg>oh here it is . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv|here pro:per|it cop|be&amp;3S .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|JCT 3|4|SUBJ 4|0|ROOT 5|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au32">
+<u>
+<seg>you found it . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|you v|find&amp;PAST pro:per|it .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|OBJ 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au33">
+<u>
+<seg>0it goes like this . </seg>
+</u>
+<spanGrp type="mor">
+<span>0pro|it v|go-3S prep|like pro:dem|this .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|JCT 4|3|POBJ 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au34">
+<u>
+<seg>is this how you go like this ? </seg>
+</u>
+<spanGrp type="mor">
+<span>cop|be&amp;3S pro:dem|this adv:int|how pro:per|you v|go prep|like pro:dem|this ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|1|SUBJ 3|5|LINK 4|5|SUBJ 5|1|CJCT 6|5|JCT 7|6|POBJ 8|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au35">
+<u>
+<seg>mhm . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yes .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au36">
+<u>
+<seg>there . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au37">
+<u>
+<seg>&lt;here that goes in&gt; [*] . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|here pro:rel|that v|go-3S adv|in .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|3|LINK 3|1|CMOD 4|3|JCT 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au38">
+<u>
+<seg>so someone comes in there and goes peepee . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|so pro:indef|someone v|come-3S adv|in adv|there coord|and v|go-3S n|+on|pee+on|pee .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|JCT 5|3|JCT 6|3|CONJ 7|6|COORD 8|7|OBJ 9|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au39">
+<u>
+<seg>I think he's gonna go peepee on the potty . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think pro:sub|he~aux|be&amp;3S part|go-PRESP~inf|to v|go n|+on|pee+on|pee prep|on det:art|the adj|pot&amp;dn-Y .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|5|SUBJ 4|5|AUX 5|2|COMP 6|7|INF 7|5|XCOMP 8|7|OBJ 9|7|JCT 10|11|DET 11|9|POBJ 12|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au40">
+<u>
+<seg>0 . </seg>
+</u>
+<spanGrp type="act">
+<span>laughs .</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au41">
+<u>
+<seg>peepee hello . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|+on|pee+on|pee n|hello .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|MOD 2|0|ROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au42">
+<u>
+<seg>I've got_to go potty . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|have mod:aux|got_to v|go adj|pot&amp;dn-Y .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|AUX 4|0|ROOT 5|4|PRED 6|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au43">
+<u>
+<seg>excuse me . </seg>
+</u>
+<spanGrp type="mor">
+<span>v|excuse pro:obj|me .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|1|OBJ 3|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au44">
+<u>
+<seg>I've got_to go peepee . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|have mod:aux|got_to v|go n|+on|pee+on|pee .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|AUX 4|0|ROOT 5|4|OBJ 6|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au45">
+<u>
+<seg>I'm gonna stand up and do that . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|be&amp;1S part|go-PRESP~inf|to v|stand adv|up coord|and v|do pro:dem|that .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|5|INF 5|3|XCOMP 6|5|JCT 7|5|CONJ 8|7|COORD 9|8|OBJ 10|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au46">
+<u>
+<seg>boys do that . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|boy-PL v|do pro:dem|that .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|OBJ 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au47">
+<u>
+<seg>they stand up and go potty . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|they v|stand adv|up coord|and v|go adj|pot&amp;dn-Y .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|JCT 4|2|CONJ 5|6|SRL 6|4|COORD 7|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au48">
+<u>
+<seg>&amp;=laughs that's great . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|that~cop|be&amp;3S adj|great .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au49">
+<u>
+<seg>girl's don't . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|girl~poss|s mod|do~neg|not .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|POSS 3|1|XMOD 4|3|NEG 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au50">
+<u>
+<seg>they sit down and go potty . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|they v|sit adv|down coord|and v|go adj|pot&amp;dn-Y .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|JCT 4|2|CONJ 5|6|SRL 6|4|COORD 7|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au51">
+<u>
+<seg>0 . </seg>
+</u>
+<spanGrp type="act">
+<span>laughs .</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au52">
+<u>
+<seg>I [/?] I broke my feet ow . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|break&amp;PAST det:poss|my n|foot&amp;PL co|ow .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|MOD 4|2|OBJ 5|2|COM 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au53">
+<u>
+<seg>now I'm gonna go peepee . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|now pro:sub|I~aux|be&amp;1S part|go-PRESP~inf|to v|go n|+on|pee+on|pee .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|JCT 2|4|SUBJ 3|4|AUX 4|0|ROOT 5|6|INF 6|4|XCOMP 7|6|OBJ 8|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au54">
+<u>
+<seg>out peepee . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|out n|+on|pee+on|pee .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|JCT 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au55">
+<u>
+<seg>pee . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|pee .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au56">
+<u>
+<seg>I [* 0'm] done . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I part|do&amp;PASTP .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au57">
+<u>
+<seg>I'm gonna get some xxx . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|be&amp;1S part|go-PRESP~inf|to v|get qn|some .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|5|INF 5|3|XCOMP 6|5|OBJ 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au58">
+<u>
+<seg>oh we're downstairs . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:sub|we~aux|be&amp;PRES adv|downstairs .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|3|JCT 5|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au59">
+<u>
+<seg>oh here it is . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv|here pro:per|it cop|be&amp;3S .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|JCT 3|4|SUBJ 4|0|ROOT 5|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au60">
+<u>
+<seg>I [* 0've] gotta go downstairs . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I mod:aux|gotta v|go adv|downstairs .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|3|JCT 5|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au61">
+<u>
+<seg>0 . </seg>
+</u>
+<spanGrp type="act">
+<span>noises .</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au62">
+<u>
+<seg>
+<pause dur="0.10" type="chrono"/>there's [/?] where's mommy ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|where~cop|be&amp;3S n|mommy ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au63">
+<u>
+<seg>there she is . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there pro:sub|she cop|be&amp;3S .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au64">
+<u>
+<seg>there's one . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:exist|there~cop|be&amp;3S pro:indef|one .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au65">
+<u>
+<seg>we have a bunch of moms and dads . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|we v|have det:art|a n|bunch prep|of n|mom-PL coord|and n|dad-PL .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|DET 4|2|OBJ 5|4|NJCT 6|5|POBJ 7|6|CONJ 8|7|COORD 9|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au66">
+<u>
+<seg>we do ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|we v|do ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au67">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au68">
+<u>
+<seg>where's +... </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|where~cop|be&amp;3S +...</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au69">
+<u>
+<seg>here's mom . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:exist|here~cop|be&amp;3S n|mom .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au70">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au71">
+<u>
+<seg>they're going on the front porch . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|they~aux|be&amp;PRES part|go-PRESP prep|on det:art|the n|front n|porch .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|3|JCT 5|7|DET 6|7|MOD 7|4|POBJ 8|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au72">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au73">
+<u>
+<seg>oh my microphone . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh det:poss|my n|microphone .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|MOD 3|0|INCROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au74">
+<u>
+<seg>0 . </seg>
+</u>
+<spanGrp type="act">
+<span>laughs .</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au75">
+<u>
+<seg>hey better get out_of the house xxx . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|hey adj|good&amp;CP v|get prep|out_of det:art|the n|house .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|JCT 3|0|ROOT 4|3|JCT 5|6|DET 6|4|POBJ 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au76">
+<u>
+<seg>what's it like outside ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what~aux|be&amp;3S pro:per|it v|like adv|outside ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|SUBJ 4|0|ROOT 5|4|JCT 6|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au77">
+<u>
+<seg>&amp;-uh pretty much warm outside . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|pretty qn|much v|warm adv|outside .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|QUANT 3|0|ROOT 4|3|JCT 5|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au78">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au79">
+<u>
+<seg>kind of like in here . </seg>
+</u>
+<spanGrp type="mor">
+<span>adj|kind prep|of co|like adv|in adv|here .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|JCT 3|5|COM 4|5|JCT 5|2|POBJ 6|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au80">
+<u>
+<seg>honey what do you want ? </seg>
+</u>
+<spanGrp type="mor">
+<span>co|honey pro:int|what mod|do pro:per|you v|want ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|5|COM 2|5|SUBJ 3|5|AUX 4|5|SUBJ 5|0|ROOT 6|5|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au81">
+<u>
+<seg>you'll take coke ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|you~mod|will v|take n|coke ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|3|OBJ 5|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au82">
+<u>
+<seg>okay I'll go get some . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay pro:sub|I~mod|will v|go v|get qn|some .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|SUBJ 3|4|AUX 4|5|SUBJ 5|0|ROOT 6|5|OBJ 7|5|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au83">
+<u>
+<seg>what is she getting ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what cop|be&amp;3S pro:sub|she part|get-PRESP ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|4|SUBJ 4|2|PRED 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au84">
+<u>
+<seg>she's getting some coke . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|she~aux|be&amp;3S part|get-PRESP qn|some n|coke .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|5|QUANT 5|3|OBJ 6|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au85">
+<u>
+<seg>oh good idea . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adj|good n|idea .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|MOD 3|0|INCROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au86">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au87">
+<u>
+<seg>you got_to open the refrigerator please . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|you mod:aux|got_to v|open det:art|the n|refrigerator co|please .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|5|DET 5|3|OBJ 6|3|COM 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au88">
+<u>
+<seg>oh there . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv|there .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|JCT 3|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au89">
+<u>
+<seg>&lt;what's foods&gt; [*] ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what~aux|be&amp;3S n|food-PL ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|INCROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au90">
+<u>
+<seg>oh here's one that goes where ? </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:exist|here~cop|be&amp;3S pro:indef|one pro:rel|that v|go-3S pro:rel|where ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|3|PRED 5|6|LINK 6|4|CMOD 7|6|OBJ 8|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au91">
+<u>
+<seg>let's see . </seg>
+</u>
+<spanGrp type="mor">
+<span>v|let~pro:obj|us v|see .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|1|OBJ 3|1|XCOMP 4|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au92">
+<u>
+<seg>oh that goes on the table . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:rel|that v|go-3S prep|on det:art|the n|table .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|3|LINK 3|1|CMOD 4|3|JCT 5|6|DET 6|4|POBJ 7|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au93">
+<u>
+<seg>around the candle . </seg>
+</u>
+<spanGrp type="mor">
+<span>prep|around det:art|the n|candle .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|3|DET 3|1|POBJ 4|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au94">
+<u>
+<seg>oh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au95">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au96">
+<u>
+<seg>there . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au97">
+<u>
+<seg>what is that ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what cop|be&amp;3S pro:dem|that ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au98">
+<u>
+<seg>a teapot . </seg>
+</u>
+<spanGrp type="mor">
+<span>det:art|a n|+n|tea+n|pot .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|DET 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au99">
+<u>
+<seg>oh where's the chairs ? </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv:int|where~cop|be&amp;3S det:art|the n|chair-PL ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|LINK 3|0|ROOT 4|5|DET 5|3|PRED 6|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au100">
+<u>
+<seg>oh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au101">
+<u>
+<seg>here's the telephone . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:exist|here~cop|be&amp;3S det:art|the n|telephone .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|DET 4|2|PRED 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au102">
+<u>
+<seg>mhm . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yes .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au103">
+<u>
+<seg>and the lamp . </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and det:art|the n|lamp .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|DET 3|0|INCROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au104">
+<u>
+<seg>oh here's the xxx and the xxx . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:exist|here~cop|be&amp;3S det:art|the coord|and det:art|the .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|3|PRED 5|4|CONJ 6|5|COORD 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au105">
+<u>
+<seg>what is that ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what cop|be&amp;3S pro:dem|that ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au106">
+<u>
+<seg>I think that's the telephone thing . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think pro:dem|that~cop|be&amp;3S det:art|the n|telephone n|thing .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|SUBJ 4|2|COMP 5|7|DET 6|7|MOD 7|4|PRED 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au107">
+<u>
+<seg>I got this . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|get&amp;PAST pro:dem|this .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|OBJ 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au108">
+<u>
+<seg>I think this can go on this table . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think pro:dem|this mod|can v|go prep|on pro:dem|this n|table .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|5|SUBJ 4|5|AUX 5|2|COMP 6|5|JCT 7|8|DET 8|6|POBJ 9|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au109">
+<u>
+<seg>&amp;-uh maybe &amp;-uh up in the baby [* 0's] room . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|maybe adv|up prep|in det:art|the n|baby n|room .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|JCT 2|0|ROOT 3|2|JCT 4|6|DET 5|6|MOD 6|3|POBJ 7|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au110">
+<u>
+<seg>oh no right here . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh co|no adv|right adv|here .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|COM 3|4|JCT 4|0|ROOT 5|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au111">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au112">
+<u>
+<seg>good idea . </seg>
+</u>
+<spanGrp type="mor">
+<span>adj|good n|idea .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|MOD 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au113">
+<u>
+<seg>and this goes here . </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and pro:dem|this v|go-3S adv|here .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|SUBJ 3|0|ROOT 4|3|JCT 5|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au114">
+<u>
+<seg>this chair's got_to push in . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|this n|chair~poss|s mod:aux|got_to v|push adv|in .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|DET 2|5|SUBJ 3|2|POSS 4|5|AUX 5|0|ROOT 6|5|JCT 7|5|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au115">
+<u>
+<seg>their table will be all set when they [* 0're] ready to eat . </seg>
+</u>
+<spanGrp type="mor">
+<span>det:poss|their n|table mod|will cop|be adv|all n|set conj|when pro:sub|they adj|ready inf|to v|eat .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|MOD 2|4|SUBJ 3|4|AUX 4|0|ROOT 5|6|JCT 6|4|PRED 7|4|PUNCT 8|7|INCROOT 9|8|PRED 10|11|INF 11|9|XCOMP 12|8|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au116">
+<u>
+<seg>but this will be their dinner thing . </seg>
+</u>
+<spanGrp type="mor">
+<span>conj|but pro:dem|this mod|will cop|be det:poss|their n|dinner n|thing .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|LINK 2|4|SUBJ 3|4|AUX 4|0|ROOT 5|7|MOD 6|7|MOD 7|4|PRED 8|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au117">
+<u>
+<seg>what is this ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what cop|be&amp;3S pro:dem|this ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au118">
+<u>
+<seg>that is breakfast in bed . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|that cop|be&amp;3S n|breakfast prep|in n|bed .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|3|NJCT 5|4|POBJ 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au119">
+<u>
+<seg>that's if you are still in bed and someone brings you breakfast to eat . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|that~cop|be&amp;3S conj|if pro:per|you cop|be&amp;PRES adv|still prep|in n|bed coord|and pro:indef|someone v|bring-3S pro:per|you n|breakfast inf|to v|eat .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|5|LINK 4|5|SUBJ 5|2|CJCT 6|5|JCT 7|5|JCT 8|7|POBJ 9|11|LINK 10|11|SUBJ 11|5|CJCT 12|11|OBJ 13|12|OBJ 14|15|INF 15|13|XCOMP 16|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au120">
+<u>
+<seg>that's right . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|that~cop|be&amp;3S n|right .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au121">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au122">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au123">
+<u>
+<seg>and what would go here ? </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and pro:int|what mod|will&amp;COND v|go adv|here ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|LINK 2|4|SUBJ 3|4|AUX 4|0|ROOT 5|4|JCT 6|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au124">
+<u>
+<seg>maybe they could +... </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|maybe pro:sub|they mod|could +...</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au125">
+<u>
+<seg>what goes in that one ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what v|go-3S prep|in pro:dem|that pro:indef|one ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|2|JCT 4|5|DET 5|3|POBJ 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au126">
+<u>
+<seg>good question . </seg>
+</u>
+<spanGrp type="mor">
+<span>adj|good n|question .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|MOD 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au127">
+<u>
+<seg>I think you could put a newspaper in there . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think pro:per|you mod|could v|put&amp;ZERO det:art|a n|newspaper prep|in adv|there .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|5|SUBJ 4|5|AUX 5|2|COMP 6|7|DET 7|5|OBJ 8|5|JCT 9|8|POBJ 10|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au128">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au129">
+<u>
+<seg>so you could read while you're eating breakfast . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|so pro:per|you mod|could v|read&amp;ZERO n|while pro:per|you~aux|be&amp;PRES part|eat-PRESP n|breakfast .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|SUBJ 3|4|AUX 4|0|ROOT 5|4|OBJ 6|8|SUBJ 7|8|AUX 8|5|CMOD 9|8|OBJ 10|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au130">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au131">
+<u>
+<seg>and I need some pillows . </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and pro:sub|I v|need qn|some n|pillow-PL .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|SUBJ 3|0|ROOT 4|5|QUANT 5|3|OBJ 6|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au132">
+<u>
+<seg>mhm . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yes .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au133">
+<u>
+<seg>these are all those things . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|these cop|be&amp;PRES qn|all pro:dem|those n|thing-PL .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|5|QUANT 4|5|DET 5|2|PRED 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au134">
+<u>
+<seg>those are the pillow things that you can lie down . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|those cop|be&amp;PRES det:art|the n|pillow n|thing-PL pro:rel|that pro:per|you mod|can v|lie adv|down .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|5|DET 4|5|MOD 5|2|PRED 6|9|LINK 7|9|SUBJ 8|9|AUX 9|5|CMOD 10|9|JCT 11|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au135">
+<u>
+<seg>I got_to put this one back . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I mod:aux|got_to v|put&amp;ZERO pro:dem|this pro:indef|one n|back .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|6|DET 5|6|MOD 6|3|OBJ 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au136">
+<u>
+<seg>it can't come off . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|it mod|can~neg|not v|come adv|off .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|2|NEG 4|0|ROOT 5|4|JCT 6|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au137">
+<u>
+<seg>it's stuck . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|it~aux|be&amp;3S part|stick&amp;PASTP .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au138">
+<u>
+<seg>got_to get it off . </seg>
+</u>
+<spanGrp type="mor">
+<span>mod:aux|got_to v|get pro:per|it adv|off .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|AUX 2|0|ROOT 3|2|OBJ 4|2|JCT 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au139">
+<u>
+<seg>I don't think it comes out . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I mod|do~neg|not v|think pro:per|it v|come-3S adv|out .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|2|NEG 4|0|ROOT 5|4|OBJ 6|4|COMP 7|6|JCT 8|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au140">
+<u>
+<seg>well that way we don't lose it . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|well pro:dem|that n|way pro:sub|we mod|do~neg|not v|lose pro:per|it .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|DET 3|7|LINK 4|7|SUBJ 5|7|AUX 6|5|NEG 7|0|ROOT 8|7|OBJ 9|7|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au141">
+<u>
+<seg>oh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au142">
+<u>
+<seg>we don't lose it . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|we mod|do~neg|not v|lose pro:per|it .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|2|NEG 4|0|ROOT 5|4|OBJ 6|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au143">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au144">
+<u>
+<seg>we'll put the pillows right here . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|we~mod|will v|put&amp;ZERO det:art|the n|pillow-PL adv|right adv|here .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|5|DET 5|3|OBJ 6|7|JCT 7|3|JCT 8|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au145">
+<u>
+<seg>oh where's the night light ? </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv:int|where~cop|be&amp;3S det:art|the n|night n|light ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|LINK 3|0|ROOT 4|6|DET 5|6|MOD 6|3|PRED 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au146">
+<u>
+<seg>oh here they are . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv|here pro:sub|they cop|be&amp;PRES .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|JCT 3|4|SUBJ 4|0|ROOT 5|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au147">
+<u>
+<seg>where's our bed+room ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|where~cop|be&amp;3S det:poss|our n|+n|bed+n|room ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|4|MOD 4|2|PRED 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au148">
+<u>
+<seg>oh there . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv|there .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|JCT 3|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au149">
+<u>
+<seg>thank you . </seg>
+</u>
+<spanGrp type="mor">
+<span>v|thank pro:per|you .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|1|OBJ 3|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au150">
+<u>
+<seg>&lt;oh this gonna lose&gt; [*] . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh det:dem|this part|go-PRESP~inf|to v|lose .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|ROOT 3|2|XMOD 4|5|INF 5|3|XCOMP 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au151">
+<u>
+<seg>oh where's my pillow ? </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:rel|where~aux|be&amp;3S det:poss|my n|pillow ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|5|COM 2|5|LINK 3|5|AUX 4|5|MOD 5|0|ROOT 6|5|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au152">
+<u>
+<seg>here it is . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|here pro:per|it cop|be&amp;3S .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|JCT 2|3|SUBJ 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au153">
+<u>
+<seg>thank you . </seg>
+</u>
+<spanGrp type="mor">
+<span>v|thank pro:per|you .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|1|OBJ 3|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au154">
+<u>
+<seg>you're welcome . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|you~cop|be&amp;PRES adj|welcome .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au155">
+<u>
+<seg>we got_to go to bed soon . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|we mod:aux|got_to v|go prep|to n|bed adv|soon .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|3|JCT 5|4|POBJ 6|3|JCT 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au156">
+<u>
+<seg>oh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au157">
+<u>
+<seg>because it's &amp;-uh past my bedtime . </seg>
+</u>
+<spanGrp type="mor">
+<span>conj|because pro:per|it~aux|be&amp;3S adj|past det:poss|my n|+n|bed+n|time .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|SUBJ 3|0|ROOT 4|6|MOD 5|6|MOD 6|3|PRED 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au158">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au159">
+<u>
+<seg>oh we need to turn the light on right here like that light 0is on . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:sub|we v|need inf|to v|turn det:art|the n|light adv|on adv|right adv|here prep|like pro:dem|that n|light 0aux|is adv|on .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|5|INF 5|3|XCOMP 6|7|DET 7|5|OBJ 8|5|JCT 9|10|JCT 10|5|JCT 11|5|JCT 12|13|DET 13|11|POBJ 14|13|XMOD 15|14|JCT 16|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au160">
+<u>
+<seg>how come we're playing with a doll+house ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|how v|come pro:sub|we~aux|be&amp;PRES part|play-PRESP prep|with det:art|a n|+n|doll+n|house ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|0|ROOT 3|5|SUBJ 4|5|AUX 5|2|COMP 6|5|JCT 7|8|DET 8|6|POBJ 9|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au161">
+<u>
+<seg>&amp;-um well yeah there's a lot to talk about . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|well co|yeah pro:exist|there~cop|be&amp;3S det:art|a n|lot prep|to n|talk adv|about .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|COM 3|4|SUBJ 4|0|ROOT 5|6|DET 6|4|PRED 7|6|NJCT 8|7|POBJ 9|6|NJCT 10|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au162">
+<u>
+<seg>
+<pause dur="0.3" type="chrono"/>it won't go on . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|it mod|will~neg|not v|go adv|on .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|2|NEG 4|0|ROOT 5|4|JCT 6|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au163">
+<u>
+<seg>you know what we could do too ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|you v|know pro:int|what pro:sub|we mod|could v|do post|too ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|6|OBJ 4|6|SUBJ 5|6|AUX 6|2|COMP 7|6|JCT 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au164">
+<u>
+<seg>what ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au165">
+<u>
+<seg>we can put this circle through the headboard and then they stay . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|we mod|can v|put&amp;ZERO pro:dem|this n|circle prep|through det:art|the n|+n|head+n|board coord|and adv:tem|then pro:sub|they n|stay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|5|DET 5|3|OBJ 6|3|JCT 7|8|DET 8|6|POBJ 9|3|CONJ 10|12|JCT 11|12|SUBJ 12|9|COORD 13|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au166">
+<u>
+<seg>like that . </seg>
+</u>
+<spanGrp type="mor">
+<span>prep|like pro:dem|that .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|POBJ 3|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au167">
+<u>
+<seg>circle through the headboard ? </seg>
+</u>
+<spanGrp type="mor">
+<span>n|circle prep|through det:art|the n|+n|head+n|board ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|JCT 3|4|DET 4|2|POBJ 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au168">
+<u>
+<seg>mhm . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yes .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au169">
+<u>
+<seg>see the circle &lt;in there&gt; [&gt;] ? </seg>
+</u>
+<spanGrp type="mor">
+<span>v|see det:art|the n|circle prep|in adv|there ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|3|DET 3|1|OBJ 4|1|JCT 5|4|POBJ 6|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au170">
+<u>
+<seg>xxx [&lt;] . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au171">
+<u>
+<seg>and this is the headboard that your head goes on ? </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and pro:dem|this cop|be&amp;3S det:art|the n|+n|head+n|board pro:rel|that det:poss|your n|head v|go-3S adv|on ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|SUBJ 3|0|ROOT 4|5|DET 5|3|PRED 6|9|LINK 7|8|MOD 8|9|SUBJ 9|5|CMOD 10|9|JCT 11|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au172">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au173">
+<u>
+<seg>when you're sleeping . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|when pro:per|you~aux|be&amp;PRES part|sleep-PRESP .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|LINK 2|4|SUBJ 3|4|AUX 4|0|ROOT 5|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au174">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au175">
+<u>
+<seg>and then they kind of stay . </seg>
+</u>
+<spanGrp type="mor">
+<span>coord|and adv:tem|then pro:sub|they n|kind prep|of n|stay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|7|JCT 3|7|SUBJ 4|3|OBJ 5|4|NJCT 6|5|POBJ 7|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au176">
+<u>
+<seg>do you like that ? </seg>
+</u>
+<spanGrp type="mor">
+<span>mod|do pro:per|you v|like pro:dem|that ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|AUX 2|3|SUBJ 3|0|ROOT 4|3|OBJ 5|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au177">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au178">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au179">
+<u>
+<seg>oh thank you honey . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh v|thank pro:per|you n|honey .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|ROOT 3|4|MOD 4|2|OBJ 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au180">
+<u>
+<seg>I need my night+light . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|need det:poss|my n|+n|night+n|light .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|MOD 4|2|OBJ 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au181">
+<u>
+<seg>oh that's the baby's . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:dem|that~cop|be&amp;3S det:art|the n|baby~poss|s .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|5|DET 5|3|PRED 6|5|POSS 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au182">
+<u>
+<seg>go in there . </seg>
+</u>
+<spanGrp type="mor">
+<span>v|go prep|in adv|there .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|1|JCT 3|2|POBJ 4|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au183">
+<u>
+<seg>got_to give the babies one . </seg>
+</u>
+<spanGrp type="mor">
+<span>mod:aux|got_to v|give det:art|the n|baby-PL pro:indef|one .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|AUX 2|0|ROOT 3|4|DET 4|5|MOD 5|2|OBJ 6|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au184">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au185">
+<u>
+<seg>have the lights off . </seg>
+</u>
+<spanGrp type="mor">
+<span>v|have det:art|the n|light-PL adv|off .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|3|DET 3|1|OBJ 4|1|JCT 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au186">
+<u>
+<seg>I'm gonna go upstairs and have a night+light . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|be&amp;1S part|go-PRESP~inf|to v|go adv|upstairs coord|and v|have det:art|a n|+n|night+n|light .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|5|INF 5|3|XCOMP 6|5|JCT 7|5|CONJ 8|7|COORD 9|10|DET 10|8|OBJ 11|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au187">
+<u>
+<seg>oh hey hey [/?] here's a bed tray for us to [/?] when we eat . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh co|hey pro:exist|here~cop|be&amp;3S det:art|a n|bed n|tray prep|for pro:obj|us conj|when pro:sub|we v|eat .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|4|COM 3|4|SUBJ 4|0|ROOT 5|7|DET 6|7|MOD 7|4|PRED 8|7|NJCT 9|8|POBJ 10|12|LINK 11|12|SUBJ 12|7|CJCT 13|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au188">
+<u>
+<seg>I have a story to tell them . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|have det:art|a n|story inf|to v|tell pro:obj|them .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|DET 4|2|OBJ 5|6|INF 6|4|XMOD 7|6|OBJ 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au189">
+<u>
+<seg>oh good idea . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adj|good n|idea .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|MOD 3|0|INCROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au190">
+<u>
+<seg>here's xxx . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:exist|here~cop|be&amp;3S .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au191">
+<u>
+<seg>oh maybe +... </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh adv|maybe +...</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|ROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au192">
+<u>
+<seg>oh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au193">
+<u>
+<seg>here's xxx Delia . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:exist|here~cop|be&amp;3S n:prop|Delia .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au194">
+<u>
+<seg>hey Delia why [/?] do you want some breakfast ? </seg>
+</u>
+<spanGrp type="mor">
+<span>co|hey n:prop|Delia v|do pro:per|you v|want qn|some n|breakfast ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|3|OBJ 5|3|XCOMP 6|7|QUANT 7|5|OBJ 8|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au195">
+<u>
+<seg>oh no honey . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh co|no n|honey .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|COM 3|0|INCROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au196">
+<u>
+<seg>no thanks . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|no co|thanks .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au197">
+<u>
+<seg>I'm just going to bed for a minute . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|be&amp;1S adv|just part|go-PRESP prep|to n|bed prep|for det:art|a n|minute .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|JCT 4|0|ROOT 5|4|JCT 6|5|POBJ 7|4|JCT 8|9|DET 9|7|POBJ 10|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au198">
+<u>
+<seg>she's just taking a nap . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|she~aux|be&amp;3S adv|just part|take-PRESP det:art|a n|nap .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|JCT 4|0|ROOT 5|6|DET 6|4|OBJ 7|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au199">
+<u>
+<seg>taking her shoes off . </seg>
+</u>
+<spanGrp type="mor">
+<span>part|take-PRESP det:poss|her n|shoe-PL adv|off .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|3|MOD 3|1|OBJ 4|1|JCT 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au200">
+<u>
+<seg>0 . </seg>
+</u>
+<spanGrp type="act">
+<span>hums .</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au201">
+<u>
+<seg>good_night . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|good_night .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au202">
+<u>
+<seg>turn off the night+light . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|turn prep|off det:art|the n|+n|night+n|light .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|NJCT 3|4|DET 4|2|POBJ 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au203">
+<u>
+<seg>what's the matter ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what~aux|be&amp;3S det:art|the v|matter ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|LINK 2|4|AUX 3|4|DET 4|0|ROOT 5|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au204">
+<u>
+<seg>I've got_to get up and I +... </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I~aux|have mod:aux|got_to v|get adv|up coord|and pro:sub|I +...</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|AUX 4|0|ROOT 5|4|JCT 6|4|CONJ 7|6|COORD 8|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au205">
+<u>
+<seg>oh ouch . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh co|ouch .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au206">
+<u>
+<seg>sorry xxx . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|sorry .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au207">
+<u>
+<seg>xxx daddy . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|daddy .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au208">
+<u>
+<seg>hello ? </seg>
+</u>
+<spanGrp type="mor">
+<span>co|hello ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au209">
+<u>
+<seg>what's your name ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what~cop|be&amp;3S det:poss|your n|name ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|MOD 4|2|PRED 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au210">
+<u>
+<seg>&amp;-uh Delia and you [* 0've] got_to go home . </seg>
+</u>
+<spanGrp type="mor">
+<span>n:prop|Delia coord|and pro:per|you mod:aux|got_to v|go n|home .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|5|LINK 3|5|SUBJ 4|5|AUX 5|1|CJCT 6|5|JCT 7|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au211">
+<u>
+<seg>byebye . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|byebye .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au212">
+<u>
+<seg>do you have any cars for them ? </seg>
+</u>
+<spanGrp type="mor">
+<span>mod|do pro:per|you v|have qn|any n|car-PL prep|for pro:obj|them ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|AUX 2|3|SUBJ 3|0|ROOT 4|5|QUANT 5|3|OBJ 6|3|JCT 7|6|POBJ 8|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au213">
+<u>
+<seg>any cards ? </seg>
+</u>
+<spanGrp type="mor">
+<span>qn|any n|card-PL ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|QUANT 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au214">
+<u>
+<seg>cars . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|car-PL .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au215">
+<u>
+<seg>cars . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|car-PL .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au216">
+<u>
+<seg>oh cars . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh n|car-PL .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au217">
+<u>
+<seg>no I don't think so . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|no pro:sub|I mod|do~neg|not v|think co|so .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|5|COM 2|5|SUBJ 3|5|AUX 4|3|NEG 5|0|ROOT 6|5|COM 7|5|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au218">
+<u>
+<seg>there's a couch . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:exist|there~cop|be&amp;3S det:art|a n|couch .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|DET 4|2|PRED 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au219">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au220">
+<u>
+<seg>it goes back in the family room . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|it v|go-3S adv|back prep|in det:art|the n|family n|room .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|JCT 4|2|JCT 5|7|DET 6|7|MOD 7|4|POBJ 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au221">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au222">
+<u>
+<seg>right here . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|right adv|here .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|JCT 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au223">
+<u>
+<seg>good idea . </seg>
+</u>
+<spanGrp type="mor">
+<span>adj|good n|idea .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|MOD 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au224">
+<u>
+<seg>well the doors need to be closed . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|well det:art|the n|door-PL v|need inf|to aux|be part|close-PASTP .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|COM 2|3|DET 3|4|SUBJ 4|0|ROOT 5|7|INF 6|7|AUX 7|4|XCOMP 8|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au225">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au226">
+<u>
+<seg>what is this ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what cop|be&amp;3S pro:dem|this ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au227">
+<u>
+<seg>oh it's a rug for the bath+room . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:per|it~cop|be&amp;3S det:art|a n|rug prep|for det:art|the n|+n|bath+n|room .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|5|DET 5|3|PRED 6|5|NJCT 7|8|DET 8|6|POBJ 9|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au228">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au229">
+<u>
+<seg>this it goes on the potty xxx . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|this pro:per|it v|go-3S prep|on det:art|the adj|pot&amp;dn-Y .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|SUBJ 3|0|ROOT 4|3|JCT 5|6|DET 6|4|POBJ 7|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au230">
+<u>
+<seg>I think so . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think co|so .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|COM 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au231">
+<u>
+<seg>no it doesn't . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|no pro:per|it mod|do&amp;3S~neg|not .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|5|SUBJ 3|5|AUX 4|3|NEG 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au232">
+<u>
+<seg>you could just put it on the floor . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|you mod|could adv|just v|put&amp;ZERO pro:per|it prep|on det:art|the n|floor .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|JCT 4|0|ROOT 5|4|OBJ 6|4|JCT 7|8|DET 8|6|POBJ 9|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au233">
+<u>
+<seg>&amp;-uh is there a bath+tub ? </seg>
+</u>
+<spanGrp type="mor">
+<span>cop|be&amp;3S adv|there det:art|a n|+n|bath+n|tub ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|4|JCT 3|4|DET 4|1|SUBJ 5|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au234">
+<u>
+<seg>look . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|look .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au235">
+<u>
+<seg>I had it right in my hand . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|have&amp;PAST pro:per|it adv|right prep|in det:poss|my n|hand .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|OBJ 4|2|JCT 5|2|JCT 6|7|MOD 7|5|POBJ 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au236">
+<u>
+<seg>it's a washcloth . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:per|it~cop|be&amp;3S det:art|a n|+n|wash+n|cloth .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|DET 4|2|PRED 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au237">
+<u>
+<seg>mhm . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yes .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au238">
+<u>
+<seg>where's the washcloth go ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|where~cop|be&amp;3S det:art|the n|+n|wash+n|cloth v|go ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|LINK 2|5|LINK 3|4|DET 4|5|SUBJ 5|0|ROOT 6|5|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au239">
+<u>
+<seg>how do you get it back in ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv:int|how mod|do pro:per|you v|get pro:per|it adj|back adv|in ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|LINK 2|4|AUX 3|4|SUBJ 4|0|ROOT 5|4|OBJ 6|4|PRED 7|4|JCT 8|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au240">
+<u>
+<seg>hm: I think it just kind of stays in the tub . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|hm pro:sub|I v|think pro:per|it adv|just n|kind prep|of n|stay-PL prep|in det:art|the n|tub .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|3|OBJ 5|3|JCT 6|5|POBJ 7|6|NJCT 8|7|POBJ 9|8|NJCT 10|11|DET 11|9|POBJ 12|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au241">
+<u>
+<seg>that way it doesn't get lost . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:dem|that n|way pro:per|it mod|do&amp;3S~neg|not v|get v|lose&amp;PAST .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|DET 2|0|INCROOT 3|6|SUBJ 4|6|AUX 5|4|NEG 6|2|CMOD 7|6|PRED 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au242">
+<u>
+<seg>oh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au243">
+<u>
+<seg>who should take a bath ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|who mod|should v|take det:art|a n|bath ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|LINK 2|3|AUX 3|0|ROOT 4|5|DET 5|3|OBJ 6|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au244">
+<u>
+<seg>I wonder if a baby should take a bath . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|wonder conj|if det:art|a n|baby mod|should v|take det:art|a n|bath .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|7|LINK 4|5|DET 5|7|SUBJ 6|7|AUX 7|2|CJCT 8|9|DET 9|7|OBJ 10|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au245">
+<u>
+<seg>yeah she could . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah pro:sub|she mod|could .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au246">
+<u>
+<seg>okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au247">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au248">
+<u>
+<seg>mommy and daddy here they are . </seg>
+</u>
+<spanGrp type="mor">
+<span>n|mommy coord|and n|daddy adv|here pro:sub|they cop|be&amp;PRES .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|CONJ 3|6|SUBJ 4|6|JCT 5|6|SUBJ 6|2|COORD 7|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au249">
+<u>
+<seg>I need a +... </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|need det:art|a +...</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|OBJ 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au250">
+<u>
+<seg>oh that's the microphone . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh pro:dem|that~cop|be&amp;3S det:art|the n|microphone .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|5|DET 5|3|PRED 6|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au251">
+<u>
+<seg>xxx . </seg>
+</u>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au252">
+<u>
+<seg>I think someone's upstairs with them . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I v|think pro:indef|someone~cop|be&amp;3S adv|upstairs prep|with pro:obj|them .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|4|SUBJ 4|2|COMP 5|4|JCT 6|4|JCT 7|6|POBJ 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au253">
+<u>
+<seg>&lt;&amp;-uh do you have&gt; [/?] is there a puppy dog and a cat ? </seg>
+</u>
+<spanGrp type="mor">
+<span>cop|be&amp;3S adv|there det:art|a n|puppy n|dog coord|and det:art|a n|cat ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|ROOT 2|1|JCT 3|5|DET 4|5|MOD 5|2|OBJ 6|5|CONJ 7|8|DET 8|6|COORD 9|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au254">
+<u>
+<seg>yeah . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au255">
+<u>
+<seg>oh . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au256">
+<u>
+<seg>there is . </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there cop|be&amp;3S .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au257">
+<u>
+<seg>there is huh ? </seg>
+</u>
+<spanGrp type="mor">
+<span>adv|there cop|be&amp;3S co|huh ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|PRED 4|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au258">
+<u>
+<seg>what should they do ? </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:int|what mod|should pro:sub|they v|do ?</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|LINK 2|4|AUX 3|4|SUBJ 4|0|ROOT 5|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au259">
+<u>
+<seg>I just washed the baby . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|I adv|just v|wash-PAST det:art|the n|baby .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|JCT 3|0|ROOT 4|5|DET 5|3|OBJ 6|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au260">
+<u>
+<seg>oh okay . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh co|okay .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au261">
+<u>
+<seg>we're washing . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|we~aux|be&amp;PRES part|wash-PRESP .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|SUBJ 2|3|AUX 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au262">
+<u>
+<seg>meow . </seg>
+</u>
+<spanGrp type="mor">
+<span>on|meow .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|0|INCROOT 2|1|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au263">
+<u>
+<seg>they want to jump in the bath+tub . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|they v|want prep|to n|jump prep|in det:art|the n|+n|bath+n|tub .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|JCT 4|3|POBJ 5|4|NJCT 6|7|DET 7|5|POBJ 8|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au264">
+<u>
+<seg>oh but the cat doesn't like water . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|oh conj|but det:art|the n|cat mod|do&amp;3S~neg|not co|like n|water .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|8|COM 2|7|LINK 3|4|DET 4|7|SUBJ 5|7|AUX 6|5|NEG 7|8|COM 8|0|ROOT 9|8|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au265">
+<u>
+<seg>no no . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|no co|no .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|COM 2|0|INCROOT 3|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au266">
+<u>
+<seg>she'll just jump on top and look . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|she~mod|will adv|just n|jump prep|on n|top coord|and cop|look .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|4|SUBJ 2|4|AUX 3|4|JCT 4|0|ROOT 5|4|JCT 6|5|POBJ 7|6|CONJ 8|7|COORD 9|4|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au267">
+<u>
+<seg>0 . </seg>
+</u>
+<spanGrp type="act">
+<span>noises .</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="CHI" xml:id="au268">
+<u>
+<seg>he jumped in there . </seg>
+</u>
+<spanGrp type="mor">
+<span>pro:sub|he v|jump-PAST prep|in adv|there .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|2|SUBJ 2|0|ROOT 3|2|JCT 4|3|POBJ 5|2|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+<annotationBlock who="INV" xml:id="au269">
+<u>
+<seg>yeah he did . </seg>
+</u>
+<spanGrp type="mor">
+<span>co|yeah pro:sub|he v|do&amp;PAST .</span>
+</spanGrp>
+<spanGrp type="gra">
+<span>1|3|COM 2|3|SUBJ 3|0|ROOT 4|3|PUNCT</span>
+</spanGrp>
+</annotationBlock>
+</div>
+</body>
+</text>
+</TEI>

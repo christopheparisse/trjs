@@ -1064,6 +1064,7 @@ trjs.transcription = (function () {
             var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
             var itrans = trjs.dataload.checkstring(trjs.events.lineGetCellHtml($(tablelines[i]), trjs.data.TRCOL));
+            itrans = transcriptEncoding(itrans);
             if (!iloc === '' && its === '' && ite === '' && itrans === '') continue;
             if (trjs.check.testMark(iloc))
                 iloc = trjs.check.trimMark(iloc);

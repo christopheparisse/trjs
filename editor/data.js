@@ -411,11 +411,12 @@ trjs.data = {
 				trjs.events.lineSetCell($(tablelines[3]), 2, this.recordingLoc());
 				trjs.events.lineSetCell($(tablelines[4]), 2, this.recordingDate());
 				trjs.events.lineSetCell($(tablelines[5]), 2, this.recordingPlaceName());
-				trjs.events.lineSetCell($(tablelines[6]), 2, this.mediaName());
-				trjs.events.lineSetCell($(tablelines[7]), 2, this.mediaRelLoc());
-				trjs.events.lineSetCell($(tablelines[8]), 2, this.mediaLoc());
-				trjs.events.lineSetCell($(tablelines[9]), 2, this.mediaType());
-				trjs.events.lineSetCell($(tablelines[10]), 2, this.mediaDuration());
+                trjs.events.lineSetCell($(tablelines[6]), 2, this.languages.join(' '));
+                trjs.events.lineSetCell($(tablelines[7]), 2, this.mediaName());
+				trjs.events.lineSetCell($(tablelines[8]), 2, this.mediaRelLoc());
+				trjs.events.lineSetCell($(tablelines[9]), 2, this.mediaLoc());
+				trjs.events.lineSetCell($(tablelines[10]), 2, this.mediaType());
+				trjs.events.lineSetCell($(tablelines[11]), 2, this.mediaDuration());
 			}
 		}
 		this.setNamesInWindow();
@@ -440,15 +441,19 @@ trjs.data = {
 				//  recording Date
 				this.recPlaceName = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[5]), 2));
 				//  recording PlaceName
-				this.setMediaName(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[6]), 2)));
-				//  Media Name
-				this.setMediaRelLoc(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[7]), 2)));
+                var ls = trjs.events.lineGetCell($(tablelines[6]), 2);
+                if (!ls) ls = '';
+                this.languages = ls.trim().split(RegExp("[,\\s]+"));
+                //  Languages
+                this.setMediaName(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[7]), 2)));
+                //  Media Name
+                this.setMediaRelLoc(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[8]), 2)));
 				//  Media RelLoc
-				this.setMediaLoc(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[8]), 2)));
+				this.setMediaLoc(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[9]), 2)));
 				//  Media Loc
-				this.setMediaType(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[9]), 2)));
+				this.setMediaType(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[10]), 2)));
 				//  Media Type
-				this.setMediaDuration(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[10]), 2)));
+				this.setMediaDuration(trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[11]), 2)));
 				//  Media Duration
 			}
 		}
@@ -545,6 +550,7 @@ trjs.data = {
 	textDesc: null, // intermediate buffer to store the file as a string for saving purposes
     revision: [], // list of file revisions and various information
     imbrication: null, // empty at begining
+    languages: [], // list of languages used in the transcription
 
 	search: null, // results of search
 //	videoHeight: 240, // default height of the video
