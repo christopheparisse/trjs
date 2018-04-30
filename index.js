@@ -73,10 +73,10 @@ const BrowserWindow = electron.BrowserWindow;
 // Menu
 const Menu = electron.Menu;
 
-function createWindow() {
+function createWindow(arg) {
     for (var i in process.listWindows) {
         if (process.listWindows[i] === null || process.listWindows[i] === undefined) {
-            process.listWindows[i] = startWindow();
+            process.listWindows[i] = startWindow(arg);
             process.ischangedWindows[i] = false;
             process.idWindows[i] = process.listWindows[i].id;
 
@@ -103,7 +103,7 @@ function createWindow() {
         }
     }
 
-    process.listWindows.push(startWindow());
+    process.listWindows.push(startWindow(arg));
     process.ischangedWindows.push(false);
     i = process.listWindows.length-1;
     process.idWindows.push(process.listWindows[i].id);
@@ -118,15 +118,19 @@ function createWindow() {
     return i;
 }
 
-function startWindow() {
+function startWindow(arg) {
     oneWindow = true;
     // Create the browser window.
     var w = new BrowserWindow({width: 800, height: 800});
     //console.log(w);
     //console.log(w.id);
 
-    // and load the index.html of the app.
-    w.loadURL('file://' + __dirname + '/index.html');
+    if (arg) {
+        w.loadURL('file://' + __dirname + '/index.html?newtranscript');
+    } else {
+        // and load the index.html of the app.
+        w.loadURL('file://' + __dirname + '/index.html');
+    }
 
     // Open the DevTools.
     // w.webContents.openDevTools();
@@ -182,12 +186,16 @@ function createMenu() {
                 {
                     label: 'New transcription', accelerator: 'CmdOrCtrl+N', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('newtranscript', 'main');
+                    if (!window) {
+                        var nth = createWindow( true );
+                    } else {
+                        window.webContents.send('newtranscript', 'main');
+                    }
                 }
                 },
                 {
                     label: 'New window', accelerator: 'Shift+CmdOrCtrl+N', click: function () {
-                    var nth = createWindow()
+                    var nth = createWindow();
                     process.listWindows[nth].webContents.send('newtranscript', 'main');
                 }
                 },

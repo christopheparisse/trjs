@@ -729,7 +729,7 @@ trjs.editor = (function () {
     function ortolang() {
         trjs.io.innerSave();
         // location.href = "http://www.ortolang.fr";
-        window.open("http://www.ortolang.fr", '_blank');
+        fsio.openExternal("http://www.ortolang.fr", '_blank');
     }
 
     /**
@@ -1070,6 +1070,11 @@ trjs.editor = (function () {
                     return;
                 }
             });
+        }
+        if (uri.query === 'newtranscript') {
+            trjs.transcription.loadNewGrid();
+            finalizeLoad();
+            return;
         }
         if (trjs.param.server!== 'electron' && uri.protocol === 'file') {
             if (uri.queryKey.length > 0) {

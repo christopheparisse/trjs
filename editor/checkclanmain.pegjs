@@ -85,9 +85,13 @@ pause
   / "(.)" { return "<pause>" + "short" + "</pause>"; }
 
 mot
-  = initial:lettre milieu:lettremilieumajapos+ fin:lettre { return initial + reste.join('') + fin; }
+  = ic:inicode initial:lettreminmaj milieu:lettremilieumajapos+ fin:lettreminmaj+ { return ic + initial + reste.join('') + fin; }
+  / initial:lettre milieu:lettremilieumajapos+ fin:lettre+ { return initial + reste.join('') + fin; }
   / initial:lettreapi mot:lettremilieuapi*  w:" "? apos:['] { return initial + mot.join('') + "'"; }
   / mot:lettreapi+ { return mot.join(''); }
+
+inicode
+  = [&=-*]
 
 motmaj
   = initial:lettremaj milieu:lettremilieumajapos+ fin:lettreminmaj { return initial + reste.join('') + fin; }

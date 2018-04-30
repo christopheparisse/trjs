@@ -622,7 +622,8 @@ trjs.keys.initBindings = function () {
     trjs.bindings.push([nkey("down arrow"), false, false, false, false, trjs.events.keyDown, trjs.messgs.bin40]); // Down
     // reserved for special characters: trjs.bindings.push([nkey("f1"), false, false, false, false, function() {}, trjs.messgs.binxxx]); // F1
     // reserved for special characters: trjs.bindings.push([nkey("f2"), false, false, false, false, function() {}, trjs.messgs.binxxx]); // F2
-    trjs.bindings.push([nkey("f3"), false, false, false, false, trjs.media.playJump, trjs.messgs.bin1142]); // F3
+    // trjs.bindings.push([nkey("f3"), false, false, false, false, trjs.media.playJump, trjs.messgs.bin1142]); // F3
+    trjs.bindings.push([nkey("f3"), false, false, false, false, trjs.events.insertWithTimeLocAndRedraw, trjs.messgs.altbin117]); // F3
     trjs.bindings.push([nkey("f4"), false, false, false, false, trjs.events.setStartAndRedraw, trjs.messgs.bin115]); // F4
     trjs.bindings.push([nkey("f5"), false, false, false, false, trjs.events.setEndAndRedraw, trjs.messgs.bin116]); // F5
     trjs.bindings.push([nkey("f6"), false, false, false, false, trjs.events.insertBlankLineLocAndRedraw, trjs.messgs.bin117]); // F6
