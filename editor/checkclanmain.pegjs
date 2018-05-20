@@ -91,7 +91,7 @@ mot
   / mot:lettreapi+ { return mot.join(''); }
 
 inicode
-  = [&=-*]
+  = [\&\=\-\*]
 
 motmaj
   = initial:lettremaj milieu:lettremilieumajapos+ fin:lettreminmaj { return initial + reste.join('') + fin; }

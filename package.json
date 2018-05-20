@@ -32,14 +32,14 @@
     "async": "latest",
     "electron-spellchecker": "latest",
     "glob": "latest",
-    "mime": "latest",
+    "mime": "^2.3.1",
     "minimist": "latest",
     "xmldom": "latest"
   },
   "devDependencies": {
-    "electron": "latest",
-    "electron-builder": "latest",
-    "electron-packager": "^10.1.2",
+    "electron": "^2.0.1",
+    "electron-builder": "^20.13.4",
+    "electron-packager": "latest",
     "electron-rebuild": "latest",
     "gulp": "latest",
     "gulp-concat": "latest",

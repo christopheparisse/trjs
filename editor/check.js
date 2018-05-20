@@ -18,7 +18,10 @@ trjs.check = (function () {
             return { value: 'ok', message: r }; // line is ok
         } catch (e) {
             // console.log(e);
-            return { value: 'error', message: "error at column " + e.location.start.column /* + " - reason: " + e.message */ };
+            if (e.location && e.location.start)
+                return { value: 'error', message: "error at column " + e.location.start.column };
+            else
+                return { value: 'error', message: " - reason: " + e.message };
         }
     }
 
