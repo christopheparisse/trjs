@@ -241,7 +241,7 @@ fsio.readFile = function(fname, callbackDone, callbackFail) {
     try {
         fs.readFile(fname, 'utf-8', function (err, data) {
             if (!err)
-                callbackDone(data);
+                callbackDone(data.replace(/^\uFEFF/, ''));
             else
                 callbackFail(err + ' ' + data);
         });

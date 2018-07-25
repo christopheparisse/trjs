@@ -12,6 +12,7 @@ trjs.media = (function () {
     /*
      * event listeners
      */
+    var media_clock = null;
 
     /**
      * test the position of the media and move transcription if it has changed a lot since last time
@@ -52,10 +53,11 @@ trjs.media = (function () {
     function ctrlFromTo() {
         var media = $('#media-display')[0].firstElementChild;
         if (media.currentTime >= media.endplay) {
+            clearInterval(media_clock);
+            media.removeEventListener('timeupdate', ctrlFromTo);
             media.pause();
             media.lastPosition = media.currentTime;
             media.lastTime = (new Date()).getTime();
-            media.removeEventListener('timeupdate', ctrlFromTo);
             media.addEventListener('timeupdate', timeUpdateListener, false);
             if (media.s1) dehighlight(media.s1);
             if (media.s2) dehighlight(media.s2);
@@ -63,6 +65,8 @@ trjs.media = (function () {
             media.s1 = null;
             media.s2 = null;
             media.s3 = null;
+            media.currentTime = media.endplay;
+            adjustRealInfo.show(media);
             media.endplay = -1;
             trjs.param.isContinuousPlaying = false;
         } else
@@ -404,6 +408,7 @@ trjs.media = (function () {
         media.s3 = s3;
         //  display the current and remaining times
         media.addEventListener("timeupdate", ctrlFromTo, false);
+        media_clock = setInterval(ctrlFromTo, 100);
         trjs.param.isContinuousPlaying = true;
         media.play();
     }

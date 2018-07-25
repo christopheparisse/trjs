@@ -29,7 +29,7 @@
   },
   "homepage": "http://ct3.ortolang.fr/trjs",
   "dependencies": {
-    "async": "latest",
+    "async": "^2.6.1",
     "electron-spellchecker": "latest",
     "glob": "latest",
     "mime": "^2.3.1",
@@ -37,14 +37,14 @@
     "xmldom": "latest"
   },
   "devDependencies": {
-    "electron": "^2.0.1",
-    "electron-builder": "^20.13.4",
+    "electron": "^2.0.5",
+    "electron-builder": "^20.25.0",
     "electron-packager": "latest",
-    "electron-rebuild": "latest",
+    "electron-rebuild": "^1.8.1",
     "gulp": "latest",
     "gulp-concat": "latest",
     "gulp-html-tag-include": "latest",
-    "gulp-preprocess": "latest",
+    "gulp-preprocess": "^3.0.0",
     "pegjs": "^0.10.0"
   }
 }
