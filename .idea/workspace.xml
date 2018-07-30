@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/antoine-34-2_03_05.tei_corpo.xml.rtf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/antoine-34-2_03_05.tei_corpo.xml.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/opensave.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/opensave.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/transcription.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/transcription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/modal-exports.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/modal-exports.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systemcall/fsio.js" beforeDir="false" afterPath="$PROJECT_DIR$/systemcall/fsio.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,13 +43,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="28" />
-          <entry key="js" value="289" />
+          <entry key="js" value="299" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="28" />
-          <entry key="JavaScript" value="289" />
+          <entry key="JavaScript" value="299" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -72,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/systemcall/fsio.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="431" column="41" lean-forward="true" selection-start-line="431" selection-start-column="41" selection-end-line="431" selection-end-column="41" />
+            <state relative-caret-position="472">
+              <caret line="434" column="53" selection-start-line="434" selection-start-column="53" selection-end-line="434" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -99,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/modal-exports.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="27" column="74" lean-forward="true" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
+              <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -138,10 +132,10 @@
       <find>exportText</find>
       <find>saveTranscriptToSubtitlesAss</find>
       <find>saveTranscriptToSubtitles</find>
-      <find>burnSubtitles</find>
       <find>exportMediaSubt</find>
       <find>text</find>
       <find>saveTranscriptToText</find>
+      <find>burnSubtitles</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -213,9 +207,9 @@
         <option value="$PROJECT_DIR$/buildmacos.sh" />
         <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
-        <option value="$PROJECT_DIR$/systemcall/fsio.js" />
         <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/html/modal-exports.html" />
+        <option value="$PROJECT_DIR$/systemcall/fsio.js" />
       </list>
     </option>
   </component>
@@ -373,12 +367,12 @@
       <workItem from="1531224439020" duration="913000" />
       <workItem from="1532520808487" duration="1121000" />
       <workItem from="1532932726961" duration="123000" />
-      <workItem from="1532933168948" duration="6114000" />
+      <workItem from="1532933168948" duration="6429000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121851000" />
+    <option name="totallyTimeSpent" value="122166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1735" height="1134" extended-state="0" />
@@ -727,17 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node/medialibrary.js">
+    <entry file="file://$PROJECT_DIR$/html/modal-exports.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="567" column="26" selection-start-line="567" selection-start-column="13" selection-end-line="567" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/systemcall/fsio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="431" column="41" lean-forward="true" selection-start-line="431" selection-start-column="41" selection-end-line="431" selection-end-column="41" />
+        <state relative-caret-position="185">
+          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -748,10 +735,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/modal-exports.html">
+    <entry file="file://$PROJECT_DIR$/node/medialibrary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="27" column="74" lean-forward="true" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
+        <state relative-caret-position="322">
+          <caret line="567" column="26" selection-start-line="567" selection-start-column="13" selection-end-line="567" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systemcall/fsio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="434" column="53" selection-start-line="434" selection-start-column="53" selection-end-line="434" selection-end-column="53" />
         </state>
       </provider>
     </entry>
