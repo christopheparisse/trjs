@@ -203,6 +203,7 @@ trjs.io = (function () {
      * @method localSave
      */
     function localSave() {
+        $("#openexports").modal('hide');
         if (trjs.param.checkAtSave)
             trjs.check.checkFinal();
         var s = (!trjs.data.transcriptInner) ? trjs.transcription.saveTranscriptToString() : trjs.data.transcriptInner;
@@ -220,6 +221,7 @@ trjs.io = (function () {
      * @method exportCsv
      */
     function exportCsv() {
+        $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToCsvString();
         var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.csv';
         trjs.data.transcriptInner = null;
@@ -247,6 +249,7 @@ trjs.io = (function () {
      * @method exportText
      */
     function exportText(style) {
+        $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToText(true, true, true);
         var fn = (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.txt';
         // var dump = $('#dump1').text(s);
@@ -265,6 +268,7 @@ trjs.io = (function () {
      * @method exportRtf
      */
     function exportRtf(style) {
+        $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToRtf(true, true, true, style);
         var fn = (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.rtf';
         // var dump = $('#dump1').text(s);
@@ -301,6 +305,7 @@ trjs.io = (function () {
      * @method exportDocx
      */
     function exportDocx(style) {
+        $("#openexports").modal('hide');
         var content, s;
         if (style === 'html') {
             s = trjs.transcription.saveTranscriptToHtml(true, true, true);
@@ -325,6 +330,7 @@ trjs.io = (function () {
      * @method exportXlsx
      */
     function exportXlsx() {
+        $("#openexports").modal('hide');
         var corpus = getEditTable();
         var content = teiExportXlsx.tableToXlsx(corpus, 8);
 
@@ -1309,6 +1315,7 @@ trjs.io = (function () {
      * @method exportTrans
      */
     function exportTrans(format) {
+        $("#openexports").modal('hide');
         if (trjs.param.level < 'level6') return;
         var s = innerSave();
         if (trjs.data.recordingName() === trjs.data.NEWRECNAME) {

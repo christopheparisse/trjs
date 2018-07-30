@@ -1592,6 +1592,7 @@ trjs.transcription = (function () {
     }
 
     function exportMStoMediaSubt(all) {
+        $("#openexports").modal('hide');
         if (trjs.param.level < 'level3') return;
         // find one pgBox
         var pgb1 = trjs.progress.find();
@@ -1640,6 +1641,7 @@ trjs.transcription = (function () {
     }
 
     function exportMStoSubt(format, all) {
+        $("#openexports").modal('hide');
         if (all === 'all' || trjs.data.selectedPart === false || trjs.data.selectedPart === 'all') {
             if (format === 'srt')
                 var s = saveTranscriptToSubtitles(false, false, 'srt', true, 'gls');
@@ -1660,6 +1662,7 @@ trjs.transcription = (function () {
     }
 
     function exportMStoMedia() {
+        $("#openexports").modal('hide');
         if (trjs.param.level < 'level3') return;
         if (trjs.data.selectedPart === false || trjs.data.selectedPart === 'all')
             trjs.log.boxalert('no part of the media was selected');
@@ -1698,6 +1701,7 @@ trjs.transcription = (function () {
      * @return string with the data
      */
     function saveTranscriptToSubtitles(partof, reset, format, locs, tiers) {
+        $("#openexports").modal('hide');
         if (format === 'srt')
             return saveTranscriptToSubtitlesSrt(partof, reset, locs, tiers);
         else
@@ -1715,6 +1719,7 @@ trjs.transcription = (function () {
      * @return string with the data
      */
     function saveTranscriptToSubtitlesSrt(partof, reset, locs, tiers) {
+        $("#openexports").modal('hide');
         /*
          * saving the text part of the file
          */
@@ -1825,6 +1830,7 @@ trjs.transcription = (function () {
      * @return string with the data
      */
     function saveTranscriptToSubtitlesAss(partof, reset, locs, tiers) {
+        $("#openexports").modal('hide');
         /*
          * header of the ass file
          */
@@ -2092,6 +2098,7 @@ trjs.transcription = (function () {
      * @return string with the data
      */
     function saveTranscriptToHtml(partof, reset, time) {
+        $("#openexports").modal('hide');
         /*
          * saving the text part of the file
          */
@@ -2198,6 +2205,7 @@ trjs.transcription = (function () {
      * @return string with the data
      */
     function saveTranscriptToRtf(partof, reset, time, table) {
+        $("#openexports").modal('hide');
         // table = true;
         /*
          * saving the text part of the file
@@ -2467,6 +2475,7 @@ trjs.transcription = (function () {
         saveTranscriptToCsvString: saveTranscriptToCsvString,
         saveTranscriptToString: saveTranscriptToString,
         saveTranscriptToRtf: saveTranscriptToRtf,
+        saveTranscriptToText: saveTranscriptToText,
         saveTranscriptToHtml: saveTranscriptToHtml,
         selectAllMS: selectAllMS,
         setCode: setCode,
