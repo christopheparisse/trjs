@@ -907,11 +907,11 @@ trjs.editor = (function () {
                 if (remote.process.argsOpenFile) {
                     args = require('minimist')(remote.process.argsOpenFile);
                 }
-                if (args.tm !== undefined) {
+                if (args && args.tm !== undefined) {
                     var tm = (typeof args.tm === 'string' || typeof args.tm === 'number') ? args.tm : args.tm[0];
                     sURL += '&tm=' + tm;
                 }
-                if (args.play !== undefined) {
+                if (args && args.play !== undefined) {
                     sURL += '&play';
                 }
             } else {
@@ -919,18 +919,18 @@ trjs.editor = (function () {
                 //console.log('normal call', argv);
                 var args = require('minimist')(argv);
                 //console.log('normal call', args);
-                if (args._ !== undefined) {
+                if (args && args._ !== undefined) {
                     if (args._.length > 2 && (remote.process.defaultApp === true || args._[1] === 'index.js')) {
                         sURL += "?t=" + args._[2].replace(/\\/g, '/');
                     } else if (args._.length > 1 && args._[1] !== 'index.js') {
                         sURL += "?t=" + args._[1].replace(/\\/g, '/');
                     }
                 }
-                if (args.tm !== undefined) {
+                if (args && args.tm !== undefined) {
                     var tm = (typeof args.tm === 'string' || typeof args.tm === 'number') ? args.tm : args.tm[0];
                     sURL += '&tm=' + tm;
                 }
-                if (args.play !== undefined) {
+                if (args && args.play !== undefined) {
                     sURL += '&play';
                 }
             }

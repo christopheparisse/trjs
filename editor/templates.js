@@ -860,11 +860,16 @@ trjs.template = (function () {
                 for (var i = 0; i < elt2.length; i++) {
                     var tdiv = new TextDesc();
                     tdiv['xml_id'] = $(elt2[i]).attr('xml:id');
-                    var desc = $(elt2[i]).attr("activity");
-                    if (desc && desc.length > 0)
-                        tdiv['text'] = $(desc[0]).text();
-                    else
-                        tdiv['text'] = "";
+                    var desc = $(elt2[i]).find("activity");
+                    if (desc && desc.length > 0) {
+                        var date = $(elt2[i]).find("date");
+                        if (date && date.length > 0)
+                            tdiv['text'] = $(date[0]).text() + " " + $(desc[0]).text();
+                        else
+                            tdiv['text'] = $(desc[0]).text();
+                    } else {
+                        tdiv['text'] = $(elt2[i]).text();
+                    }
                     trjs.data.textDesc.push(tdiv);
                 }
             }
