@@ -222,7 +222,9 @@ trjs.io = (function () {
      */
     function exportCsv() {
         $("#openexports").modal('hide');
-        var s = trjs.transcription.saveTranscriptToCsvString();
+        var s = trjs.transcription.saveTranscriptToCsvString(false, false);
+        /*
+        // automatic save in the same folder as the main file
         var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.csv';
         trjs.data.transcriptInner = null;
         fsio.saveFile({data: s, name: codefn.encodeFilename(fn)},
@@ -232,16 +234,9 @@ trjs.io = (function () {
             function (params) {
                 trjs.log.boxalert('file ' + fn + ' could not be saved');
             });
-
-        /*
-         // var dump = $('#dump1').text(s);
-         var blob = new Blob([s], {
-         type : "text/plain;charset=utf-8"
-         });
-         // {type: 'text/css'});
-         saveAs(blob, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.csv');
-         // fsio.saveBlob({data: blob, name: (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.csv'});
-         */
+        */
+        // {type: 'text/csv'});
+        saveAs(s, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.csv');
     }
 
     /**
@@ -250,8 +245,9 @@ trjs.io = (function () {
      */
     function exportText(style) {
         $("#openexports").modal('hide');
-        var s = trjs.transcription.saveTranscriptToText(true, true, true);
-        var fn = (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.txt';
+        var s = trjs.transcription.saveTranscriptToText(false, false, style);
+        // automatic save in the same folder as the main file
+        var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.txt';
         // var dump = $('#dump1').text(s);
         fsio.saveFile({data: s, name: codefn.encodeFilename(fn)},
             function (params) {
@@ -260,7 +256,10 @@ trjs.io = (function () {
             function (params) {
                 trjs.log.boxalert('file ' + fn + ' could not be saved');
             });
+        /*
         // {type: 'text/css'});
+        saveAs(s, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.txt');
+        */
     }
 
     /**
@@ -270,7 +269,7 @@ trjs.io = (function () {
     function exportRtf(style) {
         $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToRtf(true, true, true, style);
-        var fn = (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.rtf';
+        var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.rtf';
         // var dump = $('#dump1').text(s);
         fsio.saveFile({data: s, name: codefn.encodeFilename(fn)},
             function (params) {

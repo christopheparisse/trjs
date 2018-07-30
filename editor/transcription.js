@@ -1931,7 +1931,7 @@ trjs.transcription = (function () {
                 s += iloc + ': ' + itrans + "\n";
             }
         } else { // some or all locs and some (or all) tiers
-            for (var i = 0; i < tablelines.length;) {
+            for (var i = 0; i < tablelines.length; i++) {
                 if (partof === true) {
                     var td = $(tablelines[i]).find('td.info');
                     if (td[0].data_select !== true) {
@@ -2067,7 +2067,7 @@ trjs.transcription = (function () {
             s += transcriptEncoding(itrans) + '\t';
             var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
-            if (time !== undefined && (its !== '' || ite != '')) {
+            if (time !== false && (its !== '' || ite != '')) {
                 /*
                  * writes content of subtitles in txt format
                  */
