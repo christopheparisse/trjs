@@ -376,7 +376,7 @@ fsio.compatibleFiles = function(args, doneFunction, failFunction) {
 fsio.testMediaFile = function(args, doneFunction, failFunction) {
     externals.test_media_file(args.name, args.browser, args.browserversion, args.format, args.quality,
         function (err, mess) {
-            if (!err)
+            if (mess.indexOf('*') !== 0)
                 doneFunction(mess);
             else
                 failFunction(mess);
@@ -384,10 +384,10 @@ fsio.testMediaFile = function(args, doneFunction, failFunction) {
     );
 };
 
-fsio.testFileExists = function(args, doneFunction, failFunction) {
-    externals.test_file_exists(args.fn,
+fsio.testFileExists = function(fn, doneFunction, failFunction) {
+    externals.test_file_exists(fn,
         function (err, mess) {
-            if (!err)
+            if (mess === 'true')
                 doneFunction(mess);
             else
                 failFunction(mess);
@@ -471,8 +471,8 @@ var openFromMenu = function(menuItem, browserWindow, event) {
 
 fsio.setMRU = function(name) {
     //const remote = require('electron').remote;
-    const Menu = remote.Menu;
-    const MenuItem = remote.MenuItem;
+    var Menu = remote.Menu;
+    var MenuItem = remote.MenuItem;
     var mn = new MenuItem({label: name, click: openFromMenu});
     var topmn = Menu.getApplicationMenu();
     var recentfiles = (process.platform === 'darwin')
@@ -499,8 +499,8 @@ fsio.setMRU = function(name) {
 
 fsio.setMRUInitial = function() {
     //const remote = require('electron').remote;
-    const Menu = remote.Menu;
-    const MenuItem = remote.MenuItem;
+    var Menu = remote.Menu;
+    var MenuItem = remote.MenuItem;
 
     var topmn = Menu.getApplicationMenu();
     var recentfiles = (process.platform === 'darwin')
@@ -517,8 +517,8 @@ fsio.setMRUInitial = function() {
 
 fsio.clearMRU = function() {
     //const remote = require('electron').remote;
-    const Menu = remote.Menu;
-    const MenuItem = remote.MenuItem;
+    var Menu = remote.Menu;
+    // var MenuItem = remote.MenuItem;
     var topmn = Menu.getApplicationMenu();
     var recentfiles = topmn.items[1].submenu.items[9].submenu;
     recentfiles.clear();

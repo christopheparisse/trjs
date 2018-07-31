@@ -12,6 +12,8 @@
  * access to the file, local or remote
  */
 
+var remote = require('electron').remote;
+
 trjs.io = (function () {
 
     //////////////////////////
@@ -223,20 +225,61 @@ trjs.io = (function () {
     function exportCsv() {
         $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToCsvString(false, false);
-        /*
-        // automatic save in the same folder as the main file
-        var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.csv';
-        trjs.data.transcriptInner = null;
-        fsio.saveFile({data: s, name: codefn.encodeFilename(fn)},
-            function (params) {
-                trjs.log.alert('file saved in CSV format as ' + fn);
-            },
-            function (params) {
-                trjs.log.boxalert('file ' + fn + ' could not be saved');
+        saveExportFile(s, "text/plain;charset=utf-8", ".csv", 'Csv Files', ['csv', 'txt'], 'CSV');
+    }
+
+    /**
+     * save the exported string to a format
+     */
+    function saveExportFile(s, mime, ext, extInfo, extFiles, extBOLD) {
+        if (trjs.param.server !== 'electron' || trjs.param.exportSaveAs === true) {
+            // {type: 'text/css'});
+            var blob = new Blob([s], {
+                type: mime
             });
-        */
-        // {type: 'text/csv'});
-        saveAs(s, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.csv');
+            saveAs(blob, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + ext);
+        } else {
+            // automatic save in the same folder as the main file
+            var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + ext;
+            // var dump = $('#dump1').text(s);
+            // test if file exists
+            fsio.testFileExists(fn,
+                function (mess) { // true
+                    // ask for new name
+                    try {
+                        var fl = remote.dialog.showSaveDialog({
+                            title: 'Export transcription file',
+                            filters: [
+                                { name: extInfo, extensions: extFiles },
+                                { name: 'All Files', extensions: ['*'] }
+                            ]
+                        });
+                        if (fl) {
+                            fsio.saveFile({data: s, name: fl},
+                                function (params) {
+                                    trjs.log.alert('file saved in ' + extBOLD + ' format as ' + fl);
+                                },
+                                function (params) {
+                                    trjs.log.boxalert('file ' + fl + ' could not be saved');
+                                });
+                        } else {
+                            trjs.log.alert('export cancelled');
+                        }
+                    } catch (error) {
+                        console.log(error);
+                        callback(1, error);
+                    }
+                },
+                function (mess) { // false
+                    fsio.saveFile({data: s, name: fn},
+                        function (params) {
+                            trjs.log.alert('file saved in ' + extBOLD + ' format as ' + fn);
+                        },
+                        function (params) {
+                            trjs.log.boxalert('file ' + fn + ' could not be saved');
+                        });
+                });
+        }
     }
 
     /**
@@ -246,20 +289,7 @@ trjs.io = (function () {
     function exportText(style) {
         $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToText(false, false, style);
-        // automatic save in the same folder as the main file
-        var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.txt';
-        // var dump = $('#dump1').text(s);
-        fsio.saveFile({data: s, name: codefn.encodeFilename(fn)},
-            function (params) {
-                trjs.log.alert('file saved in TXT format as ' + fn);
-            },
-            function (params) {
-                trjs.log.boxalert('file ' + fn + ' could not be saved');
-            });
-        /*
-        // {type: 'text/css'});
-        saveAs(s, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.txt');
-        */
+        saveExportFile(s, "text/plain;charset=utf-8", ".txt", 'Text Files', ['txt', 'text'], 'TXT');
     }
 
     /**
@@ -269,15 +299,7 @@ trjs.io = (function () {
     function exportRtf(style) {
         $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToRtf(true, true, true, style);
-        var fn = (trjs.data.recordingRealFile() ? trjs.data.recordingRealFile() : "export") + '.rtf';
-        // var dump = $('#dump1').text(s);
-        fsio.saveFile({data: s, name: codefn.encodeFilename(fn)},
-            function (params) {
-                trjs.log.alert('file saved in RTF format as ' + fn);
-            },
-            function (params) {
-                trjs.log.boxalert('file ' + fn + ' could not be saved');
-            });
+        saveExportFile(s, "text/plain;charset=utf-8", ".rtf", 'Rtf Files', ['rtf'], 'RTF');
     }
 
     function getEditTable() {
@@ -320,8 +342,7 @@ trjs.io = (function () {
             else
                 content = teiConvertTools.tableToDocx(corpus, ';table;time2;', 3);
         }
-        // {type: 'appplication/docx'});
-        saveAs(content, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.docx');
+        saveExportFile(content, 'appplication/docx', ".docx", 'Docx Files', ['docx'], 'DOCX');
     }
 
     /**
@@ -332,9 +353,7 @@ trjs.io = (function () {
         $("#openexports").modal('hide');
         var corpus = getEditTable();
         var content = teiExportXlsx.tableToXlsx(corpus, 8);
-
-        // {type: 'appplication/xlsx'});
-        saveAs(content, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + '.xlsx');
+        saveExportFile(content, 'appplication/xlsx', ".xlsx", 'Xlsx Files', ['xlsx'], 'XLSX');
     }
 
     ///////////////////
@@ -1310,7 +1329,7 @@ trjs.io = (function () {
     }
 
     /**
-     * save current file on the server in Transcriber format
+     * save current file on the server in a transcription format
      * @method exportTrans
      */
     function exportTrans(format) {
@@ -1383,9 +1402,7 @@ trjs.io = (function () {
      */
     function testFileExists(fn, action) {
         if (trjs.param.level < 'level6') return;
-        fsio.testFileExists({
-            fn: codefn.encodeFilename(fn)
-        }, function (data) {
+        fsio.testFileExists(codefn.encodeFilename(fn), function (data) {
             if (data) {
                 if (data === 'true')// file exists
                     action(true, fn);

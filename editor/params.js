@@ -74,6 +74,7 @@ trjs.param = {
     final: true,
     wavesampling: version.WAVESAMPLINGINITIAL,
     format: 'CHAT',
+    exportSaveAs: false,
 
     mode: 'readwrite',
 
