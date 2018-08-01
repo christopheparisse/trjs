@@ -117,67 +117,75 @@ function toLowerCaseSystem(str) {
         return str;
 }
 
-fsio.writeTranscript = function(code, data) {
+fsio.writeTranscript = function(code, fname) {
     if (code === 0) {
-        trjs.local.put('recordingRealFile', data);
-        var exts = version.BASIC_EXT.split('|');
+        trjs.local.put('recordingRealFile', fname);
+        var exts = version.KNOWN_EXTENSIONS_TRANSCRIPTION_CONVERSIONS.split('|');
+        for (var i in exts) {
+            if (exts[i] && toLowerCaseSystem(fname).endsWith(exts[i])) {
+                // it is a different format and a conversion is required
+                trjs.io.exportTrans(exts[i], fname, true);
+                return;
+            }
+        }
+        exts = version.BASIC_EXT.split('|');
         var withExt = false;
         for (var i in exts) {
-            if (exts[i] && toLowerCaseSystem(data).endsWith(exts[i])) {
+            if (exts[i] && toLowerCaseSystem(fname).endsWith(exts[i])) {
                 withExt = true;
                 break;
             }
         }
         if ( !withExt )
-            data += version.SOFT_EXT;
+            fname += version.SOFT_EXT;
         // test if file exist already
-        trjs.io.testFileExists(data, function(exists, fn) {
+        trjs.io.testFileExists(fname, function(exists, fn) {
             if (exists === true) {
-                bootbox.confirm( trjs.messgs.askforerase + data + " ?", function(ok) {
+                bootbox.confirm( trjs.messgs.askforerase + fname + " ?", function(ok) {
                     if (ok !== true)
                         return;
-                    trjs.data.setRecordingRealFile(data);
-                    fsio.setMRU(data);
+                    trjs.data.setRecordingRealFile(fname);
+                    fsio.setMRU(fname);
                     trjs.data.setNamesInEdit();
                     trjs.io.serverSave();
                 });
             } else {
-                trjs.data.setRecordingRealFile(data);
-                fsio.setMRU(data);
+                trjs.data.setRecordingRealFile(fname);
+                fsio.setMRU(fname);
                 trjs.data.setNamesInEdit();
                 trjs.io.serverSave();
             }
         });
     } else {
         if (code !== 2)
-            trjs.log.alert('error: ' + data);
+            trjs.log.alert('error: ' + fname);
         // else code===2 --> cancel by user
     }
 };
 
-fsio.openMedia = function(code, data) {
+fsio.openMedia = function(code, fname) {
     if (code === 0) {
-        data = data.replace(/\\/g, '/');
-        //console.log('>>media openMedia ' + data);
-        trjs.local.put('Media: trjs.data.mediaRealFile', data);
-        trjs.io.serverLoadMedia(data);
+        fname = fname.replace(/\\/g, '/');
+        //console.log('>>media openMedia ' + fname);
+        trjs.local.put('Media: trjs.data.mediaRealFile', fname);
+        trjs.io.serverLoadMedia(fname);
     } else {
         if (code !== 2)
-            trjs.log.alert('error: ' + data);
+            trjs.log.alert('error: ' + fname);
         // else code===2 --> cancel by user
  //       if (trjs.media.xxx)
  //           trjs.media.display('notloaded');
     }
 };
 
-fsio.convertMedia = function(code, data) {
+fsio.convertMedia = function(code, fname) {
     if (code === 0) {
-        data = data.replace(/\\/g, '/');
-        console.log('>>media convertMedia ' + data);
-        trjs.io.convertMediaFile(data,'convertonly');
+        fname = fname.replace(/\\/g, '/');
+        console.log('>>media convertMedia ' + fname);
+        trjs.io.convertMediaFile(fname,'convertonly');
     } else {
         if (code !== 2)
-            trjs.log.alert('errorConvert: ' + data);
+            trjs.log.alert('errorConvert: ' + fname);
     }
 }
 
@@ -202,6 +210,7 @@ fsio.__chooseSaveFile = function(title, filters, callback) {
     try {
         var fl = remote.dialog.showSaveDialog({
             title: 'Save transcription file',
+            defaultPath: '',
             filters: filters
         });
         if (fl) {
@@ -432,8 +441,8 @@ fsio.exportMediaSubt = function(args, doneFunction, failFunction) {
         // if (version.debug(__filename))
         //console.log('ecriture de ' + tempfn);
         fs.writeFileSync(tempfn, args['subtitles']);
-        var output = path.dirname(args['media']) + '/x' + path.basename(args['media'], path.extname(args['media'])) + '-subtitle.mp4';
-        return medialibrary.burnSubtitles(args['media'], output, tempfn, 2, true, parseInt(args['tmin']), parseInt(args['tmax']), 'electron', args['box'],
+        // var output = path.dirname(args['media']) + '/x' + path.basename(args['media'], path.extname(args['media'])) + '-subtitle.mp4';
+        return medialibrary.burnSubtitles(args['media'], null, tempfn, 2, true, parseInt(args['tmin']), parseInt(args['tmax']), 'electron', args['box'],
             function (err, mess) {
                 if (!err)
                     doneFunction(mess);

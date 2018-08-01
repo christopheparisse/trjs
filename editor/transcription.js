@@ -328,6 +328,7 @@ trjs.transcription = (function () {
      * @method exportMStoTei
      */
     function exportMStoTei() {
+        $("#openexports").modal('hide');
         var s = trjs.transcription.saveTranscriptToString(true);
         // var dump = $('#dump1').text(s);
         var blob = new Blob([s], {type: "text/plain;charset=utf-8"}); // {type: 'text/css'});

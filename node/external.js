@@ -35,8 +35,9 @@ function praattotei() {
 /**
  * @method format_to_tei
  * @param {string} format
- * @param {string} input filename
- * @param {string} outpout filename
+ * @param filein
+ * @param fileout
+ * @param callback
  */
 exports.format_to_tei = function (format, filein, fileout, callback) {
     filein = codefn.decodeFilename(filein);
@@ -294,13 +295,13 @@ exports.tei_to_format = function (format, transcript, output, callback) {
         if (version.debug(__filename)) console.log('ecriture de ' + tempfn);
         fs.writeFileSync(tempfn, transcript);
 
-        if (format === 'clan') {
+        if (format === 'clan' || format === '.cha') {
             var extension = '.cha';
-        } else if (format === 'elan') {
+        } else if (format === 'elan' || format === '.eaf') {
             var extension = '.eaf';
-        } else if (format === 'praat') {
+        } else if (format === 'praat' || format === '.textgrid') {
             var extension = '.textgrid';
-        } else if (format === 'transcriber') {
+        } else if (format === 'transcriber' || format === '.trs') {
             var extension = '.trs';
         }
         if (version.debug(__filename)) console.log(extension);
@@ -312,13 +313,13 @@ exports.tei_to_format = function (format, transcript, output, callback) {
             var fileout = version.generateName(dirpath, 'tei_to_format', extension);
         }
 
-        if (format === 'clan') {
+        if (extension === '.cha') {
             var cmd = teitochat() + ' -i "' + tempfn + '" -o "' + fileout + '"';
-        } else if (format === 'elan') {
+        } else if (extension === '.eaf') {
             var cmd = teitoelan() + ' -i "' + tempfn + '" -o "' + fileout + '"';
-        } else if (format === 'praat') {
+        } else if (extension === '.textgrid') {
             var cmd = teitopraat() + ' -i "' + tempfn + '" -o "' + fileout + '"';
-        } else if (format === 'transcriber') {
+        } else if (extension === '.trs') {
             var cmd = teitotrs() + ' -i "' + tempfn + '" -o "' + fileout + '"';
         }
         if (version.debug(__filename)) console.log(cmd);

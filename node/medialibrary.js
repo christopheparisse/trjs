@@ -600,6 +600,7 @@ medialibrary.processVideo = function (name, output, subtitles, percent, threads,
      */
     var extname = path.extname(name);
     var duration = 0;
+    var newname;
     if (begin !== -1) {
         begin = Math.floor(begin);
         var nend = Math.floor(end);
@@ -610,24 +611,27 @@ medialibrary.processVideo = function (name, output, subtitles, percent, threads,
             if (subtitles) {
                 if (extname === ".mp3" || extname === '.wav') {
                     format = 'mp4';
-                    var newname = changeExtension(name, 'subt-' + begin + '-' + nend + ".mp4");
+                    newname = changeExtension(name, 'subt-' + begin + '-' + nend + ".mp4");
                 } else
-                    var newname = changeExtension(name, 'subt-' + begin + '-' + nend + extname);
+                    newname = changeExtension(name, 'subt-' + begin + '-' + nend + extname);
             } else
-                var newname = changeExtension(name, begin + '-' + nend + extname);
+                newname = changeExtension(name, begin + '-' + nend + extname);
         }
         else
-            var newname = output;
+            newname = output;
     } else {
         var nend = end;
         if (subtitles && (extname === ".mp3" || extname === '.wav'))
             format = 'mp4';
-        if (!output) // output === '' or null or undefined or 0
-            var newname = changeExtension(name, format);
-        else if (output.indexOf('+') === 0)
-            var newname = replaceExtension(name, format, output);
+        if (!output) { // output === '' or null or undefined or 0
+            if (subtitles)
+                newname = changeExtension(name, "subt." + format);
+            else
+                newname = changeExtension(name, format);
+        } else if (output.indexOf('+') === 0)
+            newname = replaceExtension(name, format, output);
         else
-            var newname = output;
+            newname = output;
     }
 
     if (!overwrite && fs.existsSync(newname)) {

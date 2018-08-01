@@ -127,17 +127,19 @@ trjs.messgs_eng = {
     fsavecache: 'Save in the cache',
     fdownload: 'Local export',
     fexporttext: 'Export to Text (.txt)',
-    fexportrtf: 'Export to Rtf (.rtf)',
-    fexportdocx: 'Export to Docx (.docx)',
-    fexporttrs: 'Export to Transcriber (.trs)',
-    fexportclan: 'Export to Clan (.cha)',
-    fexportpraat: 'Export to Praat (.textgrid)',
-    fexportelan: 'Export to Elan (.eaf)',
-    fexportcsv: 'Export to Csv (.csv)',
-    fexportexcel: 'Export to Excel (.xlsx)',
+    fexporttexttime: 'to Text with time stamps (.txt)',
+    fexporttextnotime: 'to Text no time stamps (.txt)',
+    fexportrtf: 'to Rtf (.rtf)',
+    fexportdocx: 'to Docx table format (.docx)',
+    fexportdocxtab: 'to Docx tabulation format (.docx)',
+    fexporttrs: 'to Transcriber (.trs)',
+    fexportclan: 'to Clan (.cha)',
+    fexportpraat: 'to Praat (.textgrid)',
+    fexportelan: 'to Elan (.eaf)',
+    fexportcsv: 'to Csv (.csv)',
+    fexportexcel: 'to Excel (.xlsx)',
     fopenlocaltrs: 'Open a local transcription',
     fopenlocalmedia: 'Open a local media',
-
     fmult: 'Multiple selection',
     fmultshow: 'Show/hide multiple selection',
     fmultselect: 'Select all',
@@ -145,7 +147,7 @@ trjs.messgs_eng = {
     fmultcut: 'Cut lines',
     fmultcopy: 'Copy lines',
     fmultpaste: 'Paste',
-    fmulttotei: 'Export selection to TEIML',
+    fmulttotei: 'Export selection to TEI corpo',
     fmulttotxt: 'Export selection to Text/Spreadsheet',
     fmulttomedia: 'Extract selection to media without subtitles',
     fmulttosubt: 'Extract selection to media with subtitles',
@@ -489,7 +491,7 @@ trjs.messgs_eng = {
 
     savepref: "Save preferences",
     converr1: "Conversion error of file format ",
-    converr2: " to format Teiml (",
+    converr2: " to format Tei Corpo (",
     errload1: "Error ",
     errload2: " loading the file : ",
     errload: "Error loading the file : ",
@@ -880,15 +882,17 @@ trjs.messgs_fra = {
     fsaveas: 'Enregistrer sous...',
     fsavecache: 'Sauver dans le cache',
     fdownload: 'Export local',
-    fexporttext: 'Export vers Texte (.txt)',
-    fexportrtf: 'Export vers Word Rtf (.rtf)',
-    fexportdocx: 'Export vers Word Docx (.docx)',
-    fexporttrs: 'Export vers Transcriber (.trs)',
-    fexportclan: 'Export vers Clan (.cha)',
-    fexportpraat: 'Export vers Praat (.textgrid)',
-    fexportelan: 'Export vers Elan (.eaf)',
-    fexportcsv: 'Export vers Csv (.csv)',
-    fexportexcel: 'Export vers Excel (.xlsx)',
+    fexporttexttime: 'vers Texte avec marques de temps (.txt)',
+    fexporttextnotime: 'vers Texte sans marques de temps (.txt)',
+    fexportrtf: 'vers Word Rtf (.rtf)',
+    fexportdocx: 'vers Word Docx tableau (.docx)',
+    fexportdocxtab: 'vers Word Docx avec tabulation (.docx)',
+    fexporttrs: 'vers Transcriber (.trs)',
+    fexportclan: 'vers Clan (.cha)',
+    fexportpraat: 'vers Praat (.textgrid)',
+    fexportelan: 'vers Elan (.eaf)',
+    fexportcsv: 'vers Csv (.csv)',
+    fexportexcel: 'vers Excel (.xlsx)',
     fopenlocaltrs: 'Importer une transcription locale',
     fopenlocalmedia: 'Importer un média local',
 
@@ -899,7 +903,7 @@ trjs.messgs_fra = {
     fmultcut: 'Couper la sélection',
     fmultcopy: 'Copier la sélection',
     fmultpaste: 'Coller',
-    fmulttotei: 'Exporter la sélection au format TEIML',
+    fmulttotei: 'Exporter la sélection au format TEI Corpo',
     fmulttotxt: 'Exporter la sélection au format Texte/Spreadsheet',
     fmulttomedia: 'Extraire le média sans sous-titres pour la sélection',
     fmulttosubt: 'Extraire le média avec les sous-titres pour la sélection',
@@ -1243,7 +1247,7 @@ trjs.messgs_fra = {
 
     savepref: "Enregistrer les préférences",
     converr1: "Erreur de conversion du fichier ",
-    converr2: " vers le format Teiml (",
+    converr2: " vers le format Tei Corpo (",
     errload1: "Erreur ",
     errload2: " de chargement du fichier : ",
     errload: "Erreur de chargement du fichier : ",
@@ -1600,11 +1604,18 @@ trjs.messgs_init = function () {
     $('#fsaveas').text(trjs.messgs.fsaveas);
     $('#fsavecache').text(trjs.messgs.fsavecache);
     $('#fdownload').text(trjs.messgs.fdownload);
-    $('#fexporttext').text(trjs.messgs.fexportext);
+
+    $('#fexporttexttime').text(trjs.messgs.fexporttexttime);
+    $('#fexporttextnotime').text(trjs.messgs.fexporttextnotime);
+    $('#fexportrtf').text(trjs.messgs.fexportrtf);
+    $('#fexportdocx').text(trjs.messgs.fexportdocx);
+    $('#fexportdocxtab').text(trjs.messgs.fexportdocxtab);
     $('#fexporttrs').text(trjs.messgs.fexporttrs);
     $('#fexportclan').text(trjs.messgs.fexportclan);
-    $('#fexportexcel').text(trjs.messgs.fexportexcel);
+    $('#fexportpraat').text(trjs.messgs.fexportpraat);
+    $('#fexportelan').text(trjs.messgs.fexportelan);
     $('#fexportcsv').text(trjs.messgs.fexportcsv);
+    $('#fexportexcel').text(trjs.messgs.fexportexcel);
     $('#fopenlocaltrs').text(trjs.messgs.fopenlocaltrs);
     $('#fopenlocalmedia').text(trjs.messgs.fopenlocalmedia);
     $('#fmult').text(trjs.messgs.fmult);

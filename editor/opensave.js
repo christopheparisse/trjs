@@ -1313,26 +1313,24 @@ trjs.io = (function () {
         });
     }
 
-    function extFormat(f) {
-        switch (f) {
-            case 'transcriber':
-                return '.trs';
-            case 'clan':
-                return '.cha';
-            case 'elan':
-                return '.eaf';
-            case 'praat':
-                return '.textgrid';
-            default:
-                return '.txt';
-        }
-    }
-
     /**
-     * save current file on the server in a transcription format
+     * export current file on the server in a transcription format
+     * check whether file exists or not and ask for new name if necessary
      * @method exportTrans
      */
-    function exportTrans(format) {
+    function exportTrans(format, fileoutput, force) {
+        function saveTheFile(fname) {
+            fsio.teiToFormat({
+                format: format,
+                output: codefn.encodeFilename(fname),
+                transcript: s,
+            }, function (data) {
+                // $("#save-server-response").html(data);
+                trjs.log.boxalert(trjs.messgs.exporttrans + format + trjs.messgs.exportname + fname);
+            }, function (data) {
+                trjs.log.boxalert(trjs.messgs.exporterror + " " + format + " " + data);
+            });
+        }
         $("#openexports").modal('hide');
         if (trjs.param.level < 'level6') return;
         var s = innerSave();
@@ -1340,7 +1338,52 @@ trjs.io = (function () {
             //trjs.log.alert(trjs.messgs.mustfn);
             trjs.io.doSaveAs();
         }
-        var fileoutput = trjs.utils.headName(trjs.data.recordingRealFile()) + version.MARK_EXT + extFormat(format);
+        if (!fileoutput) fileoutput = trjs.utils.headName(trjs.data.recordingRealFile()) + version.MARK_EXT + (format);
+        if (force === true) {
+            saveTheFile(fileoutput);
+            return;
+        }
+        fsio.testFileExists(fileoutput,
+            function (mess) {
+                // ask for new name
+                try {
+                    var fl = remote.dialog.showSaveDialog({
+                        title: 'Export transcription file in ' + format + ' format',
+                        defaultPath: fileoutput,
+                        filters: [
+                            { name: "Transcription files", extensions: ['cha', 'trs', 'eaf', 'textgrid'] },
+                            { name: 'All Files', extensions: ['*'] }
+                        ]
+                    });
+                    if (fl) {
+                        saveTheFile(fl);
+                    } else {
+                        trjs.log.alert('export cancelled');
+                    }
+                } catch (error) {
+                    console.log(error);
+                    callback(1, error);
+                }
+            },
+            function (mess) { // false
+                saveTheFile(fileoutput);
+            });
+    }
+
+    /**
+     * save current file on the server in a transcription format
+     * do not check for existing file (erase old file automatically)
+     * @method saveToFormatTrans
+     */
+    function saveToFormatTrans(format) {
+        $("#openexports").modal('hide');
+        if (trjs.param.level < 'level6') return;
+        var s = innerSave();
+        if (trjs.data.recordingName() === trjs.data.NEWRECNAME) {
+            //trjs.log.alert(trjs.messgs.mustfn);
+            trjs.io.doSaveAs();
+        }
+        var fileoutput = trjs.utils.headName(trjs.data.recordingRealFile()) + (format);
         fsio.teiToFormat({
             format: format,
             output: codefn.encodeFilename(fileoutput),
