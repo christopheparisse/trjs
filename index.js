@@ -91,12 +91,12 @@ function createWindow(arg) {
                 process.listWindows[i] = null;
                 process.ischangedWindows[i] = false;
                 // test whether there are other opened windows
-                console.log("w.on CLOSED: test");
+                // console.log("w.on CLOSED: test");
                 for (var k=0; k < process.listWindows.length; k++) {
                     if (process.listWindows[k] !== null) {
                         return;
                     }
-                    console.log("NO windows opened");
+                    // console.log("NO windows opened");
                     if (process.platform !== 'darwin') {
                         app.quit();
                     }
@@ -156,11 +156,11 @@ function startWindow(arg) {
     wnd.on('close', function (e) {
         if (app.stopExit) {
             e.preventDefault(); // Prevents the window from closing
-            console.log("w.on close");
+            //console.log("w.on close");
 
             var sz = e.sender.getSize();
             // console.log("w: ",e);
-            console.log('sz: ', sz );
+            //console.log('sz: ', sz );
             store.set('width', sz[0]);
             store.set('height', sz[1]);
 
@@ -618,7 +618,7 @@ app.on('ready', function () {
 app.on('window-all-closed', function () {
     // On OS X it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    console.log('window-all-closed');
+    // console.log('window-all-closed');
     if (process.platform !== 'darwin') {
         app.quit();
     }

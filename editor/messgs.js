@@ -378,7 +378,8 @@ trjs.messgs_eng = {
     sgototime: "Go to time : ",
 
     exportit: "Export and download",
-    exportfile: "All file",
+    exportfile: "File",
+    exportmedia: "Media",
     exportselect: "Selection",
     exportmenufile: "Export to...",
     exportmenuselect: "Export selection to...",
@@ -1135,6 +1136,7 @@ trjs.messgs_fra = {
 
     exportit: "Export et téléchargement",
     exportfile: "Tout le fichier",
+    exportmedia: "Média",
     exportselect: "Sélection",
     exportmenufile: "Exporter vers...",
     exportmenuselect: "Exporter la sélection...",
@@ -1711,6 +1713,7 @@ trjs.messgs_init = function () {
 
     $('#exporttit').text(trjs.messgs.exportit);
     $('#exportfile').text(trjs.messgs.exportfile);
+    $('#exportmedia').text(trjs.messgs.exportmedia);
     $('#exportselect').text(trjs.messgs.exportselect);
     $('#exportmenufile').text(trjs.messgs.exportmenufile);
     $('#exportmenuselect').text(trjs.messgs.exportmenuselect);

@@ -609,6 +609,7 @@
                 <div role="tabpanel">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#expfic" aria-controls="expfic" role="tab" data-toggle="tab"><i class="fa fa-file-o"></i> <span id="exportfile">Fichier</span></a></li>
+                        <li role="presentation"><a href="#expmedia" aria-controls="expmedia" role="tab" data-toggle="tab"><span id="exportmedia">Media</span></a></li>
                         <li role="presentation"><a href="#expsel" aria-controls="expsel" role="tab" data-toggle="tab"><span id="exportselect">Sélection multiple</span></a></li>
                     </ul>
                     <div class="tab-content">
@@ -637,7 +638,7 @@
                                     &nbsp;<span id="fexportrtf">to RTF (.rtf)</span>
                                 </div>
                                 <div class="col-md-3 col-md-pull-9"></div>
-								</div><div class="row">
+                            </div><div class="row">
                                 <div class="col-md-9 col-md-push-3">
                                     <button type="button" class="btn btn-primary" onclick="trjs.io.exportDocx('table');"><i class="fa fa-download"></i></button>
                                     &nbsp;<span id="fexportdocx">to Docx table (.docx)</span>
@@ -686,7 +687,10 @@
                                     &nbsp;<span id="fexportpraat">to Praat (.textgrid)</span>
                                 </div>
                                 <div class="col-md-3 col-md-pull-9"></div>
-                            </div><br/><div class="row">
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="expmedia"><br/>
+                            <div class="row">
                                 <div class="col-md-9 col-md-push-3">
                                     <button type="button" class="btn btn-default" onclick="trjs.transcription.exportMStoMediaSubt('all');"><i class="fa fa-file-audio-o"></i> <i class="fa fa-file-movie-o"></i> </button>
                                     &nbsp;<span id="fmulttosubtall">all media with subtitles</span>
