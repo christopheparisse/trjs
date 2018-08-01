@@ -1,7 +1,10 @@
 'use strict';
-const electron = require('electron');
+var electron = require('electron');
 // Module to control application life.
-const app = electron.app;
+var app = electron.app;
+var Store = require('electron-store');
+var store = new Store();
+
 app.stopExit = true;
 var isReady = false;
 var oneWindow = false;
@@ -69,9 +72,9 @@ app.on('open-file', function(event, path) {
 });
 
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow;
+var BrowserWindow = electron.BrowserWindow;
 // Menu
-const Menu = electron.Menu;
+var Menu = electron.Menu;
 
 function createWindow(arg) {
     for (var i in process.listWindows) {
@@ -121,25 +124,45 @@ function createWindow(arg) {
 function startWindow(arg) {
     oneWindow = true;
     // Create the browser window.
-    var w = new BrowserWindow({width: 800, height: 800});
-    //console.log(w);
-    //console.log(w.id);
+    var wth = parseInt(store.get('width'));
+    var hgt = parseInt(store.get('height'));
+//    console.log(wth, hgt);
+
+    /*
+    if (wth < 200 || wth > 5000) wth = 800;
+    if (hgt < 200 || hgt > 4000) hgt = 900;
+    console.log(wth, hgt);
+    */
+
+    var displaysize = electron.screen.getPrimaryDisplay().size;
+//    console.log(displaysize);
+    if (wth > displaysize.width) wth = displaysize.width - 10;
+    if (hgt > displaysize.height) hgt = displaysize.height - 10;
+//    console.log(wth, hgt);
+
+    var wnd = new BrowserWindow({width: wth, height: hgt});
 
     if (arg) {
-        w.loadURL('file://' + __dirname + '/index.html?newtranscript');
+        wnd.loadURL('file://' + __dirname + '/index.html?newtranscript');
     } else {
         // and load the index.html of the app.
-        w.loadURL('file://' + __dirname + '/index.html');
+        wnd.loadURL('file://' + __dirname + '/index.html');
     }
 
     // Open the DevTools.
     // w.webContents.openDevTools();
 
     // Emitted when the window is closing.
-    w.on('close', function (e) {
+    wnd.on('close', function (e) {
         if (app.stopExit) {
             e.preventDefault(); // Prevents the window from closing
             console.log("w.on close");
+
+            var sz = e.sender.getSize();
+            // console.log("w: ",e);
+            console.log('sz: ', sz );
+            store.set('width', sz[0]);
+            store.set('height', sz[1]);
 
             /*
             electron.dialog.showMessageBox({
@@ -157,7 +180,7 @@ function startWindow(arg) {
         }
     });
 
-    return w;
+    return wnd;
 }
 
 function createMenu() {

@@ -31,6 +31,7 @@
   "dependencies": {
     "async": "^2.6.1",
     "electron-spellchecker": "latest",
+    "electron-store": "^2.0.0",
     "glob": "latest",
     "mime": "^2.3.1",
     "minimist": "latest",
