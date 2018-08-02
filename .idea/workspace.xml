@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systemcall/fsio.js" beforeDir="false" afterPath="$PROJECT_DIR$/systemcall/fsio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006.cha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006.tei_corpo.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat.cha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat.tei_corpo-fixed.cha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat.tei_corpo-fixed_chat.trjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat.tei_corpo.cha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat.trjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat_backup1.trjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat_backup2.trjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat_backup3.trjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat_brian.tei_corpo.cha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_chat_brian.trjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/11006_toto.titi" beforeDir="false" />
-    </list>
+    <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -34,7 +15,7 @@
     <session id="-645793077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -378,12 +359,12 @@
       <workItem from="1532933168948" duration="7763000" />
       <workItem from="1533057458181" duration="13721000" />
       <workItem from="1533136419526" duration="791000" />
-      <workItem from="1533193609376" duration="2645000" />
+      <workItem from="1533193609376" duration="2836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140657000" />
+    <option name="totallyTimeSpent" value="140848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="422" y="57" width="1494" height="996" extended-state="0" />
