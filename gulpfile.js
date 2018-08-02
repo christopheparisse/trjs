@@ -79,13 +79,13 @@ gulp.task('readonly-css', function(cb) {
 //	<link rel="stylesheet" type="text/css" href="dist/readonly-css.css"></link>
 */
 
-gulp.task('trjsread', ['readonly-lib', 'readonly-src'], function () {
+gulp.task('trjsread', gulp.series('readonly-lib', 'readonly-src', function () {
    // construct trsjread.html
     return gulp.src('./html/trjsread.html')
         .pipe(include())
         .pipe(preprocess({context: { VERSION: 'readonly'}}))
         .pipe(gulp.dest('.'));
-});
+}));
 
 gulp.task('trjslocal', function () {
    // construct trjslocal.html
@@ -111,6 +111,4 @@ gulp.task('electron', function () {
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['trjslocal', 'trjsclient', 'electron'], function() {
-  // place code for your default task here
-});
+gulp.task('default', gulp.series('trjslocal', 'trjsclient', 'electron'));

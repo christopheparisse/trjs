@@ -5,6 +5,7 @@
   "description": "Oral transcription editor",
   "scripts": {
     "start": "gulp ; electron index.js",
+    "gulp": "gulp",
     "express": "node node/trjsexpress.js",
     "electron": "electron index.js",
     "arg": "electron index.js /corpusformat/clan/antoine-34-2_03_05.tei_corpo.xml --tm=100 --play",
@@ -29,22 +30,24 @@
   },
   "homepage": "http://ct3.ortolang.fr/trjs",
   "dependencies": {
+    "ajv": "^6.5.2",
     "async": "^2.6.1",
-    "electron-spellchecker": "latest",
+    "electron-spellchecker": "1.1.2",
     "electron-store": "^2.0.0",
-    "glob": "latest",
+    "glob": "7.1.2",
+    "hoek": "^5.0.3",
     "mime": "^2.3.1",
-    "minimist": "latest",
-    "xmldom": "latest"
+    "minimist": "1.2.0",
+    "xmldom": "0.1.27"
   },
   "devDependencies": {
     "electron": "^2.0.5",
     "electron-builder": "^20.25.0",
-    "electron-packager": "latest",
-    "electron-rebuild": "^1.8.1",
-    "gulp": "latest",
-    "gulp-concat": "latest",
-    "gulp-html-tag-include": "latest",
+    "electron-packager": "12.1.0",
+    "electron-rebuild": "1.8.2",
+    "gulp": "4.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-html-tag-include": "1.0.1",
     "gulp-preprocess": "^3.0.0",
     "pegjs": "^0.10.0"
   }

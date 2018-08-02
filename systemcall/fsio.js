@@ -4,7 +4,6 @@
 /* use strict */
 
 var fs = require('fs');
-var path = require('path');
 var remote = require('electron').remote;
 var externals = require('./node/external.js');
 var medialibrary = require('./node/medialibrary.js');
@@ -441,7 +440,6 @@ fsio.exportMediaSubt = function(args, doneFunction, failFunction) {
         // if (version.debug(__filename))
         //console.log('ecriture de ' + tempfn);
         fs.writeFileSync(tempfn, args['subtitles']);
-        // var output = path.dirname(args['media']) + '/x' + path.basename(args['media'], path.extname(args['media'])) + '-subtitle.mp4';
         return medialibrary.burnSubtitles(args['media'], null, tempfn, 2, true, parseInt(args['tmin']), parseInt(args['tmax']), 'electron', args['box'],
             function (err, mess) {
                 if (!err)
