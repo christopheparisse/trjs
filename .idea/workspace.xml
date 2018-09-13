@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/trjs_doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/trjs_doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/messgs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/messgs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/templates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/meta-part-templ.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/meta-part-templ.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-macos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-macos.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-x64.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-x64.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-x86.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-x86.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-zip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-zip.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/external.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/external.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savedev.sh" beforeDir="false" afterPath="$PROJECT_DIR$/savedev.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/conversions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/tools/conversions.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ver.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,8 +32,8 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="4" />
-          <entry key="js" value="39" />
-          <entry key="json" value="5" />
+          <entry key="js" value="40" />
+          <entry key="json" value="6" />
           <entry key="json-old" value="1" />
           <entry key="md" value="2" />
           <entry key="sh" value="9" />
@@ -51,8 +42,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="39" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="40" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
@@ -60,7 +51,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="336" />
-          <entry key="js" value="2740" />
+          <entry key="js" value="2742" />
           <entry key="json" value="69" />
         </counts>
       </usages-collector>
@@ -68,7 +59,7 @@
         <counts>
           <entry key="HTML" value="336" />
           <entry key="JSON" value="69" />
-          <entry key="JavaScript" value="2740" />
+          <entry key="JavaScript" value="2742" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -112,7 +103,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/messgs.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="302">
@@ -121,6 +112,24 @@
                 <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/editor/version.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -227,7 +236,6 @@
         <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/node/medialibrary.js" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
-        <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/html/modal-exports.html" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/systemcall/fsio.js" />
@@ -243,6 +251,7 @@
         <option value="$PROJECT_DIR$/node/external.js" />
         <option value="$PROJECT_DIR$/html/meta-part-templ.html" />
         <option value="$PROJECT_DIR$/editor/messgs.js" />
+        <option value="$PROJECT_DIR$/editor/version.js" />
       </list>
     </option>
   </component>
@@ -421,18 +430,18 @@
       <workItem from="1536820319902" duration="198000" />
       <workItem from="1536820547431" duration="437000" />
       <workItem from="1536847835405" duration="332000" />
-      <workItem from="1536848383405" duration="267000" />
+      <workItem from="1536848383405" duration="467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143612000" />
+    <option name="totallyTimeSpent" value="143812000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17077045" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17077045" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.22528554" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -671,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/modal-exports.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -755,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/editor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13485">
@@ -805,6 +800,20 @@
             <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/version.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
