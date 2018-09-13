@@ -15,7 +15,7 @@ cp -v ./tools/ffprobe-x86.exe $1/trjs-x86/tools
 cp -v ./tools/fonts.conf $1/trjs-x86/tools
 cp -vR ./tools/presets $1/trjs-x86/tools
 cp -vR ./tools/java-x86 $1/trjs-x86/tools
-cp -v ./tools/conversions.jar $1/trjs-x86/tools
+cp -v ./tools/teicorpo.jar $1/trjs-x86/tools
 cp -v ./transcriberjs-x86.nsi $1/trjs-x86/app
 cp -v ./index.js $1/trjs-x86/app
 cp -v ./README.md $1/trjs-x86/app

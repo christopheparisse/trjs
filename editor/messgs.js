@@ -287,7 +287,9 @@ trjs.messgs_eng = {
     metadataspan: "Metadata",
     infodc: "(informations about Dublin-Core)",
     participantspan: "List of speakers",
-    templatespan: "List of tiers",
+    templatespan: "Document structure",
+    maintierspan: "Main tiers",
+    deptierspan: "Dependent tiers and tier types",
     searchspan: "Search current file",
     ssearch: "Search word or string :  ",
     tisgotoline: "Ctrl L",
@@ -1044,7 +1046,9 @@ trjs.messgs_fra = {
     metadataspan: "Métadonnées",
     infodc: "(informations sur le format Dublin-Core)",
     participantspan: "Liste des locuteurs",
-    templatespan: "Liste des tiers",
+    templatespan: "Structure du document",
+    maintierspan: "Tiers principaux",
+    deptierspan: "Tiers dependants and types des tiers",
     searchspan: "Rechercher dans le fichier courant",
     ssearch: "Chercher un mot ou une chaîne de caractère : ",
 
@@ -1557,6 +1561,8 @@ trjs.messgs_init = function () {
     $('#infodc').text(trjs.messgs.infodc);
     $('#participant-span').text(trjs.messgs.participantspan);
     $('#template-span').text(trjs.messgs.templatespan);
+    $('#maintiers-span').text(trjs.messgs.maintierspan);
+    $('#deptiers-span').text(trjs.messgs.deptierspan);
     $('#messages-span').text(trjs.messgs.messagesspan);
     $('#search-span').text(trjs.messgs.searchspan);
     $('#ssearch').text(trjs.messgs.ssearch);

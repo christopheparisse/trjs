@@ -20,16 +20,16 @@ var codefn = require('../editor/codefn.js');
 */
 
 function chattotei() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.ClanToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.ClanToTei';
 };
 function elantotei() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.ElanToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.ElanToTei';
 };
 function trstotei() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TranscriberToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.TranscriberToTei';
 };
 function praattotei() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.PraatToTei';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.PraatToTei';
 };
 
 /**
@@ -266,16 +266,16 @@ exports.test_file_exists = function (fn, callback) {
 };
 
 function teitotrs() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToTranscriber';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.TeiToTranscriber';
 };
 function teitochat() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToClan';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.TeiToClan';
 };
 function teitoelan() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToElan';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.TeiToElan';
 };
 function teitopraat() {
-    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/conversions.jar" fr.ortolang.teicorpo.TeiToPraat';
+    return '"' + version.javaLoc() + '" -cp "' + version.ffmpegdirLoc() + '/teicorpo.jar" fr.ortolang.teicorpo.TeiToPraat';
 };
 
 /**

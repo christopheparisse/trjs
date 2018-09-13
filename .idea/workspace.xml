@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="" />
+    <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/trjs_doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/trjs_doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/messgs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/messgs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/templates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/meta-part-templ.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/meta-part-templ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mktrjs-macos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-macos.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mktrjs-x64.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-x64.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mktrjs-x86.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-x86.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mktrjs-zip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-zip.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/external.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/external.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savedev.sh" beforeDir="false" afterPath="$PROJECT_DIR$/savedev.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/conversions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/tools/conversions.jar" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,45 +28,47 @@
     <session id="-645793077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
-          <entry key="js" value="32" />
+          <entry key="html" value="4" />
+          <entry key="js" value="39" />
           <entry key="json" value="5" />
           <entry key="json-old" value="1" />
           <entry key="md" value="2" />
-          <entry key="sh" value="4" />
+          <entry key="sh" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
+          <entry key="HTML" value="4" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="32" />
+          <entry key="JavaScript" value="39" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="214" />
-          <entry key="js" value="2518" />
+          <entry key="html" value="336" />
+          <entry key="js" value="2740" />
           <entry key="json" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="214" />
+          <entry key="HTML" value="336" />
           <entry key="JSON" value="69" />
-          <entry key="JavaScript" value="2518" />
+          <entry key="JavaScript" value="2740" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -62,38 +77,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/editor/editor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="113" column="70" selection-start-line="113" selection-start-column="70" selection-end-line="113" selection-end-column="70" />
+            <state relative-caret-position="13485">
+              <caret line="899" column="52" selection-start-line="899" selection-start-column="52" selection-end-line="899" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json-old">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/editor/templates.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4140">
+              <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node/external.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4080">
+              <caret line="272" column="2" selection-start-line="272" selection-start-column="2" selection-end-line="272" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/transcription.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25500">
+              <caret line="1700" column="43" selection-start-line="1700" selection-start-column="43" selection-end-line="1700" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="1054" selection-start-line="1054" selection-end-line="1054" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/meta-part-templ.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fileEx</find>
-      <find>chooseFile</find>
-      <find>saveas</find>
-      <find>testfile</find>
-      <find>test_media_file</find>
-      <find>transcriptInner</find>
       <find>format_to_tei</find>
       <find>exportMStoTei</find>
       <find>exportMStoMediaSubt</find>
@@ -118,6 +162,12 @@
       <find>w.on</find>
       <find>window-all</find>
       <find>path</find>
+      <find>conversions.jar</find>
+      <find>url</find>
+      <find>predefined value</find>
+      <find>List of tiers</find>
+      <find>template-span</find>
+      <find>templatespan</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -142,19 +192,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/html/insert-macro.html" />
-        <option value="$PROJECT_DIR$/html/menu.html" />
-        <option value="$PROJECT_DIR$/style/font-awesome.css" />
         <option value="$PROJECT_DIR$/doc/trjs_pp.html" />
         <option value="$PROJECT_DIR$/doc/doc.css" />
         <option value="$PROJECT_DIR$/html/modal-parameters.html" />
-        <option value="$PROJECT_DIR$/mktrjs-x64.sh" />
-        <option value="$PROJECT_DIR$/mktrjs-x86.sh" />
-        <option value="$PROJECT_DIR$/mktrjs-macos.sh" />
         <option value="$PROJECT_DIR$/buildwin.bat" />
         <option value="$PROJECT_DIR$/html/media.html" />
         <option value="$PROJECT_DIR$/style/global.css" />
-        <option value="$PROJECT_DIR$/html/meta-part-templ.html" />
         <option value="$PROJECT_DIR$/editor/kwiclex.js" />
         <option value="$PROJECT_DIR$/editor/undo.js" />
         <option value="$PROJECT_DIR$/editor/jqtree.js" />
@@ -179,20 +222,27 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/maj.sh" />
         <option value="$PROJECT_DIR$/editor/editor.js" />
-        <option value="$PROJECT_DIR$/editor/templates.js" />
         <option value="$PROJECT_DIR$/buildmacos.sh" />
         <option value="$PROJECT_DIR$/editor/params.js" />
         <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/node/medialibrary.js" />
-        <option value="$PROJECT_DIR$/node/external.js" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
-        <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/html/modal-exports.html" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/systemcall/fsio.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/mktrjs-x64.sh" />
+        <option value="$PROJECT_DIR$/mktrjs-macos.sh" />
+        <option value="$PROJECT_DIR$/mktrjs-x86.sh" />
+        <option value="$PROJECT_DIR$/mktrjs-zip.sh" />
+        <option value="$PROJECT_DIR$/savedev.sh" />
+        <option value="$PROJECT_DIR$/doc/trjs_doc.html" />
+        <option value="$PROJECT_DIR$/editor/templates.js" />
+        <option value="$PROJECT_DIR$/node/external.js" />
+        <option value="$PROJECT_DIR$/html/meta-part-templ.html" />
+        <option value="$PROJECT_DIR$/editor/messgs.js" />
       </list>
     </option>
   </component>
@@ -218,10 +268,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="422" />
-    <option name="y" value="57" />
-    <option name="width" value="1494" />
-    <option name="height" value="996" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -260,6 +309,11 @@
               <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
               <item name="trjs" type="462c0819:PsiDirectoryNode" />
               <item name="systemcall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trjs" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -360,23 +414,31 @@
       <workItem from="1533057458181" duration="13721000" />
       <workItem from="1533136419526" duration="791000" />
       <workItem from="1533193609376" duration="2836000" />
+      <workItem from="1535529870779" duration="931000" />
+      <workItem from="1535537580905" duration="19000" />
+      <workItem from="1535537630447" duration="319000" />
+      <workItem from="1535657466958" duration="261000" />
+      <workItem from="1536820319902" duration="198000" />
+      <workItem from="1536820547431" duration="437000" />
+      <workItem from="1536847835405" duration="332000" />
+      <workItem from="1536848383405" duration="267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140848000" />
+    <option name="totallyTimeSpent" value="143612000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="422" y="57" width="1494" height="996" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17107943" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17077045" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.22528554" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2444018" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.43141592" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -391,14 +453,14 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17636445" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17077045" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.22528554" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.17383178" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32967892" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.43141592" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -445,43 +507,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/transcriberjs-x86.nsi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/help.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1186">
-          <caret line="483" selection-start-line="483" selection-end-line="483" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/modal-parameters.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-614">
-          <caret line="27" column="175" selection-start-line="27" selection-start-column="156" selection-end-line="27" selection-end-column="175" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/meta-part-templ.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6660">
-          <caret line="444" column="33" lean-forward="true" selection-start-line="444" selection-start-column="33" selection-end-line="444" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Edition de métadonnées TEI _ CORLI.html" />
-    <entry file="file://$USER_HOME$/Downloads/Edition de métadonnées TEI _ CORLI_files/display.css" />
     <entry file="file://$USER_HOME$/Downloads/TEST.html" />
     <entry file="file://$USER_HOME$/Downloads/media.html" />
     <entry file="file://$PROJECT_DIR$/html/trjsclient.html">
@@ -523,13 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="951">
-          <caret line="936" column="9" selection-start-line="936" selection-start-column="9" selection-end-line="936" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -584,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/templates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="865" column="47" lean-forward="true" selection-start-line="865" selection-start-column="47" selection-end-line="865" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/dataload.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -639,24 +650,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node/external.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="323" column="9" lean-forward="true" selection-start-line="323" selection-start-column="9" selection-end-line="323" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node/medialibrary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="627" column="54" selection-start-line="627" selection-start-column="54" selection-end-line="627" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/transcription.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="1594" column="32" selection-start-line="1594" selection-start-column="13" selection-end-line="1594" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -685,20 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="1137" column="21" selection-start-line="1137" selection-start-column="21" selection-end-line="1137" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,9 +691,6 @@
           <caret line="436" column="44" lean-forward="true" selection-start-line="436" selection-start-column="44" selection-end-line="436" selection-end-column="44" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json-old">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/hoek/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -723,17 +703,108 @@
     <entry file="file://$PROJECT_DIR$/node_modules/hoek/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/mktrjs-x64.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="285">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json-old">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mktrjs-macos.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mktrjs-x86.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/trjs_doc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="755" column="54" selection-start-line="755" selection-start-column="54" selection-end-line="755" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/savedev.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mktrjs-zip.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
+        <state relative-caret-position="827">
           <caret line="113" column="70" selection-start-line="113" selection-start-column="70" selection-end-line="113" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13485">
+          <caret line="899" column="52" selection-start-line="899" selection-start-column="52" selection-end-line="899" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/templates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4140">
+          <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/external.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4080">
+          <caret line="272" column="2" selection-start-line="272" selection-start-column="2" selection-end-line="272" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/transcription.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25500">
+          <caret line="1700" column="43" selection-start-line="1700" selection-start-column="43" selection-end-line="1700" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/meta-part-templ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="1054" selection-start-line="1054" selection-end-line="1054" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

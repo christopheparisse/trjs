@@ -17,7 +17,7 @@ cp ./tools/ffprobe_10_6 $1/trjs-macos/tools
 cp ./tools/fonts.conf $1/trjs-macos/tools
 cp -R ./tools/presets $1/trjs-macos/tools
 cp -R ./tools/java-osx $1/trjs-macos/tools
-cp ./tools/conversions.jar $1/trjs-macos/tools
+cp ./tools/teicorpo.jar $1/trjs-macos/tools
 cp ./index.js $1/trjs-macos/trjs-macos-app
 cp ./README.md $1/trjs-macos/trjs-macos-app
 cp ./gulpfile.js $1/trjs-macos/trjs-macos-app

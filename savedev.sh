@@ -13,7 +13,7 @@ rsync -ptoguv ./tools/ffprob* parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs/t
 rsync -ptoguv ./tools/fonts.conf parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs/tools
 rsync -auv  ./tools/presets parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs/tools
 rsync -auv  ./tools/java* parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs/tools
-rsync -ptoguv ./tools/conversions.jar parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs/tools
+rsync -ptoguv ./tools/teicorpo.jar parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs/tools
 rsync -ptoguv ./transcriberjs*.nsi parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs
 rsync -ptoguv ./index.js parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs
 rsync -ptoguv ./README.md parisse@ct3.ortolang.fr:/applis/devlopt/betatrjs

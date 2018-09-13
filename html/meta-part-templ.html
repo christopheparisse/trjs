@@ -13,11 +13,13 @@
     <div id="template-title" class="modal-header">
         <div id="aide_fen"><span id='aide_struc' title=""><i class="fa fa-question-circle fa-lg fa-colorred" onclick="trjs.contextualhelp('op-struc',true);"></i></span></div>
         <button type="button" class="close" onclick='trjs.editor.showTemplate();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="template-span" class="modal-title">List of templates</h4>
+        <h4 id="template-span" class="modal-title">Document structure</h4>
     </div><br/>
+    <h4 id="maintiers-span" class="modal-title">Main tiers</h4>
     <table class="paramtable" id="template-code" onkeydown="trjs.template.eventKeydownTMCode(event);">
         <thead><td class="textcell">Code</td><td class="textcell">Speaker's name</td><td class="textcell">Content</td><td class="textcell">Description</td></thead>
     </table>
+    <h4 id="deptiers-span" class="modal-title">Dependent tiers and tier types</h4>
     <table class="paramtable" id="template-tier" onkeydown="trjs.template.eventKeydownTMTier(event);">
         <thead><td class="textcell">Tier</td><td class="textcell">Type</td><td class="textcell">Parent</td><td class="textcell">Speaker's name</td><td class="textcell">Content</td><td class="textcell">Description</td></thead>
     </table>

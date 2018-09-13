@@ -269,7 +269,7 @@ trjs.template = (function () {
     function checkTierType(e) {
         //console.log('check tier type');
         //console.log(e);
-        var type = $(e.target).text().toLowerCase();
+        var type = $(e.target).text().toLowerCase().trim().replace(/[-_]/, " ");
         //console.log(type);
         //console.log(["symbolic association", "time subdivision", "symbolic subdivision", "included in", "point"].indexOf(type));
         if (type === '') return; // this ok, there can be no code (free format)
