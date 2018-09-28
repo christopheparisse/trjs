@@ -1,25 +1,18 @@
 /**
  * table and bindings for hadlings the keyboard interface.
- * one table (trjs.tablekeys) contains the actual bindings
- * one table (trjs.bindings) contains the potential bindings that have to be initialized and can be changed dynamically by the user
- * supplementary bindings can be added to handle the API keys.
- * API keys bindings are first added to the trjs.bindings table (controlled by the user) and then transmitted to trjs.tablekeys
- * @author Christophe Parisse & Clémentine Gross
- * Date: july 2014
- * @module Tablekeyboard
- * @author
- */
-
-/**
- * trjs.keys contains the actual motor of the keys bindings
- * trjs.bindings contains the program or user defined settings for the keys
- * trjs.api contains the short cut and values that can be used to insert phonetic symbols
- * trjs.apiBindings contains the program or user defined settings for the keys
- *
+ * one table (trjs.bindingsDef) contains the initial and default bindings that are matched to the software actions
+ * one table (trjs.bindingsUser) contains the bindings that are a copy of the default and can be changed dynamically by the user
+ * one table (trjs.tablekeys) contains the actual bindings that fire events (injected from trjs.bindingsUser
  * trjs.tablekeys contains the routing table: each cell of the object contains a pointer to the corresponding function.
  * each cell position correspond to the charcode or keycode plus a modifier computed to the KEYS above.
  * trjs.tablekeys is computed automatically according to the bindings defined in the trjs.tablebindings defined by the user
  * or by the default program
+ * supplementary bindings can be added to handle the API keys and F1/F2 keys.
+ * API and F1/F2 keys bindings are first added to the trjs.bindingsDef table and then transmitted to trjs.bindingsUser
+ * @author Christophe Parisse & Clémentine Gross
+ * Date: july 2014
+ * @module tablekeyboard
+ * @author
  */
 
 var keysToString = function (k, ctrl, alt, shift, meta) {
@@ -51,6 +44,17 @@ trjs.keys[5] = trjs.keys.CTRLSHIFTKEYS; // ctrl !alt shift !meta
 trjs.keys[6] = trjs.keys.ALTSHIFTKEYS; // !ctrl alt shift !meta
 trjs.keys[7] = trjs.keys.CTRLALTSHIFTKEYS; // ctrl alt shift !meta
 
+var BINDKEY = 0;
+var BINDCTRL = 1;
+var BINDALT = 2;
+var BINDSHIFT = 3;
+var BINDMETA = 4;
+var BINDSUPL = 5;
+var BINDFUN = 6;
+
+trjs.bindingsDef = [];
+trjs.bindingsUser = [];
+
 trjs.keys.skipModifierKey = [];
 trjs.tablekeys = {};
 trjs.tablekeysSE1 = {};
@@ -65,7 +69,6 @@ trjs.keys.modifiersEvent = function (charCode, e) {
     var ctrl = e.ctrlKey;
     var meta = e.metaKey;
     if (trjs.param.server === 'electron') {
-        // console.log("xxx");
         if (!e.ctrlKey && e.metaKey) {
             ctrl = true;
             meta = 'ctrl';
@@ -75,21 +78,72 @@ trjs.keys.modifiersEvent = function (charCode, e) {
 };
 
 trjs.keys.insertBinding = function (bind, keytable) {
-    if (bind[0] !== -1) {
-        if (!bind[5]) {
-            console.log('bindings key=' + keysToString(bind[0], bind[1], bind[2], bind[3], bind[4]) + ' is undefined');
+    if (bind[BINDKEY] !== -1) {
+        if (!bind[BINDFUN]) {
+            console.log('bindings key=' + keysToString(bind[BINDKEY], bind[BINDCTRL], bind[BINDALT], bind[BINDSHIFT], bind[BINDMETA], bind[BINDSUPL]) + ' is undefined');
+            return;
         }
-        if (bind[4] === 'ctrl') {
+//        console.log(bind, keytable, bind[BINDFUN]);
+        if (bind[BINDMETA] === 'ctrl') {
             // extends control to metakey for compatibility between windows/unix and mac
-            keytable[trjs.keys.modifiersFlags(bind[0], true,
-                bind[2], bind[3], false)] = bind[5];
+            keytable[trjs.keys.modifiersFlags(bind[BINDKEY], true,
+                bind[BINDALT], bind[BINDSHIFT], false)] = trjs.keys.functions[bind[BINDFUN]][0];
         } else {
-            // put value dirrectly as it is in the table of codes
-            keytable[trjs.keys.modifiersFlags(bind[0], bind[1],
-                bind[2], bind[3], bind[4])] = bind[5];
+            // put value directly as it is in the table of codes
+            keytable[trjs.keys.modifiersFlags(bind[BINDKEY], bind[BINDCTRL],
+                bind[BINDALT], bind[BINDSHIFT], bind[BINDMETA])] = trjs.keys.functions[bind[BINDFUN]][0];
         }
     }
 };
+
+function initTablekeys() {
+
+    if (trjs.tablekeys !== undefined && trjs.tablekeys !== null) {
+        delete trjs.tablekeys;
+    }
+    trjs.tablekeys = {};
+    for (var i = 0; i < trjs.bindingsUser.length; i++) {
+        if (trjs.bindingsUser[i][BINDSUPL] && trjs.bindingsUser[i][BINDSUPL] !== "api") continue;
+        trjs.keys.insertBinding(trjs.bindingsUser[i], trjs.tablekeys);
+    }
+    // F1/F2 binding
+    if (trjs.tablekeysSE1 !== undefined && trjs.tablekeysSE1 !== null) {
+        delete trjs.tablekeysSE1;
+    }
+    trjs.tablekeysSE1 = {};
+    for (var i = 0; i < trjs.bindingsUser.length; i++) {
+        if (trjs.bindingsUser[i][BINDSUPL] !== "F1") continue;
+        trjs.keys.insertBinding(trjs.bindingsUser[i], trjs.tablekeysSE1);
+    }
+    if (trjs.tablekeysSE2 !== undefined && trjs.tablekeysSE2 !== null) {
+        delete trjs.tablekeysSE2;
+    }
+    trjs.tablekeysSE2 = {};
+    for (var i = 0; i < trjs.bindingsUser.length; i++) {
+        if (trjs.bindingsUser[i][BINDSUPL] !== "F2") continue;
+        trjs.keys.insertBinding(trjs.bindingsUser[i], trjs.tablekeysSE2);
+    }
+}
+
+function loadUserBindings() {
+//    trjs.bindingsDef.push([nkey("page up"), false, false, false, false, "", "pageUp"]); // Page Up
+    var bu = trjs.local.get('bindingsUser');
+    if (bu) {
+        var v = JSON.parse(bu);
+        trjs.bindingsUser = v;
+    } else {
+        trjs.bindingsUser = [];
+        // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+        for (var i = 0; i < trjs.bindingsDef.length; i++) {
+            trjs.bindingsUser.push([ trjs.bindingsDef[i][BINDKEY], trjs.bindingsDef[i][BINDCTRL], trjs.bindingsDef[i][BINDALT],
+                trjs.bindingsDef[i][BINDSHIFT], trjs.bindingsDef[i][BINDMETA], trjs.bindingsDef[i][BINDSUPL], trjs.bindingsDef[i][BINDFUN] ]);
+        }
+    }
+}
+
+function saveUserBindings() {
+    trjs.local.put('bindingsUser', JSON.stringify(trjs.bindingsUser));
+}
 
 trjs.keys.init = function () {
     trjs.keys.initNameToKey();
@@ -98,6 +152,9 @@ trjs.keys.init = function () {
     trjs.keys.initMacrosBindings();
     trjs.keys.initF1Bindings();
     trjs.keys.initF2Bindings();
+
+    // LOAD USER BINDINGS IF THERE EXIST ELSE COPY bindingsDef to bindingsUser
+    loadUserBindings();
 
     trjs.keys.specialChar1 = trjs.keys.modifiersEvent(nkey("f1"), {
         ctrlKey: false,
@@ -112,31 +169,7 @@ trjs.keys.init = function () {
         metaKey: false
     });
 
-    if (trjs.tablekeys !== undefined && trjs.tablekeys !== null) {
-        delete trjs.tablekeys;
-    }
-    trjs.tablekeys = {};
-    for (var i = 0; i < trjs.bindings.length; i++) {
-        trjs.keys.insertBinding(trjs.bindings[i], trjs.tablekeys);
-    }
-    // if API binding
-    for (var i = 0; i < trjs.apiBindings.length; i++) {
-        trjs.keys.insertBinding(trjs.apiBindings[i], trjs.tablekeys);
-    }
-    if (trjs.tablekeysSE1 !== undefined && trjs.tablekeysSE1 !== null) {
-        delete trjs.tablekeysSE1;
-    }
-    trjs.tablekeysSE1 = {};
-    for (var i = 0; i < trjs.F1Bindings.length; i++) {
-        trjs.keys.insertBinding(trjs.F1Bindings[i], trjs.tablekeysSE1);
-    }
-    if (trjs.tablekeysSE2 !== undefined && trjs.tablekeysSE2 !== null) {
-        delete trjs.tablekeysSE2;
-    }
-    trjs.tablekeysSE2 = {};
-    for (var i = 0; i < trjs.F2Bindings.length; i++) {
-        trjs.keys.insertBinding(trjs.F2Bindings[i], trjs.tablekeysSE2);
-    }
+    initTablekeys();
     // key that are never used in isolation but only to modify other keys
     trjs.keys.skipModifierKey.push(nkey('shift'));
     trjs.keys.skipModifierKey.push(nkey('ctrl'));
@@ -171,15 +204,172 @@ trjs.keys.emphasis = function () {
 
 trjs.keys.toHtml = function () {
     var s = '';
-    for (var i in trjs.bindings) {
-        var k = trjs.keyToName[trjs.bindings[i][0]];
+    for (var i in trjs.bindingsUser) {
+        if (trjs.bindingsUser[i][BINDSUPL]) continue;
+        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
         if (!k) k = 'Unknown';
-        if (trjs.bindings[i][0] !== -1) {
+        if (trjs.bindingsUser[i][BINDKEY] !== -1) {
             s += '<tr><td>'
-                + keysToString(k.toUpperCase(), trjs.bindings[i][1], trjs.bindings[i][2], trjs.bindings[i][3], trjs.bindings[i][4])
+                + keysToString(k.toUpperCase(), trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
+                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA])
                 + '</td><td>'
-                + trjs.bindings[i][6]
+                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
                 + '</td></tr>\n';
+        }
+    }
+    return s;
+};
+
+var keyChanging = []; // change
+
+trjs.keys.storeChangeKeys = function() {
+    for (var i in keyChanging) {
+        //  keyChanging[i] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
+        //  trjs.bindingsUser.push([nkey("tab"), false, false, false, false, "", "tab"]); // Tab
+        if (!keyChanging[i].changed) continue;
+        console.log("changing", i, keyChanging[i]);
+        for (var k in trjs.bindingsUser) {
+            if (trjs.bindingsUser[k][BINDFUN] === keyChanging[i].fun) {
+                trjs.bindingsUser[k][BINDKEY] = keyChanging[i].key;
+                trjs.bindingsUser[k][BINDCTRL] = keyChanging[i].ctrl;
+                trjs.bindingsUser[k][BINDALT] = keyChanging[i].alt;
+                trjs.bindingsUser[k][BINDSHIFT] = keyChanging[i].shift;
+                trjs.bindingsUser[k][BINDMETA] = keyChanging[i].ctrl;
+                trjs.bindingsUser[k][BINDSUPL] = keyChanging[i].supl;
+            }
+        }
+    }
+    // regenerate the actual bindings to trjs.tablekeys
+    initTablekeys();
+}
+
+trjs.keys.updateKCSupl = function(element, nth)
+{
+    var idx = element.target.selectedIndex;
+    var val = element.target.options[idx].value;
+    console.log(idx, val, nth, element);
+    if (keyChanging[nth]) {
+        keyChanging[nth].supl = val;
+        keyChanging[nth].changed = true;
+    }
+    console.log("supl", nth, keyChanging[nth]);
+}
+trjs.keys.updateKCCtrl = function(element, nth)
+{
+    var val = element.target.value;
+    console.log(val, nth, element);
+    if (keyChanging[nth]) {
+        keyChanging[nth].ctrl = val==='on' ? true : false;
+        keyChanging[nth].changed = true;
+    }
+    console.log("ctrl", nth, keyChanging[nth]);
+}
+trjs.keys.updateKCAlt = function(element, nth)
+{
+    var val = element.target.value;
+    console.log(val, nth, element);
+    if (keyChanging[nth]) {
+        keyChanging[nth].alt = val==='on' ? true : false;
+        keyChanging[nth].changed = true;
+    }
+    console.log("alt", nth, keyChanging[nth]);
+}
+trjs.keys.updateKCShift = function(element, nth)
+{
+    var val = element.target.value;
+    console.log(val, nth, element);
+    if (keyChanging[nth]) {
+        keyChanging[nth].shift = val==='on' ? true : false;
+        keyChanging[nth].changed = true;
+    }
+    console.log("shift", nth, keyChanging[nth]);
+}
+trjs.keys.updateKCKey = function(element, nth)
+{
+    var idx = element.target.selectedIndex;
+    var val = element.target.options[idx].value;
+    console.log(idx, val, nth, element);
+    if (keyChanging[nth]) {
+        keyChanging[nth].key = Number(val);
+        keyChanging[nth].changed = true;
+    }
+    console.log("key", nth, keyChanging);
+}
+
+function keysChoice(nth, key) {
+    var s = '<select onchange="trjs.keys.updateKCKey(event,' + nth + ');">';
+    for (var i in trjs.keyToName) {
+        s += '<option value="' + i + '" ';
+        if (trjs.keyToName[i] === key) s  += 'selected="selected" ';
+        s += '>' + trjs.keyToName[i].toUpperCase() + '</option>';
+    }
+    s += '</select>';
+    return s;
+}
+
+function keysToStringSupl(nth, fun, key, ctrl, alt, shift, meta, supl) {
+    keyChanging[nth] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
+    var s = '';
+
+    s += '<span class="modkey">Ctrl</span>';
+    s += '<input type="checkbox" name="modctrl" onchange="trjs.keys.updateKCCtrl(event,' + nth + ');" ';
+    if (!trjs.utils.isMacOS()) {
+        if (ctrl) s += 'checked="checked"';
+    } else {
+        if (ctrl || meta) s += 'checked="checked"';
+    }
+    s += ' />';
+
+    s += '<span class="modkey">Alt</span>';
+    s += '<input type="checkbox" onchange="trjs.keys.updateKCAlt(event,' + nth + ');" ';
+    if (alt) s += 'checked="checked"';
+    s += ' />';
+
+    s += '<span class="modkey">Shift</span>';
+    s += '<input type="checkbox" onchange="trjs.keys.updateKCShift(event,' + nth + ');" ';
+    if (shift) s += 'checked="checked"';
+    s += ' />';
+
+    s += '<span class="modkey">Prefix</span>';
+    s += '<select onchange="trjs.keys.updateKCSupl(event,' + nth + ');">';
+    s += '<option value="none" ';
+    if (!supl) s  += 'selected="selected" ';
+    s += '>--</option>';
+    s += '<option value="F1" ';
+    if (supl === 'F1') s  += 'selected="selected" ';
+    s += '>F1</option>';
+    s += '<option value="F2" ';
+    if (supl === 'F2') s  += 'selected="selected" ';
+    s += '>F2</option>';
+    s += '</select>';
+
+    return s;
+}
+
+trjs.keys.chgToHtml = function () {
+    var s = '';
+    keyChanging = [];
+    for (var i in trjs.bindingsUser) {
+        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
+        if (!k) k = 'Unknown';
+        var f = trjs.bindingsUser[i][BINDFUN];
+        if (!f) console.log(i, trjs.bindingsUser[i]);
+        if (trjs.bindingsUser[i][BINDKEY] !== -1 && f) {
+            s += '<tr><td>';
+            s += trjs.bindingsUser[i][BINDFUN];
+            s += '</td><td>';
+            s += keysChoice(i, k);
+            s += '</td><td>';
+            s += keysToStringSupl(i, f, trjs.bindingsUser[i][BINDKEY], trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
+                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA], trjs.bindingsUser[i][BINDSUPL])
+            s += '</td><td>';
+            var c = trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2];
+            if (c) {
+                s += c;
+            }
+            s += '</td><td>';
+            s += trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1];
+            s += '</td></tr>\n';
         }
     }
     return s;
@@ -187,16 +377,18 @@ trjs.keys.toHtml = function () {
 
 trjs.keys.apiToHtml = function () {
     var s = '';
-    for (var i in trjs.apiBindings) {
-        var k = trjs.keyToName[trjs.apiBindings[i][0]];
+    for (var i in trjs.bindingsUser) {
+        if (trjs.bindingsUser[i][BINDSUPL] !== "api") continue;
+        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
         if (!k) k = 'Unknown';
-        if (trjs.apiBindings[i][0] !== -1) {
+        if (trjs.bindingsUser[i][BINDKEY] !== -1) {
             s += '<tr><td>'
-                + keysToString(k.toUpperCase(), trjs.apiBindings[i][1], trjs.apiBindings[i][2], trjs.apiBindings[i][3], trjs.apiBindings[i][4])
+                + keysToString(k.toUpperCase(), trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
+                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA])
                 + '</td><td>'
-                + trjs.apiBindings[i][7]
+                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2]
                 + '</td><td>'
-                + trjs.apiBindings[i][6]
+                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
                 + '</td></tr>\n';
         }
     }
@@ -205,29 +397,39 @@ trjs.keys.apiToHtml = function () {
 
 trjs.keys.f1f2ToHtml = function () {
     var s = '';
-    for (var i in trjs.F1Bindings) {
-        var k = trjs.keyToName[trjs.F1Bindings[i][0]];
+    for (var i in trjs.bindingsUser) {
+        if (trjs.bindingsUser[i][BINDSUPL] !== "F1") continue;
+        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
         if (!k) k = 'Unknown';
-        if (trjs.F1Bindings[i][0] !== -1) {
+        var d = trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2];
+        if (trjs.bindingsUser[i][BINDKEY] !== -1) {
             s += '<tr><td>'
-                + 'F1 /fb/ ' + keysToString(k.toUpperCase(), trjs.F1Bindings[i][1], trjs.F1Bindings[i][2], trjs.F1Bindings[i][3], trjs.F1Bindings[i][4])
+                + keysToString(k.toUpperCase(), trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
+                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA])
                 + '</td><td>'
-                + trjs.utils.notnull(trjs.F1Bindings[i][7])
+                + 'F1'
                 + '</td><td>'
-                + trjs.utils.notnull(trjs.F1Bindings[i][6])
+                + (d === null ? "" : d)
+                + '</td><td>'
+                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
                 + '</td></tr>\n';
         }
     }
-    for (var i in trjs.F2Bindings) {
-        var k = trjs.keyToName[trjs.F2Bindings[i][0]];
+    for (var i in trjs.bindingsUser) {
+        if (trjs.bindingsUser[i][BINDSUPL] !== "F2") continue;
+        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
         if (!k) k = 'Unknown';
-        if (trjs.F2Bindings[i][0] !== -1) {
+        var d = trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2];
+        if (trjs.bindingsUser[i][BINDKEY] !== -1) {
             s += '<tr><td>'
-                + 'F2 /fb/ ' + keysToString(k.toUpperCase(), trjs.F2Bindings[i][1], trjs.F2Bindings[i][2], trjs.F2Bindings[i][3], trjs.F2Bindings[i][4])
+                + keysToString(k.toUpperCase(), trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
+                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA])
                 + '</td><td>'
-                + trjs.utils.notnull(trjs.F2Bindings[i][7])
+                + 'F2'
                 + '</td><td>'
-                + trjs.utils.notnull(trjs.F2Bindings[i][6])
+                + (d === null ? "" : d)
+                + '</td><td>'
+                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
                 + '</td></tr>\n';
         }
     }
@@ -239,13 +441,21 @@ trjs.keys.showKeys = function () {
     $('#bindings-content').html(
         '<p><button id="printbkeys" onclick="trjs.keys.printKeys();">' +
         '<i class="fa fa-print"></i><span id="printkeys"> Print the list of keys</span></button></p>' +
-        '<table id="tableid" class="display"><thead><tr><th id="tkey">Keys</th><th id="tbin">Bindings</th></tr></thead>' +
+        '<table id="tableid" class="display"><thead><tr><th id="tCHGkey">Keys</th><th id="tCHGbin">Value</th></tr></thead>' +
         '<tbody>' + trjs.keys.toHtml() + '</tbody></table>');
-    $('#tableid').dataTable({
-        "scrollY": "350px",
-        "scrollCollapse": true,
-        "paging": false
-    });
+    var h = $(window).height();
+    if (h>400)
+        $('#tableid').dataTable({
+            "scrollY": (h-400) + "px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+    else
+        $('#tableid').dataTable({
+            "scrollY": "auto",
+            "scrollCollapse": true,
+            "paging": false
+        });
     $('#message-bindings').modal({keyboard: true});
 };
 
@@ -256,7 +466,7 @@ trjs.keys.showApiKeys = function () {
         '<table id="tableidapi" class="display"><thead><tr><th id="tapikey">Keys</th><th id="tapibin">API</th><th>Info</th></tr></thead>' +
         '<tbody>' + trjs.keys.apiToHtml() + '</tbody></table>');
     $('#tableidapi').dataTable({
-        "scrollY": "350px",
+        "scrollY": "auto",
         "scrollCollapse": true,
         "paging": false
     });
@@ -265,15 +475,43 @@ trjs.keys.showApiKeys = function () {
 
 trjs.keys.showF1F2Keys = function () {
     $('#F1F2bindings-content').html(
-        '<p><button id="printbapikeys" onclick="trjs.keys.printF1F2Keys();">' +
+        '<p><button id="printbf1f2keys" onclick="trjs.keys.printF1F2Keys();">' +
         '<i class="fa fa-print"></i><span id="printF1F2keys"> Print the list of F1/F2 keys</span></button></p>' +
-        '<table id="tableidF1F2" class="display"><thead><tr><th id="tF1F2key">Keys</th><th id="tF1F2bin">Value</th><th>Info</th></tr></thead>' +
+        '<table id="tableidF1F2" class="display"><thead><tr><th id="tF1F2key">Keys</th><th id="tF1F2prefix">Prefix</th><th id="tF1F2bin">Value</th><th>Info</th></tr></thead>' +
         '<tbody>' + trjs.keys.f1f2ToHtml() + '</tbody></table>');
     $('#tableidF1F2').dataTable({
-        "scrollY": "350px",
+        "scrollY": "auto",
         "scrollCollapse": true,
         "paging": false
     });
+    $('#message-bindings').modal({keyboard: true});
+};
+
+trjs.keys.showChangeKeys = function () {
+    $('#bindings-change').html(
+        '<p><button id="storebChangeKeys" onclick="trjs.keys.storeChangeKeys();">' +
+        '<i class="fa fa-save"></i><span id="storeChangeKeys"> Save the new keys associations</span></button></p>' +
+        '<table id="tableidCHG" class="display"><thead><tr>' +
+        '<th id="tckfun">Function</th>' +
+        '<th id="tckey">Keys</th>' +
+        '<th id="tcmod">Modifiers</th>' +
+        '<th id="tcchars">Chars</th>' +
+        '<th id="tcdesc">Description</th>' +
+        '</tr></thead>' +
+        '<tbody>' + trjs.keys.chgToHtml() + '</tbody></table>');
+    var h = $(window).height();
+    if (h>400)
+        $('#tableidCHG').dataTable({
+            "scrollY": (h-400) + "px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+    else
+        $('#tableidCHG').dataTable({
+            "scrollY": "auto",
+            "scrollCollapse": true,
+            "paging": false
+        });
     $('#message-bindings').modal({keyboard: true});
 };
 
@@ -316,8 +554,12 @@ trjs.keys.initMacrosBindings = function() {
     trjs.macros.loadTable();
     // Ctrl F2 === 113 et Ctrl F12 = 123
     for (var i=0; i<11; i++) {
-        if (trjs.macros.table[i] && trjs.macros.table[i][0])
-            trjs.bindings.push([113+i, true, false, false, 'ctrl', trjs.macros.macrofunction(i), trjs.macros.desc(i) ] ); // Ctrl F(2+i)
+        if (trjs.macros.table[i] && trjs.macros.table[i][0]) {
+            // trjs.keys.functions
+            // "backwardStep": [ trjs.media.backwardStep, trjs.messgs.altbin37, null],
+            trjs.keys.functions["macro"+i] = [ trjs.macros.macrofunction(i), trjs.macros.desc(i), null ];
+            trjs.bindingsDef.push([113+i, true, false, false, 'ctrl', "", "macro"+i ] ); // Ctrl F(2+i)
+        }
     }
 };
 
@@ -608,169 +850,146 @@ trjs.keys.nkey = nkey;
  * for the future it would be good to allow to store and modify this list of bindings
  */
 
-trjs.bindings = [];
-
 trjs.keys.initBindings = function () {
-    /* clé - ctrl alt shift meta function description */
-    trjs.bindings.push([nkey("tab"), false, false, false, false, trjs.events.tab, trjs.messgs.bin9]); // Tab
-    trjs.bindings.push([nkey("newline"), false, false, false, false, trjs.events.enter, trjs.messgs.bin10]); // return Key
-    trjs.bindings.push([nkey("enter"), false, false, false, false, trjs.events.enter, trjs.messgs.bin13]); // return Key
-    trjs.bindings.push([nkey("escape"), false, false, false, false, trjs.events.escape, trjs.messgs.bin27]); // Esc
-    trjs.bindings.push([nkey("page up"), false, false, false, false, trjs.events.pageUp, trjs.messgs.bin33]); // Page Up
-    trjs.bindings.push([nkey("page down"), false, false, false, false, trjs.events.pageDown, trjs.messgs.bin34]); // Page Down
-    trjs.bindings.push([nkey("up arrow"), false, false, false, false, trjs.events.keyUp, trjs.messgs.bin38]); // Up
-    trjs.bindings.push([nkey("down arrow"), false, false, false, false, trjs.events.keyDown, trjs.messgs.bin40]); // Down
-    // reserved for special characters: trjs.bindings.push([nkey("f1"), false, false, false, false, function() {}, trjs.messgs.binxxx]); // F1
-    // reserved for special characters: trjs.bindings.push([nkey("f2"), false, false, false, false, function() {}, trjs.messgs.binxxx]); // F2
-    // trjs.bindings.push([nkey("f3"), false, false, false, false, trjs.media.playJump, trjs.messgs.bin1142]); // F3
-    trjs.bindings.push([nkey("f3"), false, false, false, false, trjs.events.insertWithTimeLocAndRedraw, trjs.messgs.altbin117]); // F3
-    trjs.bindings.push([nkey("f4"), false, false, false, false, trjs.events.setStartAndRedraw, trjs.messgs.bin115]); // F4
-    trjs.bindings.push([nkey("f5"), false, false, false, false, trjs.events.setEndAndRedraw, trjs.messgs.bin116]); // F5
-    trjs.bindings.push([nkey("f6"), false, false, false, false, trjs.events.insertBlankLineLocAndRedraw, trjs.messgs.bin117]); // F6
-    trjs.bindings.push([nkey("f7"), false, false, false, false, trjs.events.runCurrentLine, trjs.messgs.bin118]); // F7
-    trjs.bindings.push([nkey("f8"), false, false, false, false, trjs.events.goContinuous, trjs.messgs.bin119]); // F8
-
-    trjs.bindings.push([nkey("1"), true, false, false, 'ctrl', trjs.events.setNthLoc1, trjs.messgs.ctrlbin49]); // Ctrl 1
-    trjs.bindings.push([nkey("2"), true, false, false, 'ctrl', trjs.events.setNthLoc2, trjs.messgs.ctrlbin50]); // Ctrl 2
-    trjs.bindings.push([nkey("3"), true, false, false, 'ctrl', trjs.events.setNthLoc3, trjs.messgs.ctrlbin51]); // Ctrl 3
-    trjs.bindings.push([nkey("4"), true, false, false, 'ctrl', trjs.events.setNthLoc4, trjs.messgs.ctrlbin52]); // Ctrl 4
-    trjs.bindings.push([nkey("5"), true, false, false, 'ctrl', trjs.events.setNthLoc5, trjs.messgs.ctrlbin53]); // Ctrl 5
-    trjs.bindings.push([nkey("6"), true, false, false, 'ctrl', trjs.events.setNthLoc6, trjs.messgs.ctrlbin54]); // Ctrl 6
-    trjs.bindings.push([nkey("7"), true, false, false, 'ctrl', trjs.events.setNthLoc7, trjs.messgs.ctrlbin55]); // Ctrl 7
-    trjs.bindings.push([nkey("8"), true, false, false, 'ctrl', trjs.events.setNthLoc8, trjs.messgs.ctrlbin56]); // Ctrl 8
-    trjs.bindings.push([nkey("9"), true, false, false, 'ctrl', trjs.events.setNthLoc9, trjs.messgs.ctrlbin57]); // Ctrl 9
-
-    trjs.bindings.push([nkey("end"), true, false, false, 'ctrl', trjs.events.ctrlEnd, trjs.messgs.ctrlbin35]); // Ctrl End
-    trjs.bindings.push([nkey("home"), true, false, false, 'ctrl', trjs.events.ctrlHome, trjs.messgs.ctrlbin36]); // Ctrl Home
-    trjs.bindings.push([nkey("b"), true, false, false, 'ctrl', trjs.events.splitLineLocAndRedraw, trjs.messgs.ctrlbin66]); // Ctrl B
-    trjs.bindings.push([nkey("d"), true, false, false, 'ctrl', trjs.events.deleteLineAndRedraw, trjs.messgs.ctrlbin68]); // Ctrl D
-    trjs.bindings.push([nkey("e"), true, false, false, 'ctrl', trjs.check.currentLineCheck, 'Check current line']); // Ctrl E
-    trjs.bindings.push([nkey("f"), true, false, false, 'ctrl', trjs.editor.showSearch, trjs.messgs.ctrlaltbin70]); // Ctrl F
-    trjs.bindings.push([nkey("g"), true, false, false, 'ctrl', trjs.events.setDivPlusInsert, trjs.messgs.ctrlbin71]); // Ctrl G
-    trjs.bindings.push([nkey("i"), true, false, false, 'ctrl', trjs.events.insertBlankLineAndRedraw, trjs.messgs.ctrlbin73]); // Ctrl I
-    trjs.bindings.push([nkey("j"), true, false, false, 'ctrl', trjs.events.joinLine, trjs.messgs.ctrlbin74]); // Ctrl J
-    trjs.bindings.push([nkey("l"), true, false, false, 'ctrl', trjs.editor.showLine, trjs.messgs.ctrlbin76]); // Ctrl L
-    trjs.bindings.push([nkey("m"), true, false, false, 'ctrl', trjs.events.insertWithTimeAndRedraw, trjs.messgs.ctrlbin77]); // Ctrl M
-    trjs.bindings.push([nkey("o"), true, false, false, 'ctrl', trjs.editor.openTranscript, trjs.messgs.ctrlbin79]); // Ctrl O
-    trjs.bindings.push([nkey("r"), true, false, false, 'ctrl', trjs.events.replicateLineAndRedraw, trjs.messgs.ctrlbin82]); // Ctrl R
-    trjs.bindings.push([nkey("s"), true, false, false, 'ctrl', trjs.editor.save, trjs.messgs.ctrlbin83]); // Ctrl S
-    trjs.bindings.push([nkey("t"), true, false, false, 'ctrl', trjs.editor.showTime, trjs.messgs.ctrlbin84]); // Ctrl T
-    trjs.bindings.push([nkey("u"), true, false, false, 'ctrl', trjs.editor.hideDiv, trjs.messgs.ctrlbin85]); // Ctrl U
-    trjs.bindings.push([nkey("y"), true, false, false, 'ctrl', trjs.undo.redo, trjs.messgs.ctrlbin89]); // Ctrl Y
-    trjs.bindings.push([nkey("z"), true, false, false, 'ctrl', trjs.undo.undo, trjs.messgs.ctrlbin90]); // Ctrl Z
-
-    trjs.bindings.push([nkey("f8"), true, false, false, 'ctrl', trjs.editor.zoomGlobalOut, trjs.messgs.ctrlbin119]); // Ctrl F8
-    trjs.bindings.push([nkey("f9"), true, false, false, 'ctrl', trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin120]); // Ctrl F9
-
-    trjs.bindings.push([nkey("1"), true, false, true, 'ctrl', trjs.events.setDivPlus, trjs.messgs.ctrlshiftbin49]); // Ctrl Shift 1
-    trjs.bindings.push([nkey("2"), true, false, true, 'ctrl', trjs.events.setDivMinus, trjs.messgs.ctrlshiftbin50]); // Ctrl Shift 2
-    trjs.bindings.push([nkey("g"), true, false, true, 'ctrl', trjs.events.setDivMissingMinus, trjs.messgs.ctrlshiftbin71]); // Ctrl Shift G
-    /*
-    trjs.bindings.push([nkey("1"), true, true, false, 'ctrl', trjs.events.setNthTier1, trjs.messgs.ctrlaltbin49]); // Ctrl Alt 1
-    trjs.bindings.push([nkey("2"), true, true, false, 'ctrl', trjs.events.setNthTier2, trjs.messgs.ctrlaltbin50]); // Ctrl Alt 2
-    trjs.bindings.push([nkey("3"), true, true, false, 'ctrl', trjs.events.setNthTier3, trjs.messgs.ctrlaltbin51]); // Ctrl Alt 3
-    trjs.bindings.push([nkey("4"), true, true, false, 'ctrl', trjs.events.setNthTier4, trjs.messgs.ctrlaltbin52]); // Ctrl Alt 4
-    trjs.bindings.push([nkey("5"), true, true, false, 'ctrl', trjs.events.setNthTier5, trjs.messgs.ctrlaltbin53]); // Ctrl Alt 5
-    trjs.bindings.push([nkey("6"), true, true, false, 'ctrl', trjs.events.setNthTier6, trjs.messgs.ctrlaltbin54]); // Ctrl Alt 6
-    trjs.bindings.push([nkey("7"), true, true, false, 'ctrl', trjs.events.setNthTier7, trjs.messgs.ctrlaltbin55]); // Ctrl Alt 7
-    trjs.bindings.push([nkey("8"), true, true, false, 'ctrl', trjs.events.setNthTier8, trjs.messgs.ctrlaltbin56]); // Ctrl Alt 8
-    trjs.bindings.push([nkey("9"), true, true, false, 'ctrl', trjs.events.setNthTier9, trjs.messgs.ctrlaltbin57]); // Ctrl Alt 9
-    */
-    trjs.bindings.push([nkey("a"), true, true, false, 'ctrl', trjs.transcription.selectAllMS, trjs.messgs.ctrlaltbin65]); // Ctrl Alt A
-    trjs.bindings.push([nkey("b"), true, true, false, 'ctrl', trjs.events.splitLineAndRedraw, trjs.messgs.ctrlaltbin66]); // Ctrl Alt B
-    trjs.bindings.push([nkey("d"), true, true, false, 'ctrl', trjs.events.deleteLineLocAndRedraw, trjs.messgs.ctrlaltbin68]); // Ctrl Alt D
-    trjs.bindings.push([nkey("e"), true, true, false, 'ctrl', trjs.events.chooseInputDevice, 'Choose output sound device']); // Ctrl Shift E
-//    trjs.bindings.push([70, true, false, false, 'ctrl', trjs.editor.showSearch, trjs.messgs.ctrlaltbin70]); // Ctrl F
-    trjs.bindings.push([nkey("g"), true, true, false, 'ctrl', trjs.events.setDivMinusInsert, trjs.messgs.ctrlaltbin71]); // Ctrl Alt G
-    trjs.bindings.push([nkey("i"), true, true, false, 'ctrl', trjs.events.setTimeReplaceLocAndRedraw, trjs.messgs.ctrlaltbin73]); // Ctrl Alt I
-    if (trjs.utils.isWindows()) {
-        trjs.bindings.push([nkey("h"), true, true, false, 'ctrl', trjs.events.joinLineLoc, trjs.messgs.ctrlaltbin74]); // Ctrl Alt H
-    } else {
-        trjs.bindings.push([nkey("j"), true, true, false, 'ctrl', trjs.events.joinLineLoc, trjs.messgs.ctrlaltbin74]); // Ctrl Alt J
-    }
-    trjs.bindings.push([nkey("m"), true, true, false, 'ctrl', trjs.events.setTimeReplaceAndRedraw, trjs.messgs.ctrlaltbin77]); // Ctrl Alt M
-    trjs.bindings.push([nkey("o"), true, true, false, 'ctrl', trjs.editor.openMedia, trjs.messgs.ctrlaltbin79]); // Ctrl Alt O
-    trjs.bindings.push([nkey("r"), true, true, false, 'ctrl', trjs.events.splitLineAndRedraw, trjs.messgs.ctrlaltbin82]); // Ctrl Alt R
-    trjs.bindings.push([nkey("u"), true, true, false, 'ctrl', trjs.editor.showDiv, trjs.messgs.ctrlaltbin85]); // Ctrl Alt U
-
-    /*
-    trjs.bindings.push( [nkey("f2"), true, true, false, 'ctrl', trjs.keys.colorRed, trjs.messgs.ctrlaltbin113 ] ); // Ctrl Alt F2
-    trjs.bindings.push( [nkey("f3"), true, true, false, 'ctrl', trjs.keys.colorGreen, trjs.messgs.ctrlaltbin114 ] ); // Ctrl Alt F3
-    trjs.bindings.push( [nkey("f4"), true, true, false, 'ctrl', trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115 ] ); // Ctrl Alt F4
-    trjs.bindings.push( [nkey("f5"), true, true, false, 'ctrl', trjs.keys.bold, trjs.messgs.ctrlaltbin116 ] ); // Ctrl Alt F5
-    trjs.bindings.push( [nkey("f6"), true, true, false, 'ctrl', trjs.keys.italics, trjs.messgs.ctrlaltbin117 ] ); // Ctrl Alt F6
-    trjs.bindings.push( [nkey("f7"), true, true, false, 'ctrl', trjs.keys.emphasis, trjs.messgs.ctrlaltbin118 ] ); // Ctrl Alt F7
-
-    trjs.bindings.push([nkey("f8"), true, true, false, 'ctrl', trjs.media.playSlower, trjs.messgs.ctrlaltbin115]); // Ctrl Alt F8
-    trjs.bindings.push([nkey("f9"), true, true, false, 'ctrl', trjs.media.playFaster, trjs.messgs.ctrlaltbin116]); // Ctrl Alt F9
-    trjs.bindings.push([nkey("f10"), true, true, false, 'ctrl', trjs.media.playReverse, trjs.messgs.ctrlaltbin66]); // Ctrl Alt F10
-    trjs.bindings.push([nkey("f11"), true, true, false, 'ctrl', trjs.media.playNormal, trjs.messgs.ctrlaltbin69]); // Ctrl Alt F11
-    */
-
-    //trjs.bindings.push([119, true, true, false, 'ctrl', trjs.transcription.setMultipleSelection, trjs.messgs.ctrlaltbin119]); // Ctrl Alt F8
-    //trjs.bindings.push([120, true, true, false, 'ctrl', trjs.transcription.exportMStoSubtSrt, trjs.messgs.ctrlaltbin120]); // Ctrl Alt F9
-    //trjs.bindings.push([121, true, true, false, 'ctrl', trjs.transcription.exportMStoSubtAss, trjs.messgs.ctrlaltbin121]); // Ctrl Alt F10
-    //trjs.bindings.push([122, true, true, false, 'ctrl', trjs.transcription.exportMStoMediaSubt, trjs.messgs.ctrlaltbin122]); // Ctrl Alt F11
-    trjs.bindings.push([nkey("f12"), true, true, false, 'ctrl', trjs.transcription.exportMStoMedia, trjs.messgs.ctrlaltbin123]); // Ctrl Alt F12
-
-    trjs.bindings.push([nkey("f1"), false, true, true, false, trjs.macros.generic, trjs.messgs.generic ] ); // Alt Shift F1
-    /* 113 à 123 pour Alt Shift F2 à F12 à converser pour les macros */
-
-    trjs.bindings.push([nkey("left arrow"), false, true, false, false, trjs.media.backwardStep, trjs.messgs.altbin37]); // Alt Left
-    trjs.bindings.push([nkey("up arrow"), false, true, false, false, trjs.events.keyLocUp, trjs.messgs.altbin38]); // Alt Up
-    trjs.bindings.push([nkey("right arrow"), false, true, false, false, trjs.media.forwardStep, trjs.messgs.altbin39]); // Alt Right
-    trjs.bindings.push([nkey("down arrow"), false, true, false, false, trjs.events.keyLocDown, trjs.messgs.altbin40]); // Alt Down
-
-    trjs.bindings.push([nkey("f1"), false, true, false, false, trjs.events.tab, trjs.messgs.bin9]); // Alt F1
-    trjs.bindings.push([nkey("f2"), false, true, false, false, trjs.media.makeSmall, trjs.messgs.altbin113]); // Alt F2
-    trjs.bindings.push([nkey("f3"), false, true, false, false, trjs.media.makeBig, trjs.messgs.altbin114]); // Alt F3
-    trjs.bindings.push([nkey("f6"), false, true, false, false, trjs.events.insertWithTimeLocAndRedraw, trjs.messgs.altbin117]); // Alt F6
-    trjs.bindings.push([nkey("f7"), false, true, false, false, trjs.events.runThreeLines, trjs.messgs.altbin118]); // Alt F7
-    trjs.bindings.push([nkey("f11"), false, true, false, false, trjs.transcription.sort, "sort all lines by times"]); // Alt F11
-    trjs.bindings.push([nkey("f12"), false, true, false, false, trjs.undo.undoList, "display undo/redo list"]); // Alt F12
-
-    trjs.bindings.push([nkey("tab"), false, false, true, false, trjs.events.shiftTab, trjs.messgs.shiftbin9]); // Shift Tab
-    trjs.bindings.push([nkey("f1"), false, false, true, false, trjs.media.playPause, trjs.messgs.shiftbin112]); // Shift F1
-    trjs.bindings.push([nkey("f7"), false, false, true, false, trjs.media.playPause, trjs.messgs.shiftbin112]); // Shift F7
-    trjs.bindings.push([nkey("f6"), false, false, true, false, trjs.events.insertBlankLineLocBeforeAndRedraw, trjs.messgs.shiftbin117]); // Shift F6
-
     /*
      trjs.keys.special1 = function() { console.timeEnd("page"); };
-     trjs.bindings.push( [114, false, false, true, false, trjs.keys.special1, trjs.messgs.shiftbin114 ] ); // Shift F3
-     trjs.bindings.push([115, false, false, true, false, trjs.io.htmlSave, trjs.messgs.shiftbin115]); // Shift F4
+     trjs.bindings.push( [114, false, false, true, false, "special1", trjs.mess]); // Shift F3
+     trjs.bindings.push([115, false, false, true, false, "htmlSave"]); // Shift F4
      */
+    // reserved for special characters: trjs.bindings.push([nkey("f1"), false, false, false, false, function() {}, trjs.messgs.binxxx]); // F1
+    // reserved for special characters: trjs.bindings.push([nkey("f2"), false, false, false, false, function() {}, trjs.messgs.binxxx]); // F2
+
+    // key ctrl alt shift meta supl function_name
+    // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+    // here supl = ""
+    trjs.bindingsDef.push([nkey("tab"), false, false, false, false, "", "tab"]); // Tab
+    trjs.bindingsDef.push([nkey("newline"), false, false, false, false, "", "enter"]); // return Key
+    trjs.bindingsDef.push([nkey("enter"), false, false, false, false, "", "enter"]); // return Key
+    trjs.bindingsDef.push([nkey("escape"), false, false, false, false, "", "escape"]); // Esc
+    trjs.bindingsDef.push([nkey("page up"), false, false, false, false, "", "pageUp"]); // Page Up
+    trjs.bindingsDef.push([nkey("page down"), false, false, false, false, "", "pageDown"]); // Page Down
+    trjs.bindingsDef.push([nkey("up arrow"), false, false, false, false, "", "keyUp"]); // Up
+    trjs.bindingsDef.push([nkey("down arrow"), false, false, false, false, "", "keyDown"]); // Down
+    // trjs.bindingsDef.push([nkey("f3"), false, false, false, false, "", "playJump"]); // F3
+    trjs.bindingsDef.push([nkey("f3"), false, false, false, false, "", "insertWithTimeLoc"]); // F3
+    trjs.bindingsDef.push([nkey("f4"), false, false, false, false, "", "setStart"]); // F4
+    trjs.bindingsDef.push([nkey("f5"), false, false, false, false, "", "setEnd"]); // F5
+    trjs.bindingsDef.push([nkey("f6"), false, false, false, false, "", "insertBlankLineLoc"]); // F6
+    trjs.bindingsDef.push([nkey("f7"), false, false, false, false, "", "runCurrentLine"]); // F7
+    trjs.bindingsDef.push([nkey("f8"), false, false, false, false, "", "goContinuous"]); // F8
+
+    trjs.bindingsDef.push([nkey("1"), true, false, false, 'ctrl', "", "setNthLoc1"]); // Ctrl 1
+    trjs.bindingsDef.push([nkey("2"), true, false, false, 'ctrl', "", "setNthLoc2"]); // Ctrl 2
+    trjs.bindingsDef.push([nkey("3"), true, false, false, 'ctrl', "", "setNthLoc3"]); // Ctrl 3
+    trjs.bindingsDef.push([nkey("4"), true, false, false, 'ctrl', "", "setNthLoc4"]); // Ctrl 4
+    trjs.bindingsDef.push([nkey("5"), true, false, false, 'ctrl', "", "setNthLoc5"]); // Ctrl 5
+    trjs.bindingsDef.push([nkey("6"), true, false, false, 'ctrl', "", "setNthLoc6"]); // Ctrl 6
+    trjs.bindingsDef.push([nkey("7"), true, false, false, 'ctrl', "", "setNthLoc7"]); // Ctrl 7
+    trjs.bindingsDef.push([nkey("8"), true, false, false, 'ctrl', "", "setNthLoc8"]); // Ctrl 8
+    trjs.bindingsDef.push([nkey("9"), true, false, false, 'ctrl', "", "setNthLoc9"]); // Ctrl 9
+
+    trjs.bindingsDef.push([nkey("end"), true, false, false, 'ctrl', "", "ctrlEnd"]); // Ctrl End
+    trjs.bindingsDef.push([nkey("home"), true, false, false, 'ctrl', "", "ctrlHome"]); // Ctrl Home
+    trjs.bindingsDef.push([nkey("b"), true, false, false, 'ctrl', "", "splitLineLoc"]); // Ctrl B
+    trjs.bindingsDef.push([nkey("d"), true, false, false, 'ctrl', "", "deleteLine"]); // Ctrl D
+    trjs.bindingsDef.push([nkey("e"), true, false, false, 'ctrl', "", "currentLineCheck",]); // Ctrl E
+    trjs.bindingsDef.push([nkey("f"), true, false, false, 'ctrl', "", "showSearch"]); // Ctrl F
+    trjs.bindingsDef.push([nkey("g"), true, false, false, 'ctrl', "", "setDivPlusInsert"]); // Ctrl G
+    trjs.bindingsDef.push([nkey("i"), true, false, false, 'ctrl', "", "insertBlankLine"]); // Ctrl I
+    trjs.bindingsDef.push([nkey("j"), true, false, false, 'ctrl', "", "joinLine"]); // Ctrl J
+    trjs.bindingsDef.push([nkey("l"), true, false, false, 'ctrl', "", "showLine"]); // Ctrl L
+    trjs.bindingsDef.push([nkey("m"), true, false, false, 'ctrl', "", "insertWithTime"]); // Ctrl M
+    trjs.bindingsDef.push([nkey("o"), true, false, false, 'ctrl', "", "openTranscript"]); // Ctrl O
+    trjs.bindingsDef.push([nkey("r"), true, false, false, 'ctrl', "", "replicateLine"]); // Ctrl R
+    trjs.bindingsDef.push([nkey("s"), true, false, false, 'ctrl', "", "save"]); // Ctrl S
+    trjs.bindingsDef.push([nkey("t"), true, false, false, 'ctrl', "", "showTime"]); // Ctrl T
+    trjs.bindingsDef.push([nkey("u"), true, false, false, 'ctrl', "", "hideDiv"]); // Ctrl U
+    trjs.bindingsDef.push([nkey("y"), true, false, false, 'ctrl', "", "redo"]); // Ctrl Y
+    trjs.bindingsDef.push([nkey("z"), true, false, false, 'ctrl', "", "undo"]); // Ctrl Z
+
+    trjs.bindingsDef.push([nkey("f8"), true, false, false, 'ctrl', "", "zoomGlobalOut"]); // Ctrl F8
+    trjs.bindingsDef.push([nkey("f9"), true, false, false, 'ctrl', "", "zoomGlobalIn"]); // Ctrl F9
+
+    trjs.bindingsDef.push([nkey("1"), true, false, true, 'ctrl', "", "setDivPlus"]); // Ctrl Shift 1
+    trjs.bindingsDef.push([nkey("2"), true, false, true, 'ctrl', "", "setDivMinus"]); // Ctrl Shift 2
+    trjs.bindingsDef.push([nkey("g"), true, false, true, 'ctrl', "", "setDivMissingMinus"]); // Ctrl Shift G
+
+    trjs.bindingsDef.push([nkey("a"), true, true, false, 'ctrl', "", "selectAllMS"]); // Ctrl Alt A
+    trjs.bindingsDef.push([nkey("b"), true, true, false, 'ctrl', "", "splitLine"]); // Ctrl Alt B
+    trjs.bindingsDef.push([nkey("d"), true, true, false, 'ctrl', "", "deleteLineLoc"]); // Ctrl Alt D
+    trjs.bindingsDef.push([nkey("e"), true, true, false, 'ctrl', "", "chooseInputDevice"]); // Ctrl Shift E
+    // trjs.bindingsDef.push([70, true, false, false, 'ctrl', "", "showSearch"]); // Ctrl F
+    trjs.bindingsDef.push([nkey("g"), true, true, false, 'ctrl', "", "setDivMinusInsert"]); // Ctrl Alt G
+    trjs.bindingsDef.push([nkey("i"), true, true, false, 'ctrl', "", "setTimeReplaceLoc"]); // Ctrl Alt I
+    if (trjs.utils.isWindows()) {
+        trjs.bindingsDef.push([nkey("h"), true, true, false, 'ctrl', "", "joinLineLoc"]); // Ctrl Alt H
+    } else {
+        trjs.bindingsDef.push([nkey("j"), true, true, false, 'ctrl', "", "joinLineLoc"]); // Ctrl Alt J
+    }
+    trjs.bindingsDef.push([nkey("m"), true, true, false, 'ctrl', "", "setTimeReplace"]); // Ctrl Alt M
+    trjs.bindingsDef.push([nkey("o"), true, true, false, 'ctrl', "", "openMedia"]); // Ctrl Alt O
+    trjs.bindingsDef.push([nkey("r"), true, true, false, 'ctrl', "", "splitLine"]); // Ctrl Alt R
+    trjs.bindingsDef.push([nkey("u"), true, true, false, 'ctrl', "", "showDiv"]); // Ctrl Alt U
+
+    //trjs.bindingsDef.push([119, true, true, false, 'ctrl', "", "setMultipleSelection"]); // Ctrl Alt F8
+    //trjs.bindingsDef.push([120, true, true, false, 'ctrl', "", "exportMStoSubtSrt"]); // Ctrl Alt F9
+    //trjs.bindingsDef.push([121, true, true, false, 'ctrl', "", "exportMStoSubtAss"]); // Ctrl Alt F10
+    //trjs.bindingsDef.push([122, true, true, false, 'ctrl', "", "exportMStoMediaSubt"]); // Ctrl Alt F11
+    trjs.bindingsDef.push([nkey("f12"), true, true, false, 'ctrl', "", "exportMStoMedia"]); // Ctrl Alt F12
+
+    trjs.bindingsDef.push([nkey("f1"), false, true, true, false, "", "generic", trjs.mess]); // Alt Shift F1
+    /* 113 à 123 pour Alt Shift F2 à F12 à converser pour les macros */
+
+    trjs.bindingsDef.push([nkey("left arrow"), false, true, false, false, "", "backwardStep"]); // Alt Left
+    trjs.bindingsDef.push([nkey("up arrow"), false, true, false, false, "", "keyLocUp"]); // Alt Up
+    trjs.bindingsDef.push([nkey("right arrow"), false, true, false, false, "", "forwardStep"]); // Alt Right
+    trjs.bindingsDef.push([nkey("down arrow"), false, true, false, false, "", "keyLocDown"]); // Alt Down
+
+    trjs.bindingsDef.push([nkey("f1"), false, true, false, false, "", "tab"]); // Alt F1
+    trjs.bindingsDef.push([nkey("f2"), false, true, false, false, "", "makeSmall"]); // Alt F2
+    trjs.bindingsDef.push([nkey("f3"), false, true, false, false, "", "makeBig"]); // Alt F3
+    trjs.bindingsDef.push([nkey("f6"), false, true, false, false, "", "insertWithTimeLoc"]); // Alt F6
+    trjs.bindingsDef.push([nkey("f7"), false, true, false, false, "", "runThreeLines"]); // Alt F7
+    trjs.bindingsDef.push([nkey("f11"), false, true, false, false, "", "sort"]); // Alt F11
+    trjs.bindingsDef.push([nkey("f12"), false, true, false, false, "", "undoList"]); // Alt F12
+
+    trjs.bindingsDef.push([nkey("tab"), false, false, true, false, "", "shiftTab"]); // Shift Tab
+    trjs.bindingsDef.push([nkey("f1"), false, false, true, false, "", "playPause"]); // Shift F1
+    trjs.bindingsDef.push([nkey("f7"), false, false, true, false, "", "playPause"]); // Shift F7
+    trjs.bindingsDef.push([nkey("f6"), false, false, true, false, "", "insertBlankLineLocBefore"]); // Shift F6
 };
 
 trjs.apiBindings = [];
 
 trjs.keys.initApiBindings = function () {
-    /* clé - ctrl alt shift meta function description */
-    trjs.apiBindings.push([48, false, true, false, false, function () { trjs.api.key(9); }, trjs.api.desc(9), trjs.api.keyValue(9)]); // Alt 0 et Alt @
-    trjs.apiBindings.push([50, false, true, false, false, function () { trjs.api.key(6); }, trjs.api.desc(6), trjs.api.keyValue(6)]); // Alt 2
-    trjs.apiBindings.push([57, false, true, false, false, function () { trjs.api.key(7); }, trjs.api.desc(7), trjs.api.keyValue(7)]); // Alt 9
-    trjs.apiBindings.push([58, false, true, false, false, function () { trjs.api.key(73); }, trjs.api.desc(73), trjs.api.keyValue(73)]); // Alt :
-    trjs.apiBindings.push([65, false, true, false, false, function () { trjs.api.key(19); }, trjs.api.desc(19), trjs.api.keyValue(19)]); // Alt A
-    trjs.apiBindings.push([68, false, true, false, false, function () { trjs.api.key(43); }, trjs.api.desc(43), trjs.api.keyValue(43)]); // Alt D
-    trjs.apiBindings.push([69, false, true, false, false, function () { trjs.api.key(3); }, trjs.api.desc(3), trjs.api.keyValue(3)]); // Alt E
-    trjs.apiBindings.push([72, false, true, false, false, function () { trjs.api.key(71); }, trjs.api.desc(71), trjs.api.keyValue(71)]); // Alt H
-    trjs.apiBindings.push([73, false, true, false, false, function () { trjs.api.key(1); }, trjs.api.desc(1), trjs.api.keyValue(1)]); // Alt I
-    trjs.apiBindings.push([74, false, true, false, false, function () { trjs.api.key(60); }, trjs.api.desc(60), trjs.api.keyValue(60)]); // Alt J
-    trjs.apiBindings.push([78, false, true, false, false, function () { trjs.api.key(61); }, trjs.api.desc(61), trjs.api.keyValue(61)]); // Alt N
-    trjs.apiBindings.push([79, false, true, false, false, function () { trjs.api.key(23); }, trjs.api.desc(23), trjs.api.keyValue(23)]); // Alt O
-    trjs.apiBindings.push([81, false, true, false, false, function () { trjs.api.key(24); }, trjs.api.desc(24), trjs.api.keyValue(24)]); // Alt Q
-    trjs.apiBindings.push([82, false, true, false, false, function () { trjs.api.key(68); }, trjs.api.desc(68), trjs.api.keyValue(68)]); // Alt R
-    trjs.apiBindings.push([83, false, true, false, false, function () { trjs.api.key(46); }, trjs.api.desc(46), trjs.api.keyValue(46)]); // Alt S
-    trjs.apiBindings.push([84, false, true, false, false, function () { trjs.api.key(42); }, trjs.api.desc(42), trjs.api.keyValue(42)]); // Alt T
-    trjs.apiBindings.push([85, false, true, false, false, function () { trjs.api.key(21); }, trjs.api.desc(21), trjs.api.keyValue(21)]); // Alt U
-    trjs.apiBindings.push([86, false, true, false, false, function () { trjs.api.key(18); }, trjs.api.desc(18), trjs.api.keyValue(18)]); // Alt V
-    trjs.apiBindings.push([88, false, true, false, false, function () { trjs.api.key(51); }, trjs.api.desc(51), trjs.api.keyValue(51)]); // Alt X
-    trjs.apiBindings.push([90, false, true, false, false, function () { trjs.api.key(47); }, trjs.api.desc(47), trjs.api.keyValue(47)]); // Alt Z
-    trjs.apiBindings.push([78, false, true, true, false, function () { trjs.api.key(74); }, trjs.api.desc(74), trjs.api.keyValue(74)]); // Alt Shift N
-    trjs.apiBindings.push([69, false, true, true, false, function () { trjs.api.key(75); }, trjs.api.desc(75), trjs.api.keyValue(75)]); // Shift Alt E
-    trjs.apiBindings.push([57, false, true, true, false, function () { trjs.api.key(76); }, trjs.api.desc(76), trjs.api.keyValue(76)]); // Shift Alt 9
-    trjs.apiBindings.push([79, false, true, true, false, function () { trjs.api.key(77); }, trjs.api.desc(77), trjs.api.keyValue(77)]); // Shift Alt O
-    trjs.apiBindings.push([65, false, true, true, false, function () { trjs.api.key(78); }, trjs.api.desc(78), trjs.api.keyValue(78)]); // Shift Alt A
-    trjs.apiBindings.push([82, false, true, true, false, function () { trjs.api.key(79); }, trjs.api.desc(79), trjs.api.keyValue(79)]); // Shift Alt R
+    // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+    // here supl = "api"
+    trjs.bindingsDef.push([48, false, true, false, false, "api", "api.key(9)"]); // Alt 0 et Alt @
+    trjs.bindingsDef.push([50, false, true, false, false, "api", "api.key(6)"]); // Alt 2
+    trjs.bindingsDef.push([57, false, true, false, false, "api", "api.key(7)"]); // Alt 9
+    trjs.bindingsDef.push([58, false, true, false, false, "api", "api.key(73)"]); // Alt :
+    trjs.bindingsDef.push([65, false, true, false, false, "api", "api.key(19)"]); // Alt A
+    trjs.bindingsDef.push([68, false, true, false, false, "api", "api.key(43)"]); // Alt D
+    trjs.bindingsDef.push([69, false, true, false, false, "api", "api.key(3)"]); // Alt E
+    trjs.bindingsDef.push([72, false, true, false, false, "api", "api.key(71)"]); // Alt H
+    trjs.bindingsDef.push([73, false, true, false, false, "api", "api.key(1)"]); // Alt I
+    trjs.bindingsDef.push([74, false, true, false, false, "api", "api.key(60)"]); // Alt J
+    trjs.bindingsDef.push([78, false, true, false, false, "api", "api.key(61)"]); // Alt N
+    trjs.bindingsDef.push([79, false, true, false, false, "api", "api.key(23)"]); // Alt O
+    trjs.bindingsDef.push([81, false, true, false, false, "api", "api.key(24)"]); // Alt Q
+    trjs.bindingsDef.push([82, false, true, false, false, "api", "api.key(68)"]); // Alt R
+    trjs.bindingsDef.push([83, false, true, false, false, "api", "api.key(46)"]); // Alt S
+    trjs.bindingsDef.push([84, false, true, false, false, "api", "api.key(42)"]); // Alt T
+    trjs.bindingsDef.push([85, false, true, false, false, "api", "api.key(21)"]); // Alt U
+    trjs.bindingsDef.push([86, false, true, false, false, "api", "api.key(18)"]); // Alt V
+    trjs.bindingsDef.push([88, false, true, false, false, "api", "api.key(51)"]); // Alt X
+    trjs.bindingsDef.push([90, false, true, false, false, "api", "api.key(47)"]); // Alt Z
+    trjs.bindingsDef.push([78, false, true, true, false, "api", "api.key(74)"]); // Alt Shift N
+    trjs.bindingsDef.push([69, false, true, true, false, "api", "api.key(75)"]); // Shift Alt E
+    trjs.bindingsDef.push([57, false, true, true, false, "api", "api.key(76)"]); // Shift Alt 9
+    trjs.bindingsDef.push([79, false, true, true, false, "api", "api.key(77)"]); // Shift Alt O
+    trjs.bindingsDef.push([65, false, true, true, false, "api", "api.key(78)"]); // Shift Alt A
+    trjs.bindingsDef.push([82, false, true, true, false, "api", "api.key(79)"]); // Shift Alt R
 
 // liste des caractère nom de domaine internationaux pour le français : ß à á â ã ä å æ ç è é ê ë ì í î ï ñ ò ó ô õ ö ù ú û ü ý ÿ œ
 };
@@ -830,39 +1049,40 @@ trjs.F1.desc = function (k) {
 trjs.F1Bindings = [];
 
 trjs.keys.initF1Bindings = function () {
-    /* clé - ctrl alt shift meta function description value */
-    trjs.F1Bindings.push([nkey("up arrow"), false, false, false, false, function () { trjs.F1.key(0); }, trjs.F1.desc(0), trjs.F1.keyValue(0)]); // up arrow
-    trjs.F1Bindings.push([nkey("down arrow"), false, false, false, false, function () { trjs.F1.key(1); }, trjs.F1.desc(1), trjs.F1.keyValue(1)]); //
-    trjs.F1Bindings.push([nkey("1"), false, false, false, false, function () { trjs.F1.key(2); }, trjs.F1.desc(2), trjs.F1.keyValue(2)]); //
-    trjs.F1Bindings.push([nkey("2"), false, false, false, false, function () { trjs.F1.key(3); }, trjs.F1.desc(3), trjs.F1.keyValue(3)]); //
-    trjs.F1Bindings.push([nkey("3"), false, false, false, false, function () { trjs.F1.key(4); }, trjs.F1.desc(4), trjs.F1.keyValue(4)]); //
-    trjs.F1Bindings.push([nkey("4"), false, false, false, false, function () { trjs.F1.key(5); }, trjs.F1.desc(5), trjs.F1.keyValue(5)]); //
-    trjs.F1Bindings.push([nkey("5"), false, false, false, false, function () { trjs.F1.key(6); }, trjs.F1.desc(6), trjs.F1.keyValue(6)]); //
-    trjs.F1Bindings.push([nkey("6"), false, false, false, false, function () { trjs.F1.key(7); }, trjs.F1.desc(7), trjs.F1.keyValue(7)]); //
-    trjs.F1Bindings.push([nkey("equal sign"), false, false, false, false, function () { trjs.F1.key(8); }, trjs.F1.desc(8), trjs.F1.keyValue(8)]); //
-    trjs.F1Bindings.push([nkey("add"), false, false, true, false, function () { trjs.F1.key(9); }, trjs.F1.desc(9), trjs.F1.keyValue(9)]); //
-    trjs.F1Bindings.push([nkey("u"), false, false, false, false, function () { trjs.F1.key(10); }, trjs.F1.desc(10), trjs.F1.keyValue(10)]); //
-    trjs.F1Bindings.push([nkey("period"), false, false, false, false, function () { trjs.F1.key(11); }, trjs.F1.desc(11), trjs.F1.keyValue(11)]); //
-    trjs.F1Bindings.push([nkey("open square bracket"), false, false, false, false, function () { trjs.F1.key(12); }, trjs.F1.desc(12), trjs.F1.keyValue(12)]); //
-    trjs.F1Bindings.push([nkey("close square bracket"), false, false, false, false, function () { trjs.F1.key(13); }, trjs.F1.desc(13), trjs.F1.keyValue(13)]); //
-    trjs.F1Bindings.push([nkey("open square bracket"), false, false, true, false, function () { trjs.F1.key(14); }, trjs.F1.desc(14), trjs.F1.keyValue(14)]); //
-    trjs.F1Bindings.push([nkey("close square bracket"), false, false, true, false, function () { trjs.F1.key(15); }, trjs.F1.desc(15), trjs.F1.keyValue(15)]); //
-    trjs.F1Bindings.push([nkey("right arrow"), false, false, false, false, function () { trjs.F1.key(16); }, trjs.F1.desc(16), trjs.F1.keyValue(16)]); //
-    trjs.F1Bindings.push([nkey("left arrow"), false, false, false, false, function () { trjs.F1.key(17); }, trjs.F1.desc(17), trjs.F1.keyValue(17)]); //
-    trjs.F1Bindings.push([nkey("star"), false, false, false, false, function () { trjs.F1.key(18); }, trjs.F1.desc(18), trjs.F1.keyValue(18)]); //
-    trjs.F1Bindings.push([nkey("forward slash"), false, false, true, false, function () { trjs.F1.key(19); }, trjs.F1.desc(19), trjs.F1.keyValue(19)]); //
-    trjs.F1Bindings.push([nkey("close parenthesis"), false, false, false, false, function () { trjs.F1.key(20); }, trjs.F1.desc(20), trjs.F1.keyValue(20)]); //
-    trjs.F1Bindings.push([nkey("d"), false, false, false, false, function () { trjs.F1.key(21); }, trjs.F1.desc(21), trjs.F1.keyValue(21)]); //
-    trjs.F1Bindings.push([nkey("h"), false, false, false, false, function () { trjs.F1.key(22); }, trjs.F1.desc(22), trjs.F1.keyValue(22)]); //
-    trjs.F1Bindings.push([nkey("l"), false, false, false, false, function () { trjs.F1.key(23); }, trjs.F1.desc(23), trjs.F1.keyValue(23)]); //
-    trjs.F1Bindings.push([nkey("b"), false, false, false, false, function () { trjs.F1.key(24); }, trjs.F1.desc(24), trjs.F1.keyValue(24)]); //
-    trjs.F1Bindings.push([nkey("w"), false, false, false, false, function () { trjs.F1.key(25); }, trjs.F1.desc(25), trjs.F1.keyValue(25)]); //
-    trjs.F1Bindings.push([nkey("y"), false, false, false, false, function () { trjs.F1.key(26); }, trjs.F1.desc(26), trjs.F1.keyValue(26)]); //
-    trjs.F1Bindings.push([nkey("s"), false, false, false, false, function () { trjs.F1.key(27); }, trjs.F1.desc(27), trjs.F1.keyValue(27)]); //
-    trjs.F1Bindings.push([nkey("p"), false, false, false, false, function () { trjs.F1.key(28); }, trjs.F1.desc(28), trjs.F1.keyValue(28)]); //
-    trjs.F1Bindings.push([nkey("n"), false, false, false, false, function () { trjs.F1.key(29); }, trjs.F1.desc(29), trjs.F1.keyValue(29)]); //
-    trjs.F1Bindings.push([nkey("r"), false, false, false, false, function () { trjs.F1.key(30); }, trjs.F1.desc(30), trjs.F1.keyValue(30)]); //
-    trjs.F1Bindings.push([nkey("c"), false, false, false, false, function () { trjs.F1.key(31); }, trjs.F1.desc(31), trjs.F1.keyValue(31)]); //
+    // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+    // here supl = "F1"
+    trjs.bindingsDef.push([nkey("up arrow"), false, false, false, false, "F1", "F1.key(0)"]); // up arrow
+    trjs.bindingsDef.push([nkey("down arrow"), false, false, false, false, "F1", "F1.key(1)"]); //
+    trjs.bindingsDef.push([nkey("1"), false, false, false, false, "F1", "F1.key(2)"]); //
+    trjs.bindingsDef.push([nkey("2"), false, false, false, false, "F1", "F1.key(3)"]); //
+    trjs.bindingsDef.push([nkey("3"), false, false, false, false, "F1", "F1.key(4)"]); //
+    trjs.bindingsDef.push([nkey("4"), false, false, false, false, "F1", "F1.key(5)"]); //
+    trjs.bindingsDef.push([nkey("5"), false, false, false, false, "F1", "F1.key(6)"]); //
+    trjs.bindingsDef.push([nkey("6"), false, false, false, false, "F1", "F1.key(7)"]); //
+    trjs.bindingsDef.push([nkey("equal sign"), false, false, false, false, "F1", "F1.key(8)"]); //
+    trjs.bindingsDef.push([nkey("add"), false, false, true, false, "F1", "F1.key(9)"]); //
+    trjs.bindingsDef.push([nkey("u"), false, false, false, false, "F1", "F1.key(10)"]); //
+    trjs.bindingsDef.push([nkey("period"), false, false, false, false, "F1", "F1.key(11)"]); //
+    trjs.bindingsDef.push([nkey("open square bracket"), false, false, false, false, "F1", "F1.key(12)"]); //
+    trjs.bindingsDef.push([nkey("close square bracket"), false, false, false, false, "F1", "F1.key(13)"]); //
+    trjs.bindingsDef.push([nkey("open square bracket"), false, false, true, false, "F1", "F1.key(14)"]); //
+    trjs.bindingsDef.push([nkey("close square bracket"), false, false, true, false, "F1", "F1.key(15)"]); //
+    trjs.bindingsDef.push([nkey("right arrow"), false, false, false, false, "F1", "F1.key(16)"]); //
+    trjs.bindingsDef.push([nkey("left arrow"), false, false, false, false, "F1", "F1.key(17)"]); //
+    trjs.bindingsDef.push([nkey("star"), false, false, false, false, "F1", "F1.key(18)"]); //
+    trjs.bindingsDef.push([nkey("forward slash"), false, false, true, false, "F1", "F1.key(19)"]); //
+    trjs.bindingsDef.push([nkey("close parenthesis"), false, false, false, false, "F1", "F1.key(20)"]); //
+    trjs.bindingsDef.push([nkey("d"), false, false, false, false, "F1", "F1.key(21)"]); //
+    trjs.bindingsDef.push([nkey("h"), false, false, false, false, "F1", "F1.key(22)"]); //
+    trjs.bindingsDef.push([nkey("l"), false, false, false, false, "F1", "F1.key(23)"]); //
+    trjs.bindingsDef.push([nkey("b"), false, false, false, false, "F1", "F1.key(24)"]); //
+    trjs.bindingsDef.push([nkey("w"), false, false, false, false, "F1", "F1.key(25)"]); //
+    trjs.bindingsDef.push([nkey("y"), false, false, false, false, "F1", "F1.key(26)"]); //
+    trjs.bindingsDef.push([nkey("s"), false, false, false, false, "F1", "F1.key(27)"]); //
+    trjs.bindingsDef.push([nkey("p"), false, false, false, false, "F1", "F1.key(28)"]); //
+    trjs.bindingsDef.push([nkey("n"), false, false, false, false, "F1", "F1.key(29)"]); //
+    trjs.bindingsDef.push([nkey("r"), false, false, false, false, "F1", "F1.key(30)"]); //
+    trjs.bindingsDef.push([nkey("c"), false, false, false, false, "F1", "F1.key(31)"]); //
 };
 
 trjs.F2 = {};
@@ -903,59 +1123,247 @@ trjs.F2.desc = function (k) {
 trjs.F2Bindings = [];
 
 trjs.keys.initF2Bindings = function () {
-    // clé - ctrl alt shift meta function description value
-    trjs.F2Bindings.push([nkey("t"), false, false, false, false, function () { trjs.F2.key(0); }, trjs.F2.desc(0), trjs.F2.keyValue(0)]); // up arrow
-    trjs.F2Bindings.push([nkey("v"), false, false, false, false, function () { trjs.F2.key(1); }, trjs.F2.desc(1), trjs.F2.keyValue(1)]); //
-    trjs.F2Bindings.push([nkey("comma"), false, false, false, false, function () { trjs.F2.key(2); }, trjs.F2.desc(2), trjs.F2.keyValue(2)]); //
-    trjs.F2Bindings.push([nkey("h"), false, false, false, false, function () { trjs.F2.key(3); }, trjs.F2.desc(3), trjs.F2.keyValue(3)]); //
-    trjs.F2Bindings.push([nkey("minus"), false, false, false, false, function () { trjs.F2.key(4); }, trjs.F2.desc(4), trjs.F2.keyValue(4)]); //
-    trjs.F2Bindings.push([nkey("q"), false, false, false, false, function () { trjs.F2.key(5); }, trjs.F2.desc(5), trjs.F2.keyValue(5)]); //
-    trjs.F2Bindings.push([nkey("q"), false, false, true, false, function () { trjs.F2.key(6); }, trjs.F2.desc(6), trjs.F2.keyValue(6)]); //
-    trjs.F2Bindings.push([nkey("semi-colon"), false, false, false, false, function () { trjs.F2.key(7); }, trjs.F2.desc(7), trjs.F2.keyValue(7)]); //
-    trjs.F2Bindings.push([nkey("1"), false, false, false, false, function () { trjs.F2.key(8); }, trjs.F2.desc(8), trjs.F2.keyValue(8)]); //
-    trjs.F2Bindings.push([nkey("2"), false, false, false, false, function () { trjs.F2.key(9); }, trjs.F2.desc(9), trjs.F2.keyValue(9)]); //
-    trjs.F2Bindings.push([nkey("lesser than"), false, false, false, false, function () { trjs.F2.key(10); }, trjs.F2.desc(10), trjs.F2.keyValue(10)]); //
-    trjs.F2Bindings.push([nkey("greater than"), false, false, false, false, function () { trjs.F2.key(11); }, trjs.F2.desc(11), trjs.F2.keyValue(11)]); //
-    trjs.F2Bindings.push([nkey("open curly bracket"), false, false, false, false, function () { trjs.F2.key(12); }, trjs.F2.desc(12), trjs.F2.keyValue(12)]); //
-    trjs.F2Bindings.push([nkey("close curly bracket"), false, false, false, false, function () { trjs.F2.key(13); }, trjs.F2.desc(13), trjs.F2.keyValue(13)]); //
-    trjs.F2Bindings.push([nkey("single quote"), false, false, false, false, function () { trjs.F2.key(14); }, trjs.F2.desc(14), trjs.F2.keyValue(14)]); //
-    trjs.F2Bindings.push([nkey("double quote"), false, false, false, false, function () { trjs.F2.key(15); }, trjs.F2.desc(15), trjs.F2.keyValue(15)]); //
+    // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+    // here supl = "F2"
+    trjs.bindingsDef.push([nkey("t"), false, false, false, false, "F2", "F2.key(0)"]); // up arrow
+    trjs.bindingsDef.push([nkey("v"), false, false, false, false, "F2", "F2.key(1)"]); //
+    trjs.bindingsDef.push([nkey("comma"), false, false, false, false, "F2", "F2.key(2)"]); //
+    trjs.bindingsDef.push([nkey("h"), false, false, false, false, "F2", "F2.key(3)"]); //
+    trjs.bindingsDef.push([nkey("minus"), false, false, false, false, "F2", "F2.key(4)"]); //
+    trjs.bindingsDef.push([nkey("q"), false, false, false, false, "F2", "F2.key(5)"]); //
+    trjs.bindingsDef.push([nkey("q"), false, false, true, false, "F2", "F2.key(6)"]); //
+    trjs.bindingsDef.push([nkey("semi-colon"), false, false, false, false, "F2", "F2.key(7)"]); //
+    trjs.bindingsDef.push([nkey("1"), false, false, false, false, "F2", "F2.key(8)"]); //
+    trjs.bindingsDef.push([nkey("2"), false, false, false, false, "F2", "F2.key(9)"]); //
+    trjs.bindingsDef.push([nkey("lesser than"), false, false, false, false, "F2", "F2.key(10)"]); //
+    trjs.bindingsDef.push([nkey("greater than"), false, false, false, false, "F2", "F2.key(11)"]); //
+    trjs.bindingsDef.push([nkey("open curly bracket"), false, false, false, false, "F2", "F2.key(12)"]); //
+    trjs.bindingsDef.push([nkey("close curly bracket"), false, false, false, false, "F2", "F2.key(13)"]); //
+    trjs.bindingsDef.push([nkey("single quote"), false, false, false, false, "F2", "F2.key(14)"]); //
+    trjs.bindingsDef.push([nkey("double quote"), false, false, false, false, "F2", "F2.key(15)"]); //
 
-    trjs.F2Bindings.push( [nkey("f3"), false, false, false, false, trjs.events.setNthLoc1, trjs.messgs.ctrlbin49]); // F2 F3
-    trjs.F2Bindings.push( [nkey("f4"), false, false, false, false, trjs.events.setNthLoc2, trjs.messgs.ctrlbin50]); // F2 F4
-    trjs.F2Bindings.push( [nkey("f5"), false, false, false, false, trjs.events.setNthLoc3, trjs.messgs.ctrlbin51]); // F2 F5
-    trjs.F2Bindings.push( [nkey("f6"), false, false, false, false, trjs.events.setNthLoc4, trjs.messgs.ctrlbin52]); // F2 F6
-    trjs.F2Bindings.push( [nkey("f7"), false, false, false, false, trjs.events.setNthLoc5, trjs.messgs.ctrlbin53]); // F2 F7
-    trjs.F2Bindings.push( [nkey("f8"), false, false, false, false, trjs.events.setNthLoc6, trjs.messgs.ctrlbin54]); // F2 F8
-    trjs.F2Bindings.push( [nkey("f9"), false, false, false, false, trjs.events.setNthLoc7, trjs.messgs.ctrlbin55]); // F2 F9
-    trjs.F2Bindings.push([nkey("f10"), false, false, false, false, trjs.events.setNthLoc8, trjs.messgs.ctrlbin56]); // F2 F10
-    trjs.F2Bindings.push([nkey("f11"), false, false, false, false, trjs.events.setNthLoc9, trjs.messgs.ctrlbin57]); // F2 F11
+    trjs.bindingsDef.push( [nkey("f3"), false, false, false, false, "F2", "setNthLoc1" ]); // F2 F3
+    trjs.bindingsDef.push( [nkey("f4"), false, false, false, false, "F2", "setNthLoc2" ]); // F2 F4
+    trjs.bindingsDef.push( [nkey("f5"), false, false, false, false, "F2", "setNthLoc3" ]); // F2 F5
+    trjs.bindingsDef.push( [nkey("f6"), false, false, false, false, "F2", "setNthLoc4" ]); // F2 F6
+    trjs.bindingsDef.push( [nkey("f7"), false, false, false, false, "F2", "setNthLoc5" ]); // F2 F7
+    trjs.bindingsDef.push( [nkey("f8"), false, false, false, false, "F2", "setNthLoc6" ]); // F2 F8
+    trjs.bindingsDef.push( [nkey("f9"), false, false, false, false, "F2", "setNthLoc7" ]); // F2 F9
+    trjs.bindingsDef.push([nkey("f10"), false, false, false, false, "F2", "setNthLoc8" ]); // F2 F10
+    trjs.bindingsDef.push([nkey("f11"), false, false, false, false, "F2", "setNthLoc9" ]); // F2 F11
 
-    trjs.F2Bindings.push( [nkey("f3"), true, true, false, 'ctrl', trjs.events.setNthTier1, trjs.messgs.ctrlaltbin49]); // F2 ctrl alt F3
-    trjs.F2Bindings.push( [nkey("f4"), true, true, false, 'ctrl', trjs.events.setNthTier2, trjs.messgs.ctrlaltbin50]); // F2 ctrl alt F4
-    trjs.F2Bindings.push( [nkey("f5"), true, true, false, 'ctrl', trjs.events.setNthTier3, trjs.messgs.ctrlaltbin51]); // F2 ctrl alt F5
-    trjs.F2Bindings.push( [nkey("f6"), true, true, false, 'ctrl', trjs.events.setNthTier4, trjs.messgs.ctrlaltbin52]); // F2 ctrl alt F6
-    trjs.F2Bindings.push( [nkey("f7"), true, true, false, 'ctrl', trjs.events.setNthTier5, trjs.messgs.ctrlaltbin53]); // F2 ctrl alt F7
-    trjs.F2Bindings.push( [nkey("f8"), true, true, false, 'ctrl', trjs.events.setNthTier6, trjs.messgs.ctrlaltbin54]); // F2 ctrl alt F8
-    trjs.F2Bindings.push( [nkey("f9"), true, true, false, 'ctrl', trjs.events.setNthTier7, trjs.messgs.ctrlaltbin55]); // F2 ctrl alt F9
-    trjs.F2Bindings.push([nkey("f10"), true, true, false, 'ctrl', trjs.events.setNthTier8, trjs.messgs.ctrlaltbin56]); // F2 ctrl alt F10
-    trjs.F2Bindings.push([nkey("f11"), true, true, false, 'ctrl', trjs.events.setNthTier9, trjs.messgs.ctrlaltbin57]); // F2 ctrl alt F11
+    trjs.bindingsDef.push( [nkey("f3"), true, true, false, 'ctrl', "F2", "setNthTier1" ]); // F2 ctrl alt F3
+    trjs.bindingsDef.push( [nkey("f4"), true, true, false, 'ctrl', "F2", "setNthTier2" ]); // F2 ctrl alt F4
+    trjs.bindingsDef.push( [nkey("f5"), true, true, false, 'ctrl', "F2", "setNthTier3" ]); // F2 ctrl alt F5
+    trjs.bindingsDef.push( [nkey("f6"), true, true, false, 'ctrl', "F2", "setNthTier4" ]); // F2 ctrl alt F6
+    trjs.bindingsDef.push( [nkey("f7"), true, true, false, 'ctrl', "F2", "setNthTier5" ]); // F2 ctrl alt F7
+    trjs.bindingsDef.push( [nkey("f8"), true, true, false, 'ctrl', "F2", "setNthTier6" ]); // F2 ctrl alt F8
+    trjs.bindingsDef.push( [nkey("f9"), true, true, false, 'ctrl', "F2", "setNthTier7" ]); // F2 ctrl alt F9
+    trjs.bindingsDef.push([nkey("f10"), true, true, false, 'ctrl', "F2", "setNthTier8" ]); // F2 ctrl alt F10
+    trjs.bindingsDef.push([nkey("f11"), true, true, false, 'ctrl', "F2", "setNthTier9" ]); // F2 ctrl alt F11
 
-    trjs.F2Bindings.push( [nkey("f5"), false, true, false, false, trjs.keys.colorRed, trjs.messgs.ctrlaltbin113, 'RED' ] ); // F2 alt F5
-    trjs.F2Bindings.push( [nkey("f6"), false, true, false, false, trjs.keys.colorGreen, trjs.messgs.ctrlaltbin114, 'GREEN' ] ); // F2 alt F6
-    trjs.F2Bindings.push( [nkey("f7"), false, true, false, false, trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115, 'BLUE' ] ); // F2 alt F7
-    trjs.F2Bindings.push( [nkey("f8"), false, true, false, false, trjs.keys.bold, trjs.messgs.ctrlaltbin116, 'BOLD' ] ); // F2 alt F8
-    trjs.F2Bindings.push( [nkey("f9"), false, true, false, false, trjs.keys.italics, trjs.messgs.ctrlaltbin117, 'ITALICS' ] ); // F2 alt F9
-    trjs.F2Bindings.push( [nkey("f10"), false, true, false, false, trjs.keys.emphasis, trjs.messgs.ctrlaltbin118, 'EMPHASIS' ] ); // F2 alt F10
+    trjs.bindingsDef.push( [nkey("f5"), false, true, false, false, "F2", "colorRed" ]); // 'RED' ] ); // F2 alt F5
+    trjs.bindingsDef.push( [nkey("f6"), false, true, false, false, "F2", "colorGreen" ]); // 'GREEN' ] ); // F2 alt F6
+    trjs.bindingsDef.push( [nkey("f7"), false, true, false, false, "F2", "colorBlue" ]); // 'BLUE' ] ); // F2 alt F7
+    trjs.bindingsDef.push( [nkey("f8"), false, true, false, false, "F2", "bold" ]); // 'BOLD' ] ); // F2 alt F8
+    trjs.bindingsDef.push( [nkey("f9"), false, true, false, false, "F2", "italics" ]); // 'ITALICS' ] ); // F2 alt F9
+    trjs.bindingsDef.push( [nkey("f10"), false, true, false, false, "F2", "emphasis" ]); // 'EMPHASIS' ] ); // F2 alt F10
 
-    trjs.F2Bindings.push([nkey("f9"), true, true, false, false, trjs.media.playSlower, trjs.messgs.ctrlaltbin115]); // F2 ctrl alt F9
-    trjs.F2Bindings.push([nkey("f10"), true, true, false, false, trjs.media.playFaster, trjs.messgs.ctrlaltbin116]); // F2 ctrl alt F10
-    trjs.F2Bindings.push([nkey("f11"), true, true, false, false, trjs.media.playReverse, trjs.messgs.ctrlaltbin66]); // F2 ctrl alt F11
-    trjs.F2Bindings.push([nkey("f12"), true, true, false, false, trjs.media.playNormal, trjs.messgs.ctrlaltbin69]); // F2 ctrl alt F12
+    trjs.bindingsDef.push([nkey("f9"), true, true, false, false, "F2", "playSlower" ]); // F2 ctrl alt F9
+    trjs.bindingsDef.push([nkey("f10"), true, true, false, false, "F2", "playFaster" ]); // F2 ctrl alt F10
+    trjs.bindingsDef.push([nkey("f11"), true, true, false, false, "F2", "playReverse" ]); // F2 ctrl alt F11
+    trjs.bindingsDef.push([nkey("f12"), true, true, false, false, "F2", "playNormal" ]); // F2 ctrl alt F12
 
-    //trjs.F2Bindings.push([119, false, false, false, false, trjs.transcription.setMultipleSelection, trjs.messgs.ctrlaltbin119]); // Ctrl Alt F8
-    //trjs.F2Bindings.push([120, false, false, false, false, trjs.transcription.exportMStoSubtSrt, trjs.messgs.ctrlaltbin120]); // Ctrl Alt F9
-    //trjs.F2Bindings.push([121, false, false, false, false, trjs.transcription.exportMStoSubtAss, trjs.messgs.ctrlaltbin121]); // Ctrl Alt F10
-    //trjs.F2Bindings.push([122, false, false, false, false, trjs.transcription.exportMStoMediaSubt, trjs.messgs.ctrlaltbin122]); // Ctrl Alt F11
-    //trjs.F2Bindings.push([nkey("f12"), false, false, false, false, trjs.transcription.exportMStoMedia, trjs.messgs.ctrlaltbin123]); // Ctrl Alt F12
+    //trjs.bindingsDef.push([119, true, true, false, 'ctrl', "F2", "setMultipleSelection"]); // Ctrl Alt F8
+    //trjs.bindingsDef.push([120, true, true, false, 'ctrl', "F2", "exportMStoSubtSrt"]); // Ctrl Alt F9
+    //trjs.bindingsDef.push([121, true, true, false, 'ctrl', "F2", "exportMStoSubtAss"]); // Ctrl Alt F10
+    //trjs.bindingsDef.push([122, true, true, false, 'ctrl', "F2", "exportMStoMediaSubt"]); // Ctrl Alt F11
+
+    //trjs.bindingsDef.push([nkey("f12"), false, false, false, false, trjs.transcription.exportMStoMedia, trjs.messgs.ctrlaltbin123]); // Ctrl Alt F12
+};
+
+trjs.keys.viewKeyBindings = function() {
+    trjs.keys.showKeys();
+    trjs.keys.showApiKeys();
+    trjs.keys.showF1F2Keys();
+    trjs.keys.showChangeKeys();
+}
+
+/**
+ * table of all available functions
+ */
+trjs.keys.functions = {
+    "about": [ trjs.editor.about, "About TRJS", null],
+    "viewKeyBindings": [ trjs.keys.viewKeyBindings, "View and change key bindings", null],
+    "backwardStep": [ trjs.media.backwardStep, trjs.messgs.altbin37, null],
+    "bold": [ trjs.keys.bold, trjs.messgs.ctrlaltbin116, null],
+    "chooseInputDevice": [ trjs.events.chooseInputDevice, 'Choose output sound device', null],
+    "colorBlue": [ trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115, null],
+    "colorGreen": [ trjs.keys.colorGreen, trjs.messgs.ctrlaltbin114, null],
+    "colorRed": [ trjs.keys.colorRed, trjs.messgs.ctrlaltbin113, null],
+    "ctrlEnd": [ trjs.events.ctrlEnd, trjs.messgs.ctrlbin35, null],
+    "ctrlHome": [ trjs.events.ctrlHome, trjs.messgs.ctrlbin36, null],
+    "deleteLine": [ trjs.events.deleteLineAndRedraw, trjs.messgs.ctrlbin68, null],
+    "deleteLineLoc": [ trjs.events.deleteLineLocAndRedraw, trjs.messgs.ctrlaltbin68, null],
+    "emphasis": [ trjs.keys.emphasis, trjs.messgs.ctrlaltbin118, null],
+    "enter": [ trjs.events.enter, trjs.messgs.cmdenter, null],
+    "escape": [ trjs.events.escape, trjs.messgs.bin27, null],
+    "exportMStoMedia": [ trjs.transcription.exportMStoMedia, trjs.messgs.ctrlaltbin123, null],
+    "exportMStoMediaSubt": [ trjs.transcription.exportMStoMediaSubt, trjs.messgs.ctrlaltbin122, null],
+    "exportMStoSubtAss": [ trjs.transcription.exportMStoSubtAss, trjs.messgs.ctrlaltbin121, null],
+    "exportMStoSubtSrt": [ trjs.transcription.exportMStoSubtSrt, trjs.messgs.ctrlaltbin120, null],
+    "generic": [ trjs.macros.generic, trjs.messgs.generic, null],
+    "goContinuous": [ trjs.events.goContinuous, trjs.messgs.bin119, null],
+    "hideDiv": [ trjs.editor.hideDiv, trjs.messgs.ctrlbin85, null],
+    "htmlSave": [ trjs.io.htmlSave, trjs.messgs.shiftbin115, null],
+    "insertBlankLine": [ trjs.events.insertBlankLineAndRedraw, trjs.messgs.ctrlbin73, null],
+    "insertBlankLineLoc": [ trjs.events.insertBlankLineLocAndRedraw, trjs.messgs.bin117, null],
+    "insertBlankLineLocBefore": [ trjs.events.insertBlankLineLocBeforeAndRedraw, trjs.messgs.shiftbin117, null],
+    "insertWithTime": [ trjs.events.insertWithTimeAndRedraw, trjs.messgs.ctrlbin77, null],
+    "insertWithTimeLoc": [ trjs.events.insertWithTimeLocAndRedraw, trjs.messgs.altbin117, null],
+    "italics": [ trjs.keys.italics, trjs.messgs.ctrlaltbin117, null],
+    "joinLine": [ trjs.events.joinLine, trjs.messgs.ctrlbin74, null],
+    "joinLineLoc": [ trjs.events.joinLineLoc, trjs.messgs.ctrlaltbin74, null],
+    "keyDown": [ trjs.events.keyDown, trjs.messgs.bin40, null],
+    "keyLocDown": [ trjs.events.keyLocDown, trjs.messgs.altbin40, null],
+    "keyLocUp": [ trjs.events.keyLocUp, trjs.messgs.altbin38, null],
+    "keyUp": [ trjs.events.keyUp, trjs.messgs.bin38, null],
+    "makeBig": [ trjs.media.makeBig, trjs.messgs.altbin114, null],
+    "makeSmall": [ trjs.media.makeSmall, trjs.messgs.altbin113, null],
+    "openMedia": [ trjs.editor.openMedia, trjs.messgs.ctrlaltbin79, null],
+    "openTranscript": [ trjs.editor.openTranscript, trjs.messgs.ctrlbin79, null],
+    "forwardStep": [ trjs.media.forwardStep, trjs.messgs.altbin39, null],
+    "pageDown": [ trjs.events.pageDown, trjs.messgs.bin34, null],
+    "pageUp": [ trjs.events.pageUp, trjs.messgs.bin33, null],
+    "playFaster": [ trjs.media.playFaster, trjs.messgs.ctrlaltbin116, null],
+    "playJump": [ trjs.media.playJump, trjs.messgs.altbin112, null],
+    "playNormal": [ trjs.media.playNormal, trjs.messgs.ctrlaltbin69, null],
+    "playPause": [ trjs.media.playPause, trjs.messgs.shiftbin112, null],
+    "playReverse": [ trjs.media.playReverse, trjs.messgs.ctrlaltbin66, null],
+    "playSlower": [ trjs.media.playSlower, trjs.messgs.ctrlaltbin115, null],
+    "redo": [ trjs.undo.redo, trjs.messgs.ctrlbin89, null],
+    "replicateLine": [ trjs.events.replicateLineAndRedraw, trjs.messgs.ctrlbin82, null],
+    "runCurrentLine": [ trjs.events.runCurrentLine, trjs.messgs.bin118, null],
+    "runThreeLines": [ trjs.events.runThreeLines, trjs.messgs.altbin118, null],
+    "save": [ trjs.editor.save, trjs.messgs.ctrlbin83, null],
+    "selectAllMS": [ trjs.transcription.selectAllMS, trjs.messgs.ctrlaltbin65, null],
+    "setDivMinus": [ trjs.events.setDivMinus, trjs.messgs.ctrlshiftbin50, null],
+    "setDivMinusInsert": [ trjs.events.setDivMinusInsert, trjs.messgs.ctrlaltbin71, null],
+    "setDivMissingMinus": [ trjs.events.setDivMissingMinus, trjs.messgs.ctrlshiftbin71, null],
+    "setDivPlus": [ trjs.events.setDivPlus, trjs.messgs.ctrlshiftbin49, null],
+    "setDivPlusInsert": [ trjs.events.setDivPlusInsert, trjs.messgs.ctrlbin71, null],
+    "setEnd": [ trjs.events.setEndAndRedraw, trjs.messgs.bin116, null],
+    "setMultipleSelection": [ trjs.transcription.setMultipleSelection, trjs.messgs.ctrlaltbin119, null],
+    "setNthLoc1": [ trjs.events.setNthLoc1, trjs.messgs.ctrlbin49, null],
+    "setNthLoc2": [ trjs.events.setNthLoc2, trjs.messgs.ctrlbin50, null],
+    "setNthLoc3": [ trjs.events.setNthLoc3, trjs.messgs.ctrlbin51, null],
+    "setNthLoc4": [ trjs.events.setNthLoc4, trjs.messgs.ctrlbin52, null],
+    "setNthLoc5": [ trjs.events.setNthLoc5, trjs.messgs.ctrlbin53, null],
+    "setNthLoc6": [ trjs.events.setNthLoc6, trjs.messgs.ctrlbin54, null],
+    "setNthLoc7": [ trjs.events.setNthLoc7, trjs.messgs.ctrlbin55, null],
+    "setNthLoc8": [ trjs.events.setNthLoc8, trjs.messgs.ctrlbin56, null],
+    "setNthLoc9": [ trjs.events.setNthLoc9, trjs.messgs.ctrlbin57, null],
+    "setNthTier1": [ trjs.events.setNthTier1, trjs.messgs.ctrlaltbin49, null],
+    "setNthTier2": [ trjs.events.setNthTier2, trjs.messgs.ctrlaltbin50, null],
+    "setNthTier3": [ trjs.events.setNthTier3, trjs.messgs.ctrlaltbin51, null],
+    "setNthTier4": [ trjs.events.setNthTier4, trjs.messgs.ctrlaltbin52, null],
+    "setNthTier5": [ trjs.events.setNthTier5, trjs.messgs.ctrlaltbin53, null],
+    "setNthTier6": [ trjs.events.setNthTier6, trjs.messgs.ctrlaltbin54, null],
+    "setNthTier7": [ trjs.events.setNthTier7, trjs.messgs.ctrlaltbin55, null],
+    "setNthTier8": [ trjs.events.setNthTier8, trjs.messgs.ctrlaltbin56, null],
+    "setNthTier9": [ trjs.events.setNthTier9, trjs.messgs.ctrlaltbin57, null],
+    "setStart": [ trjs.events.setStartAndRedraw, trjs.messgs.bin115, null],
+    "setTimeReplace": [ trjs.events.setTimeReplaceAndRedraw, trjs.messgs.ctrlaltbin77, null],
+    "setTimeReplaceLoc": [ trjs.events.setTimeReplaceLocAndRedraw, trjs.messgs.ctrlaltbin73, null],
+    "shiftTab": [ trjs.events.shiftTab, trjs.messgs.shiftbin9, null],
+    "showDiv": [ trjs.editor.showDiv, trjs.messgs.ctrlaltbin85, null],
+    "showLine": [ trjs.editor.showLine, trjs.messgs.ctrlbin76, null],
+    "showSearch": [ trjs.editor.showSearch, trjs.messgs.ctrlaltbin70, null],
+    "showTime": [ trjs.editor.showTime, trjs.messgs.ctrlbin84, null],
+    "sort": [ trjs.transcription.sort, "sort all lines by times", null],
+    "splitLine": [ trjs.events.splitLineAndRedraw, trjs.messgs.cmdsplitLine, null],
+    "splitLineLoc": [ trjs.events.splitLineLocAndRedraw, trjs.messgs.ctrlbin66, null],
+    "tab": [ trjs.events.tab, trjs.messgs.cmdtab, null],
+    "undo": [ trjs.undo.undo, trjs.messgs.ctrlbin90, null],
+    "undoList": [ trjs.undo.undoList, "display undo/redo list", null],
+    "currentLineCheck": [ trjs.check.currentLineCheck, 'Check current line', null],
+    "zoomGlobalIn": [ trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin120, null],
+    "zoomGlobalOut": [ trjs.editor.zoomGlobalOut, trjs.messgs.ctrlbin119, null],
+
+    "api.key(9)": [ function () { trjs.api.key(9); }, trjs.api.desc(9), trjs.api.keyValue(9)], // Alt 0 et Alt @
+    "api.key(6)": [ function () { trjs.api.key(6); }, trjs.api.desc(6), trjs.api.keyValue(6)], // Alt 2
+    "api.key(7)": [ function () { trjs.api.key(7); }, trjs.api.desc(7), trjs.api.keyValue(7)], // Alt 9
+    "api.key(73)": [ function () { trjs.api.key(73); }, trjs.api.desc(73), trjs.api.keyValue(73)], // Alt :
+    "api.key(19)": [ function () { trjs.api.key(19); }, trjs.api.desc(19), trjs.api.keyValue(19)], // Alt A
+    "api.key(43)": [ function () { trjs.api.key(43); }, trjs.api.desc(43), trjs.api.keyValue(43)], // Alt D
+    "api.key(3)": [ function () { trjs.api.key(3); }, trjs.api.desc(3), trjs.api.keyValue(3)], // Alt E
+    "api.key(71)": [ function () { trjs.api.key(71); }, trjs.api.desc(71), trjs.api.keyValue(71)], // Alt H
+    "api.key(1)": [ function () { trjs.api.key(1); }, trjs.api.desc(1), trjs.api.keyValue(1)], // Alt I
+    "api.key(60)": [ function () { trjs.api.key(60); }, trjs.api.desc(60), trjs.api.keyValue(60)], // Alt J
+    "api.key(61)": [ function () { trjs.api.key(61); }, trjs.api.desc(61), trjs.api.keyValue(61)], // Alt N
+    "api.key(23)": [ function () { trjs.api.key(23); }, trjs.api.desc(23), trjs.api.keyValue(23)], // Alt O
+    "api.key(24)": [ function () { trjs.api.key(24); }, trjs.api.desc(24), trjs.api.keyValue(24)], // Alt Q
+    "api.key(68)": [ function () { trjs.api.key(68); }, trjs.api.desc(68), trjs.api.keyValue(68)], // Alt R
+    "api.key(46)": [ function () { trjs.api.key(46); }, trjs.api.desc(46), trjs.api.keyValue(46)], // Alt S
+    "api.key(42)": [ function () { trjs.api.key(42); }, trjs.api.desc(42), trjs.api.keyValue(42)], // Alt T
+    "api.key(21)": [ function () { trjs.api.key(21); }, trjs.api.desc(21), trjs.api.keyValue(21)], // Alt U
+    "api.key(18)": [ function () { trjs.api.key(18); }, trjs.api.desc(18), trjs.api.keyValue(18)], // Alt V
+    "api.key(51)": [ function () { trjs.api.key(51); }, trjs.api.desc(51), trjs.api.keyValue(51)], // Alt X
+    "api.key(47)": [ function () { trjs.api.key(47); }, trjs.api.desc(47), trjs.api.keyValue(47)], // Alt Z
+    "api.key(74)": [ function () { trjs.api.key(74); }, trjs.api.desc(74), trjs.api.keyValue(74)], // Alt Shift N
+    "api.key(75)": [ function () { trjs.api.key(75); }, trjs.api.desc(75), trjs.api.keyValue(75)], // Shift Alt E
+    "api.key(76)": [ function () { trjs.api.key(76); }, trjs.api.desc(76), trjs.api.keyValue(76)], // Shift Alt 9
+    "api.key(77)": [ function () { trjs.api.key(77); }, trjs.api.desc(77), trjs.api.keyValue(77)], // Shift Alt O
+    "api.key(78)": [ function () { trjs.api.key(78); }, trjs.api.desc(78), trjs.api.keyValue(78)], // Shift Alt A
+    "api.key(79)": [ function () { trjs.api.key(79); }, trjs.api.desc(79), trjs.api.keyValue(79)], // Shift Alt R
+
+    "F1.key(0)": [ function () { trjs.F1.key(0); }, trjs.F1.desc(0), trjs.F1.keyValue(0)],
+    "F1.key(1)": [ function () { trjs.F1.key(1); }, trjs.F1.desc(1), trjs.F1.keyValue(1)],
+    "F1.key(2)": [ function () { trjs.F1.key(2); }, trjs.F1.desc(2), trjs.F1.keyValue(2)],
+    "F1.key(3)": [ function () { trjs.F1.key(3); }, trjs.F1.desc(3), trjs.F1.keyValue(3)],
+    "F1.key(4)": [ function () { trjs.F1.key(4); }, trjs.F1.desc(4), trjs.F1.keyValue(4)],
+    "F1.key(5)": [ function () { trjs.F1.key(5); }, trjs.F1.desc(5), trjs.F1.keyValue(5)],
+    "F1.key(6)": [ function () { trjs.F1.key(6); }, trjs.F1.desc(6), trjs.F1.keyValue(6)],
+    "F1.key(7)": [ function () { trjs.F1.key(7); }, trjs.F1.desc(7), trjs.F1.keyValue(7)],
+    "F1.key(8)": [ function () { trjs.F1.key(8); }, trjs.F1.desc(8), trjs.F1.keyValue(8)],
+    "F1.key(9)": [ function () { trjs.F1.key(9); }, trjs.F1.desc(9), trjs.F1.keyValue(9)],
+    "F1.key(10)": [ function () { trjs.F1.key(10); }, trjs.F1.desc(10), trjs.F1.keyValue(10)],
+    "F1.key(11)": [ function () { trjs.F1.key(11); }, trjs.F1.desc(11), trjs.F1.keyValue(11)],
+    "F1.key(12)": [ function () { trjs.F1.key(12); }, trjs.F1.desc(12), trjs.F1.keyValue(12)],
+    "F1.key(13)": [ function () { trjs.F1.key(13); }, trjs.F1.desc(13), trjs.F1.keyValue(13)],
+    "F1.key(14)": [ function () { trjs.F1.key(14); }, trjs.F1.desc(14), trjs.F1.keyValue(14)],
+    "F1.key(15)": [ function () { trjs.F1.key(15); }, trjs.F1.desc(15), trjs.F1.keyValue(15)],
+    "F1.key(16)": [ function () { trjs.F1.key(16); }, trjs.F1.desc(16), trjs.F1.keyValue(16)],
+    "F1.key(17)": [ function () { trjs.F1.key(17); }, trjs.F1.desc(17), trjs.F1.keyValue(17)],
+    "F1.key(18)": [ function () { trjs.F1.key(18); }, trjs.F1.desc(18), trjs.F1.keyValue(18)],
+    "F1.key(19)": [ function () { trjs.F1.key(19); }, trjs.F1.desc(19), trjs.F1.keyValue(19)],
+    "F1.key(20)": [ function () { trjs.F1.key(20); }, trjs.F1.desc(20), trjs.F1.keyValue(20)],
+    "F1.key(21)": [ function () { trjs.F1.key(21); }, trjs.F1.desc(21), trjs.F1.keyValue(21)],
+    "F1.key(22)": [ function () { trjs.F1.key(22); }, trjs.F1.desc(22), trjs.F1.keyValue(22)],
+    "F1.key(23)": [ function () { trjs.F1.key(23); }, trjs.F1.desc(23), trjs.F1.keyValue(23)],
+    "F1.key(24)": [ function () { trjs.F1.key(24); }, trjs.F1.desc(24), trjs.F1.keyValue(24)],
+    "F1.key(25)": [ function () { trjs.F1.key(25); }, trjs.F1.desc(25), trjs.F1.keyValue(25)],
+    "F1.key(26)": [ function () { trjs.F1.key(26); }, trjs.F1.desc(26), trjs.F1.keyValue(26)],
+    "F1.key(27)": [ function () { trjs.F1.key(27); }, trjs.F1.desc(27), trjs.F1.keyValue(27)],
+    "F1.key(28)": [ function () { trjs.F1.key(28); }, trjs.F1.desc(28), trjs.F1.keyValue(28)],
+    "F1.key(29)": [ function () { trjs.F1.key(29); }, trjs.F1.desc(29), trjs.F1.keyValue(29)],
+    "F1.key(30)": [ function () { trjs.F1.key(30); }, trjs.F1.desc(30), trjs.F1.keyValue(30)],
+    "F1.key(31)": [ function () { trjs.F1.key(31); }, trjs.F1.desc(31), trjs.F1.keyValue(31)],
+
+    "F2.key(0)": [ function () { trjs.F2.key(0); }, trjs.F2.desc(0), trjs.F2.keyValue(0)],
+    "F2.key(1)": [ function () { trjs.F2.key(1); }, trjs.F2.desc(1), trjs.F2.keyValue(1)],
+    "F2.key(2)": [ function () { trjs.F2.key(2); }, trjs.F2.desc(2), trjs.F2.keyValue(2)],
+    "F2.key(3)": [ function () { trjs.F2.key(3); }, trjs.F2.desc(3), trjs.F2.keyValue(3)],
+    "F2.key(4)": [ function () { trjs.F2.key(4); }, trjs.F2.desc(4), trjs.F2.keyValue(4)],
+    "F2.key(5)": [ function () { trjs.F2.key(5); }, trjs.F2.desc(5), trjs.F2.keyValue(5)],
+    "F2.key(6)": [ function () { trjs.F2.key(6); }, trjs.F2.desc(6), trjs.F2.keyValue(6)],
+    "F2.key(7)": [ function () { trjs.F2.key(7); }, trjs.F2.desc(7), trjs.F2.keyValue(7)],
+    "F2.key(8)": [ function () { trjs.F2.key(8); }, trjs.F2.desc(8), trjs.F2.keyValue(8)],
+    "F2.key(9)": [ function () { trjs.F2.key(9); }, trjs.F2.desc(9), trjs.F2.keyValue(9)],
+    "F2.key(10)": [ function () { trjs.F2.key(10); }, trjs.F2.desc(10), trjs.F2.keyValue(10)],
+    "F2.key(11)": [ function () { trjs.F2.key(11); }, trjs.F2.desc(11), trjs.F2.keyValue(11)],
+    "F2.key(12)": [ function () { trjs.F2.key(12); }, trjs.F2.desc(12), trjs.F2.keyValue(12)],
+    "F2.key(13)": [ function () { trjs.F2.key(13); }, trjs.F2.desc(13), trjs.F2.keyValue(13)],
+    "F2.key(14)": [ function () { trjs.F2.key(14); }, trjs.F2.desc(14), trjs.F2.keyValue(14)],
+    "F2.key(15)": [ function () { trjs.F2.key(15); }, trjs.F2.desc(15), trjs.F2.keyValue(15)],
 };

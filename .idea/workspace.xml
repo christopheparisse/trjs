@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ver.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/trjs_pp.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/trjs_pp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/electronkeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/electronkeyboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/macros.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/macros.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/messgs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/messgs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/include-editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/include-editor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/modal-keyboard-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/modal-keyboard-info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trjsclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/trjsclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trjslocal.html" beforeDir="false" afterPath="$PROJECT_DIR$/trjslocal.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,21 +29,22 @@
     <session id="-645793077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="3" />
+          <entry key="project.closed" value="16" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.11" value="5" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="4" />
-          <entry key="js" value="40" />
-          <entry key="json" value="6" />
+          <entry key="css" value="6" />
+          <entry key="html" value="12" />
+          <entry key="js" value="47" />
+          <entry key="json" value="7" />
           <entry key="json-old" value="1" />
           <entry key="md" value="2" />
           <entry key="sh" value="9" />
@@ -41,81 +52,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="4" />
-          <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="40" />
+          <entry key="CSS" value="6" />
+          <entry key="HTML" value="12" />
+          <entry key="JSON" value="7" />
+          <entry key="JavaScript" value="47" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="336" />
-          <entry key="js" value="2742" />
+          <entry key="css" value="271" />
+          <entry key="html" value="448" />
+          <entry key="js" value="7170" />
           <entry key="json" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="336" />
+          <entry key="CSS" value="271" />
+          <entry key="HTML" value="453" />
           <entry key="JSON" value="69" />
-          <entry key="JavaScript" value="2742" />
+          <entry key="JavaScript" value="7165" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/editor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13485">
-              <caret line="899" column="52" selection-start-line="899" selection-start-column="52" selection-end-line="899" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/templates.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4140">
-              <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node/external.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4080">
-              <caret line="272" column="2" selection-start-line="272" selection-start-column="2" selection-end-line="272" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/transcription.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25500">
-              <caret line="1700" column="43" selection-start-line="1700" selection-start-column="43" selection-end-line="1700" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/messgs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="1054" selection-start-line="1054" selection-end-line="1054" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,19 +92,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/editor/version.js">
+        <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="298">
+              <caret line="252" column="32" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/meta-part-templ.html">
+        <entry file="file://$PROJECT_DIR$/style/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="4950">
+              <caret line="330" selection-start-line="330" selection-end-line="330" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/electronkeyboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1965">
+              <caret line="131" column="7" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/macros.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2925">
+              <caret line="195" column="37" selection-start-line="195" selection-start-column="31" selection-end-line="195" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10020">
+              <caret line="668" column="15" selection-start-line="668" selection-start-column="12" selection-end-line="668" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -147,36 +140,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>format_to_tei</find>
-      <find>exportMStoTei</find>
-      <find>exportMStoMediaSubt</find>
-      <find>subtitle</find>
-      <find>burnSubtitles</find>
-      <find>processVideo</find>
-      <find>newname</find>
-      <find>showOpenDialog</find>
-      <find>__chooseSaveFile</find>
-      <find>writeTranscript</find>
-      <find>data</find>
-      <find>extFormat</find>
-      <find>exportTrans</find>
-      <find>teiToFormat</find>
-      <find>fexportclan</find>
-      <find>TEIML</find>
-      <find>close</find>
-      <find>ready</find>
-      <find>800</find>
-      <find>exportfile</find>
-      <find>w.clo</find>
-      <find>w.on</find>
-      <find>window-all</find>
-      <find>path</find>
-      <find>conversions.jar</find>
-      <find>url</find>
-      <find>predefined value</find>
-      <find>List of tiers</find>
-      <find>template-span</find>
-      <find>templatespan</find>
+      <find>console.log</find>
+      <find>90%</find>
+      <find>width</find>
+      <find>modal</find>
+      <find>350</find>
+      <find>scrollit</find>
+      <find>scroll</find>
+      <find>datatables_scrollbody</find>
+      <find>modal-dialog</find>
+      <find>bindings-content</find>
+      <find>.modal</find>
+      <find>keysToString</find>
+      <find>showF1F2Keys</find>
+      <find>input</find>
+      <find>select</find>
+      <find>inline</find>
+      <find>\&quot;</find>
+      <find>chgToHtml</find>
+      <find>$$$</find>
+      <find>bindingsUser</find>
+      <find>keyChanging</find>
+      <find>keysToStringSupl</find>
+      <find>actua</find>
+      <find>tablekeys</find>
+      <find>macros</find>
+      <find>andr</find>
+      <find>AndRedraw&quot;</find>
+      <find>initTablekeys</find>
+      <find>console</find>
+      <find>changed</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -190,8 +183,16 @@
       <replace>stopExit</replace>
       <replace>6.3</replace>
       <replace>fname</replace>
+      <replace>trjs.bindingsDef.push</replace>
+      <replace>, null, &quot;</replace>
+      <replace>, &quot;&quot;, &quot;</replace>
+      <replace>, &quot;api&quot;, &quot;</replace>
+      <replace>, &quot;F1&quot;, &quot;</replace>
+      <replace>, &quot;F2&quot;, &quot;</replace>
+      <replace>&quot;</replace>
     </replaceStrings>
     <dirStrings>
+      <dir>$PROJECT_DIR$/doc</dir>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
@@ -201,12 +202,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/doc/trjs_pp.html" />
-        <option value="$PROJECT_DIR$/doc/doc.css" />
-        <option value="$PROJECT_DIR$/html/modal-parameters.html" />
-        <option value="$PROJECT_DIR$/buildwin.bat" />
         <option value="$PROJECT_DIR$/html/media.html" />
-        <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/editor/kwiclex.js" />
         <option value="$PROJECT_DIR$/editor/undo.js" />
         <option value="$PROJECT_DIR$/editor/jqtree.js" />
@@ -221,8 +217,6 @@
         <option value="$USER_HOME$/Downloads/Edition de métadonnées TEI _ CORLI.html" />
         <option value="$USER_HOME$/Downloads/Edition de métadonnées TEI _ CORLI_files/display.css" />
         <option value="$USER_HOME$/Downloads/TEST.html" />
-        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
-        <option value="$PROJECT_DIR$/editor/electronkeyboard.js" />
         <option value="$PROJECT_DIR$/editor/check.js" />
         <option value="$PROJECT_DIR$/editor/checkclanmain.pegjs" />
         <option value="$USER_HOME$/Downloads/page (4).html" />
@@ -250,8 +244,15 @@
         <option value="$PROJECT_DIR$/editor/templates.js" />
         <option value="$PROJECT_DIR$/node/external.js" />
         <option value="$PROJECT_DIR$/html/meta-part-templ.html" />
-        <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
+        <option value="$PROJECT_DIR$/editor/messgs.js" />
+        <option value="$PROJECT_DIR$/editor/macros.js" />
+        <option value="$PROJECT_DIR$/html/include-editor.html" />
+        <option value="$PROJECT_DIR$/doc/style/bootstrap.css" />
+        <option value="$PROJECT_DIR$/html/modal-keyboard-info.html" />
+        <option value="$PROJECT_DIR$/style/global.css" />
+        <option value="$PROJECT_DIR$/editor/electronkeyboard.js" />
+        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
       </list>
     </option>
   </component>
@@ -277,22 +278,27 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
+    <option name="x" value="87" />
+    <option name="y" value="43" />
+    <option name="width" value="1394" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
               <item name="trjs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trjs" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
@@ -317,6 +323,11 @@
             <path>
               <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
               <item name="trjs" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trjs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trjs" type="462c0819:PsiDirectoryNode" />
               <item name="systemcall" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -328,6 +339,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,24 +442,28 @@
       <workItem from="1536820319902" duration="198000" />
       <workItem from="1536820547431" duration="437000" />
       <workItem from="1536847835405" duration="332000" />
-      <workItem from="1536848383405" duration="467000" />
+      <workItem from="1536848383405" duration="576000" />
+      <workItem from="1537009746318" duration="13858000" />
+      <workItem from="1537282059658" duration="2928000" />
+      <workItem from="1537306156540" duration="21001000" />
+      <workItem from="1537806679235" duration="1140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143812000" />
+    <option name="totallyTimeSpent" value="182848000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <frame x="87" y="43" width="1394" height="1049" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17077045" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.22528554" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5924765" visible="true" weight="0.14930809" />
+      <window_info id="Structure" order="1" sideWeight="0.4075235" side_tool="true" visible="true" weight="0.14930809" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.43141592" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.43125" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -516,50 +532,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/TEST.html" />
-    <entry file="file://$USER_HOME$/Downloads/media.html" />
-    <entry file="file://$PROJECT_DIR$/html/trjsclient.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/page (4).html" />
-    <entry file="file://$USER_HOME$/Downloads/page (5).html" />
-    <entry file="file://$USER_HOME$/Downloads/page (6).html" />
-    <entry file="file://$PROJECT_DIR$/editor/checkclanmain.pegjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/check.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/checkclanmain.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buildsetmacos.sh" />
-    <entry file="file://$PROJECT_DIR$/buildallmac.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/media.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -594,20 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/macros.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/jqtree.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="38" column="31" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/electronkeyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -629,13 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="965">
           <caret line="95" column="26" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="684" column="143" selection-start-line="684" selection-start-column="143" selection-end-line="684" selection-end-column="143" />
         </state>
       </provider>
     </entry>
@@ -757,31 +712,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+    <entry file="file://$PROJECT_DIR$/editor/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13485">
-          <caret line="899" column="52" selection-start-line="899" selection-start-column="52" selection-end-line="899" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/templates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4140">
-          <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/external.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4080">
-          <caret line="272" column="2" selection-start-line="272" selection-start-column="2" selection-end-line="272" selection-end-column="2" />
+        <state relative-caret-position="135">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/transcription.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25500">
+        <state relative-caret-position="608">
           <caret line="1700" column="43" selection-start-line="1700" selection-start-column="43" selection-end-line="1700" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/external.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="272" column="2" selection-start-line="272" selection-start-column="2" selection-end-line="272" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/templates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="899" column="52" selection-start-line="899" selection-start-column="52" selection-end-line="899" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -792,14 +754,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+    <entry file="file://$PROJECT_DIR$/html/include-js-electron.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="1054" selection-start-line="1054" selection-end-line="1054" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/include-js.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24480">
+          <caret line="1632" column="44" selection-start-line="1632" selection-start-column="38" selection-end-line="1632" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/include-editor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/local.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/style/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="5176" column="16" lean-forward="true" selection-start-line="5176" selection-start-column="16" selection-end-line="5176" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.dataTables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="2215" selection-start-line="2215" selection-end-line="2215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/dataTables.bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="102" column="25" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="5177" column="15" selection-start-line="5177" selection-start-column="3" selection-end-line="5177" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/modal-opening-files.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/modal-keyboard-info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -810,10 +826,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
+    <entry file="file://$PROJECT_DIR$/style/global.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="4950">
+          <caret line="330" selection-start-line="330" selection-end-line="330" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/electronkeyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="131" column="7" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/macros.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2925">
+          <caret line="195" column="37" selection-start-line="195" selection-start-column="31" selection-end-line="195" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10020">
+          <caret line="668" column="15" selection-start-line="668" selection-start-column="12" selection-end-line="668" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="252" column="32" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="32" />
         </state>
       </provider>
     </entry>

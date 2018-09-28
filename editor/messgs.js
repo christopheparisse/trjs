@@ -565,9 +565,8 @@ trjs.messgs_eng = {
     annul: "Cancel",
     askforreorder: "Using automatic reordering changes radically the way time alignement edition is performed. Are you sure?",
 
-    bin9: "Tabulation or play from the transcription", // Tab
-    bin10: "Store time to end of current line and begining of next line and jumps to next line. Also inserts a line if Inset mode in on or if at the end of the file", // return Key
-    bin13: "Store time to end of current line and begining of next line and jumps to next line. Also inserts a line if Inset mode in on or if at the end of the file", // return Key
+    cmdtab: "Tabulation or play from the transcription", // Tab
+    cmdenter: "Store time to end of current line and begining of next line and jumps to next line. Also inserts a line if Inset mode in on or if at the end of the file", // return Key
     bin27: "Stop the playing of the media", // Esc
     bin33: "Move to page above", // Page Up
     bin34: "Move to page below", // Page Down
@@ -636,7 +635,7 @@ trjs.messgs_eng = {
 
     ctrlaltbin77: "Store time to end of current line and begining of next line", // Ctrl Alt M
     ctrlaltbin79: "Load a media", // Ctrl Alt O
-    ctrlaltbin82: "Split the line at the cursor", // Ctrl Alt R
+    cmdsplitLine: "Split the line at the cursor", // Ctrl Alt R
     ctrlaltbin85: "Show the hidden div", // Ctrl Alt U
 
     ctrlbin119: "Zoom Out (all window)", // Ctrl F8
@@ -1324,9 +1323,8 @@ trjs.messgs_fra = {
     annul: "Annuler",
     askforreorder: "La réorganisation automatique des lignes modifie profondément la manière d'aligner temporellement. Etes-vous sûr de vouloir l'utiliser ?",
 
-    bin9: "Lecture à partir du début de la ligne courante, pause (ou tab)", // Tab
-    bin10: "Marquer le temps de fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante", // return Key
-    bin13: "Marquer le temps de fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante", // return Key
+    cmdtab: "Lecture à partir du début de la ligne courante, pause (ou tab)", // Tab
+    cmdenter: "Marquer le temps de fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante", // return Key
     bin27: "Pause", // Esc
     bin33: "Aller en haut de la page", // Page Up
     bin34: "Aller en bas de la page", // Page Down

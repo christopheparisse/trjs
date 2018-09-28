@@ -159,9 +159,7 @@ trjs.init.electronkeyboard = function () {
     });
     // message-bindings
     ipcRenderer.on('messagebindings', function(event, arg) {
-        trjs.keys.showKeys();
-        trjs.keys.showApiKeys();
-        trjs.keys.showF1F2Keys();
+        trjs.keys.viewKeyBindings();
     });
     ipcRenderer.on('messages', function(event, arg) {
         trjs.log.show();

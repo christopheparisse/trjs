@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<script type="text/javascript">
@@ -20,115 +20,119 @@
 		<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-submenu.css" />
 		<link rel="stylesheet" href="style/font-awesome.css"/>
-		<title>TRJS - Manuel d'utilisation</title>
+		<title>TRJS - User manual</title>
 	</head>
 
 	<body>
 
 <header>
 <img src="img/trjs.png" width="30" height="30"/>
-<b> T R J S </b> version Beta - Documentation : <b>Premiers pas</b>
+<b> T R J S </b> 0.6.8 - Documentation : <b>First steps</b>
 </header>
 <div id="main">
 <main>
 	<div id="menu2">
-<span><a href="#01"><i class="fa fa-download pl fa-5x"></i><br/>Installer</a></span>
-<span><a href="#02"><i class="fa fa-laptop pl fa-5x"></i><br/>Organisation et description</a></span>
-<span><a href="#03"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Ouvrir une transcription </a></span>
-<span><a href="#04"><i class="fa fa-file-movie-o pl fa-5x"></i><br/>Ouvrir un média </a></span>
-<span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Commencer à transcrire</a></span>
-<span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Commandes pour la transcription</a></span>
-<span><a href="#07"><i class="fa fa-keyboard-o pl fa-5x"></i><br/>Manipulation du clavier </a></span>
-<span><a href="#08"><i class="fa fa-cogs pl fa-5x"></i><br/>Paramètres et autres fonctions </a></span>
+<span><a href="#01"><i class="fa fa-download pl fa-5x"></i><br/>Install</a></span>
+<span><a href="#02"><i class="fa fa-laptop pl fa-5x"></i><br/>Main features</a></span>
+<span><a href="#03"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Open a transcript</a></span>
+<span><a href="#04"><i class="fa fa-file-movie-o pl fa-5x"></i><br/>Open a media</a></span>
+<span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Basic editing</a></span>
+<span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Transcription commands</a></span>
+<span><a href="#07"><i class="fa fa-keyboard-o pl fa-5x"></i><br/>Keyboard features</a></span>
+<span><a href="#08"><i class="fa fa-cogs pl fa-5x"></i><br/>Parameters and other features</a></span>
 	</div>
 
 
-<h1 id="01">Comment installer TRJS</h1><hr/>
-		<h2 id="0101">Au préalable</h2>
-<p>Avant de procéder à l'installation de TRJS,
-veuillez vérifier avoir effectué les installations et <b>mises à jour</b> suivantes:
+<h1 id="01">Install TRJS</h1><hr/>
+		<h2 id="0101">Conditions for installation</h2>
 <ol>
-	<li>Avoir une version de votre système d'exploitation compatible:</li>
-	<ul>
 		<li>Mac OS :</li>
 		<ul>
-			<li>version <b>minimum 10.9</b> (Mavericks) </li>
-			<li>et plus récentes</li>
-			<li>Pour de plus anciennes version, installer à partir des sources comme pour Linux.</li>
+			<li><b>minimum version 10.9</b> (Mavericks) </li>
+			<li>and more recent ones</li>
+			<li>for older version, install as for Linux computers</li>
 		</ul>
 		<li>Windows : </li>
 		<ul>
-			<!--
-			<li>XP</li>
-			-->
-			<li>Seven </li>
+			<li>Seven</li>
 			<li>8</li>
 			<li>10</li>
 		</ul>
-		<li>Autres systèmes :</li>
+		<li>Other systems :</li>
 		<ul>
-			<li>Linux: l'installation se fait à partir des sources.
-			</li>
-			<li>
-				Les sources sont disponibles ici: http://www.github.com/christopheparisse/trjs/
-				Une fois l'archive décompressée ou récupérée avec git clone, faire:
-				npm install
-				npm start
-				L'installation à partir des sources nécessite l'installation séparé de Node.js, NPM, Java, FFMPEG et FFPASTE.
-			</li>
+			<li>Linux: Installation is done with the sources.</li>
 		</ul>
-	</ul>
 </ol>
-Le programme d'installation est téléchargeable sur la page <a href="http://ct3.ortolang.fr/trjs/doku.php?id=start">Téléchargement</a>.
+Installation programs can be downloaded here <a href="http://ct3.ortolang.fr/trjs/doku.php?id=start">Téléchargement</a>.
 </p>
 
-		<h2 id="0102">Sous Windows</h2>
+		<h2 id="0102">Under Windows</h2>
 <p><ol>
-	<li>Cliquez sur le <a href="http://ct3.ortolang.fr/trjs/doku.php">lien de téléchargement</a>.<br/>
-		Choisissez la version de Windows désirée.<br/>
-	Vous pouvez <b>Enregistrer le fichier</b>.</li><br/>
-	<li>Dans le dossier <b>Téléchargements</b>, vous trouverez le répertoire d'installation au format exécutable,
-		nommé selon la version <b>trjs-....exe</b>.<br/>
-	Veuillez l'ouvrir pour lancer l'installation.<br/> La fenêtre suivante apparaît:
+	<li>Clock on <a href="http://ct3.ortolang.fr/trjs/doku.php">download link</a>.<br/>
+		Select the appropriate Windows version.<br/>
+	You can <b>download this file</b>.</li><br/>
+	<li>In the <b>download</b> directory, and you will find a file named <b>trjs-....exe</b>
+		according to the version downloaded.<br/>
+	You have to open it to start the installation.<br/>
+	On Windows 10, a red window appears that warns against the use of dangerous programs.
+	You have to select in the bottom right the message "More information" to obtain
+	a screen where you can confirm that you want to use the installation program. <br/>
+	The following window appears:
 	<img id="ima" class="align" src="img/capture/dl/02.png"/>
-	Il est conseillé de garder cochée la case <b>Desktop Shortcuts</b>
-	afin de pouvoir lancer le logiciel directement depuis le Bureau (Desktop) via un raccourci.
+	We suggest to keep selected the <b>Desktop Shortcuts</b>
+	so that it will be possible to start TRJS from the Desktop using a shortcut.
 	<img id="ima" class="align" src="img/capture/dl/03.png"/>
-	Le répertoire par défaut est <b>trjs</b> dans "Program Files ..."<br/>
-	<li>L'installation de TRJS est <b>terminée</b>.
-	Vous pouvez fermer.<img id="ima" class="align" src="img/capture/dl/07.png"/></li>
+	The default directory is <b>trjs</b> in "Program Files ..."<br/>
+	You can choose any other location.
+	<li>The installation of TRJS is <b>finished</b>.
+	You can close the installation program.<img id="ima" class="align" src="img/capture/dl/07.png"/></li>
 </ol></p>
-		<h2 id="0103">Sous Mac OS X</h2>
-<p>Le téléchargement consiste en un fichier ZIP. Ce fichier peut être décompressé sur OSX, soit automatiquement, soit
-manuellement en faisant double-clic dessus(selon vos paramètres de navigateur).
-Une fois décompressée, l'application peut être déplacée où vous voulez, par exemple dans le dossier Applications,
-mais aussi dans un autre dossier.</p>
-		<h2 id="0104">Autres systèmes</h2>
+		<h2 id="0103">Under MacOS</h2>
+<p>The download is a zipped file. If you click on this file, it will be
+	automatically unzipped. The result is an app file (TRJS.app), that you can move
+	into any other location, including the Applications folder.<br/>
+	<em>For the first use of the software, using control+right click to start the program,
+	intead of right click. This will allow you to confirm that the software is secure
+and can be used on your computer.</em></p>
+		<h2 id="0104">Other systems</h2>
 <p>
 Pour les systèmes Linux ou autres systèmes, installer à partir des sources et faire une installation séparée de Java (pour les outils d'export)
 et de FFMPEG pour visualiser le signal et utiliser les outils de conversion de fichier média.
 </p>
 <p>
-	Pour installer à partir des sources, récupérer le fichier trjs-vx.y.z.zip et le décompresser.<br/>
-	Dans le répertoire de décompression, lancer une fenêtre de commande et exécuter les commandes suivantes:<br/>
-	<pre>npm install<br/>gulp<br/>npm run electron</pre>
-	Il est nécessaire pour le bon fonctionnement du correcteur lexical de lancer au moins une fois la commande:<br/>
+	Sources are available here: http://www.github.com/christopheparisse/trjs/ or
+	download the file called "trjs-versionxxx.zip".
+	Once the downloaded files are unzipped or after using git clone with github, please do:
+	<pre>
+	npm install
+	npm run gulp
+	npm run electron
+  </pre>
+	Installation from the sources requires the previous installation of Node.js, NPM, Java, FFMPEG and FFPASTE.
+	<br/>
+	To use the lexical checker it is necessary to run at least once:<br/>
 	<pre>npm run rebuild</pre>
+	To run the software once install, it is only necessary to use:
+	<pre>
+	npm run electron
+	</pre>
 </p>
 
-<h1 id="02">Organisation et description de TRJS</h1><hr/>
-	<h2 id="0301">Lancer TRJS</h2>
-	<p>Il suffit de faire double-clic sur l'icone du programme.</p>
-	<p>Il est possible d'associer le programme à un type de fichier. Dans ce cas,
-	il est conseillé d'utiliser l'extension .trjs pour les noms de fichiers pour éviter
-	la confusion avec les fichiers d'extension .xml. L'utilisation de l'extension .xml
-	ou .tei_corpo.xml reste tout à fait autorisée.</p>
+<h1 id="02">Main features of TRJS</h1><hr/>
+	<h2 id="0301">Start TRJS</h2>
+	<p>Please double-click on the icon of the program.</p>
+	<p>It is possible to associate a file extension to the software so
+		it can be started from the finder with specific file types.
+		Possible files types are .trjs, .xml, and any file type that can be automatically
+		converted by TRJS (chat files, text files, elan files, praat files, transcriber files, subtitle files).
+		The use of .trjs is suggested so that it does not create confusion with other file types.
+	</p>
 
-	<h2 id="0301">Présentation de la fenêtre TRJS</h2>
+	<h2 id="0301">Layout of the TRJS window</h2>
 <p>Après avoir lancé TRJS, le programme s'ouvre sur la fenêtre principale.<br/>
 Cette fenêtre s'articule en différentes parties, comme découpées ci-dessous:
 <img id="ima" class="center" src="img/capture/i1.png"  width="800"/><br/>
-<ol>
+@<ol>
 	<li>La <a href="#0302">barre de menus</a>, avec accès aux paramètres et fonctionnalités.</li>
 	<li>Le <a href="#0303">champ média</a>, encadré des <a href="#0308">barres d'outils</a> pour l'édition de la transcription.</li>
 	<li>Le <a href="#0304">signal</a>, représentation sonore du média.</li>
@@ -584,23 +588,23 @@ ainsi que son raccourci clavier éventuel associé.</p>
 </ul>
 </p>
 
-<p><a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p>
+<p><a href="#top"><i class="fa fa-arrow-circle-up"></i> Top of page</a></p>
 </div>
 </main>
 
 <section id="menu">
 	<nav>
 <p><span>Navigation</span><br/>
-<a href="#01"> 1. Installation </a><br/>
+<a href="#01"> 1. Install </a><br/>
 <a href="#02"> 2. Organisation et description</a><br/>
-<a href="#03"> 3. Ouvrir une transcription </a><br/>
-<a href="#04"> 4. Ouvrir un média </a><br/>
-<a href="#05"> 5. Edition de la transcription</a><br/>
-<a href="#06"> 6. Méthodes de transcription</a><br/>
-<a href="#07"> 7. Manipulation du clavier </a><br/>
-<a href="#08"> 8. Organisation et fonctionnalités </a><br/>
+<a href="#03"> 3. Open a transcript </a><br/>
+<a href="#04"> 4. Open a media </a><br/>
+<a href="#05"> 5. Basic editing</a><br/>
+<a href="#06"> 6. Transcription commands</a><br/>
+<a href="#07"> 7. Keyboard features</a><br/>
+<a href="#08"> 8. Parameters and other features </a><br/>
 <br/>
-<a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p><br/>
+<a href="#top"><i class="fa fa-arrow-circle-up"></i> Top of page</a></p><br/>
 	</nav>
 </section>
 

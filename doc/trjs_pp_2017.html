@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<script type="text/javascript">
-		function openCloseSpoiler(div) {
+		function ouvrirFermerSpoiler(div) {
 			var divContenu = div.getElementsByTagName('div')[0];
 			if (divContenu.style.display == 'none') {
 				divContenu.style.display = 'block';
@@ -22,9 +22,9 @@
 		<link rel="stylesheet" href="style/font-awesome.css"/>
 		<title>TRJS - Manuel d'utilisation</title>
 	</head>
-
+	
 	<body>
-
+	
 <header>
 <img src="img/trjs.png" width="30" height="30"/>
 <b> T R J S </b> version Beta - Documentation : <b>Premiers pas</b>
@@ -36,25 +36,24 @@
 <span><a href="#02"><i class="fa fa-laptop pl fa-5x"></i><br/>Organisation et description</a></span>
 <span><a href="#03"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Ouvrir une transcription </a></span>
 <span><a href="#04"><i class="fa fa-file-movie-o pl fa-5x"></i><br/>Ouvrir un média </a></span>
-<span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Commencer à transcrire</a></span>
-<span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Commandes pour la transcription</a></span>
+<span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Edition de la transcription </a></span>
+<span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Méthodes de transcription </a></span>
 <span><a href="#07"><i class="fa fa-keyboard-o pl fa-5x"></i><br/>Manipulation du clavier </a></span>
-<span><a href="#08"><i class="fa fa-cogs pl fa-5x"></i><br/>Paramètres et autres fonctions </a></span>
+<span><a href="#08"><i class="fa fa-cogs pl fa-5x"></i><br/>Organisation et fonctionnalités </a></span>
 	</div>
 
 
 <h1 id="01">Comment installer TRJS</h1><hr/>
 		<h2 id="0101">Au préalable</h2>
-<p>Avant de procéder à l'installation de TRJS,
+<p>Avant de procéder à l'installation de TRJS, 
 veuillez vérifier avoir effectué les installations et <b>mises à jour</b> suivantes:
 <ol>
 	<li>Avoir une version de votre système d'exploitation compatible:</li>
 	<ul>
-		<li>Mac OS :</li>
+		<li>Mac OS :</li> 
 		<ul>
-			<li>version <b>minimum 10.9</b> (Mavericks) </li>
+			<li>version <b>minimum 10.7</b> (Lion) </li>
 			<li>et plus récentes</li>
-			<li>Pour de plus anciennes version, installer à partir des sources comme pour Linux.</li>
 		</ul>
 		<li>Windows : </li>
 		<ul>
@@ -67,17 +66,22 @@ veuillez vérifier avoir effectué les installations et <b>mises à jour</b> sui
 		</ul>
 		<li>Autres systèmes :</li>
 		<ul>
-			<li>Linux: l'installation se fait à partir des sources.
-			</li>
-			<li>
-				Les sources sont disponibles ici: http://www.github.com/christopheparisse/trjs/
-				Une fois l'archive décompressée ou récupérée avec git clone, faire:
-				npm install
-				npm start
-				L'installation à partir des sources nécessite l'installation séparé de Node.js, NPM, Java, FFMPEG et FFPASTE.
-			</li>
+			<li>Linux: l'utilisation de toutes les possibilités du logiciel impose
+			l'installation séparée de Java et FFMPEG + FFPASTE</li>
 		</ul>
 	</ul>
+	<li>L'utilisation en mode restreint navigateur impose l'utilisation d'un navigateur récent
+		(c'est-à-dire implémentant les <b>normes HTML5 et CSS3</b>):</li>
+	<!--
+	<ul>
+		<li><img src="img/ff.png" width="20" height="20"/> Firefox, version 35 et plus récentes</li>
+		<li><img src="img/chrome.png" width="20" height="20"/> Chrome, version 31 et +</li>
+		<li><img src="img/opera.png" width="20" height="20"/> Opera, version 26 et +</li>
+		<li><img src="img/safari.png" width="20" height="20"/> Safari, version 7.1 et +</li>
+		<li><img src="img/ie.png" width="20" height="20"> Internet Explorer, version 10 et +</li>
+		<li><img src="img/ie.png" width="20" height="20"> Edge</li>
+	</ul>
+	-->
 </ol>
 Le programme d'installation est téléchargeable sur la page <a href="http://ct3.ortolang.fr/trjs/doku.php?id=start">Téléchargement</a>.
 </p>
@@ -91,12 +95,12 @@ Le programme d'installation est téléchargeable sur la page <a href="http://ct3
 		nommé selon la version <b>trjs-....exe</b>.<br/>
 	Veuillez l'ouvrir pour lancer l'installation.<br/> La fenêtre suivante apparaît:
 	<img id="ima" class="align" src="img/capture/dl/02.png"/>
-	Il est conseillé de garder cochée la case <b>Desktop Shortcuts</b>
+	Il est conseillé de garder cochée la case <b>Desktop Shortcuts</b> 
 	afin de pouvoir lancer le logiciel directement depuis le Bureau (Desktop) via un raccourci.
 	<img id="ima" class="align" src="img/capture/dl/03.png"/>
 	Le répertoire par défaut est <b>trjs</b> dans "Program Files ..."<br/>
 	<li>L'installation de TRJS est <b>terminée</b>.
-	Vous pouvez fermer.<img id="ima" class="align" src="img/capture/dl/07.png"/></li>
+	Vous pouvez fermer.<img id="ima" class="align" src="img/capture/dl/07.png"/></li>				
 </ol></p>
 		<h2 id="0103">Sous Mac OS X</h2>
 <p>Le téléchargement consiste en un fichier ZIP. Ce fichier peut être décompressé sur OSX, soit automatiquement, soit
@@ -135,7 +139,7 @@ Cette fenêtre s'articule en différentes parties, comme découpées ci-dessous:
 	<li>La <a href="#0305">partition</a>, représentation horizontale de la transcription.</li>
 	<li>Les <a href="#0306">commandes média</a>, boutons de lecture et d'édition de la transcription.</li>
 	<li>La <a href="#0307">transcription</a>, où on peut éditer notre texte.</li>
-</ol>
+</ol>		
 </p>
 		<h2 id="0302">La barre de menu : l'accès aux paramètres</h2>
 <p>La barre de menu est composée d'encarts cliquables :<br/><br/>
@@ -143,18 +147,18 @@ Cette fenêtre s'articule en différentes parties, comme découpées ci-dessous:
 L'onglet <bl>FICHIER</bl> propose plusieurs options d'ouverture, de sauvegarde et d'import.<br/>
 L'onglet <bl>EDITION</bl> permet d'éditer les métadonnées liées au(x) fichier(s) transcription et média.<br/>
 L'onglet <bl>OUTILS</bl> donne accès à des options de conversion, d'export, de correction du(des) fichier(s).<br/>
-L'onglet <bl>NOM DU FICHIER</bl> renvoie au panneau <a href="#0601">Métadonnées</a> qui s'ouvre directement.
+L'onglet <bl>NOM DU FICHIER</bl> renvoie au panneau <a href="#0601">Métadonnées</a> qui s'ouvre directement. 
 Chaque ligne éditée du tableau s'enregistre automatiquement.<br/>
 L'onglet <bl>PARAMETRES</bl> contient plusieurs encarts aux fonctionnalités thématiques (affichage, réglages etc.) .<br/>
 L'onglet <bl>RECHERCHE</bl> affiche un pannel avec diverses options de recherche à travers le(s) fichier(s).<br/>
 L'onglet <bl>AIDE</bl> contient les liens vers les sites de documentation et mémos.<br/>
-</p>
+</p>	
 
-
+			
 		<h2 id="0303">Champ média</h2>
 <p>Le champ média contient la vidéo et/ou l'audio.</p><br/><br/>
 <img id="ima" class="center" src="img/capture/imed.png" width="800" /><br/><br/>
-<p>La barre de lecture est propre au média (et dépendante du navigateur utilisé),
+<p>La barre de lecture est propre au média (et dépendante du navigateur utilisé), 
 elle apparaît lorsqu'on passe le curseur sur le média, puis disparaît après 3 secondes. <br/>
 Elle offre les options suivantes :
 	<ol>
@@ -179,7 +183,7 @@ Elle offre les options suivantes :
 		<h2 id="0306">Boutons média</h2>
 <p>Autour du champ média (audio ou vidéo) sont déployés des boutons, associés à des raccourcis claviers.</p><br/>
 <img id="ima" class="center" src="img/capture/i5.png" width="800" /><br/>
-<p>Lorsqu'on passe la souris sur une icône, une <b>bulle d'information</b> apparaît pour rappeler la fonction principale de l'icône,
+<p>Lorsqu'on passe la souris sur une icône, une <b>bulle d'information</b> apparaît pour rappeler la fonction principale de l'icône, 
 ainsi que son raccourci clavier associé.</p><br/>
 <table>
 	<tr><th>Icône</th><th>Raccourci clavier</th><th>Fonctionnalité</th></tr>
@@ -195,7 +199,7 @@ ainsi que son raccourci clavier associé.</p><br/>
 </table>
 
 		<h2 id="0307">Transcription</h2>
-<p>La transcription orthographique du signal est éditée sous forme de tableau déroulable
+<p>La transcription orthographique du signal est éditée sous forme de tableau déroulable 
 (la barre de défilement vertical se trouve sur la droite).<br/>
 Le tableau de transcription est une visualisation verticale éditable du texte.</p><br/>
 
@@ -204,7 +208,7 @@ Le tableau de transcription est une visualisation verticale éditable du texte.<
 		<h2 id="0308">Barres d'outils</h2>
 <img id="ima" class="center" src="img/capture/i7.png" width="800" /><br/><br/>
 <p>Les barres d'outils permettent d'accéder très rapidement aux principales commandes d'édition. <br/>
-Chaque icône est également définie par un raccourci clavier,
+Chaque icône est également définie par un raccourci clavier, 
 qui s'affiche au moyen d'une <b>infobulle</b> lorsqu'on passe la souris par dessus.<br/>
 On peut <b>rétrécir ou déplacer</b> les barres d'outils.</p>
 
@@ -228,7 +232,7 @@ Allez à la partie ci-dessous "Lire un média".
 <p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Choisir un média</b>.</p>
 Si tout s'est déroulé sans encombre, le média est chargé. <br/>
 Sinon, un message d'erreur vous avertit d'un éventuel problème de compatibilité avec le format média.
-
+	
 
 		<h2 id="0503">Gestion du média</h2>
 			<h3 id="050301">Fonctions de lecture</h3>
@@ -272,8 +276,8 @@ Le tableau de transcription est une visualisation verticale éditable du texte.<
 	</ol>
 </p>
 <div id="nb"><p>
-Le positionnement sur une zone transcrite positionne la partition
-(si possible c'est à dire si la transcription est liée temporellement)
+Le positionnement sur une zone transcrite positionne la partition 
+(si possible c'est à dire si la transcription est liée temporellement) 
 et le temps du média.
 </p></div>
 		<h2 id="0602">Edition des métadonnées</h2>
@@ -284,10 +288,10 @@ et le temps du média.
 <p>Le tableau s'affiche pour l'édition, et se ferme à l'aide de la croix grise située en haut à droite.<br/>
 Chaque ligne éditée du tableau s'enregistre <b>automatiquement</b>.
 Seules les parties grisées sont <b>éditables</b>.<br/>
-Ces champs permettent de rentrer les informations générales sur le document y compris sur les noms de fichiers,
-mais aussi de rentrer les informations sur les champs métadonnées
+Ces champs permettent de rentrer les informations générales sur le document y compris sur les noms de fichiers, 
+mais aussi de rentrer les informations sur les champs métadonnées 
 <a href="http://localhost:8101/doc/dublin-core.html">Dublin-Core</a>.<br/>
-Pour obtenir des informations supplémentaires, passez votre souris sur la partie <b>Information</b> située à droite du tableau,
+Pour obtenir des informations supplémentaires, passez votre souris sur la partie <b>Information</b> située à droite du tableau, 
 une <b>infobulle</b> apparaît.
 </p>
 
@@ -297,21 +301,21 @@ une <b>infobulle</b> apparaît.
 </p>
 
 		<h2 id="0603">Edition des locuteurs</h2>
-<p>Un <b>clic droit</b> sur le locuteur (colonne de droite) dans le tableau de transcription,
+<p>Un <b>clic droit</b> sur le locuteur (colonne de droite) dans le tableau de transcription, 
 permet de choisir le nom du locuteur ou la valeur de la tier à définir pour la ligne courante.</p>
 <img id="ima" class="center" src="img/capture/i6.png" width="800px"/>
-<p>Une fois le clic droit activé dans le champ Locuteur (Locutor), un encart s'affiche proposant :
+<p>Une fois le clic droit activé dans le champ Locuteur (Locutor), un encart s'affiche proposant :  
 	<ul>
 		<li>à gauche, les valeurs de la catégorie <b>Participant</b> (Person) - ici, nous avons 3 locuteurs : CHI, MOT et OBS</li>
 		<li>à droite, les valeurs de la catégorie <b>Structure</b> (Template) </li>
-		<li>il est possible d'ouvrir une division (+div+), de la fermer (-div-),
+		<li>il est possible d'ouvrir une division (+div+), de la fermer (-div-), 
 		de coder un incident (+incident+) ou une pause (+pause+)</li>
 		<li><b>Cancel</b> ferme l'onglet</li>
 	</ul>
 </p>
-<p>Ces valeurs sont des raccourcis vers les valeurs autorisées dans les entêtes de fichier,
+<p>Ces valeurs sont des raccourcis vers les valeurs autorisées dans les entêtes de fichier, 
 renseignées au préalable. <br/>
-Si le code choisi n'est pas défini dans les noms de personnes ou tiers autorisés,
+Si le code choisi n'est pas défini dans les noms de personnes ou tiers autorisés, 
 le logiciel vous demande de changer la valeur et insère la valeur neutre "---".</p>
 <p>Voir <a href="#060203">Paramètres d'édition des locuteurs</a> pour insérer ou modifier les valeurs.</p>
 
@@ -319,7 +323,7 @@ le logiciel vous demande de changer la valeur et insère la valeur neutre "---".
 Tout un ensemble de champs complémentaires est disponible pour fournir des informations sur un locuteur.
 </p>
 
-<p>Il est également possible d'inscrire directement un locuteur ou une tier enregistré au préalable à l'aide d'un raccourci clavier :
+<p>Il est également possible d'inscrire directement un locuteur ou une tier enregistré au préalable à l'aide d'un raccourci clavier : 
 <table>
 	<tr><th>Raccourcis clavier</th><th>Codage direct du locuteur</th></tr>
 	<tr><td>Ctrl + 1</td><td>premier locuteur</td></tr>
@@ -353,13 +357,13 @@ Un simple clic permet de visualiser le nombre de millisecondes.</p>
 <li>avec l'icône <i class="iconcur fa fa-save fa-lg"></i> situé dans la barre d'outils</li>
 <li>ou en accédant dans le menu <bl>FICHIERS</bl> à l'encart <b>Enregistrer</b>.<br/></li>
 </ul></p>
-<p>Vous pouvez <b>définir ou modifier l'emplacement</b> de votre fichier de transcription
-en accédant à l'encart <b>Enregistrer sous...</b> du menu <bl>FICHIERS</bl>,
+<p>Vous pouvez <b>définir ou modifier l'emplacement</b> de votre fichier de transcription 
+en accédant à l'encart <b>Enregistrer sous...</b> du menu <bl>FICHIERS</bl>, 
 et ainsi <b>renommer</b> votre fichier.</p>
 
 <p>Les options d'exports sont disponibles dans le menu <bl>OUTILS</bl> sous l'onglet <b>Export</b>.<br/>
 Il est possible d'exporter la <b>totalité</b> du fichier ou seulement une <b>sélection</b>.</p>
-
+	
 
 <h1 id="06">Méthodes de transcription</h1><hr/>
 	<h2 id="0701">Usages de transcription et commandes d'édition</h2>
@@ -368,9 +372,9 @@ Il est possible d'exporter la <b>totalité</b> du fichier ou seulement une <b>s�
 <p>La touche <b>Enter/Return</b> fonctionne de la manière suivante :<br/>
 	<ul>
 		<li><b>Alignement de la fin de l'énoncé avec le temps courant</b> puis <b>saut à la ligne suivante</b>.</li>
-		<li>Si on est en fin de fichier, alors insertion d'une ligne.</li>
+		<li>Si on est en fin de fichier, alors insertion d'une ligne.</li>  
 	</ul>
-Cette touche permet de <b>réaligner des lignes déjà transcrites</b>,
+Cette touche permet de <b>réaligner des lignes déjà transcrites</b>, 
 son usage est principalement réservé au <b>réajustement du temps</b> d'un fichier déja transcrit. </p>
 <p>La touche <b>Return/Entrée</b> correspond au raccourci clavier : <b>Ctrl + M</b>, accessible via l'icône <i class="iconcur fa fa-outdent fa-lg"></i> de la barre d'outils.</p>
 <br/>
@@ -391,7 +395,7 @@ son usage est principalement réservé au <b>réajustement du temps</b> d'un fic
 </p>
 	<h2 id="0702">Commandes d'annulation</h2>
 <h4>Annuler la dernère action</h4>
-<p>La commande d'annulation (undo) annule la dernière action au moyen
+<p>La commande d'annulation (undo) annule la dernière action au moyen 
 du raccourci clavier <b>Ctrl Z</b>.</p>
 
 <h4>Historique des dernières actions</h4>
@@ -402,7 +406,7 @@ du raccourci clavier <b>Ctrl Z</b>.</p>
 
 <h1 id="07">Manipulation du clavier </h1><hr/>
 		<h2 id="0801">Commandes d'édition</h2>
-<p>TRJS est prévu pour la transcription et l'alignement rapide, et la manipulation intuitive de la vidéo/du son.
+<p>TRJS est prévu pour la transcription et l'alignement rapide, et la manipulation intuitive de la vidéo/du son. 
 Il est optimisé pour être utilisé facilement (et complètement) depuis le clavier, sans nécessité d'utiliser la souris.</p>
 
 			<h3 id="080101">Commandes d'édition principales</h3>
@@ -495,7 +499,7 @@ Il est optimisé pour être utilisé facilement (et complètement) depuis le cla
 <p>TRJS permet d'insérer des caracatères API (pour le codage phonologique). <br/>
 En général, faire :
 <ul>
-	<li>Alt + Caractère SAMPA ou</li>
+	<li>Alt + Caractère SAMPA ou</li> 
 	<li>Alt + Shift + Caractère SAMPA.</li>
 </ul>
 </p>
@@ -528,7 +532,7 @@ En général, faire :
 	<tr><td>Alt + Shift + O</td><td>ɔ̃</td><td>Voyelle nasale moyenne inférieure postérieure arrondie</td></tr>
 	<tr><td>Alt + Shift + Q</td><td>æ</td><td>Voyelle pré-ouverte antérieure non arrondie</td></tr>
 </table>
-
+		
 <h1 id="08">Organisation et fonctionnalités </h1><hr/>
 
 		<h2 id="0901">Paramètres</h2>
@@ -550,7 +554,7 @@ En général, faire :
 	<tr><td>Vérification de la transcription lors de la sauvegarde</td><td>Coché par défaut</td><td>Onglet <bl>VERIFICATION</bl></td></tr>
 	<tr><td>Nombre de versions précédentes conservées lors de la sauvergarde</td><td>De 1 à 3</td><td>Onglet <bl>VERIFICATION</bl></td></tr></tbody>
 </table>
-<p>Lorsqu'on passe la souris sur un paramètre, une <b>bulle d'information</b> apparaît pour rappeler sa <b>fonction principale</b>,
+<p>Lorsqu'on passe la souris sur un paramètre, une <b>bulle d'information</b> apparaît pour rappeler sa <b>fonction principale</b>, 
 ainsi que son raccourci clavier éventuel associé.</p>
 
 		<h2 id="0902">Outil de recherche</h2>
@@ -602,7 +606,7 @@ ainsi que son raccourci clavier éventuel associé.</p>
 <br/>
 <a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p><br/>
 	</nav>
-</section>
+</section>	
 
 	</body>
 </html>

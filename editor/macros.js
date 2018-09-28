@@ -96,6 +96,12 @@ trjs.macros.desc = function (key) {
         : "";
 };
 
+trjs.macros.content = function (key) {
+    return (trjs.macros.table[key][0])
+        ? trjs.macros.table[key][0]
+        : "";
+};
+
 trjs.macros.macro0 = function () {
     if (trjs.macros.table[0][0]) {
         trjs.macros.replaceSelectedText(trjs.macros.table[0][0]);
