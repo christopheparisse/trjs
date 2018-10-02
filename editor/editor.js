@@ -892,10 +892,10 @@ trjs.editor = (function () {
         // if this is the case, then load the HTML file directly
         // else load an empty file and insert either the localStorage or an external file
         var sURL = window.document.URL.toString();
-        console.log(sURL);
-        console.log(trjs.param.mode);
-        console.log(trjs.param.location);
-        console.log(trjs.param.server);
+        //console.log(sURL);
+        //console.log(trjs.param.mode);
+        //console.log(trjs.param.location);
+        //console.log(trjs.param.server);
         if (trjs.param.server === 'electron') {
             var remote = require('electron').remote;
             if (remote.process.macosxOpenFile) {
@@ -936,9 +936,9 @@ trjs.editor = (function () {
             }
         }
 
-        console.log("VRAI URL " + sURL);
+        //console.log("VRAI URL " + sURL);
         var uri = parseUri(sURL);
-        console.log(uri);
+        //console.log(uri);
         //if (uri.file === 'transcriberjs.html')
         loadFromTranscriberjsHtml(uri);
         /*
@@ -1046,7 +1046,7 @@ trjs.editor = (function () {
         trjs.dmz.initVisible();
         setInitParam();
 
-        console.log("CRASHED: " + trjs.local.get('crashed'));
+        //console.log("CRASHED: " + trjs.local.get('crashed'));
         //console.log(uriLoad);
         /*
          if ( trjs.local.get('saved') == 'no' && uriLoad == true ) { // last save by trjs.io.innerSave() but not by trjs.io.serverSave() and not loading default page.
@@ -1149,7 +1149,7 @@ trjs.editor = (function () {
                         finalizeLoad();
                     } else {
                         trjs.io.serverLoadTranscript(trjs.local.get('recordingRealFile'), true, function (err) {
-                            console.log("err " + err);
+                            if (err) console.log("err " + err);
                             finalizeLoad();
                         }); // external load
                     }

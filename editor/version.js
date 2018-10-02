@@ -16,10 +16,10 @@ if (typeof exports !== 'undefined') {
 }
 
 version.appName = 'TRJS';
-version.version = 'v0.6.8';
+version.version = 'v0.6.9';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
-version.date = new Date(2018, 7, 1); // year, month, day : warning minus 1 (-1) for months : janvier === 0
+version.date = new Date(2018, 9, 3); // year, month, day : warning minus 1 (-1) for months : janvier === 0
 
 version.preservedPages = 3;
 

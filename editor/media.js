@@ -206,12 +206,12 @@ trjs.media = (function () {
         var media = $('#media-display')[0].firstElementChild;
         media.playbackRate = media.playbackRate * 2;
     }
-
+/*
     function playReverse(e) {
         var media = $('#media-display')[0].firstElementChild;
         media.playbackRate = -media.playbackRate;
     }
-
+*/
     function playNormal(e) {
         var media = $('#media-display')[0].firstElementChild;
         media.playbackRate = 1;
@@ -644,9 +644,11 @@ trjs.media = (function () {
         playPause: function (e) {
             playPause(e);
         },
+        /*
         playReverse: function (e) {
             playReverse(e);
         },
+        */
         playSlower: function (e) {
             playSlower(e);
         },

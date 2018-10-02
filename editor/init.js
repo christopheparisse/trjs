@@ -89,9 +89,9 @@ trjs.init = function(force) {
 				trjs.param.init('readwrite', 'electron', 'electron', 'level6');
 
                 var remote = require('electron').remote;
-                console.log(remote);
-                console.log(remote.getCurrentWindow());
-                console.log(remote.getCurrentWindow().id);
+                //console.log(remote);
+                //console.log(remote.getCurrentWindow());
+                //console.log(remote.getCurrentWindow().id);
                 remote.getCurrentWindow().on('close', function(e) {
                     e.preventDefault(); // Prevents the window from closing
                     console.log("Remote: oncClose : changed = " + trjs.param.ischanged());

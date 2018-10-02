@@ -189,28 +189,34 @@ function createMenu() {
             label: 'File',
             submenu: [
                 {
-                    /*
                     label: 'Open ...', accelerator: 'CmdOrCtrl+O', click: function () {
+//                    label: 'Open Ctrl+O ...', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
-                        window.webContents.send('opentranscript', 'main');
-                    }
-                    */
-                    label: 'Open Ctrl+O ...', click: function () {
-                        var window = BrowserWindow.getFocusedWindow();
-                        window.webContents.send('opentranscript', 'main');
+                        if (!window) {
+                            var n = createWindow();
+                            process.listWindows[n].webContents.send('opentranscript', 'main');
+                        } else {
+                            window.webContents.send('opentranscript', 'main');
+                        }
                     }
                 },
                 {
                     label: 'Open media ...', accelerator: 'Shift+CmdOrCtrl+O', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('openmedia', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (!window) {
+                            var n = createWindow();
+                            process.listWindows[n].webContents.send('openmedia', 'main');
+                        } else {
+                            window.webContents.send('openmedia', 'main');
+                        }
+                    }
                 },
                 {
                     label: 'New transcription', accelerator: 'CmdOrCtrl+N', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     if (!window) {
-                        var nth = createWindow( true );
+                        var n = createWindow( true );
+                        process.listWindows[n].webContents.send('newtranscript', 'main');
                     } else {
                         window.webContents.send('newtranscript', 'main');
                     }
@@ -225,20 +231,20 @@ function createMenu() {
                 {
                     label: 'Save', accelerator: 'CmdOrCtrl+S', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('save', 'main');
+                    if (window) window.webContents.send('save', 'main');
                 }
                 },
                 {
                     label: 'Save as ...', accelerator: 'Shift+CmdOrCtrl+S', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('saveas', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('saveas', 'main');
+                    }
                 },
                 {
                     label: 'Save in cache', accelerator: 'CmdOrCtrl+T', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('innersave', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('innersave', 'main');
+                    }
                 },
                 {
                     label: 'Close',
@@ -253,16 +259,16 @@ function createMenu() {
                 },
                 {
                     label: 'Clear recent files', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('clearmru', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('clearmru', 'main');
+                    }
                 },
                 {type: 'separator'},
                 {
                     label: 'Export', accelerator: 'Alt+CmdOrCtrl+S', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('export', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('export', 'main');
+                    }
                 }
             ]
         },
@@ -271,37 +277,40 @@ function createMenu() {
             submenu: [
                 {
                     label: 'Insert line', accelerator: 'F6', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('insertline', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('insertline', 'main');
+                    }
                 },
                 {
                     label: 'Delete line', accelerator: 'CmdOrCtrl+D', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('deleteline', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('deleteline', 'main');
+                    }
                 },
                 {
                     label: 'Insert macro', accelerator: 'CmdOrCtrl+F1', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('insertmacro', 'main');
-                }
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('insertmacro', 'main');
+                    }
                 },
                 {type: 'separator'},
-                {label: 'Undo', accelerator: 'CmdOrCtrl+Z', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('undo', 'main');
-                }
+                {
+                    label: 'Undo', accelerator: 'CmdOrCtrl+Z', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('undo', 'main');
+                    }
                 },
-                {label: 'Undo list', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('undolist', 'main');
-                }
+                {
+                    label: 'Undo list', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('undolist', 'main');
+                    }
                 },
-                {label: 'Redo', accelerator: 'Shift+CmdOrCtrl+Z', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('redo', 'main');
-                }
+                {
+                    label: 'Redo', accelerator: 'Shift+CmdOrCtrl+Z', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('redo', 'main');
+                    }
                 },
                 {type: 'separator'},
                 {label: 'Cut', accelerator: 'CmdOrCtrl+X', role: 'cut'},
@@ -309,88 +318,102 @@ function createMenu() {
                 {label: 'Paste', accelerator: 'CmdOrCtrl+V', role: 'paste'},
                 {label: 'Select All', accelerator: 'CmdOrCtrl+A', role: 'selectall'},
                 {type: 'separator'},
-                {label: 'Show/hide multiple selection', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('showhidemsel', 'main');
-                }
+                {
+                    label: 'Show/hide multiple selection', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('showhidemsel', 'main');
+                    }
                 },
-                {label: 'Select all', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('selectmsel', 'main');
-                }
+                {
+                    label: 'Select all', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('selectmsel', 'main');
+                    }
                 },
-                {label: 'Deselect all', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('deselectmsel', 'main');
-                }
+                {
+                    label: 'Deselect all', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('deselectmsel', 'main');
+                    }
                 },
-                {label: 'Cut lines', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('cutmsel', 'main');
-                }
+                {
+                    label: 'Cut lines', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('cutmsel', 'main');
+                    }
                 },
-                {label: 'Copy lines', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('copymsel', 'main');
-                }
+                {
+                    label: 'Copy lines', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('copymsel', 'main');
+                    }
                 },
-                {label: 'Paste Lines', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('pastemsel', 'main');
-                }
+                {
+                    label: 'Paste Lines', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('pastemsel', 'main');
+                    }
                 },
             ]
         },
         {
             label: 'Tools',
             submenu: [
-                {label: 'Search', accelerator: 'CmdOrCtrl+F', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('search', 'main');
-                }
+                {
+                    label: 'Search', accelerator: 'CmdOrCtrl+F', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('search', 'main');
+                    }
                 },
                 {type: 'separator'},
-                {label: 'Tiers', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('showtemp', 'main');
-                }
+                {
+                    label: 'Tiers', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('showtemp', 'main');
+                    }
                 },
                 {
                     label: 'Other information',
                     submenu: [
-                        {label: 'Metadata', click: function () {
-                            var window = BrowserWindow.getFocusedWindow();
-                            window.webContents.send('showmeta', 'main');
-                        }
+                        {
+                            label: 'Metadata', click: function () {
+                                var window = BrowserWindow.getFocusedWindow();
+                                if (window) window.webContents.send('showmeta', 'main');
+                            }
                         },
-                        {label: 'Speaker data', click: function () {
-                            var window = BrowserWindow.getFocusedWindow();
-                            window.webContents.send('showpart', 'main');
+                        {
+                            label: 'Speaker data', click: function () {
+                                var window = BrowserWindow.getFocusedWindow();
+                                if (window) window.webContents.send('showpart', 'main');
                             }
                         }
                     ]
                 },
                 {type: 'separator'},
-                {label: 'Parameters', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('showparameters', 'main');
-                }
+                {
+                    label: 'Parameters', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('showparameters', 'main');
+                    }
                 },
                 {type: 'separator'},
-                {label: 'Check transcription', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('checktranscript', 'main');
-                }
+                {
+                    label: 'Check transcription', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('checktranscript', 'main');
+                    }
                 },
-                {label: 'Shift all time links', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('shifttime', 'main');
-                }
+                {
+                    label: 'Shift all time links', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('shifttime', 'main');
+                    }
                 },
-                {label: 'Media convert', click: function () {
-                    var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('mediaconvert', 'main');
-                }
+                {
+                    label: 'Media convert', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('mediaconvert', 'main');
+                    }
                 },
             ]
         },
@@ -409,19 +432,22 @@ function createMenu() {
                             focusedWindow.setFullScreen(!focusedWindow.isFullScreen());
                     }
                     },
-                {label: 'Zoom in (all window)', click: function () {
+                {
+                    label: 'Zoom in (all window)', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
-                        window.webContents.send('wndzoomin', 'main');
+                        if (window) window.webContents.send('wndzoomin', 'main');
                     }
                 },
-                {label: 'Zoom out (all window)', click: function () {
+                {
+                    label: 'Zoom out (all window)', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
-                        window.webContents.send('wndzoomout', 'main');
+                        if (window) window.webContents.send('wndzoomout', 'main');
                     }
                 },
-                {label: 'Zoom reset (all window)', click: function () {
+                {
+                    label: 'Zoom reset (all window)', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
-                        window.webContents.send('wndzoomreset', 'main');
+                        if (window) window.webContents.send('wndzoomreset', 'main');
                     }
                 },
                 {label: 'Minimize', accelerator: 'CmdOrCtrl+M', role: 'minimize'},
@@ -436,7 +462,7 @@ function createMenu() {
                             id: 'palettefile',
                             click: function () {
                             var window = BrowserWindow.getFocusedWindow();
-                            window.webContents.send('palettefile', 'main');
+                            if (window) window.webContents.send('palettefile', 'main');
                         }
                         },
                         {   label: 'Edit Toolbox',
@@ -445,7 +471,7 @@ function createMenu() {
                             id: 'paletteedit',
                             click: function () {
                             var window = BrowserWindow.getFocusedWindow();
-                            window.webContents.send('paletteedit', 'main');
+                            if (window) window.webContents.send('paletteedit', 'main');
                         }
                         },
                     ]
@@ -472,70 +498,70 @@ function createMenu() {
                 label: 'Start/open a transcription',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('helpstart', 'main');
+                    if (window) window.webContents.send('helpstart', 'main');
                 }
             },
             {
                 label: 'Transcribing new data',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('helptranscribe', 'main');
+                    if (window) window.webContents.send('helptranscribe', 'main');
                 }
             },
             {
                 label: 'Editing a previous transcription',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('helpedit', 'main');
+                    if (window) window.webContents.send('helpedit', 'main');
                 }
             },
             {
                 label: 'Import and export',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('helpimportexport', 'main');
+                    if (window) window.webContents.send('helpimportexport', 'main');
                 }
             },
             {
                 label: 'Parameters and special features',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('helpparams', 'main');
+                    if (window) window.webContents.send('helpparams', 'main');
                 }
             },
             {
                 label: 'Online Help',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('help', 'main');
+                    if (window) window.webContents.send('help', 'main');
                 }
             },
             {
                 label: 'Key Bindings',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('messagebindings', 'main');
+                    if (window) window.webContents.send('messagebindings', 'main');
                 }
             },
             {
                 label: 'Messages',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('messages', 'main');
+                    if (window) window.webContents.send('messages', 'main');
                 }
             },
             {
                 label: 'Reset messages',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('resetmessages', 'main');
+                    if (window) window.webContents.send('resetmessages', 'main');
                 }
             },
             {
                 label: 'About',
                 click: function () {
                     var window = BrowserWindow.getFocusedWindow();
-                    window.webContents.send('about', 'main');
+                    if (window) window.webContents.send('about', 'main');
                 }
             },
         ]
@@ -551,16 +577,18 @@ function createMenu() {
                     {label: 'About ' + name,
                         click: function () {
                             var window = BrowserWindow.getFocusedWindow();
-                            window.webContents.send('about', 'main');
+                            if (window) window.webContents.send('about', 'main');
                         }
                     },
                     {type: 'separator'},
                     {label: 'Services', role: 'services', submenu: []},
                     {type: 'separator'},
-                    {label: 'Parameters', click: function () {
-                        var window = BrowserWindow.getFocusedWindow();
-                        window.webContents.send('showparameters', 'main');
-                    }},
+                    {
+                        label: 'Parameters', click: function () {
+                            var window = BrowserWindow.getFocusedWindow();
+                            if (window) window.webContents.send('showparameters', 'main');
+                        }
+                    },
                     {type: 'separator'},
                     {label: 'Hide ' + name, accelerator: 'Command+H', role: 'hide'},
                     {label: 'Hide Others', accelerator: 'Command+Shift+H', role: 'hideothers'},

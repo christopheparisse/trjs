@@ -27,12 +27,12 @@ fsio.startChooseFile = function(dest, type) {
     if (type === 'transcriptsaveas') {
         fsio.__chooseSaveFile('Save transcript as',
             [
+                { name: 'Trjs Files', extensions: ['trjs'] },
                 { name: 'Transcription Files', extensions: ['cha', 'cex', 'textgrid', 'eaf', 'trs', 'xml', 'trjs'] },
                 { name: 'Chat Files', extensions: ['cha', 'cex'] },
                 { name: 'Praat Files', extensions: ['textgrid'] },
                 { name: 'Elan Files', extensions: ['eaf'] },
-                { name: 'Transcriber Files', extensions: ['trs'] },
-                { name: 'Trjs Files', extensions: ['trjs'] }
+                { name: 'Transcriber Files', extensions: ['trs'] }
             ],
             fsio.writeTranscript
         );

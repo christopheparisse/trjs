@@ -765,6 +765,7 @@ trjs.messgs_eng = {
     tbin: "Bindings",
     tapibin: "API",
     generic: "Basic macro menu",
+    editKey: "Editing keyboard command",
 };
 
 trjs.messgs_fra = {
@@ -1523,6 +1524,7 @@ trjs.messgs_fra = {
     tbin: "Fonctions",
     tapibin: "API",
     generic: "Menu macro de base",
+    editKey: "Edition de la commande clavier",
 };
 
 trjs.messgs = trjs.messgs_eng;

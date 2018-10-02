@@ -1445,18 +1445,13 @@ trjs.io = (function () {
      */
     function testFileExists(fn, action) {
         if (trjs.param.level < 'level6') return;
-        fsio.testFileExists(codefn.encodeFilename(fn), function (data) {
-            if (data) {
-                if (data === 'true')// file exists
-                    action(true, fn);
-                else
-                    action(false, fn);
-            } else {
-                trjs.log.boxalert(trjs.messgs.cannoterase + fn);
-            }
-        }, function (data) {
-            trjs.log.boxalert(trjs.messgs.cannoterase + fn);
-        });
+        fsio.testFileExists(codefn.encodeFilename(fn),
+            function (data) {
+                action(true, fn);
+            },
+            function (data) {
+                action(false, fn);
+            });
     }
 
     return {
