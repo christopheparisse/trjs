@@ -13,6 +13,7 @@
     "cleanpegjs": "pegjs editor/cleansentence.pegjs",
     "rebuild": "node_modules/.bin/electron-rebuild",
     "build": "sh buildallmac.sh",
+    "dist": "sh majpgmct3.sh",
     "git": "sh maj.sh"
   },
   "repository": {

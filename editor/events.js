@@ -37,6 +37,7 @@ trjs.events = (function () {
     function lineGetCell(line, col) {
         if (!line) {
             console.log('line is null');
+            console.trace();
             return '';
         }
         var tds = line.children();
@@ -203,7 +204,7 @@ trjs.events = (function () {
         var s = trjs.transcription.stringLineTranscript(type, loc, ts, te, trjs.transcription.formatTime(ts), trjs.transcription.formatTime(te), tr, ln);
         sel.before(s); // inserts before current sibbling
         trjs.transcription.trUpdateCSS(sel, loc);
-        next = sel.next();
+        var next = sel.next();
         while (next != null && next.length > 0) {
             ln++;
             lineSetCell(next, trjs.data.LINECOL, ln);
@@ -378,8 +379,8 @@ trjs.events = (function () {
      * @param {object} line of transcription table
      */
     function goContinuous(e, sel) {
-        if (sel === undefined) sel = trjs.data.selectedLine;
-        if ((sel === null) || (sel === undefined)) return;
+        if (!sel) sel = trjs.data.selectedLine;
+        if (!sel) return;
         if (trjs.param.isContinuousPlaying === true) {
             trjs.media.endContinuousPlay();
             return;
@@ -388,7 +389,12 @@ trjs.events = (function () {
             if (sel === null) return;
             setSelectedLine(sel);
             var start = lineGetCell(sel, trjs.data.TSCOL);
-            if (start === '') return;
+            if (!start && Number(start) !== 0) {
+                console.log("gc", start);
+                console.log("gc stop at start");
+                trjs.log.alert("cannot run current line with no time start: use TAB (playpause function)");
+                return;
+            }
             trjs.media.runContinuous(start, sel);
         }
     }
@@ -483,20 +489,23 @@ trjs.events = (function () {
      * @return {object} line of transcription table
      */
     function findLineToStart(sel) {
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var t = trjs.transcription.typeTier(sel);
         if (t !== 'loc' && t !== 'div') {
             sel = getPreviousMainline(sel);
-            if (sel === undefined) return;
+            if (!sel) return;
         }
         var start = lineGetCell(sel, trjs.data.TSCOL);
         var end = lineGetCell(sel, trjs.data.TECOL);
         while (t !== 'div' && (start === '' || end === '')) {
             sel = getPreviousMainline(sel);
+            if (!sel) {
+                trjs.log.alert('cannot play this line', 'normal');
+                return null;
+            }
             t = trjs.transcription.typeTier(sel);
             start = lineGetCell(sel, trjs.data.TSCOL);
             end = lineGetCell(sel, trjs.data.TECOL);
-            if (sel === undefined) return null;
         }
         if (start === '' || end === '') {
             trjs.log.alert('cannot play this line', 'normal');
@@ -513,9 +522,9 @@ trjs.events = (function () {
      * @return {object} line of transcription table
      */
     function findLineToFollow(sel) {
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         sel = getNextMainline(sel);
-        if (sel === undefined) return null;
+        if (!sel) return null;
         var t = trjs.transcription.typeTier(sel);
         var start = lineGetCell(sel, trjs.data.TSCOL);
         var end = lineGetCell(sel, trjs.data.TECOL);
@@ -524,7 +533,7 @@ trjs.events = (function () {
             t = trjs.transcription.typeTier(sel);
             start = lineGetCell(sel, trjs.data.TSCOL);
             end = lineGetCell(sel, trjs.data.TECOL);
-            if (sel === undefined) return null;
+            if (!sel) return null;
         }
         if (start == '' || end == '') {
             trjs.log.alert('cannot play this line', 'normal');
@@ -540,15 +549,25 @@ trjs.events = (function () {
      * @param {object} line of transcription table
      */
     function runCurrentLine(e, sel) {
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         if (trjs.param.isContinuousPlaying == true)
             trjs.media.endContinuousPlay();
-        if (sel === undefined) return;
+        if (!sel) return;
         sel = findLineToStart(sel);
-        if (sel === undefined) return;
+        if (!sel) return;
         setSelectedLine(sel);
         var start = lineGetCell(sel, trjs.data.TSCOL);
         var end = lineGetCell(sel, trjs.data.TECOL);
+        if (!start && Number(start) !== 0) {
+            console.log("stop at start", start, end);
+            trjs.log.alert("cannot run current line with no time start: use TAB (playpause function)");
+            return;
+        }
+        if (!end && Number(end) !== 0) {
+            console.log("stop at end", start, end);
+            trjs.log.alert("cannot run current line with no time end: use TAB (playpause function)");
+            return;
+        }
         trjs.media.runFromTo(start, end, sel);
     }
 
@@ -559,10 +578,10 @@ trjs.events = (function () {
      * @param {object} line of transcription table
      */
     function runThreeLines(e, sel) {
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         if (trjs.param.isContinuousPlaying == true)
             trjs.media.endContinuousPlay();
-        if (sel === undefined) return;
+        if (!sel) return;
         var prevline = findLineToStart(sel);
         if (prevline == null) return;
         prevline = getPreviousMainline(prevline);
@@ -572,6 +591,18 @@ trjs.events = (function () {
         setSelectedLine(prevline);
         var start = lineGetCell(prevline, trjs.data.TSCOL);
         var end = lineGetCell(nextline, trjs.data.TECOL);
+        if (!start && Number(start) !== 0) {
+            console.log("r3", start, end);
+            console.log("stop at start");
+            trjs.log.alert("cannot run current line with no time start: use TAB (playpause function)");
+            return;
+        }
+        if (!end && Number(end) !== 0) {
+            console.log("r3", start, end);
+            console.log("stop at end");
+            trjs.log.alert("cannot run current line with no time end: use TAB (playpause function)");
+            return;
+        }
         trjs.media.runFromTo(start, end, prevline, sel, nextline);
     }
 
@@ -584,7 +615,7 @@ trjs.events = (function () {
     function keyUp(e, sel) {
         if (e.transcript !== true) return false;
         e.preventDefault();
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var prevline = sel.prev();
         if (prevline.length >= 1) {
             $('.transcription', prevline[0]).focus();
@@ -602,7 +633,7 @@ trjs.events = (function () {
     function keyDown(e, sel) {
         if (e.transcript !== true) return false;
         e.preventDefault();
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var nextline = sel.next();
         if (nextline.length >= 1) {
             $('.transcription', nextline[0]).focus();
@@ -620,7 +651,7 @@ trjs.events = (function () {
     function pageUp(e, sel) {
         if (e.transcript !== true) return false;
         e.preventDefault();
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var prevline = sel.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev();
         if (prevline.length >= 1) {
             $('.transcription', prevline[0]).focus();
@@ -638,7 +669,7 @@ trjs.events = (function () {
     function pageDown(e, sel) {
         if (e.transcript !== true) return false;
         e.preventDefault();
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var nextline = sel.next().next().next().next().next().next().next().next().next().next().next();
         if (nextline.length >= 1) {
             $('.transcription', nextline[0]).focus();
@@ -680,7 +711,7 @@ trjs.events = (function () {
      */
     function keyLocUp(e, sel) {
         if (e && e.transcript !== true) return false;
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var prevline = getPreviousMainline(sel);
         if (prevline != null && prevline.length >= 1) {
             $('.transcription', prevline[0]).focus();
@@ -697,7 +728,7 @@ trjs.events = (function () {
      */
     function keyLocDown(e, sel) {
         if (e && e.transcript !== true) return false;
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var nextline = getNextMainline(sel);
         if (nextline != null && nextline.length >= 1) {
             $('.transcription', nextline[0]).focus();
@@ -753,7 +784,7 @@ trjs.events = (function () {
      */
     function deleteLine(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         trjs.undo.deleteLine(trjs.transcription.getLine(sel), trjs.undo.getContentOfLine(sel));
         deleteSelectedLine(sel);
     }
@@ -766,7 +797,7 @@ trjs.events = (function () {
      */
     function deleteLineLoc(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var type = trjs.transcription.typeTier(sel);
         if (type != 'loc' && type != 'div') sel = getPreviousMainline(sel);
         trjs.undo.deleteLine(trjs.transcription.getLine(sel), trjs.undo.getContentOfLine(sel));
@@ -792,7 +823,7 @@ trjs.events = (function () {
      * @return {array} with 4 values from copyLine
      */
     function copyLineLoc(sel) {
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var type = trjs.transcription.typeTier(sel);
         if (type != 'loc' && type != 'div') sel = getPreviousMainline(sel);
         var copy = [copyLine(sel)];
@@ -825,7 +856,7 @@ trjs.events = (function () {
      */
     function replicateLine(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var line = trjs.transcription.getLine(sel);
         var code = lineGetCell(sel, trjs.data.CODECOL);
         var ts = lineGetCell(sel, trjs.data.TSCOL);
@@ -869,7 +900,7 @@ trjs.events = (function () {
      */
     function joinLine(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var next = sel.next();
         if (next != null && next.length > 0)
             __joinLines(sel, next);
@@ -883,7 +914,7 @@ trjs.events = (function () {
      */
     function joinLineLoc(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var type = trjs.transcription.typeTier(sel);
         if (type != 'loc' && type != 'div') sel = getPreviousMainline(sel);
         var next = getNextMainline(sel);
@@ -938,7 +969,7 @@ trjs.events = (function () {
      */
     function insertWithTimeLoc(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         __insertWithTimeHere(sel, getLastTierline(sel));
     }
@@ -952,7 +983,7 @@ trjs.events = (function () {
      */
     function insertWithTime(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         __insertWithTimeHere(sel, sel);
     }
@@ -965,7 +996,7 @@ trjs.events = (function () {
      */
     function insertBlankLineLoc(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         var type = trjs.transcription.typeTier(sel);
         if (type === 'prop') sel = getPreviousMainline(sel);
@@ -987,7 +1018,7 @@ trjs.events = (function () {
      */
     function insertBlankLineLocBefore(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         var type = trjs.transcription.typeTier(sel);
         if (type === 'prop') sel = getPreviousMainline(sel);
@@ -1009,7 +1040,7 @@ trjs.events = (function () {
      */
     function insertBlankLine(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         $('.transcription', sel).focus();
         var type = trjs.transcription.typeTier(sel);
         if (type === 'div') type = 'main loc';
@@ -1028,7 +1059,7 @@ trjs.events = (function () {
      */
     function setDivPlus(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var linenumber = trjs.transcription.getLine(sel);
         var pc = lineGetCell(sel, trjs.data.CODECOL);
         trjs.transcription.setType(sel, 'main div');
@@ -1048,7 +1079,7 @@ trjs.events = (function () {
      */
     function setDivMinus(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var linenumber = trjs.transcription.getLine(sel);
         var pc = lineGetCell(sel, trjs.data.CODECOL);
         var tablelines = trjs.transcription.tablelines();
@@ -1075,7 +1106,7 @@ trjs.events = (function () {
     function setDivPlusInsert(e, sel) {
         trjs.param.change(true);
         var linenumber = trjs.transcription.getLine(sel);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         createRowAfterWith(sel, 'main div', '+div+', '', '', trjs.transcription.createDivEditField('', ''));
         trjs.undo.insertLine(linenumber);
         trjs.undo.replaceCode(linenumber + 1, '', '+div+');
@@ -1090,7 +1121,7 @@ trjs.events = (function () {
      */
     function setDivMissingMinus(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var tablelines = trjs.transcription.tablelines();
         var nbm = trjs.transcription.nbMissingDiv(tablelines, sel) - 1;
         var prev = sel.prev();
@@ -1112,7 +1143,7 @@ trjs.events = (function () {
      */
     function setDivMinusInsert(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var linenumber = trjs.transcription.getLine(sel);
         var tablelines = trjs.transcription.tablelines();
         var nbm = trjs.transcription.nbMissingDiv(tablelines, sel);
@@ -1134,7 +1165,7 @@ trjs.events = (function () {
      */
     function setNthLoc(sel, nth) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var table = $("#template-code");
         var tablelines = $('tr', table[0]);
         if (nth >= tablelines.length) return;
@@ -1170,7 +1201,7 @@ trjs.events = (function () {
      */
     function setNthTier(sel, nth) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var table = $("#template-tier");
         var tablelines = $('tr', table[0]);
         if (nth >= tablelines.length) return;
@@ -1239,7 +1270,7 @@ trjs.events = (function () {
      */
     function setTimeReplace(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var nextline = sel.next();
         if (nextline.length >= 1)
             __setTimeReplace(sel, nextline);
@@ -1253,7 +1284,7 @@ trjs.events = (function () {
      */
     function setTimeReplaceLoc(e, sel) {
         trjs.param.change(true);
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var type = trjs.transcription.typeTier(sel);
         var prevline = (type == 'loc' || type == 'div') ? sel : getPreviousMainline(sel);
         var nextline = getNextMainline(sel);
@@ -1311,7 +1342,7 @@ trjs.events = (function () {
                 return;
             }
         }
-        if (sel === undefined) sel = trjs.data.selectedLine;
+        if (!sel) sel = trjs.data.selectedLine;
         var tm = trjs.media.getTime();
         var ts = lineGetCell(sel, trjs.data.TSCOL);
         if (tm !== '' && ts !== '' && tm < ts) {
@@ -1492,6 +1523,7 @@ trjs.events = (function () {
             // if (e.transcript !== true) return false;
             e.preventDefault();
         }
+        console.log("tab:", trjs.param.synchro.witch());
         if (trjs.param.isContinuousPlaying == true) {
             trjs.media.endContinuousPlay();
             return true;

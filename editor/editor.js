@@ -529,19 +529,19 @@ trjs.editor = (function () {
     }
 
     function zoomGlobalIn() {
-        const webFrame = require('electron').webFrame;
+        var webFrame = require('electron').webFrame;
         var f = webFrame.getZoomFactor();
         webFrame.setZoomFactor(f * 1.2);
     }
 
     function zoomGlobalOut() {
-        const webFrame = require('electron').webFrame;
+        var webFrame = require('electron').webFrame;
         var f = webFrame.getZoomFactor();
         webFrame.setZoomFactor(f / 1.2);
     }
 
     function zoomGlobalReset() {
-        const webFrame = require('electron').webFrame;
+        var webFrame = require('electron').webFrame;
         webFrame.setZoomFactor(1);
     }
 
@@ -1479,6 +1479,7 @@ trjs.editor = (function () {
     }
 
     function updateCheck() {
+        /*
         if (trjs.param.level < 'level6') return;
         fsio.updateCheck(
             {version: (trjs.param.lastversion ? trjs.param.lastversion : version.version)},
@@ -1499,9 +1500,11 @@ trjs.editor = (function () {
             function (data) {
                 trjs.log.alert('update_check: ' + data.status + ' ' + data.responseText);
             });
+        */
     }
 
     function updateClean() {
+        /*
         if (trjs.param.level < 'level6') return;
         fsio.updateClean(
             {},
@@ -1511,6 +1514,7 @@ trjs.editor = (function () {
             function (data) {
                 trjs.log.alert('update_clean: ' + data.status + ' ' + data.responseText);
             });
+        */
     }
 
     return {

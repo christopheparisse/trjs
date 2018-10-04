@@ -351,6 +351,7 @@ var trackChanges = {
 		// if this function is called the cell of a line has lost the focus
 		var resultEdited = trjs.events.lineGetCell($(event.target).parent(), this.field);
 		var resultEditedNumber = trjs.transcription.getLine($(event.target).parent());
+        if (isNaN(resultEditedNumber) || resultEditedNumber === "NaN") return;
 		if (resultEditedNumber !== this.currentEditedNumber) { // then the order of focus and blur is (next focus first, last blur second)
 			if (resultEditedNumber !== this.previousEditedNumber) {
 				console.log('incoherent lines (previous): ' + resultEditedNumber + ' ' + this.currentEditedNumber + ' ' + this.previousEditedNumber);

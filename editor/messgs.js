@@ -657,7 +657,7 @@ trjs.messgs_eng = {
     altbin38: "Go up to the next main line", // Alt Up
     altbin39: "Jump forwards a little bit", // Alt Right
     altbin40: "Go down to the next main line", // Alt Down
-    altbin112: "Play from the current position in the transcription", // Alt F1
+    playcurrent: "Play from the current position in the transcription", // Alt F1
     altbin113: "Reduce the size of the media", // Alt F2
     altbin114: "Increase the size of the media", // Alt F3
     altbin115: "Play the media two times slower", // Alt F4
@@ -666,7 +666,7 @@ trjs.messgs_eng = {
     altbin118: "Play three main lines around the current one", // Alt F7
 
     shiftbin9: "Play from the start of the current line", // Shift Tab
-    shiftbin112: "Play from the current media time", // Shift F1
+    playpause: "Play from the current media time", // Shift F1
 
 //	shiftbin114: "Specific function (trjs.keys.special1)" , // Shift F3
     shiftbin115: "Local save in HTML format", // Shift F4
@@ -1416,7 +1416,7 @@ trjs.messgs_fra = {
     altbin38: "Aller à la ligne principale précédente", // Alt Up
     altbin39: "Aller en avant", // Alt Right
     altbin40: "Aller à la ligne principale suivante", // Alt Down
-    altbin112: "Lecture à partir de l'endroit où le curseur est situé, pause", // Alt F1
+    playcurrent: "Lecture à partir de l'endroit où le curseur est situé, pause", // Alt F1
     altbin113: "Réduire la taille de la vidéo", // Alt F2
     altbin114: "Agrandir la taille de la vidéo", // Alt F3
     altbin115: "Jouer la vidéo moins vite", // Alt F4
@@ -1425,7 +1425,7 @@ trjs.messgs_fra = {
     altbin118: "Jouer 3 lignes autour de la ligne courante", // Alt F7
 
     shiftbin9: "Lecture à partir du début de la ligne courante", // Shift Tab
-    shiftbin112: "Lecture à partir du temps du média, pause", // Shift F1
+    playpause: "Lecture à partir du temps du média, pause", // Shift F1
 
 //	shiftbin114: "specific function (trjs.keys.special1)" , // Shift F3
     shiftbin115: "Sauvegarde locale au format HTML", // Shift F4

@@ -20,7 +20,11 @@ trjs.media = (function () {
      */
     function timeUpdateListener() {
         var media = $('#media-display')[0].firstElementChild;
-        if (media) adjustRealInfo.show(media);
+        try {
+            if (media) adjustRealInfo.show(media);
+        } catch(e) {
+            console.log(e);
+        }
     }
 
     /**
@@ -81,7 +85,12 @@ trjs.media = (function () {
     function ctrlContinuousFromTo() {
         var media = $('#media-display')[0].firstElementChild;
         if (media.currentTime >= media.endplay) {
-            if (media.endElement == null) return;
+            console.log(media.currentTime, media.endplay, media.startElement, media.endElement);
+            if (media.endElement == null) {
+                endContinuousPlay();
+                return;
+            }
+            console.log("go on!");
             dehighlight(media.startElement);
             highlight(media.endElement);
 
@@ -97,10 +106,20 @@ trjs.media = (function () {
 
             // set nxt to be selected
             // trjs.events.setSelectedLine(media.endElement, 'nowave');  // the wave is drawn by adjustRealInfo
+            /*
+            if (!nxt) {
+                // finish last line
+                trjs.events.setSelectedLine(media.endElement);
+                trjs.events.runCurrentLine(undefined, media.endElement);
+                return;
+            }
+            */
 
             media.startElement = media.endElement;
             media.endElement = nxt;
-            media.endplay = trjs.events.lineGetCell(nxt, trjs.data.TSCOL);
+            if (nxt) {
+                media.endplay = trjs.events.lineGetCell(nxt, trjs.data.TSCOL);
+            }
             // display the current and remaining times
             // media.addEventListener("timeupdate", ctrlContinuousFromTo, false);
         }
@@ -167,7 +186,7 @@ trjs.media = (function () {
             }
             var s = trjs.events.lineGetCell(trjs.data.selectedLine, trjs.data.TSCOL);
             var e = trjs.events.lineGetCell(trjs.data.selectedLine, trjs.data.TECOL);
-            // ne pas reajuster si on décide que ce n'est pas nécessaire
+            // do not change time if not necessary
             if (s !== '' && e !== '' && (pt < Number(s) || pt > Number(e))) // the media is not in the current line.
                 media.currentTime = Number(s);
             media.play();
@@ -416,20 +435,21 @@ trjs.media = (function () {
     /**
      * find the next line with time end information
      * @method nextHighlight
-     * @param jQuery pointer to a TR line
+     * @param tr jQuery pointer to a TR line
      * @return pointer to a TR line (jquery-object)
      */
     function nextHighlight(tr) {
-//	if (tr == null) return;
         while (true) {
             //console.log(tr);
             tr = tr.next();
-            if (tr == null || tr.length === 0) {
-                endContinuousPlay();
+            if (!tr || tr.length === 0) {
+                //endContinuousPlay();
                 return null;
             }
             var te = trjs.events.lineGetCell(tr, trjs.data.TSCOL);
-            if (te !== '' && te > 0)
+            if (!te) // te === null or te === 0 or te === ''
+                return null;
+            else
                 return tr;
         }
     }
@@ -440,9 +460,9 @@ trjs.media = (function () {
      * @param jQuery pointer to a TR line
      */
     function highlight(tr) {
-        while (tr != null && tr.length > 0) {
+        while (tr && tr.length > 0) {
             tr = highlight0(tr);
-            if (trjs.events.lineGetCell(tr, trjs.data.TSCOL) != '' || trjs.events.lineGetCell(tr, trjs.data.TECOL) != '')
+            if (trjs.events.lineGetCell(tr, trjs.data.TSCOL) || trjs.events.lineGetCell(tr, trjs.data.TECOL))
                 break;
         }
     }
@@ -503,6 +523,7 @@ trjs.media = (function () {
         dehighlight(media.startElement);
         media.lastPosition = media.currentTime;
         media.lastTime = (new Date()).getTime();
+        clearInterval(media_clock);
         media.removeEventListener('timeupdate', ctrlFromTo);
         media.addEventListener('timeupdate', timeUpdateListener, false);
         media.endplay = -1;
@@ -524,21 +545,38 @@ trjs.media = (function () {
         }
         var media = $('#media-display')[0].firstElementChild;
         media.currentTime = start;
-        media.play();
-        //console.log(currentTR);
-        highlight(currentTR);
-        media.startElement = currentTR;
-        // find next element to be highlihted
-        var nxt = nextHighlight(currentTR);
+        var playPromise = media.play();
+        if (playPromise !== undefined) {
+            playPromise.then(function(_) {
+                // playback started!
+                // We can now safely pause video...
+                //console.log(currentTR);
+                highlight(currentTR);
+                media.startElement = currentTR;
+                // find next element to be highlihted
+                var nxt = nextHighlight(currentTR);
 
-        // set nxt to be selected
-        trjs.events.setSelectedLine(currentTR);
+                if (nxt === null) {
+                    trjs.events.setSelectedLine(currentTR);
+                    endContinuousPlay();
+                    // finish current line
+                    trjs.events.runCurrentLine(undefined, currentTR);
+                    return;
+                }
+                // set nxt to be selected
+                trjs.events.setSelectedLine(currentTR);
 
-        media.endElement = nxt;
-        media.endplay = trjs.events.lineGetCell(nxt, trjs.data.TSCOL);
-        //  display the current and remaining times
-        media.addEventListener("timeupdate", ctrlContinuousFromTo, false);
-        trjs.param.isContinuousPlaying = true;
+                media.endElement = nxt;
+                media.endplay = trjs.events.lineGetCell(nxt, trjs.data.TSCOL);
+                //  display the current and remaining times
+                media.addEventListener("timeupdate", ctrlContinuousFromTo, false);
+                trjs.param.isContinuousPlaying = true;
+            })
+            .catch(function(error) {
+                    // play was prevented
+                    // do nothing.
+            });
+        }
     }
 
     function display(p) {

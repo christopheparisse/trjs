@@ -164,9 +164,7 @@ function loadUIsolated(utt) {
 	// names of the locutors found in the transcript in case persons description is incomplete
     lastEndTime = ts; // time of the previous end of an element, even if no element processed yet
     var elt = loadUSeg('', utts[0], ts, te, loc, 'loc');
-    if (elt) {
-        addLineOfTranscript(loc, lastEndTime, te, elt, 'loc');
-    }
+    addLineOfTranscript(loc, lastEndTime, te, elt, 'loc');
 }
 
 function getDesc(node) {
@@ -343,9 +341,7 @@ function loadannotationBlock(utt) {
     	}
     } else {
 	    var elt = loadUSeg('', tmp[0], ts, te, loc, 'loc');
-        if (elt) {
-            addLineOfTranscript(loc, lastEndTime, te, elt, 'loc');
-        }
+        addLineOfTranscript(loc, lastEndTime, te, elt, 'loc');
     }
     /* tiers lines */
     /* for now because it is not final:

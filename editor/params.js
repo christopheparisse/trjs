@@ -197,11 +197,11 @@ trjs.param = {
 
         /*
          * set the timing for checking new updates
-         */
         if (trjs.param.level >= 'level1' && trjs.param.server !== 'express' && trjs.param.server !== 'nodejs') {
             setTimeout(trjs.editor.updateCheck, 2 * 60 * 1000); // check two minutes after initial start
             setInterval(trjs.editor.updateCheck, 6 * 60 * 60 * 1000); // every six hours
         }
+         */
     },
 
     resetDefault: function () {
@@ -451,5 +451,8 @@ trjs.param = {
             else
                 trjs.param.synchro.check(true, 'control');
         },
+        witch: function() {
+            return this.setting;
+        }
     },
 };
