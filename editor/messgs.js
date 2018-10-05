@@ -766,6 +766,7 @@ trjs.messgs_eng = {
     tapibin: "API",
     generic: "Basic macro menu",
     editKey: "Editing keyboard command",
+    savekeybindings: "Do you want to save the change in the keyboard bindings?",
 };
 
 trjs.messgs_fra = {
@@ -1525,6 +1526,7 @@ trjs.messgs_fra = {
     tapibin: "API",
     generic: "Menu macro de base",
     editKey: "Edition de la commande clavier",
+    savekeybindings: "Voulez-vous sauver les modifications dans les associations clavier ?",
 };
 
 trjs.messgs = trjs.messgs_eng;

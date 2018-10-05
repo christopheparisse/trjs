@@ -45,6 +45,7 @@ function modifiersToString(ctrl, alt, shift, meta, supl) {
 
 trjs.keys = {};
 trjs.keys.kc = null; // intermediary variable to edit key binding changes
+trjs.keys.updated = false; // allow to check if change to the key binding should be changed
 
 trjs.keys.CTRLKEYS = 300;
 trjs.keys.ALTKEYS = 600;
@@ -163,7 +164,19 @@ function loadUserBindings() {
     }
 }
 
-function saveUserBindings() {
+trjs.keys.resetKeys = function() {
+    trjs.bindingsUser = [];
+    // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+    for (var i = 0; i < trjs.bindingsDef.length; i++) {
+        trjs.bindingsUser.push([ trjs.bindingsDef[i][BINDKEY],
+            trjs.bindingsDef[i][BINDCTRL], trjs.bindingsDef[i][BINDALT],
+            trjs.bindingsDef[i][BINDSHIFT], (trjs.bindingsDef[i][BINDMETA] === 'ctrl' ? true : trjs.bindingsDef[i][BINDMETA]),
+            trjs.bindingsDef[i][BINDSUPL], trjs.bindingsDef[i][BINDFUN] ]);
+    }
+}
+
+trjs.keys.saveUserBindings = function () {
+    trjs.keys.updated = false;
     trjs.local.put('bindingsUser', JSON.stringify(trjs.bindingsUser));
 }
 
@@ -269,43 +282,44 @@ trjs.keys.storeChangeKeys = function() {
             }
         }
     }
-    console.log("storeChangeKeys", keyChanging, trjs.bindingsUser);
+//    console.log("storeChangeKeys", keyChanging, trjs.bindingsUser);
     // regenerate the actual bindings to trjs.tablekeys
     initTablekeys();
+    trjs.keys.saveUserBindings();
 }
 
 trjs.keys.updateKCSupl = function(element)
 {
     var idx = element.target.selectedIndex;
     var val = element.target.options[idx].value;
-    console.log(idx, val, trjs.keys.kc, element);
-    trjs.keys.kc.supl = val;
+//    console.log(idx, val, trjs.keys.kc, element);
+    trjs.keys.kc.supl = val === '--' ? '' : val;
     trjs.keys.kc.changed = true;
-    console.log("supl", trjs.keys.kc);
+//    console.log("supl", trjs.keys.kc);
 }
 trjs.keys.updateKCCtrl = function(element)
 {
-    var val = element.target.value;
+    var val = element.target.checked;
     console.log(val, trjs.keys.kc, element);
-    trjs.keys.kc.ctrl = val==='on' ? true : false;
+    trjs.keys.kc.ctrl = val;
     trjs.keys.kc.changed = true;
-    console.log("ctrl", trjs.keys.kc);
+//    console.log("ctrl", trjs.keys.kc);
 }
 trjs.keys.updateKCAlt = function(element)
 {
-    var val = element.target.value;
+    var val = element.target.checked;
     console.log(val, trjs.keys.kc, element);
-    trjs.keys.kc.alt = val==='on' ? true : false;
+    trjs.keys.kc.alt = val;
     trjs.keys.kc.changed = true;
-    console.log("alt", trjs.keys.kc);
+//    console.log("alt", trjs.keys.kc);
 }
 trjs.keys.updateKCShift = function(element)
 {
-    var val = element.target.value;
+    var val = element.target.checked;
     console.log(val, trjs.keys.kc, element);
-    trjs.keys.kc.shift = val==='on' ? true : false;
+    trjs.keys.kc.shift = val;
     trjs.keys.kc.changed = true;
-    console.log("shift", trjs.keys.kc);
+//    console.log("shift", trjs.keys.kc);
 }
 trjs.keys.updateKCKey = function(element)
 {
@@ -314,10 +328,14 @@ trjs.keys.updateKCKey = function(element)
     console.log(idx, val, trjs.keys.kc, element);
     trjs.keys.kc.key = trjs.keyToName[val];
     trjs.keys.kc.changed = true;
-    console.log("kc", trjs.keys.kc);
+//    console.log("kc", trjs.keys.kc);
 }
 
 trjs.keys.validateKey = function(kc, nth) {
+    trjs.keys.updated = true;
+//    $('#storebChangeKeys').css('font-size: larger; border: 5px solid blue;');
+    var s = document.getElementById('storebChangeKeys').style;
+    s.cssText += 'font-size: larger; border: 5px solid blue; background-color: orange;';
     keyChanging[nth].key = kc.key;
     keyChanging[nth].changed = true;
     keyChanging[nth].ctrl = kc.ctrl;
@@ -430,6 +448,7 @@ trjs.keys.editKey = function (event, nth) {
 trjs.keys.chgToHtml = function () {
     var s = '';
     keyChanging = [];
+    trjs.keys.updated = false;
     for (var i in trjs.bindingsUser) {
         //  keyChanging[i] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
         var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
@@ -534,7 +553,7 @@ trjs.keys.f1f2ToHtml = function () {
 trjs.keys.showKeys = function () {
     $('#bindings-content').html(
         '<p><button id="printbkeys" onclick="trjs.keys.printKeys();">' +
-        '<i class="fa fa-print"></i><span id="printkeys"> Print the list of keys</span></button></p>' +
+        '<i class="fa fa-print"></i><span id="printkeys"> Print the list of keys </span></button></p>' +
         '<table id="tableid" class="display"><thead><tr>' +
         '<th id="tCHGmodif">Modifiers</th>' +
         '<th id="tCHGkey">Keys</th>' +
@@ -597,7 +616,8 @@ trjs.keys.showF1F2Keys = function () {
 trjs.keys.showChangeKeys = function () {
     $('#bindings-change').html(
         '<p><button id="storebChangeKeys" onclick="trjs.keys.storeChangeKeys();">' +
-        '<i class="fa fa-save"></i><span id="storeChangeKeys"> Save the new keys associations</span></button></p>' +
+        '<i class="fa fa-save"></i><span id="storeChangeKeys"> Save the new keys associations</span></button>' +
+        '<button id="resetbkeys" onclick="trjs.keys.resetKeys();"> Reset the default keys </button></p>' +
         '<table id="tableidCHG" class="display"><thead><tr>' +
         '<th id="tckaction">-</th>' +
         '<th id="tckfun">Function</th>' +
@@ -620,6 +640,27 @@ trjs.keys.showChangeKeys = function () {
             "scrollCollapse": true,
             "paging": false
         });
+    $("#message-bindings").on("hidden.bs.modal", function () {
+        // put your default event here
+        if (trjs.keys.updated === true) {
+            bootbox.confirm({
+                message: trjs.messgs.savekeybindings,
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function(rep) {
+                    if (rep === true) trjs.keys.storeChangeKeys();
+                }
+            });
+        }
+    });
     $('#message-bindings').modal({keyboard: true});
 };
 
