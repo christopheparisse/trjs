@@ -161,6 +161,10 @@ trjs.init.electronkeyboard = function () {
     ipcRenderer.on('messagebindings', function(event, arg) {
         trjs.keys.viewKeyBindings();
     });
+    // trjs.macros.generic
+    ipcRenderer.on('macros', function(event, arg) {
+        trjs.macros.generic();
+    });
     ipcRenderer.on('messages', function(event, arg) {
         trjs.log.show();
     });

@@ -125,7 +125,7 @@ body {
 #menus-access { display:block; position:relative; overflow:hidden; margin: 0; }
 .goleft { display: inline; float: left; }
 .goright { display: inline; float: right; }
-#menus-top-span { background:#084B8A; color:white; font-size:120%; cursor:pointer; }
+#menus-top-span { backg:#084B8A; color:white; font-size:120%; cursor:pointer; }
 #search-top-span { background:#0174DF; color:white; font-size:120%; cursor:pointer; }
 #save-top-span { background:#0174DF; color:white; font-size:120%; cursor:pointer; }
 #help-top-span { color:black; font-size:120%; cursor:pointer; }
@@ -314,7 +314,8 @@ em { font-variant: small-caps; }
 
 
 #buttons-middle { display:block; text-align:center; position:relative; }
-.imedia { cursor:pointer; display:inline-block; /* background-color: #2E2E2E; color: #8E8E8E; */ position: relative; top: -5px; padding: 2px; }
+.imedia { cursor:pointer; display:inline-block; /* background-color: #2E2E2E; color: #8E8E8E; */
+	position: relative; top: -5px; padding: 2px; }
 .iconcur { cursor:pointer; padding-left:10px; padding-right:10px; }
 
 #button-page-left { position: absolute; left:10px; }
@@ -328,3 +329,13 @@ em { font-variant: small-caps; }
 td span { color: blue; margin: 2px; }
 td input { display: inline; margin: 2px; }
 td select { display: inline; margin: 2px; }
+
+.chgBlock {
+	border: 2px solid lightblue; border-radius: 5px;
+	margin-left: 3px; margin-right: 3px;
+}
+.chgFunname {
+	border: 2px solid lightblue; border-radius: 5px;
+	margin-left: 3px; margin-right: 3px;
+	font-size: larger;
+}

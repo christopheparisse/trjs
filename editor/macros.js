@@ -3,6 +3,13 @@
  */
 trjs.macros = {};
 
+/**
+ * full macros list table
+ */
+trjs.macros.table = {
+    copyright: { content: "copyright Christophe Parisse (2018) - sponsored by Ortolang/Modyco/DGLFLF", desc: "copyright of software", key: "" }
+};
+
 trjs.macros.onblur = function (event) {
     trjs.undo.line.check(event);
     trjs.macros.storeSelectedText();
@@ -86,160 +93,16 @@ trjs.macros.formatSelectedText = function(style) {
         }
     } else if (document.selection && document.selection.createRange) {
         range = document.selection.createRange();
+        var selected = $(range.startContainer).text();
         range.pasteHTML(style + selected + style);
     }
 }
 
-trjs.macros.desc = function (key) {
-    return (trjs.macros.table[key][1])
-        ? trjs.macros.table[key][1]
-        : "";
-};
-
-trjs.macros.content = function (key) {
-    return (trjs.macros.table[key][0])
-        ? trjs.macros.table[key][0]
-        : "";
-};
-
-trjs.macros.macro0 = function () {
-    if (trjs.macros.table[0][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[0][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro1 = function () {
-    if (trjs.macros.table[1][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[1][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro2 = function () {
-    if (trjs.macros.table[2][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[2][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro3 = function () {
-    if (trjs.macros.table[3][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[3][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro4 = function () {
-    if (trjs.macros.table[4][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[4][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro5 = function () {
-    if (trjs.macros.table[5][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[5][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro6 = function () {
-    if (trjs.macros.table[6][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[6][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro7 = function () {
-    if (trjs.macros.table[7][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[7][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro8 = function () {
-    if (trjs.macros.table[8][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[8][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro9 = function () {
-    if (trjs.macros.table[9][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[9][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macro10 = function () {
-    if (trjs.macros.table[10][0]) {
-        trjs.macros.replaceSelectedText(trjs.macros.table[10][0]);
-        return true;
-    }
-    return false;
-};
-
-trjs.macros.macrofunction = function (key) {
-    switch (key) {
-        case 0:
-            return trjs.macros.macro0;
-        case 1:
-            return trjs.macros.macro1;
-        case 2:
-            return trjs.macros.macro2;
-        case 3:
-            return trjs.macros.macro3;
-        case 4:
-            return trjs.macros.macro4;
-        case 5:
-            return trjs.macros.macro5;
-        case 6:
-            return trjs.macros.macro6;
-        case 7:
-            return trjs.macros.macro7;
-        case 8:
-            return trjs.macros.macro8;
-        case 9:
-            return trjs.macros.macro9;
-        case 10:
-            return trjs.macros.macro10;
-    }
-    return undefined;
-};
-
-trjs.macros.generic = function () {
-    $("#insertmacro").modal();
-    trjs.macros.choice();
-};
-
-var __mapkeymacro = [
-    'Ctrl F2',
-    'Ctrl F3',
-    'Ctrl F4',
-    'Ctrl F5',
-    'Ctrl F6',
-    'Ctrl F7',
-    'Ctrl F8',
-    'Ctrl F9',
-    'Ctrl F10',
-    'Ctrl F11',
-    'Ctrl F12',
-];
-
 trjs.macros.parse = function (m) {
     var re;
     var nh;
+    var leftEvt = '\\' + trjs.data.leftEvent;
+    var rightEvt = '\\' + trjs.data.rightEvent;
     if (m.indexOf(trjs.data.rightEvent) === 0) {
         return {
             type: 'value',
@@ -247,7 +110,7 @@ trjs.macros.parse = function (m) {
             content: m
         };
     } else if (m.length > 5 && m.lastIndexOf('/N'+ trjs.data.rightEvent) === m.length-3) {
-        var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/N' + trjs.data.rightEvent);
+        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/N' + rightEvt);
         var nh = re.exec(m);
         if (nh) {
             return {
@@ -256,7 +119,7 @@ trjs.macros.parse = function (m) {
                 content: nh[1]
             };
         } else {
-            re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/N' + trjs.data.rightEvent);
+            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/N' + rightEvt);
             nh = re.exec(m);
             if (nh) {
                 return {
@@ -273,7 +136,7 @@ trjs.macros.parse = function (m) {
             }
         }
     } else if (m.length > 5 && m.lastIndexOf('/E'+ trjs.data.rightEvent) === m.length-3) {
-        re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/E' + trjs.data.rightEvent);
+        re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/E' + rightEvt);
         nh = re.exec(m);
         if (nh) {
             return {
@@ -282,7 +145,7 @@ trjs.macros.parse = function (m) {
                 content: nh[1]
             };
         } else {
-            re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/E' + trjs.data.rightEvent);
+            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/E' + rightEvt);
             nh = re.exec(m);
             if (nh) {
                 return {
@@ -299,7 +162,7 @@ trjs.macros.parse = function (m) {
             }
         }
     } else if (m.length > 5 && m.lastIndexOf('/COM'+ trjs.data.rightEvent) === m.length-5) {
-        var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/COM' + trjs.data.rightEvent);
+        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/COM' + rightEvt);
         var nh = re.exec(m);
         if (nh) {
             return {
@@ -308,7 +171,7 @@ trjs.macros.parse = function (m) {
                 content: nh[1]
             };
         } else {
-            re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/COM' + trjs.data.rightEvent);
+            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/COM' + rightEvt);
             nh = re.exec(m);
             if (nh) {
                 return {
@@ -326,7 +189,7 @@ trjs.macros.parse = function (m) {
         }
 
     } else if (m.length > 5 && m.lastIndexOf('/VOC'+ trjs.data.rightEvent) === m.length-5) {
-        re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/VOC' + trjs.data.rightEvent);
+        re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/VOC' + rightEvt);
         nh = re.exec(m);
         if (nh) {
             return {
@@ -342,7 +205,7 @@ trjs.macros.parse = function (m) {
             };
         }
     } else if (m.length > 5 && m.lastIndexOf('/LX'+ trjs.data.rightEvent) === m.length-4) {
-        var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/LX' + trjs.data.rightEvent);
+        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/LX' + rightEvt);
         var nh = re.exec(m);
         if (nh) {
             return {
@@ -351,7 +214,7 @@ trjs.macros.parse = function (m) {
                 content: nh[1]
             };
         } else {
-            re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/LX' + trjs.data.rightEvent);
+            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/LX' + rightEvt);
             nh = re.exec(m);
             if (nh) {
                 return {
@@ -368,7 +231,7 @@ trjs.macros.parse = function (m) {
             }
         }
     } else if (m.length > 5 && m.lastIndexOf('/NE'+ trjs.data.rightEvent) === m.length-4) {
-        var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/NE' + trjs.data.rightEvent);
+        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/NE' + rightEvt);
         var nh = re.exec(m);
         if (nh) {
             return {
@@ -377,7 +240,7 @@ trjs.macros.parse = function (m) {
                 content: nh[1]
             };
         } else {
-            re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/NE' + trjs.data.rightEvent);
+            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/NE' + rightEvt);
             nh = re.exec(m);
             if (nh) {
                 return {
@@ -394,7 +257,7 @@ trjs.macros.parse = function (m) {
             }
         }
     } else if (m.length > 5 && m.lastIndexOf('/LG'+ trjs.data.rightEvent) === m.length-4) {
-        var re = new RegExp(trjs.data.leftEvent + ' ' + '/(.*?)' + '/LG' + trjs.data.rightEvent);
+        var re = new RegExp(leftEvt + ' ' + '/(.*?)' + '/LG' + rightEvt);
         var nh = re.exec(m);
         if (nh) {
             return {
@@ -436,7 +299,7 @@ trjs.macros.parse = function (m) {
     } else {
         if (m.length > 5 && m.lastIndexOf('/LG:') > 0) {
             // LG:val
-            var re = new RegExp(trjs.data.leftEvent + ' ' + '/(.*)/LG:(.*)' + trjs.data.rightEvent);
+            var re = new RegExp(leftEvt + ' ' + '/(.*)/LG:(.*)' + rightEvt);
             var nh = re.exec(m);
             if (nh) {
                 return {
@@ -445,7 +308,7 @@ trjs.macros.parse = function (m) {
                     content: nh[2]
                 };
             } else {
-                var re = new RegExp(trjs.data.leftEvent + ' ' + '/LG:(.*)' + trjs.data.rightEvent);
+                var re = new RegExp(leftEvt + ' ' + '/LG:(.*)' + rightEvt);
                 var nh = re.exec(m);
                 if (nh) {
                     return {
@@ -468,184 +331,6 @@ trjs.macros.parse = function (m) {
                 content: m
             };
         }
-    }
-};
-
-trjs.macros.choice = function () {
-    var k = parseInt($('#keyshortcut').val());
-    if (trjs.macros.table[k] && trjs.macros.table[k][0]) {
-        var p = trjs.macros.parse(trjs.macros.table[k][0]);
-        $('#event-type').val(p.type);
-        $('#event-subtype').val(p.subtype);
-        $('#event-content').val(p.content);
-        /*
-         var re;
-         var nh;
-         var m = trjs.macros.table[k][0];
-         if (m.indexOf(trjs.data.rightEvent) === 0) {
-         $('#event-type').val('value');
-         $('#event-subtype').val('');
-         $('#event-content').val(m);
-         } else if (m.length > 5 && m.lastIndexOf('/N'+ trjs.data.rightEvent) === m.length-3) {
-         $('#event-type').val('noise');
-         var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/N' + trjs.data.rightEvent);
-         var nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val(nh[2]);
-         $('#event-content').val(nh[1]);
-         } else {
-         re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/N' + trjs.data.rightEvent);
-         nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val('');
-         $('#event-content').val(nh[1]);
-         } else {
-         $('#event-subtype').val('error');
-         $('#event-content').val(m);
-         }
-         }
-         } else if (m.length > 5 && m.lastIndexOf('/E'+ trjs.data.rightEvent) === m.length-3) {
-         $('#event-type').val('event');
-         re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/E' + trjs.data.rightEvent);
-         nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val(nh[2]);
-         $('#event-content').val(nh[1]);
-         } else {
-         re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/E' + trjs.data.rightEvent);
-         nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val('');
-         $('#event-content').val(nh[1]);
-         } else {
-         $('#event-subtype').val('error');
-         $('#event-content').val(m);
-         }
-         }
-         } else if (m.length > 5 && m.lastIndexOf('/COM'+ trjs.data.rightEvent) === m.length-5) {
-         $('#event-type').val('comment');
-         var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/COM' + trjs.data.rightEvent);
-         var nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val(nh[2]);
-         $('#event-content').val(nh[1]);
-         } else {
-         re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/COM' + trjs.data.rightEvent);
-         nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val('');
-         $('#event-content').val(nh[1]);
-         } else {
-         $('#event-subtype').val('error');
-         $('#event-content').val(m);
-         }
-         }
-
-         } else if (m.length > 5 && m.lastIndexOf('/VOC'+ trjs.data.rightEvent) === m.length-5) {
-         $('#event-type').val('vocal');
-         re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/VOC' + trjs.data.rightEvent);
-         nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val('');
-         $('#event-content').val(nh[1]);
-         } else {
-         $('#event-subtype').val('error');
-         $('#event-content').val(m);
-         }
-         } else if (m.length > 5 && m.lastIndexOf('/LX'+ trjs.data.rightEvent) === m.length-4) {
-         $('#event-type').val('lexical');
-         var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/LX' + trjs.data.rightEvent);
-         var nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val(nh[2]);
-         $('#event-content').val(nh[1]);
-         } else {
-         re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/LX' + trjs.data.rightEvent);
-         nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val('');
-         $('#event-content').val(nh[1]);
-         } else {
-         $('#event-subtype').val('error');
-         $('#event-content').val(m);
-         }
-         }
-         } else if (m.length > 5 && m.lastIndexOf('/NE'+ trjs.data.rightEvent) === m.length-4) {
-         $('#event-type').val('entities');
-         var re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/(.*?)' + '/NE' + trjs.data.rightEvent);
-         var nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val(nh[2]);
-         $('#event-content').val(nh[1]);
-         } else {
-         re = new RegExp(trjs.data.leftEvent + ' ' + '(.*)' + ' ' + '/NE' + trjs.data.rightEvent);
-         nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val('');
-         $('#event-content').val(nh[1]);
-         } else {
-         $('#event-subtype').val('error');
-         $('#event-content').val(m);
-         }
-         }
-         } else if (m.length > 5 && m.lastIndexOf('/LG'+ trjs.data.rightEvent) === m.length-4) {
-         $('#event-type').val('language');
-         var re = new RegExp(trjs.data.leftEvent + ' ' + '/(.*?)' + '/LG' + trjs.data.rightEvent);
-         var nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val(nh[1]);
-         $('#event-content').val('');
-         } else {
-         $('#event-subtype').val('');
-         $('#event-content').val(m);
-         }
-         } else if (m === '#') {
-         $('#event-type').val('shortpause');
-         $('#event-subtype').val('');
-         $('#event-content').val('');
-         } else if (m === '##') {
-         $('#event-type').val('middlepause');
-         $('#event-subtype').val('');
-         $('#event-content').val('');
-         } else if (m === '###') {
-         $('#event-type').val('longpause');
-         $('#event-subtype').val('');
-         $('#event-content').val('');
-         } else if (m.indexOf('#') === 0 && m.lastIndexOf('#') === m.length-1) {
-         $('#event-type').val('verylongpause');
-         $('#event-subtype').val('');
-         $('#event-content').val(m.substr(1,m.length-2));
-         } else {
-         if (m.length > 5 && m.lastIndexOf('/LG:') > 0) {
-         // LG:val
-         $('#event-type').val('language');
-         var re = new RegExp(trjs.data.leftEvent + ' ' + '/(.*)/LG:(.*)' + trjs.data.rightEvent);
-         var nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val(nh[1]);
-         $('#event-content').val(nh[2]);
-         } else {
-         var re = new RegExp(trjs.data.leftEvent + ' ' + '/LG:(.*)' + trjs.data.rightEvent);
-         var nh = re.exec(m);
-         if (nh) {
-         $('#event-subtype').val('');
-         $('#event-content').val(nh[1]);
-         } else {
-         $('#event-subtype').val('LG:');
-         $('#event-content').val(m);
-         }
-         }
-         } else {
-         $('#event-type').val('value');
-         $('#event-subtype').val('');
-         $('#event-content').val(m);
-         }
-         }
-         */
-    } else {
-        $('#event-type').val('value');
-        $('#event-subtype').val('');
-        $('#event-content').val('');
     }
 };
 
@@ -684,12 +369,153 @@ trjs.macros.form = function () {
     return f;
 };
 
+trjs.macros.desc = function(k) {
+    return (trjs.macros.table[k])
+        ? trjs.macros.table[k].desc
+        : "";
+};
+
+trjs.macros.key = function(k) {
+    return (trjs.macros.table[k])
+        ? trjs.macros.table[k].key
+        : "";
+};
+
+trjs.macros.content = function(k) {
+    return (trjs.macros.table[k])
+        ? trjs.macros.table[k].content
+        : "";
+};
+
+trjs.macros.macrofunction = function(k) {
+    return function() {
+        if (trjs.macros.table[k]) {
+            trjs.macros.replaceSelectedText(trjs.macros.table[k].content);
+            return true;
+        }
+        return false;
+    }
+};
+
+trjs.macros.generic = function () {
+    var s = '';
+    s += '<option value="newmacro">' + trjs.messgs.newmacro + '</option>';
+    for (var k in trjs.macros.table) {
+        s += '<option value="' + k + '">' + k + '</option>';
+    }
+    $('#accessmacro').html(s);
+    trjs.keys.initKeyChanging(); // get ready to define new key associations
+    // add an empty
+    if (!trjs.keys.keyChanging['__editedmacrokey__']) {
+        var kc = {
+            fun: "",
+            key: "",
+            ctrl: false,
+            alt: false,
+            shift: false,
+            supl: "",
+            changed: false
+        };
+        trjs.keys.keyChanging['__editedmacrokey__'] = kc;
+    } else {
+        trjs.keys.keyChanging['__editedmacrokey__'].key = "";
+        trjs.keys.keyChanging['__editedmacrokey__'].ctrl = false;
+        trjs.keys.keyChanging['__editedmacrokey__'].alt = false;
+        trjs.keys.keyChanging['__editedmacrokey__'].shift = false;
+        trjs.keys.keyChanging['__editedmacrokey__'].ctrl = false;
+        trjs.keys.keyChanging['__editedmacrokey__'].changed = false;
+        trjs.keys.keyChanging['__editedmacrokey__'].sup = "";
+    }
+    $("#insertmacro").modal();
+};
+
+/**
+ * use macroname to locate and load a macro
+ * should ckeck if the present edited macro was saved if it was modified
+ */
+trjs.macros.find = function () {
+    var k = $('#accessmacro').val();
+    if (k === 'newmacro' || !trjs.macros.table[k]) {
+        $('#event-type').val('value');
+        $('#event-subtype').val('');
+        $('#event-content').val('');
+    } else {
+        var p = trjs.macros.parse(trjs.macros.content(k));
+        $('#event-type').val(p.type);
+        $('#event-subtype').val(p.subtype);
+        $('#event-content').val(p.content);
+        $('#macroname').val("");
+        $('#macrodesc').val(trjs.macros.desc(k));
+        // find k in bindingsUser and update it if necessary
+        var s = trjs.macros.key(k);
+        for (var i in trjs.bindingsUser) {
+            if (trjs.bindingsUser[i][BINDFUN] === k) {
+                // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+                s = modifiersToString(
+                    trjs.bindingsUser[i][BINDCTRL],
+                    trjs.bindingsUser[i][BINDALT],
+                    trjs.bindingsUser[i][BINDSHIFT],
+                    trjs.bindingsUser[i][BINDCTRL],
+                    trjs.bindingsUser[i][BINDSUPL])
+                    + '/' + trjs.keyToName[trjs.bindingsUser[i][BINDKEY]].toUpperCase();
+            }
+        }
+        $('#vkeyshortcut').text(s);
+    }
+};
+
+/**
+ * save the macro which is currently edited
+ */
 trjs.macros.save = function () {
     var s = trjs.macros.form();
-    var k = parseInt($('#keyshortcut').val());
-    trjs.macros.table[k] = [s, "macro " + __mapkeymacro[k]];
-    trjs.keys.insertBinding( [ 113+k, true, false, false, 'ctrl', trjs.macros.macrofunction(k), trjs.macros.desc(k) ] ); // Ctrl F(2+i)
+    var n = $('#macroname').val();
+    var d = $('#macrodesc').val();
+    var a = $('#accessmacro').val();
+    var k = $('#vkeyshortcut').text();
+    // four thing to do
+    // save the macros
+    // create a function for the new macro or replace function for the old one
+    // add keyChanging __editedmacrokey__ to bindingUser unless it exists then modify it
+    var cm = (a === 'newmacro') ? n : a; // cm is the name of the actual macro processed - new or old
+    trjs.macros.table[cm] = { content: s, desc: d, key: k };
     trjs.macros.saveTable();
+    trjs.keys.functions[cm] = [ trjs.macros.macrofunction(cm), d, s];
+    // functions do not need to be saved - they are reconstructed automatically
+    if (trjs.keys.updated) {
+        var foundInBindings = false;
+        for (var k in trjs.bindingsUser) {
+            if (trjs.bindingsUser[k][BINDFUN] === cm) {
+                // update
+                console.log("update kb:", trjs.bindingsUser[k], trjs.keys.keyChanging['__editedmacrokey__']);
+                console.log("ukb2:", trjs.keys.nameToKey[trjs.keys.keyChanging['__editedmacrokey__'].key]);
+                foundInBindings = true;
+                // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+                trjs.bindingsUser[k][BINDKEY] = Number(trjs.keys.nameToKey[trjs.keys.keyChanging['__editedmacrokey__'].key]);
+                trjs.bindingsUser[k][BINDCTRL] = trjs.keys.keyChanging['__editedmacrokey__'].ctrl;
+                trjs.bindingsUser[k][BINDALT] = trjs.keys.keyChanging['__editedmacrokey__'].alt;
+                trjs.bindingsUser[k][BINDSHIFT] = trjs.keys.keyChanging['__editedmacrokey__'].shift;
+                trjs.bindingsUser[k][BINDMETA] = trjs.keys.keyChanging['__editedmacrokey__'].ctrl;
+                trjs.bindingsUser[k][BINDSUPL] = trjs.keys.keyChanging['__editedmacrokey__'].supl;
+                break;
+            }
+        }
+        if (foundInBindings !== true) {
+            trjs.bindingsUser.push([
+                // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
+                Number(trjs.keys.nameToKey[trjs.keys.keyChanging['__editedmacrokey__'].key]),
+                trjs.keys.keyChanging['__editedmacrokey__'].ctrl,
+                trjs.keys.keyChanging['__editedmacrokey__'].alt,
+                trjs.keys.keyChanging['__editedmacrokey__'].shift,
+                trjs.keys.keyChanging['__editedmacrokey__'].ctrl,
+                trjs.keys.keyChanging['__editedmacrokey__'].supl,
+                cm
+            ]);
+        }
+        // regenerate the actual bindings to trjs.tablekeys
+        trjs.keys.initTablekeys();
+        trjs.keys.saveUserBindings();
+    }
 };
 
 trjs.macros.insert = function () {
@@ -697,27 +523,23 @@ trjs.macros.insert = function () {
     trjs.macros.insertSelectedText(s);
 };
 
-/**
- * full macros list table
- */
-trjs.macros.table = [
-    ["copyright Christophe Parisse (2016) - sponsored by Ortolang/Modyco/DGLFLF", "copyright of software"],
-];
-
 trjs.macros.saveTable = function() {
-    // Ctrl F2 === 113 et Ctrl F12 = 123
-    for (var i=0; i<11; i++) {
-        if (trjs.macros.table[i] && trjs.macros.table[i][0]) {
-            trjs.local.put('macros'+i, trjs.macros.table[i][0]);
-        }
-    }
+    var d = JSON.stringify(trjs.macros.table);
+    trjs.local.put('macros', d);
 };
 
 trjs.macros.loadTable = function() {
-    // Ctrl F2 === 113 et Ctrl F12 = 123
-    for (var i=0; i<11; i++) {
-        var s = trjs.local.get('macros'+i);
-        if (s)
-            trjs.macros.table[i] = [ s, "macro " + __mapkeymacro[i] ];
-    }
+    var s = trjs.local.get('macros');
+    if (s)
+        trjs.macros.table = JSON.parse(s);
+};
+
+trjs.macros.selectShortcut = function() {
+    trjs.keys.keyChanging["__editedmacrokey__"] = { fun: '', key: '', ctrl: false, alt: false, shift: false, supl: '', changed: false };
+    trjs.keys.editKey(null, "__editedmacrokey__", function() {
+        if (trjs.keys.keyChanging["__editedmacrokey__"].changed == true) {
+            var s = trjs.keys.printkey(trjs.keys.keyChanging["__editedmacrokey__"]);
+            $('#vkeyshortcut').text(s);
+        }
+    });
 };

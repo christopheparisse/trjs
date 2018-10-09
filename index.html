@@ -532,20 +532,22 @@
             <div class="modal-body">
                 <div class="tab-content">
                     <div class="col-md-6">
-                        <p><span id='pkeyshortcut'>Shortcut: </span>
-                            <select class="ckeyshortcut" id="keyshortcut" onchange='trjs.macros.choice();'>
-                                <option value="0">Ctrl F2</option>
-                                <option value="1">Ctrl F3</option>
-                                <option value="2">Ctrl F4</option>
-                                <option value="3">Ctrl F5</option>
-                                <option value="4">Ctrl F6</option>
-                                <option value="5">Ctrl F7</option>
-                                <option value="6">Ctrl F8</option>
-                                <option value="7">Ctrl F9</option>
-                                <option value="8">Ctrl F10</option>
-                                <option value="9">Ctrl F11</option>
-                                <option value="10">Ctrl F12</option>
-                            </select></p>
+                        <p>
+                            <span id='paccessmacro'>Find: </span>
+                            <select class="caccessmacro" id="accessmacro" onchange='trjs.macros.find();'>
+                            </select>
+                            <br/>
+                            <span id='pmacroname'>New name: </span>
+                            <input type="text" class="cmacroname" id="macroname"/>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><span id='pmacrodesc'>Description: </span>
+                            <input type="text" class="cmacrodesc" id="macrodesc"/></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><span id='pkeyshortcut'onclick='trjs.macros.selectShortcut();'>Shortcut: <span id='vkeyshortcut'></span></span>
+                        </p>
                     </div>
                     <div class="col-md-6">
                         <p><span id='ptypeevent'>Type: </span>
@@ -567,14 +569,14 @@
                     <div class="row">
                         <div class="input-group">
                             <span id="pinfomacrost">Subtype: </span>
-                            <input type="info" placeholder="..." id="event-subtype" type="info" name="event-subtype"
+                            <input type="text" placeholder="..." id="event-subtype" name="event-subtype"
                                    onchange=""/>
                         </div><!-- /input-group -->
                     </div>
                     <div class="row">
                         <div class="input-group">
                             <span id="pinfomacroval">Value: </span>
-                            <input type="info" placeholder="..." id="event-content" type="info" name="event-content"
+                            <input type="text" placeholder="..." id="event-content" name="event-content"
                                    onchange=""/>
                         </div><!-- /input-group -->
                     </div>

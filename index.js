@@ -398,6 +398,14 @@ function createMenu() {
                 },
                 {type: 'separator'},
                 {
+                    label: 'Macros',
+                    click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('macros', 'main');
+                    }
+                },
+                {type: 'separator'},
+                {
                     label: 'Check transcription', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
                         if (window) window.webContents.send('checktranscript', 'main');

@@ -1664,7 +1664,7 @@ trjs.events = (function () {
             specialEvent1 = false;
             var f = trjs.tablekeysSE1[keyptr];
             //console.log("F= ", f);
-            console.log("SE1 " + charCode + ' ' + keyptr + ' ' + f);
+            //console.log("SE1 " + charCode + ' ' + keyptr + ' ' + f);
             if (f !== undefined) {
                 e.preventDefault();
                 return f(e, trjs.data.selectedLine);
@@ -1676,7 +1676,7 @@ trjs.events = (function () {
             specialEvent2 = false;
             var f = trjs.tablekeysSE2[keyptr];
             //console.log("F= ", f);
-            console.log("SE2 " + charCode + ' ' + keyptr + ' ' + f);
+            //console.log("SE2 " + charCode + ' ' + keyptr + ' ' + f);
             if (f !== undefined) {
                 e.preventDefault();
                 return f(e, trjs.data.selectedLine);

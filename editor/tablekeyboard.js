@@ -35,6 +35,7 @@ function modifiersToString(ctrl, alt, shift, meta, supl) {
     if (alt) {
         if (s1 === true) s += '/';
         s += 'Alt';
+        s1 = true;
     }
     if (shift) {
         if (s1 === true) s += '/';
@@ -43,9 +44,47 @@ function modifiersToString(ctrl, alt, shift, meta, supl) {
     return s;
 }
 
+function modifiers2ToString(ctrl, alt, shift, meta, supl) {
+    var s = '';
+    var s1 = false;
+    if (trjs.utils.isMacOS()) {
+        if (meta) {
+            s += 'Cmd';
+            s1 = true;
+        }
+    } else {
+        if (ctrl) {
+            s += 'Ctrl';
+            s1 = true;
+        }
+    }
+    if (alt) {
+        if (s1 === true) s += '/';
+        s += 'Alt';
+        s1 = true;
+    }
+    if (shift) {
+        if (s1 === true) s += '/';
+        s += 'Shift';
+    }
+    return s;
+}
+
+function prefixToString(supl) {
+    var s = '';
+    if (supl && supl !== 'api') {
+        s += supl;
+    }
+    return s;
+}
+
 trjs.keys = {};
 trjs.keys.kc = null; // intermediary variable to edit key binding changes
 trjs.keys.updated = false; // allow to check if change to the key binding should be changed
+
+trjs.keys.printkey = function(kc) {
+    return modifiersToString(kc.ctrl, kc.alt, kc.shift, kc.ctrl, kc.supl) + '/' + kc.key.toUpperCase();
+}
 
 trjs.keys.CTRLKEYS = 300;
 trjs.keys.ALTKEYS = 600;
@@ -101,10 +140,15 @@ trjs.keys.modifiersEvent = function (charCode, e) {
 trjs.keys.insertBinding = function (bind, keytable) {
     if (bind[BINDKEY] !== NOKEY) {
         if (!bind[BINDFUN]) {
-            console.log('bindings key=' + bind[BINDKEY] + ' ' + modifiersToString(bind[BINDKEY], bind[BINDCTRL], bind[BINDALT], bind[BINDSHIFT], bind[BINDMETA], bind[BINDSUPL]) + ' is undefined');
+            console.log('bindings key=' + bind[BINDKEY] + ' ' + modifiersToString(bind[BINDKEY],
+                bind[BINDCTRL], bind[BINDALT], bind[BINDSHIFT], bind[BINDMETA], bind[BINDSUPL]) + ' is undefined');
             return;
         }
-//        console.log(bind, keytable, bind[BINDFUN]);
+        if (!trjs.keys.functions[bind[BINDFUN]]) {
+            console.log("missing function:", bind[BINDFUN], "for", bind);
+            return;
+        }
+        // console.log(bind, keytable, bind[BINDFUN]);
         if (bind[BINDMETA] === 'ctrl') {
             // extends control to metakey for compatibility between windows/unix and mac
             keytable[trjs.keys.modifiersFlags(bind[BINDKEY], true,
@@ -117,7 +161,7 @@ trjs.keys.insertBinding = function (bind, keytable) {
     }
 };
 
-function initTablekeys() {
+trjs.keys.initTablekeys = function() {
 
     if (trjs.tablekeys !== undefined && trjs.tablekeys !== null) {
         delete trjs.tablekeys;
@@ -158,7 +202,8 @@ function loadUserBindings() {
         for (var i = 0; i < trjs.bindingsDef.length; i++) {
             trjs.bindingsUser.push([ trjs.bindingsDef[i][BINDKEY],
                 trjs.bindingsDef[i][BINDCTRL], trjs.bindingsDef[i][BINDALT],
-                trjs.bindingsDef[i][BINDSHIFT], (trjs.bindingsDef[i][BINDMETA] === 'ctrl' ? true : trjs.bindingsDef[i][BINDMETA]),
+                trjs.bindingsDef[i][BINDSHIFT], (trjs.bindingsDef[i][BINDMETA] === 'ctrl'
+                    ? true : trjs.bindingsDef[i][BINDMETA]),
                 trjs.bindingsDef[i][BINDSUPL], trjs.bindingsDef[i][BINDFUN] ]);
         }
     }
@@ -170,7 +215,8 @@ trjs.keys.resetKeys = function() {
     for (var i = 0; i < trjs.bindingsDef.length; i++) {
         trjs.bindingsUser.push([ trjs.bindingsDef[i][BINDKEY],
             trjs.bindingsDef[i][BINDCTRL], trjs.bindingsDef[i][BINDALT],
-            trjs.bindingsDef[i][BINDSHIFT], (trjs.bindingsDef[i][BINDMETA] === 'ctrl' ? true : trjs.bindingsDef[i][BINDMETA]),
+            trjs.bindingsDef[i][BINDSHIFT], (trjs.bindingsDef[i][BINDMETA] === 'ctrl'
+                ? true : trjs.bindingsDef[i][BINDMETA]),
             trjs.bindingsDef[i][BINDSUPL], trjs.bindingsDef[i][BINDFUN] ]);
     }
 }
@@ -185,14 +231,17 @@ trjs.keys.init = function () {
     // generate all initial bindings
     trjs.keys.initBindings();
     trjs.keys.initApiBindings();
-    trjs.keys.initMacrosBindings();
     trjs.keys.initF1Bindings();
     trjs.keys.initF2Bindings();
-    // add unbinded functions to the list so that the user can change the bindings
-    trjs.keys.noBindings();
+    // load the Macros
+    // and they are added to trjs.keys.functions table
+    trjs.keys.initMacrosBindings();
+    // the macros bindings will go In the user bindings
 
     // LOAD USER BINDINGS IF THERE EXIST ELSE COPY bindingsDef to bindingsUser
     loadUserBindings();
+    // add unbinded functions to the list so that the user can change the bindings
+    trjs.keys.noBindings();
 
     trjs.keys.specialChar1 = trjs.keys.modifiersEvent(nkey("f1"), {
         ctrlKey: false,
@@ -207,7 +256,7 @@ trjs.keys.init = function () {
         metaKey: false
     });
 
-    initTablekeys();
+    trjs.keys.initTablekeys();
     // key that are never used in isolation but only to modify other keys
     trjs.keys.skipModifierKey.push(nkey('shift'));
     trjs.keys.skipModifierKey.push(nkey('ctrl'));
@@ -240,51 +289,37 @@ trjs.keys.emphasis = function () {
     trjs.macros.formatSelectedText('em');
 };
 
-trjs.keys.toHtml = function () {
-    var s = '';
-    for (var i in trjs.bindingsUser) {
-        if (trjs.bindingsUser[i][BINDSUPL]) continue;
-        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
-        if (!k) k = 'Unknown';
-        if (trjs.bindingsUser[i][BINDKEY] !== NOKEY) {
-            s += '<tr><td>'
-                + modifiersToString(trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
-                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA], trjs.bindingsUser[i][BINDSUPL])
-                + '</td><td>'
-                + k
-                + '</td><td>'
-                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
-                + '</td></tr>\n';
-        }
-    }
-    return s;
-};
-
-var keyChanging = []; // change
+/**
+ * intermediary table to store the potential changes to the keyboard bingings
+ * initiated by trjs.keys.initKeyChanging()
+ * changes saved by trjs.keys.storeChangeKeys() if trjs.keys.updated === true
+ * @type {Array}
+ */
+trjs.keys.keyChanging = []; // change
 
 trjs.keys.storeChangeKeys = function() {
-    for (var i in keyChanging) {
-        //  keyChanging[i] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
+    for (var i in trjs.keys.keyChanging) {
+        //  trjs.keys.keyChanging[i] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
         //  trjs.bindingsUser.push([nkey("tab"), false, false, false, false, "", "tab"]); // Tab
-        if (!keyChanging[i].changed) continue;
-        console.log("changing", i, keyChanging[i]);
+        if (i === '__editedmacrokey__' || !trjs.keys.keyChanging[i].changed) continue;
+        // console.log("changing", i, trjs.keys.keyChanging[i]);
         for (var k in trjs.bindingsUser) {
-            if (trjs.bindingsUser[k][BINDFUN] === keyChanging[i].fun) {
-                console.log("copy bindings1:", keyChanging[i]);
-                console.log("copy bindings2:", trjs.keys.nameToKey[keyChanging[i].key]);
-                trjs.bindingsUser[k][BINDKEY] = Number(trjs.keys.nameToKey[keyChanging[i].key]);
-                trjs.bindingsUser[k][BINDCTRL] = keyChanging[i].ctrl;
-                trjs.bindingsUser[k][BINDALT] = keyChanging[i].alt;
-                trjs.bindingsUser[k][BINDSHIFT] = keyChanging[i].shift;
-                trjs.bindingsUser[k][BINDMETA] = keyChanging[i].ctrl;
-                trjs.bindingsUser[k][BINDSUPL] = keyChanging[i].supl;
-                console.log("copy bindings3:", trjs.bindingsUser[k]);
+            if (trjs.bindingsUser[k][BINDFUN] === trjs.keys.keyChanging[i].fun) {
+                //console.log("copy bindings1:", trjs.keys.keyChanging[i]);
+                //console.log("copy bindings2:", trjs.keys.nameToKey[trjs.keys.keyChanging[i].key]);
+                trjs.bindingsUser[k][BINDKEY] = Number(trjs.keys.nameToKey[trjs.keys.keyChanging[i].key]);
+                trjs.bindingsUser[k][BINDCTRL] = trjs.keys.keyChanging[i].ctrl;
+                trjs.bindingsUser[k][BINDALT] = trjs.keys.keyChanging[i].alt;
+                trjs.bindingsUser[k][BINDSHIFT] = trjs.keys.keyChanging[i].shift;
+                trjs.bindingsUser[k][BINDMETA] = trjs.keys.keyChanging[i].ctrl;
+                trjs.bindingsUser[k][BINDSUPL] = trjs.keys.keyChanging[i].supl;
+                //console.log("copy bindings3:", trjs.bindingsUser[k]);
             }
         }
     }
-//    console.log("storeChangeKeys", keyChanging, trjs.bindingsUser);
+//    console.log("storeChangeKeys", trjs.keys.keyChanging, trjs.bindingsUser);
     // regenerate the actual bindings to trjs.tablekeys
-    initTablekeys();
+    trjs.keys.initTablekeys();
     trjs.keys.saveUserBindings();
 }
 
@@ -300,81 +335,119 @@ trjs.keys.updateKCSupl = function(element)
 trjs.keys.updateKCCtrl = function(element)
 {
     var val = element.target.checked;
-    console.log(val, trjs.keys.kc, element);
     trjs.keys.kc.ctrl = val;
     trjs.keys.kc.changed = true;
-//    console.log("ctrl", trjs.keys.kc);
 }
 trjs.keys.updateKCAlt = function(element)
 {
     var val = element.target.checked;
-    console.log(val, trjs.keys.kc, element);
     trjs.keys.kc.alt = val;
     trjs.keys.kc.changed = true;
-//    console.log("alt", trjs.keys.kc);
 }
 trjs.keys.updateKCShift = function(element)
 {
     var val = element.target.checked;
-    console.log(val, trjs.keys.kc, element);
     trjs.keys.kc.shift = val;
     trjs.keys.kc.changed = true;
-//    console.log("shift", trjs.keys.kc);
 }
 trjs.keys.updateKCKey = function(element)
 {
     var idx = element.target.selectedIndex;
     var val = element.target.options[idx].value;
-    console.log(idx, val, trjs.keys.kc, element);
     trjs.keys.kc.key = trjs.keyToName[val];
     trjs.keys.kc.changed = true;
-//    console.log("kc", trjs.keys.kc);
 }
 
-trjs.keys.validateKey = function(kc, nth) {
-    trjs.keys.updated = true;
-//    $('#storebChangeKeys').css('font-size: larger; border: 5px solid blue;');
-    var s = document.getElementById('storebChangeKeys').style;
-    s.cssText += 'font-size: larger; border: 5px solid blue; background-color: orange;';
-    keyChanging[nth].key = kc.key;
-    keyChanging[nth].changed = true;
-    keyChanging[nth].ctrl = kc.ctrl;
-    keyChanging[nth].alt = kc.alt;
-    keyChanging[nth].shift = kc.shift;
-//    keyChanging[nth].meta = kc.meta;
-    keyChanging[nth].supl = kc.supl;
-
-    if (keyChanging[nth].key !== trjs.keyToName[NOKEY]) {
-        // in this case the previous associated key with the same meaning should removed
-        for (var k in keyChanging) {
-            k = Number(k);
-            if (k !== nth && keyChanging[k].key === keyChanging[nth].key
-                && keyChanging[k].ctrl === keyChanging[nth].ctrl
-                && keyChanging[k].alt === keyChanging[nth].alt
-                && keyChanging[k].shift === keyChanging[nth].shift
-//                && keyChanging[k].meta === keyChanging[nth].meta
-                && keyChanging[k].supl === keyChanging[nth].supl
-                ) {
+trjs.keys.testKeyAvailable = function(kc, nth) {
+    // check if keyChanging has unwanted consequences
+    var listOfFun = [];
+    nth = String(nth);
+    if (kc.key !== trjs.keyToName[NOKEY]) {
+        // in this case the previous associated key with the same meaning should tested
+        for (var k in trjs.keys.keyChanging) {
+            if (!trjs.keys.keyChanging[k]) continue;
+            if (k !== nth && trjs.keys.keyChanging[k].key === kc.key
+                && trjs.keys.keyChanging[k].ctrl === kc.ctrl
+                && trjs.keys.keyChanging[k].alt === kc.alt
+                && trjs.keys.keyChanging[k].shift === kc.shift
+                //                && trjs.keys.keyChanging[k].meta === kc.meta
+                && trjs.keys.keyChanging[k].supl === kc.supl
+            ) {
                 // this old setting is overridden by the new one
-                keyChanging[k].key = trjs.keyToName[NOKEY];
-                keyChanging[k].changed = true;
-                keyChanging[k].ctrl = false;
-                keyChanging[k].alt = false;
-                keyChanging[k].shift = false;
-//                keyChanging[k].meta = false;
-                keyChanging[k].supl = '';
-                console.log("replace key", k);
+                listOfFun.push(trjs.keys.keyChanging[k].fun);
             }
         }
     } // else the function is only removing a key association
+    if (listOfFun.length < 1) {
+        trjs.keys.validateKey(kc, nth);
+    } else {
+        s = "The key association of these functions will be removed: ";
+        s += listOfFun.join(" ");
+        s += ". Are you ok with this?";
+        bootbox.confirm(s,
+            function (rep) {
+                if (rep !== true)
+                    return;
+                else {
+                    trjs.keys.validateKey(kc, nth);
+                    return;
+                }
+            }
+        );
+    }
 }
 
-trjs.keys.editKey = function (event, nth) {
-    // keyChanging[nth] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
-    trjs.keys.kc = keyChanging[nth]; // the element to edit
-    var h = '<span class="chgFunname">' + trjs.keys.kc.fun + '</span>';
+trjs.keys.validateKey = function(kc, nth) {
+    // store the new state of keyChanging
+    trjs.keys.updated = true;
+    // signal to the user to save the keys
+    var s = document.getElementById('storebChangeKeys');
+    if (s) s.style.cssText += 'font-size: larger; border: 5px solid blue; background-color: orange;';
+    // if macro editing this is not visible and saving will be done automatically
 
-    h += '<select class="chgSuplkey" onchange="trjs.keys.updateKCSupl(event);">';
+    nth = String(nth);
+    trjs.keys.keyChanging[nth].key = kc.key;
+    trjs.keys.keyChanging[nth].changed = true;
+    trjs.keys.keyChanging[nth].ctrl = kc.ctrl;
+    trjs.keys.keyChanging[nth].alt = kc.alt;
+    trjs.keys.keyChanging[nth].shift = kc.shift;
+//    trjs.keys.keyChanging[nth].meta = kc.meta;
+    trjs.keys.keyChanging[nth].supl = kc.supl;
+
+    if (trjs.keys.keyChanging[nth].key !== trjs.keyToName[NOKEY]) {
+        // in this case the previous associated key with the same meaning should removed
+        for (var k in trjs.keys.keyChanging) {
+            // k = Number(k);
+            // console.log(k,nth,trjs.keys.keyChanging[k], trjs.keys.keyChanging[nth]);
+            if (!trjs.keys.keyChanging[k]) continue;
+            if (k !== nth && trjs.keys.keyChanging[k].key === trjs.keys.keyChanging[nth].key
+                && trjs.keys.keyChanging[k].ctrl === trjs.keys.keyChanging[nth].ctrl
+                && trjs.keys.keyChanging[k].alt === trjs.keys.keyChanging[nth].alt
+                && trjs.keys.keyChanging[k].shift === trjs.keys.keyChanging[nth].shift
+//                && trjs.keys.keyChanging[k].meta === trjs.keys.keyChanging[nth].meta
+                && trjs.keys.keyChanging[k].supl === trjs.keys.keyChanging[nth].supl
+                ) {
+                // this old setting is overridden by the new one
+                trjs.keys.keyChanging[k].key = trjs.keyToName[NOKEY];
+                trjs.keys.keyChanging[k].changed = true;
+                trjs.keys.keyChanging[k].ctrl = false;
+                trjs.keys.keyChanging[k].alt = false;
+                trjs.keys.keyChanging[k].shift = false;
+//                trjs.keys.keyChanging[k].meta = false;
+                trjs.keys.keyChanging[k].supl = '';
+                //console.log("replace key", k);
+            }
+        }
+    } // else the function is only removing a key association
+    trjs.keys.updateKeyBindings();
+}
+
+trjs.keys.editKey = function (event, nth, callback) {
+    // trjs.keys.keyChanging[nth] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
+    trjs.keys.kc = trjs.keys.keyChanging[nth]; // the element to edit
+    var h = 'Function <span class="chgFunname">' + trjs.keys.kc.fun + '</span> = ';
+
+    h += 'Prefix <select class="chgSuplkey" onchange="trjs.keys.updateKCSupl(event);">';
     h += '<option value="--" ';
     if (trjs.keys.kc.supl === '') h += 'selected="selected" ';
     h += '>--</option>';
@@ -420,9 +493,11 @@ trjs.keys.editKey = function (event, nth) {
                 label: trjs.messgs.labelok,
                 className: "btn-success",
                 callback: function () {
-                    // change values of keyChanging[nth]
-                    // keyChanging[nth] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
-                    trjs.keys.validateKey(trjs.keys.kc, nth);
+                    // change values of trjs.keys.keyChanging[nth]
+                    // trjs.keys.keyChanging[nth] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
+                    // trjs.keys.validateKey(trjs.keys.kc, nth);
+                    trjs.keys.testKeyAvailable(trjs.keys.kc, nth);
+                    if (callback) callback();
                 }
             },
             cancel: {
@@ -445,12 +520,12 @@ trjs.keys.editKey = function (event, nth) {
     });
 }
 
-trjs.keys.chgToHtml = function () {
-    var s = '';
-    keyChanging = [];
+trjs.keys.initKeyChanging = function () {
+    trjs.keys.keyChanging = [];
     trjs.keys.updated = false;
     for (var i in trjs.bindingsUser) {
-        //  keyChanging[i] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
+        // ?? remove bindings to unexistant functions ??
+        //  trjs.keys.keyChanging[i] = { fun: fun, key: key, ctrl: ctrl||meta, alt: alt, shift: shift, supl: supl, changed: false };
         var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
         var kc = {
             fun: trjs.bindingsUser[i][BINDFUN],
@@ -461,26 +536,27 @@ trjs.keys.chgToHtml = function () {
             supl: trjs.bindingsUser[i][BINDSUPL],
             changed: false
         };
-        keyChanging.push(kc);
+        trjs.keys.keyChanging.push(kc);
+    }
+};
+
+trjs.keys.toHtml = function () {
+    var s = '';
+    for (var i in trjs.keys.keyChanging) {
+        if (trjs.keys.keyChanging[i].supl) continue;
+        var k = trjs.keys.keyChanging[i].key;
         if (!k) k = 'Unknown';
-        var f = trjs.bindingsUser[i][BINDFUN];
-        if (!f) console.log("key with no function?", i, trjs.bindingsUser[i]);
-        else {
-            s += '<tr><td><button class="chgButton" onclick="trjs.keys.editKey(event,' + i + ');">Edit</button></td><td>';
-            s += '<span class="chgFunname">' + trjs.bindingsUser[i][BINDFUN] + '</span>';
-            s += '</td><td>';
-            s += modifiersToString(trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
-                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA], trjs.bindingsUser[i][BINDSUPL]);
-            s += '</td><td>';
-            s += '<span class="chgKeyname">' + k + '</span>';
-            s += '</td><td>';
-            var c = trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2];
-            if (c) {
-                s += '<span class="chgCompl">' + c + '</span>';
-            }
-            s += '</td><td>';
-            s += '<span class="chgInfo">' + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1] + '</span>';
-            s += '</td></tr>\n';
+        if (trjs.keys.keyChanging[i].key !== "no key" && trjs.keys.functions[trjs.keys.keyChanging[i].fun]) {
+            s += '<tr><td>'
+                + prefixToString(trjs.keys.keyChanging[i].supl)
+                + '</td><td>'
+                + modifiers2ToString(trjs.keys.keyChanging[i].ctrl, trjs.keys.keyChanging[i].alt,
+                    trjs.keys.keyChanging[i].shift, trjs.keys.keyChanging[i].ctrl)
+                + '</td><td>'
+                + k.toUpperCase()
+                + '</td><td>'
+                + trjs.keys.functions[trjs.keys.keyChanging[i].fun][1]
+                + '</td></tr>\n';
         }
     }
     return s;
@@ -488,20 +564,22 @@ trjs.keys.chgToHtml = function () {
 
 trjs.keys.apiToHtml = function () {
     var s = '';
-    for (var i in trjs.bindingsUser) {
-        if (trjs.bindingsUser[i][BINDSUPL] !== "api") continue;
-        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
+    for (var i in trjs.keys.keyChanging) {
+        if (trjs.keys.keyChanging[i].supl !== "api") continue;
+        var k = trjs.keys.keyChanging[i].key;
         if (!k) k = 'Unknown';
-        if (trjs.bindingsUser[i][BINDKEY] !== NOKEY) {
+        if (trjs.keys.keyChanging[i].key !== "no key") {
             s += '<tr><td>'
-                + modifiersToString(trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
-                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA], trjs.bindingsUser[i][BINDSUPL])
+                + prefixToString(trjs.keys.keyChanging[i].supl)
                 + '</td><td>'
-                + k
+                + modifiers2ToString(trjs.keys.keyChanging[i].ctrl, trjs.keys.keyChanging[i].alt,
+                    trjs.keys.keyChanging[i].shift, trjs.keys.keyChanging[i].ctrl)
                 + '</td><td>'
-                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2]
+                + k.toUpperCase()
                 + '</td><td>'
-                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
+                + trjs.keys.functions[trjs.keys.keyChanging[i].fun][2]
+                + '</td><td>'
+                + trjs.keys.functions[trjs.keys.keyChanging[i].fun][1]
                 + '</td></tr>\n';
         }
     }
@@ -510,56 +588,91 @@ trjs.keys.apiToHtml = function () {
 
 trjs.keys.f1f2ToHtml = function () {
     var s = '';
-    for (var i in trjs.bindingsUser) {
-        if (trjs.bindingsUser[i][BINDSUPL] !== "F1") continue;
-        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
+    for (var i in trjs.keys.keyChanging) {
+        if (trjs.keys.keyChanging[i].supl !== "F1") continue;
+        var k = trjs.keys.keyChanging[i].key;
         if (!k) k = 'Unknown';
-        var d = trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2];
-        if (trjs.bindingsUser[i][BINDKEY] !== NOKEY) {
+        var d = trjs.keys.functions[trjs.keys.keyChanging[i].fun][2];
+        if (trjs.keys.keyChanging[i].key !== "no key") {
             s += '<tr><td>'
-                + modifiersToString(trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
-                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA], trjs.bindingsUser[i][BINDSUPL])
+                + prefixToString(trjs.keys.keyChanging[i].supl)
                 + '</td><td>'
-                + k
+                + modifiers2ToString(trjs.keys.keyChanging[i].ctrl, trjs.keys.keyChanging[i].alt,
+                    trjs.keys.keyChanging[i].shift, trjs.keys.keyChanging[i].ctrl)
+                + '</td><td>'
+                + k.toUpperCase()
                 + '</td><td>'
                 + (d === null ? "" : d)
                 + '</td><td>'
-                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
+                + trjs.keys.functions[trjs.keys.keyChanging[i].fun][1]
                 + '</td></tr>\n';
         }
     }
-    for (var i in trjs.bindingsUser) {
-        if (trjs.bindingsUser[i][BINDSUPL] !== "F2") continue;
-        var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
+    for (var i in trjs.keys.keyChanging) {
+        if (trjs.keys.keyChanging[i].supl !== "F2") continue;
+        var k = trjs.keys.keyChanging[i].key;
         if (!k) k = 'Unknown';
-        var d = trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][2];
-        if (trjs.bindingsUser[i][BINDKEY] !== -1) {
+        var d = trjs.keys.functions[trjs.keys.keyChanging[i].fun][2];
+        if (trjs.keys.keyChanging[i].key !== -1) {
             s += '<tr><td>'
-                + modifiersToString(trjs.bindingsUser[i][BINDCTRL], trjs.bindingsUser[i][BINDALT],
-                    trjs.bindingsUser[i][BINDSHIFT], trjs.bindingsUser[i][BINDMETA], trjs.bindingsUser[i][BINDSUPL])
+                + prefixToString(trjs.keys.keyChanging[i].supl)
                 + '</td><td>'
-                + k
+                + modifiers2ToString(trjs.keys.keyChanging[i].ctrl, trjs.keys.keyChanging[i].alt,
+                    trjs.keys.keyChanging[i].shift, trjs.keys.keyChanging[i].ctrl)
+                + '</td><td>'
+                + k.toUpperCase()
                 + '</td><td>'
                 + (d === null ? "" : d)
                 + '</td><td>'
-                + trjs.keys.functions[trjs.bindingsUser[i][BINDFUN]][1]
+                + trjs.keys.functions[trjs.keys.keyChanging[i].fun][1]
                 + '</td></tr>\n';
         }
     }
     return s;
 };
 
+trjs.keys.chgToHtml = function () {
+    var s = '';
+    for (var i in trjs.keys.keyChanging) {
+        if (!trjs.keys.functions[trjs.keys.keyChanging[i].fun]) continue;
+        var k = trjs.keys.keyChanging[i].key;
+        if (!k) k = 'Unknown';
+        var f = trjs.keys.keyChanging[i].fun;
+        if (!f) console.log("key with no function?", i, trjs.keys.keyChanging[i]);
+        else {
+            s += '<tr><td><button class="chgButton" onclick="trjs.keys.editKey(event,' + i + ');">Edit</button></td><td>';
+            s += '<span class="chgFunname">' + trjs.keys.keyChanging[i].fun + '</span>';
+            s += '</td><td>';
+            s += prefixToString(trjs.keys.keyChanging[i].supl);
+            s += '</td><td>';
+            s += modifiers2ToString(trjs.keys.keyChanging[i].ctrl, trjs.keys.keyChanging[i].alt,
+                trjs.keys.keyChanging[i].shift, trjs.keys.keyChanging[i].ctrl);
+            s += '</td><td>';
+            s += '<span class="chgKeyname">' + k.toUpperCase() + '</span>';
+            s += '</td><td>';
+            var c = trjs.keys.functions[trjs.keys.keyChanging[i].fun][2];
+            if (c) {
+                s += '<span class="chgCompl">' + c + '</span>';
+            }
+            s += '</td><td>';
+            s += '<span class="chgInfo">' + trjs.keys.functions[trjs.keys.keyChanging[i].fun][1] + '</span>';
+            s += '</td></tr>\n';
+        }
+    }
+    return s;
+};
 
 trjs.keys.showKeys = function () {
     $('#bindings-content').html(
         '<p><button id="printbkeys" onclick="trjs.keys.printKeys();">' +
         '<i class="fa fa-print"></i><span id="printkeys"> Print the list of keys </span></button></p>' +
         '<table id="tableid" class="display"><thead><tr>' +
+        '<th id="tCHGprefix">Prefix</th>' +
         '<th id="tCHGmodif">Modifiers</th>' +
-        '<th id="tCHGkey">Keys</th>' +
+        '<th id="tCHGkey">Key</th>' +
         '<th id="tCHGbin">Function</th>' +
         '</tr></thead>' +
-        '<tbody>' + trjs.keys.toHtml() + '</tbody></table>');
+        '<tbody id="bodyKeys">' + trjs.keys.toHtml() + '</tbody></table>');
     var h = $(window).height();
     if (h>400)
         $('#tableid').dataTable({
@@ -576,17 +689,22 @@ trjs.keys.showKeys = function () {
     $('#message-bindings').modal({keyboard: true});
 };
 
+trjs.keys.updateKeys = function () {
+    $('#bodyKeys').html(trjs.keys.toHtml());
+}
+
 trjs.keys.showApiKeys = function () {
     $('#apibindings-content').html(
         '<p><button id="printbapikeys" onclick="trjs.keys.printApiKeys();">' +
         '<i class="fa fa-print"></i><span id="printapikeys"> Print the list of API keys</span></button></p>' +
         '<table id="tableidapi" class="display"><thead><tr>' +
+        '<th id="tapiprefix">Prefix</th>' +
         '<th id="tapimodif">Modifiers</th>' +
-        '<th id="tapikey">Keys</th>' +
+        '<th id="tapikey">Key</th>' +
         '<th id="tapibin">API</th>' +
         '<th>Info</th>' +
         '</tr></thead>' +
-        '<tbody>' + trjs.keys.apiToHtml() + '</tbody></table>');
+        '<tbody id="bodyApiKeys">' + trjs.keys.apiToHtml() + '</tbody></table>');
     $('#tableidapi').dataTable({
         "scrollY": "auto",
         "scrollCollapse": true,
@@ -595,16 +713,21 @@ trjs.keys.showApiKeys = function () {
     $('#message-bindings').modal({keyboard: true});
 };
 
+trjs.keys.updateApiKeys = function () {
+    $('#bodyApiKeys').html(trjs.keys.apiToHtml());
+}
+
 trjs.keys.showF1F2Keys = function () {
     $('#F1F2bindings-content').html(
         '<p><button id="printbf1f2keys" onclick="trjs.keys.printF1F2Keys();">' +
         '<i class="fa fa-print"></i><span id="printF1F2keys"> Print the list of F1/F2 keys</span></button></p>' +
         '<table id="tableidF1F2" class="display"><thead><tr>' +
+        '<th id="tF1F2prefix">Prefix</th>' +
         '<th id="tF1F2modif">Modifiers</th>' +
-        '<th id="tF1F2key">Keys</th>' +
+        '<th id="tF1F2key">Key</th>' +
         '<th id="tF1F2bin">Value</th>' +
         '<th>Info</th></tr></thead>' +
-        '<tbody>' + trjs.keys.f1f2ToHtml() + '</tbody></table>');
+        '<tbody id="bodyF1F2Keys">' + trjs.keys.f1f2ToHtml() + '</tbody></table>');
     $('#tableidF1F2').dataTable({
         "scrollY": "auto",
         "scrollCollapse": true,
@@ -612,6 +735,10 @@ trjs.keys.showF1F2Keys = function () {
     });
     $('#message-bindings').modal({keyboard: true});
 };
+
+trjs.keys.updateF1F2Keys = function () {
+    $('#bodyF1F2Keys').html(trjs.keys.f1f2ToHtml());
+}
 
 trjs.keys.showChangeKeys = function () {
     $('#bindings-change').html(
@@ -621,12 +748,13 @@ trjs.keys.showChangeKeys = function () {
         '<table id="tableidCHG" class="display"><thead><tr>' +
         '<th id="tckaction">-</th>' +
         '<th id="tckfun">Function</th>' +
+        '<th id="tcprefix">Prefix</th>' +
         '<th id="tcmod">Modifiers</th>' +
-        '<th id="tckey">Keys</th>' +
+        '<th id="tckey">Key</th>' +
         '<th id="tcchars">Chars</th>' +
         '<th id="tcdesc">Description</th>' +
         '</tr></thead>' +
-        '<tbody>' + trjs.keys.chgToHtml() + '</tbody></table>');
+        '<tbody id="bodyChgKeys">' + trjs.keys.chgToHtml() + '</tbody></table>');
     var h = $(window).height();
     if (h>400)
         $('#tableidCHG').dataTable({
@@ -640,8 +768,10 @@ trjs.keys.showChangeKeys = function () {
             "scrollCollapse": true,
             "paging": false
         });
-    $("#message-bindings").on("hidden.bs.modal", function () {
+    $("#message-bindings").on("hidden.bs.modal", function (event) {
         // put your default event here
+        console.log("call to hidden", event);
+        console.trace();
         if (trjs.keys.updated === true) {
             bootbox.confirm({
                 message: trjs.messgs.savekeybindings,
@@ -663,6 +793,10 @@ trjs.keys.showChangeKeys = function () {
     });
     $('#message-bindings').modal({keyboard: true});
 };
+
+trjs.keys.updateChangeKeys = function () {
+    $('#bodyChgKeys').html(trjs.keys.chgToHtml());
+}
 
 trjs.keys.printKeys = function (argument) {
     var style = '.p { display:block; margin: 0; padding: 0; } .keysdisplay { font-style: italic; margin-right: 2em; color:#000000; background:#FFFFFF; font-size:larger; } .keysdescr { color:#000000; background:#FFFFFF; } ';
@@ -701,14 +835,8 @@ trjs.keys.ispress = function (e) {
 
 trjs.keys.initMacrosBindings = function() {
     trjs.macros.loadTable();
-    // Ctrl F2 === 113 et Ctrl F12 = 123
-    for (var i=0; i<11; i++) {
-        if (trjs.macros.table[i] && trjs.macros.table[i][0]) {
-            // trjs.keys.functions
-            // "backwardStep": [ trjs.media.backwardStep, trjs.messgs.altbin37, null],
-            trjs.keys.functions["macro"+i] = [ trjs.macros.macrofunction(i), trjs.macros.desc(i), null ];
-            trjs.bindingsDef.push([113+i, true, false, false, 'ctrl', "", "macro"+i ] ); // Ctrl F(2+i)
-        }
+    for (var i in trjs.macros.table) {
+        trjs.keys.functions[i] = [ trjs.macros.macrofunction(i), trjs.macros.desc(i), trjs.macros.content(i) ];
     }
 };
 
@@ -1086,8 +1214,8 @@ trjs.keys.initBindings = function () {
     //trjs.bindingsDef.push([122, true, true, false, 'ctrl', "", "exportMStoMediaSubt"]); // Ctrl Alt F11
     trjs.bindingsDef.push([nkey("f12"), true, true, false, 'ctrl', "", "exportMStoMedia"]); // Ctrl Alt F12
 
-    trjs.bindingsDef.push([nkey("f1"), false, true, true, false, "", "generic", trjs.mess]); // Alt Shift F1
-    /* 113 à 123 pour Alt Shift F2 à F12 à converser pour les macros */
+    trjs.bindingsDef.push([nkey("f1"), false, true, true, false, "", "generic"]); // Alt Shift F1
+    /* 113 à 123 for Alt Shift F2 à F12 might be used for macros */
 
     trjs.bindingsDef.push([nkey("left arrow"), false, true, false, false, "", "backwardStep"]); // Alt Left
     trjs.bindingsDef.push([nkey("up arrow"), false, true, false, false, "", "keyLocUp"]); // Alt Up
@@ -1297,25 +1425,15 @@ trjs.keys.initF2Bindings = function () {
     trjs.bindingsDef.push([nkey("single quote"), false, false, false, false, "F2", "F2.key(14)"]); //
     trjs.bindingsDef.push([nkey("double quote"), false, false, false, false, "F2", "F2.key(15)"]); //
 
-    trjs.bindingsDef.push( [nkey("f3"), false, false, false, false, "F2", "setNthLoc1" ]); // F2 F3
-    trjs.bindingsDef.push( [nkey("f4"), false, false, false, false, "F2", "setNthLoc2" ]); // F2 F4
-    trjs.bindingsDef.push( [nkey("f5"), false, false, false, false, "F2", "setNthLoc3" ]); // F2 F5
-    trjs.bindingsDef.push( [nkey("f6"), false, false, false, false, "F2", "setNthLoc4" ]); // F2 F6
-    trjs.bindingsDef.push( [nkey("f7"), false, false, false, false, "F2", "setNthLoc5" ]); // F2 F7
-    trjs.bindingsDef.push( [nkey("f8"), false, false, false, false, "F2", "setNthLoc6" ]); // F2 F8
-    trjs.bindingsDef.push( [nkey("f9"), false, false, false, false, "F2", "setNthLoc7" ]); // F2 F9
-    trjs.bindingsDef.push([nkey("f10"), false, false, false, false, "F2", "setNthLoc8" ]); // F2 F10
-    trjs.bindingsDef.push([nkey("f11"), false, false, false, false, "F2", "setNthLoc9" ]); // F2 F11
-
-    trjs.bindingsDef.push( [nkey("f3"), true, true, false, 'ctrl', "F2", "setNthTier1" ]); // F2 ctrl alt F3
-    trjs.bindingsDef.push( [nkey("f4"), true, true, false, 'ctrl', "F2", "setNthTier2" ]); // F2 ctrl alt F4
-    trjs.bindingsDef.push( [nkey("f5"), true, true, false, 'ctrl', "F2", "setNthTier3" ]); // F2 ctrl alt F5
-    trjs.bindingsDef.push( [nkey("f6"), true, true, false, 'ctrl', "F2", "setNthTier4" ]); // F2 ctrl alt F6
-    trjs.bindingsDef.push( [nkey("f7"), true, true, false, 'ctrl', "F2", "setNthTier5" ]); // F2 ctrl alt F7
-    trjs.bindingsDef.push( [nkey("f8"), true, true, false, 'ctrl', "F2", "setNthTier6" ]); // F2 ctrl alt F8
-    trjs.bindingsDef.push( [nkey("f9"), true, true, false, 'ctrl', "F2", "setNthTier7" ]); // F2 ctrl alt F9
-    trjs.bindingsDef.push([nkey("f10"), true, true, false, 'ctrl', "F2", "setNthTier8" ]); // F2 ctrl alt F10
-    trjs.bindingsDef.push([nkey("f11"), true, true, false, 'ctrl', "F2", "setNthTier9" ]); // F2 ctrl alt F11
+    trjs.bindingsDef.push( [nkey("1"), true, false, false, false, "F2", "setNthTier1" ]); // F2 ctrl 1
+    trjs.bindingsDef.push( [nkey("2"), true, false, false, false, "F2", "setNthTier2" ]); // F2 ctrl 2
+    trjs.bindingsDef.push( [nkey("3"), true, false, false, false, "F2", "setNthTier3" ]); // F2 ctrl 3
+    trjs.bindingsDef.push( [nkey("4"), true, false, false, false, "F2", "setNthTier4" ]); // F2 ctrl 4
+    trjs.bindingsDef.push( [nkey("5"), true, false, false, false, "F2", "setNthTier5" ]); // F2 ctrl 5
+    trjs.bindingsDef.push( [nkey("6"), true, false, false, false, "F2", "setNthTier6" ]); // F2 ctrl 6
+    trjs.bindingsDef.push( [nkey("7"), true, false, false, false, "F2", "setNthTier7" ]); // F2 ctrl 7
+    trjs.bindingsDef.push( [nkey("8"), true, false, false, false, "F2", "setNthTier8" ]); // F2 ctrl 8
+    trjs.bindingsDef.push( [nkey("9"), true, false, false, false, "F2", "setNthTier9" ]); // F2 ctrl 9
 
     trjs.bindingsDef.push( [nkey("f5"), false, true, false, false, "F2", "colorRed" ]); // 'RED' ] ); // F2 alt F5
     trjs.bindingsDef.push( [nkey("f6"), false, true, false, false, "F2", "colorGreen" ]); // 'GREEN' ] ); // F2 alt F6
@@ -1328,32 +1446,40 @@ trjs.keys.initF2Bindings = function () {
     //trjs.bindingsDef.push([120, true, true, false, 'ctrl', "F2", "exportMStoSubtSrt"]); // Ctrl Alt F9
     //trjs.bindingsDef.push([121, true, true, false, 'ctrl', "F2", "exportMStoSubtAss"]); // Ctrl Alt F10
     //trjs.bindingsDef.push([122, true, true, false, 'ctrl', "F2", "exportMStoMediaSubt"]); // Ctrl Alt F11
-
     //trjs.bindingsDef.push([nkey("f12"), false, false, false, false, trjs.transcription.exportMStoMedia, trjs.messgs.ctrlaltbin123]); // Ctrl Alt F12
 };
 
 trjs.keys.noBindings = function() {
     // list all keys that are set and check if there are unintended doubles
     var funnames = {};
-    for (var i in trjs.bindingsDef) {
-        if (funnames[trjs.bindingsDef[i][BINDFUN]] === true) {
+    for (var i in trjs.bindingsUser) {
+        if (funnames[trjs.bindingsUser[i][BINDFUN]] === true) {
             // double
+            console.log(i,"has two key bindings (not an error)");
         } else {
-            funnames[trjs.bindingsDef[i][BINDFUN]] = true;
+            funnames[trjs.bindingsUser[i][BINDFUN]] = true;
         }
     }
     for (var i in trjs.keys.functions) {
         if (funnames[i] !== true) {
-            trjs.bindingsDef.push([ NOKEY, false, false, false, false, "", i ]);
+            trjs.bindingsUser.push([ NOKEY, false, false, false, false, "", i ]);
         }
     }
 }
 
 trjs.keys.viewKeyBindings = function() {
+    trjs.keys.initKeyChanging();
     trjs.keys.showKeys();
     trjs.keys.showApiKeys();
     trjs.keys.showF1F2Keys();
     trjs.keys.showChangeKeys();
+}
+
+trjs.keys.updateKeyBindings = function() {
+    trjs.keys.updateKeys();
+    trjs.keys.updateApiKeys();
+    trjs.keys.updateF1F2Keys();
+    trjs.keys.updateChangeKeys();
 }
 
 /**

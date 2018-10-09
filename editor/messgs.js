@@ -767,6 +767,7 @@ trjs.messgs_eng = {
     generic: "Basic macro menu",
     editKey: "Editing keyboard command",
     savekeybindings: "Do you want to save the change in the keyboard bindings?",
+    newmacro: "New macro",
 };
 
 trjs.messgs_fra = {
@@ -1527,6 +1528,7 @@ trjs.messgs_fra = {
     generic: "Menu macro de base",
     editKey: "Edition de la commande clavier",
     savekeybindings: "Voulez-vous sauver les modifications dans les associations clavier ?",
+    newmacro: "Nouvelle macro",
 };
 
 trjs.messgs = trjs.messgs_eng;
