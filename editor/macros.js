@@ -338,7 +338,7 @@ trjs.macros.form = function () {
     var t = $('#event-type').val();
     var s = $('#event-subtype').val();
     var c = $('#event-content').val();
-    console.log(t,s,c);
+    // console.log(t,s,c);
     var f = '';
     switch(t) {
         case 'value':
@@ -535,7 +535,10 @@ trjs.macros.loadTable = function() {
 };
 
 trjs.macros.selectShortcut = function() {
-    trjs.keys.keyChanging["__editedmacrokey__"] = { fun: '', key: '', ctrl: false, alt: false, shift: false, supl: '', changed: false };
+    var k = $('#accessmacro').val();
+    if (k === "newname")
+        k = $('#macroname').val();
+    trjs.keys.keyChanging["__editedmacrokey__"] = { fun: k, key: '', ctrl: false, alt: false, shift: false, supl: '', changed: false };
     trjs.keys.editKey(null, "__editedmacrokey__", function() {
         if (trjs.keys.keyChanging["__editedmacrokey__"].changed == true) {
             var s = trjs.keys.printkey(trjs.keys.keyChanging["__editedmacrokey__"]);

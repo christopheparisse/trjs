@@ -339,3 +339,7 @@ td select { display: inline; margin: 2px; }
 	margin-left: 3px; margin-right: 3px;
 	font-size: larger;
 }
+
+#pkeyshortcut {
+	border: 2px solid lightblue; border-radius: 5px;
+}

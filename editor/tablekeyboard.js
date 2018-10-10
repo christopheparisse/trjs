@@ -592,6 +592,8 @@ trjs.keys.f1f2ToHtml = function () {
         if (trjs.keys.keyChanging[i].supl !== "F1") continue;
         var k = trjs.keys.keyChanging[i].key;
         if (!k) k = 'Unknown';
+        //console.log("F1", trjs.keys.keyChanging[i].fun, trjs.keys.keyChanging[i]);
+        if (!trjs.keys.functions[trjs.keys.keyChanging[i].fun]) continue;
         var d = trjs.keys.functions[trjs.keys.keyChanging[i].fun][2];
         if (trjs.keys.keyChanging[i].key !== "no key") {
             s += '<tr><td>'
@@ -612,6 +614,8 @@ trjs.keys.f1f2ToHtml = function () {
         if (trjs.keys.keyChanging[i].supl !== "F2") continue;
         var k = trjs.keys.keyChanging[i].key;
         if (!k) k = 'Unknown';
+        //console.log("F2", trjs.keys.keyChanging[i].fun, trjs.keys.keyChanging[i]);
+        if (!trjs.keys.functions[trjs.keys.keyChanging[i].fun]) continue;
         var d = trjs.keys.functions[trjs.keys.keyChanging[i].fun][2];
         if (trjs.keys.keyChanging[i].key !== -1) {
             s += '<tr><td>'
@@ -1247,12 +1251,12 @@ trjs.apiBindings = [];
 trjs.keys.initApiBindings = function () {
     // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
     // here supl = "api"
-    trjs.bindingsDef.push([48, false, true, false, false, "api", "api.key(9)"]); // Alt 0 et Alt @
-    trjs.bindingsDef.push([50, false, true, false, false, "api", "api.key(6)"]); // Alt 2
-    trjs.bindingsDef.push([57, false, true, false, false, "api", "api.key(7)"]); // Alt 9
-    trjs.bindingsDef.push([58, false, true, false, false, "api", "api.key(73)"]); // Alt :
-    trjs.bindingsDef.push([65, false, true, false, false, "api", "api.key(19)"]); // Alt A
-    trjs.bindingsDef.push([68, false, true, false, false, "api", "api.key(43)"]); // Alt D
+    trjs.bindingsDef.push([nkey("@"), false, true, false, false, "api", "api.key(9)"]); // Alt 0 et Alt @
+    trjs.bindingsDef.push([nkey("2"), false, true, false, false, "api", "api.key(6)"]); // Alt 2
+    trjs.bindingsDef.push([nkey("9"), false, true, false, false, "api", "api.key(7)"]); // Alt 9
+    trjs.bindingsDef.push([nkey("semi-colon"), false, true, false, false, "api", "api.key(73)"]); // Alt :
+    trjs.bindingsDef.push([nkey("a"), false, true, false, false, "api", "api.key(19)"]); // Alt A
+    trjs.bindingsDef.push([nkey("d"), false, true, false, false, "api", "api.key(43)"]); // Alt D
     trjs.bindingsDef.push([69, false, true, false, false, "api", "api.key(3)"]); // Alt E
     trjs.bindingsDef.push([72, false, true, false, false, "api", "api.key(71)"]); // Alt H
     trjs.bindingsDef.push([73, false, true, false, false, "api", "api.key(1)"]); // Alt I
@@ -1267,7 +1271,7 @@ trjs.keys.initApiBindings = function () {
     trjs.bindingsDef.push([86, false, true, false, false, "api", "api.key(18)"]); // Alt V
     trjs.bindingsDef.push([88, false, true, false, false, "api", "api.key(51)"]); // Alt X
     trjs.bindingsDef.push([90, false, true, false, false, "api", "api.key(47)"]); // Alt Z
-    trjs.bindingsDef.push([78, false, true, true, false, "api", "api.key(74)"]); // Alt Shift N
+    trjs.bindingsDef.push([nkey("n"), false, true, true, false, "api", "api.key(74)"]); // Alt Shift N
     trjs.bindingsDef.push([69, false, true, true, false, "api", "api.key(75)"]); // Shift Alt E
     trjs.bindingsDef.push([57, false, true, true, false, "api", "api.key(76)"]); // Shift Alt 9
     trjs.bindingsDef.push([79, false, true, true, false, "api", "api.key(77)"]); // Shift Alt O
@@ -1455,7 +1459,7 @@ trjs.keys.noBindings = function() {
     for (var i in trjs.bindingsUser) {
         if (funnames[trjs.bindingsUser[i][BINDFUN]] === true) {
             // double
-            console.log(i,"has two key bindings (not an error)");
+            console.log(i, trjs.bindingsUser[i][BINDFUN], "has two key bindings (not an error)");
         } else {
             funnames[trjs.bindingsUser[i][BINDFUN]] = true;
         }

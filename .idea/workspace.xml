@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/electronkeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/electronkeyboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/trjs_pp_eng.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/trjs_pp_eng.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/macros.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/macros.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/messgs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/messgs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/insert-macro.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/insert-macro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/global.css" afterDir="false" />
     </list>
@@ -28,24 +26,24 @@
     <session id="-645793077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.10" value="8" />
           <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.8" value="4" />
+          <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="10" />
-          <entry key="html" value="16" />
-          <entry key="js" value="91" />
-          <entry key="json" value="10" />
+          <entry key="css" value="11" />
+          <entry key="html" value="19" />
+          <entry key="js" value="95" />
+          <entry key="json" value="11" />
           <entry key="json-old" value="1" />
           <entry key="md" value="2" />
           <entry key="sh" value="9" />
@@ -53,28 +51,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="10" />
-          <entry key="HTML" value="16" />
-          <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="91" />
+          <entry key="CSS" value="11" />
+          <entry key="HTML" value="19" />
+          <entry key="JSON" value="11" />
+          <entry key="JavaScript" value="95" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="422" />
-          <entry key="html" value="979" />
-          <entry key="js" value="18913" />
+          <entry key="css" value="428" />
+          <entry key="html" value="1237" />
+          <entry key="js" value="19156" />
           <entry key="json" value="143" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="422" />
-          <entry key="HTML" value="996" />
+          <entry key="CSS" value="428" />
+          <entry key="HTML" value="1254" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="18896" />
+          <entry key="JavaScript" value="19139" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -84,19 +82,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/version.js">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="255">
+              <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="401">
+              <caret line="131" selection-start-line="131" selection-end-line="131" />
             </state>
           </provider>
         </entry>
@@ -105,12 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bootbox.confirm</find>
-      <find>vkey</find>
-      <find>valida</find>
-      <find>vkeyshortcut</find>
-      <find>modifiers</find>
-      <find>modifiers2ToString</find>
       <find>:</find>
       <find>round</find>
       <find>chgBlock</find>
@@ -135,6 +127,12 @@
       <find>insertmacro</find>
       <find>message-bindings</find>
       <find>console.log</find>
+      <find>eventKeypress</find>
+      <find>keyToName</find>
+      <find>api.key(6</find>
+      <find>new</find>
+      <find>shortcut</find>
+      <find>shorcut</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -175,8 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/systemcall/filetree.js" />
-        <option value="$PROJECT_DIR$/transcriberjs-x64.nsi" />
         <option value="$PROJECT_DIR$/transcriberjs-x86.nsi" />
         <option value="$PROJECT_DIR$/editor/help.js" />
         <option value="$PROJECT_DIR$/editor/data.js" />
@@ -218,14 +214,16 @@
         <option value="$PROJECT_DIR$/doc/doc.css" />
         <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/html/insert-macro.html" />
-        <option value="$PROJECT_DIR$/editor/macros.js" />
-        <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/editor/electronkeyboard.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
-        <option value="$PROJECT_DIR$/editor/events.js" />
-        <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/editor/events.js" />
+        <option value="$PROJECT_DIR$/html/index.html" />
+        <option value="$PROJECT_DIR$/editor/version.js" />
+        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
+        <option value="$PROJECT_DIR$/editor/macros.js" />
+        <option value="$PROJECT_DIR$/style/global.css" />
+        <option value="$PROJECT_DIR$/doc/trjs_pp_eng.html" />
       </list>
     </option>
   </component>
@@ -260,7 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,6 +309,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,18 +426,19 @@
       <workItem from="1538761008765" duration="18995000" />
       <workItem from="1538903181787" duration="882000" />
       <workItem from="1538925327012" duration="6011000" />
-      <workItem from="1538944914399" duration="15422000" />
+      <workItem from="1538944914399" duration="15596000" />
+      <workItem from="1539125170489" duration="3690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267583000" />
+    <option name="totallyTimeSpent" value="271447000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7992278" visible="true" weight="0.13979349" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7992278" visible="true" weight="0.18268467" />
       <window_info id="Structure" order="1" sideWeight="0.2007722" side_tool="true" weight="0.1406417" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -514,16 +513,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node/mediatools.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/medialibrary.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="627" column="54" selection-start-line="627" selection-start-column="54" selection-end-line="627" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/modal-exports.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -771,45 +760,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="1672" column="13" lean-forward="true" selection-start-line="1672" selection-start-column="13" selection-end-line="1672" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="774" selection-start-line="774" selection-end-line="774" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="337" column="33" selection-start-line="337" selection-start-column="33" selection-end-line="337" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/insert-macro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/messgs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="770" column="2" selection-start-line="770" selection-start-column="2" selection-end-line="770" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/macros.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="399" lean-forward="true" selection-start-line="399" selection-end-line="399" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -836,15 +790,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="182">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="1716" selection-start-line="1707" selection-end-line="1716" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="323" column="34" lean-forward="true" selection-start-line="323" selection-start-column="34" selection-end-line="323" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/insert-macro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/macros.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="539" column="34" lean-forward="true" selection-start-line="539" selection-start-column="34" selection-end-line="539" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="668" column="13" selection-start-line="668" selection-start-column="13" selection-end-line="668" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
         </state>
       </provider>
     </entry>
