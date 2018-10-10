@@ -19,8 +19,9 @@ var ContextMenuBuilder = require('./lib/context-menu-builder').default;
 window.spellCheckHandler = new SpellCheckHandler();
 setTimeout(function() { window.spellCheckHandler.attachToInput(); } , 1000);
 
-// Start off as US English, America #1 (lol)
+// Start off as US English
 window.spellCheckHandler.switchLanguage(trjs.param.checkLanguage);
+console.log('language choice', trjs.param.checkLanguage);
 //window.spellCheckHandler.provideHintText('This is probably the language that you want to check in');
 //window.spellCheckHandler.autoUnloadDictionariesOnBlur();
 
