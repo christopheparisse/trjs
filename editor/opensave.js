@@ -27,6 +27,7 @@ trjs.io = (function () {
     function localLoadMedia() {
         trjs.data.isMediaReady = false;
         trjs.data.initMedia();
+        trjs.media.resetMedia();
         var nBytes = 0;
         var oFiles = $("#upload-media")[0].files;
         nBytes = oFiles[0].size;
@@ -75,6 +76,7 @@ trjs.io = (function () {
     function innerLoadMedia(name, obj) {
         var ext = trjs.utils.extensionName(name).toLowerCase();
         trjs.media.setTime(0);
+        trjs.media.resetMedia();
         if (ext === ".mp3" || ext === ".oga" || ext === ".wav" || ext === "aif" || ext === "aiff") {
             // sets the audio
             setAudio();
@@ -572,6 +574,7 @@ trjs.io = (function () {
     }
 
     function finalizeLoadMedia() {
+        trjs.media.resetMedia();
         trjs.media.setTime(0);
         trjs.editor.resizeTranscript();
         trjs.dmz.sliderPopulate();
@@ -1072,6 +1075,7 @@ trjs.io = (function () {
         trjs.data.setMediaRealFile(name);
         trjs.data.setNamesInEdit();
         trjs.data.isMediaReady = true;
+        trjs.media.resetMedia();
         if (mediaFormat === 'html5MediaAudio') {
             // sets the audio
             setAudio();
@@ -1104,6 +1108,7 @@ trjs.io = (function () {
     function serverLoadMedia(name, mediatype) {
         // console.log('XXX serverLoadMedia ' + name + ' ' + mediatype);
         trjs.data.isMediaReady = false;
+        trjs.media.resetMedia();
         // clean the previous media, so if not loaded, this will be seen
         trjs.dmz.clear();
         // if there is no pathname, we create a pathnome

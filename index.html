@@ -417,6 +417,9 @@
 							</div>
 							<div role="tabpanel" class="tab-pane" id="pmodes"><br/>
 								<div class="row">
+									<div class="col-md-6"><p><input name="reload-last-file" id="reload-last-file" type="checkbox" onchange="trjs.editor.setReloadLastFile();" /><label for="reload-last-file">&nbsp;<span id='preloadlastfile'>Reload last file when starting </span></label></p></div>
+								</div>
+								<div class="row">
 									<div class="col-xs-6 col-md-4"><span id="pmode">Mode : </span></div>
 								</div>
 								<div class="row">
@@ -552,18 +555,6 @@
                     <div class="col-md-6">
                         <p><span id='ptypeevent'>Type: </span>
                             <select class="ctypevent" id="event-type">
-                                <option value="noise">noise</option>
-                                <option value="event">event</option>
-                                <option value="language">language</option>
-                                <option value="comment">comment</option>
-                                <option value="vocal">vocal</option>
-                                <option value="shortpause">short pause</option>
-                                <option value="middlepause">middle pause</option>
-                                <option value="longpause">long pause</option>
-                                <option value="verylongpause">very long pause</option>
-                                <option value="lexical">lexical</option>
-                                <option value="entities">entities</option>
-                                <option value="value">value</option>
                             </select></p>
                     </div>
                     <div class="row">
@@ -959,9 +950,5 @@
 
 <script>
     trjs.init('electron');
-</script>
-<script>
-    // You can also require other files to run in this process
-    require('./renderer.js');
 </script>
 </html>

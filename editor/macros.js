@@ -339,34 +339,103 @@ trjs.macros.form = function () {
     var s = $('#event-subtype').val();
     var c = $('#event-content').val();
     // console.log(t,s,c);
-    var f = '';
-    switch(t) {
-        case 'value':
-            return c;
-        case 'noise':
-            return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/N' + trjs.data.rightEvent;
-        case 'event':
-            return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/E' + trjs.data.rightEvent;
-        case 'language':
-            return trjs.data.leftEvent + ' ' + (s?'/'+s:'') + '/LG' + (c?':'+c:'') + trjs.data.rightEvent;
-        case 'comment':
-            return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/COM' + trjs.data.rightEvent;
-        case 'vocal':
-            return trjs.data.leftEvent + ' ' + c + ' /VOC' + trjs.data.rightEvent;
-        case 'shortpause':
-            return '#';
-        case 'middlepause':
-            return '##';
-        case 'longpause':
-            return '###';
-        case 'verylongpause':
-            return '#' + c + '#';
-        case 'lexical':
-            return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/LX' + trjs.data.rightEvent;
-        case 'entities':
-            return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/NE' + trjs.data.rightEvent;
+    if (trjs.param.format === 'CHAT') {
+        switch(t) {
+            case 'value':
+                return c;
+            case 'interposedword':
+                return '&*' + c + (s?':'+s:'');
+            case 'complexlocalevents':
+                return trjs.data.leftEvent + '^ ' + c + trjs.data.rightEvent;
+            case 'shortpause':
+                return '(.)';
+            case 'middlepause':
+                return '(..)';
+            case 'longpause':
+                return '(...)';
+            case 'verylongpause':
+                return '(' + c + ')';
+            case 'longevent':
+                return '&{l=* ' + c + ' &}l=*';
+            case 'longnonverbalevent':
+                return '&{n=* ' + c + ' &}n=*';
+            case 'trailingoff':
+                return '+...';
+            case 'interruption':
+                return '+/.';
+            case 'quotationfollows':
+                return '+"/.';
+            case 'quotationprecedes':
+                return '+".';
+            case 'selfcompletion':
+                return '+,';
+            case 'othercompletion':
+                return '++';
+            case 'stressing':
+                return '[!]';
+            case 'contrastivestressing':
+                return '[!!]';
+            case 'bestguess':
+                return '[?]';
+            case 'overlapfollows':
+                return '[>]';
+            case 'overlapprecedes':
+                return '[<]';
+            case 'lazyoverlap':
+                return '+<';
+            case 'repetition':
+                return '[/]';
+            case 'retracing':
+                return '[//]';
+            case 'reformulation':
+                return '[///]';
+            case 'paralinguitic':
+                return trjs.data.leftEvent + '=! ' + c + ' ' + s + trjs.data.rightEvent;
+            case 'explanation':
+                return trjs.data.leftEvent + '= ' + c + ' ' + s + trjs.data.rightEvent;
+            case 'duration':
+                return trjs.data.leftEvent + '# ' + c + ' ' + s + trjs.data.rightEvent;
+            case 'replacement':
+                return trjs.data.leftEvent + ': ' + c + ' ' + s + trjs.data.rightEvent;
+            case 'replacementrealword':
+                return trjs.data.leftEvent + ':: ' + c + ' ' + s + trjs.data.rightEvent;
+            case 'alternative':
+                return trjs.data.leftEvent + '=? ' + c + ' ' + s + trjs.data.rightEvent;
+            case 'comment':
+                return trjs.data.leftEvent + '% ' + c + ' ' + s + trjs.data.rightEvent;
+            default:
+                return f+s+c;
+        }
+    } else {
+        switch(t) {
+            case 'value':
+                return c;
+            case 'noise':
+                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/N' + trjs.data.rightEvent;
+            case 'event':
+                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/E' + trjs.data.rightEvent;
+            case 'language':
+                return trjs.data.leftEvent + ' ' + (s?'/'+s:'') + '/LG' + (c?':'+c:'') + trjs.data.rightEvent;
+            case 'comment':
+                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/COM' + trjs.data.rightEvent;
+            case 'vocal':
+                return trjs.data.leftEvent + ' ' + c + ' /VOC' + trjs.data.rightEvent;
+            case 'shortpause':
+                return '#';
+            case 'middlepause':
+                return '##';
+            case 'longpause':
+                return '###';
+            case 'verylongpause':
+                return '#' + c + '#';
+            case 'lexical':
+                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/LX' + trjs.data.rightEvent;
+            case 'entities':
+                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/NE' + trjs.data.rightEvent;
+            default:
+                return f+s+c;
+        }
     }
-    return f;
 };
 
 trjs.macros.desc = function(k) {
@@ -426,7 +495,56 @@ trjs.macros.generic = function () {
         trjs.keys.keyChanging['__editedmacrokey__'].changed = false;
         trjs.keys.keyChanging['__editedmacrokey__'].sup = "";
     }
-    $("#insertmacro").modal();
+
+    if (trjs.param.format === 'CHAT') {
+        s = '<option value="value">Any value</option>'
+            + '<option value="interposedword">Interposed word</option>'
+            + '<option value="complexlocalevents">Complex Local Events</option>'
+            + '<option value="shortpause">Short pause</option>'
+            + '<option value="middlepause">Middle pause</option>'
+            + '<option value="longpause">Long pause</option>'
+            + '<option value="verylongpause">Very long pause</option>'
+            + '<option value="longevent">Long event</option>'
+            + '<option value="longnonverbalevent">Long nonverbal event</option>'
+            + '<option value="trailingoff">Trailing off</option>'
+            + '<option value="interruption">Interruption</option>'
+            + '<option value="quotationfollows">Quotation follows</option>'
+            + '<option value="quotationprecedes">Quotation precedes</option>'
+            + '<option value="selfcompletion">Self completion</option>'
+            + '<option value="othercompletion">Other completion</option>'
+            + '<option value="paralinguitic">Paralinguistic</option>'
+            + '<option value="explanation">Explanation</option>'
+            + '<option value="stressing">Stressing</option>'
+            + '<option value="contrastivestressing">Contrastive stressing</option>'
+            + '<option value="duration">Duration</option>'
+            + '<option value="replacement">Replacement</option>'
+            + '<option value="replacementrealword">Replacement real word</option>'
+            + '<option value="alternative">Alternative transcription</option>'
+            + '<option value="comment">Comment</option>'
+            + '<option value="bestguess">Best guess</option>'
+            + '<option value="overlapfollows">Overlap follows</option>'
+            + '<option value="overlapprecedes">Overlap precedes</option>'
+            + '<option value="lazyoverlap">Lazy Overlap</option>'
+            + '<option value="repetition">Repetition</option>'
+            + '<option value="retracing">Retracing</option>'
+            + '<option value="reformulation">Reformulation</option>';
+    } else {
+        s = '<option value="value">Any value</option>'
+            + '<option value="noise">Noise</option>'
+            + '<option value="event">Event</option>'
+            + '<option value="language">Language</option>'
+            + '<option value="comment">Comment</option>'
+            + '<option value="vocal">Vocal</option>'
+            + '<option value="shortpause">Short pause</option>'
+            + '<option value="middlepause">Middle pause</option>'
+            + '<option value="longpause">Long pause</option>'
+            + '<option value="verylongpause">Very long pause</option>'
+            + '<option value="lexical">Lexical</option>'
+            + '<option value="entities">Entities</option>';
+    }
+
+    $('#event-type').html(s);
+    $('#insertmacro').modal();
 };
 
 /**

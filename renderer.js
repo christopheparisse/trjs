@@ -4,7 +4,6 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 var SpellChecker = require('electron-spellchecker');
 var SpellCheckHandler = SpellChecker.SpellCheckHandler;
 var ContextMenuListener = SpellChecker.ContextMenuListener;
@@ -22,6 +21,7 @@ setTimeout(function() { window.spellCheckHandler.attachToInput(); } , 1000);
 // Start off as US English
 window.spellCheckHandler.switchLanguage(trjs.param.checkLanguage);
 console.log('language choice', trjs.param.checkLanguage);
+console.trace();
 //window.spellCheckHandler.provideHintText('This is probably the language that you want to check in');
 //window.spellCheckHandler.autoUnloadDictionariesOnBlur();
 

@@ -158,6 +158,9 @@ function initData(fn) {
  */
 function init() {
 //	try {
+		// init params
+		trjs.param.loadStorage();
+
 		trjs.utils.detectBrowser();
 		trjs.utils.checkStorageSupport();
 		
@@ -190,10 +193,8 @@ function init() {
 		if (uri.queryKey['t'] != null)
 			uriLoad = true;
 	
-		// init params
-		trjs.param.loadStorage();
 		setInitParam();
-		
+
 		$("#transcript-name").text('loading');
 		if (uri.protocol == 'file') {
 			trjs.kwiclex.loadData(trjs.local.get('kwiclexData')); // loading the data stored in local memory

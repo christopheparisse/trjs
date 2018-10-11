@@ -110,6 +110,7 @@ trjs.editor = (function () {
         $('#mode-showlinktime').prop('checked', trjs.param.showLinkTime);
         $('#use-quality').prop('checked', trjs.param.useQuality);
         $('#check-at-save').prop('checked', trjs.param.checkAtSave);
+        $('#reload-last-file').prop('checked', trjs.param.reloadLastFile);
         $('#check-type').val(trjs.param.format);
         $('#number-sample').val(trjs.param.wavesampling);
 
@@ -193,11 +194,11 @@ trjs.editor = (function () {
             trjs.log.alert('Language set for spelling: English');
         } else {
             // this is French
-            trjs.log.alert("Langue sélectionnée pour l'orthographe: Français");
             trjs.param.checkLanguage = 'fr-FR';
+            trjs.log.alert("Langue sélectionnée pour l'orthographe: Français");
         }
         trjs.param.saveStorage();
-        if (typeof resetSpellCheckProvider !== "undefined") resetSpellCheckProvider();
+        trjs.param.spelling();
     }
 
     /**
@@ -288,6 +289,19 @@ trjs.editor = (function () {
         var x = $('#format-time option:selected').val();
         trjs.param.formatTime = x;
         trjs.transcription.updateTimecode();
+        trjs.param.saveStorage();
+    }
+
+    /**
+     * set option about reloading last file at startup
+     * @method setReloadLastFile
+     */
+    function setReloadLastFile() {
+        if ($('#reload-last-file').prop('checked') === true) {
+            trjs.param.reloadLastFile = true;
+        } else {
+            trjs.param.reloadLastFile = false;
+        }
         trjs.param.saveStorage();
     }
 
@@ -1059,7 +1073,8 @@ trjs.editor = (function () {
          }
          }
          */
-        if (trjs.param.server!== 'electron' && trjs.local.get('saved') === 'no' && uriLoad === true) { // last save by trjs.io.innerSave() but not by trjs.io.serverSave() and not loading default page.
+        if (trjs.param.server!== 'electron' && trjs.local.get('saved') === 'no' && uriLoad === true) {
+            // last save by trjs.io.innerSave() but not by trjs.io.serverSave() and not loading default page.
             bootbox.confirm(trjs.messgs.backfile, function (result) {
                 if (result === false) {
                     // get XML ready
@@ -1143,8 +1158,7 @@ trjs.editor = (function () {
                     }
                 } else {
                     // load last opened file
-                    if (!trjs.local.get('recordingName')) {
-                        // first time here
+                    if (!trjs.param.reloadLastFile || !trjs.local.get('recordingName')) {
                         trjs.transcription.loadNewGrid();
                         finalizeLoad();
                     } else {
@@ -1478,45 +1492,6 @@ trjs.editor = (function () {
         });
     }
 
-    function updateCheck() {
-        /*
-        if (trjs.param.level < 'level6') return;
-        fsio.updateCheck(
-            {version: (trjs.param.lastversion ? trjs.param.lastversion : version.version)},
-            function (mess) {
-                if (mess.indexOf('restart:') === 0) {
-                    trjs.param.lastversion = mess.substr(8);
-                    trjs.param.saveStorage();
-                    reloadSystem();
-                } else if (mess.indexOf('restartnode:') === 0) {
-                    trjs.param.lastversion = mess.substr(12);
-                    trjs.param.saveStorage();
-                    reloadSystem('node');
-                } else if (mess === 'nothing to do')
-                    trjs.log.alert(trjs.messgs.ennv);
-                else
-                    trjs.log.alert(trjs.messgs.eerup, mess);
-            },
-            function (data) {
-                trjs.log.alert('update_check: ' + data.status + ' ' + data.responseText);
-            });
-        */
-    }
-
-    function updateClean() {
-        /*
-        if (trjs.param.level < 'level6') return;
-        fsio.updateClean(
-            {},
-            function (mess) {
-                trjs.log.alert("cleaning installation files " + mess);
-            },
-            function (data) {
-                trjs.log.alert('update_clean: ' + data.status + ' ' + data.responseText);
-            });
-        */
-    }
-
     return {
         about: about,
         finalizeLoad: finalizeLoad,
@@ -1542,6 +1517,7 @@ trjs.editor = (function () {
         ortolang: ortolang,
         prevSearch: prevSearch,
         setReorder: setReorder,
+        setReloadLastFile: setReloadLastFile,
         resetElements: resetElements,
         resizeTranscript: resizeTranscript,
         save: function () {
@@ -1591,8 +1567,6 @@ trjs.editor = (function () {
             $('#gotime').focus()
         },
         toggleInsert: toggleInsert,
-        updateCheck: updateCheck,
-        updateClean: updateClean,
         zoomGlobalIn: zoomGlobalIn,
         zoomGlobalOut: zoomGlobalOut,
         zoomGlobalReset: zoomGlobalReset,

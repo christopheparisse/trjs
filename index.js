@@ -150,7 +150,7 @@ function startWindow(arg) {
     }
 
     // Open the DevTools.
-    // w.webContents.openDevTools();
+    // wnd.webContents.openDevTools();
 
     // Emitted when the window is closing.
     wnd.on('close', function (e) {
@@ -537,6 +537,7 @@ function createMenu() {
                     if (window) window.webContents.send('helpparams', 'main');
                 }
             },
+            {type: 'separator'},
             {
                 label: 'Online Help',
                 click: function () {
@@ -544,6 +545,7 @@ function createMenu() {
                     if (window) window.webContents.send('help', 'main');
                 }
             },
+            {type: 'separator'},
             {
                 label: 'Key Bindings',
                 click: function () {
@@ -565,6 +567,7 @@ function createMenu() {
                     if (window) window.webContents.send('resetmessages', 'main');
                 }
             },
+            {type: 'separator'},
             {
                 label: 'About',
                 click: function () {

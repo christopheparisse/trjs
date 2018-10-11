@@ -75,6 +75,7 @@ trjs.param = {
     wavesampling: version.WAVESAMPLINGINITIAL,
     format: 'CHAT',
     exportSaveAs: false,
+    reloadLastFile: false,
 
     mode: 'readwrite',
 
@@ -202,6 +203,7 @@ trjs.param = {
             setInterval(trjs.editor.updateCheck, 6 * 60 * 60 * 1000); // every six hours
         }
          */
+        trjs.param.spelling();
     },
 
     resetDefault: function () {
@@ -230,6 +232,7 @@ trjs.param = {
         this.nbRecentFiles = 4;
         this.paletteFile = false;
         this.paletteEdit = false;
+        this.reloadLastFile = false;
         this.final = true;
         this.format = 'CHAT';
         this.wavesampling = 4000;
@@ -282,6 +285,7 @@ trjs.param = {
         this.showMedia = this.testUndefBoolean(trjs.local.get('param_showMedia'), true);
         this.paletteFile = this.testUndefBoolean(trjs.local.get('param_paletteFile'), false);
         this.paletteEdit = this.testUndefBoolean(trjs.local.get('param_paletteEdit'), false);
+        this.reloadLastFile = this.testUndefBoolean(trjs.local.get('param_reloadLastFile'), false);
         this.nbVisible = this.testUndefInt(trjs.local.get('param_nbVisible'), 3);
         this.final = this.testUndefBoolean(trjs.local.get('param_final'), true);
         this.format = this.testUndefString(trjs.local.get('param_format'), 'CHAT');
@@ -325,6 +329,7 @@ trjs.param = {
         trjs.local.put('param_showMedia', this.showMedia);
         trjs.local.put('param_paletteFile', this.paletteFile);
         trjs.local.put('param_paletteEdit', this.paletteEdit);
+        trjs.local.put('param_reloadLastFile', this.reloadLastFile);
         trjs.local.put('param_nbVisible', this.nbVisible);
         trjs.local.put('param_final', this.final);
         trjs.local.put('param_wavesampling', this.wavesampling);
@@ -456,3 +461,29 @@ trjs.param = {
         }
     },
 };
+
+trjs.param.spelling = function() {
+    var SpellChecker = require('electron-spellchecker');
+    var SpellCheckHandler = SpellChecker.SpellCheckHandler;
+    var ContextMenuListener = SpellChecker.ContextMenuListener;
+    var ContextMenuBuilder = SpellChecker.ContextMenuBuilder;
+
+    /*
+    var SpellCheckHandler = require('./lib/spell-check-handler').default;
+    var ContextMenuListener = require('./lib/context-menu-listener').default;
+    var ContextMenuBuilder = require('./lib/context-menu-builder').default;
+    */
+
+    window.spellCheckHandler = new SpellCheckHandler();
+    setTimeout(function() { window.spellCheckHandler.attachToInput(); } , 1000);
+
+// Start off as US English
+    window.spellCheckHandler.switchLanguage(trjs.param.checkLanguage);
+//window.spellCheckHandler.provideHintText('This is probably the language that you want to check in');
+//window.spellCheckHandler.autoUnloadDictionariesOnBlur();
+
+    var contextMenuBuilder = new ContextMenuBuilder(window.spellCheckHandler, null, true);
+    var contextMenuListener = new ContextMenuListener(function (info) {
+        contextMenuBuilder.showPopupMenu(info);
+    });
+}

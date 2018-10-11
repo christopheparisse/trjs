@@ -2,7 +2,7 @@
 
 'use strict';
 
-const ipcRenderer = require('electron').ipcRenderer;
+var ipcRenderer = require('electron').ipcRenderer;
 
 trjs.init.electronkeyboard = function () {
     // load previous data
