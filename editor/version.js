@@ -15,11 +15,13 @@ if (typeof exports !== 'undefined') {
     var os = require('os');
 }
 
+/*
 var loadJsonFile = require('load-json-file');
 loadJsonFile('package.json').then(function(json) {
     version.version = 'v' + json.version;
 });
-
+*/
+version.version = "v0.7.1";
 version.appName = 'TRJS';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
