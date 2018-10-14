@@ -1173,7 +1173,7 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("home"), true, false, false, 'ctrl', "", "ctrlHome"]); // Ctrl Home
     trjs.bindingsDef.push([nkey("b"), true, false, false, 'ctrl', "", "splitLineLoc"]); // Ctrl B
     trjs.bindingsDef.push([nkey("d"), true, false, false, 'ctrl', "", "deleteLine"]); // Ctrl D
-    trjs.bindingsDef.push([nkey("e"), true, false, false, 'ctrl', "", "currentLineCheck",]); // Ctrl E
+    trjs.bindingsDef.push([nkey("e"), true, false, false, 'ctrl', "", "checkCurrentLine",]); // Ctrl E
     trjs.bindingsDef.push([nkey("f"), true, false, false, 'ctrl', "", "showSearch"]); // Ctrl F
     trjs.bindingsDef.push([nkey("g"), true, false, false, 'ctrl', "", "setDivPlusInsert"]); // Ctrl G
     trjs.bindingsDef.push([nkey("i"), true, false, false, 'ctrl', "", "insertBlankLine"]); // Ctrl I
@@ -1193,7 +1193,7 @@ trjs.keys.initBindings = function () {
 
     trjs.bindingsDef.push([nkey("1"), true, false, true, 'ctrl', "", "setDivPlus"]); // Ctrl Shift 1
     trjs.bindingsDef.push([nkey("2"), true, false, true, 'ctrl', "", "setDivMinus"]); // Ctrl Shift 2
-    trjs.bindingsDef.push([nkey("e"), true, false, true, 'ctrl', "", "cleanCurrentLine"]); // Ctrl Shift E
+    trjs.bindingsDef.push([nkey("e"), true, false, true, 'ctrl', "", "cleanTranscription"]); // Ctrl Shift G
     trjs.bindingsDef.push([nkey("g"), true, false, true, 'ctrl', "", "setDivMissingMinus"]); // Ctrl Shift G
 
     trjs.bindingsDef.push([nkey("a"), true, true, false, 'ctrl', "", "selectAllMS"]); // Ctrl Alt A
@@ -1586,7 +1586,7 @@ trjs.keys.functions = {
     "tab": [ trjs.events.tab, trjs.messgs.cmdtab, null],
     "undo": [ trjs.undo.undo, trjs.messgs.ctrlbin90, null],
     "undoList": [ trjs.undo.undoList, "display undo/redo list", null],
-    "currentLineCheck": [ trjs.check.currentLineCheck, 'Check current line', null],
+    "currentLineCheck": [ trjs.check.checkCurrentLine, 'Check current line', null],
     "zoomGlobalIn": [ trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin120, null],
     "zoomGlobalOut": [ trjs.editor.zoomGlobalOut, trjs.messgs.ctrlbin119, null],
 

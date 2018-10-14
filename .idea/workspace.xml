@@ -4,21 +4,8 @@
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/check.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/check.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/messgs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/messgs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/opensave.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/opensave.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/params.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/params.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/transcription.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/transcription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/media.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/teiconverttools.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/teiconverttools.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/external.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/external.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trjsclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/trjsclient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trjslocal.html" beforeDir="false" afterPath="$PROJECT_DIR$/trjslocal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tempchatfile.cha" beforeDir="false" afterPath="$PROJECT_DIR$/tempchatfile.cha" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +20,7 @@
     <session id="-645793077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="31" />
           <entry key="project.open.time.10" value="9" />
           <entry key="project.open.time.11" value="7" />
           <entry key="project.open.time.12" value="3" />
@@ -72,7 +59,7 @@
         <counts>
           <entry key="css" value="437" />
           <entry key="html" value="3019" />
-          <entry key="js" value="24515" />
+          <entry key="js" value="24747" />
           <entry key="json" value="143" />
         </counts>
       </usages-collector>
@@ -81,7 +68,7 @@
           <entry key="CSS" value="437" />
           <entry key="HTML" value="3036" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="24498" />
+          <entry key="JavaScript" value="24730" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -99,20 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/editor/check.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="241" column="53" selection-start-line="241" selection-start-column="53" selection-end-line="241" selection-end-column="53" />
+            <state relative-caret-position="209">
+              <caret line="277" selection-start-line="277" selection-end-line="278" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/transcription.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="109" column="41" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="41" />
+            <state relative-caret-position="345">
+              <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -160,8 +147,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="1194" column="101" lean-forward="true" selection-start-line="1194" selection-start-column="101" selection-end-line="1194" selection-end-column="101" />
+            <state relative-caret-position="312">
+              <caret line="1196" column="88" selection-start-line="1196" selection-start-column="88" selection-end-line="1196" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -177,24 +164,16 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>formatSelectedText</find>
-      <find>setMark</find>
-      <find>&lt;erro</find>
-      <find>trimMark</find>
-      <find>cleanTranscription</find>
-      <find>checkstring</find>
       <find>❮</find>
       <find>gtlt</find>
       <find>leftBracket</find>
       <find>TRCOL</find>
       <find>updateLocNames</find>
       <find>getEditTable</find>
-      <find>testMark</find>
       <find>save</find>
       <find>save(</find>
       <find>innerSave(</find>
       <find>saveTranscriptToString</find>
-      <find>cleanErrors</find>
       <find>&lt;i</find>
       <find>true, false, true</find>
       <find>getSelectedLine</find>
@@ -205,8 +184,16 @@
       <find>.int2</find>
       <find>int1</find>
       <find>data-toggle</find>
-      <find>testChatline</find>
       <find>&amp;amp</find>
+      <find>xmlEntitiesEncode</find>
+      <find>currentLineCheck</find>
+      <find>checkCurrentLine</find>
+      <find>testMark</find>
+      <find>cleanTranscription</find>
+      <find>cleanErrors</find>
+      <find>testChatline</find>
+      <find>checkCurr</find>
+      <find>clean</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -292,14 +279,14 @@
         <option value="$PROJECT_DIR$/js/teiconverttools.js" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
         <option value="$PROJECT_DIR$/style/global.css" />
-        <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/editor/data.js" />
-        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
         <option value="$PROJECT_DIR$/html/media.html" />
         <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/params.js" />
         <option value="$PROJECT_DIR$/node/testchatter.js" />
         <option value="$PROJECT_DIR$/node/chatter.js" />
+        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
+        <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/editor/check.js" />
       </list>
     </option>
@@ -497,24 +484,24 @@
       <workItem from="1539186726811" duration="5946000" />
       <workItem from="1539240544366" duration="8023000" />
       <workItem from="1539298790668" duration="85000" />
-      <workItem from="1539363205839" duration="19915000" />
+      <workItem from="1539363205839" duration="22795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308301000" />
+    <option name="totallyTimeSpent" value="311181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="31" width="1470" height="1148" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.16839199" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.16839199" />
       <window_info id="Structure" order="1" sideWeight="0.5522234" side_tool="true" weight="0.16962525" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.23674242" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.2594697" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -845,13 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="1194" column="101" lean-forward="true" selection-start-line="1194" selection-start-column="101" selection-end-line="1194" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/opensave.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -910,17 +890,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/check.js">
+    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="241" column="53" selection-start-line="241" selection-start-column="53" selection-end-line="241" selection-end-column="53" />
+        <state relative-caret-position="312">
+          <caret line="1196" column="88" selection-start-line="1196" selection-start-column="88" selection-end-line="1196" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/transcription.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="109" column="41" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="41" />
+        <state relative-caret-position="345">
+          <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="277" selection-start-line="277" selection-end-line="278" />
         </state>
       </provider>
     </entry>

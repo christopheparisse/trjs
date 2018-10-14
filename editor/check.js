@@ -197,11 +197,11 @@ trjs.check = (function () {
     /*
      * check current line for possible incomplete locutors or errors in transcription
      */
-    function currentLineCheck(e, sel) {
+    function checkCurrentLine(e, sel) {
         if (sel === undefined) sel = trjs.data.selectedLine;
-        var errs = [];
         var loc = trjs.transcription.getCode(sel);
         var type = trjs.transcription.findCode(loc);
+        var errs = [];
         if (loc === '---') {
             errs.push('error on locutor');
         }
@@ -212,6 +212,7 @@ trjs.check = (function () {
             errs.push('end of div with comment (not allowed)');
         }
         if (type === 'loc') {
+            cleanTranscription(sel);
             checkTranscription(sel, errs, false);
         }
     }
@@ -235,7 +236,7 @@ trjs.check = (function () {
                     trjs.transcription.setCode(sel, loc);
                     // indicate in the transcription where the error is.
                     var u = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
-                    var m = '<error data-toggle="tooltip" title="' + ck.list[0].message + '" onclick="alert(' + ck.list[0].message + ');">';
+                    var m = '<error data-toggle="tooltip" title="' + ck.list[0].message + '">';
                     if (ck.list[0].column >= u.length)
                         u = u + m + trjs.data.errorMarker + '</error>';
                     else
@@ -274,6 +275,7 @@ trjs.check = (function () {
         t = t.replace(RegExp('<error.*?>' + trjs.data.errorMarker + '<\/error>', 'g'), '');
         t = t.replace(/<error.*?>/g, '');
         t = t.replace(/<\/error>/g, '');
+        t = t.replace(/&nbsp;/g, ' ');
         console.log("cleanOut: ",t);
         return t;
     }
@@ -288,6 +290,7 @@ trjs.check = (function () {
 
     function cleanTranscription(sel) {
         var t = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
+        if (t.indexOf('<error') < 0) return; // nothing to clean
         t = cleanErrors(t);
         trjs.events.lineSetCell(sel, trjs.data.TRCOL, t);
     }
@@ -352,7 +355,7 @@ trjs.check = (function () {
         cleanErrors: cleanErrors,
         cleanCurrentLine: cleanCurrentLine,
         cleanTranscription: cleanTranscription,
-        currentLineCheck: currentLineCheck,
+        checkCurrentLine: checkCurrentLine,
         goCheck: goCheck,
         nextCheck: nextCheck,
         prevCheck: prevCheck,
