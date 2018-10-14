@@ -22,6 +22,8 @@ trjs.data = {
 	rightParent: '⌋', // 2046 // '⁘', // 2058 '⁆'
 	leftCode: '{', // 231C - '⁌', // 204C '⌜' // ▷ 25B7
 	rightCode: '}', // 231F - '⁍', // 204D '⌟' // ◁ 25C1
+    // errorMarker: '⁉️', // '⁉',
+    errorMarker: '<i class="fa fa-exclamation-triangle"></i>',
 
 	NEWRECNAME: 'new.trjs',
 	NOMEDIA: '*NoMedia*',

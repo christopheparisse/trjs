@@ -1193,12 +1193,13 @@ trjs.keys.initBindings = function () {
 
     trjs.bindingsDef.push([nkey("1"), true, false, true, 'ctrl', "", "setDivPlus"]); // Ctrl Shift 1
     trjs.bindingsDef.push([nkey("2"), true, false, true, 'ctrl', "", "setDivMinus"]); // Ctrl Shift 2
+    trjs.bindingsDef.push([nkey("e"), true, false, true, 'ctrl', "", "cleanCurrentLine"]); // Ctrl Shift E
     trjs.bindingsDef.push([nkey("g"), true, false, true, 'ctrl', "", "setDivMissingMinus"]); // Ctrl Shift G
 
     trjs.bindingsDef.push([nkey("a"), true, true, false, 'ctrl', "", "selectAllMS"]); // Ctrl Alt A
     trjs.bindingsDef.push([nkey("b"), true, true, false, 'ctrl', "", "splitLine"]); // Ctrl Alt B
     trjs.bindingsDef.push([nkey("d"), true, true, false, 'ctrl', "", "deleteLineLoc"]); // Ctrl Alt D
-    trjs.bindingsDef.push([nkey("e"), true, true, false, 'ctrl', "", "chooseInputDevice"]); // Ctrl Shift E
+    trjs.bindingsDef.push([nkey("e"), true, true, false, 'ctrl', "", "chooseInputDevice"]); // Ctrl Alt E
     // trjs.bindingsDef.push([70, true, false, false, 'ctrl', "", "showSearch"]); // Ctrl F
     trjs.bindingsDef.push([nkey("g"), true, true, false, 'ctrl', "", "setDivMinusInsert"]); // Ctrl Alt G
     trjs.bindingsDef.push([nkey("i"), true, true, false, 'ctrl', "", "setTimeReplaceLoc"]); // Ctrl Alt I
@@ -1494,6 +1495,7 @@ trjs.keys.functions = {
     "viewKeyBindings": [ trjs.keys.viewKeyBindings, "View and change key bindings", null],
     "backwardStep": [ trjs.media.backwardStep, trjs.messgs.altbin37, null],
     "bold": [ trjs.keys.bold, trjs.messgs.ctrlaltbin116, null],
+    "cleanCurrentLine": [ trjs.check.cleanCurrentLine, "remove all special information (e.g. syntax checking) from the current line", null],
     "chooseInputDevice": [ trjs.events.chooseInputDevice, 'Choose output sound device', null],
     "colorBlue": [ trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115, null],
     "colorGreen": [ trjs.keys.colorGreen, trjs.messgs.ctrlaltbin114, null],

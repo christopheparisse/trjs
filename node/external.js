@@ -65,12 +65,7 @@ exports.format_to_tei = function (format, filein, fileout, callback) {
             if (version.debug(__filename)) console.log(docxContent);
             var tei = teiTools.docxToTEI(docxContent);
             if (version.debug(__filename)) console.log('now write to : ' + fileout);
-            fs.writeFileSync(fileout, tei, function (err) {
-                if (err)
-                    callback(1, "error saving to " + fileout);
-                else
-                    callback(0, "saved to " + fileout);
-            });
+            fs.writeFileSync(fileout, tei);
         } catch (error) {
             console.log('caught error');
             console.log(error);

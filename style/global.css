@@ -307,6 +307,7 @@ table th.infosup {width:3px;}
 red { color: #FF0000; }
 green { color: #00FF00; }
 blue { color: #0000FF; }
+error { color: #FF00FF; }
 em { font-variant: small-caps; }
 
 .nomedia-div { border: 2px solid black; }

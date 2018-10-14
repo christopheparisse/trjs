@@ -20,10 +20,6 @@ var teiConvertTools = {};
 var shiftSize = 3;
 
 function nolines(s) {
-	/*
-	s = s.replace(/❮/g, '<');
-	s = s.replace(/❯/g, '>');
-	*/
 	s = gtlt(s);
 	return s.replace(/[\s]+/g, ' ');
 }

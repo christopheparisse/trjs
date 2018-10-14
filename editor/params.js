@@ -381,7 +381,21 @@ trjs.param = {
         return val;
     },
 
-    // version control: list of features available
+
+    setTooltip: function() {
+        $('[data-toggle="tooltip"]').tooltip({
+            animation: true,
+            delay: { show: 50, hide: 10 }
+        });
+        $("button").on("mousedown", function() {
+            $('[data-toggle="tooltip"]').tooltip("hide");
+        });
+        $('[data-toggle="tooltip"]').on("mouseleave", function() {
+            $('[data-toggle="tooltip"]').tooltip("hide");
+        });
+    },
+
+// version control: list of features available
     // they should not be used to display or hide the partition and wave (which is a temporary choice)
     // but to avoid loading these elements if they are not necessary or the computer is slow
     // or to control the available version

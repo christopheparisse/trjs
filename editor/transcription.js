@@ -89,7 +89,7 @@ trjs.transcription = (function () {
      * @param string
      * @return string
      */
-    function transcriptEncoding(s, style) {
+    function transcriptEncoding(s) {
         var reLeft = new RegExp(trjs.data.leftBracket, "g");
         var reRight = new RegExp(trjs.data.rightBracket, "g");
         s = s.replace(reLeft, '<'); // 60 3C
@@ -1066,9 +1066,11 @@ trjs.transcription = (function () {
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
             var itrans = trjs.dataload.checkstring(trjs.events.lineGetCellHtml($(tablelines[i]), trjs.data.TRCOL));
             itrans = transcriptEncoding(itrans);
-            if (!iloc === '' && its === '' && ite === '' && itrans === '') continue;
-            if (trjs.check.testMark(iloc))
+            if (iloc === '' && its === '' && ite === '' && itrans === '') continue;
+            if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
+                itrans = trjs.check.cleanErrors(itrans);
+            }
             if (trjs.param.locnames === true) {
                 if (type === 'loc') {
                     var ll = trjs.template.nameToCode(iloc);
@@ -1295,8 +1297,10 @@ trjs.transcription = (function () {
             var line = getLine($(tablelines[i]));
             if (iloc == '' && itrans == '') continue;
             if (iloc === undefined || iloc === null) iloc = '';
-            if (trjs.check.testMark(iloc))
+            if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
+                itrans = trjs.check.cleanErrors(itrans);
+            }
             s += trjs.data.recordingLoc() + "/" + trjs.data.recordingName() + "\t" + line + "\t";  // name of transcription
             s += trjs.data.mediaLoc() + '/' + trjs.data.mediaName() + "\t" + its + "\t" + ite + "\t"; // name of media and times
             // s += trjs.data.installURL + "/transcriberjs.html?t=" + trjs.data.recordingLoc() + '/' + trjs.data.recordingName() + "&ln=" + trjs.events.lineGetCell($(tablelines[i]), trjs.events.firstLoc) + "&play";
@@ -1778,8 +1782,10 @@ trjs.transcription = (function () {
             itrans = itrans.replace(/\}/g, '\\}'); // 62 3E
 
             if (iloc == '' && itrans == '') continue;
-            if (trjs.check.testMark(iloc))
+            if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
+                itrans = trjs.check.cleanErrors(itrans);
+            }
 
             /*
              * writes content of subtitles in srt format
@@ -1896,13 +1902,18 @@ trjs.transcription = (function () {
                 var type = typeTier($(tablelines[i]));
                 if (type !== 'loc') continue;
                 var iloc = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.CODECOL));
-                if (trjs.check.testMark(iloc))
+                if (trjs.check.testMark(iloc)) {
                     iloc = trjs.check.trimMark(iloc);
+                    itrans = trjs.check.cleanErrors(itrans);
+                }
                 if (!allLocs && locs.indexOf(iloc) < 0) continue;
 
                 var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
                 var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
                 var itrans = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TRCOL));
+                if (trjs.check.testMark(iloc)) {
+                    itrans = trjs.check.cleanErrors(itrans);
+                }
                 itrans = itrans.replace(/\{/g, '\\{'); // 60 3C
                 itrans = itrans.replace(/\}/g, '\\}'); // 62 3E
 
@@ -1975,6 +1986,9 @@ trjs.transcription = (function () {
                      * but first gather the tiers and store the locs
                      */
                     var itrans = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TRCOL));
+                    if (trjs.check.testMark(iloc)) {
+                        itrans = trjs.check.cleanErrors(itrans);
+                    }
                     itrans = itrans.replace(/\{/g, '\\{'); // 60 3C
                     itrans = itrans.replace(/\}/g, '\\}'); // 62 3E
                     s += 'Dialogue: Marked=0,';
@@ -2049,8 +2063,10 @@ trjs.transcription = (function () {
             var iloc = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.CODECOL));
             var itrans = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TRCOL));
             if (iloc == '' && itrans == '') continue;
-            if (trjs.check.testMark(iloc))
+            if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
+                itrans = trjs.check.cleanErrors(itrans);
+            }
             if (type === 'prop') {
                 s += '\t';
                 var level = trjs.data.imbrication[iloc];
@@ -2128,8 +2144,10 @@ trjs.transcription = (function () {
             var iloc = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.CODECOL));
             var itrans = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TRCOL));
             if (iloc == '' && itrans == '') continue;
-            if (trjs.check.testMark(iloc))
+            if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
+                itrans = trjs.check.cleanErrors(itrans);
+            }
             if (type === 'prop') {
                 s += '</td>';
                 var level = trjs.data.imbrication[iloc];
@@ -2267,8 +2285,10 @@ trjs.transcription = (function () {
             var iloc = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.CODECOL));
             var itrans = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TRCOL));
             if (iloc == '' && itrans == '') continue;
-            if (trjs.check.testMark(iloc))
+            if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
+                itrans = trjs.check.cleanErrors(itrans);
+            }
             if (type === 'prop') {
                 s += (table ? ' \\cell\n' : '\t');
                 var level = trjs.data.imbrication[iloc];

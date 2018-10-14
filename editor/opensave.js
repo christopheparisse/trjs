@@ -314,8 +314,10 @@ trjs.io = (function () {
             var iloc = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.CODECOL));
             var itrans = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TRCOL));
             if (iloc == '' && itrans == '') continue;
-            if (trjs.check.testMark(iloc))
+            if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
+                itrans = trjs.check.cleanErrors(itrans);
+            }
             var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
             et.push({loc: iloc, ts: its, te: ite, tx: itrans, type: type});

@@ -115,12 +115,12 @@ version.WAVESAMPLING = version.WAVESAMPLINGINITIAL;
 
 version.trjsLoc = function () {
     var htmlTrjsPath = process.cwd().replace(/\\/g, '/');
-    console.log("ffmpegdirLoc:type " + global.applicationTarget.type);
-    console.log("ffmpegdirLoc:process " + htmlTrjsPath);
-    console.log("ffmpegdirLoc:dirname " + __dirname);
+    // console.log("ffmpegdirLoc:type " + global.applicationTarget.type);
+    // console.log("ffmpegdirLoc:process " + htmlTrjsPath);
+    // console.log("ffmpegdirLoc:dirname " + __dirname);
     if (__dirname !== undefined) {
         var dirname = __dirname.replace(/\\/g, '/');
-        console.log('dirname (v2) ', dirname);
+        // console.log('dirname (v2) ', dirname);
         if (dirname.indexOf('app.asar') > 0) {
             htmlTrjsPath = dirname.substring(0, dirname.indexOf('app.asar')-1);
         } else if (dirname.indexOf('/editor') > 0 || dirname.indexOf('/node') > 0)
@@ -128,10 +128,10 @@ version.trjsLoc = function () {
         else
             htmlTrjsPath = dirname;
     } else {
-        console.log('process');
+        // console.log('process');
         // nothing to do
     }
-    console.log('path= ' + htmlTrjsPath);
+    // console.log('path= ' + htmlTrjsPath);
     return htmlTrjsPath;
 };
 

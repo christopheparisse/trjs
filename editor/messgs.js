@@ -518,6 +518,7 @@ trjs.messgs_eng = {
     cannotlast: 'Impossible to delete last line.',
 
     int1: "Play/Pause: TAB",
+    int1bis: "Mark time and go next line: ENTER",
     int2: "Set beginning of line to current time: F4",
     int3: "Set end of line to current time: F5",
     int4: "Insert a blank line: F6",
@@ -1279,6 +1280,7 @@ trjs.messgs_fra = {
     cannotlast: 'Impossible de supprimer la dernière ligne.',
 
     int1: "Lecture simple/Pause: TAB",
+    int1bis: "Marquer le temps et passer à la ligne suivante: ENTER",
     int2: "Saisir le temps de début: F4",
     int3: "Saisir le temps de fin: F5",
     int4: "Insérer une ligne vide: F6",
@@ -1815,6 +1817,7 @@ trjs.messgs_init = function () {
     $('#fdownload').attr('title', trjs.messgs.infodownload);
 
     $('#t1').attr('title', trjs.messgs.int1);
+    $('#t1bis').attr('title', trjs.messgs.int1bis);
     $('#t2').attr('title', trjs.messgs.int2);
     $('#t3').attr('title', trjs.messgs.int3);
     $('#t4').attr('title', trjs.messgs.int4);

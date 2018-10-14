@@ -7,9 +7,29 @@
 'use strict';
 
 var gramchat = require("./editor/checkclanmain.js");
+var chatter = require('./node/chatter.js');
 
 trjs.check = (function () {
-    function testChatline(t) {
+    function testChatline(t, callback) {
+        try {
+            t = trjs.transcription.transcriptEncoding(t);
+            chatter.chatter(t, "eng", function(err, messg) {
+                if (err) {
+                    var ret = [];
+                    for (var i = 0; i < messg.length; i++)
+                        ret.push({ message: messg[i][2], column: messg[i][1] });
+                    callback({ value: 'error', list: ret });
+                    console.log('NotGood:', messg, ret);
+                } else {
+                    callback({ value: 'ok' });
+                    // console.log('Perfect:', messg);
+                }
+            });
+        } catch (e) {
+            console.log(e);
+            trjs.log.boxalert(e);
+        }
+        /*
         try {
             t = trjs.transcription.transcriptEncoding(t);
             var r = gramchat.parse(t);
@@ -23,6 +43,7 @@ trjs.check = (function () {
             else
                 return { value: 'error', message: " - reason: " + e.message };
         }
+        */
     }
 
     function trimMark(s) {
@@ -140,6 +161,13 @@ trjs.check = (function () {
     function goCheck() {
         trjs.data.check = []; // empty array of line numbers
         trjs.data.checkCount = 0;
+        trjs.data.checkToDo = 0;
+        trjs.data.checkDone = 0;
+        trjs.data.checkAddMsg = function(m) {
+            // {n: i, message: errs.join("<br/>")}
+            trjs.data.checkCount++;
+            trjs.data.check.push({ n: trjs.data.checkCount, message: errs.join("<br/>")});
+        }
         var tablelines = trjs.transcription.tablelines();
         for (var i = 0; i < tablelines.length - 1; i++) {
             var sel = $(tablelines[i]);
@@ -155,16 +183,13 @@ trjs.check = (function () {
             if (loc === '-div-' && trjs.dataload.checkstring(trjs.events.lineGetCell(sel, trjs.data.TRCOL)) !== '') {
             }
             if (type === 'loc') {
-                var ck = checkTranscription(sel);
-                if (trjs.param.final === true && ck.value !== 'ok' && ck.value !== 'unavailable') {
-                    errs.push(ck.message);
-                }
-            }
-            if (errs.length > 0) {
-                trjs.data.check.push({n: i, message: errs.join("<br/>")});
-                trjs.data.checkCount++;
+                trjs.data.checkToDo++;
+                checkTranscription(sel, errs, true);
             }
         }
+        /*
+         wait for all to display results
+         */
         $('#check-nb-results').text(trjs.data.checkCount);
         $('#check-nbx').text(trjs.data.checkCount);
     }
@@ -187,13 +212,7 @@ trjs.check = (function () {
             errs.push('end of div with comment (not allowed)');
         }
         if (type === 'loc') {
-            var ck = checkTranscription(sel);
-            if (ck.value !== 'ok' && ck.value !== 'unavailable') {
-                errs.push(ck.message);
-            }
-        }
-        if (errs.length > 0) {
-            trjs.log.boxalert(errs.join("<br/>"));
+            checkTranscription(sel, errs, false);
         }
     }
 
@@ -201,21 +220,76 @@ trjs.check = (function () {
      * check a line for whichever method is set for the file (by defaut CHAT but can be other transcription systems)
      * @method checkTranscription
      */
-    function checkTranscription(sel) {
+    function checkTranscription(sel, errs, all) {
         // if the transcription is not correct, modify the line and return false
         // else return true
         if (trjs.param.format === 'CHAT') {
             var t = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
-            var ck = trjs.check.testChatline(t);
-            if (ck.value !== 'ok') {
-                var loc = trjs.transcription.getCode(sel);
-                loc = setMark(loc);
-                trjs.transcription.setCode(sel, loc);
-                return ck;
-            }
-            return ck;
-        } else
-            return { value: 'unavailable' };
+            console.log("check", t);
+            trjs.check.testChatline(t, function(ck) {
+                trjs.data.checkDone++;
+                console.log("result", ck.value, ck.list);
+                if (ck.value !== 'ok') {
+                    var loc = trjs.transcription.getCode(sel);
+                    loc = setMark(loc);
+                    trjs.transcription.setCode(sel, loc);
+                    // indicate in the transcription where the error is.
+                    var u = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
+                    var m = '<error data-toggle="tooltip" title="' + ck.list[0].message + '" onclick="alert(' + ck.list[0].message + ');">';
+                    if (ck.list[0].column >= u.length)
+                        u = u + m + trjs.data.errorMarker + '</error>';
+                    else
+                        u = u.substring(0, ck.list[0].column) + m + u.substring(ck.list[0].column) + '</error>';
+                    trjs.events.lineSetCellHtml(sel, trjs.data.TRCOL, u);
+                    trjs.param.setTooltip();
+                    errs.push(ck.message);
+                    if (all === false) {
+                        if (errs.length > 0) {
+                            trjs.log.boxalert(errs.join("<br/>"));
+                        }
+                    } else {
+                        if (errs.length > 0) {
+                            trjs.data.checkAddMsg(errs.join("<br/>"));
+                            trjs.data.checkCount++;
+                        }
+                    }
+                }
+            });
+        }
+        // return { value: 'unavailable' };
+    }
+
+    /**
+     * remove error messages from a transcription
+     * @param t
+     * @returns {void | string}
+     */
+    function cleanErrors(t) {
+        // t = t.replace(/<error.*?>.*?<\/error>/g, '');
+        console.log("clean: ",t);
+        /*
+        var re = RegExp(trjs.data.leftBracket + "error.*?" + trjs.data.rightBracket, "g");
+        re = RegExp(trjs.data.leftBracket + "\/error" + trjs.data.rightBracket, "g");
+        */
+        t = t.replace(RegExp('<error.*?>' + trjs.data.errorMarker + '<\/error>', 'g'), '');
+        t = t.replace(/<error.*?>/g, '');
+        t = t.replace(/<\/error>/g, '');
+        console.log("cleanOut: ",t);
+        return t;
+    }
+
+    /**
+     * remove all special information (e.g. syntax checking) from the current line
+     */
+    function cleanCurrentLine() {
+        var sel = trjs.data.selectedLine;
+        cleanTranscription(sel);
+    }
+
+    function cleanTranscription(sel) {
+        var t = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
+        t = cleanErrors(t);
+        trjs.events.lineSetCell(sel, trjs.data.TRCOL, t);
     }
 
     /**
@@ -275,6 +349,9 @@ trjs.check = (function () {
     return {
         checkFinal: checkFinal,
         checkOverlap: checkOverlap,
+        cleanErrors: cleanErrors,
+        cleanCurrentLine: cleanCurrentLine,
+        cleanTranscription: cleanTranscription,
         currentLineCheck: currentLineCheck,
         goCheck: goCheck,
         nextCheck: nextCheck,
