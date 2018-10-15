@@ -58,6 +58,7 @@ trjs.check = (function () {
     }
 
     function setMark(s) {
+        if (testMark(s)) return;
         return trjs.data.MARK + s + trjs.data.MARK;
     }
 
@@ -235,15 +236,32 @@ trjs.check = (function () {
                     loc = setMark(loc);
                     trjs.transcription.setCode(sel, loc);
                     // indicate in the transcription where the error is.
-                    var u = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
-                    var m = '<error data-toggle="tooltip" title="' + ck.list[0].message + '">';
-                    if (ck.list[0].column >= u.length)
-                        u = u + m + trjs.data.errorMarker + '</error>';
-                    else
-                        u = u.substring(0, ck.list[0].column) + m + u.substring(ck.list[0].column) + '</error>';
-                    trjs.events.lineSetCellHtml(sel, trjs.data.TRCOL, u);
+
+                    var u = trjs.events.lineGetCell(sel, trjs.data.TRCOL); // initial string
+                    var w = ''; // result string.
+                    var p = 0; // pointer to next element to copy from u
+                    var ith = 0; // iterate through ct.list
+                    var messg = '';
+                    do {
+                        var m = '<error data-toggle="tooltip" title="' + ck.list[ith].message + '">'; // the first part of the message
+                        messg += 'column: ' + ck.list[ith].column + ' ' + ck.list[ith].message;
+                        if (ck.list[ith].column >= u.length) {
+                            // copy the rest of u
+                            w += u.substring(p) + m + trjs.data.errorMarker + '</error>';
+                            p = u.length; // at the end
+                            // this should be the end unless there are more than one error message at the end
+                        } else {
+                            var gauche = u.substring(p, ck.list[ith].column);
+                            p = ck.list[ith].column;
+                            w += gauche + m + trjs.data.errorMarker + '</error>';
+                        }
+                        ith ++;
+                    } while(ith < ck.list.length);
+                    if (p < u.length) w += u.substring(p);
+
+                    trjs.events.lineSetCellHtml(sel, trjs.data.TRCOL, w);
                     trjs.param.setTooltip();
-                    errs.push(ck.message);
+                    errs.push(messg);
                     if (all === false) {
                         if (errs.length > 0) {
                             trjs.log.boxalert(errs.join("<br/>"));
@@ -290,7 +308,11 @@ trjs.check = (function () {
 
     function cleanTranscription(sel) {
         var t = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
-        if (t.indexOf('<error') < 0) return; // nothing to clean
+        if (t.indexOf('<error') < 0) {
+            // nothing to erase ?
+            trjs.events.lineSetCell(sel, trjs.data.TRCOL, t);
+            return;
+        }
         t = cleanErrors(t);
         trjs.events.lineSetCell(sel, trjs.data.TRCOL, t);
     }
