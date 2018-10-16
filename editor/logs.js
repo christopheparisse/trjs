@@ -111,6 +111,8 @@ trjs.log = ( function() {
 		boxalert: function(msg) {
 			bootbox.alert(msg, function() {
                 trjs.events.setFocus();
+                var x = $(document.activeElement);
+                x.parent().parent().hide();
 			});
 			infoMsgShow(msg, "normal", 0);
 		},

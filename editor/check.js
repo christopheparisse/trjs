@@ -244,7 +244,7 @@ trjs.check = (function () {
                     var messg = '';
                     do {
                         var m = '<error data-toggle="tooltip" title="' + ck.list[ith].message + '">'; // the first part of the message
-                        messg += 'column: ' + ck.list[ith].column + ' ' + ck.list[ith].message;
+                        messg += '<br/>column: ' + ck.list[ith].column + ' ' + ck.list[ith].message;
                         if (ck.list[ith].column >= u.length) {
                             // copy the rest of u
                             w += u.substring(p) + m + trjs.data.errorMarker + '</error>';

@@ -1608,7 +1608,7 @@ trjs.events = (function () {
     var specialEvent1 = false;
     var specialEvent2 = false;
     function eventKeydown(e) {
-        eventKeydownTranscript(e, true);
+        return eventKeydownTranscript(e, true);
     }
     function eventKeydownTranscript(e, enter) {
         /*
@@ -1633,7 +1633,7 @@ trjs.events = (function () {
          console.log('charCode '+ e.charCode);
          */
         var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
-        if (enter === true && charCode === 13) return;
+        if (enter === true && charCode === 13) return false;
         if (trjs.param.server !== 'electron') {
             var m = $('#openfile').data('bs.modal');
             if (m && m.isShown) {
