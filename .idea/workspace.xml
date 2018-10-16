@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/check.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/check.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/logs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/edition.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/edition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/chatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/chatter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tempchatfile.cha" beforeDir="false" afterPath="$PROJECT_DIR$/tempchatfile.cha" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trjsclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/trjsclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trjslocal.html" beforeDir="false" afterPath="$PROJECT_DIR$/trjslocal.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +43,8 @@
         <counts>
           <entry key="cha" value="1" />
           <entry key="css" value="12" />
-          <entry key="html" value="32" />
-          <entry key="js" value="150" />
+          <entry key="html" value="35" />
+          <entry key="js" value="156" />
           <entry key="json" value="11" />
           <entry key="json-old" value="1" />
           <entry key="md" value="2" />
@@ -47,9 +54,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="12" />
-          <entry key="HTML" value="32" />
+          <entry key="HTML" value="35" />
           <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="150" />
+          <entry key="JavaScript" value="156" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="13" />
         </counts>
@@ -57,17 +64,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="437" />
-          <entry key="html" value="3019" />
-          <entry key="js" value="25455" />
+          <entry key="html" value="3053" />
+          <entry key="js" value="25717" />
           <entry key="json" value="143" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="437" />
-          <entry key="HTML" value="3036" />
+          <entry key="HTML" value="3070" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="25438" />
+          <entry key="JavaScript" value="25700" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -79,62 +86,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node/chatter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+            <state relative-caret-position="604">
+              <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/check.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="266" column="45" selection-start-line="266" selection-start-column="37" selection-end-line="266" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/logs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="100" column="25" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/editor/check.js">
+        <entry file="file://$PROJECT_DIR$/editor/events.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="789">
-              <caret line="313" selection-start-line="313" selection-end-line="313" />
+            <state relative-caret-position="315">
+              <caret line="2282" column="49" lean-forward="true" selection-start-line="2282" selection-start-column="49" selection-end-line="2282" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/transcription.js">
+        <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+            <state relative-caret-position="192">
+              <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/media.html">
+        <entry file="file://$PROJECT_DIR$/html/edition.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="123" selection-start-line="63" selection-start-column="122" selection-end-line="63" selection-end-column="123" />
+            <state relative-caret-position="281">
+              <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/params.js">
+        <entry file="file://$PROJECT_DIR$/editor/editor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5865">
-              <caret line="391" column="11" lean-forward="true" selection-start-line="391" selection-start-column="11" selection-end-line="391" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2115">
-              <caret line="141" column="108" selection-start-line="141" selection-start-column="97" selection-end-line="141" selection-end-column="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/messgs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27465">
-              <caret line="1831" column="47" selection-start-line="1831" selection-start-column="47" selection-end-line="1831" selection-end-column="47" />
+            <state relative-caret-position="207">
+              <caret line="565" column="35" selection-start-line="565" selection-start-column="13" selection-end-line="565" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -142,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17940">
-              <caret line="1196" column="88" selection-start-line="1196" selection-start-column="88" selection-end-line="1196" selection-end-column="88" />
+            <state relative-caret-position="6358">
+              <caret line="1419" column="49" selection-start-line="1419" selection-start-column="49" selection-end-line="1419" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -159,18 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>leftBracket</find>
-      <find>TRCOL</find>
-      <find>updateLocNames</find>
-      <find>getEditTable</find>
-      <find>save</find>
-      <find>save(</find>
-      <find>innerSave(</find>
-      <find>saveTranscriptToString</find>
-      <find>&lt;i</find>
-      <find>true, false, true</find>
-      <find>getSelectedLine</find>
-      <find>error</find>
       <find>saisir</find>
       <find>int2</find>
       <find>.int1</find>
@@ -189,6 +184,18 @@
       <find>testChatline</find>
       <find>checkTranscription</find>
       <find>setMark</find>
+      <find>focus</find>
+      <find>transcriptGotFocus</find>
+      <find>focus()</find>
+      <find>infoMsgShow</find>
+      <find>infoMsgDisplay</find>
+      <find>setFocus</find>
+      <find>bootbox</find>
+      <find>keyd</find>
+      <find>defa</find>
+      <find>showOpensaveTranscript</find>
+      <find>loadmed</find>
+      <find>eventKeypress</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -232,10 +239,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Downloads/page (5).html" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/maj.sh" />
-        <option value="$PROJECT_DIR$/buildmacos.sh" />
         <option value="$PROJECT_DIR$/node/medialibrary.js" />
         <option value="$PROJECT_DIR$/html/modal-exports.html" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
@@ -256,10 +259,8 @@
         <option value="$PROJECT_DIR$/html/search.html" />
         <option value="$PROJECT_DIR$/doc/doc.css" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/editor/events.js" />
         <option value="$PROJECT_DIR$/editor/kwiclex.js" />
         <option value="$PROJECT_DIR$/renderer.js" />
-        <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/editor/init.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/doc/trjs_pp_eng.html" />
@@ -272,17 +273,23 @@
         <option value="$PROJECT_DIR$/node/external.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/js/teiconverttools.js" />
-        <option value="$PROJECT_DIR$/editor/opensave.js" />
         <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/editor/data.js" />
         <option value="$PROJECT_DIR$/html/media.html" />
         <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/params.js" />
         <option value="$PROJECT_DIR$/node/testchatter.js" />
-        <option value="$PROJECT_DIR$/node/chatter.js" />
         <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
         <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/editor/check.js" />
+        <option value="$PROJECT_DIR$/node/chatter.js" />
+        <option value="$PROJECT_DIR$/editor/logs.js" />
+        <option value="$PROJECT_DIR$/editor/opensavelocal.js" />
+        <option value="$PROJECT_DIR$/editor/opensave.js" />
+        <option value="$PROJECT_DIR$/html/edition.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/html/index.html" />
+        <option value="$PROJECT_DIR$/editor/events.js" />
       </list>
     </option>
   </component>
@@ -308,10 +315,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
-    <option name="y" value="31" />
-    <option name="width" value="1470" />
-    <option name="height" value="1148" />
+    <option name="x" value="149" />
+    <option name="y" value="70" />
+    <option name="width" value="1310" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -480,24 +487,24 @@
       <workItem from="1539240544366" duration="8023000" />
       <workItem from="1539298790668" duration="85000" />
       <workItem from="1539363205839" duration="22795000" />
-      <workItem from="1539641673038" duration="1656000" />
+      <workItem from="1539641673038" duration="7027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312837000" />
+    <option name="totallyTimeSpent" value="318208000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="31" width="1470" height="1148" extended-state="0" />
+    <frame x="149" y="70" width="1310" height="1010" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.16770187" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.18851823" />
       <window_info id="Structure" order="1" sideWeight="0.5522234" side_tool="true" weight="0.16962525" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.2594697" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.25839415" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -512,13 +519,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.16908212" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.19301033" />
       <window_info id="Structure" order="1" sideWeight="0.5522234" side_tool="true" weight="0.16962525" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.23674242" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.25839415" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -566,23 +573,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/style/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="5177" column="15" selection-start-line="5177" selection-start-column="3" selection-end-line="5177" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/modal-opening-files.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/jqtree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="179" column="24" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/undo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -601,13 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="181" column="49" selection-start-line="181" selection-start-column="49" selection-end-line="181" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/logs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1044">
-          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
@@ -643,13 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
@@ -787,24 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="1523" column="30" selection-start-line="1523" selection-start-column="20" selection-end-line="1523" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/modal-exports.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="19" column="139" selection-start-line="19" selection-start-column="113" selection-end-line="19" selection-end-column="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="79" column="30" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -822,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/opensave.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="189" column="57" selection-start-line="189" selection-start-column="35" selection-end-line="189" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1070" />
@@ -838,13 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/chatter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -869,13 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="141" column="108" selection-start-line="141" selection-start-column="97" selection-end-line="141" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/messgs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27465">
@@ -883,17 +824,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
+    <entry file="file://$PROJECT_DIR$/node/chatter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17940">
-          <caret line="1196" column="88" selection-start-line="1196" selection-start-column="88" selection-end-line="1196" selection-end-column="88" />
+        <state relative-caret-position="604">
+          <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/check.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="313" selection-start-line="313" selection-end-line="313" />
+        <state relative-caret-position="799">
+          <caret line="266" column="45" selection-start-line="266" selection-start-column="37" selection-end-line="266" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/logs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="100" column="25" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/local-open.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/opensave.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1472" lean-forward="true" selection-start-line="1472" selection-end-line="1472" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/opensavelocal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1057">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/edition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6358">
+          <caret line="1419" column="49" selection-start-line="1419" selection-start-column="49" selection-end-line="1419" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="565" column="35" selection-start-line="565" selection-start-column="13" selection-end-line="565" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="2282" column="49" lean-forward="true" selection-start-line="2282" selection-start-column="49" selection-end-line="2282" selection-end-column="49" />
         </state>
       </provider>
     </entry>

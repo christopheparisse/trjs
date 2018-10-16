@@ -52,7 +52,7 @@ exports.chatter = function(utt, lang, callback) {
             var re = /line (\w+), column (\w+): (.*?)$/gm;
             do {
                 m = re.exec(messg);
-                if (m) {
+                if (m && m[3].indexOf('internal error') < 0) {
                     // console.log(m[1], m[2]-7);
                     errors.push([m[1], m[2]-7, m[3]]);
                 }

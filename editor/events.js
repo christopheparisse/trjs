@@ -373,6 +373,17 @@ trjs.events = (function () {
     }
 
     /**
+     * @method setFocus
+     */
+    function setFocus() {
+        var sel = trjs.data.selectedLine;
+        // put current line in focus if this is not the case
+        setTimeout(function() {
+            $('.transcription', sel).focus();
+        }, 1000);
+    }
+
+    /**
      * continuous display of lines starting from the last selected line
      * @method goContinuous
      * @param event
@@ -1597,6 +1608,9 @@ trjs.events = (function () {
     var specialEvent1 = false;
     var specialEvent2 = false;
     function eventKeydown(e) {
+        eventKeydownTranscript(e, true);
+    }
+    function eventKeydownTranscript(e, enter) {
         /*
          console.log('keyCode '+ e.keyCode);
          console.log('charCode '+ e.charCode);
@@ -1618,6 +1632,8 @@ trjs.events = (function () {
          console.log('keyCode '+ e.keyCode);
          console.log('charCode '+ e.charCode);
          */
+        var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
+        if (enter === true && charCode === 13) return;
         if (trjs.param.server !== 'electron') {
             var m = $('#openfile').data('bs.modal');
             if (m && m.isShown) {
@@ -1645,7 +1661,6 @@ trjs.events = (function () {
             }
         }
 
-        var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
         // if modifier only key, skip it
         if (trjs.keys.skipModifierKey.indexOf(charCode) >= 0) return true;
         var keyptr = trjs.keys.modifiersEvent(charCode, e);
@@ -2275,7 +2290,8 @@ trjs.events = (function () {
         deleteSelectedLine: deleteSelectedLine,
         enter: enter,
         eventKeydown: eventKeydown,
-        eventKeypress: eventKeypress,
+        eventKeydownTranscript: eventKeydownTranscript,
+        // eventKeypress: eventKeypress,
         escape: escape,
         findLineToFollow: findLineToFollow,
         findLineToStart: findLineToStart,
@@ -2385,6 +2401,7 @@ trjs.events = (function () {
             return r;
         },
         setEnd: setEnd,
+        setFocus: setFocus,
         setEndAndRedraw: function (e) {
             trjs.undo.opinit('setEndAndRedraw');
             setEnd(e);

@@ -106,27 +106,27 @@
 		<span>to be filled</span>
 	</div>
 
-<div id='opensave-bench-transcript' class='roundshadow hidetjs benchfull'>
-    <div id="opensave-title-transcript" class="modal-header">
-        <button type="button" class="close" onclick='trjs.editor.showOpensaveTranscript();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="opensavespan" class="modal-title">Load and save data</h4>
-    </div><br/>
-    <div class='benchfull'>
-        <p class="hz"><span id='o1'>Load Transcription from local file : </span><input id="upload-input-transcript" type="file" name="file-transcript" onchange="trjs.io.localLoadTranscript();" /> <span id="trsize">size: </span><span id="transcript-file-size">0</span></p>
-        <p class='info-opensave'><span id='o3'>Please click above to select a transcript file on your computer or drag a file in the input field above.</span></p>
-    </div>
-</div>
-<div id='opensave-bench-media' class='roundshadow hidetjs benchfull'>
-    <div id="opensave-title-media" class="modal-header">
-        <button type="button" class="close" onclick='trjs.editor.showOpensaveMedia();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="opensave-span" class="modal-title">Load and save data</h4>
-    </div><br/>
-    <div class='benchfull'>
-        <p class="hz"><span id='o2'>Load Media from local file : </span><input id="upload-media" type="file" name="file-media" onchange="trjs.io.localLoadMedia();" /> size: <span id="media-file-size">0</span></p>
-        <p class='info-opensave'><span id='o3'>Please click above to select a media file on your computer or drag a file in the input field above.</span></p>
-    </div>
-</div>
-
+<!-- <div id='opensave-bench-transcript' class='roundshadow hidetjs benchfull'>
+     <div id="opensave-title-transcript" class="modal-header">
+         <button type="button" class="close" onclick='trjs.editor.showOpensaveTranscript();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 id="opensavespan" class="modal-title">Load and save data</h4>
+     </div><br/>
+     <div class='benchfull'>
+         <p class="hz"><span id='o1'>Load Transcription from local file : </span><input id="upload-input-transcript" type="file" name="file-transcript" onchange="trjs.io.localLoadTranscript();" /> <span id="trsize">size: </span><span id="transcript-file-size">0</span></p>
+         <p class='info-opensave'><span id='o3'>Please click above to select a transcript file on your computer or drag a file in the input field above.</span></p>
+     </div>
+ </div>
+ <div id='opensave-bench-media' class='roundshadow hidetjs benchfull'>
+     <div id="opensave-title-media" class="modal-header">
+         <button type="button" class="close" onclick='trjs.editor.showOpensaveMedia();' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 id="opensave-span" class="modal-title">Load and save data</h4>
+     </div><br/>
+     <div class='benchfull'>
+         <p class="hz"><span id='o2'>Load Media from local file : </span><input id="upload-media" type="file" name="file-media" onchange="trjs.io.localLoadMedia();" /> size: <span id="media-file-size">0</span></p>
+         <p class='info-opensave'><span id='o3'>Please click above to select a media file on your computer or drag a file in the input field above.</span></p>
+     </div>
+ </div>
+ -->
     <div id="search-bench" class="roundshadow hidetjs benchfull">
         <div id="search-title" class="modal-header">
             <div id="aide_fen"><span id='aide_search' title=""><i class="fa fa-question-circle fa-lg fa-colorred" onclick="trjs.contextualhelp('op-search',true);"></i></span></div>
@@ -923,21 +923,33 @@
 
 <div id='edition'>
     <div id='transcription-head'>
-    <div id='media-info'>
-        <span id='currenttime'></span>&nbsp;(<span id='starttime'></span>&nbsp;-&nbsp;<span id='stoptime'></span>)
-        <span id='timewindow'>&nbsp;(<span id='startwindow'></span>&nbsp;-&nbsp;<span id='stopwindow'></span>)&nbsp;</span>
-        <!--
-        <span id='timewave'>&nbsp;(<span id='startwave'></span>&nbsp;-&nbsp;<span id='stopwave'></span>)&nbsp;</span>
-        -->
-        <!--<span id='insertreplacemode' onclick="trjs.editor.toggleInsert();">Insert mode</span>-->
+        <div id='media-info'>
+            <span id='currenttime'></span>&nbsp;(<span id='starttime'></span>&nbsp;-&nbsp;<span id='stoptime'></span>)
+            <span id='timewindow'>&nbsp;(<span id='startwindow'></span>&nbsp;-&nbsp;<span id='stopwindow'></span>)&nbsp;</span>
+            <!--
+            <span id='timewave'>&nbsp;(<span id='startwave'></span>&nbsp;-&nbsp;<span id='stopwave'></span>)&nbsp;</span>
+            -->
+            <!--<span id='insertreplacemode' onclick="trjs.editor.toggleInsert();">Insert mode</span>-->
+        </div>
+        <table class="transcribertable" id="transcript-head">
+            <thead>
+            <th class="num">-</th>
+            <th class="info">-</th>
+            <th class="code">Loc</th>
+            <th class="ts">Ts</th>
+            <th class="te">Te</th>
+            <th class="vts">Ts</th>
+            <th class="vte">Te</th>
+            <th class="transcription">Transcription</th>
+            </thead>
+            <tr>
+                <td id='table-loading'></td>
+            </tr>
+        </table>
     </div>
-    <table class="transcribertable" id="transcript-head">
-        <thead><th class="num">-</th><th class="info">-</th><th class="code">Loc</th><th class="ts">Ts</th><th class="te">Te</th><th class="vts">Ts</th><th class="vte">Te</th><th class="transcription">Transcription</th></thead>
-        <tr><td id='table-loading'></td></tr>
-    </table>
-</div>
     <div id='transcription-bench'>
-        <table class="transcribertable" id="transcript" onclick="trjs.events.transcriptGotFocus(event);">
+        <table class="transcribertable" id="transcript" onclick="trjs.events.transcriptGotFocus(event);"
+               onkeydown="trjs.events.eventKeydownTranscript(event);">
         </table>
     </div>
 </div>

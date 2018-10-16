@@ -42,6 +42,7 @@ trjs.log = ( function() {
 			}
 			elem.delay(200).fadeIn().delay(arrayInfoMsgDuration[dispInfoMsg]).fadeOut();
 			dispInfoMsg++;
+			trjs.events.setFocus();
 		}
 		if (dispInfoMsg >= nbInfoMsg && hInfoMsg != null) {
 			clearInterval(hInfoMsg);
@@ -97,7 +98,9 @@ trjs.log = ( function() {
 		 * @method show
 		 */
 		show: function() {
-			bootbox.alert('All messages: <br/>' + arrayInfoMsg.join('<br/>'), function() {});
+			bootbox.alert('All messages: <br/>' + arrayInfoMsg.join('<br/>'), function() {
+                trjs.events.setFocus();
+            });
 		},
 		
 		/**
@@ -106,7 +109,9 @@ trjs.log = ( function() {
 		 * @param {string} message to be displayed
 		 */
 		boxalert: function(msg) {
-			bootbox.alert(msg, function() {});
+			bootbox.alert(msg, function() {
+                trjs.events.setFocus();
+			});
 			infoMsgShow(msg, "normal", 0);
 		},
 		log: function(m) {
