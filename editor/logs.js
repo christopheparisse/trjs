@@ -7,6 +7,7 @@
  * @author Christophe Parisse
  */
 
+var picoModal = require('picomodal');
 
 trjs.log = ( function() {
 
@@ -111,9 +112,14 @@ trjs.log = ( function() {
 		boxalert: function(msg) {
 			bootbox.alert(msg, function() {
                 trjs.events.setFocus();
-                var x = $(document.activeElement);
-                x.parent().parent().hide();
 			});
+			/*
+		    picoModal(msg).afterCreate(function(modal){
+		        console.log(modal);
+            }).show().afterClose(function(){
+                trjs.events.setFocus();
+            });
+            */
 			infoMsgShow(msg, "normal", 0);
 		},
 		log: function(m) {

@@ -1607,10 +1607,12 @@ trjs.events = (function () {
      */
     var specialEvent1 = false;
     var specialEvent2 = false;
-    function eventKeydown(e) {
-        return eventKeydownTranscript(e, true);
+    function enterKeydown(e) {
+        var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
+        if (charCode !== 13) return false;
+        return eventKeydown(e, true);
     }
-    function eventKeydownTranscript(e, enter) {
+    function eventKeydown(e, enter) {
         /*
          console.log('keyCode '+ e.keyCode);
          console.log('charCode '+ e.charCode);
@@ -1633,7 +1635,7 @@ trjs.events = (function () {
          console.log('charCode '+ e.charCode);
          */
         var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
-        if (enter === true && charCode === 13) return false;
+        if (enter !== true && charCode === 13) return false;
         if (trjs.param.server !== 'electron') {
             var m = $('#openfile').data('bs.modal');
             if (m && m.isShown) {
@@ -2290,7 +2292,7 @@ trjs.events = (function () {
         deleteSelectedLine: deleteSelectedLine,
         enter: enter,
         eventKeydown: eventKeydown,
-        eventKeydownTranscript: eventKeydownTranscript,
+        enterKeydown: enterKeydown,
         // eventKeypress: eventKeypress,
         escape: escape,
         findLineToFollow: findLineToFollow,
