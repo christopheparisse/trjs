@@ -16,6 +16,7 @@ cp -v ./tools/fonts.conf $1/trjs-x64/tools
 cp -vR ./tools/presets $1/trjs-x64/tools
 cp -vR ./tools/java-x64 $1/trjs-x64/tools
 cp -v ./tools/teicorpo.jar $1/trjs-x64/tools
+cp -v ./tools/package.json $1/trjs-macos/tools
 cp -v ./transcriberjs-x64.nsi $1/trjs-x64/app
 cp -v ./index.js $1/trjs-x64/app
 cp -v ./README.md $1/trjs-x64/app

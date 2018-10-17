@@ -45,6 +45,7 @@ trjs.init = function(force) {
 				mode = 'f1';
 		}
 	}
+    version.setVersion();
 	// console.log("Mode="+mode);
 	if (mode) {
 		switch (mode) {

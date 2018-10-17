@@ -7,7 +7,7 @@
  * @author Christophe Parisse
  */
 
-var picoModal = require('picomodal');
+// var picoModal = require('picomodal');
 
 trjs.log = ( function() {
 

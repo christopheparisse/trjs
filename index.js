@@ -180,6 +180,11 @@ function startWindow(arg) {
         }
     });
 
+    wnd.webContents.on('will-navigate', function(event, url) {
+        event.preventDefault();
+        //console.log('will-navigate', event, url);
+    });
+
     return wnd;
 }
 

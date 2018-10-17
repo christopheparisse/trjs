@@ -15,19 +15,25 @@ if (typeof exports !== 'undefined') {
     var os = require('os');
 }
 
-/*
-var loadJsonFile = require('load-json-file');
-loadJsonFile('package.json').then(function(json) {
-    version.version = 'v' + json.version;
-});
-*/
-version.version = "v0.7.1";
+version.version = "v-loading";
 version.appName = 'TRJS';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
 version.date = new Date(2018, 9, 9); // year, month, day : warning minus 1 (-1) for months : january === 0
 
 version.preservedPages = 3;
+
+version.setVersion = function() {
+    var loadJsonFile = require('load-json-file');
+
+    loadJsonFile(version.ffmpegdirLoc() + '/package.json').then(function(json) {
+        version.version = (json.version) ?  'v' + json.version : 'v-beta';
+        document.title = trjs.messgs.namesoftware + ' ' + version.version;
+    }).catch(function() {
+        version.version = 'v-in progress';
+        document.title = trjs.messgs.namesoftware + ' ' + version.version;
+    });
+}
 
 /*
  * Default values correspoding to the local nodejs version

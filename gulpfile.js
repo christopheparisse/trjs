@@ -104,11 +104,17 @@ gulp.task('trjsclient', function () {
 });
 
 gulp.task('electron', function () {
-   // construct index.html
+    // construct index.html
     return gulp.src('./html/index.html')
         .pipe(include())
         .pipe(preprocess({context: { VERSION: 'electron'}}))
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', gulp.series('trjslocal', 'trjsclient', 'electron'));
+gulp.task('package', function () {
+    // copy package.json dans tools
+    return gulp.src('./package.json')
+        .pipe(gulp.dest('tools'));
+});
+
+gulp.task('default', gulp.series('trjslocal', 'trjsclient', 'electron', 'package'));
