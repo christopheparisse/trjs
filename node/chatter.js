@@ -8,14 +8,16 @@ var cp = require('child_process');
 var fs = require('fs');
 var version = require('../editor/version.js');
 
-exports.chatter0 = function(utt, lang, callback) {
+exports.chatter0 = function(utts, lang, callback) {
     var text = '';
     text += '@UTF8\n';
     text += '@Begin\n';
     text += '@Languages:\t' + lang + '\n';
     text += '@Participants:	SP01 Participant\n';
     text += '@ID:\t' + lang + '|change_corpus_later|SP01|||||Participant|||\n';
-    text += '*SP01:\t' + utt + '\n';
+    for (var i in utts) {
+        text += '*SP01:\t' + utts[i] + '\n';
+    }
     text += '@End\n';
     fs.writeFileSync('tempchatfile.cha', text);
 
@@ -44,8 +46,8 @@ exports.chatter0 = function(utt, lang, callback) {
     });
 }
 
-exports.chatter = function(utt, lang, callback) {
-    exports.chatter0(utt, lang, function (err, messg) {
+exports.chatter = function(utts, lang, callback) {
+    exports.chatter0(utts, lang, function (err, messg) {
         if (err) {
             var errors = [], m;
             // filter messgs for line and column
@@ -53,8 +55,8 @@ exports.chatter = function(utt, lang, callback) {
             do {
                 m = re.exec(messg);
                 if (m && m[3].indexOf('internal error') < 0) {
-                    // console.log(m[1], m[2]-7);
-                    errors.push([m[1], m[2]-7, m[3]]);
+                    // console.log(m[1]-4, m[2]-7);
+                    errors.push([m[1]-4, m[2]-7, m[3]]);
                 }
             } while (m);
             callback(1, errors);

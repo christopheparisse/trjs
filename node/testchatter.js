@@ -11,7 +11,8 @@ function main() {
     var argv = require('minimist')(process.argv.slice(2));
 
     console.log(argv);
-    chatter.chatter0(argv._, "eng", function(err, messg) {
+    var txt = (typeof argv._ === 'string') ? [argv._] : argv._;
+    chatter.chatter0(txt, "eng", function(err, messg) {
         if (err) {
             console.log('ERROR');
             console.log("[[", messg);
@@ -21,7 +22,7 @@ function main() {
         }
     });
 
-    chatter.chatter(argv._, "eng", function(err, messg) {
+    chatter.chatter(txt, "eng", function(err, messg) {
         if (err) {
             console.log('NotGood:', messg);
         } else {

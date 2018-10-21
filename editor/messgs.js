@@ -211,7 +211,8 @@ trjs.messgs_eng = {
     preorder: 'Reorder lines dynamically ',
     checkspan: 'Check current file',
     icheck: 'Check file ',
-    checkfe: 'Founded errors :',
+    checkfe: 'Found errors :',
+    checkerr: ' errors.',
 
     tools: 'Tools',
 
@@ -325,6 +326,7 @@ trjs.messgs_eng = {
     timeEndSmallerBegin: 'Cannot set end time smaller than begin time',
     timeBeginGreaterEnd: 'Cannot set begin time greater than end time',
     checknoerror: 'No errors in the document',
+    checkcorrectline: 'No errors in the line',
 
     ftnotrsf: 'No transcript file available here',
     ftnomedf: 'No media file available here',
@@ -974,6 +976,7 @@ trjs.messgs_fra = {
     checkspan: 'Vérifier le fichier courant',
     icheck: 'Vérifier le fichier ',
     checkfe: 'Erreurs trouvées :',
+    checkerr: ' erreurs.',
 
     tools: 'Outils',
 
@@ -1085,6 +1088,7 @@ trjs.messgs_fra = {
     timeEndSmallerBegin: 'Impossible de mettre un temps de fin avant un temps de début',
     timeBeginGreaterEnd: 'Impossible de mettre un temps de début après un temps de fin',
     checknoerror: "Pas d'erreur dans le document",
+    checkcorrectline: "Pas d'erreur dans la ligne",
 
     ftnotrsf: 'Aucun fichier de transcription disponible ici',
     ftnomedf: 'Aucun fichier media disponible ici',

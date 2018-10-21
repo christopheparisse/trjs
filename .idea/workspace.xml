@@ -3,17 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-macos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-macos.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-x64.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-x64.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-x86.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-x86.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mktrjs-zip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mktrjs-zip.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/check.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/check.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/messgs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/messgs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/chatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/chatter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/tempchatfile.cha" beforeDir="false" afterPath="$PROJECT_DIR$/node/tempchatfile.cha" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/testchatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/testchatter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tempchatfile.cha" beforeDir="false" afterPath="$PROJECT_DIR$/tempchatfile.cha" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,17 +24,18 @@
     <session id="-645793077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="36" />
-          <entry key="project.open.time.10" value="10" />
+          <entry key="project.closed" value="40" />
+          <entry key="project.open.time.10" value="12" />
           <entry key="project.open.time.11" value="9" />
           <entry key="project.open.time.12" value="6" />
           <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="37" />
+          <entry key="project.opened" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -46,7 +43,7 @@
           <entry key="cha" value="1" />
           <entry key="css" value="12" />
           <entry key="html" value="35" />
-          <entry key="js" value="163" />
+          <entry key="js" value="167" />
           <entry key="json" value="12" />
           <entry key="json-old" value="1" />
           <entry key="md" value="2" />
@@ -58,7 +55,7 @@
           <entry key="CSS" value="12" />
           <entry key="HTML" value="35" />
           <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="163" />
+          <entry key="JavaScript" value="167" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="17" />
         </counts>
@@ -67,7 +64,7 @@
         <counts>
           <entry key="css" value="437" />
           <entry key="html" value="3053" />
-          <entry key="js" value="26568" />
+          <entry key="js" value="28456" />
           <entry key="json" value="143" />
           <entry key="sh" value="18" />
         </counts>
@@ -77,7 +74,7 @@
           <entry key="CSS" value="437" />
           <entry key="HTML" value="3070" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="26551" />
+          <entry key="JavaScript" value="28439" />
           <entry key="PLAIN_TEXT" value="18" />
         </counts>
       </usages-collector>
@@ -90,74 +87,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node/chatter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/check.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3690">
-              <caret line="246" column="39" selection-start-line="246" selection-start-column="39" selection-end-line="246" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1123">
-              <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
+            <state relative-caret-position="421">
+              <caret line="49" column="24" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/editor/version.js">
+        <entry file="file://$PROJECT_DIR$/editor/check.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="293">
+              <caret line="198" column="26" selection-start-line="198" selection-start-column="26" selection-end-line="198" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/init.js">
+        <entry file="file://$PROJECT_DIR$/editor/events.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="300">
+              <caret line="1313" column="18" lean-forward="true" selection-start-line="1313" selection-start-column="18" selection-end-line="1313" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="978" column="12" selection-start-line="978" selection-start-column="4" selection-end-line="978" selection-end-column="12" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor/editor.js">
+        <entry file="file://$PROJECT_DIR$/editor/params.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="1006" lean-forward="true" selection-start-line="1005" selection-end-line="1006" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="635">
+              <caret line="384" column="4" selection-start-line="384" selection-start-column="4" selection-end-line="384" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -173,19 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>xmlEntitiesEncode</find>
-      <find>currentLineCheck</find>
-      <find>checkCurrentLine</find>
-      <find>testMark</find>
-      <find>cleanTranscription</find>
-      <find>cleanErrors</find>
-      <find>checkCurr</find>
-      <find>clean</find>
-      <find>testChatline</find>
-      <find>checkTranscription</find>
-      <find>setMark</find>
-      <find>focus</find>
-      <find>transcriptGotFocus</find>
       <find>focus()</find>
       <find>infoMsgShow</find>
       <find>infoMsgDisplay</find>
@@ -203,6 +161,19 @@
       <find>webcon</find>
       <find>webContents.on</find>
       <find>title</find>
+      <find>utt</find>
+      <find>testChatlines</find>
+      <find>checkAddMsg</find>
+      <find>messg</find>
+      <find>ln</find>
+      <find>checkTranscription</find>
+      <find>erreur</find>
+      <find>errs</find>
+      <find>checknoerror</find>
+      <find>check</find>
+      <find>checknoe</find>
+      <find>errors</find>
+      <find>checkfe</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -275,18 +246,13 @@
         <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/editor/data.js" />
         <option value="$PROJECT_DIR$/html/media.html" />
-        <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/params.js" />
-        <option value="$PROJECT_DIR$/node/testchatter.js" />
         <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
         <option value="$PROJECT_DIR$/editor/transcription.js" />
-        <option value="$PROJECT_DIR$/node/chatter.js" />
         <option value="$PROJECT_DIR$/editor/opensavelocal.js" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/html/index.html" />
-        <option value="$PROJECT_DIR$/editor/check.js" />
-        <option value="$PROJECT_DIR$/editor/events.js" />
         <option value="$PROJECT_DIR$/html/edition.html" />
         <option value="$PROJECT_DIR$/editor/logs.js" />
         <option value="$PROJECT_DIR$/index.js" />
@@ -297,6 +263,11 @@
         <option value="$PROJECT_DIR$/mktrjs-zip.sh" />
         <option value="$PROJECT_DIR$/editor/init.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
+        <option value="$PROJECT_DIR$/node/chatter.js" />
+        <option value="$PROJECT_DIR$/node/testchatter.js" />
+        <option value="$PROJECT_DIR$/editor/events.js" />
+        <option value="$PROJECT_DIR$/editor/messgs.js" />
+        <option value="$PROJECT_DIR$/editor/check.js" />
       </list>
     </option>
   </component>
@@ -323,10 +294,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="237" />
+    <option name="x" value="151" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="990" />
+    <option name="width" value="1381" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -505,18 +476,21 @@
       <workItem from="1539761959891" duration="237000" />
       <workItem from="1539767882941" duration="1946000" />
       <workItem from="1539780615594" duration="90000" />
-      <workItem from="1539813340146" duration="486000" />
+      <workItem from="1539813340146" duration="602000" />
+      <workItem from="1539899189203" duration="1093000" />
+      <workItem from="1539907667090" duration="69000" />
+      <workItem from="1540049382607" duration="10032000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324292000" />
+    <option name="totallyTimeSpent" value="335602000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="237" y="23" width="1280" height="990" extended-state="0" />
+    <frame x="151" y="23" width="1381" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.17077045" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.15808824" />
       <window_info id="Structure" order="1" sideWeight="0.5522234" side_tool="true" weight="0.16962525" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -737,13 +711,6 @@
         <state relative-caret-position="-1070" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node/testchatter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/transcription.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
@@ -755,20 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
           <caret line="63" column="123" selection-start-line="63" selection-start-column="122" selection-end-line="63" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/params.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5865">
-          <caret line="391" column="11" lean-forward="true" selection-start-line="391" selection-start-column="11" selection-end-line="391" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27465">
-          <caret line="1831" column="47" selection-start-line="1831" selection-start-column="47" selection-end-line="1831" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -829,13 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="2294" column="35" selection-start-line="2294" selection-start-column="35" selection-end-line="2294" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mktrjs-macos.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -864,24 +810,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node/chatter.js">
+    <entry file="file://$PROJECT_DIR$/editor/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+        <state relative-caret-position="480">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/check.js">
+    <entry file="file://$PROJECT_DIR$/editor/editor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3690">
-          <caret line="246" column="39" selection-start-line="246" selection-start-column="39" selection-end-line="246" selection-end-column="39" />
+        <state relative-caret-position="15090">
+          <caret line="1006" selection-start-line="1005" selection-end-line="1006" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -892,34 +838,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/editor/version.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1123">
+        <state relative-caret-position="821">
           <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/editor.js">
+    <entry file="file://$PROJECT_DIR$/node/testchatter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="1006" lean-forward="true" selection-start-line="1005" selection-end-line="1006" />
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/init.js">
+    <entry file="file://$PROJECT_DIR$/editor/params.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="635">
+          <caret line="384" column="4" selection-start-line="384" selection-start-column="4" selection-end-line="384" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/chatter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="1313" column="18" lean-forward="true" selection-start-line="1313" selection-start-column="18" selection-end-line="1313" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="978" column="12" selection-start-line="978" selection-start-column="4" selection-end-line="978" selection-end-column="12" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
+    <entry file="file://$PROJECT_DIR$/editor/check.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="293">
+          <caret line="198" column="26" selection-start-line="198" selection-start-column="26" selection-end-line="198" selection-end-column="26" />
         </state>
       </provider>
     </entry>

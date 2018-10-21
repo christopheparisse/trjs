@@ -10,14 +10,16 @@ var gramchat = require("./editor/checkclanmain.js");
 var chatter = require('./node/chatter.js');
 
 trjs.check = (function () {
-    function testChatline(t, callback) {
+    function testChatlines(text, callback) {
         try {
-            t = trjs.transcription.transcriptEncoding(t);
-            chatter.chatter(t, "eng", function(err, messg) {
+            for (var i in text) {
+                text[i] = trjs.transcription.transcriptEncoding(text[i]);
+            }
+            chatter.chatter(text, "eng", function(err, messg) {
                 if (err) {
                     var ret = [];
                     for (var i = 0; i < messg.length; i++)
-                        ret.push({ message: messg[i][2], column: messg[i][1] });
+                        ret.push({ message: messg[i][2], line: messg[i][0], column: messg[i][1] });
                     callback({ value: 'error', list: ret });
                     console.log('NotGood:', messg, ret);
                 } else {
@@ -160,39 +162,54 @@ trjs.check = (function () {
      * check all lines for possible incomplete locutors or errors in transcription
      */
     function goCheck() {
+        var tablelines = trjs.transcription.tablelines();
+        console.log(tablelines);
+        checklines(tablelines, false);
+    }
+
+    /*
+     * check all lines for possible incomplete locutors or errors in transcription
+     */
+    function checklines(lgns, jq) {
         trjs.data.check = []; // empty array of line numbers
         trjs.data.checkCount = 0;
-        trjs.data.checkToDo = 0;
-        trjs.data.checkDone = 0;
-        trjs.data.checkAddMsg = function(m) {
-            // {n: i, message: errs.join("<br/>")}
+        trjs.data.checkAddMsg = function(line, err) {
             trjs.data.checkCount++;
-            trjs.data.check.push({ n: trjs.data.checkCount, message: errs.join("<br/>")});
+            trjs.data.check.push({ n: line, message: err });
         }
-        var tablelines = trjs.transcription.tablelines();
-        for (var i = 0; i < tablelines.length - 1; i++) {
-            var sel = $(tablelines[i]);
+        trjs.data.checkText = function(nth) {
+            return 'line: ' + trjs.data.check[nth].n + ' ' + trjs.data.check[nth].message;
+        }
+        var text = []; // text values of utterances
+        var sels = []; // pointers to DOM elements
+        var n = []; // line numbers
+        for (var i = 0; i < lgns.length; i++) {
+            var sel = jq ? lgns[i] : $(lgns[i]);
             var loc = trjs.transcription.getCode(sel);
             var type = trjs.transcription.findCode(loc);
-            var errs = [];
             if (loc === '---') {
-                errs.push('error on locutor');
+                trjs.data.checkAddMsg(i+1, 'error on locutor');
             }
             if (checkOverlapNext(sel)) {
-                errs.push('overlap on same locutor');
+                trjs.data.checkAddMsg(i+1, 'overlap on same locutor');
+                loc = setMark(loc);
+                trjs.transcription.setCode(sel, loc);
+            } else if (testMark(loc)) {
+                loc = trimMark(loc);
+                trjs.transcription.setCode(sel, loc);
             }
             if (loc === '-div-' && trjs.dataload.checkstring(trjs.events.lineGetCell(sel, trjs.data.TRCOL)) !== '') {
+                trjs.data.checkAddMsg(i+1, 'end of div with comment (not allowed)');
             }
-            if (type === 'loc') {
-                trjs.data.checkToDo++;
-                checkTranscription(sel, errs, true);
+            if (type === 'loc' && trjs.param.format === 'CHAT') {
+                cleanTranscription(sel);
+                text.push(trjs.events.lineGetCell(sel, trjs.data.TRCOL));
+                sels.push(sel);
+                n.push(i+1);
             }
         }
-        /*
-         wait for all to display results
-         */
-        $('#check-nb-results').text(trjs.data.checkCount);
-        $('#check-nbx').text(trjs.data.checkCount);
+        if (trjs.param.format === 'CHAT')
+            checkTranscription(text, sels, n);
     }
 
     /*
@@ -200,82 +217,98 @@ trjs.check = (function () {
      */
     function checkCurrentLine(e, sel) {
         if (sel === undefined) sel = trjs.data.selectedLine;
-        var loc = trjs.transcription.getCode(sel);
-        var type = trjs.transcription.findCode(loc);
-        var errs = [];
-        if (loc === '---') {
-            errs.push('error on locutor');
-        }
-        if (checkOverlapNext(sel)) {
-            errs.push('overlap on same locutor');
-        }
-        if (loc === '-div-' && trjs.dataload.checkstring(trjs.events.lineGetCell(sel, trjs.data.TRCOL)) !== '') {
-            errs.push('end of div with comment (not allowed)');
-        }
-        if (type === 'loc') {
-            cleanTranscription(sel);
-            checkTranscription(sel, errs, false);
-        }
+        console.log(sel);
+        checklines([sel], true);
     }
 
     /**
      * check a line for whichever method is set for the file (by defaut CHAT but can be other transcription systems)
      * @method checkTranscription
      */
-    function checkTranscription(sel, errs, all) {
-        // if the transcription is not correct, modify the line and return false
-        // else return true
-        if (trjs.param.format === 'CHAT') {
-            var t = trjs.events.lineGetCell(sel, trjs.data.TRCOL);
-            console.log("check", t);
-            trjs.check.testChatline(t, function(ck) {
-                trjs.data.checkDone++;
-                console.log("result", ck.value, ck.list);
-                if (ck.value !== 'ok') {
-                    var loc = trjs.transcription.getCode(sel);
+    function checkTranscription(text, sels, n) {
+        testChatlines(text, function(ck) {
+            console.log("result", ck.value, ck.list);
+            if (ck.value !== 'ok') {
+                for (var el=0; el < ck.list.length; ) {
+                    // process all element with the same line and then just to next one
+                    var ln = ck.list[el].line;
+                    var utt = sels[ln-1];
+                    // change the speaker information
+                    var loc = trjs.transcription.getCode(utt);
                     loc = setMark(loc);
-                    trjs.transcription.setCode(sel, loc);
+                    trjs.transcription.setCode(utt, loc);
                     // indicate in the transcription where the error is.
-
-                    var u = trjs.events.lineGetCell(sel, trjs.data.TRCOL); // initial string
+                    // there can be several elements for this
+                    var u = text[ln-1]; // initial string
                     var w = ''; // result string.
                     var p = 0; // pointer to next element to copy from u
-                    var ith = 0; // iterate through ct.list
-                    var messg = '';
+                    // iterate through ct.list from the starting point 'el'
                     do {
-                        var m = '<error data-toggle="tooltip" title="' + ck.list[ith].message + '">'; // the first part of the message
-                        messg += '<br/>column: ' + ck.list[ith].column + ' ' + ck.list[ith].message;
-                        if (ck.list[ith].column >= u.length) {
+                        var m = '<error data-toggle="tooltip" title="' + ck.list[el].message + '">'; // the first part of the message
+                        trjs.data.checkAddMsg(n[ln-1], 'column: ' + ck.list[el].column + ' ' + ck.list[el].message);
+                        if (ck.list[el].column >= u.length) {
                             // copy the rest of u
                             w += u.substring(p) + m + trjs.data.errorMarker + '</error>';
                             p = u.length; // at the end
                             // this should be the end unless there are more than one error message at the end
                         } else {
-                            var gauche = u.substring(p, ck.list[ith].column);
-                            p = ck.list[ith].column;
+                            var gauche = u.substring(p, ck.list[el].column);
+                            p = ck.list[el].column;
                             w += gauche + m + trjs.data.errorMarker + '</error>';
                         }
-                        ith ++;
-                    } while(ith < ck.list.length);
+                        el ++;
+                    } while(el < ck.list.length && ck.list[el].line === ln);
                     if (p < u.length) w += u.substring(p);
+                    trjs.events.lineSetCellHtml(sels[ln-1], trjs.data.TRCOL, w);
+                }
+                trjs.param.setTooltip();
+                $('#check-nb-results').text(trjs.data.checkCount);
+                $('#check-nbx').text(trjs.data.checkCount);
+                if (text.length < 2) {
+                    if (trjs.data.checkCount >= 1) {
+                        var s = '';
+                        for (var e in trjs.data.check) {
+                            s += trjs.data.check[e].message + '<br/>';
+                        }
+                        trjs.log.boxalert(s);
+                    }
+                } else {
+                    if (trjs.data.checkCount >= 1) {
+                        var s = '';
+                        for (var e in trjs.data.check) {
+                            s += trjs.data.checkText(e) + '<br/>';
+                        }
+                        trjs.log.boxalert(s);
 
-                    trjs.events.lineSetCellHtml(sel, trjs.data.TRCOL, w);
-                    trjs.param.setTooltip();
-                    errs.push(messg);
-                    if (all === false) {
-                        if (errs.length > 0) {
-                            trjs.log.boxalert(errs.join("<br/>"));
-                        }
+                        trjs.data.checkPos = 0;
+                        $('#check-posx').text(1);
+                        trjs.events.goToLine(trjs.data.check[0].n);
+                        $('#check-valx').text(trjs.data.checkText(0));
+                        trjs.editor.showCheck(true);
                     } else {
-                        if (errs.length > 0) {
-                            trjs.data.checkAddMsg(errs.join("<br/>"));
-                            trjs.data.checkCount++;
-                        }
+                        trjs.log.boxalert(trjs.messgs.checknoerror);
                     }
                 }
-            });
-        }
-        // return { value: 'unavailable' };
+            } else {
+                if (trjs.data.checkCount < 1) {
+                    if (text.length < 2) {
+                        trjs.log.alert(trjs.messgs.checkcorrectline);
+                    } else {
+                        trjs.log.boxalert(trjs.messgs.checknoerror);
+                    }
+                } else {
+                    if (text.length < 3) {
+                        var s = '';
+                        for (var e in trjs.data.check) {
+                            s += trjs.data.check[e].message + '<br/>';
+                        }
+                        s += trjs.data.checkCount + trjs.messgs.checkerr;
+                        trjs.log.boxalert(s);
+                    }
+                }
+
+            }
+        });
     }
 
     /**
@@ -323,14 +356,6 @@ trjs.check = (function () {
      */
     function checkFinal() {
         goCheck();
-        if (trjs.data.checkCount > 0) {
-            trjs.data.checkPos = 0;
-            $('#check-posx').text(1);
-            trjs.events.goToLine(trjs.data.check[0].n + 1);
-            $('#check-valx').text(trjs.data.check[0].message);
-            trjs.editor.showCheck(true);
-        } else
-            trjs.log.boxalert(trjs.messgs.checknoerror);
     }
 
     /**
@@ -342,12 +367,12 @@ trjs.check = (function () {
             if (trjs.data.checkPos > 0) {
                 trjs.data.checkPos--;
                 $('#check-posx').text(trjs.data.checkPos + 1);
-                trjs.events.goToLine(trjs.data.check[trjs.data.checkPos].n + 1);
-                $('#check-valx').text(trjs.data.check[trjs.data.checkPos].message);
+                trjs.events.goToLine(trjs.data.check[trjs.data.checkPos].n);
+                $('#check-valx').text(trjs.data.checkText(trjs.data.checkPos));
             } else {
                 $('#check-posx').text(1);
-                trjs.events.goToLine(trjs.data.check[0].n + 1);
-                $('#check-valx').text(trjs.data.check[0].message);
+                trjs.events.goToLine(trjs.data.check[0].n);
+                $('#check-valx').text(trjs.data.checkText(0));
             }
         }
     }
@@ -361,12 +386,12 @@ trjs.check = (function () {
             if (trjs.data.checkPos < trjs.data.checkCount - 1) {
                 trjs.data.checkPos++;
                 $('#check-posx').text(trjs.data.checkPos + 1);
-                trjs.events.goToLine(trjs.data.check[trjs.data.checkPos].n + 1);
-                $('#check-valx').text(trjs.data.check[trjs.data.checkPos].message);
+                trjs.events.goToLine(trjs.data.check[trjs.data.checkPos].n );
+                $('#check-valx').text(trjs.data.checkText(trjs.data.checkPos));
             } else {
                 $('#check-posx').text(trjs.data.checkCount);
-                trjs.events.goToLine(trjs.data.check[trjs.data.checkCount - 1].n + 1);
-                $('#check-valx').text(trjs.data.check[trjs.data.checkCount - 1].message);
+                trjs.events.goToLine(trjs.data.check[trjs.data.checkCount - 1].n);
+                $('#check-valx').text(trjs.data.checkText(trjs.data.checkCount - 1));
             }
         }
     }
@@ -383,7 +408,6 @@ trjs.check = (function () {
         prevCheck: prevCheck,
         setMark: setMark,
         testMark: testMark,
-        testChatline: testChatline,
         trimMark: trimMark,
     };
 })();

@@ -1310,8 +1310,8 @@ trjs.events = (function () {
      */
     function goToLine(ln) {
         var tablelines = trjs.transcription.tablelines();
-        if (ln-1 < 0 || ln >= tablelines.length) {
-            console.log('erroneous line number');
+        if (ln < 1 || ln > tablelines.length) {
+            console.log('erroneous line number', ln);
             return;
         }
         var d = $('#transcription-bench');
