@@ -5,7 +5,7 @@
  */
 
 var cp = require('child_process');
-var fs = require('fs');
+var temp = require('fs-temp');
 var version = require('../editor/version.js');
 
 exports.chatter0 = function(utts, lang, callback) {
@@ -19,11 +19,13 @@ exports.chatter0 = function(utts, lang, callback) {
         text += '*SP01:\t' + utts[i] + '\n';
     }
     text += '@End\n';
-    fs.writeFileSync('tempchatfile.cha', text);
+    // fs.writeFileSync('tempchatfile.cha', text);
+    var tempchatfile = temp.template("%s.cha").writeFileSync(text);
+    console.log("tempfile:", tempchatfile);
 
     var output = '', error = '';
     var analyzer = cp.spawn(version.javaLoc(), ['-cp', version.ffmpegdirLoc() + '/chatter.jar',
-        'org.talkbank.chatter.App', 'tempchatfile.cha']);
+        'org.talkbank.chatter.App', tempchatfile]);
 
     analyzer.stdout.on('data', function(data) {
         if (data) output += data;
@@ -38,9 +40,11 @@ exports.chatter0 = function(utts, lang, callback) {
     analyzer.on('close', function(code) {
         if (code === 0) {
             callback(0, output);
+//            fs.unlinkSync(tempchatfile);
             return;
         } else {
             callback(1, error);
+//            fs.unlinkSync(tempchatfile);
             return;
         }
     });

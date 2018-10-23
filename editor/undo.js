@@ -481,7 +481,16 @@ return {
 	replaceCode: function(line, old, code) { return replace(trjs.data.CODECOL, line, old, code); },
 	replaceTS: function(line, old, code) { return replace(trjs.data.TSCOL, line, old, code); },
 	replaceTE: function(line, old, code) { return replace(trjs.data.TECOL, line, old, code); },
-	replaceTrans: function(line, old, code) { return replace(trjs.data.TRCOL, line, old, code); },
+	replaceTrans: function(line, old, code) {
+        var tablelines = trjs.transcription.tablelines();
+        if (line < 1 || line > tablelines.length) {
+            console.log('erroneous line number', line);
+        } else {
+        	console.log('undo: check ', line);
+            trjs.check.checkCurrentLine(undefined, $(tablelines[line - 1]));
+		}
+		return replace(trjs.data.TRCOL, line, old, code);
+	},
 	insertLine: insertLine,
 	deleteLine: deleteLine,
 	getContentOfLine: getContentOfLine,

@@ -16,7 +16,8 @@ cp ./tools/fonts.conf $1/trjs-zip/tools
 cp -R ./tools/presets $1/trjs-zip/tools
 cp -R ./tools/java* $1/trjs-zip/tools
 cp ./tools/teicorpo.jar $1/trjs-zip/tools
-cp ./tools/package.json $1/trjs-macos/tools
+cp ./tools/chatter.jar $1/trjs-zip/tools
+cp ./tools/package.json $1/trjs-zip/tools
 cp ./transcriberjs*.nsi $1/trjs-zip
 cp ./index.js $1/trjs-zip
 cp ./README.md $1/trjs-zip

@@ -180,6 +180,9 @@ trjs.check = (function () {
         trjs.data.checkText = function(nth) {
             return 'line: ' + trjs.data.check[nth].n + ' ' + trjs.data.check[nth].message;
         }
+        trjs.data.checkTextSingle = function(nth) {
+            return trjs.data.check[nth].message;
+        }
         var text = []; // text values of utterances
         var sels = []; // pointers to DOM elements
         var n = []; // line numbers
@@ -208,8 +211,18 @@ trjs.check = (function () {
                 n.push(i+1);
             }
         }
-        if (trjs.param.format === 'CHAT')
+        if (trjs.param.format === 'CHAT' && text.length > 0) {
             checkTranscription(text, sels, n);
+        } else {
+            // print message if there are some.
+            if (trjs.data.checkCount >= 1) {
+                var s = '';
+                for (var e in trjs.data.check) {
+                    s += trjs.data.checkTextSingle(e) + '<br/>';
+                }
+                trjs.log.boxalert(s);
+            }
+        }
     }
 
     /*
@@ -217,7 +230,7 @@ trjs.check = (function () {
      */
     function checkCurrentLine(e, sel) {
         if (sel === undefined) sel = trjs.data.selectedLine;
-        console.log(sel);
+        console.log("checkCurrentLine", sel);
         checklines([sel], true);
     }
 
