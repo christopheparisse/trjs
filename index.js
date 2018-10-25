@@ -140,7 +140,7 @@ function startWindow(arg) {
     if (hgt > displaysize.height) hgt = displaysize.height - 10;
 //    console.log(wth, hgt);
 
-    var wnd = new BrowserWindow({width: wth, height: hgt});
+    // var wnd = new BrowserWindow({width: wth, height: hgt});
 
     if (arg) {
         wnd.loadURL('file://' + __dirname + '/index.html?newtranscript');
