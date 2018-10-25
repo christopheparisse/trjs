@@ -153,8 +153,10 @@ trjs.dmz = ( function() {
 		init: function() {
             trjs.partition.setNbVisible(trjs.param.nbVisible);
 			// init partition
-			if (trjs.partition)
-				trjs.partition.init();
+			if (trjs.partition) {
+				$('#partition').height(trjs.param.nbVisible * 25);
+                trjs.partition.init(trjs.param.nbVisible * 25);
+			}
 			// init wave
 			// this is done when the signal image is loaded
 			trjs.dmz.sliderInit();

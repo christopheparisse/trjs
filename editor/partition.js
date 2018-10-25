@@ -351,7 +351,7 @@ trjs.partition = ( function() {
 	 * @param {int} for zoon its the value in seconds of the visible part
 	 * @return table of ids for each line in the data
 	 */
-	var initPartition = function() {
+	var initPartition = function(height) {
 		trjs.slider.populatePartition();
 		if (trjs.partition.initializing === true) return;
 		if (! trjs.partition.isVisible() ) return;
@@ -372,7 +372,7 @@ trjs.partition = ( function() {
 		partitionReady = false;
 		/* partition contains the location as placed in the normal flow */
 		var partition = $('#partition');
-		partitionHeightValue = partition.height();
+		partitionHeightValue = height ? height : partition.height();
 		// Creating the canvas
 		if (!trjs.partition.canvas) {
 			trjs.partition.canvas = document.createElement("canvas");
@@ -381,6 +381,7 @@ trjs.partition = ( function() {
 			trjs.partition.effectiveWidth = $(window).width();
 			trjs.partition.sizeOfSecond(trjs.partition.effectiveWidth / trjs.partition.winsizeValue); // TODO
 			trjs.partition.canvas.height = trjs.partition.partitionHeight();
+			// trjs.partition.canvas.font = "12px sans"; // TODO choose font
 			var p = document.getElementById("partition");
 			if (!p) {
 				trjs.partition.initializing = false;
@@ -467,7 +468,6 @@ trjs.partition = ( function() {
 		/*
 		 * functions accessed from outside the partition object
 		 */
-		adjustPartition: function() { adjustPartition(); },
 		clear: function() { // ok. frees partition.
 			if (partitionReady === true) {
 				/* dessiner le fond */
@@ -476,14 +476,11 @@ trjs.partition = ( function() {
 			}
 //			partitionReady = false;
 		},
-		drawPartition: function(p1, p2) { return drawPartition(p1, p2); },
+		drawPartition: drawPartition,
 		durationInSeconds: function() { if (trjs.wave && trjs.wave.isReady()) return trjs.wave.file.durationInSeconds(); else return trjs.slider.sp.timelength; },
 		hide: function() { 	var p = $('#partition'); var sp = $('#slider-partition'); if (p) p.hide(); if (sp) sp.hide(); },
-		highlight: function(start, end, id, color) { return highlightElement(start, end, id, color); }, // ok. (set highlight of partition)
-
-		init: function() { // ok. loads partition.
-			return initPartition();
-		},
+		highlight: highlightElement, // ok. (set highlight of partition)
+		init: initPartition, // ok. loads partition.
 		isReady: function() {
 			return partitionReady;
 		},
@@ -492,15 +489,13 @@ trjs.partition = ( function() {
 		},
 		mouseDownPartition: function(e) { mouseDownPartition(e); },
 		nbVisible: function() { return visibleLines; },
-		pageleft: function() { pageleft(); },
-		pageright: function() { pageright(); },
+		pageleft: pageleft,
+		pageright: pageright,
 		partitionHeight: function(pixels) { if (pixels !== undefined) partitionHeightValue = pixels; return partitionHeightValue; },
-		redrawHighlight: function(start, end, id, color) { redrawHighlight(start, end, id, color); },
-		redrawPartitionHighlight: function(start, end, id, color) { redrawPartitionHighlight(start, end, id, color); },
-		redrawPartition: function() { redrawPartition(); },
-		resetWidth: function() { // ok. resets width of partition
-			resetWidthPartition();
-		},
+		redrawHighlight: redrawHighlight,
+		redrawPartitionHighlight: redrawPartitionHighlight,
+		redrawPartition: redrawPartition,
+		resetWidth: resetWidthPartition, // ok. resets width of partition
 		setVisible: function(choice) { // shows and hides partition
 			if (choice === true) {
 				partitionVisible = true;

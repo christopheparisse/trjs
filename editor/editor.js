@@ -251,7 +251,7 @@ trjs.editor = (function () {
         else
             $('#nb-visible').val(3);
         trjs.param.saveStorage();
-        trjs.partition.redrawPartition();
+        trjs.dmz.init();
     }
 
     /**

@@ -6,13 +6,15 @@ OK: Temporary file pour gocheck in tempfile for App.
 
 Error when check for empty speaker information.
 
-Eight of partition when changing the number of tiers displayed
+Height of partition when changing the number of tiers displayed
 
 When opening a file, if no window exists create one.
 
 Missing translations
 
 Help to rewrite
+
+Double ref in recent files
 
 ## Improvements of current features
 

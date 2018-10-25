@@ -2,6 +2,6 @@ npm install
 npm update
 npm rebuild
 npm run rebuild
-sh buildpc.sh
-buildwin.bat
-sh majpgmwin.sh
+npm build
+npm git
+npm dist
