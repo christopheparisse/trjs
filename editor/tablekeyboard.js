@@ -1193,7 +1193,7 @@ trjs.keys.initBindings = function () {
 
     trjs.bindingsDef.push([nkey("1"), true, false, true, 'ctrl', "", "setDivPlus"]); // Ctrl Shift 1
     trjs.bindingsDef.push([nkey("2"), true, false, true, 'ctrl', "", "setDivMinus"]); // Ctrl Shift 2
-    trjs.bindingsDef.push([nkey("e"), true, false, true, 'ctrl', "", "cleanTranscription"]); // Ctrl Shift G
+    trjs.bindingsDef.push([nkey("e"), true, false, true, 'ctrl', "", "cleanCurrentLine"]); // Ctrl Shift E
     trjs.bindingsDef.push([nkey("g"), true, false, true, 'ctrl', "", "setDivMissingMinus"]); // Ctrl Shift G
 
     trjs.bindingsDef.push([nkey("a"), true, true, false, 'ctrl', "", "selectAllMS"]); // Ctrl Alt A

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,8 +37,8 @@
           <entry key="aa" value="1" />
           <entry key="cha" value="1" />
           <entry key="css" value="12" />
-          <entry key="html" value="36" />
-          <entry key="js" value="174" />
+          <entry key="html" value="37" />
+          <entry key="js" value="175" />
           <entry key="json" value="14" />
           <entry key="json-old" value="1" />
           <entry key="md" value="6" />
@@ -51,9 +49,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="12" />
-          <entry key="HTML" value="36" />
+          <entry key="HTML" value="37" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="174" />
+          <entry key="JavaScript" value="175" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="28" />
         </counts>
@@ -62,7 +60,7 @@
         <counts>
           <entry key="css" value="437" />
           <entry key="html" value="3053" />
-          <entry key="js" value="29393" />
+          <entry key="js" value="29401" />
           <entry key="json" value="143" />
           <entry key="md" value="1646" />
           <entry key="sh" value="68" />
@@ -74,7 +72,7 @@
           <entry key="CSS" value="437" />
           <entry key="HTML" value="3070" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="29376" />
+          <entry key="JavaScript" value="29384" />
           <entry key="Markdown" value="1646" />
           <entry key="PLAIN_TEXT" value="102" />
         </counts>
@@ -109,11 +107,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="1498" selection-start-line="1498" selection-end-line="1498" />
+            <state relative-caret-position="363">
+              <caret line="214" column="19" selection-start-line="214" selection-start-column="19" selection-end-line="214" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="152" column="4" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -165,15 +172,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>errs</find>
-      <find>checknoerror</find>
-      <find>checknoe</find>
-      <find>errors</find>
       <find>checkfe</find>
       <find>tempora</find>
       <find>focus</find>
       <find>undo</find>
-      <find>checkCurrentLine</find>
       <find>check</find>
       <find>undo.</find>
       <find>enter</find>
@@ -195,6 +197,11 @@
       <find>visible</find>
       <find>adjust</find>
       <find>.font</find>
+      <find>currentLineCheck</find>
+      <find>checkCurrentLine</find>
+      <find>cleantrans</find>
+      <find>reset</find>
+      <find>resetKeys</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -267,7 +274,6 @@
         <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/html/edition.html" />
         <option value="$PROJECT_DIR$/editor/logs.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/editor/init.js" />
         <option value="$PROJECT_DIR$/node/testchatter.js" />
@@ -289,6 +295,7 @@
         <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/todo.md" />
         <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -489,12 +496,12 @@
       <workItem from="1540141304174" duration="8554000" />
       <workItem from="1540417717648" duration="35000" />
       <workItem from="1540417789260" duration="2701000" />
-      <workItem from="1540450668785" duration="63000" />
+      <workItem from="1540450668785" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346955000" />
+    <option name="totallyTimeSpent" value="347491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="151" y="23" width="1657" height="1038" extended-state="0" />
@@ -575,13 +582,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/editor/wave.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="794" column="8" selection-start-line="794" selection-start-column="8" selection-end-line="794" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor/media.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -738,13 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="184" column="10" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -906,10 +899,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/modal-keyboard-info.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="1498" selection-start-line="1498" selection-end-line="1498" />
+        <state relative-caret-position="363">
+          <caret line="214" column="19" selection-start-line="214" selection-start-column="19" selection-end-line="214" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="152" column="4" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="4" />
         </state>
       </provider>
     </entry>
