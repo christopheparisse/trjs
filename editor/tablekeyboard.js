@@ -1495,6 +1495,7 @@ trjs.keys.functions = {
     "viewKeyBindings": [ trjs.keys.viewKeyBindings, "View and change key bindings", null],
     "backwardStep": [ trjs.media.backwardStep, trjs.messgs.altbin37, null],
     "bold": [ trjs.keys.bold, trjs.messgs.ctrlaltbin116, null],
+    "checkCurrentLine": [ trjs.check.checkCurrentLine, 'Check current line', null],
     "cleanCurrentLine": [ trjs.check.cleanCurrentLine, "remove all special information (e.g. syntax checking) from the current line", null],
     "chooseInputDevice": [ trjs.events.chooseInputDevice, 'Choose output sound device', null],
     "colorBlue": [ trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115, null],
@@ -1586,7 +1587,6 @@ trjs.keys.functions = {
     "tab": [ trjs.events.tab, trjs.messgs.cmdtab, null],
     "undo": [ trjs.undo.undo, trjs.messgs.ctrlbin90, null],
     "undoList": [ trjs.undo.undoList, "display undo/redo list", null],
-    "currentLineCheck": [ trjs.check.checkCurrentLine, 'Check current line', null],
     "zoomGlobalIn": [ trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin120, null],
     "zoomGlobalOut": [ trjs.editor.zoomGlobalOut, trjs.messgs.ctrlbin119, null],
 

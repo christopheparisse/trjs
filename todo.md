@@ -4,9 +4,9 @@
 
 OK: Temporary file pour gocheck in tempfile for App.
 
-Error when check for empty speaker information.
+OK: Error when check for empty speaker information.
 
-Height of partition when changing the number of tiers displayed
+OK (but can be better): Height of partition when changing the number of tiers displayed
 
 When opening a file, if no window exists create one.
 
@@ -14,7 +14,17 @@ Missing translations
 
 Help to rewrite
 
-Double ref in recent files
+Double filenames in recent files
+
+Some bizarre brackets in antoine-34-2_03_05.tei_corpo.xml
+
+When in new window, opening previous files go in the previous window
+
+In the partition, some utterances at the right limit of the window are 
+never correctly displayed. They are too short on the right in the previous page
+and they are not seen in the next page.
+
+Ctrl instead of CMD when creating new mappings 
 
 ## Improvements of current features
 
@@ -25,6 +35,8 @@ Hide/show some lines and keep this parameter. Show this at the opening of the fi
 Replace element within file.
 
 Yank copy paste current line.
+
+Make it possible to choose font and size for partition text.
 
 ## Small features to add
 
