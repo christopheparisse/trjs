@@ -1199,7 +1199,7 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("a"), true, true, false, 'ctrl', "", "selectAllMS"]); // Ctrl Alt A
     trjs.bindingsDef.push([nkey("b"), true, true, false, 'ctrl', "", "splitLine"]); // Ctrl Alt B
     trjs.bindingsDef.push([nkey("d"), true, true, false, 'ctrl', "", "deleteLineLoc"]); // Ctrl Alt D
-    trjs.bindingsDef.push([nkey("e"), true, true, false, 'ctrl', "", "chooseInputDevice"]); // Ctrl Alt E
+    trjs.bindingsDef.push([nkey("e"), true, true, false, 'ctrl', "", "goCheck"]); // Ctrl Alt E
     // trjs.bindingsDef.push([70, true, false, false, 'ctrl', "", "showSearch"]); // Ctrl F
     trjs.bindingsDef.push([nkey("g"), true, true, false, 'ctrl', "", "setDivMinusInsert"]); // Ctrl Alt G
     trjs.bindingsDef.push([nkey("i"), true, true, false, 'ctrl', "", "setTimeReplaceLoc"]); // Ctrl Alt I
@@ -1208,6 +1208,7 @@ trjs.keys.initBindings = function () {
     } else {
         trjs.bindingsDef.push([nkey("j"), true, true, false, 'ctrl', "", "joinLineLoc"]); // Ctrl Alt J
     }
+    trjs.bindingsDef.push([nkey("k"), true, true, false, 'ctrl', "", "chooseInputDevice"]); // Ctrl Alt K
     trjs.bindingsDef.push([nkey("m"), true, true, false, 'ctrl', "", "setTimeReplace"]); // Ctrl Alt M
     trjs.bindingsDef.push([nkey("o"), true, true, false, 'ctrl', "", "openMedia"]); // Ctrl Alt O
     trjs.bindingsDef.push([nkey("r"), true, true, false, 'ctrl', "", "splitLine"]); // Ctrl Alt R
@@ -1513,6 +1514,7 @@ trjs.keys.functions = {
     "exportMStoSubtAss": [ trjs.transcription.exportMStoSubtAss, trjs.messgs.ctrlaltbin121, null],
     "exportMStoSubtSrt": [ trjs.transcription.exportMStoSubtSrt, trjs.messgs.ctrlaltbin120, null],
     "generic": [ trjs.macros.generic, trjs.messgs.generic, null],
+    "goCheck": [ trjs.check.goCheck, 'Check all file', null],
     "goContinuous": [ trjs.events.goContinuous, trjs.messgs.bin119, null],
     "hideDiv": [ trjs.editor.hideDiv, trjs.messgs.ctrlbin85, null],
     "htmlSave": [ trjs.io.htmlSave, trjs.messgs.shiftbin115, null],
