@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/editor/dataload.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/dataload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/transcription.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/transcription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools/teicorpo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/tools/teicorpo.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,7 +39,7 @@
           <entry key="cha" value="1" />
           <entry key="css" value="12" />
           <entry key="html" value="37" />
-          <entry key="js" value="179" />
+          <entry key="js" value="180" />
           <entry key="json" value="14" />
           <entry key="json-old" value="1" />
           <entry key="md" value="6" />
@@ -52,7 +52,7 @@
           <entry key="CSS" value="12" />
           <entry key="HTML" value="37" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="179" />
+          <entry key="JavaScript" value="180" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="28" />
         </counts>
@@ -61,7 +61,7 @@
         <counts>
           <entry key="css" value="437" />
           <entry key="html" value="3053" />
-          <entry key="js" value="29904" />
+          <entry key="js" value="30321" />
           <entry key="json" value="143" />
           <entry key="md" value="1646" />
           <entry key="sh" value="68" />
@@ -73,7 +73,7 @@
           <entry key="CSS" value="437" />
           <entry key="HTML" value="3070" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="29887" />
+          <entry key="JavaScript" value="30304" />
           <entry key="Markdown" value="1646" />
           <entry key="PLAIN_TEXT" value="102" />
         </counts>
@@ -123,11 +123,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/dataload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
+            <state relative-caret-position="71">
               <caret line="280" column="9" lean-forward="true" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/editor/transcription.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="999" column="43" selection-start-line="999" selection-start-column="43" selection-end-line="999" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -237,7 +246,6 @@
         <option value="$PROJECT_DIR$/editor/data.js" />
         <option value="$PROJECT_DIR$/html/media.html" />
         <option value="$PROJECT_DIR$/editor/params.js" />
-        <option value="$PROJECT_DIR$/editor/transcription.js" />
         <option value="$PROJECT_DIR$/editor/opensavelocal.js" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
         <option value="$PROJECT_DIR$/index.html" />
@@ -267,6 +275,7 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/editor/dataload.js" />
+        <option value="$PROJECT_DIR$/editor/transcription.js" />
       </list>
     </option>
   </component>
@@ -470,12 +479,12 @@
       <workItem from="1540450668785" duration="998000" />
       <workItem from="1540469577843" duration="13000" />
       <workItem from="1540481648498" duration="749000" />
-      <workItem from="1540683061522" duration="2808000" />
+      <workItem from="1540683061522" duration="4573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="351460000" />
+    <option name="totallyTimeSpent" value="353225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="103" y="55" width="1573" height="1071" extended-state="0" />
@@ -635,13 +644,6 @@
     <entry file="file://$PROJECT_DIR$/html/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1070" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/transcription.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/local-open.html">
@@ -885,8 +887,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/dataload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
+        <state relative-caret-position="71">
           <caret line="280" column="9" lean-forward="true" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/transcription.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="999" column="43" selection-start-line="999" selection-start-column="43" selection-end-line="999" selection-end-column="43" />
         </state>
       </provider>
     </entry>

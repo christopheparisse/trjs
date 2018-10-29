@@ -989,6 +989,26 @@ trjs.transcription = (function () {
         return s;
     }
 
+    function syntaxdecode(itrans) {
+        var ws = itrans.split(/\s+/);
+        var s = '';
+        var p1 = /(.*)\|(.*)\{(.*)\}/;
+        var p2 = /(.*)\|(.*)/;
+        for (var i in ws) {
+            var m = p1.exec(ws[i]);
+            if (m) {
+                s += '<w pos="' + m[1] + '" lemma="' + m[3] + '">' + m[2] + '</w>';
+            } else {
+                m = p2.exec(ws[i]);
+                if (m)
+                    s += '<w pos="' + m[1] + '">' + m[2] + '</w>';
+                else
+                    s += '<w>' + ws[i] + '</w>';
+            }
+        }
+        return s;
+    }
+
     /**
      * save data contained in the editing tables into a string
      * last version of TEIML
@@ -999,7 +1019,7 @@ trjs.transcription = (function () {
         var s = '';
         s += '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n';
         s += '<!DOCTYPE TEI SYSTEM "http://ct3.ortolang.fr/tei-corpo/tei_corpo.dtd">\n';
-        s += '<TEI version="0.9" subversion="trjs" xmlns="http://www.tei-c.org/ns/1.0"';
+        s += '<TEI version="0.9.1" subversion="trjs" xmlns="http://www.tei-c.org/ns/1.0"';
         if (trjs.data.recordingLang())
             s += ' xml:lang="' + trjs.data.recordingLang() + '"';
         s += '>\n';
@@ -1119,20 +1139,31 @@ trjs.transcription = (function () {
                 var newlevel = trjs.data.imbrication[iloc];
                 // console.log('K', iloc, level, newlevel);
                 if (!newlevel) {
-                    //console.log('pas d indication de level');
-                    s += '<spanGrp type="' + iloc + '">';
-                    s += '<span';
-                    if (its !== '') s += ' from="#' + timeline[its] + '"';
-                    if (ite !== '') s += ' to="#' + timeline[ite] + '"';
-                    s += '>\n';
-                    s += xmlEntitiesEncode(itrans);
-                    s += '</span>\n';
-                    s += '</spanGrp>\n';
+                    //console.log('no indication of level');
+                    if (iloc.indexOf('pos:') === 0) {
+                        s += '<spanGrp inst="' + iloc.substring(4) + '" type="ref">';
+                        s += '<span';
+                        if (its !== '') s += ' from="#' + timeline[its] + '"';
+                        if (ite !== '') s += ' to="#' + timeline[ite] + '"';
+                        s += '>\n';
+                        s += syntaxdecode(itrans);
+                        s += '</span>\n';
+                        s += '</spanGrp>\n';
+                    } else {
+                        s += '<spanGrp type="' + iloc + '">';
+                        s += '<span';
+                        if (its !== '') s += ' from="#' + timeline[its] + '"';
+                        if (ite !== '') s += ' to="#' + timeline[ite] + '"';
+                        s += '>\n';
+                        s += xmlEntitiesEncode(itrans);
+                        s += '</span>\n';
+                        s += '</spanGrp>\n';
+                    }
                 } else if (newlevel > level) {
                     // the current span is lower in the hierarchy than the previous one
                     // do not close spanGrp
                     //console.log('AUGMENTATION');
-                    while (level < newlevel - 1) { // Cas où l'on sauterait plusieurs niveaux d'un coup
+                    while (level < newlevel - 1) { // in case of several levels are skiped at the same time
                         level++;
                         s += '<span>\n';
                         s += '<spanGrp>\n';
