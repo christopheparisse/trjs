@@ -274,7 +274,11 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 function loadSpanGrp(spangrp, loc) {
     /* type information */
 	var type = checkstring($(spangrp).attr("type"));
+    var postsoftware = '';
     if (type !== '') {
+        if (type === 'ref') {
+            postsoftware = "pos:" + checkstring($(spangrp).attr("inst"));
+        }
         trjs.data.tiersdata[type] = true;	// add this to the template in case it is not declared as normal template
         trjs.data.dependency[type] = loc;    // creation of a relation between speaker and type
     }
@@ -284,15 +288,15 @@ function loadSpanGrp(spangrp, loc) {
             /* type and time information */
             var tsx = checknumber(timelineRef($(childs[i]).attr("from")));
             var tex = checknumber(timelineRef($(childs[i]).attr("to")));
-            loadSpan(childs[i], tsx, tex, type); // loads either the span
+            loadSpan(childs[i], tsx, tex, type, postsoftware); // loads either the span
         } else {
-            // this should not happen with the limits of TEI CORPO
+            // this should not happen within the limits of TEICORPO
 			trjs.log.alert('loadSpanGrp: unknown nodeName: ' + childs[i].tagName + ' type: ' + childs[i].nodeType);
         }
 	}
 }
 
-function loadSpan(span, from, to, type) {
+function loadSpan(span, from, to, type, postsoftware) {
     var i;
 	if (type === 'ref') {
 		// console.log(span);
@@ -308,7 +312,7 @@ function loadSpan(span, from, to, type) {
             // console.log(t,p,l);
             s += p + '|' + t + '{' + l + '} ';
         }
-        addLineOfTranscript(type, from, to, s, 'prop');
+        addLineOfTranscript(postsoftware, from, to, s, 'prop');
 		return;
 	}
     /* type information */
