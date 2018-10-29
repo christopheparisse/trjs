@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/dataload.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/dataload.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,19 +18,19 @@
     <session id="-645793077">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="45" />
+          <entry key="project.closed" value="46" />
           <entry key="project.open.time.10" value="13" />
           <entry key="project.open.time.11" value="11" />
           <entry key="project.open.time.12" value="6" />
           <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="46" />
+          <entry key="project.opened" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -40,7 +39,7 @@
           <entry key="cha" value="1" />
           <entry key="css" value="12" />
           <entry key="html" value="37" />
-          <entry key="js" value="177" />
+          <entry key="js" value="178" />
           <entry key="json" value="14" />
           <entry key="json-old" value="1" />
           <entry key="md" value="6" />
@@ -53,7 +52,7 @@
           <entry key="CSS" value="12" />
           <entry key="HTML" value="37" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="177" />
+          <entry key="JavaScript" value="178" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="28" />
         </counts>
@@ -62,7 +61,7 @@
         <counts>
           <entry key="css" value="437" />
           <entry key="html" value="3053" />
-          <entry key="js" value="29459" />
+          <entry key="js" value="29798" />
           <entry key="json" value="143" />
           <entry key="md" value="1646" />
           <entry key="sh" value="68" />
@@ -74,7 +73,7 @@
           <entry key="CSS" value="437" />
           <entry key="HTML" value="3070" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="29442" />
+          <entry key="JavaScript" value="29781" />
           <entry key="Markdown" value="1646" />
           <entry key="PLAIN_TEXT" value="102" />
         </counts>
@@ -100,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/check.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="717">
+            <state relative-caret-position="6270">
               <caret line="418" column="12" selection-start-line="418" selection-start-column="8" selection-end-line="418" selection-end-column="12" />
             </state>
           </provider>
@@ -109,17 +108,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="718" lean-forward="true" selection-start-line="718" selection-end-line="718" />
+            <state relative-caret-position="10770">
+              <caret line="718" selection-start-line="718" selection-end-line="718" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.js">
+        <entry file="file://$PROJECT_DIR$/editor/dataload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="152" column="7" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
+            <state relative-caret-position="584">
+              <caret line="301" selection-start-line="301" selection-end-line="301" />
             </state>
           </provider>
         </entry>
@@ -135,7 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tempora</find>
       <find>focus</find>
       <find>undo</find>
       <find>check</find>
@@ -165,6 +172,7 @@
       <find>reset</find>
       <find>resetKeys</find>
       <find>goch</find>
+      <find>spanGrp</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -212,7 +220,6 @@
         <option value="$PROJECT_DIR$/doc/style/bootstrap.css" />
         <option value="$PROJECT_DIR$/html/modal-keyboard-info.html" />
         <option value="$PROJECT_DIR$/systemcall/fsio.js" />
-        <option value="$PROJECT_DIR$/editor/dataload.js" />
         <option value="$PROJECT_DIR$/html/search.html" />
         <option value="$PROJECT_DIR$/doc/doc.css" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -259,6 +266,7 @@
         <option value="$PROJECT_DIR$/todo.md" />
         <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/editor/dataload.js" />
       </list>
     </option>
   </component>
@@ -285,16 +293,17 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="939" />
-    <option name="y" value="220" />
-    <option name="width" value="1307" />
-    <option name="height" value="1066" />
+    <option name="x" value="103" />
+    <option name="y" value="55" />
+    <option name="width" value="1573" />
+    <option name="height" value="1071" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -321,7 +330,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,18 +469,19 @@
       <workItem from="1540417789260" duration="2701000" />
       <workItem from="1540450668785" duration="998000" />
       <workItem from="1540469577843" duration="13000" />
-      <workItem from="1540481648498" duration="331000" />
+      <workItem from="1540481648498" duration="749000" />
+      <workItem from="1540683061522" duration="1753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348234000" />
+    <option name="totallyTimeSpent" value="350405000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="536" y="192" width="1307" height="1066" extended-state="0" />
+    <frame x="103" y="55" width="1573" height="1071" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.16718507" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44777662" visible="true" weight="0.15721649" />
       <window_info id="Structure" order="1" sideWeight="0.5522234" side_tool="true" weight="0.16962525" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -592,13 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/dataload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
@@ -862,22 +864,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/check.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
+        <state relative-caret-position="6270">
           <caret line="418" column="12" selection-start-line="418" selection-start-column="8" selection-end-line="418" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="718" lean-forward="true" selection-start-line="718" selection-end-line="718" />
+        <state relative-caret-position="10770">
+          <caret line="718" selection-start-line="718" selection-end-line="718" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="152" column="7" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
+        <state relative-caret-position="453">
+          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/dataload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="301" selection-start-line="301" selection-end-line="301" />
         </state>
       </provider>
     </entry>

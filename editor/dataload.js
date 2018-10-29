@@ -276,7 +276,7 @@ function loadSpanGrp(spangrp, loc) {
 	var type = checkstring($(spangrp).attr("type"));
     if (type !== '') {
         trjs.data.tiersdata[type] = true;	// add this to the template in case it is not declared as normal template
-        trjs.data.dependency[type] = loc;    // creation d'une dépendance entre loc et type
+        trjs.data.dependency[type] = loc;    // creation of a relation between speaker and type
     }
 	var childs = $(spangrp).children();
 	for (var i = 0; i < childs.length; i++) {
@@ -293,6 +293,24 @@ function loadSpanGrp(spangrp, loc) {
 }
 
 function loadSpan(span, from, to, type) {
+    var i;
+	if (type === 'ref') {
+		// console.log(span);
+		var ws = $(span).find('w');
+		var s = '';
+		// console.log(ws, span.innerHTML);
+        for (i = 0; i < ws.length; i++) {
+        	// console.log(ws[i]);
+            // console.log(ws[i].innerHTML);
+            var p = $(ws[i]).attr('pos');
+            var l = $(ws[i]).attr('lemma');
+            var t = $(ws[i]).text();
+            // console.log(t,p,l);
+            s += p + '|' + t + '{' + l + '} ';
+        }
+        addLineOfTranscript(type, from, to, s, 'prop');
+		return;
+	}
     /* type information */
 	var spanType = $(span).attr('type');
 	if (spanType)
@@ -300,7 +318,6 @@ function loadSpan(span, from, to, type) {
 	else
     	addLineOfTranscript(type, from, to, transcriptDecoding(span), 'prop');
 	var childs = $(span).children();
-    var nodetype, i;
 	for (i = 0; i < childs.length; i++) {
         if (childs[i].tagName === 'spanGrp') {
             loadSpanGrp(childs[i], type); // loads either the span
