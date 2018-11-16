@@ -167,6 +167,7 @@ fsio.openMedia = function(code, fname) {
         fname = fname.replace(/\\/g, '/');
         //console.log('>>media openMedia ' + fname);
         trjs.local.put('Media: trjs.data.mediaRealFile', fname);
+        trjs.param.change(true);
         trjs.io.serverLoadMedia(fname);
     } else {
         if (code !== 2)

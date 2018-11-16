@@ -8,6 +8,12 @@ OK: Error when check for empty speaker information.
 
 OK (but can be better): Height of partition when changing the number of tiers displayed
 
+OK Continuous play on ANAE-04 ou ANAE-09
+
+OK Note as modified the changes in the media name
+
+Erroneous delete of all lines instead of one when used with multiline before
+
 When opening a file, if no window exists create one.
 
 Missing translations

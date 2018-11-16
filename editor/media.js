@@ -282,10 +282,14 @@ trjs.media = (function () {
                 return null;
             }
             var te = trjs.events.lineGetCell(tr, trjs.data.TSCOL);
+            if (te) // some time was found
+                return tr;
+            /*
             if (!te) // te === null or te === 0 or te === ''
                 return null;
             else
                 return tr;
+            */
         }
     }
 

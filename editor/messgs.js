@@ -638,7 +638,8 @@ trjs.messgs_eng = {
 
     ctrlaltbin77: "Store time to end of current line and begining of next line", // Ctrl Alt M
     ctrlaltbin79: "Load a media", // Ctrl Alt O
-    cmdsplitLine: "Split the line at the cursor", // Ctrl Alt R
+    cmdsplitLine: "Split the line at the cursor", // Ctrl Alt B
+    cmdsplitLineLoc: "Split the line at the cursor and add time and speaker", // Ctrl B
     ctrlaltbin85: "Show the hidden div", // Ctrl Alt U
 
     ctrlbin119: "Zoom Out (all window)", // Ctrl F8

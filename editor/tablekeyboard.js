@@ -1585,7 +1585,7 @@ trjs.keys.functions = {
     "showTime": [ trjs.editor.showTime, trjs.messgs.ctrlbin84, null],
     "sort": [ trjs.transcription.sort, "sort all lines by times", null],
     "splitLine": [ trjs.events.splitLineAndRedraw, trjs.messgs.cmdsplitLine, null],
-    "splitLineLoc": [ trjs.events.splitLineLocAndRedraw, trjs.messgs.ctrlbin66, null],
+    "splitLineLoc": [ trjs.events.splitLineLocAndRedraw, trjs.messgs.cmdsplitLineLoc, null],
     "tab": [ trjs.events.tab, trjs.messgs.cmdtab, null],
     "undo": [ trjs.undo.undo, trjs.messgs.ctrlbin90, null],
     "undoList": [ trjs.undo.undoList, "display undo/redo list", null],

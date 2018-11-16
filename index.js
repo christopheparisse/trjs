@@ -198,7 +198,7 @@ function createMenu() {
 //                    label: 'Open Ctrl+O ...', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
                         if (!window) {
-                            var n = createWindow();
+                            var n = createWindow(true);
                             process.listWindows[n].webContents.send('opentranscript', 'main');
                         } else {
                             window.webContents.send('opentranscript', 'main');
@@ -220,7 +220,7 @@ function createMenu() {
                     label: 'New transcription', accelerator: 'CmdOrCtrl+N', click: function () {
                     var window = BrowserWindow.getFocusedWindow();
                     if (!window) {
-                        var n = createWindow( true );
+                        var n = createWindow(true);
                         process.listWindows[n].webContents.send('newtranscript', 'main');
                     } else {
                         window.webContents.send('newtranscript', 'main');
