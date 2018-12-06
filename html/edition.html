@@ -24,9 +24,12 @@
             </tr>
         </table>
     </div>
+<!--
     <div id='transcription-bench'>
+--> 
+    <div id='transcription-bench' onkeypress="trjs.events.eventKeypress(event);">
         <table class="transcribertable" id="transcript" onclick="trjs.events.transcriptGotFocus(event);"
-               onkeydown="trjs.events.enterKeydown(event);">
+            onkeydown="trjs.events.enterKeydown(event);">
         </table>
     </div>
 </div>

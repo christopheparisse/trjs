@@ -10,6 +10,10 @@
  * these parameters are stored in localStorage
  */
 
+var trjsFormatCHAT = 'CHAT';
+var trjsFormatXMLTEI = 'XMLTEI';
+var trjsFormatNone = 'None';
+
 /**
  * variable to contains all data about the transcription (to be removed in future versions)
  * @constructor trjs.param
@@ -73,7 +77,7 @@ trjs.param = {
     paletteEdit: false,
     final: true,
     wavesampling: version.WAVESAMPLINGINITIAL,
-    format: 'CHAT',
+    format: trjsFormatCHAT, // CHAT or XMLTEI or None
     exportSaveAs: false,
     reloadLastFile: false,
 
@@ -234,7 +238,7 @@ trjs.param = {
         this.paletteEdit = false;
         this.reloadLastFile = false;
         this.final = true;
-        this.format = 'CHAT';
+        this.format = trjsFormatCHAT;
         this.wavesampling = 4000;
     },
     resetWarnings: function () {
@@ -288,7 +292,7 @@ trjs.param = {
         this.reloadLastFile = this.testUndefBoolean(trjs.local.get('param_reloadLastFile'), false);
         this.nbVisible = this.testUndefInt(trjs.local.get('param_nbVisible'), 3);
         this.final = this.testUndefBoolean(trjs.local.get('param_final'), true);
-        this.format = this.testUndefString(trjs.local.get('param_format'), 'CHAT');
+        this.format = this.testUndefString(trjs.local.get('param_format'), trjsFormatCHAT);
         this.wavesampling = this.testUndefInt(trjs.local.get('param_wavesampling'), version.WAVESAMPLINGINITIAL);
         if (this.wavesampling > version.WAVESAMPLINGMAX) this.wavesampling = version.WAVESAMPLINGMAX;
         var rf = this.testUndefString(trjs.local.get('param_recentfiles'), '');

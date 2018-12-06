@@ -51,23 +51,44 @@ function xmlEntityDecode(texte) {
  * @return {string} content
  */
 function transcriptDecoding(s) {
-    var elts = $(s).contents(), k = '';
+/*     var elts = $(s).contents(), k = '';
     if (elts.length < 1) {
-        k = s.textContent;
+		// console.log(s);
+		// console.log($(s));
+		// console.log(s.toString());
+		if (s.nodeType === 1)
+			k = s.outerHTML;
+		else
+			k = s.textContent;
     } else
         for (var i = 0; i < elts.length; i++) {
             var x = elts[i];
-            //console.log("TagName " + "[" + i + "]" + elts[i].tagName);
-            //console.log("NodeName " + "[" + i + "]" + elts[i].nodeName); // ok pour elt et #text pour text
-            //console.log("LocaName " + "[" + i + "]" + elts[i].localName);
-            //console.log("Type " + "[" + i + "]" + elts[i].nodeType); // 1 pour elt et 3 pour text
-            //console.log("Text " + "[" + i + "]" + $(elts[i]).html());
+            // console.log("TagName " + "[" + i + "]" + elts[i].tagName);
+            // console.log("NodeName " + "[" + i + "]" + elts[i].nodeName); // ok pour elt et #text pour text
+            // console.log("LocaName " + "[" + i + "]" + elts[i].localName);
+            // console.log("Type " + "[" + i + "]" + elts[i].nodeType); // 1 pour elt et 3 pour text
+			// console.log("Text " + "[" + i + "]" + $(elts[i]).html());
             if (elts[i].nodeType === 3) {
                 k += elts[i].textContent;
-            }
-        }
-    k = k.replace(/</g, trjs.data.leftBracket); // 60 3C
-    k = k.replace(/>/g, trjs.data.rightBracket); // 62 3E
+			} else {
+				k += elts[i].outerHTML;
+			}
+		}
+ */	
+	console.log(s);
+	var k;
+	if (typeof(s) === 'string')
+		k = s;
+	else if (s.nodeType === 1)
+		k = s.outerHTML;
+	else if (s.nodeType === 3)
+		k = s.textContent;
+	else
+		k = String(s);
+	console.log(k);
+	k = k.replace(/</g, trjs.data.leftBracket); // 60 3C
+	k = k.replace(/>/g, trjs.data.rightBracket); // 62 3E
+	k = k.replace(/ xmlns=.http...www.tei.c.org.ns.1.0./, ""); // remove namespace information
 	return k;
 }
 
@@ -190,6 +211,7 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 	if (ts && parseFloat(ts) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(ts);
 	if (te && parseFloat(te) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(te);
 	var childs = $(seg).contents(); // mixed nodes
+	console.log(seg,seg.innerHTML);
     lastEndTime = ts; // time of the previous end of an element, even if no element processed yet
     var reg = new RegExp("[\n\r]","g");
 	for (var i = 0; i < childs.length; i++) {
@@ -210,10 +232,14 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
                 addLineOfTranscript(loc, lastEndTime, t, elt, prop);
     			lastEndTime = t; // break in the utterance : reset start
                 elt = '';
+			} else if (childs[i].nodeName === 'choice') {
+				elt += loadChoiceContent(childs[i]);
 			} else if (childs[i].nodeName === 'incident') {
 				elt += loadIncidentContent(childs[i]);
 			} else if (childs[i].nodeName === 'vocal') {
-				elt += trjs.data.leftCodet + getDesc(childs[i]).replace(reg, "") + ' /VOC' + trjs.data.rightCode;
+				elt += trjs.data.leftCode + getDesc(childs[i]).replace(reg, "") + ' /VOC' + trjs.data.rightCode;
+			} else if (childs[i].nodeName === 'kinesic') {
+				elt += trjs.data.leftCode + getDesc(childs[i]).replace(reg, "") + ' /GES' + trjs.data.rightCode;
     		} else if (childs[i].nodeName === 'format') {
 				if ($(childs[i]).attr('type') === 'italics') {
 		    		a = transcriptDecoding(childs[i]);
@@ -226,6 +252,22 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 					elt += '<b>' + a.replace(reg, "") + '</b>';
 				}
 			} else if (childs[i].nodeName === 'pause') {
+				if ($(childs[i]).attr('type') === 'short') {
+			    	elt += ' # ';
+				} else if ($(childs[i]).attr('type') === 'long') {
+			    	elt += ' ## ';
+				} else if ($(childs[i]).attr('type') === 'verylong') {
+			    	elt += ' ### ';
+				} else if ($(childs[i]).attr('type') === 'chrono') {
+					var dur = $(childs[i]).attr('dur');
+					if (dur)
+				    	elt += ' #' + dur + ' ';
+				    else
+				    	elt += ' # ';
+				} else {
+			    	elt += ' # ';
+				}
+				/*
 				if ($(childs[i]).attr('type') === 'short') {
 			    	elt += ' (.) ';
 				} else if ($(childs[i]).attr('type') === 'long') {
@@ -241,6 +283,7 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 				} else {
 			    	elt += ' (.) ';
 				}
+				*/
 			} else if (childs[i].nodeName !== 'span') {
 	    		a = transcriptDecoding(childs[i]);
 				elt += ' ' + a.replace(reg, "");
@@ -377,18 +420,14 @@ function loadannotationBlock(utt) {
 
 function loadIncidentContent(inc) {
 	var e = trjs.data.leftEvent;
-	e += ' ' + $(inc).find('desc').text() + '/';
+	var t = $(inc).find('desc').text();
+	if (t === '') t = $(inc).text();
+	e += ' ' + t + '/';
 	switch($(inc).attr('type')) {
-		case 'pronounce':
-			e += 'PHO';
-			break;
-		case 'language':
-			e += 'LG';
-			var f = $(inc).attr('subtype');
-			if (f) e += ':' + f;
-			break;
 		case 'noise':
-			e += 'N';
+			var f = $(inc).attr('subtype');
+			if (f) e += f + '/' + e;
+			else e += 'N';
 			break;
 		case 'comment':
 			e += 'COM';
@@ -396,11 +435,19 @@ function loadIncidentContent(inc) {
 		case 'background':
 			e += 'B';
 			break;
+		case 'pronounce':
+			e += 'API';
+			break;
+		case 'language':
+			e += 'LG';
+			var f = $(inc).attr('subtype');
+			if (f) e += ':' + f;
+			break;
 		case 'lexical':
-			e += 'B';
+			e += 'LEX';
 			break;
 		case 'entities':
-			e += 'B';
+			e += 'NE';
 			break;
 		default:
 			e += $(inc).attr('type');
@@ -409,6 +456,32 @@ function loadIncidentContent(inc) {
 	e += trjs.data.rightEvent;
 	return e;
 }
+
+function loadChoiceContent(inc) {
+	console.log("INC", inc);
+	var content = $(inc).find('abbr');
+	console.log('find abbr', content);
+	if (content.length > 0) {
+		var value = $(inc).find('expan').text();
+		var attr = $(content).attr('type');
+		if (attr === 'acronym') {
+			return trjs.data.leftCode + content.text() + '/' + value + '/A' + trjs.data.rightCode;
+		}
+		return trjs.data.leftCode + content.text() + '/' + value + '/ABBR' + trjs.data.rightCode;
+	}
+	console.log('find orig', content);
+	content = $(inc).find('orig');
+	console.log('find orig', content);
+	if (content.length > 0) {
+		var value = $(inc).find('reg').text();
+		if (value) {
+			return trjs.data.leftCode + content.text() + '/' + value + '/VAR' + trjs.data.rightCode;
+		}
+		return trjs.data.leftCode + content.text() + '/' + value + '/ORIG' + trjs.data.rightCode;
+	}
+	return trjs.data.leftCode + $(inc).text() + '/CHOICE' + trjs.data.rightCode;
+}
+
 /**
  * load a div from XML data (version 0.4 & 0.5 & 0.6 & 0.7)
  * @method loadDiv

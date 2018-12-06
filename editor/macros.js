@@ -338,6 +338,9 @@ trjs.macros.form = function () {
     var t = $('#event-type').val();
     var s = $('#event-subtype').val();
     var c = $('#event-content').val();
+    if (!t) t = '';
+    if (!s) s = '';
+    if (!c) c = '';
     // console.log(t,s,c);
     if (trjs.param.format === 'CHAT') {
         switch(t) {
@@ -413,13 +416,17 @@ trjs.macros.form = function () {
             case 'noise':
                 return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/N' + trjs.data.rightEvent;
             case 'event':
-                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/E' + trjs.data.rightEvent;
+                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/PE' + trjs.data.rightEvent;
             case 'language':
-                return trjs.data.leftEvent + ' ' + (s?'/'+s:'') + '/LG' + (c?':'+c:'') + trjs.data.rightEvent;
+                return trjs.data.leftCode + ' ' + (s?'/'+s:'') + '/LG' + (c?':'+c:'') + trjs.data.rightCode;
             case 'comment':
                 return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/COM' + trjs.data.rightEvent;
             case 'vocal':
-                return trjs.data.leftEvent + ' ' + c + ' /VOC' + trjs.data.rightEvent;
+                return trjs.data.leftCode + ' ' + (s?'/'+s:'') + ' /VOC' + trjs.data.rightCode;
+            case 'abbr':
+                return trjs.data.leftCode + ' ' + c + '/' + s + ' /A' + trjs.data.rightCode;
+            case 'var':
+                return trjs.data.leftCode + ' ' + c + '/' + s + ' /VAR' + trjs.data.rightCode;
             case 'shortpause':
                 return '#';
             case 'middlepause':
@@ -429,9 +436,9 @@ trjs.macros.form = function () {
             case 'verylongpause':
                 return '#' + c + '#';
             case 'lexical':
-                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/LX' + trjs.data.rightEvent;
+                return trjs.data.leftCode + ' ' + c + ' ' + (s?'/'+s:'') + '/LEX' + trjs.data.rightCode;
             case 'entities':
-                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/NE' + trjs.data.rightEvent;
+                return trjs.data.leftCode + ' ' + c + ' ' + (s?'/'+s:'') + '/NE' + trjs.data.rightCode;
             default:
                 return f+s+c;
         }
@@ -532,6 +539,8 @@ trjs.macros.generic = function () {
         s = '<option value="value">Any value</option>'
             + '<option value="noise">Noise</option>'
             + '<option value="event">Event</option>'
+            + '<option value="abbr">Abbreviation</option>'
+            + '<option value="var">Variant</option>'
             + '<option value="language">Language</option>'
             + '<option value="comment">Comment</option>'
             + '<option value="vocal">Vocal</option>'

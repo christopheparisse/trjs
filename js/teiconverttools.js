@@ -219,88 +219,217 @@ function toXmlEvents(t) {
 	// transformer les incidents
 	// transformer les vocals
 	// transformer les pauses
+	// transformer les choices
 	t = Encoder.htmlDecode(t);
 	t = gtlt(t);
-	var s = "";
+	return teiConvertTools.toTEIEvents(t);
+}
+
+teiConvertTools.toTEIEvents = function(text) {
+	var rewrite = "";
 	var reincident = new RegExp("(.*?)\\" + trjs.data.leftEvent + "(.*?)\\" + trjs.data.rightEvent + "(.*)");
-	var repause = new RegExp("(.*?)(\#{1,3})(.*)");
-	var repause2 = new RegExp("(.*?)\#(\\d+\\.?\\d*)(.*)");
-	var resimple = new RegExp("\\s+(.*)\/(.*)\\s+");
-	var relangue = new RegExp("\\s+(.*)\/LG:(.*)\\s+");
+	var recode = new RegExp("(.*?)\\" + trjs.data.leftCode + "(.*?)\\" + trjs.data.rightCode + "(.*)");
+	var repause = new RegExp("(.*?)(#{1,3})(.*)");
+	var repause2 = new RegExp("(.*?)#(\\d+\\.?\\d*)(.*)");
+	var resimple2 = new RegExp("(.*)\/(.*)\/(.*)");
+	var resimple = new RegExp("(.*)\/(.*)");
+	var relangue = new RegExp("(.*)\/LG:(.*)");
+	// text === starting value
+	// rewrite === the resulting modified text
 	while (1) {
 		// find first incident
-		var p = reincident.exec(t);
+		var p = reincident.exec(text);
 		if (p !== null) {
-			var q = relangue.exec(p[2]);
+			var q = resimple2.exec(p[2]);
 			if (q !== null) {
-				s += p[1];
-				s += '<incident type="language" subtype="' + q[2] + '">';
-				s += q[1];
-				s += '</incident>\n';
-				t = p[3];
+				rewrite += p[1];
+				var tag = q[3].trim();
+				var sub = q[2].trim();
+				switch(tag) {
+					case 'N':
+						rewrite += '<incident type="noise" subtype="' + sub + '">';
+						break;
+					case 'COM':
+						rewrite += '<incident type="comment" subtype="' + sub + '">';
+						break;
+					case 'B':
+						rewrite += '<incident type="background" subtype="' + sub + '">';
+						break;
+					case 'PE':
+						rewrite += '<incident type="para" subtype="' + sub + '">';
+						break;
+					/*
+					case 'NE':
+						s += '<incident type="entities" subtype="' + sub + '">';
+						break;
+					case 'API':
+						s += '<incident type="pronounce" subtype="' + sub + '">';
+						break;
+					case 'LEX':
+						s += '<incident type="lexical" subtype="' + sub + '">';
+						break;
+					*/
+					default:
+						rewrite += '<incident type="' + tag + '" subtype="' + sub + '">';
+						break;
+				}
+				rewrite += q[1];
+				rewrite += '</incident>\n';
+				text = p[3];
 				continue;
 			}
 			q = resimple.exec(p[2]);
 			if (q !== null) {
-				s += p[1];
-				if (q[2] === 'N')
-					s += '<incident type="noise" subtype="instantanous">';
-				else if (q[2] === 'PHO')
-					s += '<incident type="pronounce" subtype="previous">';
-				else if (q[2] === 'LEX')
-					s += '<incident type="lexical" subtype="previous">';
-				else if (q[2] === 'COM')
-					s += '<incident type="comment" subtype="previous">';
-				else if (q[2] === 'NE')
-					s += '<incident type="entities" subtype="previous">';
-				else if (q[2] === 'B')
-					s += '<incident type="backgroud" subtype="previous">';
-				else
-					s += '<incident type="' + q[2] + '" subtype="previous">';
-				s += q[1];
-				s += '</incident>\n';
-				t = p[3];
+				rewrite += p[1];
+				var tag = q[2].trim();
+				switch(tag) {
+					case 'N':
+						rewrite += '<incident type="noise" subtype="instantanous">';
+						break;
+					case 'COM':
+						rewrite += '<incident type="comment" subtype="previous">';
+						break;
+					case 'B':
+						rewrite += '<incident type="background" subtype="previous">';
+						break;
+					case 'PE':
+						rewrite += '<incident type="para" subtype="previous">';
+						break;
+					/*
+					case 'PHO':
+						s += '<incident type="pronounce" subtype="previous">';
+						break;
+					case 'LEX':
+						s += '<incident type="lexical" subtype="previous">';
+						break;
+					case 'NE':
+						s += '<incident type="entities" subtype="previous">';
+						break;
+					*/
+					default:
+						rewrite += '<incident type="' + tag + '" subtype="previous">';
+						break;
+				}
+				rewrite += q[1];
+				rewrite += '</incident>\n';
+				text = p[3];
 				continue;
 			}
-			s += p[1];
-			s += '<incident type="unknown" subtype="previous">';
-			s += p[2];
-			s += '</incident>\n';
-			t = p[3];
+			rewrite += p[1];
+			rewrite += '<incident type="unknown" subtype="previous">';
+			rewrite += p[2];
+			rewrite += '</incident>\n';
+			text = p[3];
 			continue;
 		}
-		p = repause2.exec(t);
-		if (p !== null) {
-			s += p[1];
-			s += '<pause type="chrono" dur="';
-			s += p[2];
-			s += '"/>';
-			t = p[3];
-			continue;
-		}
-		p = repause.exec(t);
-		if (p !== null) {
-			s += p[1];
-			s += '<pause type="';
-			switch(p[2]) {
-				case '#':
-					s += 'short';
-					break;
-				case '##':
-					s += 'long';
-					break;
-				case '###':
-					s += 'verylong';
-					break;
-			}
-			s += '"/>';
-			t = p[3];
-			continue;
-		}
-		s += t;
+		rewrite += text;
 		break;
 	}
-	return s;
+
+	// text === starting value
+	// rewrite === the resulting modified text
+	// start again transforming the leftCode + rightCode
+	text = rewrite;
+	rewrite = "";
+	while (1) {
+		// find first incident
+		var p = recode.exec(text);
+		if (p !== null) {
+			var q = relangue.exec(p[2]);
+			if (q !== null) {
+				rewrite += p[1];
+				rewrite += '<incident type="language" subtype="' + q[2] + '">';
+				rewrite += q[1];
+				rewrite += '</incident>\n';
+				text = p[3];
+				continue;
+			}
+			q = resimple2.exec(p[2]);
+			// there are three elements
+			if (q !== null) {
+				rewrite += p[1];
+				var tag = q[3].trim();
+				var sub = q[2].trim();
+				var cont = q[1].trim();
+				switch(tag) {
+					case 'A': // acronyms
+						rewrite += '<choice><abbr type="acronym">' + cont + "</abbr><expan>" 
+							+ sub + '</expan></choice>';
+						break;
+					case 'VAR': // variation
+						rewrite += '<choice><orig>' + cont + "</orig><reg>" 
+							+ sub + '</reg></choice>';
+						break;
+					default:
+						rewrite += '<vocal type="' + tag + '" subtype="' + sub + '">' + cont + '</vocal>';
+						break;
+				}
+				text = p[3];
+				continue;
+			}
+			q = resimple.exec(p[2]);
+			if (q !== null) {
+				rewrite += p[1];
+				var tag = q[2].trim();
+				var cont = q[1].trim();
+				switch(tag) {
+					case 'C': // acronyms
+						rewrite += '<choice><seg>' + cont + '</seg></choice>';
+						break;
+					default:
+						rewrite += '<vocal type="' + tag + '" subtype="previous">' + cont + '</vocal>';
+						break;
+				}
+				text = p[3];
+				continue;
+			}
+			rewrite += p[1];
+			rewrite += '<incident type="unknown" subtype="previous">';
+			rewrite += p[2];
+			rewrite += '</incident>\n';
+			text = p[3];
+			continue;
+		}
+		rewrite += text;
+		break;
+	}
+
+	// start again transforming the pauses
+	text = rewrite;
+	rewrite = "";
+	while(1) {
+		p = repause2.exec(text);
+		if (p !== null) {
+			rewrite += p[1];
+			rewrite += '<pause type="chrono" dur="';
+			rewrite += p[2];
+			rewrite += '"/>';
+			text = p[3];
+			continue;
+		}
+		p = repause.exec(text);
+		if (p !== null) {
+			rewrite += p[1];
+			rewrite += '<pause type="';
+			switch(p[2]) {
+				case '#':
+					rewrite += 'short';
+					break;
+				case '##':
+					rewrite += 'long';
+					break;
+				case '###':
+					rewrite += 'verylong';
+					break;
+			}
+			rewrite += '"/>';
+			text = p[3];
+			continue;
+		}
+		rewrite += text;
+		break;
+	}
+	return rewrite;
 }
 
 teiConvertTools.docxToTEI = function(data) {

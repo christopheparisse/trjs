@@ -1011,6 +1011,7 @@ trjs.keyToName = {
     19: "pause/break",
     20: "caps lock",
     27: "escape",
+    32: "<",
     33: "page up",
     34: "page down",
     35: "end",
@@ -1031,8 +1032,8 @@ trjs.keyToName = {
     55: "7",
     56: "8",
     57: "9",
-    60: "lesser than",
-    62: "greater than",
+    60: "lesser than", // bug on mac: this code is never produced for keydown but for keypress
+    62: "greater than", // bug on mac: this code is never produced for keydown but for keypress
     65: "a",
     66: "b",
     67: "c",
@@ -1097,9 +1098,9 @@ trjs.keyToName = {
     186: "semi-colon",
     // 187: "equal sign",
     61: "equal sign",
-    188: "comma",
+    188: "comma", // bug on mac: this code is produced for , and <
     189: "dash",
-    190: "period",
+    190: "period", // bug on mac: this code is produced for . and >
     191: "forward slash",
     192: "grave accent",
     219: "open square bracket",
@@ -1158,6 +1159,9 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("f6"), false, false, false, false, "", "insertBlankLineLoc"]); // F6
     trjs.bindingsDef.push([nkey("f7"), false, false, false, false, "", "runCurrentLine"]); // F7
     trjs.bindingsDef.push([nkey("f8"), false, false, false, false, "", "goContinuous"]); // F8
+
+    trjs.bindingsDef.push([nkey("lesser than"), false, false, false, false, "", "leftBracket"]); // <
+    trjs.bindingsDef.push([nkey("greater than"), false, false, false, false, "", "rightBracket"]); // >
 
     trjs.bindingsDef.push([nkey("1"), true, false, false, 'ctrl', "", "setNthLoc1"]); // Ctrl 1
     trjs.bindingsDef.push([nkey("2"), true, false, false, 'ctrl', "", "setNthLoc2"]); // Ctrl 2
@@ -1401,6 +1405,16 @@ trjs.F2.key = function (k) {
     return true;
 };
 
+trjs.keys.leftBracket = function (k) {
+    trjs.macros.replaceSelectedText(trjs.data.leftBracket);
+    return true;
+}; 
+
+trjs.keys.rightBracket = function (k) {
+    trjs.macros.replaceSelectedText(trjs.data.rightBracket);
+    return true;
+};
+
 trjs.F2.keyValue = function (k) {
     return trjs.F2.table[k][1];
 };
@@ -1493,6 +1507,8 @@ trjs.keys.updateKeyBindings = function() {
  */
 trjs.keys.functions = {
     "about": [ trjs.editor.about, "About TRJS", null],
+    "leftBracket": [ trjs.keys.leftBracket, "Write left bracket character", null],
+    "rightBracket": [ trjs.keys.rightBracket, "Write right bracket character", null],
     "viewKeyBindings": [ trjs.keys.viewKeyBindings, "View and change key bindings", null],
     "backwardStep": [ trjs.media.backwardStep, trjs.messgs.altbin37, null],
     "bold": [ trjs.keys.bold, trjs.messgs.ctrlaltbin116, null],

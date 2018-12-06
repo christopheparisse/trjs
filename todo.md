@@ -2,15 +2,13 @@
 
 ## Bug corrections
 
-OK: Temporary file pour gocheck in tempfile for App.
+Colors for speakers
 
-OK: Error when check for empty speaker information.
+Copy/paste time (continue time as in ELAN)
 
-OK (but can be better): Height of partition when changing the number of tiers displayed
+Modes (control, free, blocked)
 
-OK Continuous play on ANAE-04 ou ANAE-09
-
-OK Note as modified the changes in the media name
+Redraw in waves - changes cursor when playable
 
 Erroneous delete of all lines instead of one when used with multiline before
 
@@ -31,6 +29,19 @@ never correctly displayed. They are too short on the right in the previous page
 and they are not seen in the next page.
 
 Ctrl instead of CMD when creating new mappings 
+
+## Done
+
+OK: Temporary file pour gocheck in tempfile for App.
+
+OK: Error when check for empty speaker information.
+
+OK (but can be better): Height of partition when changing the number of tiers displayed
+
+OK Continuous play on ANAE-04 ou ANAE-09
+
+OK Note as modified the changes in the media name
+
 
 ## Improvements of current features
 

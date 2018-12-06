@@ -176,18 +176,30 @@ trjs.init.testNotSave = function(callback) {
     if (!callback) {
         if (window.confirm(trjs.messgs.mustsave)) {
             // trjs.param.change(false);
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
     } else {
-        bootbox.confirm(trjs.messgs.mustsave, function (result) {
-            if (result === true) {
-                // trjs.param.change(false);
-                if (callback) callback(true);
-            } else {
-                if (callback) callback(false);
-            }
-        });
+		bootbox.confirm({
+			message: trjs.messgs.mustsave,
+			buttons: {
+				confirm: {
+					label: trjs.messgs.labelyes
+				},
+				cancel: {
+					label: trjs.messgs.labelno,
+					className: 'btn-danger'
+				}
+			},
+			callback: function (result) {
+				if (result === true) {
+					// trjs.param.change(false);
+					if (callback) callback(false);
+				} else {
+					if (callback) callback(true);
+				}
+			}
+		});
     }
 }

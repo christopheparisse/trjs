@@ -204,15 +204,17 @@ trjs.check = (function () {
             if (loc === '-div-' && trjs.dataload.checkstring(trjs.events.lineGetCell(sel, trjs.data.TRCOL)) !== '') {
                 trjs.data.checkAddMsg(i+1, 'end of div with comment (not allowed)');
             }
-            if (type === 'loc' && trjs.param.format === 'CHAT') {
+            if (type === 'loc' && (trjs.param.format === trjsFormatCHAT || trjs.param.format === trjsFormatXMLTEI)) {
                 cleanTranscription(sel);
                 text.push(trjs.events.lineGetCell(sel, trjs.data.TRCOL));
                 sels.push(sel);
                 n.push(i+1);
             }
         }
-        if (trjs.param.format === 'CHAT' && text.length > 0) {
-            checkTranscription(text, sels, n);
+        if (trjs.param.format === trjsFormatCHAT && text.length > 0) {
+            checkChatTranscription(text, sels, n);
+        } else if (trjs.param.format === trjsFormatXMLTEI && text.length > 0) {
+            checkXmlTranscription(text, sels, n);
         } else {
             // print message if there are some.
             if (trjs.data.checkCount >= 1) {
@@ -235,12 +237,82 @@ trjs.check = (function () {
     }
 
     /**
-     * check a line for whichever method is set for the file (by defaut CHAT but can be other transcription systems)
-     * @method checkTranscription
+     * Check whether lines are correctly xml formed
+     * @param {*} text 
+     * @param {*} sels 
+     * @param {*} n 
      */
-    function checkTranscription(text, sels, n) {
+    function checkXmlTranscription(text, sels, n) {
+        for (var i=0; i < text.length; i++) {
+            var test = checkXmlLine(text[i]);
+            if (test !== '') { // not null === there is an error
+                trjs.data.checkAddMsg(n[i], 'xml error: ' + test);
+            }
+        }
+        $('#check-nb-results').text(trjs.data.checkCount);
+        $('#check-nbx').text(trjs.data.checkCount);
+        if (text.length < 2) {
+            // display the error message online if there is one
+            if (trjs.data.checkCount >= 1) {
+                var s = '';
+                for (var e in trjs.data.check) {
+                    s += trjs.data.check[e].message + '<br/>';
+                }
+                trjs.log.boxalert(s);
+            }
+        } else {
+            // display the error messages in the top box.
+            if (trjs.data.checkCount >= 1) {
+                var s = '';
+                for (var e in trjs.data.check) {
+                    s += trjs.data.checkText(e) + '<br/>';
+                }
+                trjs.log.boxalert(s);
+
+                trjs.data.checkPos = 0;
+                $('#check-posx').text(1);
+                trjs.events.goToLine(trjs.data.check[0].n);
+                $('#check-valx').text(trjs.data.checkText(0));
+                trjs.editor.showCheck(true);
+            } else {
+                trjs.log.boxalert(trjs.messgs.checknoerror);
+            }
+        }
+    }
+
+    /**
+     * Check whether a line is correctly xml formed
+     * @param {*} text 
+     */
+    function checkXmlLine(text) {
+        var parser = new DOMParser();
+        var ck = parser.parseFromString("<check>" + trjs.transcription.transcriptEncoding(text) + "</check>", "text/xml");
+        if (ck.firstElementChild.firstElementChild && ck.firstElementChild.firstElementChild.nodeName === "parsererror") {
+            var s = ck.firstElementChild.firstElementChild.innerHTML;
+            // <h3 xmlns="http://www.w3.org/1999/xhtml">...</h3><div xmlns="http://www.w3.org/1999/xhtml" 
+            // style=...>error on line 1 at column 9: StartTag: invalid element name</div><h3 ...>...</h3>
+            var xml = '';
+            // filter column.*</div>
+            var re = /column([\s\S]*)<\/div>/m;
+            var m = re.exec(s);
+            // console.log(m);
+            if (m) {
+                // console.log(m[1]);
+                xml = m[1];
+            }
+            return xml ? ("column: " + xml) : ck.firstElementChild.firstElementChild.innerText;
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * check a line for whichever method is set for the file (by defaut CHAT but can be other transcription systems)
+     * @method checkChatTranscription
+     */
+    function checkChatTranscription(text, sels, n) {
         testChatlines(text, function(ck) {
-            console.log("result", ck.value, ck.list);
+            // console.log("result", ck.value, ck.list);
             if (ck.value !== 'ok') {
                 for (var el=0; el < ck.list.length; ) {
                     // process all element with the same line and then just to next one
@@ -331,7 +403,7 @@ trjs.check = (function () {
      */
     function cleanErrors(t) {
         // t = t.replace(/<error.*?>.*?<\/error>/g, '');
-        console.log("clean: ",t);
+        // console.log("clean: ",t);
         /*
         var re = RegExp(trjs.data.leftBracket + "error.*?" + trjs.data.rightBracket, "g");
         re = RegExp(trjs.data.leftBracket + "\/error" + trjs.data.rightBracket, "g");
@@ -416,6 +488,7 @@ trjs.check = (function () {
         cleanCurrentLine: cleanCurrentLine,
         cleanTranscription: cleanTranscription,
         checkCurrentLine: checkCurrentLine,
+        checkXmlLine: checkXmlLine,
         goCheck: goCheck,
         nextCheck: nextCheck,
         prevCheck: prevCheck,

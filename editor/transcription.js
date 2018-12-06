@@ -84,16 +84,38 @@ trjs.transcription = (function () {
     }
 
     /**
+     * return text content with transcription codes expanded into xml/tei
+     * @method transcriptExpand
+     * @param string
+     * @return string
+     */
+    function transcriptExpand(s) {
+        s = transcriptEncoding(s);
+        if (trjs.param.format === trjsFormatXMLTEI) {
+            // convert the [.../C] and {.../E} to XML tags
+            s = teiConvertTools.toTEIEvents(s);
+        }
+        // test if xml valid.
+        var t = trjs.check.checkXmlLine(s);
+        if (t === '') return s; // line is OK
+        return xmlEntitiesEncode(s, false); // force entities encoding
+    }
+
+    /**
      * return text content with problematic < and >
      * @method transcriptEncoding
      * @param string
      * @return string
      */
     function transcriptEncoding(s) {
+        s = s.replace(/\<br.*?\/\s?br\>/g, '\n'); // 10
+        s = s.replace(/\<br\s*\/?\>/g, '\n'); // 10
+        // TODO ?? remove everything between < and > ?
         var reLeft = new RegExp(trjs.data.leftBracket, "g");
         var reRight = new RegExp(trjs.data.rightBracket, "g");
         s = s.replace(reLeft, '<'); // 60 3C
         s = s.replace(reRight, '>'); // 62 3E
+        s = s.replace(/&nbsp;/g, ' '); // 62 3E
         return s;
     }
 
@@ -103,15 +125,14 @@ trjs.transcription = (function () {
      * @param plain text
      * @return xml coded text
      */
-    function xmlEntitiesEncode(texte) {
-        texte = texte.replace(/\<br.*?\/\s?br\>/g, '\n'); // 10
-        texte = texte.replace(/\<br\s*\/?\>/g, '\n'); // 10
+    function xmlEntitiesEncode(texte, keepxml) { // by default keepxml === undefined
+        if (trjs.param.format === trjsFormatXMLTEI && keepxml === true) return texte;
+        //texte = texte.replace(/&/g, '&amp;'); // 38 26
+        //texte = texte.replace(/\^/g,'&circ;'); // 94 5E
         texte = texte.replace(/"/g, '&quot;'); // 34 22
-        texte = texte.replace(/&/g, '&amp;'); // 38 26
         texte = texte.replace(/\'/g, '&#39;'); // 39 27
         texte = texte.replace(/\</g, '&lt;'); // 60 3C
         texte = texte.replace(/\>/g, '&gt;'); // 62 3E
-        //texte = texte.replace(/\^/g,'&circ;'); // 94 5E
         return texte;
     }
 
@@ -977,18 +998,6 @@ trjs.transcription = (function () {
         return 'dx';
     }
 
-    /**
-     * transforms a transcripted line into XML codes: to be improved later
-     * @method xmlTranscription
-     * @param string (chaine à transformer en xml)
-     * @return string (chaine xml encodée)
-     */
-    function xmlTranscription(s) {
-        s = xmlEntitiesEncode(s);
-        // s = '<seg>' + s + '</seg>';
-        return s;
-    }
-
     function syntaxdecode(itrans) {
         var ws = itrans.split(/\s+/);
         var s = '';
@@ -1085,7 +1094,7 @@ trjs.transcription = (function () {
             var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
             var itrans = trjs.dataload.checkstring(trjs.events.lineGetCellHtml($(tablelines[i]), trjs.data.TRCOL));
-            itrans = transcriptEncoding(itrans);
+            itrans = transcriptExpand(itrans);
             if (iloc === '' && its === '' && ite === '' && itrans === '') continue;
             if (trjs.check.testMark(iloc)) {
                 iloc = trjs.check.trimMark(iloc);
@@ -1155,7 +1164,7 @@ trjs.transcription = (function () {
                         if (its !== '') s += ' from="#' + timeline[its] + '"';
                         if (ite !== '') s += ' to="#' + timeline[ite] + '"';
                         s += '>\n';
-                        s += xmlEntitiesEncode(itrans);
+                        s += xmlEntitiesEncode(itrans, true);
                         s += '</span>\n';
                         s += '</spanGrp>\n';
                     }
@@ -1175,7 +1184,7 @@ trjs.transcription = (function () {
                     if (its !== '') s += ' from="#' + timeline[its] + '"';
                     if (ite !== '') s += ' to="#' + timeline[ite] + '"';
                     s += '>\n';
-                    s += xmlEntitiesEncode(itrans);
+                    s += xmlEntitiesEncode(itrans, true);
                 } else if (newlevel < level) {
                     // the current span is higher in the hierarchy than the previous one
                     // close all previous span and continue
@@ -1206,7 +1215,7 @@ trjs.transcription = (function () {
                     if (its !== '') s += ' from="#' + timeline[its] + '"';
                     if (ite !== '') s += ' to="#' + timeline[ite] + '"';
                     s += '>\n';
-                    s += xmlEntitiesEncode(itrans);
+                    s += xmlEntitiesEncode(itrans, true);
                 } else {
                     // same level as before: close one span and continue
                     //console.log('IDEM');
@@ -1222,7 +1231,7 @@ trjs.transcription = (function () {
                     if (its !== '') s += ' from="#' + timeline[its] + '"';
                     if (ite !== '') s += ' to="#' + timeline[ite] + '"';
                     s += '>\n';
-                    s += xmlEntitiesEncode(itrans);
+                    s += xmlEntitiesEncode(itrans, true);
                 }
                 prevLoc[level] = iloc;
             } else {
@@ -1256,7 +1265,7 @@ trjs.transcription = (function () {
                     s += 'xml:id="u' + localID + '" ';
                     localID++;
                     s += '>\n';
-                    s += '<u>' + xmlTranscription(itrans) + '</u>\n';
+                    s += '<u>' + xmlEntitiesEncode(itrans, true) + '</u>\n';
                     openedAU = true;
                 }
                 prevLoc[level] = iloc;
@@ -2112,7 +2121,7 @@ trjs.transcription = (function () {
                 s += nl + '\t';
             }
             s += iloc + '\t';
-            s += transcriptEncoding(itrans) + '\t';
+            s += transcriptExpand(itrans) + '\t';
             var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
             if (time !== false && (its !== '' || ite != '')) {
@@ -2193,7 +2202,7 @@ trjs.transcription = (function () {
                 s += nl + '</td>';
             }
             s += '<td>' + iloc + '</td>';
-            s += '<td>' + transcriptEncoding(itrans) + '</td><td>';
+            s += '<td>' + transcriptExpand(itrans) + '</td><td>';
             var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
             if (time !== undefined && (its !== '' || ite != '')) {
@@ -2336,7 +2345,7 @@ trjs.transcription = (function () {
                 s += nl + (table ? '\\cell\n' : '\t');
             }
             s += string_as_unicode_escape(iloc) + (table ? '\\cell\n' : '\t');
-            s += string_as_unicode_escape(transcriptEncoding(itrans)) + (table ? '\\cell\n' : '\t');
+            s += string_as_unicode_escape(transcriptExpand(itrans)) + (table ? '\\cell\n' : '\t');
             var its = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TSCOL));
             var ite = trjs.dataload.checknumber(trjs.events.lineGetCell($(tablelines[i]), trjs.data.TECOL));
             if (time !== undefined && (its !== '' || ite != '')) {

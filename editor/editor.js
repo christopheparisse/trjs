@@ -324,12 +324,15 @@ trjs.editor = (function () {
      */
     function setCheckType() {
         var x = $('#check-type').val();
-        if (x === "None") {
+        if (x === 'None') { // the values from the HTML elements
             trjs.param.final = false;
-            trjs.param.format = "";
+            trjs.param.format = trjsFormatNone;
+        } else if (x === 'XMLTEI') { // the values from the HTML elements
+            trjs.param.final = false;
+            trjs.param.format = trjsFormatXMLTEI;
         } else {
             trjs.param.final = true;
-            trjs.param.format = x;
+            trjs.param.format = trjsFormatCHAT;
         }
         trjs.param.saveStorage();
     }

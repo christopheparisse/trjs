@@ -1635,6 +1635,8 @@ trjs.events = (function () {
          console.log('charCode '+ e.charCode);
          */
         var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
+        var keyptr = trjs.keys.modifiersEvent(charCode, e);
+        // console.log("keydown", charCode, e.altKey?"alt":"", keyptr);
         if (enter !== true && charCode === 13) return false;
         if (trjs.param.server !== 'electron') {
             var m = $('#openfile').data('bs.modal');
@@ -1665,8 +1667,8 @@ trjs.events = (function () {
 
         // if modifier only key, skip it
         if (trjs.keys.skipModifierKey.indexOf(charCode) >= 0) return true;
-        var keyptr = trjs.keys.modifiersEvent(charCode, e);
-        //console.log("KEYPTR= ", keyptr);
+        // var keyptr = trjs.keys.modifiersEvent(charCode, e);
+        // console.log("KEYPTR= ", keyptr);
         if (isNaN(keyptr)) return true;
 
         if (keyptr === trjs.keys.specialChar1) {
@@ -1676,6 +1678,13 @@ trjs.events = (function () {
             specialEvent2 = true;
             return true;
         }
+
+        // Not necessary if it goes through here it is handled by the macros
+        // if (charCode === 62) {
+        //     e.preventDefault();
+        //     trjs.macros.replaceSelectedText(trjs.data.rightBracket); // '\u27E9');
+        //     return true;
+        // }
 
         if (specialEvent1 === true) {
             specialEvent1 = false;
@@ -1731,13 +1740,17 @@ trjs.events = (function () {
          console.log('meta '+ e.metaKey);
          console.log('ident ' + e.keyIdentifier);
          */
-        // var keyptr = trjs.keys.modifiersEvent(charCode, e);
-        switch (e.charCode) {
+        var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
+        var keyptr = trjs.keys.modifiersEvent(charCode, e);
+        // console.log("keypress", charCode, e.altKey?"alt":"", keyptr);
+        switch (charCode) {
+            /*
             case 10: // newline
             case 13: // return
                 e.preventDefault();
                 enter(e);
                 return true;
+            */
             case 60: //
                 e.preventDefault();
                 trjs.macros.replaceSelectedText(trjs.data.leftBracket); //'\u27E8');
@@ -1746,6 +1759,7 @@ trjs.events = (function () {
                 e.preventDefault();
                 trjs.macros.replaceSelectedText(trjs.data.rightBracket); // '\u27E9');
                 return true;
+            /*
             case 34:
                 e.preventDefault();
                 if (e.ctrlKey) {
@@ -1788,6 +1802,7 @@ trjs.events = (function () {
                     return true;
                 }
                 return false;
+            */
         }
         return false;
     }
@@ -2293,7 +2308,7 @@ trjs.events = (function () {
         enter: enter,
         eventKeydown: eventKeydown,
         enterKeydown: enterKeydown,
-        // eventKeypress: eventKeypress,
+        eventKeypress: eventKeypress,
         escape: escape,
         findLineToFollow: findLineToFollow,
         findLineToStart: findLineToStart,

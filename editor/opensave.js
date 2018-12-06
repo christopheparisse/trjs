@@ -536,7 +536,7 @@ trjs.io = (function () {
                 trjs.data.setNamesInWindow();
                 trjs.undo.clear();
             } else if (err > 1) {
-                trjs.log.boxalert(trjs.messgs.errload + name);
+                trjs.log.boxalert(trjs.messgs.errload + name + data);
             } else if (err === 0) {
                 if (typeof data === 'object') {
                     trjs.data.doc = data;
