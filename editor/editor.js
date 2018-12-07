@@ -1184,8 +1184,12 @@ trjs.editor = (function () {
      */
     function goSearch(search_pattern, flag) {
         trjs.data.search = []; // empty array of line numbers
-        if (!search_pattern)
+        if (!search_pattern) {
             search_pattern = $('#search-elts')[0].value;
+        }
+        search_pattern = search_pattern.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+        search_pattern = search_pattern.replace(/</g, trjs.data.leftBracket); // 60 3C
+        search_pattern = search_pattern.replace(/>/g, trjs.data.rightBracket); // 62 3E
         var withcase = false;
         if (flag === undefined) {
             flag = '/';

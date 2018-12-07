@@ -193,13 +193,16 @@
                             <div class="input-group">
                                 <input type="search" class="form-control" placeholder="..." id="search-elts" type="search" name="search-elts" onchange="" />
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" onclick=''><i class="fa fa-check" ></i></button>
+                                    <button class="btn btn-default" type="button" onclick='trjs.editor.goReplace();'><i class="fa fa-check" ></i></button>
                                 </span>
                             </div><!-- /input-group -->
                         </div>
                         <div class="col-md-4">
-                            &nbsp;<button class="btn btn-success" type="button"  onclick=''><i class='fa fa-arrow-left'></i></button>
-                            &nbsp;<button class="btn btn-success" type="button" onclick=''><i class='fa fa-arrow-right' onclick=''></i></button>
+                            &nbsp;<button class="btn btn-success" type="button"  onclick='trjs.editor.prevReplace();'><i class='fa fa-arrow-left'></i>Go next</button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextReplace();'><i class='fa fa-arrow-right'></i>Go previous</button>
+                            &nbsp;<button class="btn btn-success" type="button"  onclick='trjs.editor.prevSkip();'><i class='fa fa-arrow-left'></i><i class='fa fa-pencil-alt'></i>Replace and go next</button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextSkip();'><i class='fa fa-arrow-right'></i><i class='fa fa-pencil-alt'></i>Replace and go previous</button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.replaceCurrent();'><i class='fa fa-pen-fancy'></i>Replace</button>
                             &nbsp;&nbsp;<span id="search-posx" class="bgreen">0</span>/<span id="search-nbx">0</span>
                         </div>
                     </div><!-- /.row -->
