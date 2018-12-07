@@ -277,7 +277,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4" id="r">&nbsp;<span id="sfields">Dans le champs: </span></div>
+                        <div class="col-md-4" id="r">&nbsp;<span id="sfields">Dans le champ: </span></div>
                         <div class="col-md-4">
                             &nbsp;<input type="checkbox" name="search-flag-loc" id="search-flag-loc" value=2 />
                             <label for="search-flag-loc"><span id="sloc">Locutors</span></label>
@@ -311,17 +311,29 @@
                                 </span>
                             </div><!-- /input-group -->
                         </div>
-                        <div class="col-md-4">
-                            &nbsp;<button class="btn btn-success" type="button"  onclick='trjs.editor.prevReplace();'><i class='fa fa-arrow-left'></i>Go next</button>
-                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextReplace();'><i class='fa fa-arrow-right'></i>Go previous</button>
-                            &nbsp;<button class="btn btn-success" type="button"  onclick='trjs.editor.prevSkip();'><i class='fa fa-arrow-left'></i><i class='fa fa-pencil-alt'></i>Replace and go next</button>
-                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextSkip();'><i class='fa fa-arrow-right'></i><i class='fa fa-pencil-alt'></i>Replace and go previous</button>
-                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.replaceCurrent();'><i class='fa fa-pen-fancy'></i>Replace</button>
-                            &nbsp;&nbsp;<span id="search-posx" class="bgreen">0</span>/<span id="search-nbx">0</span>
-                        </div>
                     </div><!-- /.row -->
                     <div class="row">
-                        <div class="col-md-4" id="r">&nbsp;<span id="sreplfields">Dans le champs: </span></div>
+                        <div class="col-md-4">
+                            &nbsp;
+                        </div>
+                        <div class="col-md-4">
+                            &nbsp;<button class="btn btn-success" type="button"  onclick='trjs.editor.prevSkip();'><i class='fa fa-arrow-left'></i><i class='fa fa-pencil'></i>&nbsp;&nbsp;Replace and go next</button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextSkip();'><i class='fa fa-arrow-right'></i><i class='fa fa-pencil'></i>&nbsp;&nbsp;Replace and go previous</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            &nbsp;
+                        </div>
+                        <div class="col-md-4">
+                            &nbsp;<button class="btn btn-success" type="button"  onclick='trjs.editor.prevReplace();'><i class='fa fa-arrow-left'></i>&nbsp;&nbsp;Go next</button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.nextReplace();'><i class='fa fa-arrow-right'></i>&nbsp;&nbsp;Go previous</button>
+                            &nbsp;<button class="btn btn-success" type="button" onclick='trjs.editor.replaceCurrent();'><i class='fa fa-pencil'></i>&nbsp;&nbsp;Replace</button>
+                            &nbsp;&nbsp;<span id="searchrepl-posx" class="bgreen">0</span>/<span id="search-nbx">0</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" id="r">&nbsp;<span id="sreplfields">Dans le champ: </span></div>
                         <div class="col-md-4">
                             &nbsp;<input type="checkbox" name="searchrep-flag-loc" id="searchrep-flag-loc" value=2 />
                             <label for="searchrep-flag-loc"><span id="sreplloc">Locutors</span></label>
