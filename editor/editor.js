@@ -732,10 +732,21 @@ trjs.editor = (function () {
      * jumps to the help page.
      * @method goHelp
      */
-    function goHelp() {
+    function goHelpFirstSteps() {
         trjs.io.innerSave();
         // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
         fsio.openExternal("http://ct3.ortolang.fr/trjs/documentation/trjs_pp.html");
+        // window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
+    }
+
+    /**
+     * jumps to the help page.
+     * @method goHelp
+     */
+    function goHelp() {
+        trjs.io.innerSave();
+        // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
+        fsio.openExternal("http://ct3.ortolang.fr/trjs/documentation/trjs_doc.html");
         // window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
     }
 
@@ -1503,6 +1514,7 @@ trjs.editor = (function () {
         about: about,
         finalizeLoad: finalizeLoad,
         goHelp: goHelp,
+        goHelpFirstSteps: goHelpFirstSteps,
         goHelpStart: goHelpStart,
         goHelpTranscribe: goHelpTranscribe,
         goHelpEdit: goHelpEdit,

@@ -1,0 +1,290 @@
+<h1 id="08">8. Organisation et paramètres</h1>
+<hr />
+
+<div>
+    <p><u>Rappel</u> :
+        Il y a 6 zones d'affichage dans le logiciel qui sont réparties en deux groupes :
+        <ul>
+            <li>le <b>média</b> qui comprend :</li>
+            <ul>
+                <li>la vidéo ou le son</li>
+                <li>accompagné (si présent) de la représentation du signal </li>
+                <li>un slider horizontal représentant la position dans le temps</li>
+            </ul>
+            <li>la <b>transcription</b> qui comprend :</li>
+            <ul>
+                <li>la partition (représentation horizontale de la transcription verticale) </li>
+                <li>un slider horizontal représentant la position dans le temps</li>
+                <li>le tableau de transcription</li>
+            </ul>
+        </ul>
+    </p>
+</div>
+<p>Dans une zone, le positionnement temporel des éléments est toujours <b>synchrone</b>.
+    Les deux zones peuvent être synchronisées ou non selon les cas d'utilisation du logiciel :</p>
+
+<h2 id="0801">8.1. Modes de fonctionnement</h2>
+
+<div>
+    <p>Il existe plusieurs méthodes de transcription, et selon les stades de traitement d'une tâche de transcription,
+        les usages sont tout à fait différents.<br />
+
+        <h4>Création d'un nouvelle transcription</h4>
+        <p>Lors de la création d'une nouvelle transcription,
+            les utilisateurs ne sont pas dans la finesse et utilisent principalement le clavier.
+            Cela nécessite une écoute/visualisation avec déplacement de proximité, dans ce cas, on n’a pas besoin
+            d’aller dans
+            le détail
+            (usage qu'on pourrait qualifier de <b>transcription "au kilomètre"</b>).</p>
+
+        <h4>Seconde écoute pour réajustements</h4>
+        <p>Il y a donc une deuxième écoute, plus attentive et plus précise. L'objectif principal est de réajuster les
+            repères temporels.<br />
+            Cela suppose que l’étape de correction soit chronologique et linéaire.
+        </p>
+
+        <h4>Relecture, vérification et repérage</h4>
+        <p>C’est une fonctionnalité différente: sur seulement une partie de la transcription, il s'agit d'un travail de
+            repérage:
+            repérer des morceaux, ajouter des informations à une transcription etc.<br />
+            L'utilisateur a besoin d'isoler des morceux spécifiques.</p><br />
+</div>
+<p>Les usages de transcription nécessitent des fonctionnalités indépendantes, les unes des autres. <br />
+    C'est pourquoi trois <a href="#080101">modes d'édition</a> sont proposés.</p>
+
+<h3 id="080101">8.1.1. Mode Contrôle (standard)</h3>
+<p>
+    <ul>
+        <li>En situation normale, la <b>zone transcription commande la zone média</b> mais pas l'inverse. </li>
+        <li>Cela permet de déplacer le média sans se déplacer dans la transcription
+            et ainsi de <b>corriger l'alignement temps - transcription</b> de manière aisée. </li>
+    </ul><br />
+    Le mode <b>Contrôle</b> est préconisé dans un usage de <b>transcription au kilomètre</b>
+    (lors d'une nouvelle transcription).<br />
+    Les utilisateurs ne sont pas dans la finesse et utilisent principalement le clavier
+    (peu de vidéo, et pas de visualisation de la bande fréquences), cela nécessite donc une écoute avec fonctions
+    avance
+    et recul <b>de proximité</b>.<br />
+    Dans ce cas, on n’a pas besoin d’aller dans le détail,
+    la vidéo et la visualisation de l’intensité sont superflues.
+</p>
+
+<h3 id="080102">8.1.2. Mode Bloqué</h3>
+<p>
+    <ul>
+        <li>Les zones transcription et média sont <b>synchronisées</b>.</li>
+        <li>Dans certains cas, on veut pouvoir <b>commander la transcription depuis le média</b>,
+            soit pour la visio, soit pour d'autres raisons. </li>
+        <li>Des touches spéciales visio existent en standard.</li>
+    </ul><br />
+    Le mode <b>Bloqué</b> est préconisé lors d'une <b>seconde écoute, pour réajustements</b>. <br />
+    Les utilisateurs nécessitent une écoute plus fine et une visualisation de la bande fréquences <b>plus précise</b>,
+    néanmoins les fonctions d’avance et recul peuvent être différées et l’écoute moins dans la linéarité.<br />
+    En plus des touches précédentes, on a besoin de quelques fonctions de lecture spécifiques
+    (lecture segment courant, lecture ralentie etc.).<br />
+    On a aussi besoin de réajuster les temps de manière chronologique et linéaire.
+</p>
+
+<h3 id="080103">8.1.3. Mode Libre</h3>
+<p>
+    <ul>
+        <li>La zone transcription et la zone média sont <b>complétement indépendantes</b>.</li>
+        <li>Dans certains cas, on ne veut <b>pas commander le média depuis le texte</b> (réseau lent par exemple) ou
+            autres
+            besoins. </li>
+    </ul><br />
+    Le mode <b>Libre</b> est préconisé pour des usages de <b>relecture, vérification et repérage</b>.<br />
+    On a besoin de <b>sélectionner des passages précis</b> à partir du média
+    c’est-à-dire qu’on a besoin de se déplacer dans la transcription
+    mais que le déplacement dans le son soit désactivé :
+    le clic sur la bande son est déconnecté de la partie transcription.
+</p>
+
+<h3 id="080104">8.1.4. Edition des modes</h3>
+<p>Pour éditer un mode :
+    Dans le menu <bl>PARAMETRES</bl>, dans l'onglet <b>Modes d'édition</b>, sélectionner le mode souhaité.</p>
+
+<h2 id="0802">8.2. Paramètres</h2>
+
+<p>Dans le menu <bl>OUTILS</bl>, la fenêtre <b>Paramètres</b> se déploie, elle contient plusieurs encarts aux
+    fonctionnalités thématiques:<br /><br />
+    <img id="i11" class="center" src="img/capture/i11.png" width="800" /><br />
+    <ol>
+        <li><a href="#0903">Langue</a></li>
+        <li><a href="#0803">Affichage</a></li>
+        <li><a href="#0802">Modes d'édition</a></li>
+        <li><a href="#0803">Réglages</a></li>
+        <li><a href="#0803">Vérification</a></li>
+    </ol>
+</p>
+
+<p>Les paramètres suivants sont modifiables :</p>
+<table>
+    <thead>
+        <tr>
+            <th>Paramètre</th>
+            <th>Descriptif</th>
+            <th>Localisation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Version</td>
+            <td>Deux versions sont pour le moment disponibles : Français et Anglais</td>
+            <td>Onglet <bl>LANGUE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Visualisation de la partition</td>
+            <td>Coché par défaut</td>
+            <td>Onglet <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Visualisation du signal sonore</td>
+            <td>Coché par défaut</td>
+            <td>Onglet <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Affichage des numéros en début de ligne</td>
+            <td>Par défaut ils ne sont pas affichés</td>
+            <td>Onglet <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Affichage des noms des participants</td>
+            <td>A la place des codes</td>
+            <td>Onglet <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Affichage des temps des alignements</td>
+            <td>C'est-à-dire les temps de début et de fin, coché par défaut</td>
+            <td>Onglet <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Modes d'édition des zones d'affichage</td>
+            <td>3 modes sont disponibles : Libre, Contrôle (Standard), Bloqué</td>
+            <td>Onglet <bl>MODES D'EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Réorganisation dynamique des lignes</td>
+            <td></td>
+            <td>Onglet <bl>MODES D'EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Format pour les repères temporels</td>
+            <td>Renseigné par défaut en h:mm:ss</td>
+            <td>Onglet <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Nombre de chiffres pour les millisecondes</td>
+            <td>De 0 à 3</td>
+            <td>Onglet <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Valeur de retour en arrière</td>
+            <td>(Pour le raccourci clavier : <img src="img/touches/computer_key_Alt_Left.png" width="35" height="35" />
+                ) en
+                ms</td>
+            <td>Onglet <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Valeur de saut en avant</td>
+            <td>(Pour le raccourci clavier : <img src="img/touches/computer_key_Alt_Right.png" width="35" height="35" />
+                ) en
+                ms</td>
+            <td>Onglet <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Vérification de la transcription lors de la sauvegarde</td>
+            <td>Coché par défaut</td>
+            <td>Onglet <bl>VERIFICATION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Nombre de versions précédentes conservées lors de la sauvergarde</td>
+            <td>De 1 à 3</td>
+            <td>Onglet <bl>VERIFICATION</bl>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Lorsqu'on passe la souris sur un paramètre, une <b>bulle d'information</b> apparaît pour rappeler sa <b>fonction
+        principale</b>,
+    ainsi que son raccourci clavier éventuel associé.</p>
+
+<h2 id="0803">8.3. Vérification de la transcription</h2>
+
+<p>Dans le menu <bl>OUTILS</bl>, l'onglet <b>Vérifier la transcription</b>
+    permet de visualiser les erreurs éventuelles de la part du transcripteur
+    concernant la structure préconisée par le format TEI.
+</p>
+<div>
+    <p>Pour en savoir davantage à propos du format TEI :
+        <ul>
+            <li><a href="http://www.tei-c.org/index.xml">Site officiel TEI</a></li>
+            <li><a href="http://modyco.inist.fr/sources/Ortolang/ISO_Initial_Doc_24624_TranscriptionofSpeech.pdf">Proposition
+                    de format TEI/ISO pour l'oral</a></li>
+            <li><a href="http://modyco.inist.fr/sources/Ortolang/DescriptionFormatTEI.pdf">Spécifications utilisées
+                    aujourd'hui par Ortolang et transcriberjs</a></li>
+            <li><a href="http://ircom.huma-num.fr/wiki/doku.php?id=groupes:interop_tei">Site IRCOM GT2 et les
+                    discussions des
+                    formats</a></li>
+        </ul>
+    </p>
+</div>
+<p>La vérification permet d'attirer l'attention de l'utilisateur à propos d'erreurs de formats de type structurel
+    (non renseignement d'un locuteur, d'une structure),
+    de type temporel (temps non renseignés ou superposés) etc.<br />
+    Dans certains cas, l'erreur est soulignée aux yeux de l'utilisateur par un message s'affichant 5 secondes. </p>
+
+<h1 id="09">9. Fonctionnalités</h1>
+<hr />
+
+<h2 id="0901">9.1. Outil d'export</h2>
+
+<p>Les options d'exports sont disponibles dans le menu <bl>OUTILS</bl> sous l'onglet <b>Export</b>.<br />
+    Il est possible d'exporter la <b>totalité</b> du fichier ou seulement une <b>sélection</b>.</p>
+
+<h2 id="0902">9.2. Outil de recherche</h2>
+<p>L'onglet de recherche s'affiche sous forme de panneau. On y accède par plusieurs moyens :
+    <ul>
+        <li>en ouvrant le menu <bl>RECHERCHE</bl>
+        </li>
+        <li>en cliquant sur l'icône <i class="iconcur fa fa-search fa-lg"></i> de la barre d'outils</li>
+        <li>via le raccourci clavier : <b>Ctrl F</b></li>
+    </ul>
+</p>
+<p>Il est possible d'effectuer plusieurs types de recherche dans le fichier courant :
+    <ul>
+        <li><b>Rechercher</b> un mot ou une chaîne de caractères :</li>
+        <ul>
+            <li>dans le champ Locuteurs</li>
+            <li>dans le champ Transcription</li>
+        </ul>
+        <li><b>Remplacer</b> le résultat de la recherche</li>
+        <li><b>Montrer</b> les locuteurs ou les tiers :</li>
+        <ul>
+            <li>dans le champ Locuteurs (permet d'afficher seulement le locuteur/la tier sur laquelle on travaille)</li>
+            <li>dans le champ Transcription (permet d'afficher toutes les mentions d'un locuteur/une tier dans la
+                transcription)</li>
+        </ul>
+        <li><b>Cacher</b> les locuteurs ou les tiers :</li>
+        <ul>
+            <li>dans le champ Locuteurs (permet de cacher les locuteurs/tiers désirés)</li>
+            <li>dans le champ Transcription</li>
+        </ul>
+        <li><b>Aller à un numéro de ligne</b> ou le raccourci clavier : <b>Ctrl L</b></li>
+        <li>Aller à un <b>repère temporel</b> ou le raccourci clavier : <b>Ctrl T</b></li>
+    </ul>
+</p>
+<h2 id="0903">9.3. Outil d'aide contextuelle</h2>

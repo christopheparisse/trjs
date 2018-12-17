@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function ouvrirFermerSpoiler(div) {
+			var divContenu = div.getElementsByTagName('div')[0];
+			if (divContenu.style.display == 'none') {
+				divContenu.style.display = 'block';
+			} else {
+				divContenu.style.display = 'none';
+			}
+		}
+	</script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-submenu.js"></script>
+	<script src="js/bootbox.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/global.css" />
+	<!--<link rel="stylesheet" type="text/css" href="style\bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="style\bootstrap-submenu.css" />-->
+	<link rel="stylesheet" href="style/font-awesome-4.2.0/css/font-awesome.min.css" />
+	<title>transcriberjs - Manuel d'utilisation</title>
+</head>
+
+<body>
+
+	<header>
+		<img src="img/trjs.png" width="65" height="65" />
+		<b> T R A N S C R I B E R . J S </b> version Beta - Documentation : <b>Manuel d'utilisation</b>
+	</header>
+	<header2></header2>
+	<div id="main">
+		<h1>Manuel d'utilisation</h1><br />
+		<include src="menus.html"></include>
+		<br />
+
+		<h1 id="top">Préambule</h1>
+		<hr />
+		<p>transcriberjs est un logiciel de transcription, d'édition et de visualisation de données et de corpus de langage
+			oral.<br />
+			Développé en Javascript, il reprend les fonctionnalités principales
+			de <a href="http://trans.sourceforge.net/en/presentation.php">Transcriber</a>
+			et de <a href="http://childes.psy.cmu.edu/clan/">CLAN</a>, préservant l'<b>interopérabilité</b> des formats. </p>
+		<div id="nb">
+			<h2>Principes généraux</h2>
+			<p>transcriberjs permet la <b>transcription et l'alignement rapide</b>
+				d'un texte brut ne présentant pas d'alignement préalable mais correctement divisé en locuteurs,
+				à partir d'un média vidéo ou audio.</p>
+			<p>transcriberjs est optimisé pour différents usages:
+				<ul>
+					<li>une utilisation optionnelle de la souris et un <b>contrôle complet depuis le clavier</b>,
+						qui ainsi permette une manipulation intuitive de la vidéo/du son.</li>
+					<li>une <b>utilisation classique</b> avec la souris,
+						avec la possibilité de découper les sons et images au préalable ou au fur et à mesure.</li>
+				</ul>
+			</p>
+		</div>
+		<br />
+
+		<p><img class="center" src="img/schema_trjs.png" width="800" /></p>
+
+		<include src="intro-organisation.html"></include>
+		<include src="transcription.html"></include>
+		<include src="media.html"></include>
+		<include src="edition.html"></include>
+		<include src="param-export.html"></include>
+		<include src="macros.html"></include>
+		<p><a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p>
+
+	</div>
+	<section id="menu">
+		<include src="menus.html"></include>
+	</section>
+
+</body>
+
+</html>

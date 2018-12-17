@@ -1,0 +1,156 @@
+<h1 id="03">3. Fichier de transcription</h1>
+<hr />
+
+<h2 id="0301">3.1. Créer une nouvelle transcription</h2>
+<p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Nouvelle transcription</b>. </p><br />
+<img id="ima" class="center" src="img/capture/inew2ter.png" width="800" /><br /><br />
+<p>Si le média n'est pas ouvert, voir <a href="#0401">Ouvrir un média</a>, puis vous pouvez commencer la
+    transcription.</p><br />
+<img id="ima" class="center" src="img/capture/inew2bis.png" width="800" /><br /><br />
+<p>La partie transcription est désormais éditable à l'endroit indiqué.</p>
+<img id="ima" class="center" src="img/capture/inewmed.png" width="800" /><br />
+
+
+<h2 id="0302">3.2. Ouvrir une transcription</h2>
+<p>Il y a deux possibilité d'ouverture d'une transcription :
+    <ol>
+        <li>Ouvrir une transcription <b>sur le serveur</b> :</li>
+        <ul>
+            <li>Un serveur est installé sur une machine visible par Internet. L'utilisateur n'accéde seulement aux
+                fichiers
+                qui lui sont autoriséspar le serveur distant.</li>
+            <li>La version distante ne nécessite aucune installation préalable, mais nécessite de disposer d'une
+                connexion
+                Internet. L'usage des médias sons et surtout vidéos peut dépendre de la qualité et la vitesse de la
+                connexion
+                Internet.</li>
+            <li>La version distante permet d'éditer des fichiers locaux (transcriptions et médias) avec des limitations
+                dues à
+                la sécurité des versions actuelles des navigateurs (lecture séparée de la transcription et du média,
+                sauvegarde
+                uniquement dans le répertoire <b>Téléchargements</b>).</li>
+        </ul>
+        <li>Importer une transcription <b>locale</b> :</li>
+        <ul>
+            <li>Un serveur est installé sur la machine de l'utilisateur et permet d'accéder à l'ensemble de ses
+                fichiers.</li>
+            <li>La version locale dispose aussi des fonctionnalités de la version distante. Il suffit de choisir un
+                fournisseur de corpus distant pour passer en version distante.</li>
+        </ul>
+    </ol>
+</p>
+<div id="nb">
+    <p><u>Attention</u> :
+        En cas d'ouverture simultanée du même fichier plusieurs fois, il n'y a <b>pas de contrôle entre les versions</b>:
+        ainsi, seule la <b>dernière sauvegarde</b> sera prise en compte.</p>
+</div>
+
+<h3 id="030201">3.2.1. Ouvrir une transcription sur le serveur</h3>
+<p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Ouvrir une transcription</b>.</p><br />
+<img id="ima" class="center" src="img/capture/inew2.png" width="800" /><br /><br />
+<p>Une fenêtre s'ouvre :</p><br />
+<img id="ima" class="center" src="img/capture/inew3.png" width="800" /><br /><br />
+<p>
+    <ul>
+        <li>A gauche, l'<b>arborescence</b> de l'ordinateur permet de naviguer dans les répertoires (double-clic pour
+            ouvrir un dossier)</li>
+        <li>A droite, visualisation du <b>contenu d'un répertoire</b> : seulement les fichiers s'affichent</li>
+        <li>En bas à droite, sélection seule des fichiers de transcription, ou toutes les extensions de fichiers à
+            visualiser. (Voir <a href="#0303">Formats de la transcription</a>.)</li>
+    </ul>
+</p>
+<p>La transcription est chargée, mais vous n'avez pas de fichier média, comme indiqué.</p><br />
+<img id="ima" class="center" src="img/capture/inew4.png" width="800" /><br /><br />
+
+<h3 id="030202">3.2.2. Importer une transcription locale</h3>
+<p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Import</b>.</p><br />
+<img id="ima" class="center" src="img/capture/inewqu.png" width="800" /><br /><br />
+<p>Vous pouvez naviguez dans votre arborescence classique pour charger un fichier.</p>
+
+<h2 id="0303">3.3. Formats de transcription</h2>
+<p>transcriberjs accepte les formats de transcription suivants :
+    <ul>
+        <li>Texte (.txt) </li>
+        <li>Chat/CLAN (.cha) - format <a href="http://childes.psy.cmu.edu/">CHILDES</a>, <a href="http://childes.psy.cmu.edu/clan/">logiciel
+                CLAN</a></li>
+        <li>Transcriber (.trs) - logiciel <a href="http://trans.sourceforge.net/">Transcriber</a></li>
+        <li>Praat (.textgrid) - logiciel <a href="http://www.praat.org/">Praat</a></li>
+        <li>TEI (.tei ou .teiml) (Pour plus de précisions, cf. <a href="http://www.tei-c.org/index.xml">Format TEI</a>).</li>
+    </ul>
+</p>
+
+<h2 id="0304">3.4. Conversion des transcriptions</h2>
+<p>Un outil de conversion de formats est téléchargeable :
+    <a href="http://ct3.ortolang.fr/tei-corpo/teicorpo.jar"><i class="fa fa-download"></i>teicorpo.jar</a><br />
+    Il permet la conversion de fichiers CLAN/Chat, Transcriber et Praat vers le format TEIML et inversement.</p>
+<div id="nb">
+    <p>
+        Pour en savoir davantage à propos du format TEIML :
+        <ul>
+            <li><a href="http://www.tei-c.org/index.xml">Site officiel TEI</a></li>
+            <li><a href="http://modyco.inist.fr/sources/Ortolang/ISO_Initial_Doc_24624_TranscriptionofSpeech.pdf">Proposition
+                    de format TEI/ISO pour l'oral</a></li>
+            <li><a href="http://modyco.inist.fr/sources/Ortolang/DescriptionFormatTEI.pdf">Spécifications utilisées
+                    aujourd'hui par Ortolang et transcriberjs</a></li>
+            <li><a href="http://ircom.huma-num.fr/wiki/doku.php?id=groupes:interop_tei">Site IRCOM GT2 et les
+                    discussions des
+                    formats</a></li>
+        </ul>
+    </p>
+</div>
+<p>Cet outil permet donc pour le moment 7 types de conversions :
+    <ul>
+        <li>Chat (.cha) → TEI (.teiml)</li>
+        <li>Transcriber (.trs) → TEI</li>
+        <li>Praat (.textgrid) → TEI</li>
+        <li>TEI → Chat</li>
+        <li>TEI → Transcriber</li>
+        <li>Chat → Transcriber</li>
+        <li>Transcriber → Chat</li>
+    </ul>
+</p>
+
+Il est possible de télécharger la version (provisoire) de la DTD :
+<a href="http://modyco.inist.fr/sources/Ortolang/tei_speechTrans.dtd"><i class="fa fa-download"></i>DTD TEI Oral</a>
+
+<div id="nb">
+    <p>
+        <u>Attention</u> : Il faut avoir installé Java sur son ordinateur.<br />
+        L'outil est en Java et à utiliser tel que si vous avez installé Java sur votre ordinateur
+        (cf. <a href="http://www.java.com/fr/">Télécharger Java</a>).
+    </p>
+</div>
+
+<h4>Utilisation de l'outil de conversion</h4>
+
+<p>
+    Soit l'outil est à utiliser directement depuis le Finder ou Bureau (faire double clic sur le nom de fichier).<br />
+    Soit l'outil est utilisable <b>en ligne de commande</b>. Les commandes à exécuter sont :
+    <ul>
+        <li>Chat → TEIML :</li>
+        <code>java -cp teicorpo.jar fr.ortolang.tools.imports.ChatToTEI</code>
+        <li>Transcriber → TEIML :</li>
+        <code>java -cp teicorpo.jar fr.ortolang.tools.imports.TranscriberToTEI</code>
+        <li>Praat → TEIML :</li>
+        <code>java -cp teicorpo.jar fr.ortolang.tools.imports.PraatToTEI</code>
+        <li>TEIML → Chat :</li>
+        <code>java -cp teicorpo.jar fr.ortolang.tools.imports.TeiToChat</code>
+        <li>TEIML → Transcriber :</li>
+        <code>java -cp teicorpo.jar fr.ortolang.tools.imports.TeiToTranscriber</code>
+    </ul><br />
+
+    L'outil conversion de formats (TEIML, CHAT/CLAN, Transcriber, Praat) peut être téléchargé ici : <br />
+    <a href="http://ct3.ortolang.fr/tei-corpo/teicorpo.jar"><i class="fa fa-download"></i>Conversion.jar</a></p>
+
+<h2 id="0305">3.5. Enregistrer la transcription</h2>
+
+<p> Vous pouvez à tout moment <b>sauvegarder</b> la transcription en cours :
+    <ul>
+        <li>avec le raccourci clavier <b>Ctrl + S</b> </li>
+        <li>avec l'icône <i class="iconcur fa fa-save fa-lg"></i> situé dans la barre d'outils</li>
+        <li>ou en accédant dans le menu <bl>FICHIERS</bl> à l'encart <b>Enregistrer</b>.<br /></li>
+    </ul>
+</p>
+<p>Vous pouvez <b>définir ou modifier l'emplacement</b> de votre fichier de transcription
+    en accédant à l'encart <b>Enregistrer sous...</b> du menu <bl>FICHIERS</bl>,
+    et ainsi <b>renommer</b> votre fichier.</p>

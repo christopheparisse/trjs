@@ -534,67 +534,73 @@
 	</div>
 
 <!-- MODAL FOR PARAMETERS -->
-<div class="modal" id="insertmacro">
+<div class="modal" id="insertmacro" onkeydown="trjs.template.eventModals(event);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <div id="aide_fen2">
                     <span id='aide_macro' title="">
-                    <i class="fa fa-question-circle fa-lg fa-colorred" onclick="trjs.contextualhelp('op-macro',true);"></i>
+                    <i class="fa fa-question-circle fa-lg fa-colorred"
+                       onclick="trjs.contextualhelp('op-macro',true);"></i>
                     </span>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span id="pparam"> Macros (events & shortcuts)</span></h4>
+                <h4 class="modal-title"><span id="pparam">Macros</span></h4>
             </div>
             <div class="modal-body">
                 <div class="tab-content">
-                    <div class="col-md-6">
-                        <p>
-                            <span id='paccessmacro'>Find: </span>
-                            <select class="caccessmacro" id="accessmacro" onchange='trjs.macros.find();'>
-                            </select>
-                            <br/>
-                            <span id='pmacroname'>New name: </span>
-                            <input type="text" class="cmacroname" id="macroname"/>
-                        </p>
+                    <div class="row border-macro">
+                        <div class="col-md-4">
+                                <span id='paccessmacro'>Find: </span>
+                                <select class="caccessmacro" id="accessmacro" onchange='trjs.macros.find();'>
+                                </select>
+                        </div>
+                        <div class="col-md-4">
+                                <span id='pmacroname'>Name for new macro: </span>
+                                <input type="text" class="cmacroname" id="macroname"/>
+                        </div>
+                        <div class="col-md-4">
+                            <span id='pmacrodesc'>Description: </span>
+                                <input type="text" class="cmacrodesc" id="macrodesc"/>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <p><span id='pmacrodesc'>Description: </span>
-                            <input type="text" class="cmacrodesc" id="macrodesc"/></p>
+                    <div class="row border-macro">
+                        <div class="col-md-4">
+                            <span id='ptypeevent'>Type: </span>
+                                <select class="ctypevent" id="event-type">
+                                </select>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span id="pinfomacroval">Value: </span>
+                                <input type="text" placeholder="..." id="event-content" name="event-content"
+                                       onchange=""/>
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span id="pinfomacrost">Additional: </span>
+                                <input type="text" placeholder="..." id="event-subtype" name="event-subtype"
+                                       onchange=""/>
+                            </div><!-- /input-group -->
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <p><span id='pkeyshortcut'onclick='trjs.macros.selectShortcut();'>Shortcut: <span id='vkeyshortcut'></span></span>
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <p><span id='ptypeevent'>Type: </span>
-                            <select class="ctypevent" id="event-type">
-                            </select></p>
-                    </div>
-                    <div class="row">
-                        <div class="input-group">
-                            <span id="pinfomacrost">Subtype: </span>
-                            <input type="text" placeholder="..." id="event-subtype" name="event-subtype"
-                                   onchange=""/>
-                        </div><!-- /input-group -->
-                    </div>
-                    <div class="row">
-                        <div class="input-group">
-                            <span id="pinfomacroval">Value: </span>
-                            <input type="text" placeholder="..." id="event-content" name="event-content"
-                                   onchange=""/>
-                        </div><!-- /input-group -->
-                    </div>
-                    <div class="col-md-4">
-                        <div class="input-group">
-                            Save shortcut
-                            <button class="btn btn-default" type="button" onclick='trjs.macros.save();'><i
-                                    class="fa fa-check"></i></button>
-                            Insert
-                            <button class="btn btn-default" type="button" onclick='trjs.macros.insert();'><i
-                                    class="fa fa-beer"></i></button>
-                        </div><!-- /input-group -->
+                    <div class="row border-macro">
+                        <div class="col-md-4">
+                            <span id='pkeyshortcut' onclick='trjs.macros.selectShortcut();'>Shortcut: <span
+                                    id='vkeyshortcut'>...</span></span>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span id="psavemacro">Save</span>
+                                <button class="btn btn-default" type="button" onclick='trjs.macros.save();'><i
+                                        class="fa fa-check"></i></button>
+                                <span id="pinsertmacro">Insert</span>
+                                <button class="btn btn-default" type="button" onclick='trjs.macros.insert();'><i
+                                        class="fa fa-beer"></i></button>
+                            </div><!-- /input-group -->
+                        </div>
                     </div>
                 </div>
             </div>

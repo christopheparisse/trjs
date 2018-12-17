@@ -550,6 +550,13 @@ function createMenu() {
                     if (window) window.webContents.send('help', 'main');
                 }
             },
+            {
+                label: 'Online Short Help',
+                click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    if (window) window.webContents.send('helpfirststeps', 'main');
+                }
+            },
             {type: 'separator'},
             {
                 label: 'Key Bindings',

@@ -157,6 +157,9 @@ trjs.init.electronkeyboard = function () {
     ipcRenderer.on('help', function(event, arg) {
         trjs.editor.goHelp();
     });
+    ipcRenderer.on('helpfirststeps', function(event, arg) {
+        trjs.editor.goHelpFirstSteps();
+    });
     // message-bindings
     ipcRenderer.on('messagebindings', function(event, arg) {
         trjs.keys.viewKeyBindings();

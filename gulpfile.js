@@ -111,10 +111,18 @@ gulp.task('electron', function () {
         .pipe(gulp.dest('.'));
 });
 
+gulp.task('doc', function () {
+    // construct doc/index.html
+    return gulp.src('./doc/src/trjs_doc.html')
+        .pipe(include())
+        .pipe(preprocess({context: { VERSION: 'electron'}}))
+        .pipe(gulp.dest('./doc'));
+});
+
 gulp.task('package', function () {
     // copy package.json dans tools
     return gulp.src('./package.json')
         .pipe(gulp.dest('tools'));
 });
 
-gulp.task('default', gulp.series('trjslocal', 'trjsclient', 'electron', 'package'));
+gulp.task('default', gulp.series('doc', 'trjslocal', 'trjsclient', 'electron', 'package'));

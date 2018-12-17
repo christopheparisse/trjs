@@ -1,0 +1,313 @@
+<h1 id="04">4. Fichier média</h1>
+<hr />
+
+<h2 id="0401">4.1. Ouvrir un média</h2>
+<p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Choisir un média</b>.</p>
+<img id="ima" class="center" src="img/capture/inew2bis.png" width="800" /><br /><br />
+<p>Une fenêtre s'ouvre :</p><br />
+<img id="ima" class="center" src="img/capture/inew5.png" width="800" /><br /><br />
+<p>
+    <ul>
+        <li>A gauche, l'<b>arborescence</b> de l'ordinateur permet de naviguer dans les répertoires (double-clic pour
+            ouvrir un dossier)</li>
+        <li>A droite, visualisation du <b>contenu d'un répertoire</b> : seulement les fichiers s'affichent</li>
+        <li>En bas à droite, sélection seule des fichiers média, ou toutes les extensions de fichiers à visualiser.
+            (Voir
+            <a href="#0303">Formats de la transcription</a>.)</li>
+    </ul>
+</p><br />
+<img id="ima" class="center" src="img/capture/inew6.png" width="800" /><br /><br />
+Si tout s'est déroulé sans encombre, le média est chargé. <br />
+Sinon, un message d'erreur vous avertit d'un éventuel problème de compatibilité avec le format média.
+
+<h2 id="0402">4.2. Formats média</h2>
+<p>transcriberjs est compatible directement avec les formats :
+    <ul>
+        <li>Audio :</li>
+        <ul>
+            <li>Wave (.wav)</li>
+            <li>MP3 (.mp3)</li>
+            <li>OGG (.oga)</li>
+        </ul>
+        <li>Vidéo :</li>
+        <ul>
+            <li>MP4 (.mp4)</li>
+            <li>OGG (.ogv)</li>
+            <li>WebM (.webm)</li>
+        </ul>
+    </ul>
+</p>
+<p>Les autres formats de média sons/vidéos sont utilisables après conversion par l'outil <a href="https://www.ffmpeg.org">FFMPEG</a>.
+    (Voir page <a href="#0403">Conversions media</a>).</p>
+
+<h3 id="040201">4.2.1. Correspondances des formats média reconnus par transcriberjs dans les navigateurs</h3>
+<p>
+    <table>
+        <tr>
+            <th>Navigateur<br />Format</th>
+            <th><img src="img/ff.png" width="20" height="20"> Mozilla Firefox</th>
+            <th><img src="img/chrome.png" width="20" height="20"> Google Chrome</th>
+            <th><img src="img/opera.png" width="20" height="20"> Opera / <img src="img/safari.png" width="20" height="23">
+                Safari</th>
+            <th><img src="img/ie.png" width="20" height="20"> Internet Explorer</th>
+        </tr>
+        <tr>
+            <td class="b">MP4 (.mp4)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+        </tr>
+        <tr>
+            <td class="b">OGG (.ogv)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td class="a"></td>
+        </tr>
+        <tr>
+            <td class="b">WebM (.webm)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-remove"></i></td>
+        </tr>
+    </table>
+</p>
+
+<h3 id="040202">4.2.2. Correspondance des formats média avec d'autres logiciels de transcription</h3>
+<h4>Correspondance des formats audio</h4>
+<p>
+    <table>
+        <tr>
+            <th>Logiciel<br />Format</th>
+            <th>transcriberjs</th>
+            <th>Transcriber</th>
+            <th>CLAN</th>
+            <th>ELAN</th>
+            <th>Praat</th>
+        </tr>
+        <tr>
+            <td class="b">Wave (.wav)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+        </tr>
+        <tr>
+            <td class="b">MP3 (.mp3)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+        </tr>
+        <tr>
+            <td class="b">OGG (.oga)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+        </tr>
+    </table>
+</p>
+
+<h4>Correspondance des formats vidéo</h4>
+<p>
+    <table>
+        <tr>
+            <th>Logiciel<br />Format</th>
+            <th>transcriberjs</th>
+            <th>Transcriber</th>
+            <th>CLAN</th>
+            <th>ELAN</th>
+            <th>Praat</th>
+        </tr>
+        <tr>
+            <td class="b">MP4 (.mp4)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-remove"></i></td>
+            <td class="a">-</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a">-</td>
+        </tr>
+        <tr>
+            <td class="b">OGG (.ogv)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-remove"></i></td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+        </tr>
+        <tr>
+            <td class="b">WebM (.webm)</td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-remove"></i></td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+        </tr>
+        <tr>
+            <td class="b">MOV (.mov)</td>
+            <td class="a"><i class="fa fa-check"></i>
+                via <a href="https://www.ffmpeg.org/">FFmpeg</a></td>
+            <td class="a"><i class="fa fa-remove"></i></td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a">-</td>
+        </tr>
+        <tr>
+            <td class="b">MPEG (.mpeg)</td>
+            <td class="a"><i class="fa fa-check"></i>
+                via <a href="https://www.ffmpeg.org/">FFmpeg</a></td>
+            <td class="a"><i class="fa fa-remove"></i></td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a"><i class="fa fa-check"></i>
+            </td>
+            <td class="a">-</td>
+        </tr>
+        <tr>
+            <td class="b">AVI (.avi)</td>
+            <td class="a"><i class="fa fa-check"></i>
+                via <a href="https://www.ffmpeg.org/">FFmpeg</a></td>
+            <td class="a"><i class="fa fa-remove"></i></td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+            <td class="a">-</td>
+        </tr>
+    </table>
+</p>
+
+<h2 id="0403">4.3. Conversion des médias</h2>
+<p>Les autres formats de média sons/vidéos sont utilisables après conversion par l'outil <a href="https://www.ffmpeg.org/">FFMPEG</a>.
+    <br />
+    FFMPEG est un logiciel de lecture et encodage de vidéo qui assure en ligne de commande la possibilité de convertir
+    les fichiers vidéo d'un format à un autre.<br />
+</p>
+
+<h4>Conversions des formats média réalisées par transcriberjs (via <a href="https://www.ffmpeg.org/">FFmpeg)</a></h4>
+<p>
+    <ul>
+        <li>Vidéo moyenne : vers vidéo pour HTML5 taille moyenne</li>
+        <li>Petite vidéo : vers vidéo pour HTML5 petite taille</li>
+        <li>Grand MP4 : vers vidéo MP4 grande taille</li>
+        <li>Grand OGV : vers vidéo OGV grande taille</li>
+        <li>MPEG moyen : vers vidéo MPEG (Quicktime) taille moyenne</li>
+        <li>MOV moyen : vers vidéo MOV (Quicktime) taille moyenne</li>
+        <li>Grand MOV : vers vidéo MOV (Quicktime) grande taille</li>
+        <li>Vers audio : transforme la vidéo en un fichier WAV et un fichier MP3</li>
+    </ul>
+</p>
+
+<h4>Outil de conversion média</h4>
+<p>Dans le menu <bl>OUTILS</bl>, il est possible de convertir le média dans les formats suivantes:
+    <ul>
+        <li>Petit format</li>
+        <li>Moyen format</li>
+        <li>Grand format</li>
+        <li>Audio seul</li>
+    </ul>
+</p>
+
+<h1 id="05">5. Gestion du média</h1>
+<hr />
+
+<h2 id="0501">5.1. Fonctions de lecture</h2>
+<p>Plusieurs commandes et boutons de lecture du média sont disponibles,
+    chacun a des fonctionnalités et des champs d'actions spécifiques :</p>
+<table>
+    <tr>
+        <th>Icône ou raccourci clavier</th>
+        <th>Fonctionnalité</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>TAB</td>
+        <td>Lecture à partir du début de la ligne courante, pause</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>F1</td>
+        <td>Lecture simple, pause</td>
+        <td><i>correspond au bouton média masqué, apparaît lorsqu'on passe le curseur sur le média - fonction
+                totalement
+                indépendante de la transcription</i></td>
+    </tr>
+    <tr>
+        <td>Shift + F1</td>
+        <td>Lecture <b>à partir du média</b>, pause</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Alt + F1</td>
+        <td>Lecture <b>à partir de la transcription</b> (endroit où le curseur est situé), pause</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Shift + TAB</td>
+        <td>Lecture à partir du début de la ligne courante</td>
+        <td><i>permet de relire en boucle à partir du même endroit</i></td>
+    </tr>
+    <tr>
+        <td>F7</td>
+        <td>Lecture de la ligne courante</td>
+        <td><i>segment temporel seulement</i></td>
+    <tr>
+        <td>Alt F7</td>
+        <td>Lecture de 3 lignes autour de la ligne courante</td>
+        <td><i>permet d'isoler un contexte</i></td>
+    <tr>
+        <td>F8</td>
+        <td>Lecture continue à partir de la ligne courante</td>
+        <td></td>
+</table>
+
+<h2 id="0502">5.2. Sélection du signal</h2>
+
+<p>Il est possible de <b>réajuster manuellement</b> le temps d'une ligne de la transcription <b>à partir du signal</b>
+    :
+    <ol>
+        <li>Dans un premier temps, sélectionner dans la transcription/dans la partition la ligne que l'on veut
+            modifier.
+            <br />
+            Elle s'affiche en <b>vert</b> dans les parties partition et signal.</li><br />
+        <img id="ima" class="center" src="img/capture/Capture1.png" width="800px" /><br /><br />
+        <li>Ensuite se positionner <b>sur le signal et sélectionner</b> à l'aide d'un <b>clic enfoncé</b> la nouvelle
+            partie temporelle,
+            elle s'affiche en <b>bleu</b>.</li><br />
+        <img id="ima" class="center" src="img/capture/Capture2.png" width="800px" /><br /><br />
+        <li>Une fois la nouvelle délimitation sélectionnée,
+            faire <b>Shift + clic</b>.</li> <br />
+        Le temps de la ligne de transcription est réajusté, et la visualisation de la ligne dans la partie partition
+        aussi.</li>
+        <img id="ima" class="center" src="img/capture/Capture3.png" width="800px" />
+    </ol>
+</p>

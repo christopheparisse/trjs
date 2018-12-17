@@ -91,7 +91,7 @@ trjs.messgs_eng = {
     filenm: 'File ',
     movedto: ' was moved to ',
     mustfn: 'You must choose a file name to save your new file. Internal save performed only.',
-    mustsave: 'Changes have been made to the current file: do you want return to editing for saving the changes ?',
+    mustsave: 'Changes have been made to the current file: do you want to quit without saving the changes ?',
     haschanged: 'The file has changed : do you want to save it?',
     backfile: 'Last changed were not saved. Hit cancel if you want to go back to editing the previous file?',
     wantback: "The file has been changed but not saved. Please come back if you want to save it.",
@@ -774,6 +774,15 @@ trjs.messgs_eng = {
     editKey: "Editing keyboard command",
     savekeybindings: "Do you want to save the change in the keyboard bindings?",
     newmacro: "New macro",
+    paccessmacro: "Find:",
+    pmacroname: "Name for new macro:",
+    pmacrodesc: "Description",
+    ptypeevent: "Type:",
+    pinfomacroval: "Value",
+    pinfomacrost: "Additional",
+    pkeyshortcut: "Shorcut",
+    psavemacro: "Save",
+    pinsertmacro: "Insert",
 };
 
 trjs.messgs_fra = {
@@ -860,7 +869,7 @@ trjs.messgs_fra = {
     filenm: 'Fichier ',
     movedto: ' a été déplacé de ',
     mustfn: 'Vous devez choisir un nom pour sauver votre fichier. Sauvegarde interne seulement.',
-    mustsave: 'Le fichier a changé. Voulez-vous continuer pour le sauver ?',
+    mustsave: 'Le fichier a changé. Voulez-vous abandonner sans le sauver ?',
     haschanged: 'Le fichier a changé. Voulez-vous le sauver ?',
     backfile: "Les dernières modifications n'ont pas été sauvegardées. Cliquer annuler pour revenir à l'édition du document précédent.",
     wantback: "Le fichier a été changé mais pas sauvé. Revenez si vous voulez le sauver.",
@@ -1540,6 +1549,15 @@ trjs.messgs_fra = {
     editKey: "Edition de la commande clavier",
     savekeybindings: "Voulez-vous sauver les modifications dans les associations clavier ?",
     newmacro: "Nouvelle macro",
+    paccessmacro: "Trouver:",
+    pmacroname: "Nom:",
+    pmacrodesc: "Description",
+    ptypeevent: "Type:",
+    pinfomacroval: "Valeur",
+    pinfomacrost: "Complément",
+    pkeyshortcut: "Raccourci",
+    psavemacro: "Sauver",
+    pinsertmacro: "Insérer",
 };
 
 trjs.messgs = trjs.messgs_eng;

@@ -1,0 +1,846 @@
+<h1 id="01">1. Premiers pas</h1>
+<hr />
+
+<h2 id="0101">1.1. Installation</h2>
+
+<h3 id="010101">1.1.1. Au préalable</h3>
+<p>Avant de procéder à l'installation de transcriberjs,
+    veuillez vérifier avoir effectué les installations et <b>mises à jour</b> suivantes:
+    <ol>
+        <li>Avoir une version de votre système d'exploitation compatible:</li>
+        <ul>
+            <li>Mac OS :</li>
+            <ul>
+                <li>version <b>minimum 10.7</b> (Lion) </li>
+                <li>et plus récentes</li>
+            </ul>
+            <li>Windows : </li>
+            <ul>
+                <li>XP,</li>
+                <li>Seven </li>
+                <li>et 8</li>
+            </ul>
+            <li>Autres systèmes :</li>
+        </ul>
+        <li>Avoir un navigateur récent (c'est-à-dire implémentant les <b>normes HTML5 et CSS3</b>):</li>
+        <ul>
+            <li><img src="img/ff.png" width="20" height="20" /> Firefox, version 35 et plus récentes</li>
+            <li><img src="img/chrome.png" width="20" height="20" /> Chrome, version 31 et +</li>
+            <li><img src="img/opera.png" width="20" height="20" /> Opera, version 26 et +</li>
+            <li><img src="img/safari.png" width="20" height="20" /> Safari, version 7.1 et +</li>
+            <li><img src="img/ie.png" width="20" height="20"> Internet Explorer, version 9 et +</li>
+        </ul>
+    </ol>
+    Le programme d'installation est téléchargeable sur la page <a href="http://modyco.inist.fr/transcriberjs/doku.php?id=doc:download">Téléchargement</a>.
+</p>
+
+<h3 id="010102">1.1.2. Windows</h3>
+<p>
+    <ol>
+        <li>Cliquez sur le <a href="http://modyco.inist.fr/transcriberjs/doku.php?id=doc:download">lien de
+                téléchargement</a>.
+            Une fenêtre s'ouvre:
+            <img id="ima" class="align" src="img/capture/Dl\01.png" />
+            Vous pouvez <b>Enregistrer le fichier</b>.</li><br />
+        <li>Dans le dossier <b>Téléchargements</b>, vous trouverez le répertoire d'installation au format exécutable,
+            veuillez l'ouvrir avec un clic.<br /> La fenêtre suivante apparaît:
+            <img id="ima" class="align" src="img/capture/Dl\02.png" />
+            Il est conseillé de garder cochée la case <b>Desktop Shortcuts</b>
+            afin de pouvoir lancer le logiciel directement depuis le Bureau (Desktop) via un raccourci.
+            <img id="ima" class="align" src="img/capture/Dl\03.png" />
+            Le répertoire par défaut est <b>C:\transcriberjs</b><br />
+            Un autre répertoire peut-être utilisé, toutefois il est conseillé de laisser l'emplacement d'installation
+            par
+            défaut. <br />
+            <div id="nb">
+                <p><u>Attention</u> : Ne pas installer <b>transcriberjs</b> dans le répertoire <b>Program files</b>
+                    (ou <b>Program files (16 bits)</b>).<br />
+                    Le répertoire par défaut est <b>C:\transcriberjs</b> - Un autre répertoire peut-être utilisé.</p>
+            </div>
+            L'installation commence...
+        </li><br />
+        <!--<li>Les versions Windows comprennent l'installation du programme <b>Node.js</b>.
+Cette installation est <b>obligatoire</b> s'il n'est pas déjà installé sur votre ordinateur.<br/>
+La fenêtre d'installation de <b>Node.js</b> s'ouvre: <br/>
+<img id="ima" class="align" src="img/capture/Dl\04.png"/>
+<ul>
+<li>S'il s'agit de votre <b>première installation</b> de Node.js, vous pouvez suivre les instructions.</li>
+<li>Si vous avez <b>déjà installé Node.js</b>, le message suivant apparaît :
+<img id="ima" class="align" src="img/capture/Dl\05bis.png"/>
+Ainsi vous pouvez sélectionner <b>Change</b> pour poursuivre l'installation
+tout en vérifiant le bon fonctionnement de <b>Node.js</b>
+ou vous pouvez annuler cette partie de l'installation en cas de mise à jour de <b>transcriberjs</b></li>
+</ul></li><br/>
+<li>L'installation de Node.js est <b>terminée</b>.<img class="align" src="img/capture/Dl\06.png"/></li><br/>-->
+        <li>L'installation de transcriberjs est <b>terminée</b>.
+            Vous pouvez fermer.<img id="ima" class="align" src="img/capture/Dl\07.png" /></li>
+    </ol>
+</p>
+
+<h3 id="010103">1.1.3. Mac OS X</h3>
+<p>Copier <b>transcriberjs.app</b> dans <b>/Applications</b> puis créer alias comme désiré</li>
+</p>
+
+<h3 id="010104">1.1.4. Autres systèmes (Linux et sources)</h3>
+<p>
+    <ol>
+        <li>Décompresser le fichier et installer par exemple dans <b>/home/messofts/trjs</b></li>
+        <li>Faire une installation séparée de Java (version 7 minimum) et de Node.js (version 4 LTS minimum)</li>
+        <li>Lancer la commande :
+            <code>node /home/messofts/trjs/node/trjsexpress.js</code> </li>
+        <li>Visualiser la page web <a href="http://localhost:8103">http://localhost:8103</a> dans un navigateur
+            (<img src="img/ff.png" width="20" height="20" /> Firefox et
+            <img src="img/chrome.png" width="20" height="20" /> Chrome recommandés)</li>
+    </ol>
+</p>
+
+<h2 id="0102">1.2. Lancement</h2>
+
+<h3 id="010201">1.2.1. Lancement à partir du Bureau (Desktop)</h3>
+
+<p>Lancer autant de fois que désiré l'icône <b>transcriberjs</b>.</p>
+
+
+<h3 id="010202">1.2.2. Lancement via navigateur</h3>
+<p>Le programme peut être lancé directement à partir d'un navigateur récent implémentant les <b>normes HTML5 et CSS3</b>
+    :
+    <ul>
+        <li><img src="img/ff.png" width="20" height="20"> Firefox (toutes versions après 26.0, utilisable sur Windows
+            XP,
+            7, 8, Mac OS X, Linux).</li>
+        <li><img src="img/chrome.png" width="20" height="20"> Chrome (toutes versions après 33.0, utilisable sur
+            Windows 7,
+            8, Mac OS X).</li>
+        <li><img src="img/safari.png" width="20" height="20"> Safari (toutes versions après 7.0, utilisable sur Mac OS
+            X)</li>
+        <li><img src="img/opera.png" width="20" height="20"> Opera</li>
+        <li><img src="img/ie.png" width="20" height="20"> Internet Explorer</li>
+    </ul>
+</p>
+
+<h4>Usage local</h4>
+<p>Il est possible d'appeler le programme dans le navigateur de votre choix (versions minimales requises)
+    avec un des chemins suivants :
+    <ul>
+        <li><a href="http://localhost:8101">http://localhost:8101</a> ou</li>
+        <li><a href="http://localhost:8101/trjs">http://localhost:8101/trjs</a></li>
+    </ul>
+</p>
+
+<h4>Version distante</h4>
+<p>Utiliser l'adresse <a href=""></a>.<br />
+    Vous serez transférés sur l'adresse
+    <a href="http://modyco.inist.fr:8101/transcriberjs/transcriberjs.html">http://modyco.inist.fr:8101/transcriberjs/transcriberjs.html</a>
+    qui est l'adresse effective de travail.<br /></p>
+
+<h1 id="02">2. Interface</h1>
+<hr />
+
+<h2 id="0201">2.1. Organisation de l'écran d'édition</h2>
+<p>La fenêtre principale du programme transcriberjs se divise en six parties :<br /><br />
+    <img id="ima" class="center" src="img/capture/i1.png" width="800" /><br />
+    <ol>
+        <li>La barre d'accès aux <a href="#0202">menus, paramètres et fonctions annexes</a></li>
+        <li>Le <a href="#0203">champ média</a> contenant la vidéo et/ou l'audio, encadré des <a href="#0208">barres
+                d'outils</a>.</li>
+        <li>Le <a href="#0204">signal</a>, représentation sonore du média.</li>
+        <li>La <a href="#0205">partition</a>, représentation horizontale de la transcription, associée à un slider.</li>
+        <li>Les <a href="#0206">commandes média</a>, boutons de lecture et d'édition de la transcription.</li>
+        <li>La <a href="#0207">transcription</a> représentée sous forme de tableau.</li>
+    </ol>
+</p>
+
+<div id="nb">
+    <p>Pour un usage simplifié, le signal et la partition sont des parties qui peuvent être <b>affichées ou masquées</b>,
+        <br />
+        de même que les barres d'outils et la vidéo dans le champ média.
+        (cf. Onglet <b>Affichage</b> dans la fenêtre <b>Paramètres</b>, menu <bl>OUTILS</bl>).</p>
+    <p>Il est possible d'agrandir la taille de la fenêtre (ou de la rétrécir) en utilisant la fonction zoom du
+        navigateur.</p>
+</div>
+
+<h2 id="0202">2.2. Accès menus, paramètres et fonctions annexes</h2>
+<p>La barre de menu est composée d'encarts cliquables :<br /><br />
+    <img id="ima" class="center" src="img/capture/i2.png" width="800" /><br /><br />
+    L'onglet <bl>FICHIER</bl> propose plusieurs options d'ouverture, de sauvegarde et d'import.<br />
+    L'onglet <bl>EDITION</bl> permet d'éditer les métadonnées liées au(x) fichier(s) transcription et média.<br />
+    L'onglet <bl>OUTILS</bl> donne accès aux paramètres (affichage, réglages etc.), à des options de conversion,
+    d'export, de correction du(des) fichier(s).<br />
+    L'onglet <bl>NOM DU FICHIER</bl> renvoie au panneau <a href="#0601">Métadonnées</a> qui s'ouvre directement.
+    Chaque ligne éditée du tableau s'enregistre automatiquement.<br />
+    L'onglet <bl>RECHERCHE</bl> affiche un pannel avec diverses options de recherche à travers le(s) fichier(s).<br />
+    L'onglet <bl>AIDE</bl> contient les liens vers les sites de documentation et mémos.<br />
+</p>
+
+<h3 id="020201">2.2.1. Descriptif des icônes</h3>
+
+<p>
+    <table>
+        <tr>
+            <th>Icône</th>
+            <th>Fonction</th>
+            <th>Raccourci clavier</th>
+            <th>Localisation</th>
+        </tr>
+        <tr>
+            <td><i class="fa fa-folder-open-o"></i></td>
+            <td>Ouvrir une transcription, pour ouvrir une trancription existante</td>
+            <td>Ctrl O</td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-file-sound-o"></i><i class="fa fa-file-video-o"></i></td>
+            <td>Choisir un média, parmi un média existant</td>
+            <td>Ctrl Alt O</td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-file-o"></i></td>
+            <td>Nouvelle transcription, pour créer une transcription</td>
+            <td></td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>La liste des derniers fichiers ouverts, les derniers fichiers que vous avez modifiés peuvent être
+                rappelés</td>
+            <td></td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-save"></i></td>
+            <td>Enregistrer, pour sauvegarder votre travail existant</td>
+            <td>Ctrl S</td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-save"></i><i class="fa fa-pencil"></i></td>
+            <td>Enregistrer sous... pour une sauvegarde dans votre environnement de travail</td>
+            <td></td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Sauver dans le cache, afin de retrouver votre travail via votre navigateur</td>
+            <td></td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-upload"></i></td>
+            <td>Import, pour importer une transcription/un média en local</td>
+            <td></td>
+            <td>Onglet <bl>FICHIER</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-archive"></i></td>
+            <td>Métadonnées, déploiement d'un panneau de renseignement des métadonnées du fichier courant.</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-user"></i></td>
+            <td>Participants, pour l'édition du nom et des caractéristiques concernant les locuteurs du fichier courant</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-sitemap"></i></td>
+            <td>Structure, pour l'édition des champs dépendants de la ligne principale</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-th-list"></i></td>
+            <td>Afficher ou cacher la sélection multiple, pour pouvoir délimiter une sélection</td>
+            <td>Ctrl Alt F8</td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-check-square-o"></i></td>
+            <td>Sélectionner tout</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-square-o"></i></td>
+            <td>Désélectionner tout</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-cut"></i></td>
+            <td>Couper la sélection</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-copy"></i></td>
+            <td>Copier la sélection</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-paste"></i></td>
+            <td>Coller la sélection</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-mail-reply"></i></td>
+            <td>Annuler la dernière action</td>
+            <td>Ctrl Z</td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Liste des annulations, pour consulter les annulations possibles</td>
+            <td></td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-mail-forward"></i></td>
+            <td>Reproduire la dernière annulation</td>
+            <td>Ctrl Y</td>
+            <td>Onglet <bl>EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-legal"></i></td>
+            <td>Vérifier la transcription, pour consulter les erreurs de format par rapport au standard défini TEIML
+            </td>
+            <td></td>
+            <td>Onglet <bl>OUTILS</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-history"></i></i></td>
+            <td>Décaler tous les repères temporels, pour réajuster un éventuel décalage avec le fichier média</td>
+            <td></td>
+            <td>Onglet <bl>OUTILS</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-file-sound-o"></i><i class="fa fa-file-video-o"></i></td>
+            <td>Convertir un média</td>
+            <td></td>
+            <td>Onglet <bl>OUTILS</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-download"></i></td>
+            <td>Export, du fichier ou de la sélection, avec plusieurs formats proposés</td>
+            <td></td>
+            <td>Onglet <bl>OUTILS</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-cogs"></i></td>
+            <td>Paramètres, pour ajuster les paramètres de langue, d'affichage, d'édition etc.</td>
+            <td></td>
+            <td>Onglet <bl>PARAMETRES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-search"></i></td>
+            <td>Recherche,pour rechercher, remplacer, se déplacer rapidement dans le fichier de transcription</td>
+            <td>Ctrl F</td>
+            <td>Onglet <bl>RECHERCHE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Aide rapide, petite mémo avec schéma décrivant le fonctionnement de l'outil</td>
+            <td></td>
+            <td>Onglet <bl>AIDE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Aide complète, accès au site de documentation</td>
+            <td></td>
+            <td>Onglet <bl>AIDE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-keyboard-o"></i></td>
+            <td>Liste des fonctions du clavier, avec la correspondance des raccourcis claviers avec leur fonction ou
+                caractère
+                API correspondant</td>
+            <td></td>
+            <td>Onglet <bl>AIDE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-spinner"></i></td>
+            <td>Mise à jour du logiciel</td>
+            <td></td>
+            <td>Onglet <bl>AIDE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-envelope-o"></i></td>
+            <td>Messages</td>
+            <td></td>
+            <td>Onglet <bl>AIDE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Réinitialiser tous les messages d'aide</td>
+            <td></td>
+            <td>Onglet <bl>AIDE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>A propos de <b>transcriberjs</b>, crédits</td>
+            <td></td>
+            <td>Onglet <bl>AIDE</bl>
+            </td>
+        </tr>
+    </table>
+</p>
+
+<h3 id="020202">2.2.2. Menu Fichiers</h3>
+<p>En cliquant sur le menu <bl>FICHIERS</bl> (en haut à gauche de l'écran), l'encart déroulant propose plusieurs
+    options :<br /><br />
+    <img id="ima" class="center" src="img/capture/i8.png" width="800" /><br />
+    <ol>
+        <li><a href="#0301">Ouvrir une transcription</a>, pour ouvrir une trancription existante.</li>
+        <li><a href="#0302">Choisir un média</a>, parmi un média existant.</li>
+        <li><a href="#0303">Nouvelle transcription</a>, pour créer une transcription.</li>
+        <li>La liste des derniers fichiers ouverts, les derniers fichiers que vous avez modifiés peuvent être rappelés.</li>
+        <li><a href="#0304">Enregistrer</a>, pour sauvegarder votre travail existant.</li>
+        <li><a href="#0305">Enregistrer sous...</a> pour une sauvegarde dans votre environnement de travail.</li>
+        <li><a href="#0306">Sauver dans le cache</a>, afin de retrouver votre travail via votre navigateur.</li>
+        <li><a href="#0307">Import</a>, pour importer une transcription/un média en local.</li>
+        <li><a href="#0803">Export</a>, un outil pour exporter son travail vers plusieurs formats cibles.</li>
+    </ol>
+</p>
+
+<h3 id="020203">2.2.3. Menu Edition</h3>
+<p>En cliquant sur le menu <bl>EDITION</bl> (en haut à gauche de l'écran), l'encart déroulant propose plusieurs
+    options :<br /><br />
+    <img id="ima" class="center" src="img/capture/i9.png" width="800" /><br />
+    <ol>
+        <li><a href="#0601">Métadonnées</a>, déploiement d'un panneau de renseignement des métadonnées du fichier
+            courant.</li>
+        <li><a href="#0602">Participants</a>, pour l'édition du nom et des caractéristiques concernant les locuteurs du
+            fichier courant.</li>
+        <li><a href="#0604">Structures</a>, pour l'édition des champs dépendants de la ligne principale.</li>
+        <li>Les options d'édition pour la <a href="#">sélection multiple</a>,
+            sélection définie par le transcripteur d'un ou plusieurs extrait(s) de la transcription globale :</li>
+        <ul>
+            <li>Afficher ou cacher la sélection multiple</li>
+            <li>Sélectionner ou désélectionner la sélection multiple</li>
+            <li>Couper la sélection</li>
+            <li>Copier la sélection</li>
+            <li>Coller</li>
+        </ul>
+        <li><a href="#">Annuler</a>, l'action précédente.</li>
+        <li><a href="#">Liste des annulations</a>, déploie une fenêtre qui liste l'historique des dernières actions
+            réalisées.
+            Ainsi, il est possible de revenir à l'étape précédente.</li>
+        <li><a href="#">Refaire</a>, la dernière action annulée.</li>
+    </ol>
+</p>
+<h3 id="020204">2.2.4. Menu Outils</h3>
+<p>Plusieurs outils sont proposés par transcriberjs, <br /><br />
+    <img id="ima" class="center" src="img/capture/i10.png" width="800" /><br />
+    <ol>
+        <li>L'accès aux <a href="#0803">paramètres</a> : (une fenêtre se déploie, elle contient plusieurs encarts aux
+            fonctionnalités thématiques.)</li>
+        <li>Une <a href="#0803">vérification de la transcription</a></li>
+        <li>Un <a href="#0803">décalage des repères temporels</a></li>
+        <li>Un <a href="#0403">outil de conversion</a></li>
+    </ol>
+</p>
+
+<h3 id="020205">2.2.5. Encart <i>Nom du fichier</i></h3>
+<p>En cliquant sur le nom du fichier (en bleu, au milieu, en haut de l'écran),
+    le panneau <a href="#0601">Métadonnées</a> s'ouvre directement. </p>
+<br /><img id="ima" class="center" src="img/capture/imeta.png" width="800" /><br />
+
+<h3 id="020206">2.2.6. Menu Recherche</h3>
+<p>Une fenêtre s'ouvre, avec 4 encarts:<br /><br />
+    <img id="ima" class="center" src="img/capture/i12.png" width="800" /><br />
+    <ol>
+        <li><a href="#0902">Recherche</a></li>
+        <li><a href="#0902">Recherche-Remplace</a></li>
+        <li><a href="#0902">Affichage</a></li>
+        <li><a href="#0902">Aller à...</a></li>
+    </ol>
+</p>
+
+<h3 id="020207">2.2.7. Menu Aide</h3>
+<p>En cliquant sur le menu <bl>AIDE</bl> (en haut à droite de l'écran), l'encart déroulant propose plusieurs options
+    :<br /><br />
+    <img id="ima" class="center" src="img/capture/i13.png" width="800" /><br />
+    <ol>
+        <li>Aide rapide</li>
+        <li>Aide complète (site : <img src="img/trjs.png" width="35" height="35" /> <a href="http://modyco.inist.fr/transcriberjs/doku.php">http://modyco.inist.fr/transcriberjs/doku.php</a>)</li>
+        <li>Liste des fonctions du clavier - <i>Mémo rapide des</i> <a href="#0701">Raccourcis claviers et leurs
+                fonctions</a></li>
+        <li>Mise à jour du logiciel</li>
+        <li><a href="#0804">Message</a> - <i>Historique des messages affichés</i></li>
+        <li>A propos de transcriberjs - <i>Informations complémentaires et droits</i></li>
+    </ol>
+</p>
+
+<h2 id="0203">2.3. Champ média</h2>
+<p>Le champ média contient la vidéo et/ou l'audio.</p><br /><br />
+<img id="ima" class="center" src="img/capture/imed.png" width="800" /><br /><br />
+<p>La barre de lecture est propre au média (et dépendante du navigateur utilisé),
+    elle apparaît lorsqu'on passe le curseur sur le média, puis disparaît après 3 secondes. <br />
+    Elle offre les options suivantes :
+    <ol>
+        <li>Revenir en arrière (3 secondes par défaut : valeur modifiable dans le menu <bl>PARAMETRES</bl>) ou
+            raccourci
+            clavier : <b>Alt ←</b> (ou <b>F2</b>) </li>
+        <li>Lecture simple/pause</li>
+        <li>Barre de <b>déplacement</b> horizontal dans le média, avec <b>position</b> indiquée en <i>hh:mm:ss</i></li>
+        <li>Affichage du temps complet du média</li>
+        <li>Volume (option muet)</li>
+        <li>Plein écran ou raccourci clavier : <b>ESC</b> pour revenir à une taille miniature</li>
+        <li>Sauter en avant ou raccourci clavier : <b>Alt →</b> (ou <b>F3</b>)</li>
+    </ol>
+</p>
+<p>Le média est encadré par des <a href="#0209">barres d'outils</a> (8).</p>
+<p>Il existe des raccourcis clavier (cf. <a href="#0209">Barres d'outils</a>) pour :
+    <ul>
+        <li>Agrandir la taille de la vidéo : <b>Alt F3</b> et</li>
+        <li>Rétrécir la taille de la vidéo : <b>Alt F2</b>.</li>
+    </ul>
+</p>
+
+<div id="nb">
+    <p>Concernant les liens entre média et transcription :
+        <ul>
+            <li>La zone média est en <a href="">mode standard</a> par défaut. </li>
+            <li>En <a href="">mode bloqué</a>, elle positionne la transcription. </li>
+            <li>Des raccourcis clavier sont ajoutés pour lancer directement la synchronisation
+                en <a href="">mode bloqué</a> entre média et transcription :</li>
+            <ul>
+                <li>Lecture de la ligne courante : <b>F7</b></li>
+                <li>Lecture continue (à partir de la ligne courante) : <b>F8</b></li>
+            </ul>
+        </ul>
+    </p>
+</div>
+<p>Pour plus de détails, consulter les <a href="#0501">fonctions de lecture</a> et <a href="0208">barres d'outils</a>.</p>
+
+<h2 id="0204">2.4. Signal</h2>
+<p>Le signal est une représentation sonore du média dans son intensité (densité d'énergie acoustique) en fonction du
+    temps en secondes et de la fréquence en Hertz.</p>
+<img id="ima" class="center" src="img/capture/i3.png" width="800" /><br /><br />
+
+<p>
+    <ul>
+        <li>Cette zone permet la sélection d'une partie avec la souris.
+            Cette sélection ne positionne pas la transcription ni la partition (c'est-à-dire sans décalage avec la
+            transcription). </li>
+        <li>La partie grisée correspond à la ligne courante dans la partie transcription.</li>
+    </ul>
+</p>
+
+<div id="nb">
+    <p>Concernant les liens entre signal et transcription :
+        <ul>
+            <li>On peut transmettre le temps courant à la transcription (n'existe qu'en <a href="0802">mode standard et
+                    libre</a>).
+            </li>
+            <li>En <a href="0802">mode bloqué</a>, la sélection positionne la transcription.</li>
+        </ul>
+    </p>
+</div>
+
+
+<h2 id="0205">2.5. Partition</h2>
+<p>La partition est une représentation horizontale de la transcription (verticale) qui permet de visualiser
+    intuitivement les chevauchements des tours de parole des locuteurs.</p>
+<img id="ima" class="center" src="img/capture/i4.png" width="800" /><br /><br />
+
+<h3 id="020501">2.5.1. Visualisation</h3>
+<p>Les encarts qui s’affichent en vert sont les encarts sélectionnés ou en cours de lecture.
+    <ul>
+        <li>Un facteur de zoom permet de déterminer combien de secondes sont représentées en largeur.
+            Le facteur temporel de cette zone est le même que celui du wave (mais les deux peuvent être décalés).</li>
+        <li>Un clic sur cette zone positionne le temps du média (sauf en <a href="0802">mode libre</a>). </li>
+        <li>Ce clic positionne également la transcription si le clic est sur une zone
+            dont on peut déterminer la position dans la transcription (pas toujours possible pour les parties du texte
+            non-alignées).</li>
+    </ul>
+</p>
+
+<h3 id="020502">2.5.2. Slider partition</h3>
+
+<p>La barre jaune (située en-dessous de la partition) est la barre de défilement horizontal de la partition :
+    <ul>
+        <li>Cette zone fournit une vue horizontale de l'ensemble du texte. </li>
+        <li>Les repères temporels facilitent la navigation.</li>
+        <li>La partie jaune indique l'endroit où l'on se situe dans la transcription.</li>
+        <li>Un clic à n% de la zone positionne le média à n% de sa durée totale. </li>
+        <li>Le positionnement sur le slider positionne le média, sauf en <a href="0802">mode libre</a>.</li>
+    </ul>
+</p>
+
+<h2 id="0206">2.6. Boutons média</h2>
+<p>Autour du champ média (audio ou vidéo) sont déployés des boutons, associés à des raccourcis claviers.</p><br />
+<img id="ima" class="center" src="img/capture/i5.png" width="800" /><br />
+<p>Lorsqu'on passe la souris sur une icône, une <b>bulle d'information</b> apparaît pour rappeler la fonction
+    principale de l'icône,
+    ainsi que son raccourci clavier associé.</p><br />
+<table>
+    <tr>
+        <th>Icône</th>
+        <th>Raccourci clavier</th>
+        <th>Fonctionnalité</th>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-youtube-play fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_Tab.png" width="35" height="35" /></td>
+        <td><b>Play/Pause</b> : lecture simple (à partir de l'endroit où le curseur est situé) <br />/!\ Cette fonction
+            de
+            lecture ne déplace pas le curseur positionné dans le tableau de transcription.</td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-arrow-up fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_F4.png" width="35" height="35" /></td>
+        <td><b>Set start</b> : insertion dans la transcription du temps de début d'un segment à transcrire (à l'endroit
+            où
+            le curseur est situé dans le tableau de transcription)</td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-arrow-down fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_F5.png" width="35" height="35" /></td>
+        <td><b>Set end</b> : insertion dans la transcription du temps de fin</td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-edit fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_F6.png" width="35" height="35" /></td>
+        <td><b>Insert</b> : insertion d'une ligne vide sous un locuteur dans la transcription</td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-refresh fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_F7.png" width="35" height="35" /></td>
+        <td><b>Repeat</b> : lecture de la ligne courante (où se situe le curseur dans la transcription)</td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-repeat fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_F8.png" width="35" height="35"></td>
+        <td><b>Go continuous</b> : lecture continue (à partir de l'endroit où se situe le curseur)</td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-hand-o-left fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_Alt_Left.png" width="35" height="35" /></td>
+        <td><b>Backward</b> : recule (déplacement de une image, de une seconde, à l'extrémité de la partition)</td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-hand-o-right fa-2x"></i></td>
+        <td><img src="img/touches/computer_key_Alt_Right.png" width="35" height="35" /></td>
+        <td><b>Forward</b> : avance </td>
+    </tr>
+    <tr>
+        <td><i class="iconcur fa fa-search-minus fa-lg"></i>&nbsp;<i class="iconcur fa fa-search-plus fa-lg"></i></td>
+        <td></td>
+        <td><b>Zoom</b> : L'option zoom permet d'agrandir ou de rétrécir la visualisation du signal et de la partition
+            et
+            ce jusqu'à 2,6 secondes.</td>
+    </tr>
+</table>
+
+<h2 id="0207">2.7. Transcription</h2>
+<p>La transcription orthographique du signal est éditée sous forme de tableau déroulable
+    (la barre de défilement vertical se trouve sur la droite).<br />
+    Le tableau de transcription est une visualisation verticale éditable du texte.</p><br />
+
+<img id="ima" class="center" src="img/capture/i6.png" width="800" /><br /><br />
+<p>Le tableau de trancription est divisé en quatre colonnes :
+    <ol>
+        <li><b>Locuteur</b> - <i>Ce champ renseigne l'identifiant du locuteur ou l'identifiant de la structure de ligne
+                (dépendante du locuteur).</i></li>
+        <ul>
+            <li>Chaque nouveau locuteur doit être renseigné dans le tableau des participants</li>
+            <li>Chaque nouvelle valeur de structure doit être renseignée dans le tableau des structures</li>
+            <li>Visuellement, les structures supplémentaires s’imbriquent sous le locuteur (qui est la ligne principale
+                par
+                défaut) </li>
+        </ul>
+        <li><b>Début</b> - <i>le temps de début d'une ligne de transcription</i> et </li>
+        <li><b>Fin</b> - <i>le temps de fin</i></li>
+        <ul>
+            <li>Un clic permet d'obtenir le temps en millisecondes (par défaut)</li>
+            <li>L'affichage du nombre et du format pour les millisecondes est modifiable dans le menu <bl>PARAMETRES</bl>.</li>
+        </ul>
+        <li><b>Transcription</b> - <i>la partie texte éditable</i></li>
+        <ul>
+            <li>Les nuances de gris sur les lignes correspondent aux locuteurs, il y a 3 nuances du gris foncé au
+                blanc:
+                plus le gris est foncé, plus la fréquence du temps de parole du locuteur est élevée.</li>
+            <li>La ligne sélectionnée ou en cours de lecture est surlignée en jaune (en jaune clair pour une ligne
+                dépendante)</li>
+        </ul>
+    </ol>
+</p>
+<div id="nb">
+    <p>
+        Le positionnement sur une zone transcrite positionne la partition
+        (si possible c'est à dire si la transcription est liée temporellement)
+        et le temps du média (sauf en <a href="0802">mode libre</a> pour le média).
+    </p>
+</div>
+
+<h2 id="0208">2.8. Barres d'outils</h2>
+<img id="ima" class="center" src="img/capture/i7.png" width="800" /><br /><br />
+<p>Les barres d'outils permettent d'accéder très rapidement aux principales commandes d'édition. <br />
+    Chaque icône est également définie par un raccourci clavier,
+    qui s'affiche au moyen d'une <b>infobulle</b> lorsqu'on passe la souris par dessus.<br />
+    On peut <b>rétrécir ou déplacer</b> les barres d'outils.</p>
+<p>Chacune des barres d'outils a une portée différente :
+    <ul>
+        <li>Barre d'outil <b>grise</b> : renvoie aux <b>principales commandes d'édition</b> de la transcription</li>
+        <li>Barre d'outil <b>verte</b> : concerne seulement les options d'édition de la <b>sélection multiple</b></li>
+    </ul><br />
+    <table>
+        <tr>
+            <th>Icône</th>
+            <th>Raccourci clavier</th>
+            <th>Fonctionnalité</th>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-folder-open-o fa-lg"></i></td>
+            <td>Ctrl O</td>
+            <td>Ouvrir un fichier de transcription</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-file-sound-o fa-lg"></i></td>
+            <td>Ctrl Alt O</td>
+            <td>Choisir un média</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-save fa-lg"></i></td>
+            <td>Ctrl S</td>
+            <td>Sauvegarder</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-search fa-lg"></i></td>
+            <td>Ctrl F</td>
+            <td>Faire une recherche</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-mail-reply fa-lg"></i></td>
+            <td>Ctrl Z</td>
+            <td>Annuler</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-mail-forward fa-lg"></i></td>
+            <td>Ctrl Y</td>
+            <td>Refaire</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-list fa-lg"></i></td>
+            <td>Ctrl I</td>
+            <td>Insérer une ligne vide</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-indent fa-lg"></i></td>
+            <td>Ctrl Alt I</td>
+            <td>Insérer une ligne vide avec les temps</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-outdent fa-lg"></i></td>
+            <td>Ctrl M</td>
+            <td>Modifier les temps (fin de ligne courante, début de ligne suivante)</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-eraser fa-lg"></i></td>
+            <td>Ctrl D</td>
+            <td>Supprimer la ligne</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-compress fa-lg"></i></td>
+            <td>Ctrl J</td>
+            <td>Joindre la ligne courante et la suivante</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-copy fa-lg"></i></td>
+            <td>Ctrl R</td>
+            <td>Dupliquer la ligne</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-angle-double-right fa-lg"></i></td>
+            <td>Ctrl B</td>
+            <td>Lecture ralentie</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-forward fa-lg"></i></td>
+            <td>Ctrl E</td>
+            <td>Lecture accélérée</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-plus-square fa-lg"></i></td>
+            <td>Alt F3</td>
+            <td>Agrandir la taille de la vidéo</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-minus-square fa-lg"></i></td>
+            <td>Alt F2</td>
+            <td>Rétrécir la taille de la vidéo</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-th-list fa-lg"></i></td>
+            <td>Ctrl Alt F8</td>
+            <td>Montrer/cacher la sélection multiple</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-check-square-o fa-lg"></i></td>
+            <td></td>
+            <td>Sélectionner tout</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-square-o fa-lg"></i></td>
+            <td></td>
+            <td>Désélectionner tout</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-cut fa-lg"></i></td>
+            <td></td>
+            <td>Couper la sélection</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-copy fa-lg"></i></td>
+            <td></td>
+            <td>Copier la sélection</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-paste fa-lg"></i></td>
+            <td></td>
+            <td>Coller la sélection</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-download fa-lg"></i></td>
+            <td></td>
+            <td>Télécharger la sélection</td>
+        </tr>
+    </table>
+</p>
+<!--A REMPLIR-->

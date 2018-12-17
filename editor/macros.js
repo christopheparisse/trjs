@@ -74,8 +74,7 @@ trjs.macros.formatSelectedText = function(style) {
             range = sel.getRangeAt(0);
             var selected = $(range.startContainer).text();
             var endselected = $(range.endContainer).text();
-            if (endselected !== selected)
-                return;
+            if (endselected !== selected) return;
             // var newtext = selected.substring(0,range.startOffset) + '<' + style + '>' + selected.substring(range.startOffset, range.endOffset) + '</' + style + '>' + + selected.substring(range.endOffset);
             var currentline = trjs.events.getSelectedLine();
             var node = document.createElement(style);
@@ -98,246 +97,187 @@ trjs.macros.formatSelectedText = function(style) {
     }
 }
 
+function testType2(innerValue, macroString, macroProfile) {
+    var re = new RegExp( '(.*)' + '/(.*?)' + '/' + macroString);
+    var nh = re.exec(innerValue);
+    if (nh) {
+        return {
+            type: macroProfile,
+            subtype: nh[2].trim(),
+            content: nh[1].trim()
+        };
+    } else {
+        re = new RegExp('(.*)' + '/' + macroString);
+        nh = re.exec(innerValue);
+        if (nh) {
+            return {
+                type: macroProfile,
+                subtype: '',
+                content: nh[1].trim()
+            };
+        }
+    }
+    return undefined;
+}
+
+function testType1(innerValue, macroString, macroProfile) {
+    var re = new RegExp( '(.*)' + '/' + macroString);
+    var nh = re.exec(innerValue);
+    if (nh) {
+        return {
+            type: macroProfile,
+            subtype: '',
+            content: nh[1].trim()
+        };
+    }
+    return undefined;
+}
+
 trjs.macros.parse = function (m) {
     var re;
     var nh;
     var leftEvt = '\\' + trjs.data.leftEvent;
     var rightEvt = '\\' + trjs.data.rightEvent;
-    if (m.indexOf(trjs.data.rightEvent) === 0) {
+    var leftCode = '\\' + trjs.data.leftCode;
+    var rightCode = '\\' + trjs.data.rightCode;
+    var macroType; // event or code
+    if (m.indexOf(trjs.data.leftEvent) === 0) macroType = 'event';
+    else if (m.indexOf(trjs.data.leftCode) === 0) macroType = 'code';
+    else macroType = ''; // none
+    // console.log('parse', m, macroType);
+    if (macroType === '') {
+        // case of predefined values such as pauses
+        if (m === '#' || m === '(.)') {
+            return {
+                type: 'shortpause',
+                subtype: '',
+                content: ''
+            };
+        } else if (m === '##' || m === '(..)') {
+            return {
+                type: 'middlepause',
+                subtype: '',
+                content: ''
+            };
+        } else if (m === '###' || m === '(...)') {
+            return {
+                type: 'longpause',
+                subtype: '',
+                content: ''
+            };
+        } else if (m.indexOf('#') === 0 && m.lastIndexOf('#') === m.length-1) {
+            return {
+                type: 'verylongpause',
+                subtype: '',
+                content: m.substr(1,m.length-2).trim()
+            };
+        } else if (m.indexOf('(') === 0 && m.lastIndexOf(')') === m.length-1) {
+            return {
+                type: 'verylongpause',
+                subtype: '',
+                content: m.substr(1,m.length-2).trim()
+            };
+        }
         return {
             type: 'value',
             subtype: '',
+            content: m.trim()
+        };
+    }
+
+    var innerValue = m.substr(1, m.length - 2);
+    if (macroType === 'event') {
+        // test the macro strings compatible with event
+        var c = testType2(innerValue, 'N', 'noise');
+        if (c !== undefined) return c;
+        var c = testType2(innerValue, 'PE', 'event');
+        if (c !== undefined) return c;
+        var c = testType2(innerValue, 'COM', 'comment');
+        if (c !== undefined) return c;
+        return {
+            type: 'event',
+            subtype: 'error',
             content: m
         };
-    } else if (m.length > 5 && m.lastIndexOf('/N'+ trjs.data.rightEvent) === m.length-3) {
-        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/N' + rightEvt);
-        var nh = re.exec(m);
-        if (nh) {
-            return {
-                type: 'noise',
-                subtype: nh[2],
-                content: nh[1]
-            };
-        } else {
-            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/N' + rightEvt);
-            nh = re.exec(m);
-            if (nh) {
-                return {
-                    type: 'noise',
-                    subtype: '',
-                    content: nh[1]
-                };
-            } else {
-                return {
-                    type: 'noise',
-                    subtype: 'error',
-                    content: m
-                };
-            }
-        }
-    } else if (m.length > 5 && m.lastIndexOf('/E'+ trjs.data.rightEvent) === m.length-3) {
-        re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/E' + rightEvt);
-        nh = re.exec(m);
-        if (nh) {
-            return {
-                type: 'event',
-                subtype: nh[2],
-                content: nh[1]
-            };
-        } else {
-            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/E' + rightEvt);
-            nh = re.exec(m);
-            if (nh) {
-                return {
-                    type: 'event',
-                    subtype: '',
-                    content: nh[1]
-                };
-            } else {
-                return {
-                    type: 'event',
-                    subtype: 'error',
-                    content: m
-                };
-            }
-        }
-    } else if (m.length > 5 && m.lastIndexOf('/COM'+ trjs.data.rightEvent) === m.length-5) {
-        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/COM' + rightEvt);
-        var nh = re.exec(m);
-        if (nh) {
-            return {
-                type: 'comment',
-                subtype: nh[2],
-                content: nh[1]
-            };
-        } else {
-            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/COM' + rightEvt);
-            nh = re.exec(m);
-            if (nh) {
-                return {
-                    type: 'comment',
-                    subtype: '',
-                    content: nh[1]
-                };
-            } else {
-                return {
-                    type: 'comment',
-                    subtype: 'error',
-                    content: m
-                };
-            }
-        }
-
-    } else if (m.length > 5 && m.lastIndexOf('/VOC'+ trjs.data.rightEvent) === m.length-5) {
-        re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/VOC' + rightEvt);
-        nh = re.exec(m);
-        if (nh) {
-            return {
-                type: 'vocal',
-                subtype: '',
-                content: nh[1]
-            };
-        } else {
-            return {
-                type: 'vocal',
-                subtype: 'error',
-                content: m
-            };
-        }
-    } else if (m.length > 5 && m.lastIndexOf('/LX'+ trjs.data.rightEvent) === m.length-4) {
-        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/LX' + rightEvt);
-        var nh = re.exec(m);
-        if (nh) {
-            return {
-                type: 'lexical',
-                subtype: nh[2],
-                content: nh[1]
-            };
-        } else {
-            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/LX' + rightEvt);
-            nh = re.exec(m);
-            if (nh) {
-                return {
-                    type: 'lexical',
-                    subtype: '',
-                    content: nh[1]
-                };
-            } else {
-                return {
-                    type: 'lexical',
-                    subtype: 'error',
-                    content: m
-                };
-            }
-        }
-    } else if (m.length > 5 && m.lastIndexOf('/NE'+ trjs.data.rightEvent) === m.length-4) {
-        var re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/(.*?)' + '/NE' + rightEvt);
-        var nh = re.exec(m);
-        if (nh) {
-            return {
-                type: 'entities',
-                subtype: nh[2],
-                content: nh[1]
-            };
-        } else {
-            re = new RegExp(leftEvt + ' ' + '(.*)' + ' ' + '/NE' + rightEvt);
-            nh = re.exec(m);
-            if (nh) {
-                return {
-                    type: 'entities',
-                    subtype: '',
-                    content: nh[1]
-                };
-            } else {
-                return {
-                    type: 'entities',
-                    subtype: 'error',
-                    content: m
-                };
-            }
-        }
-    } else if (m.length > 5 && m.lastIndexOf('/LG'+ trjs.data.rightEvent) === m.length-4) {
-        var re = new RegExp(leftEvt + ' ' + '/(.*?)' + '/LG' + rightEvt);
-        var nh = re.exec(m);
-        if (nh) {
-            return {
-                type: 'language',
-                subtype: nh[1],
-                content: ''
-            };
-        } else {
-            return {
-                type: 'language',
-                subtype: 'error',
-                content: m
-            };
-        }
-    } else if (m === '#') {
-        return {
-            type: 'shortpause',
-            subtype: '',
-            content: ''
-        };
-    } else if (m === '##') {
-        return {
-            type: 'middlepause',
-            subtype: '',
-            content: ''
-        };
-    } else if (m === '###') {
-        return {
-            type: 'longpause',
-            subtype: '',
-            content: ''
-        };
-    } else if (m.indexOf('#') === 0 && m.lastIndexOf('#') === m.length-1) {
-        return {
-            type: 'verylongpause',
-            subtype: '',
-            content: m.substr(1,m.length-2)
-        };
-    } else {
-        if (m.length > 5 && m.lastIndexOf('/LG:') > 0) {
-            // LG:val
-            var re = new RegExp(leftEvt + ' ' + '/(.*)/LG:(.*)' + rightEvt);
-            var nh = re.exec(m);
+    }
+    if (macroType === 'code') {
+        // test the macro strings compatible with event
+        var c = testType2(innerValue, 'A', 'abbr');
+        if (c !== undefined) return c;
+        var c = testType2(innerValue, 'VAR', 'var');
+        if (c !== undefined) return c;
+        var c = testType2(innerValue, 'LEX', 'lexical');
+        if (c !== undefined) return c;
+        var c = testType2(innerValue, 'NE', 'entities');
+        if (c !== undefined) return c;
+        var c = testType1(innerValue, 'VOC', 'vocal');
+        if (c !== undefined) return c;
+        // special case for LG
+        if (innerValue.length > 3 && innerValue.lastIndexOf('/LG') === innerValue.length-3) {
+            var re = new RegExp(leftEvt + '/(.*?)' + '/LG' + rightEvt);
+            var nh = re.exec(innerValue);
             if (nh) {
                 return {
                     type: 'language',
-                    subtype: nh[1],
-                    content: nh[2]
+                    subtype: nh[1].trim(),
+                    content: ''
                 };
             } else {
-                var re = new RegExp(leftEvt + ' ' + '/LG:(.*)' + rightEvt);
-                var nh = re.exec(m);
+                return {
+                    type: 'language',
+                    subtype: 'error',
+                    content: m.trim()
+                };
+            }
+        }
+        if (innerValue.length > 4 && innerValue.lastIndexOf('/LG:') > 0) {
+            // LG:val
+            var re = new RegExp('/(.*)/LG:(.*)');
+            var nh = re.exec(innerValue);
+            if (nh) {
+                return {
+                    type: 'language',
+                    subtype: nh[1].trim(),
+                    content: nh[2].trim()
+                };
+            } else {
+                var re = new RegExp('/LG:(.*)');
+                var nh = re.exec(innerValue);
                 if (nh) {
                     return {
                         type: 'language',
                         subtype: '',
-                        content: nh[1]
+                        content: nh[1].trim()
                     };
                 } else {
                     return {
                         type: 'language',
                         subtype: 'LG:',
-                        content: m
+                        content: innerValue.trim()
                     };
                 }
             }
-        } else {
-            return {
-                type: 'value',
-                subtype: '',
-                content: m
-            };
         }
+        return {
+            type: 'comment',
+            subtype: 'error',
+            content: m.trim()
+        };
     }
+    return {
+        type: 'value',
+        subtype: 'error',
+        content: m.trim()
+    };
 };
 
 trjs.macros.form = function () {
     var t = $('#event-type').val();
     var s = $('#event-subtype').val();
+    s = s.replace(/</g, trjs.data.leftBracket).replace(/>/g, trjs.data.rightBracket);
     var c = $('#event-content').val();
+    c = c.replace(/</g, trjs.data.leftBracket).replace(/>/g, trjs.data.rightBracket);
+    // console.log('form', t, s, c);
     if (!t) t = '';
     if (!s) s = '';
     if (!c) c = '';
@@ -407,7 +347,7 @@ trjs.macros.form = function () {
             case 'comment':
                 return trjs.data.leftEvent + '% ' + c + ' ' + s + trjs.data.rightEvent;
             default:
-                return f+s+c;
+                return c;
         }
     } else {
         switch(t) {
@@ -418,15 +358,21 @@ trjs.macros.form = function () {
             case 'event':
                 return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/PE' + trjs.data.rightEvent;
             case 'language':
-                return trjs.data.leftCode + ' ' + (s?'/'+s:'') + '/LG' + (c?':'+c:'') + trjs.data.rightCode;
+                return trjs.data.leftCode + ' ' + s + ' /LG' + (c?':'+c:'') + trjs.data.rightCode;
             case 'comment':
                 return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + '/COM' + trjs.data.rightEvent;
             case 'vocal':
-                return trjs.data.leftCode + ' ' + (s?'/'+s:'') + ' /VOC' + trjs.data.rightCode;
+                return trjs.data.leftCode + ' ' + c + ' ' + (s?'/'+s:'') + ' /VOC' + trjs.data.rightCode;
+            case 'gesture':
+                return trjs.data.leftEvent + ' ' + c + ' ' + (s?'/'+s:'') + ' /GES' + trjs.data.rightEvent;
             case 'abbr':
-                return trjs.data.leftCode + ' ' + c + '/' + s + ' /A' + trjs.data.rightCode;
+                return trjs.data.leftCode + ' ' + c + ' / ' + s + ' /A' + trjs.data.rightCode;
             case 'var':
-                return trjs.data.leftCode + ' ' + c + '/' + s + ' /VAR' + trjs.data.rightCode;
+                return trjs.data.leftCode + ' ' + c + ' / ' + s + ' /VAR' + trjs.data.rightCode;
+            case 'varpho':
+                return trjs.data.leftCode + ' ' + c + ' / ' + s + ' /VARPHO' + trjs.data.rightCode;
+            case 'choice':
+                return trjs.data.leftCode + ' ' + c + ' /C' + trjs.data.rightCode;
             case 'shortpause':
                 return '#';
             case 'middlepause':
@@ -434,13 +380,13 @@ trjs.macros.form = function () {
             case 'longpause':
                 return '###';
             case 'verylongpause':
-                return '#' + c + '#';
+                return '#' + c;
             case 'lexical':
                 return trjs.data.leftCode + ' ' + c + ' ' + (s?'/'+s:'') + '/LEX' + trjs.data.rightCode;
             case 'entities':
                 return trjs.data.leftCode + ' ' + c + ' ' + (s?'/'+s:'') + '/NE' + trjs.data.rightCode;
             default:
-                return f+s+c;
+                return c;
         }
     }
 };
@@ -541,6 +487,8 @@ trjs.macros.generic = function () {
             + '<option value="event">Event</option>'
             + '<option value="abbr">Abbreviation</option>'
             + '<option value="var">Variant</option>'
+            + '<option value="varpho">Phonological variant</option>'
+            + '<option value="choice">Choice</option>'
             + '<option value="language">Language</option>'
             + '<option value="comment">Comment</option>'
             + '<option value="vocal">Vocal</option>'
@@ -549,7 +497,8 @@ trjs.macros.generic = function () {
             + '<option value="longpause">Long pause</option>'
             + '<option value="verylongpause">Very long pause</option>'
             + '<option value="lexical">Lexical</option>'
-            + '<option value="entities">Entities</option>';
+            + '<option value="entities">Entities</option>'
+            + '<option value="gesture">Gesture</option>';
     }
 
     $('#event-type').html(s);
@@ -596,6 +545,7 @@ trjs.macros.find = function () {
  */
 trjs.macros.save = function () {
     var s = trjs.macros.form();
+    // console.log('content:', s);
     var n = $('#macroname').val();
     var d = $('#macrodesc').val();
     var a = $('#accessmacro').val();
@@ -614,8 +564,8 @@ trjs.macros.save = function () {
         for (var k in trjs.bindingsUser) {
             if (trjs.bindingsUser[k][BINDFUN] === cm) {
                 // update
-                console.log("update kb:", trjs.bindingsUser[k], trjs.keys.keyChanging['__editedmacrokey__']);
-                console.log("ukb2:", trjs.keys.nameToKey[trjs.keys.keyChanging['__editedmacrokey__'].key]);
+                // console.log("update kb:", trjs.bindingsUser[k], trjs.keys.keyChanging['__editedmacrokey__']);
+                // console.log("ukb2:", trjs.keys.nameToKey[trjs.keys.keyChanging['__editedmacrokey__'].key]);
                 foundInBindings = true;
                 // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
                 trjs.bindingsUser[k][BINDKEY] = Number(trjs.keys.nameToKey[trjs.keys.keyChanging['__editedmacrokey__'].key]);

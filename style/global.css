@@ -253,6 +253,8 @@ i { display: inline; }
 
 .keysdisplay { font-style: italic; margin-right: 10px; color:#0000FF; font-size:larger; }
 
+.border-macro { border: solid 1px lightblue; padding: 8px; margin: 5px; 	border-radius: 5px; }
+
 #transcription-head { display:block; overflow:hidden; margin-top:0; margin-bottom:0; width:100%; }
 #transcription-bench { display:block; overflow-y:auto; overflow-x:hidden; height: 100%; width:100%; }
 table {

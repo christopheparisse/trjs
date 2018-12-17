@@ -175,10 +175,9 @@ trjs.init.testNotSave = function(callback) {
 
     if (!callback) {
         if (window.confirm(trjs.messgs.mustsave)) {
-            // trjs.param.change(false);
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
     } else {
 		bootbox.confirm({
@@ -195,9 +194,9 @@ trjs.init.testNotSave = function(callback) {
 			callback: function (result) {
 				if (result === true) {
 					// trjs.param.change(false);
-					if (callback) callback(false);
-				} else {
 					if (callback) callback(true);
+				} else {
+					if (callback) callback(false);
 				}
 			}
 		});

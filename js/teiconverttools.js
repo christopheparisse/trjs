@@ -31,26 +31,26 @@ function nolines(s) {
  * @return xml coded text
  */
 function xmlEntitiesEncode(texte) {
-//	texte = texte.replace(/\<br.*?\/\s?br\>/g,'\n'); // 10
-//	texte = texte.replace(/\<br\s*\/?\>/g,'\n'); // 10
-	texte = texte.replace(/"/g,'&quot;'); // 34 22
-	texte = texte.replace(/&/g,'&amp;'); // 38 26
-	texte = texte.replace(/\'/g,'&#39;'); // 39 27
-	texte = texte.replace(/\</g,'&lt;'); // 60 3C
-	texte = texte.replace(/\>/g,'&gt;'); // 62 3E
+	//	texte = texte.replace(/\<br.*?\/\s?br\>/g,'\n'); // 10
+	//	texte = texte.replace(/\<br\s*\/?\>/g,'\n'); // 10
+	texte = texte.replace(/"/g, '&quot;'); // 34 22
+	texte = texte.replace(/&/g, '&amp;'); // 38 26
+	texte = texte.replace(/\'/g, '&#39;'); // 39 27
+	texte = texte.replace(/\</g, '&lt;'); // 60 3C
+	texte = texte.replace(/\>/g, '&gt;'); // 62 3E
 	//texte = texte.replace(/\^/g,'&circ;'); // 94 5E
 	return texte;
 }
 
 function removeTags(texte) {
-  texte = texte.replace(/\<.*?\>/g,''); // 62 3E
-  return texte;
+	texte = texte.replace(/\<.*?\>/g, ''); // 62 3E
+	return texte;
 }
 
-teiConvertTools.textToTEI = function(data) {
+teiConvertTools.textToTEI = function (data) {
 	var lines = data.split(/[\n\r]+/);
 	var s = '<TEI><text><body>';
-	for (var i=0 ; i<lines.length ; i++) {
+	for (var i = 0; i < lines.length; i++) {
 		if (!lines[i]) continue;
 		var l = xmlEntitiesEncode(lines[i].trim());
 		if (l.length < 1) continue;
@@ -77,7 +77,7 @@ function splitParts(b) {
 	for (var i in p) {
 		var s = /\s+(.*):\s+(.*)\s+/.exec(p[i]);
 		if (s !== null) {
-			r.push({type: s[1], value: s[2]});
+			r.push({ type: s[1], value: s[2] });
 		}
 	}
 	return r;
@@ -180,18 +180,18 @@ function tierInfo(pb) {
 }
 
 function mimeType(url, type) {
-    var ext = trjs.utils.extensionName(url);
-    switch(ext) {
-        case '.wav':
-            return 'audio/wav';
-        case '.mp3':
-            return 'audio/mpeg';
-        case '.mp4':
-            return 'video/mp4';
-        case '.webm':
-            return 'video/webm';
-    }
-    return type;
+	var ext = trjs.utils.extensionName(url);
+	switch (ext) {
+		case '.wav':
+			return 'audio/wav';
+		case '.mp3':
+			return 'audio/mpeg';
+		case '.mp4':
+			return 'video/mp4';
+		case '.webm':
+			return 'video/webm';
+	}
+	return type;
 }
 
 /**
@@ -206,12 +206,12 @@ function isnotbl(s) {
 }
 
 function gtlt(s) {
-    var reLeft = new RegExp(trjs.data.leftBracket,"g");
-    var reRight = new RegExp(trjs.data.rightBracket,"g");
-    var reAmp = new RegExp(/&/,"g");
-    s = s.replace(reLeft, '&lt;'); // 60 3C
-    s = s.replace(reRight, '&gt;'); // 62 3E
-    s = s.replace(reAmp, '&amp;'); // 62 3E
+	var reLeft = new RegExp(trjs.data.leftBracket, "g");
+	var reRight = new RegExp(trjs.data.rightBracket, "g");
+	var reAmp = new RegExp(/&/, "g");
+	s = s.replace(reLeft, '&lt;'); // 60 3C
+	s = s.replace(reRight, '&gt;'); // 62 3E
+	s = s.replace(reAmp, '&amp;'); // 62 3E
 	return s;
 }
 
@@ -225,7 +225,7 @@ function toXmlEvents(t) {
 	return teiConvertTools.toTEIEvents(t);
 }
 
-teiConvertTools.toTEIEvents = function(text) {
+teiConvertTools.toTEIEvents = function (text) {
 	var rewrite = "";
 	var reincident = new RegExp("(.*?)\\" + trjs.data.leftEvent + "(.*?)\\" + trjs.data.rightEvent + "(.*)");
 	var recode = new RegExp("(.*?)\\" + trjs.data.leftCode + "(.*?)\\" + trjs.data.rightCode + "(.*)");
@@ -243,80 +243,62 @@ teiConvertTools.toTEIEvents = function(text) {
 			var q = resimple2.exec(p[2]);
 			if (q !== null) {
 				rewrite += p[1];
+				var cont = q[1].trim();
 				var tag = q[3].trim();
 				var sub = q[2].trim();
-				switch(tag) {
+				switch (tag) {
 					case 'N':
-						rewrite += '<incident type="noise" subtype="' + sub + '">';
+						rewrite += '<incident type="noise" subtype="' + sub + '">' + cont + '</incident>';
 						break;
 					case 'COM':
-						rewrite += '<incident type="comment" subtype="' + sub + '">';
+						rewrite += '<incident type="comment" subtype="' + sub + '">' + cont + '</incident>';
 						break;
 					case 'B':
-						rewrite += '<incident type="background" subtype="' + sub + '">';
+						rewrite += '<incident type="background" subtype="' + sub + '">' + cont + '</incident>';
+						break;
+					case 'GES':
+						rewrite += '<kinesic type="' + sub + '">' + cont + '</kinesic>';
 						break;
 					case 'PE':
-						rewrite += '<incident type="para" subtype="' + sub + '">';
+						rewrite += '<incident type="para" subtype="' + sub + '">' + cont + '</incident>';
 						break;
-					/*
-					case 'NE':
-						s += '<incident type="entities" subtype="' + sub + '">';
-						break;
-					case 'API':
-						s += '<incident type="pronounce" subtype="' + sub + '">';
-						break;
-					case 'LEX':
-						s += '<incident type="lexical" subtype="' + sub + '">';
-						break;
-					*/
 					default:
-						rewrite += '<incident type="' + tag + '" subtype="' + sub + '">';
+						rewrite += '<incident type="' + tag + '" subtype="' + sub + '">' + cont + '</incident>';
 						break;
 				}
-				rewrite += q[1];
-				rewrite += '</incident>\n';
 				text = p[3];
 				continue;
 			}
 			q = resimple.exec(p[2]);
 			if (q !== null) {
 				rewrite += p[1];
+				var cont = q[1].trim();
 				var tag = q[2].trim();
-				switch(tag) {
+				switch (tag) {
 					case 'N':
-						rewrite += '<incident type="noise" subtype="instantanous">';
+						rewrite += '<incident type="noise">' + cont + '</incident>';
 						break;
 					case 'COM':
-						rewrite += '<incident type="comment" subtype="previous">';
+						rewrite += '<incident type="comment">' + cont + '</incident>';
 						break;
 					case 'B':
-						rewrite += '<incident type="background" subtype="previous">';
+						rewrite += '<incident type="background">' + cont + '</incident>';
+						break;
+					case 'GES':
+						rewrite += '<kinesic>' + cont + '</kinesic>';
 						break;
 					case 'PE':
-						rewrite += '<incident type="para" subtype="previous">';
+						rewrite += '<incident type="para">' + cont + '</incident>';
 						break;
-					/*
-					case 'PHO':
-						s += '<incident type="pronounce" subtype="previous">';
-						break;
-					case 'LEX':
-						s += '<incident type="lexical" subtype="previous">';
-						break;
-					case 'NE':
-						s += '<incident type="entities" subtype="previous">';
-						break;
-					*/
 					default:
-						rewrite += '<incident type="' + tag + '" subtype="previous">';
+						rewrite += '<incident type="' + tag + '">' + cont + '</incident>';
 						break;
 				}
-				rewrite += q[1];
-				rewrite += '</incident>\n';
 				text = p[3];
 				continue;
 			}
 			rewrite += p[1];
-			rewrite += '<incident type="unknown" subtype="previous">';
+			rewrite += '<incident type="unknown">';
 			rewrite += p[2];
 			rewrite += '</incident>\n';
 			text = p[3];
@@ -338,9 +320,9 @@ teiConvertTools.toTEIEvents = function(text) {
 			var q = relangue.exec(p[2]);
 			if (q !== null) {
 				rewrite += p[1];
-				rewrite += '<incident type="language" subtype="' + q[2] + '">';
+				rewrite += '<seg type="language" subtype="' + q[2] + '">';
 				rewrite += q[1];
-				rewrite += '</incident>\n';
+				rewrite += '</seg>\n';
 				text = p[3];
 				continue;
 			}
@@ -351,14 +333,30 @@ teiConvertTools.toTEIEvents = function(text) {
 				var tag = q[3].trim();
 				var sub = q[2].trim();
 				var cont = q[1].trim();
-				switch(tag) {
+				switch (tag) {
 					case 'A': // acronyms
-						rewrite += '<choice><abbr type="acronym">' + cont + "</abbr><expan>" 
+						rewrite += '<choice><abbr type="acronym">' + cont + "</abbr><expan>"
 							+ sub + '</expan></choice>';
 						break;
 					case 'VAR': // variation
-						rewrite += '<choice><orig>' + cont + "</orig><reg>" 
+						rewrite += '<choice><orig>' + cont + "</orig><reg>"
 							+ sub + '</reg></choice>';
+						break;
+					case 'VARPHO': // variation
+						rewrite += '<choice type="pho"><orig>' + cont + "</orig><reg>"
+							+ sub + '</reg></choice>';
+						break;
+					case 'NE':
+						rewrite += '<rs type="entities" subtype="' + sub + '">' + cont + '</rs>';
+						break;
+					case 'LEX':
+						rewrite += '<seg type="lexical" subtype="' + sub + '">' + cont + '</seg>';
+						break;
+					case 'API':
+						rewrite += '<seg type="API" subtype="' + sub + '">' + cont + '</seg>';
+						break;
+					case 'VOC':
+						rewrite += '<vocal type="' + sub + '">' + cont + '</vocal>';
 						break;
 					default:
 						rewrite += '<vocal type="' + tag + '" subtype="' + sub + '">' + cont + '</vocal>';
@@ -372,9 +370,25 @@ teiConvertTools.toTEIEvents = function(text) {
 				rewrite += p[1];
 				var tag = q[2].trim();
 				var cont = q[1].trim();
-				switch(tag) {
-					case 'C': // acronyms
-						rewrite += '<choice><seg>' + cont + '</seg></choice>';
+				switch (tag) {
+					case 'C': // choice
+						var wrds = cont.split(',');
+						rewrite += '<choice>';
+						for (var w in wrds)
+							rewrite += '<seg>' + wrds[w] + '</seg>';
+						rewrite += '</choice>';
+						break;
+					case 'NE':
+						rewrite += '<rs type="entities">' + cont + '</rs>';
+						break;
+					case 'LEX':
+						rewrite += '<seg type="lexical">' + cont + '</seg>';
+						break;
+					case 'API':
+						rewrite += '<seg type="API">' + cont + '</seg>';
+						break;
+					case 'VOC':
+						rewrite += '<vocal>' + cont + '</vocal>';
 						break;
 					default:
 						rewrite += '<vocal type="' + tag + '" subtype="previous">' + cont + '</vocal>';
@@ -397,7 +411,7 @@ teiConvertTools.toTEIEvents = function(text) {
 	// start again transforming the pauses
 	text = rewrite;
 	rewrite = "";
-	while(1) {
+	while (1) {
 		p = repause2.exec(text);
 		if (p !== null) {
 			rewrite += p[1];
@@ -411,7 +425,7 @@ teiConvertTools.toTEIEvents = function(text) {
 		if (p !== null) {
 			rewrite += p[1];
 			rewrite += '<pause type="';
-			switch(p[2]) {
+			switch (p[2]) {
 				case '#':
 					rewrite += 'short';
 					break;
@@ -432,7 +446,7 @@ teiConvertTools.toTEIEvents = function(text) {
 	return rewrite;
 }
 
-teiConvertTools.docxToTEI = function(data) {
+teiConvertTools.docxToTEI = function (data) {
 	trjs.dataload.timelineInit();
 	var v = docx(data, 'raw'), b, l, t, pb, i;
 	var medianame = "";
@@ -452,19 +466,19 @@ teiConvertTools.docxToTEI = function(data) {
 	var prevTier = [];
 	var initSpan = [];
 	var nPrevTier = 0;
-	
+
 	function testcode(v) {
-		if (! (mapcodes[v] || maptiers[v]) ) {
+		if (!(mapcodes[v] || maptiers[v])) {
 			mapcodes[v] = true;
 			var ti = new __TierInfo();
 			ti.code = v;
 			codes.push(ti);
 		}
 	}
-	
+
 	function closeAllTiers() {
 		s = "";
-		while (nPrevTier>0) {
+		while (nPrevTier > 0) {
 			s += '</span>';
 			s += '</spanGrp>\n';
 			nPrevTier--;
@@ -475,12 +489,12 @@ teiConvertTools.docxToTEI = function(data) {
 	function __isDescendent(tc, h) {
 		var tp = [];
 		// find all parents of tc
-		for (var i=0; i < tc.length; i++) {
-			for (var j=0; j < tiers.length; j++) {
+		for (var i = 0; i < tc.length; i++) {
+			for (var j = 0; j < tiers.length; j++) {
 				if (tiers[j].code === tc[i]) {
 					if (tiers[j].parent === h)
 						return true;
-					if ([null,'-','main','none','annotatedBlock'].indexOf(tiers[j].parent) < 0)
+					if ([null, '-', 'main', 'none', 'annotatedBlock'].indexOf(tiers[j].parent) < 0)
 						tp.push(tiers[j].parent);
 				}
 			}
@@ -490,13 +504,13 @@ teiConvertTools.docxToTEI = function(data) {
 		else
 			return __isDescendent(tp, h);
 	}
-	
+
 	function isDescendent(c, h) {
 		// find parent of c
-		for (var i=0; i < tiers.length; i++) {
+		for (var i = 0; i < tiers.length; i++) {
 			if (tiers[i].code === c) {
 				// found the starting point
-				if ([null,'-','main','none','annotatedBlock'].indexOf(tiers[i].parent) >= 0)
+				if ([null, '-', 'main', 'none', 'annotatedBlock'].indexOf(tiers[i].parent) >= 0)
 					return false;
 				if (tiers[i].parent === h)
 					return true;
@@ -505,19 +519,19 @@ teiConvertTools.docxToTEI = function(data) {
 		}
 		return false;
 	}
-	
+
 	// First read the data and store it in some variables
 	// lines
 	// codes
 	// tiers
 	// ... (see above begining of function)
- 	for (i=0; i<v.DOM.length; i++) {
+	for (i = 0; i < v.DOM.length; i++) {
 		t = v.DOM[i];
-//		console.log('RAW: '+t);
+		//		console.log('RAW: '+t);
 		t = text(t);
-//		console.log('text: '+t);
-//		t = removeTags(t);
-//		console.log(t);
+		//		console.log('text: '+t);
+		//		t = removeTags(t);
+		//		console.log(t);
 		l = xmlEntitiesEncode(t.trim());
 		if (l.length < 1) continue;
 		// HEADERS
@@ -592,14 +606,14 @@ teiConvertTools.docxToTEI = function(data) {
 				}
 				var id1 = trjs.dataload.timelineAdd(b[1]);
 				var id2 = trjs.dataload.timelineAdd(b[2]);
-				lines.push({start: id1, end: id2, loc: b[3], utt: divId});
+				lines.push({ start: id1, end: id2, loc: b[3], utt: divId });
 				testcode(b[3]);
 				divId++;
 				continue;
 			}
 			var id1 = trjs.dataload.timelineAdd(b[1]);
 			var id2 = trjs.dataload.timelineAdd(b[2]);
-			lines.push({start: id1, end: id2, loc: b[3], utt: b[4]});
+			lines.push({ start: id1, end: id2, loc: b[3], utt: b[4] });
 			testcode(b[3]);
 		} else {
 			b = /(.*?)\t(.*?)\t(.*)/.exec(l);
@@ -612,26 +626,26 @@ teiConvertTools.docxToTEI = function(data) {
 					divDesc[divId] = b[1];
 					var id1 = trjs.dataload.timelineAdd(b[1]);
 					var id2 = trjs.dataload.timelineAdd(b[2]);
-					lines.push({start: id1, end: id2, loc: b[3], utt: divId});
+					lines.push({ start: id1, end: id2, loc: b[3], utt: divId });
 					testcode(b[3]);
 					divId++;
 					continue;
 				}
 				var id1 = trjs.dataload.timelineAdd(b[1]);
 				var id2 = trjs.dataload.timelineAdd(b[2]);
-				lines.push({start: id1, end: id2, loc: b[3], utt: ''});
+				lines.push({ start: id1, end: id2, loc: b[3], utt: '' });
 				testcode(b[3]);
 			} else {
 				b = /(.*?)[:\s]+(.*)/.exec(l);
 				if (b === null) {
 					if (l.trim() === "[+div+]") {
 						// it's a div !
-						lines.push({start: "", end: "", loc: l.trim(), utt: divId});
+						lines.push({ start: "", end: "", loc: l.trim(), utt: divId });
 						testcode(l.trim());
 						divId++;
 						continue;
 					}
-					lines.push({start: "", end: "", loc: l.trim(), utt: ""});
+					lines.push({ start: "", end: "", loc: l.trim(), utt: "" });
 					testcode(l.trim());
 				} else {
 					if (b[1] === "[+div+]") {
@@ -644,12 +658,12 @@ teiConvertTools.docxToTEI = function(data) {
 							divType[divId] = "";
 							divDesc[divId] = b[2];
 						}
-						lines.push({start: "", end: "", loc: b[1], utt: divId});
+						lines.push({ start: "", end: "", loc: b[1], utt: divId });
 						testcode(b[1]);
 						divId++;
 						continue;
 					}
-					lines.push({start: "", end: "", loc: b[1], utt: b[2]});
+					lines.push({ start: "", end: "", loc: b[1], utt: b[2] });
 					testcode(b[1]);
 				}
 			}
@@ -687,10 +701,10 @@ teiConvertTools.docxToTEI = function(data) {
 	s += '</notesStmt>\n';
 
 	s += '<sourceDesc>\n<recordingStmt>';
-    s += '<recording>\n';
+	s += '<recording>\n';
 	s += '<media url="' + medianame
 		+ '" mediaType="' + mimeType(medianame, mediatype) + '" />\n';
-    s += '</recording>\n';
+	s += '</recording>\n';
 	s += '</recordingStmt>\n</sourceDesc>\n';
 
 	s += '</fileDesc>\n';
@@ -701,7 +715,7 @@ teiConvertTools.docxToTEI = function(data) {
 	s += '<placeName>' + placename + '</placeName>\n';
 	s += '</place>\n';
 	// lister tous les @div+
-	for (i=0 ; i < divDesc.length; i++) {
+	for (i = 0; i < divDesc.length; i++) {
 		s += '<setting xml:id="d' + i + '">\n';
 		s += '<activity>' + divDesc[i] + '</activity></setting>\n';
 	}
@@ -714,24 +728,24 @@ teiConvertTools.docxToTEI = function(data) {
 		if (isnotbl(names[i].age)) s += 'age="' + names[i].age + '"\n';
 		if (isnotbl(names[i].role)) s += 'role="' + names[i].role + '"\n';
 		if (isnotbl(names[i].sex)) {
-            if (names[i].sex.toLowerCase() === 'm')
-                s += 'sex="1"\n';
-            else if (names[i].sex.toLowerCase() === 'f')
-                s += 'sex="2"\n';
-            else
-                s += 'sex="9"\n';
-        }
+			if (names[i].sex.toLowerCase() === 'm')
+				s += 'sex="1"\n';
+			else if (names[i].sex.toLowerCase() === 'f')
+				s += 'sex="2"\n';
+			else
+				s += 'sex="9"\n';
+		}
 		if (isnotbl(names[i].source)) s += 'source="' + names[i].source + '"\n';
 		s += '>\n';
 		if (isnotbl(names[i].name))
-            s += '<persName>' + names[i].name + '</persName>\n';
+			s += '<persName>' + names[i].name + '</persName>\n';
 		if (isnotbl(names[i].xml_lang)) {
-            var ilgs = names[i].xml_lang.split(/[,\s]/);
-            s += '<langKnowledge>\n';
-            for (var ll=0; ll < ilgs.length; ll++)
-                s += '<langKnown>' + ilgs[ll] + '</langKnown>\n';
-            s += '</langKnowledge>';
-        }
+			var ilgs = names[i].xml_lang.split(/[,\s]/);
+			s += '<langKnowledge>\n';
+			for (var ll = 0; ll < ilgs.length; ll++)
+				s += '<langKnown>' + ilgs[ll] + '</langKnown>\n';
+			s += '</langKnowledge>';
+		}
 		if (isnotbl(names[i].ses)) s += '<socecStatus>' + names[i].ses + '</socecStatus>\n';
 		if (isnotbl(names[i].educ)) s += '<education>' + names[i].educ + '</education>\n';
 		if (isnotbl(names[i].group)) {
@@ -762,9 +776,9 @@ teiConvertTools.docxToTEI = function(data) {
 	s += '<revisionDesc>\n';
 	s += '<list>\n';
 	var d = new Date();
-    s += '<item>lastsave: ' + d.toString() + '</item>\n';
-    // s += '<item>url: ' + trjs.data.recordingLoc() + '/' + trjs.data.recordingName() + '</item>\n';
-    // s += '<item>name: ' + trjs.data.recTitle + '</item>\n';
+	s += '<item>lastsave: ' + d.toString() + '</item>\n';
+	// s += '<item>url: ' + trjs.data.recordingLoc() + '/' + trjs.data.recordingName() + '</item>\n';
+	// s += '<item>name: ' + trjs.data.recTitle + '</item>\n';
 	s += '</list>\n';
 	s += '</revisionDesc>\n';
 
@@ -775,7 +789,7 @@ teiConvertTools.docxToTEI = function(data) {
 	s += '<timeline unit="s">\n';
 	s += '<when absolute="0" xml:id="tm0"/>\n';
 	for (var ti in trjs.data.idToTime)
-		s += '<when interval="' + trjs.data.idToTime[ti] + '" since="#tm0" xml:id="' + ti + '"/>\n';	
+		s += '<when interval="' + trjs.data.idToTime[ti] + '" since="#tm0" xml:id="' + ti + '"/>\n';
 	s += '</timeline>';
 	s += '<body>';
 	for (b in lines) {
@@ -787,7 +801,7 @@ teiConvertTools.docxToTEI = function(data) {
 			}
 			s += '<div type="' + divType[lines[b].utt] + '" subtype="d' + lines[b].utt + '">\n';
 			if (lines[b].start && lines[b].end) {
-				s += '<head><note type="start">#' + lines[b].start + '</note><note type="end">#' + lines[b].end + '</note></head>\n';			
+				s += '<head><note type="start">#' + lines[b].start + '</note><note type="end">#' + lines[b].end + '</note></head>\n';
 			}
 		} else if (lines[b].loc === '[-div-]') {
 			s += closeAllTiers();
@@ -863,9 +877,9 @@ teiConvertTools.docxToTEI = function(data) {
 
 function to_csv(workbook) {
 	var result = [];
-	workbook.SheetNames.forEach(function(sheetName) {
+	workbook.SheetNames.forEach(function (sheetName) {
 		var csv = X.utils.sheet_to_csv(workbook.Sheets[sheetName]);
-		if(csv.length > 0){
+		if (csv.length > 0) {
 			result.push("SHEET: " + sheetName);
 			result.push("");
 			result.push(csv);
@@ -878,7 +892,7 @@ function to_tab(workbook) {
 	var result = [];
 	workbook.FS = '\t';
 	workbook.RS = '\n';
-	workbook.SheetNames.forEach(function(sheetName) {
+	workbook.SheetNames.forEach(function (sheetName) {
 		var tab = X.utils.sheet_to_csv(workbook.Sheets[sheetName]);
 		if (tab.length > 0) {
 			result.push(sheetName);
@@ -890,7 +904,7 @@ function to_tab(workbook) {
 
 function to_array(workbook) {
 	var result = {};
-	workbook.SheetNames.forEach(function(sheetName) {
+	workbook.SheetNames.forEach(function (sheetName) {
 		var array = XLSX.utils.sheet_to_array(workbook.Sheets[sheetName]);
 		if (array.length > 0) {
 			result[sheetName] = array;
@@ -900,7 +914,7 @@ function to_array(workbook) {
 }
 
 // Fermeture
-(function(){
+(function () {
 
 	/**
 	 * Fonction pour arrondir un nombre.
@@ -918,7 +932,7 @@ function to_array(workbook) {
 		value = +value;
 		exp = +exp;
 		// Si value n'est pas un nombre
-        // ou si l'exposant n'est pas entier
+		// ou si l'exposant n'est pas entier
 		if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
 			return NaN;
 		}
@@ -932,26 +946,26 @@ function to_array(workbook) {
 
 	// Arrondi décimal
 	if (!Math.round10) {
-		Math.round10 = function(value, exp) {
+		Math.round10 = function (value, exp) {
 			return decimalAdjust('round', value, exp);
 		};
 	}
 	// Arrondi décimal inférieur
 	if (!Math.floor10) {
-		Math.floor10 = function(value, exp) {
+		Math.floor10 = function (value, exp) {
 			return decimalAdjust('floor', value, exp);
 		};
 	}
 	// Arrondi décimal supérieur
 	if (!Math.ceil10) {
-		Math.ceil10 = function(value, exp) {
+		Math.ceil10 = function (value, exp) {
 			return decimalAdjust('ceil', value, exp);
 		};
 	}
 
 })();
 
-teiConvertTools.precision = function(value, digits) {
+teiConvertTools.precision = function (value, digits) {
 	if (value === undefined || value === null || value === '')
 		return '';
 	if (!digits)
@@ -960,8 +974,8 @@ teiConvertTools.precision = function(value, digits) {
 	return Math.round10(db, - digits);
 }
 
-teiConvertTools.xlsxToTEI = function(data) {
-	var workbook = XLSX.read(data, {type: 'binary'});
+teiConvertTools.xlsxToTEI = function (data) {
+	var workbook = XLSX.read(data, { type: 'binary' });
 	var sheets = to_array(workbook);
 	var initbloc = 0;
 	var s = '<TEI><text><body>';
@@ -969,29 +983,29 @@ teiConvertTools.xlsxToTEI = function(data) {
 		s += '<div type="sheet" xml:id="' + bk + '">';
 		// names of columns
 		var titles = [];
-		for (var col=0 ; col<sheets[bk][0].length ; col++) {
+		for (var col = 0; col < sheets[bk][0].length; col++) {
 			titles.push(sheets[bk][0][col]);
 		}
 		// detect initbloc
-		if (titles[initbloc+0] === 'media' && titles[initbloc+1] === 'seconds')
+		if (titles[initbloc + 0] === 'media' && titles[initbloc + 1] === 'seconds')
 			initbloc += 2;
-		if (titles[initbloc+0] === 'file' && (titles[initbloc+1] === 'id' || titles[initbloc+1] === 'ln'))
+		if (titles[initbloc + 0] === 'file' && (titles[initbloc + 1] === 'id' || titles[initbloc + 1] === 'ln'))
 			initbloc += 2;
-		for (var ln=1 ; ln < sheets[bk].length ; ln++) {
-			if (sheets[bk][ln].length < initbloc+4) continue;
-			var who = xmlEntitiesEncode(sheets[bk][ln][initbloc+0]);
-			var ts = xmlEntitiesEncode(sheets[bk][ln][initbloc+1]);
-			var te = xmlEntitiesEncode(sheets[bk][ln][initbloc+2]);
-			var u = xmlEntitiesEncode(sheets[bk][ln][initbloc+3]);
+		for (var ln = 1; ln < sheets[bk].length; ln++) {
+			if (sheets[bk][ln].length < initbloc + 4) continue;
+			var who = xmlEntitiesEncode(sheets[bk][ln][initbloc + 0]);
+			var ts = xmlEntitiesEncode(sheets[bk][ln][initbloc + 1]);
+			var te = xmlEntitiesEncode(sheets[bk][ln][initbloc + 2]);
+			var u = xmlEntitiesEncode(sheets[bk][ln][initbloc + 3]);
 			s += '<annotationGrp who="';
 			s += who + '"';
 			if (ts) s += ' start="' + ts + '"';
 			if (te) s += ' end="' + te + '"';
 			s += '>';
 			s += '<u>' + u + '</u>';
-			if (sheets[bk][ln].length >= initbloc+4) {
+			if (sheets[bk][ln].length >= initbloc + 4) {
 				s += '<spanGrp>';
-				for (var row = initbloc+4 ; row < sheets[bk][ln].length ; row++) {
+				for (var row = initbloc + 4; row < sheets[bk][ln].length; row++) {
 					s += '<span type="' + titles[row] + '">' + xmlEntitiesEncode(sheets[bk][ln][row]) + '</span>';
 				}
 				s += '</spanGrp>';
@@ -1005,7 +1019,7 @@ teiConvertTools.xlsxToTEI = function(data) {
 
 function decSpace(nb) {
 	var s = '';
-	for (var i=0; i < nb; i++)
+	for (var i = 0; i < nb; i++)
 		s += '_';
 	return s + ' ';
 }
@@ -1044,20 +1058,20 @@ function printUttTxt(who, ts, te, tx, nb, style) {
 		return nb + '\t' + who.trim() + '\t' + tx + '\t' + ts + '\t' + te + '\n';
 }
 
-teiConvertTools.teiToText = function(data) {
+teiConvertTools.teiToText = function (data) {
 	var style = $('input:radio[name=paramtxt]:checked').val();
 	// style === bloc or line
 	var digits = $('#digitstxt').val();
-	if (!digits || digits<0 || digits>15) digits = 0;
+	if (!digits || digits < 0 || digits > 15) digits = 0;
 	var parser = new DOMParser();
 	var xml = parser.parseFromString(data, "text/xml");
-    trjs.template.readMediaInfo(xml);
+	trjs.template.readMediaInfo(xml);
 	trjs.template.readPersons(xml);
 	trjs.template.readTemplates(xml);
 	var corpus = trjs.dataload.loadTEI(xml);
 	var s = ''; // future result
 	var nb = 0;
-	for (var i=0; i<corpus.length; i++) {
+	for (var i = 0; i < corpus.length; i++) {
 		if (corpus[i].type === 'loc')
 			nb++;
 		if (corpus[i].type === 'div')
@@ -1069,10 +1083,10 @@ teiConvertTools.teiToText = function(data) {
 	return s;
 };
 
-teiConvertTools.teiToDocx = function(data, format) {
+teiConvertTools.teiToDocx = function (data, format) {
 	var format = $('input:radio[name=paramdocx]:checked').val();
 	var digits = $('#digitsdocx').val();
-	if (!digits || digits<0 || digits>15) digits = 0;
+	if (!digits || digits < 0 || digits > 15) digits = 0;
 	var parser = new DOMParser();
 	var xml = parser.parseFromString(data, "text/xml");
 	trjs.data.tiersxml = [];
@@ -1089,19 +1103,19 @@ teiConvertTools.teiToDocx = function(data, format) {
 	return s;
 }
 
-teiConvertTools.tableToDocx = function(corpus, format, digits) {
-	if (!digits || digits<0 || digits>15) digits = 0;
+teiConvertTools.tableToDocx = function (corpus, format, digits) {
+	if (!digits || digits < 0 || digits > 15) digits = 0;
 	var s = ''; // result
 	var dec = 0, nb = 0;
 	var prevTe = -1;
 	if (format.indexOf(';tab;') >= 0) {
-			s = '<!DOCTYPE html><html><body>';
+		s = '<!DOCTYPE html><html><body>';
 	} else {
-			s = '<!DOCTYPE html><html><head><style>td {vertical-align:top;}</style></head><body><table>';
+		s = '<!DOCTYPE html><html><head><style>td {vertical-align:top;}</style></head><body><table>';
 	}
 	if (format.indexOf(';overlap;') >= 0)
 		s += teiConvertTools.teiToDocxOverlap(corpus, format);
-    else
+	else
 		if (format.indexOf(';header;') >= 0) {
 			var d;
 			var p = trjs.template.tablePersons();
@@ -1116,7 +1130,7 @@ teiConvertTools.tableToDocx = function(corpus, format, digits) {
 			var t = trjs.template.tableTemplates();
 			for (d in t.codes) {
 				s += '<p>' + '[code] code: ' + t.codes[d].code + ' :-: ';
-				if (trjs.data.codesnames[t.codes[d].code]) s += ' name: ' +  trjs.data.codesnames[t.codes[d].code] + ' :-: ';
+				if (trjs.data.codesnames[t.codes[d].code]) s += ' name: ' + trjs.data.codesnames[t.codes[d].code] + ' :-: ';
 				s += ' type: ' + t.codes[d].type + ' :-: ' + ' parent: ' + t.codes[d].parent + ' :-: ' + ' </p>';
 			}
 			for (d in t.tiers) {
@@ -1125,12 +1139,12 @@ teiConvertTools.tableToDocx = function(corpus, format, digits) {
 			if (trjs.data.recordingPlaceName())
 				s += '<p>' + '[place] ' + trjs.data.recordingPlaceName() + '</p>';
 			if (trjs.data.media)
-				for (var i=0; i<trjs.data.media.length; i++) {
+				for (var i = 0; i < trjs.data.media.length; i++) {
 					s += '<p>' + '[media] ' + trjs.data.media[i].loc + '/' + trjs.data.media[i].name + ' :-: '
 						+ mimeType(trjs.data.media[i].name, trjs.data.media[i].type) + '</p>';
 				}
 		}
-	for (var i=0; i<corpus.length; i++) {
+	for (var i = 0; i < corpus.length; i++) {
 		// corpus : arrayof {loc: loc, ts: ts, te: te, tx: tx, type: ('loc' or 'prop')}
 		if (corpus[i].type === 'loc')
 			nb++;
@@ -1141,7 +1155,7 @@ teiConvertTools.tableToDocx = function(corpus, format, digits) {
 			dec = 0;
 		*/
 		if (corpus[i].type === 'div')
-			s += printUttDocx('['+corpus[i].loc+']', teiConvertTools.precision(corpus[i].ts, digits), teiConvertTools.precision(corpus[i].te, digits),
+			s += printUttDocx('[' + corpus[i].loc + ']', teiConvertTools.precision(corpus[i].ts, digits), teiConvertTools.precision(corpus[i].te, digits),
 				nolines((trjs.dataload.checkstring(corpus[i].tx) + ' | ' + trjs.dataload.checkstring(corpus[i].stx)).trim()), dec, nb, format);
 		else {
 			prevTe = corpus[i].te; // do not set this if this is a div time
@@ -1156,25 +1170,25 @@ teiConvertTools.tableToDocx = function(corpus, format, digits) {
 	}
 	// var orientation = document.querySelector('.page-orientation input:checked').value;
 	// orientation is portrait or landspace
-	var converted = htmlDocx.asBlob(s, {orientation: "portrait"});
+	var converted = htmlDocx.asBlob(s, { orientation: "portrait" });
 	return converted;
 };
 
 /**
  * a version of tei to docx that allows to print in specific format overlaps
  */
-teiConvertTools.teiToDocxOverlap = function(utterances, format) {
-	var s='', i, nl;
+teiConvertTools.teiToDocxOverlap = function (utterances, format) {
+	var s = '', i, nl;
 
 	/* now for turns, it is necessary to first comptute the overlap
 	*  then sum turns if necessary and then print
 	*/
 	var pattern = decSpace(shiftSize);
-	for (i=0; i < utterances.length; i++) {
+	for (i = 0; i < utterances.length; i++) {
 		var decal = false;
-		if (i>0 && utterances[i].ts !== ''  && utterances[i-1].te !== '' && utterances[i].ts < utterances[i-1].te)
+		if (i > 0 && utterances[i].ts !== '' && utterances[i - 1].te !== '' && utterances[i].ts < utterances[i - 1].te)
 			decal = true;
-		else if (i<utterances.length-1 && utterances[i].te !== ''  && utterances[i+1].ts !== '' && utterances[i].te > utterances[i+1].ts)
+		else if (i < utterances.length - 1 && utterances[i].te !== '' && utterances[i + 1].ts !== '' && utterances[i].te > utterances[i + 1].ts)
 			decal = true;
 		if (decal === true) {
 			utterances[i].loc = pattern + utterances[i].loc;
@@ -1186,12 +1200,12 @@ teiConvertTools.teiToDocxOverlap = function(utterances, format) {
 		utterancesOrTurns = [];
 		var prevWho = '-', prevTs = 0, prevTe = 0, sumUtts = '';
 		nl = 0;
-		for (i=0; i < utterances.length; i++) {
+		for (i = 0; i < utterances.length; i++) {
 			// compute for overlap with turn display
 			if (utterances[i].loc !== prevWho) {
 				// flush data
 				nl++;
-				utterancesOrTurns.push({ nl: nl, loc: prevWho, tx: sumUtts, ts: prevTs, te: prevTe});
+				utterancesOrTurns.push({ nl: nl, loc: prevWho, tx: sumUtts, ts: prevTs, te: prevTe });
 				prevWho = utterances[i].loc;
 				prevTs = utterances[i].ts;
 				prevTe = utterances[i].te;
@@ -1205,8 +1219,8 @@ teiConvertTools.teiToDocxOverlap = function(utterances, format) {
 	} else
 		utterancesOrTurns = utterances;
 
-	for (i=0; i < utterancesOrTurns.length; i++) {
-		nl = i+1;
+	for (i = 0; i < utterancesOrTurns.length; i++) {
+		nl = i + 1;
 		if (utterancesOrTurns[i].loc.startsWith(pattern))
 			utterancesOrTurns[i].tx = pattern + utterancesOrTurns[i].tx;
 		if (format.indexOf(';tab;') >= 0) {
@@ -1218,13 +1232,13 @@ teiConvertTools.teiToDocxOverlap = function(utterances, format) {
 	return s;
 };
 
-teiConvertTools.teiToTxm = function(teiname, destname, datafrom, callback1) {
+teiConvertTools.teiToTxm = function (teiname, destname, datafrom, callback1) {
 	var params = " ";
 	var valCT = $('input:checkbox[name=cleanline]:checked').val();
 	if (valCT === 'on')
 		params += ' -cleanline';
 	var ul = $('#tvul').children();
-	for (var i=0; i < ul.length; i++) {
+	for (var i = 0; i < ul.length; i++) {
 		var ptype = $(ul[i]).find('span.spantvtype').text();
 		var pvaleur = $(ul[i]).find('span.spantvvaleur').text();
 		params += ' ' + '-tv';
@@ -1233,7 +1247,7 @@ teiConvertTools.teiToTxm = function(teiname, destname, datafrom, callback1) {
 	system.call.teiToTxm(teiname, destname, datafrom, params, callback1);
 }
 
-teiConvertTools.teiToLexico = function(teiname, destname, datafrom, callback1) {
+teiConvertTools.teiToLexico = function (teiname, destname, datafrom, callback1) {
 	var params = [];
 	var valCT = $('input:checkbox[name=cleanline]:checked').val();
 	if (valCT === 'on')
@@ -1242,7 +1256,7 @@ teiConvertTools.teiToLexico = function(teiname, destname, datafrom, callback1) {
 	if (valSec === 'on')
 		params += ' -section';
 	var ul = $('#tvul').children();
-	for (var i=0; i < ul.length; i++) {
+	for (var i = 0; i < ul.length; i++) {
 		var ptype = $(ul[i]).find('span.spantvtype').text();
 		var pvaleur = $(ul[i]).find('span.spantvvaleur').text();
 		params += ' ' + '-tv';

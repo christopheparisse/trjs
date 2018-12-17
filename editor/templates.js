@@ -1603,6 +1603,16 @@ trjs.template = (function () {
     }
 
     /**
+     * handle keys pressed down in the modals windows
+     * @method eventModals
+     * @param {event} e
+     */
+    function eventModals(e) {
+        trjs.data.eventAnnex = true;
+        return false;
+    }
+
+    /**
      * handle keys pressed down in the transcript editor and metadata editor and person editor
      * @method eventKeydownBasic
      * @param {event} e
@@ -1714,6 +1724,7 @@ trjs.template = (function () {
         eventKeydownTMCode: eventKeydownTMCode,
         eventKeydownTMTier: eventKeydownTMTier,
         eventKeydownTMMeta: eventKeydownTMMeta,
+        eventModals: eventModals,
         imbricationLevels: imbricationLevels,
         initTableCodesLanguage: initTableCodesLanguage,
         initTableTiersLanguage: initTableTiersLanguage,

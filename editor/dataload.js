@@ -75,7 +75,7 @@ function transcriptDecoding(s) {
 			}
 		}
  */	
-	console.log(s);
+	// console.log(s);
 	var k;
 	if (typeof(s) === 'string')
 		k = s;
@@ -85,7 +85,7 @@ function transcriptDecoding(s) {
 		k = s.textContent;
 	else
 		k = String(s);
-	console.log(k);
+	// console.log(k);
 	k = k.replace(/</g, trjs.data.leftBracket); // 60 3C
 	k = k.replace(/>/g, trjs.data.rightBracket); // 62 3E
 	k = k.replace(/ xmlns=.http...www.tei.c.org.ns.1.0./, ""); // remove namespace information
@@ -211,7 +211,7 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 	if (ts && parseFloat(ts) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(ts);
 	if (te && parseFloat(te) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(te);
 	var childs = $(seg).contents(); // mixed nodes
-	console.log(seg,seg.innerHTML);
+	console.log(seg);
     lastEndTime = ts; // time of the previous end of an element, even if no element processed yet
     var reg = new RegExp("[\n\r]","g");
 	for (var i = 0; i < childs.length; i++) {
@@ -219,11 +219,16 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
         var a, e;
 		if (type === 1) { // NODE
 	    	if (childs[i].tagName === 'seg') {
-			    var internalSeg = loadUSeg(elt, childs[i], lastEndTime, te, prop); // a seg inside a u or a seg
-                if (elt === '')
-                    elt = internalSeg;
-                else
-                    elt += ' ' + internalSeg.replace(reg, "");
+				var type = $(childs[i]).attr("type");
+				if (type === 'lexical' || type === 'language' || type === 'API') {
+					elt += loadSegContent(childs[i]);
+				} else {
+					var internalSeg = loadUSeg(elt, childs[i], lastEndTime, te, prop); // a seg inside a u or a seg
+					if (elt === '')
+						elt = internalSeg;
+					else
+						elt += ' ' + internalSeg.replace(reg, "");
+				}
 	    	} else if (childs[i].tagName === 'anchor') {
     			var t = timelineRef($(childs[i]).attr('synch'));
     			if (t === lastEndTime && elt === '') // start of utterance : ignored
@@ -234,12 +239,16 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
                 elt = '';
 			} else if (childs[i].nodeName === 'choice') {
 				elt += loadChoiceContent(childs[i]);
+			} else if (childs[i].nodeName === 'rs') {
+				elt += loadRSContent(childs[i]);
 			} else if (childs[i].nodeName === 'incident') {
 				elt += loadIncidentContent(childs[i]);
 			} else if (childs[i].nodeName === 'vocal') {
-				elt += trjs.data.leftCode + getDesc(childs[i]).replace(reg, "") + ' /VOC' + trjs.data.rightCode;
+				// elt += trjs.data.leftCode + getDesc(childs[i]).replace(reg, "") + ' /VOC' + trjs.data.rightCode;
+				elt += loadVocalContent(childs[i]);
 			} else if (childs[i].nodeName === 'kinesic') {
-				elt += trjs.data.leftCode + getDesc(childs[i]).replace(reg, "") + ' /GES' + trjs.data.rightCode;
+				// elt += trjs.data.leftCode + getDesc(childs[i]).replace(reg, "") + ' /GES' + trjs.data.rightCode;
+				elt += loadKinesicContent(childs[i]);
     		} else if (childs[i].nodeName === 'format') {
 				if ($(childs[i]).attr('type') === 'italics') {
 		    		a = transcriptDecoding(childs[i]);
@@ -418,24 +427,15 @@ function loadannotationBlock(utt) {
     }
 }
 
-function loadIncidentContent(inc) {
-	var e = trjs.data.leftEvent;
+// elt += trjs.data.leftCode + getDesc(childs[i]).replace(reg, "") + ' /GES' + trjs.data.rightCode;
+
+function loadSegContent(inc) {
+	var e = trjs.data.leftCode;
 	var t = $(inc).find('desc').text();
 	if (t === '') t = $(inc).text();
 	e += ' ' + t + '/';
 	switch($(inc).attr('type')) {
-		case 'noise':
-			var f = $(inc).attr('subtype');
-			if (f) e += f + '/' + e;
-			else e += 'N';
-			break;
-		case 'comment':
-			e += 'COM';
-			break;
-		case 'background':
-			e += 'B';
-			break;
-		case 'pronounce':
+		case 'API':
 			e += 'API';
 			break;
 		case 'language':
@@ -446,8 +446,69 @@ function loadIncidentContent(inc) {
 		case 'lexical':
 			e += 'LEX';
 			break;
-		case 'entities':
-			e += 'NE';
+		default:
+			e += $(inc).attr('type');
+			break;
+	}
+	e += trjs.data.rightCode;
+	return e;
+}
+
+function loadVocalContent(inc) {
+	var t = $(inc).find('desc').text();
+	if (t === '') t = $(inc).text();
+	var a = $(inc).attr('type');
+	if (a) {
+		return trjs.data.leftCode + t + ' /' + a + ' /VOC' + trjs.data.rightCode;
+	} else {
+		return trjs.data.leftCode + t + ' /VOC' + trjs.data.rightCode;
+	}
+}
+
+function loadKinesicContent(inc) {
+	var t = $(inc).find('desc').text();
+	if (t === '') t = $(inc).text();
+	var a = $(inc).attr('type');
+	if (a) {
+		return trjs.data.leftEvent + t + ' /' + a + ' /GES' + trjs.data.rightEvent;
+	} else {
+		return trjs.data.leftEvent + t + ' /GES' + trjs.data.rightEvent;
+	}
+}
+
+function loadRSContent(inc) {
+	var t = $(inc).find('desc').text();
+	if (t === '') t = $(inc).text();
+	var a = $(inc).attr('type');
+	var b = $(inc).attr('subtype');
+	if (a === 'entities') {
+		return trjs.data.leftEvent + t + (b ? ' /' + b : '') + ' /NE' + trjs.data.rightEvent;
+	} else {
+		return trjs.data.leftEvent + t + (b ? ' /' + b : '') + ' /' + a + trjs.data.rightEvent;
+	}
+}
+
+function loadIncidentContent(inc) {
+	var e = trjs.data.leftEvent;
+	var t = $(inc).find('desc').text();
+	if (t === '') t = $(inc).text();
+	e += ' ' + t + '/';
+	switch($(inc).attr('type')) {
+		case 'noise':
+			var f = $(inc).attr('subtype');
+			if (f) e += f + '/';
+			e += 'N';
+			break;
+		case 'comment':
+			e += 'COM';
+			break;
+		case 'background':
+			e += 'B';
+			break;
+		case 'para':
+			var f = $(inc).attr('subtype');
+			if (f) e += f + '/';
+			e += 'PE';
 			break;
 		default:
 			e += $(inc).attr('type');
@@ -458,9 +519,7 @@ function loadIncidentContent(inc) {
 }
 
 function loadChoiceContent(inc) {
-	console.log("INC", inc);
 	var content = $(inc).find('abbr');
-	console.log('find abbr', content);
 	if (content.length > 0) {
 		var value = $(inc).find('expan').text();
 		var attr = $(content).attr('type');
@@ -469,15 +528,27 @@ function loadChoiceContent(inc) {
 		}
 		return trjs.data.leftCode + content.text() + '/' + value + '/ABBR' + trjs.data.rightCode;
 	}
-	console.log('find orig', content);
 	content = $(inc).find('orig');
-	console.log('find orig', content);
 	if (content.length > 0) {
 		var value = $(inc).find('reg').text();
 		if (value) {
-			return trjs.data.leftCode + content.text() + '/' + value + '/VAR' + trjs.data.rightCode;
+			var attr = $(inc).attr('type');
+			if (attr === 'pho')
+				return trjs.data.leftCode + content.text() + '/' + value + '/VARPHO' + trjs.data.rightCode;
+			else
+				return trjs.data.leftCode + content.text() + '/' + value + '/VAR' + trjs.data.rightCode;
 		}
 		return trjs.data.leftCode + content.text() + '/' + value + '/ORIG' + trjs.data.rightCode;
+	}
+	content = $(inc).find('seg');
+	// console.log('find seg', content);
+	if (content.length > 0) {
+		var s = trjs.data.leftCode;
+		for (var i=0 ; i < content.length; i++) {
+			s += $(content[i]).text();
+			if (i !== content.length - 1) s += ',';
+		}
+		return s + ' /C' + trjs.data.rightCode;
 	}
 	return trjs.data.leftCode + $(inc).text() + '/CHOICE' + trjs.data.rightCode;
 }
