@@ -103,6 +103,12 @@ function transcriptDecoding(s) {
  * @return {string} content
  */
 function spanDecoding(s) {
+	var r = nodeText(s);
+	r = xmlEntityDecode(r);
+	r = r.replace(/</g, trjs.data.leftBracket); // 60 3C
+	r = r.replace(/>/g, trjs.data.rightBracket); // 62 3E
+	return r;
+	/*
 	console.log(s);
 	if (s.nodeType === 1 && s.nodeName === 'span') {
 		var childs = $(s).children();
@@ -127,6 +133,7 @@ function spanDecoding(s) {
 			return nodeText(s);
 		}
 	}
+	*/
 }
 
 /**
