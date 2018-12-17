@@ -23,13 +23,13 @@ version.date = new Date(2018, 11, 18); // year, month, day : warning minus 1 (-1
 
 version.preservedPages = 3;
 
-version.setVersion = function() {
+version.setVersion = function () {
     var loadJsonFile = require('load-json-file');
 
-    loadJsonFile(version.ffmpegdirLoc() + '/package.json').then(function(json) {
-        version.version = (json.version) ?  'v' + json.version : 'v-beta';
+    loadJsonFile(version.ffmpegdirLoc() + '/package.json').then(function (json) {
+        version.version = (json.version) ? 'v' + json.version : 'v-beta';
         document.title = trjs.messgs.namesoftware + ' ' + version.version;
-    }).catch(function() {
+    }).catch(function () {
         version.version = 'v-in progress';
         document.title = trjs.messgs.namesoftware + ' ' + version.version;
     });
@@ -128,7 +128,7 @@ version.trjsLoc = function () {
         var dirname = __dirname.replace(/\\/g, '/');
         // console.log('dirname (v2) ', dirname);
         if (dirname.indexOf('app.asar') > 0) {
-            htmlTrjsPath = dirname.substring(0, dirname.indexOf('app.asar')-1);
+            htmlTrjsPath = dirname.substring(0, dirname.indexOf('app.asar') - 1);
         } else if (dirname.indexOf('/editor') > 0 || dirname.indexOf('/node') > 0)
             htmlTrjsPath = dirname + "/..";
         else
@@ -152,10 +152,10 @@ version.javaLoc = function () {
         else
             return version.ffmpegdirLoc() + "/java-x86/bin/java.exe";
     } else if (os.platform() === 'darwin') {
-//		if (os.release() < '14.1.0')
+        //		if (os.release() < '14.1.0')
         return version.ffmpegdirLoc() + "/java-osx/bin/java";
-//		else
-//			return version.ffmpegdirLoc() + "/java-osx3264";
+        //		else
+        //			return version.ffmpegdirLoc() + "/java-osx3264";
     } else if (os.platform() === 'linux') {
         return "java";
     }
