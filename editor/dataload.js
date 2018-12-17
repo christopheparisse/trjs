@@ -45,37 +45,12 @@ function xmlEntityDecode(texte) {
 }
 
 /**
- * return text content without problematic < and > OR NOT
- * @method transcriptDecoding
+ * return text content with < and >
+ * @method nodeContent
  * @param DOMobject
  * @return {string} content
  */
-function transcriptDecoding(s) {
-/*     var elts = $(s).contents(), k = '';
-    if (elts.length < 1) {
-		// console.log(s);
-		// console.log($(s));
-		// console.log(s.toString());
-		if (s.nodeType === 1)
-			k = s.outerHTML;
-		else
-			k = s.textContent;
-    } else
-        for (var i = 0; i < elts.length; i++) {
-            var x = elts[i];
-            // console.log("TagName " + "[" + i + "]" + elts[i].tagName);
-            // console.log("NodeName " + "[" + i + "]" + elts[i].nodeName); // ok pour elt et #text pour text
-            // console.log("LocaName " + "[" + i + "]" + elts[i].localName);
-            // console.log("Type " + "[" + i + "]" + elts[i].nodeType); // 1 pour elt et 3 pour text
-			// console.log("Text " + "[" + i + "]" + $(elts[i]).html());
-            if (elts[i].nodeType === 3) {
-                k += elts[i].textContent;
-			} else {
-				k += elts[i].outerHTML;
-			}
-		}
- */	
-	// console.log(s);
+function nodeContent(s) {
 	var k;
 	if (typeof(s) === 'string')
 		k = s;
@@ -85,11 +60,73 @@ function transcriptDecoding(s) {
 		k = s.textContent;
 	else
 		k = String(s);
-	// console.log(k);
+	return k;
+}
+
+/**
+ * return text content without < and >
+ * @method nodeText
+ * @param DOMobject
+ * @return {string} content
+ */
+function nodeText(s) {
+	var k;
+	if (typeof(s) === 'string')
+		k = s;
+	else if (s.nodeType === 1)
+		k = s.textContent;
+	else if (s.nodeType === 3)
+		k = s.textContent;
+	else
+		k = String(s);
+	return k;
+}
+
+/**
+ * return text content without problematic < and > OR NOT
+ * @method transcriptDecoding
+ * @param DOMobject
+ * @return {string} content
+ */
+function transcriptDecoding(s) {
+	var k = nodeContent(s);
 	k = k.replace(/</g, trjs.data.leftBracket); // 60 3C
 	k = k.replace(/>/g, trjs.data.rightBracket); // 62 3E
 	k = k.replace(/ xmlns=.http...www.tei.c.org.ns.1.0./, ""); // remove namespace information
 	return k;
+}
+
+/**
+ * return text content without problematic < and > OR NOT
+ * @method spanDecoding
+ * @param DOMobject
+ * @return {string} content
+ */
+function spanDecoding(s) {
+	console.log(s);
+	if (s.nodeType === 1 && s.nodeName === 'span') {
+		var childs = $(s).children();
+		if (childs.length === 0) {
+			return nodeText(s);
+		} else {
+			var r = '', v;
+			for (var i = 0; i < childs.length; i++) {
+				if (trjs.param.spanContent === 'XML') {
+					v = transcriptDecoding(childs[i]);
+				} else {
+					v = nodeText(childs[i]);
+				}
+				r += v;
+			}
+			return r;
+		}
+	} else {
+		if (trjs.param.spanContent === 'XML') {
+			return transcriptDecoding(s);
+		} else {
+			return nodeText(s);
+		}
+	}
 }
 
 /**
@@ -192,7 +229,7 @@ function getDesc(node) {
 	var e = '';
 	var edesc = $(node).find('desc');
 	for (var j=0; j<edesc.length; j++, e += ' ') {
-		e += transcriptDecoding(edesc[j]);
+		e += spanDecoding(edesc[j]);
 	}
 	return e;
 }
@@ -211,7 +248,7 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 	if (ts && parseFloat(ts) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(ts);
 	if (te && parseFloat(te) < trjs.data.maxLinkingTime) trjs.data.maxLinkingTime = parseFloat(te);
 	var childs = $(seg).contents(); // mixed nodes
-	console.log(seg);
+	// console.log(seg);
     lastEndTime = ts; // time of the previous end of an element, even if no element processed yet
     var reg = new RegExp("[\n\r]","g");
 	for (var i = 0; i < childs.length; i++) {
@@ -293,7 +330,7 @@ function loadUSeg(elt, seg, ts, te, loc, prop) {
 			    	elt += ' (.) ';
 				}
 				*/
-			} else if (childs[i].nodeName !== 'span') {
+			} else {
 	    		a = transcriptDecoding(childs[i]);
 				elt += ' ' + a.replace(reg, "");
 			}
@@ -370,9 +407,9 @@ function loadSpan(span, from, to, type, postsoftware) {
     /* type information */
 	var spanType = $(span).attr('type');
 	if (spanType)
-	    addLineOfTranscript(type, from, to, trjs.data.leftEvent + spanType + '/INF' + trjs.data.rightEvent + ' ' + transcriptDecoding(span), 'prop');
+	    addLineOfTranscript(type, from, to, trjs.data.leftEvent + spanType + '/INF' + trjs.data.rightEvent + ' ' + spanDecoding(span), 'prop');
 	else
-    	addLineOfTranscript(type, from, to, transcriptDecoding(span), 'prop');
+    	addLineOfTranscript(type, from, to, spanDecoding(span), 'prop');
 	var childs = $(span).children();
 	for (i = 0; i < childs.length; i++) {
         if (childs[i].tagName === 'spanGrp') {

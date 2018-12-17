@@ -338,6 +338,22 @@ trjs.editor = (function () {
     }
 
     /**
+     * set option about span (spanGrp) loading computation
+     * @method setSpanFormat
+     */
+    function setSpanFormat() {
+        var x = $('#span-content').val();
+        if (x === '' || x === 'text') { // clean the span from xml tags
+            trjs.param.spanContent = '';
+        } else if (x === 'XML') { // edit xml in span
+            trjs.param.spanContent= 'XML';
+        } else {
+            trjs.param.spanContent = '';
+        }
+        trjs.param.saveStorage();
+    }
+
+    /**
      * set option about wave samples
      * @method setWaveSample
      */
@@ -1561,6 +1577,7 @@ trjs.editor = (function () {
         setNums: setNums,
         setPartition: setPartition,
         setShowLinkTime: setShowLinkTime,
+        setSpanFormat: setSpanFormat,
         setUseQuality: setUseQuality,
         setWaveSample: setWaveSample,
         setWave: setWave,

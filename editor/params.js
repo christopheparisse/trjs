@@ -78,6 +78,7 @@ trjs.param = {
     final: true,
     wavesampling: version.WAVESAMPLINGINITIAL,
     format: trjsFormatCHAT, // CHAT or XMLTEI or None
+    spanContent: '', // nothing or XML
     exportSaveAs: false,
     reloadLastFile: false,
 
@@ -239,6 +240,7 @@ trjs.param = {
         this.reloadLastFile = false;
         this.final = true;
         this.format = trjsFormatCHAT;
+        this.spanContent = '';
         this.wavesampling = 4000;
     },
     resetWarnings: function () {
@@ -293,6 +295,7 @@ trjs.param = {
         this.nbVisible = this.testUndefInt(trjs.local.get('param_nbVisible'), 3);
         this.final = this.testUndefBoolean(trjs.local.get('param_final'), true);
         this.format = this.testUndefString(trjs.local.get('param_format'), trjsFormatCHAT);
+        this.spanContent = this.testUndefString(trjs.local.get('param_spancontent'), '');
         this.wavesampling = this.testUndefInt(trjs.local.get('param_wavesampling'), version.WAVESAMPLINGINITIAL);
         if (this.wavesampling > version.WAVESAMPLINGMAX) this.wavesampling = version.WAVESAMPLINGMAX;
         var rf = this.testUndefString(trjs.local.get('param_recentfiles'), '');
@@ -338,6 +341,7 @@ trjs.param = {
         trjs.local.put('param_final', this.final);
         trjs.local.put('param_wavesampling', this.wavesampling);
         trjs.local.put('param_format', this.format);
+        trjs.local.put('param_spancontent', this.spanContent);
 
         var media = $('#media-display')[0].firstElementChild;
         if (media) {
