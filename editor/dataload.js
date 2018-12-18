@@ -109,6 +109,7 @@ function spanDecoding(s) {
 	r = r.replace(/>/g, trjs.data.rightBracket); // 62 3E
 	return r;
 	/*
+	TODO if accept tags other than spanGrp within span
 	console.log(s);
 	if (s.nodeType === 1 && s.nodeName === 'span') {
 		var childs = $(s).children();
@@ -422,7 +423,8 @@ function loadSpan(span, from, to, type, postsoftware) {
         if (childs[i].tagName === 'spanGrp') {
             loadSpanGrp(childs[i], type); // loads either the span
         } else if (childs[i].nodeType !== 3) {
-            // this should not happen with the limits of TEI CORPO
+			// this should not happen with the limits of TEI CORPO
+			// TODO if accept tags within span change this
 			trjs.log.alert('loadSpan: unknown nodeName: ' + childs[i].tagName + ' type: ' + childs[i].nodeType);
         }
 	}

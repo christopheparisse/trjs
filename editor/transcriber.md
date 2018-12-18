@@ -67,7 +67,7 @@ donc il faut préciser les fonctions de chaque zone.
 ===== IMPLEMENTATION =====
   ** deux points fondamentaux permettent de contrôler le positionnement de la transcription et du média.
   * Modifier le temps du média (media.currentTime --> fonction interne du navigateur) --> lance l'exécution d'un driver "updateListener" qui
-    permet de contrôler le comportement du média. (les comportements des updateListener dépendent donc des modes: trjs.data.synchro.block, .control, .free)
+    permet de contrôler le comportement du média. (les comportements des updateListener dépendent donc des modes: trjs.param.synchro.block, .control, .free)
   * Sélectionner la ligne courante: trjs.data.selectedLine --> il s'en suit une modification de l'affichage des lignes et de la partition
   * mode free: les fonctions de positionnement de temps et de lignes sont totalement indépendantes.
   * mode control: le positionnement ligne génére du positionnement de temps
