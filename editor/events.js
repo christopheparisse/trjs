@@ -32,7 +32,7 @@ trjs.events = (function () {
      * @method lineGetCell
      * @param pointer to a jQuery DOM tr element
      * @param td index
-     * @return value of the td
+     * @return string of the td
      */
     function lineGetCell(line, col) {
         if (!line) {
@@ -445,6 +445,7 @@ trjs.events = (function () {
         if (end !== '' && end < t) {
             // warning begining time cannot be above end time
             trjs.log.alert(trjs.messgs.timeBeginGreaterEnd, 'high');
+            console.log(trjs.messgs.timeBeginGreaterEnd, end, t);
             // modification of the end time
             lineSetCell(sel, trjs.data.TECOL, '');
             lineSetCell(sel, trjs.data.VTECOL, '');
@@ -480,6 +481,7 @@ trjs.events = (function () {
         if (begin !== '' && begin > t) {
             // warning begining time cannot be above end time
             trjs.log.alert(trjs.messgs.timeEndSmallerBegin, 'high');
+            console.log(trjs.messgs.timeEndSmallerBegin, begin, t);
             return;
         }
         lineSetCell(sel, trjs.data.TECOL, t);
@@ -947,6 +949,7 @@ trjs.events = (function () {
         if (tm !== '' && ts !== '' && tm < ts) {
             // warning begining time cannot be above end time
             trjs.log.alert(trjs.messgs.timeEndSmallerBegin, 'high');
+            console.log(trjs.messgs.timeEndSmallerBegin, tm, ts);
             return;
         }
         var linenumber = trjs.transcription.getLine(sel);
@@ -1255,6 +1258,7 @@ trjs.events = (function () {
         if (begin !== '' && begin > tm) {
             // warning begining time cannot be above end time
             trjs.log.alert(trjs.messgs.timeEndSmallerBegin, 'high');
+            console.log(trjs.messgs.timeEndSmallerBegin, begin, tm);
             return;
         }
         var ft = lineGetCell(prevline, trjs.data.TECOL);
@@ -1359,6 +1363,7 @@ trjs.events = (function () {
         if (tm !== '' && ts !== '' && tm < ts) {
             // warning begining time cannot be above end time
             trjs.log.alert(trjs.messgs.timeEndSmallerBegin, 'high');
+            console.log(trjs.messgs.timeEndSmallerBegin, tm, ts);
             return;
         }
         /*
@@ -1543,7 +1548,7 @@ trjs.events = (function () {
             trjs.media.playCurrent();
         else if (trjs.param.synchro.block())
             trjs.media.playJump();
-        if (trjs.param.synchro.free())
+        else if (trjs.param.synchro.free())
             trjs.media.playPause();
         return true;
     }
@@ -1935,6 +1940,7 @@ trjs.events = (function () {
             if (end !== '' && end < newt) {
                 // warning begining time cannot be above end time
                 trjs.log.alert(trjs.messgs.timeBeginGreaterEnd, 'high');
+                console.log(trjs.messgs.timeBeginGreaterEnd, end, newt);
                 var oldtime = lineGetCell(sel, trjs.data.TSCOL);
                 lineSetCell(sel, trjs.data.VTSCOL, trjs.transcription.formatTime(oldtime));
                 return;
@@ -1951,6 +1957,7 @@ trjs.events = (function () {
             if (begin !== '' && begin > newt) {
                 // warning begining time cannot be above end time
                 trjs.log.alert(trjs.messgs.timeEndSmallerBegin, 'high');
+                console.log(trjs.messgs.timeEndSmallerBegin, begin, newt);
                 var oldtime = lineGetCell(sel, trjs.data.TECOL);
                 lineSetCell(sel, trjs.data.VTECOL, trjs.transcription.formatTime(oldtime));
                 return;

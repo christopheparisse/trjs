@@ -212,8 +212,10 @@ trjs.media = (function () {
             var s = trjs.events.lineGetCell(trjs.data.selectedLine, trjs.data.TSCOL);
             var e = trjs.events.lineGetCell(trjs.data.selectedLine, trjs.data.TECOL);
             // do not change time if not necessary
-            if (s !== '' && e !== '' && (pt < Number(s) || pt > Number(e))) // the media is not in the current line.
+            if (s !== '' && e !== '' && (pt < Number(s) || pt > Number(e))) {
+                // the media is not in the current line.
                 media.currentTime = Number(s);
+            }
             media.play();
             setTimer('standard');
         } else

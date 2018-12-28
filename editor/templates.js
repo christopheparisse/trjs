@@ -1567,7 +1567,7 @@ trjs.template = (function () {
         }
         s += '</listPerson></particDesc>\n</profileDesc>\n';
 
-        s += '<encodingDesc>\n';
+        s += '<encodingDesc version="0.9.1" subversion="trjs">\n';
         s += '<appInfo>\n';
         s += '<application ident="' + version.appName + '" />\n';
         s += '</appInfo>\n';

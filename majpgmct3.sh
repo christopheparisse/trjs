@@ -9,7 +9,8 @@ cp trjs-v0.7.4-macos.zip ~/ownCloud/betatrjs
 zip -r trjs-v0.7.4.zip trjs-zip
 scp trjs-v0.7.4.zip parisse@ct3.ortolang.fr:/applis/download/
 cp trjs-v0.7.4.zip ~/ownCloud/betatrjs
-cd /devlopt/trjs
+cd /devlopt/trjs-v0.7.4
 scp doc/trjs_pp.html parisse@ct3.ortolang.fr:/applis/trjs/documentation/
+scp doc/trjs_doc.html parisse@ct3.ortolang.fr:/applis/trjs/documentation/
 #scp trjs-v0.7.4-x64.exe parisse@ct3.ortolang.fr:/applis/download/
 #scp trjs-v0.7.4-x86.exe parisse@ct3.ortolang.fr:/applis/download/

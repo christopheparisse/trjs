@@ -589,7 +589,7 @@ teiConvertTools.docxToTEI = function (data) {
 			}
 			continue;
 		}
-		// TRANSCRITION
+		// TRANSCRIPTION
 		b = /(.*?)\t(.*?)\t(.*?)\t(.*)/.exec(l);
 		if (b !== null) {
 			// split into four parts with time1, time2, loc, utterances
