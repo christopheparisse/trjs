@@ -1239,6 +1239,7 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("f7"), false, true, false, false, "", "runThreeLines"]); // Alt F7
     trjs.bindingsDef.push([nkey("f11"), false, true, false, false, "", "sort"]); // Alt F11
     trjs.bindingsDef.push([nkey("f12"), false, true, false, false, "", "undoList"]); // Alt F12
+    trjs.bindingsDef.push([nkey("tab"), false, true, false, false, "", "playWave"]); // Alt Tab
 
     trjs.bindingsDef.push([nkey("tab"), false, false, true, false, "", "shiftTab"]); // Shift Tab
     trjs.bindingsDef.push([nkey("f1"), false, false, true, false, "", "playPause"]); // Shift F1
@@ -1560,6 +1561,7 @@ trjs.keys.functions = {
     "playPause": [ trjs.media.playPause, trjs.messgs.playpause, null],
 //    "playReverse": [ trjs.media.playReverse, trjs.messgs.ctrlaltbin66, null],
     "playSlower": [ trjs.media.playSlower, trjs.messgs.ctrlaltbin115, null],
+    "playWave": [ trjs.media.playFromWave, "Play wave file", null],
     "redo": [ trjs.undo.redo, trjs.messgs.ctrlbin89, null],
     "replicateLine": [ trjs.events.replicateLineAndRedraw, trjs.messgs.ctrlbin82, null],
     "runCurrentLine": [ trjs.events.runCurrentLine, trjs.messgs.bin118, null],

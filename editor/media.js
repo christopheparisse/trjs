@@ -12,7 +12,7 @@ trjs.media = (function () {
     /*
      * event listeners
      */
-    var media_clock = null;
+    var media_clock = null; // provides a more fine grained interval for following the media
     var media = null;
 
     function setMedia() {
@@ -84,9 +84,10 @@ trjs.media = (function () {
      */
     function ctrlFromTo() {
         setMedia();
-        if (media.currentTime >= media.endplay) {
-            setTimer('standard');
+        if (media.currentTime >= media.endplay && media.endplay !== -1) {
+            console.log("pause ctrlFromTo");
             media.pause();
+            setTimer('standard');
             media.lastPosition = media.currentTime;
             media.lastTime = (new Date()).getTime();
             if (media.s1) dehighlight(media.s1);
@@ -115,7 +116,7 @@ trjs.media = (function () {
             trjs.log.alert("media not loaded or not ready: cannot play");
             return;
         }
-        if (media.currentTime >= media.endplay) {
+        if (media.currentTime >= media.endplay && media.endplay !== -1) {
             console.log("in>", media.currentTime, media.endplay, media.currentElement, media.nextElement);
             if (media.nextElement === null) {
                 endContinuousPlay();
@@ -166,10 +167,13 @@ trjs.media = (function () {
         }
         setMedia();
         if (media.paused) {
-            media.play();
             setTimer('standard');
-        } else
+            media.play();
+        } else {
+            console.log("pause playPause");
+            setTimer('standard');
             media.pause();
+        }
     }
 
     /**
@@ -185,10 +189,13 @@ trjs.media = (function () {
         setMedia();
         trjs.events.goToTime('wave');  // synchronizes the partition and transcription with the current time in the media : the wave is already set
         if (media.paused) {
-            media.play();
             setTimer('standard');
-        } else
+            media.play();
+        } else {
+            console.log("pause playJump");
+            setTimer('standard');
             media.pause();
+        }
     }
 
     /**
@@ -218,8 +225,11 @@ trjs.media = (function () {
             }
             media.play();
             setTimer('standard');
-        } else
+        } else {
+            console.log("pause playCurrent");
+            setTimer('standard');
             media.pause();
+        }
     }
 
     /**
@@ -232,6 +242,7 @@ trjs.media = (function () {
             return;
         }
         setMedia();
+        console.log("pause playStartLine");
         media.pause();
         var sel = trjs.data.selectedLine;
         sel = trjs.events.findLineToStart(sel);
@@ -239,8 +250,8 @@ trjs.media = (function () {
         var ts = trjs.events.lineGetCell(sel, trjs.data.TSCOL);
         if (ts !== '') media.currentTime = ts;
 // not necessary:   	trjs.events.goToTime('wave');
-        media.play();
         setTimer('standard');
+        media.play();
     }
 
     /**
@@ -253,6 +264,7 @@ trjs.media = (function () {
      * @param {jquery-object} headline to be highlighted
      */
     function runFromTo(start, end, s1, s2, s3) {
+        console.log("pause runFromTo");
         media.pause();
         media.currentTime = start;
         media.endplay = end;
@@ -360,6 +372,7 @@ trjs.media = (function () {
      */
     function endContinuousPlay() {
         setMedia();
+        console.log("pause endContinuousPlay");
         if (media.pause) media.pause();
         dehighlight(media.currentElement);
         media.lastPosition = media.currentTime;
