@@ -27,7 +27,7 @@ trjs.param = {
     backwardskip: 3.0,
     forwardskip: 3.0,
     number: false,
-    nbversions: 3,
+    nbversions: 2,
     formatTime: "0:00:00",
     nbdigits: 0,
     goLine: null,

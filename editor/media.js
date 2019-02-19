@@ -170,7 +170,7 @@ trjs.media = (function () {
             setTimer('standard');
             media.play();
         } else {
-            console.log("pause playPause");
+            // console.log("pause playPause");
             setTimer('standard');
             media.pause();
         }
@@ -179,9 +179,9 @@ trjs.media = (function () {
     /**
      * starts and stop media (on/off)
      * but jump where the video/audio time is.
-     * @method playJump
+     * @method playFromMedia
      */
-    function playJump(e) {
+    function playFromMedia(e) {
         if (trjs.param.isContinuousPlaying === true) {
             endContinuousPlay();
             return;
@@ -192,7 +192,7 @@ trjs.media = (function () {
             setTimer('standard');
             media.play();
         } else {
-            console.log("pause playJump");
+            // console.log("pause playFromMedia");
             setTimer('standard');
             media.pause();
         }
@@ -202,9 +202,9 @@ trjs.media = (function () {
      * starts and stop media (on/off)
      * or if the current media time is not in the current line of transcription
      * starts media from begining line
-     * @method playCurrent
+     * @method playPauseCurrent
      */
-    function playCurrent(e) {
+    function playPauseCurrent(e) {
         if (trjs.param.isContinuousPlaying === true) {
             endContinuousPlay();
             return;
@@ -226,7 +226,7 @@ trjs.media = (function () {
             media.play();
             setTimer('standard');
         } else {
-            console.log("pause playCurrent");
+            // console.log("pause playPauseCurrent");
             setTimer('standard');
             media.pause();
         }
@@ -242,7 +242,7 @@ trjs.media = (function () {
             return;
         }
         setMedia();
-        console.log("pause playStartLine");
+        // console.log("pause playStartLine");
         media.pause();
         var sel = trjs.data.selectedLine;
         sel = trjs.events.findLineToStart(sel);
@@ -668,13 +668,13 @@ trjs.media = (function () {
         makeSmall: makeSmall,
         pageleft: pageleft,
         pageright: pageright,
-        playCurrent: playCurrent,
+        playPauseCurrent: playPauseCurrent,
         playFaster: playFaster,
         playFromWave: function (e) {
             if (trjs.param.synchro.block())
                 trjs.events.goContinuous(e);
             else if (trjs.param.synchro.control())
-                trjs.media.playJump(e);
+                trjs.media.playFromMedia(e);
             else
                 trjs.media.playPause(e);
         },
@@ -682,9 +682,9 @@ trjs.media = (function () {
             if (trjs.param.synchro.block())
                 trjs.events.goContinuous(e);
             else
-                trjs.media.playCurrent();
+                trjs.media.playCurrentLine();
         },
-        playJump: playJump,
+        playFromMedia: playFromMedia,
         playNormal: playNormal,
         playPause: playPause,
         playSlower: playSlower,

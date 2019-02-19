@@ -1525,7 +1525,7 @@ trjs.events = (function () {
         return false;
     }
 
-    function shiftTab(e) {
+    function playStartLine(e) {
         if (e) {
             if (e.transcript !== true) return false;
             e.preventDefault();
@@ -1534,7 +1534,7 @@ trjs.events = (function () {
         return true;
     }
 
-    function tab(e) {
+    function playTab(e) {
         if (e) {
             // if (e.transcript !== true) return false;
             e.preventDefault();
@@ -1545,9 +1545,9 @@ trjs.events = (function () {
             return true;
         }
         if (trjs.param.synchro.control())
-            trjs.media.playCurrent();
+            trjs.media.playPauseCurrent();
         else if (trjs.param.synchro.block())
-            trjs.media.playJump();
+            trjs.media.playFromMedia();
         else if (trjs.param.synchro.free())
             trjs.media.playPause();
         return true;
@@ -2469,7 +2469,7 @@ trjs.events = (function () {
             return true;
         },
         setTimeSelectedLine: setTimeSelectedLine,
-        shiftTab: shiftTab,
+        playStartLine: playStartLine,
         splitLineAndRedraw: function (e, p) {
             trjs.undo.opinit('splitLineAndRedraw');
             splitLine(e, p);
@@ -2484,7 +2484,7 @@ trjs.events = (function () {
             trjs.undo.opclose('splitLineLocAndRedraw');
             return true;
         },
-        tab: tab,
+        playTab: playTab,
         transcriptGotFocus: transcriptGotFocus,
     };
 })();

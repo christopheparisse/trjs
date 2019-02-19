@@ -1,608 +1,1291 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<script type="text/javascript">
-		function openCloseSpoiler(div) {
-			var divContenu = div.getElementsByTagName('div')[0];
-			if (divContenu.style.display == 'none') {
-				divContenu.style.display = 'block';
-			} else {
-				divContenu.style.display = 'none';
-			}
-		}
-		</script>
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/bootstrap-submenu.js"></script>
-		<script src="js/bootbox.js"></script>
-		<link rel="stylesheet" type="text/css" href="doc.css" />
-		<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="style/bootstrap-submenu.css" />
-		<link rel="stylesheet" href="style/font-awesome.css"/>
-		<title>TRJS - Manuel d'utilisation</title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-submenu.js"></script>
+    <script src="js/bootbox.js"></script>
+    <link rel="stylesheet" type="text/css" href="doc.css"/>
+    <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style/bootstrap-submenu.css"/>
+    <link rel="stylesheet" href="style/font-awesome.css"/>
+    <title>TRJS - Manuel d'utilisation</title>
+</head>
 
-	<body>
+<body>
 
 <header>
-<img src="img/trjs.png" width="30" height="30"/>
-<b> T R J S </b> version Beta - Documentation : <b>Premiers pas</b>
+    <img src="img/trjs.png" width="30" height="30" alt="TRJS"/>
+    <b> T R J S </b> version Beta - Documentation : <b>Premiers pas</b>
 </header>
 <div id="main">
-<main>
-	<div id="menu2">
-<span><a href="#01"><i class="fa fa-download pl fa-5x"></i><br/>Installer</a></span>
-<span><a href="#02"><i class="fa fa-laptop pl fa-5x"></i><br/>Organisation et description</a></span>
-<span><a href="#03"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Ouvrir une transcription </a></span>
-<span><a href="#04"><i class="fa fa-file-movie-o pl fa-5x"></i><br/>Ouvrir un média </a></span>
-<span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Commencer à transcrire</a></span>
-<span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Commandes pour la transcription</a></span>
-<span><a href="#07"><i class="fa fa-keyboard-o pl fa-5x"></i><br/>Manipulation du clavier </a></span>
-<span><a href="#08"><i class="fa fa-cogs pl fa-5x"></i><br/>Paramètres et autres fonctions </a></span>
-	</div>
+    <div id="menu2">
+        <span><a href="#install"><i class="fa fa-download pl fa-5x"></i><br/>Installer</a></span>
+        <span><a href="#features"><i class="fa fa-laptop pl fa-5x"></i><br/>Organisation et description</a></span>
+        <span><a href="#03"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Ouvrir une transcription </a></span>
+        <span><a href="#04"><i class="fa fa-file-movie-o pl fa-5x"></i><br/>Ouvrir un média </a></span>
+        <span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Commencer à transcrire</a></span>
+        <span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Commandes pour la transcription</a></span>
+        <span><a href="#07"><i class="fa fa-keyboard-o pl fa-5x"></i><br/>Manipulation du clavier </a></span>
+        <span><a href="#08"><i class="fa fa-cogs pl fa-5x"></i><br/>Paramètres et autres fonctions </a></span>
+    </div>
+
+    <h1 id="install">Comment installer TRJS</h1>
+    <hr/>
+    <h2>Au préalable</h2>
+    <p>Avant de procéder à l'installation de TRJS,
+        veuillez vérifier avoir effectué les installations et <b>mises à jour</b> suivantes:
+    <ol>
+        <li>Avoir une version de votre système d'exploitation compatible:</li>
+        <ul>
+            <li>Mac OS :</li>
+            <ul>
+                <li>version <b>minimum 10.9</b> (Mavericks)</li>
+                <li>et plus récentes</li>
+                <li>Pour de plus anciennes versions, utiliser la version 0.4.9 de TRJS.</li>
+            </ul>
+            <li>Windows :</li>
+            <ul>
+                <li>Seven</li>
+                <li>8</li>
+                <li>10</li>
+            </ul>
+            <li>Autres systèmes :</li>
+            <ul>
+                <li>Linux: l'installation se fait à partir des sources.
+                </li>
+                <li>
+                    Les sources sont disponibles ici: http://www.github.com/christopheparisse/trjs/
+                    Une fois l'archive décompressée ou récupérée avec git clone, faire:
+                    npm install
+                    npm start
+                    L'installation à partir des sources nécessite l'installation séparé de Node.js, NPM, Java,
+                    FFMPEG et FFPASTE.
+                </li>
+            </ul>
+        </ul>
+    </ol>
+    </p>
+
+    <p>
+        Le programme d'installation est téléchargeable sur la page <a
+            href="http://ct3.ortolang.fr/trjs/doku.php?id=start">Téléchargement</a>.
+    </p>
+
+    <h2>Sous Windows</h2>
+    <p>
+    <ol>
+        <li>Cliquez sur le <a href="http://ct3.ortolang.fr/trjs/doku.php">lien de téléchargement</a>.<br/>
+            Choisissez la version de Windows désirée.<br/>
+            Vous pouvez <b>Enregistrer le fichier</b>.
+        </li>
+        <li>Dans le dossier <b>Téléchargements</b>, vous trouverez le répertoire d'installation au format
+            exécutable,
+            nommé selon la version <b>trjs-....exe</b>.<br/>
+            Veuillez l'ouvrir pour lancer l'installation.<br/> La fenêtre suivante apparaît:
+            <img class="align" src="img/capture/dl/02.png" alt="shorcuts"/>
+            Il est conseillé de garder cochée la case <b>Desktop Shortcuts</b>
+            afin de pouvoir lancer le logiciel directement depuis le Bureau (Desktop) via un raccourci.
+            <img class="align" src="img/capture/dl/03.png" alt="emplacement"/>
+            Le répertoire par défaut est <b>trjs</b> dans "Program Files ..."<br/>
+        </li>
+        <li>L'installation de TRJS est <b>terminée</b>.
+            Vous pouvez fermer.<img class="align" src="img/capture/dl/07.png" alt="fin installation"/></li>
+    </ol>
+    </p>
+    <h2>Sous Mac OS X</h2>
+    <p>Le téléchargement consiste en un fichier ZIP. Ce fichier peut être décompressé sur OSX, soit automatiquement,
+        soit
+        manuellement en faisant double-clic dessus(selon vos paramètres de navigateur).
+        Une fois décompressée, l'application peut être déplacée où vous voulez, par exemple dans le dossier
+        Applications,
+        mais aussi dans un autre dossier.</p>
+    <h2>Autres systèmes</h2>
+    <p>
+        Pour les systèmes Linux ou autres systèmes, installer à partir des sources et faire une installation séparée
+        de Java (pour les outils d'export)
+        et de FFMPEG pour visualiser le signal et utiliser les outils de conversion de fichier média.
+    </p>
+    <p>
+        Pour installer à partir des sources, récupérer le fichier trjs-vx.y.z.zip et le décompresser.<br/>
+        Dans le répertoire de décompression, lancer une fenêtre de commande et exécuter les commandes
+        suivantes:<br/>
+    <pre>npm install<br/>gulp<br/>npm run electron</pre>
+    Il est nécessaire pour le bon fonctionnement du correcteur lexical de lancer au moins une fois la commande:<br/>
+    <pre>npm run rebuild</pre>
+    </p>
+
+    <h1 id="features">Organisation et description de TRJS</h1>
+    <hr/>
+    <h2 id="0301">Lancer TRJS</h2>
+    <p>Il suffit de faire double-clic sur l'icone du programme.</p>
+    <p>Il est possible d'associer le programme à un type de fichier. Dans ce cas,
+        il est conseillé d'utiliser l'extension .trjs pour les noms de fichiers pour éviter
+        la confusion avec les fichiers d'extension .xml. L'utilisation de l'extension .xml
+        ou .tei_corpo.xml reste tout à fait autorisée.</p>
+
+    <h2 id="0301">Présentation de la fenêtre TRJS</h2>
+    <p>Après avoir lancé TRJS, le programme s'ouvre sur la fenêtre principale.<br/>
+        Cette fenêtre s'articule en différentes parties, comme découpées ci-dessous:
+        <img class="center" src="img/capture/i1.png" width="800" alt="TRJS image" /><br/>
+    <ol>
+        <li>La <a href="#0302">barre de menus</a>, avec accès aux paramètres et fonctionnalités.</li>
+        <li>Le <a href="#0303">champ média</a>, encadré des <a href="#0308">barres d'outils</a> pour l'édition de la
+            transcription.
+        </li>
+        <li>Le <a href="#0304">signal</a>, représentation sonore du média.</li>
+        <li>La <a href="#0305">partition</a>, représentation horizontale de la transcription.</li>
+        <li>Les <a href="#0306">commandes média</a>, boutons de lecture et d'édition de la transcription.</li>
+        <li>La <a href="#0307">transcription</a>, où on peut éditer notre texte.</li>
+    </ol>
+    </p>
+    <h2 id="0302">La barre de menu : l'accès aux paramètres</h2>
+    <p>La barre de menu est composée d'encarts cliquables :<br/><br/>
+        <img class="center" src="img/capture/i2.png" width="800"/><br/><br/>
+        L'onglet
+        <bl>FICHIER</bl>
+        propose plusieurs options d'ouverture, de sauvegarde et d'import.<br/>
+        L'onglet
+        <bl>EDITION</bl>
+        permet d'éditer les métadonnées liées au(x) fichier(s) transcription et média.<br/>
+        L'onglet
+        <bl>OUTILS</bl>
+        donne accès à des options de conversion, d'export, de correction du(des) fichier(s).<br/>
+        L'onglet
+        <bl>NOM DU FICHIER</bl>
+        renvoie au panneau <a href="#0601">Métadonnées</a> qui s'ouvre directement.
+        Chaque ligne éditée du tableau s'enregistre automatiquement.<br/>
+        L'onglet
+        <bl>PARAMETRES</bl>
+        contient plusieurs encarts aux fonctionnalités thématiques (affichage, réglages etc.) .<br/>
+        L'onglet
+        <bl>RECHERCHE</bl>
+        affiche un pannel avec diverses options de recherche à travers le(s) fichier(s).<br/>
+        L'onglet
+        <bl>AIDE</bl>
+        contient les liens vers les sites de documentation et mémos.<br/>
+    </p>
 
 
-<h1 id="01">Comment installer TRJS</h1><hr/>
-		<h2 id="0101">Au préalable</h2>
-<p>Avant de procéder à l'installation de TRJS,
-veuillez vérifier avoir effectué les installations et <b>mises à jour</b> suivantes:
-<ol>
-	<li>Avoir une version de votre système d'exploitation compatible:</li>
-	<ul>
-		<li>Mac OS :</li>
-		<ul>
-			<li>version <b>minimum 10.9</b> (Mavericks) </li>
-			<li>et plus récentes</li>
-			<li>Pour de plus anciennes version, installer à partir des sources comme pour Linux.</li>
-		</ul>
-		<li>Windows : </li>
-		<ul>
-			<!--
-			<li>XP</li>
-			-->
-			<li>Seven </li>
-			<li>8</li>
-			<li>10</li>
-		</ul>
-		<li>Autres systèmes :</li>
-		<ul>
-			<li>Linux: l'installation se fait à partir des sources.
-			</li>
-			<li>
-				Les sources sont disponibles ici: http://www.github.com/christopheparisse/trjs/
-				Une fois l'archive décompressée ou récupérée avec git clone, faire:
-				npm install
-				npm start
-				L'installation à partir des sources nécessite l'installation séparé de Node.js, NPM, Java, FFMPEG et FFPASTE.
-			</li>
-		</ul>
-	</ul>
-</ol>
-Le programme d'installation est téléchargeable sur la page <a href="http://ct3.ortolang.fr/trjs/doku.php?id=start">Téléchargement</a>.
-</p>
+    <h2 id="0303">Champ média</h2>
+    <p>Le champ média contient la vidéo et/ou l'audio.</p><br/><br/>
+    <img class="center" src="img/capture/imed.png" width="800"/><br/><br/>
+    <p>La barre de lecture est propre au média (et dépendante du navigateur utilisé),
+        elle apparaît lorsqu'on passe le curseur sur le média, puis disparaît après 3 secondes. <br/>
+        Elle offre les options suivantes :
+    <ol>
+        <li>Revenir en arrière (3 secondes par défaut : valeur modifiable dans le menu
+            <bl>PARAMETRES</bl>
+            ) ou raccourci clavier : <b>Alt ←</b> (ou <b>F2</b>)
+        </li>
+        <li>Lecture simple/pause</li>
+        <li>Barre de <b>déplacement</b> horizontal dans le média, avec <b>position</b> indiquée en <i>hh:mm:ss</i>
+        </li>
+        <li>Affichage du temps complet du média</li>
+        <li>Volume (option muet)</li>
+        <li>Plein écran ou raccourci clavier : <b>ESC</b> pour revenir à une taille miniature</li>
+        <li>Sauter en avant ou raccourci clavier : <b>Alt →</b> (ou <b>F3</b>)</li>
+    </ol>
+    </p>
 
-		<h2 id="0102">Sous Windows</h2>
-<p><ol>
-	<li>Cliquez sur le <a href="http://ct3.ortolang.fr/trjs/doku.php">lien de téléchargement</a>.<br/>
-		Choisissez la version de Windows désirée.<br/>
-	Vous pouvez <b>Enregistrer le fichier</b>.</li><br/>
-	<li>Dans le dossier <b>Téléchargements</b>, vous trouverez le répertoire d'installation au format exécutable,
-		nommé selon la version <b>trjs-....exe</b>.<br/>
-	Veuillez l'ouvrir pour lancer l'installation.<br/> La fenêtre suivante apparaît:
-	<img id="ima" class="align" src="img/capture/dl/02.png"/>
-	Il est conseillé de garder cochée la case <b>Desktop Shortcuts</b>
-	afin de pouvoir lancer le logiciel directement depuis le Bureau (Desktop) via un raccourci.
-	<img id="ima" class="align" src="img/capture/dl/03.png"/>
-	Le répertoire par défaut est <b>trjs</b> dans "Program Files ..."<br/>
-	<li>L'installation de TRJS est <b>terminée</b>.
-	Vous pouvez fermer.<img id="ima" class="align" src="img/capture/dl/07.png"/></li>
-</ol></p>
-		<h2 id="0103">Sous Mac OS X</h2>
-<p>Le téléchargement consiste en un fichier ZIP. Ce fichier peut être décompressé sur OSX, soit automatiquement, soit
-manuellement en faisant double-clic dessus(selon vos paramètres de navigateur).
-Une fois décompressée, l'application peut être déplacée où vous voulez, par exemple dans le dossier Applications,
-mais aussi dans un autre dossier.</p>
-		<h2 id="0104">Autres systèmes</h2>
-<p>
-Pour les systèmes Linux ou autres systèmes, installer à partir des sources et faire une installation séparée de Java (pour les outils d'export)
-et de FFMPEG pour visualiser le signal et utiliser les outils de conversion de fichier média.
-</p>
-<p>
-	Pour installer à partir des sources, récupérer le fichier trjs-vx.y.z.zip et le décompresser.<br/>
-	Dans le répertoire de décompression, lancer une fenêtre de commande et exécuter les commandes suivantes:<br/>
-	<pre>npm install<br/>gulp<br/>npm run electron</pre>
-	Il est nécessaire pour le bon fonctionnement du correcteur lexical de lancer au moins une fois la commande:<br/>
-	<pre>npm run rebuild</pre>
-</p>
+    <h2 id="0304">Signal</h2>
+    <p>Le signal est une représentation sonore du média dans son intensité (densité d'énergie acoustique) en
+        fonction du temps en secondes et de la fréquence en Hertz.</p>
+    <img class="center" src="img/capture/i2.png" width="800"/><br/><br/>
 
-<h1 id="02">Organisation et description de TRJS</h1><hr/>
-	<h2 id="0301">Lancer TRJS</h2>
-	<p>Il suffit de faire double-clic sur l'icone du programme.</p>
-	<p>Il est possible d'associer le programme à un type de fichier. Dans ce cas,
-	il est conseillé d'utiliser l'extension .trjs pour les noms de fichiers pour éviter
-	la confusion avec les fichiers d'extension .xml. L'utilisation de l'extension .xml
-	ou .tei_corpo.xml reste tout à fait autorisée.</p>
+    <h2 id="0305">Partition</h2>
+    <p>La partition est une représentation horizontale de la transcription (verticale) qui permet de visualiser
+        intuitivement les chevauchements des tours de parole des locuteurs.</p>
+    <img class="center" src="img/capture/i4.png" width="800"/><br/><br/>
 
-	<h2 id="0301">Présentation de la fenêtre TRJS</h2>
-<p>Après avoir lancé TRJS, le programme s'ouvre sur la fenêtre principale.<br/>
-Cette fenêtre s'articule en différentes parties, comme découpées ci-dessous:
-<img id="ima" class="center" src="img/capture/i1.png"  width="800"/><br/>
-<ol>
-	<li>La <a href="#0302">barre de menus</a>, avec accès aux paramètres et fonctionnalités.</li>
-	<li>Le <a href="#0303">champ média</a>, encadré des <a href="#0308">barres d'outils</a> pour l'édition de la transcription.</li>
-	<li>Le <a href="#0304">signal</a>, représentation sonore du média.</li>
-	<li>La <a href="#0305">partition</a>, représentation horizontale de la transcription.</li>
-	<li>Les <a href="#0306">commandes média</a>, boutons de lecture et d'édition de la transcription.</li>
-	<li>La <a href="#0307">transcription</a>, où on peut éditer notre texte.</li>
-</ol>
-</p>
-		<h2 id="0302">La barre de menu : l'accès aux paramètres</h2>
-<p>La barre de menu est composée d'encarts cliquables :<br/><br/>
-<img id="ima" class="center" src="img/capture/i2.png" width="800" /><br/><br/>
-L'onglet <bl>FICHIER</bl> propose plusieurs options d'ouverture, de sauvegarde et d'import.<br/>
-L'onglet <bl>EDITION</bl> permet d'éditer les métadonnées liées au(x) fichier(s) transcription et média.<br/>
-L'onglet <bl>OUTILS</bl> donne accès à des options de conversion, d'export, de correction du(des) fichier(s).<br/>
-L'onglet <bl>NOM DU FICHIER</bl> renvoie au panneau <a href="#0601">Métadonnées</a> qui s'ouvre directement.
-Chaque ligne éditée du tableau s'enregistre automatiquement.<br/>
-L'onglet <bl>PARAMETRES</bl> contient plusieurs encarts aux fonctionnalités thématiques (affichage, réglages etc.) .<br/>
-L'onglet <bl>RECHERCHE</bl> affiche un pannel avec diverses options de recherche à travers le(s) fichier(s).<br/>
-L'onglet <bl>AIDE</bl> contient les liens vers les sites de documentation et mémos.<br/>
-</p>
+    <h2 id="0306">Boutons média</h2>
+    <p>Autour du champ média (audio ou vidéo) sont déployés des boutons, associés à des raccourcis claviers.</p>
+    <br/>
+    <img class="center" src="img/capture/i5.png" width="800"/><br/>
+    <p>Lorsqu'on passe la souris sur une icône, une <b>bulle d'information</b> apparaît pour rappeler la fonction
+        principale de l'icône,
+        ainsi que son raccourci clavier associé.</p><br/>
+    <table>
+        <tr>
+            <th>Icône</th>
+            <th>Raccourci clavier</th>
+            <th>Fonctionnalité</th>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-youtube-play fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_Tab.png" width="35" height="35"/></td>
+            <td><b>Play/Pause</b> : lecture simple (à partir de l'endroit où le curseur est situé) <br/>/!\ Cette
+                fonction de lecture ne déplace pas le curseur positionné dans le tableau de transcription.
+            </td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-arrow-up fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_F4.png" width="35" height="35"/></td>
+            <td><b>Set start</b> : insertion dans la transcription du temps de début d'un segment à transcrire (à
+                l'endroit où le curseur est situé dans le tableau de transcription)
+            </td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-arrow-down fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_F5.png" width="35" height="35"/></td>
+            <td><b>Set end</b> : insertion dans la transcription du temps de fin</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-edit fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_F6.png" width="35" height="35"/></td>
+            <td><b>Insert</b> : insertion d'une ligne vide sous un locuteur dans la transcription</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-refresh fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_F7.png" width="35" height="35"/></td>
+            <td><b>Repeat</b> : lecture de la ligne courante (où se situe le curseur dans la transcription)</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-repeat fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_F8.png" width="35" height="35"></td>
+            <td><b>Go continuous</b> : lecture continue (à partir de l'endroit où se situe le curseur)</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-hand-o-left fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_Alt_Left.png" width="35" height="35"/></td>
+            <td><b>Backward</b> : recule (déplacement de une image, de une seconde, à l'extrémité de la partition)
+            </td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-hand-o-right fa-2x"></i></td>
+            <td><img src="img/touches/computer_key_Alt_Right.png" width="35" height="35"/></td>
+            <td><b>Forward</b> : avance</td>
+        </tr>
+        <tr>
+            <td><i class="iconcur fa fa-search-minus fa-lg"></i>&nbsp;<i
+                    class="iconcur fa fa-search-plus fa-lg"></i></td>
+            <td></td>
+            <td><b>Zoom</b> : L'option zoom permet d'agrandir ou de rétrécir la visualisation du signal et de la
+                partition et ce jusqu'à 2,6 secondes.
+            </td>
+        </tr>
+    </table>
 
+    <h2 id="0307">Transcription</h2>
+    <p>La transcription orthographique du signal est éditée sous forme de tableau déroulable
+        (la barre de défilement vertical se trouve sur la droite).<br/>
+        Le tableau de transcription est une visualisation verticale éditable du texte.</p><br/>
 
-		<h2 id="0303">Champ média</h2>
-<p>Le champ média contient la vidéo et/ou l'audio.</p><br/><br/>
-<img id="ima" class="center" src="img/capture/imed.png" width="800" /><br/><br/>
-<p>La barre de lecture est propre au média (et dépendante du navigateur utilisé),
-elle apparaît lorsqu'on passe le curseur sur le média, puis disparaît après 3 secondes. <br/>
-Elle offre les options suivantes :
-	<ol>
-		<li>Revenir en arrière (3 secondes par défaut : valeur modifiable dans le menu <bl>PARAMETRES</bl>) ou raccourci clavier : <b>Alt ←</b> (ou <b>F2</b>)	</li>
-		<li>Lecture simple/pause</li>
-		<li>Barre de <b>déplacement</b> horizontal dans le média, avec <b>position</b> indiquée en <i>hh:mm:ss</i></li>
-		<li>Affichage du temps complet du média</li>
-		<li>Volume (option muet)</li>
-		<li>Plein écran ou raccourci clavier : <b>ESC</b> pour revenir à une taille miniature</li>
-		<li>Sauter en avant ou raccourci clavier : <b>Alt →</b> (ou <b>F3</b>)</li>
-	</ol>
-</p>
+    <img class="center" src="img/capture/i6.png" width="800"/><br/><br/>
 
-		<h2 id="0304">Signal</h2>
-<p>Le signal est une représentation sonore du média dans son intensité (densité d'énergie acoustique) en fonction du temps en secondes et de la fréquence en Hertz.</p>
-<img id="ima" class="center" src="img/capture/i2.png" width="800" /><br/><br/>
+    <h2 id="0308">Barres d'outils</h2>
+    <img class="center" src="img/capture/i7.png" width="800"/><br/><br/>
+    <p>Les barres d'outils permettent d'accéder très rapidement aux principales commandes d'édition. <br/>
+        Chaque icône est également définie par un raccourci clavier,
+        qui s'affiche au moyen d'une <b>infobulle</b> lorsqu'on passe la souris par dessus.<br/>
+        On peut <b>rétrécir ou déplacer</b> les barres d'outils.</p>
 
-		<h2 id="0305">Partition</h2>
-<p>La partition est une représentation horizontale de la transcription (verticale) qui permet de visualiser intuitivement les chevauchements des tours de parole des locuteurs.</p>
-<img id="ima" class="center" src="img/capture/i4.png" width="800" /><br/><br/>
+    <h1 id="03">Ouvrir une transcription </h1>
+    <hr/>
+    <h2 id="0401">Créer une nouvelle transcription</h2>
+    <p>Dans le menu
+        <bl>FICHIERS</bl>
+        , sélectionner <b>Nouvelle transcription</b>.
+    </p>
+    <br/>
+    Une fenêtre s'ouvre alors pour vous demander de choisir le fichier média associé (audio ou vidéo).
+    Vous pouvez choisir un média ou annuler pour travailler sans média, puis vous pouvez commencer la
+    transcription.</p><br/>
+    <p>La partie transcription est désormais éditable à l'endroit indiqué.</p>
+    <img class="center" src="img/capture/inewmed.png" width="800"/><br/>
 
-		<h2 id="0306">Boutons média</h2>
-<p>Autour du champ média (audio ou vidéo) sont déployés des boutons, associés à des raccourcis claviers.</p><br/>
-<img id="ima" class="center" src="img/capture/i5.png" width="800" /><br/>
-<p>Lorsqu'on passe la souris sur une icône, une <b>bulle d'information</b> apparaît pour rappeler la fonction principale de l'icône,
-ainsi que son raccourci clavier associé.</p><br/>
-<table>
-	<tr><th>Icône</th><th>Raccourci clavier</th><th>Fonctionnalité</th></tr>
-	<tr><td><i class="iconcur fa fa-youtube-play fa-2x"></i></td><td><img src="img/touches/computer_key_Tab.png" width="35" height="35"/></td><td><b>Play/Pause</b> : lecture simple (à partir de l'endroit où le curseur est situé) <br/>/!\ Cette fonction de lecture ne déplace pas le curseur positionné dans le tableau de transcription.</td></tr>
-	<tr><td><i class="iconcur fa fa-arrow-up fa-2x"></i></td><td><img src="img/touches/computer_key_F4.png" width="35" height="35"/></td><td><b>Set start</b> : insertion dans la transcription du temps de début d'un segment à transcrire (à l'endroit où le curseur est situé dans le tableau de transcription)</td></tr>
-	<tr><td><i class="iconcur fa fa-arrow-down fa-2x"></i></td><td><img src="img/touches/computer_key_F5.png" width="35" height="35"/></td><td><b>Set end</b> : insertion dans la transcription du temps de fin</td></tr>
-	<tr><td><i class="iconcur fa fa-edit fa-2x"></i></td><td><img src="img/touches/computer_key_F6.png" width="35" height="35"/></td><td><b>Insert</b> : insertion d'une ligne vide sous un locuteur dans la transcription</td></tr>
-	<tr><td><i class="iconcur fa fa-refresh fa-2x"></i></td><td><img src="img/touches/computer_key_F7.png" width="35" height="35"/></td><td><b>Repeat</b> : lecture de la ligne courante (où se situe le curseur dans la transcription)</td></tr>
-	<tr><td><i class="iconcur fa fa-repeat fa-2x"></i></td><td><img src="img/touches/computer_key_F8.png" width="35" height="35"></td><td><b>Go continuous</b> : lecture continue (à partir de l'endroit où se situe le curseur)</td></tr>
-	<tr><td><i class="iconcur fa fa-hand-o-left fa-2x"></i></td><td><img src="img/touches/computer_key_Alt_Left.png" width="35" height="35"/></td><td><b>Backward</b> : recule (déplacement de une image, de une seconde, à l'extrémité de la partition)</td></tr>
-	<tr><td><i class="iconcur fa fa-hand-o-right fa-2x"></i></td><td><img src="img/touches/computer_key_Alt_Right.png" width="35" height="35"/></td><td><b>Forward</b> : avance </td></tr>
-	<tr><td><i class="iconcur fa fa-search-minus fa-lg"></i>&nbsp;<i class="iconcur fa fa-search-plus fa-lg"></i></td><td></td><td><b>Zoom</b> : L'option zoom permet d'agrandir ou de rétrécir la visualisation du signal et de la partition et ce jusqu'à 2,6 secondes.</td></tr>
-</table>
+    <h2 id="0402">Ouvrir une transcription existante</h2>
+    <p>Dans le menu
+        <bl>FICHIERS</bl>
+        , sélectionner <b>Ouvrir une transcription</b>.
+    </p>
+    <br/>
+    </p>
+    <p>La transcription est chargée, mais vous n'avez pas de fichier média, comme indiqué.</p><br/>
+    <img class="center" src="img/capture/inew4.png" width="800"/><br/><br/>
+    Allez à la partie ci-dessous "Lire un média".
 
-		<h2 id="0307">Transcription</h2>
-<p>La transcription orthographique du signal est éditée sous forme de tableau déroulable
-(la barre de défilement vertical se trouve sur la droite).<br/>
-Le tableau de transcription est une visualisation verticale éditable du texte.</p><br/>
-
-<img id="ima" class="center" src="img/capture/i6.png" width="800" /><br/><br/>
-
-		<h2 id="0308">Barres d'outils</h2>
-<img id="ima" class="center" src="img/capture/i7.png" width="800" /><br/><br/>
-<p>Les barres d'outils permettent d'accéder très rapidement aux principales commandes d'édition. <br/>
-Chaque icône est également définie par un raccourci clavier,
-qui s'affiche au moyen d'une <b>infobulle</b> lorsqu'on passe la souris par dessus.<br/>
-On peut <b>rétrécir ou déplacer</b> les barres d'outils.</p>
-
-<h1 id="03">Ouvrir une transcription </h1><hr/>
-		<h2 id="0401">Créer une nouvelle transcription</h2>
-<p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Nouvelle transcription</b>. </p><br/>
-Une fenêtre s'ouvre alors pour vous demander de choisir le fichier média associé (audio ou vidéo).
-Vous pouvez choisir un média ou annuler pour travailler sans média, puis vous pouvez commencer la transcription.</p><br/>
-<p>La partie transcription est désormais éditable à l'endroit indiqué.</p>
-<img id="ima" class="center" src="img/capture/inewmed.png" width="800" /><br/>
-
-		<h2 id="0402">Ouvrir une transcription existante</h2>
-<p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Ouvrir une transcription</b>.</p><br/>
-</p>
-<p>La transcription est chargée, mais vous n'avez pas de fichier média, comme indiqué.</p><br/>
-<img id="ima" class="center" src="img/capture/inew4.png" width="800" /><br/><br/>
-Allez à la partie ci-dessous "Lire un média".
-
-<h1 id="04">Lire un média </h1><hr/>
-		<h2 id="0501">Charger un média</h2>
-<p>Dans le menu <bl>FICHIERS</bl>, sélectionner <b>Choisir un média</b>.</p>
-Si tout s'est déroulé sans encombre, le média est chargé. <br/>
-Sinon, un message d'erreur vous avertit d'un éventuel problème de compatibilité avec le format média.
+    <h1 id="04">Lire un média </h1>
+    <hr/>
+    <h2 id="0501">Charger un média</h2>
+    <p>Dans le menu
+        <bl>FICHIERS</bl>
+        , sélectionner <b>Choisir un média</b>.
+    </p>
+    Si tout s'est déroulé sans encombre, le média est chargé. <br/>
+    Sinon, un message d'erreur vous avertit d'un éventuel problème de compatibilité avec le format média.
 
 
-		<h2 id="0503">Gestion du média</h2>
-			<h3 id="050301">Fonctions de lecture</h3>
-<p>Plusieurs commandes et boutons de lecture du média sont disponibles, chacun a des fonctionnalités et des champs d'actions spécifiques :</p>
-<table>
-	<tr><th>Icône ou raccourci clavier</th><th>Fonctionnalité</th><th>Description</th></tr>
-	<tr><td>TAB</td><td>Lecture à partir du point d'arrêt si dans la ligne courante ou sinon à partir du début de la ligne courante, pause</td><td></td></tr>
-	<tr><td>Shift + F1</td><td>Lecture <b>à partir du média</b>, pause</td><td></td></tr>
-	<tr><td>Shift + TAB</td><td>Lecture à partir du début de la ligne courante</td><td><i>permet de relire en boucle à partir du même endroit</i></td></tr>
-	<tr><td>F7</td><td>Lecture de la ligne courante</td><td><i>segment temporel seulement</i></td>
-	<tr><td>Alt F7</td><td>Lecture de 3 lignes autour de la ligne courante</td><td><i>permet d'isoler un contexte</i></td>
-	<tr><td>F8</td><td>Lecture continue à partir de la ligne courante</td><td></td>
-	</table>
+    <h2 id="0503">Gestion du média</h2>
+    <h3 id="050301">Fonctions de lecture</h3>
+    <p>Plusieurs commandes et boutons de lecture du média sont disponibles, chacun a des fonctionnalités et des
+        champs d'actions spécifiques :</p>
+    <table>
+        <tr>
+            <th>Icône ou raccourci clavier</th>
+            <th>Fonctionnalité</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>TAB</td>
+            <td>Lecture à partir du point d'arrêt si dans la ligne courante ou sinon à partir du début de la ligne
+                courante, pause
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Shift + F1</td>
+            <td>Lecture <b>à partir du média</b>, pause</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Shift + TAB</td>
+            <td>Lecture à partir du début de la ligne courante</td>
+            <td><i>permet de relire en boucle à partir du même endroit</i></td>
+        </tr>
+        <tr>
+            <td>F7</td>
+            <td>Lecture de la ligne courante</td>
+            <td><i>segment temporel seulement</i></td>
+        <tr>
+            <td>Alt F7</td>
+            <td>Lecture de 3 lignes autour de la ligne courante</td>
+            <td><i>permet d'isoler un contexte</i></td>
+        <tr>
+            <td>F8</td>
+            <td>Lecture continue à partir de la ligne courante</td>
+            <td></td>
+    </table>
 
 
-<h1 id="05">Edition de la transcription </h1><hr/>
-		<h2 id="0601">Structure de la transcription</h2>
-<p>La transcription orthographique du signal est éditée sous forme de tableau déroulable (la barre de défilement vertical se trouve sur la droite).<br/>
-Le tableau de transcription est une visualisation verticale éditable du texte.</p>
+    <h1 id="05">Edition de la transcription </h1>
+    <hr/>
+    <h2 id="0601">Structure de la transcription</h2>
+    <p>La transcription orthographique du signal est éditée sous forme de tableau déroulable (la barre de défilement
+        vertical se trouve sur la droite).<br/>
+        Le tableau de transcription est une visualisation verticale éditable du texte.</p>
 
-<img id="ima" class="center" src="img/capture/i6.png" width="800" /><br/><br/>
-<p>Le tableau de trancription est divisé en quatre colonnes :
-	<ol>
-		<li>Locuteur - <i>Ce champ renseigne l'identifiant du locuteur ou l'identifiant de la structure de ligne (dépendante du locuteur).</i></li>
-		<ul>
-			<li>Chaque nouveau locuteur doit être renseigné dans le tableau des participants</li>
-			<li>Chaque nouvelle valeur de structure doit être renseignée dans le tableau des structures</li>
-			<li>Visuellement, les structures supplémentaires s’imbriquent sous le locuteur (qui est la ligne principale par défaut) </li>
-		</ul>
-		<li>Start - <i>le temps de début</i> et </li>
-		<li>End - <i>le temps de fin</i></li>
-		<ul>
-			<li>Un clic permet d'obtenir le temps en millisecondes (par défaut)</li>
-			<li>L'affichage du nombre et du format pour les millisecondes est modifiable dans le menu paramètres.</li>
-		</ul>
-		<li>Transcription - <i>la partie texte éditable</i></li>
-		<ul>
-			<li>Les nuances de gris sur les lignes correspondent aux locuteurs, il y a 3 nuances du gris foncé au blanc: plus le gris est foncé, plus la fréquence du temps de parole du locuteur est élevée.</li>
-			<li>La ligne sélectionnée est surlignée en bleu (en bleu clair pour une ligne dépendante)</li>
-		</ul>
-	</ol>
-</p>
-<div id="nb"><p>
-Le positionnement sur une zone transcrite positionne la partition
-(si possible c'est à dire si la transcription est liée temporellement)
-et le temps du média.
-</p></div>
-		<h2 id="0602">Edition des métadonnées</h2>
-<p>Un clic sur le nom du fichier (encart bleu) situé en haut, dans la barre de menu, permet d'éditer les métadonnées. </p>
-<img id="ima" class="center" src="img/capture/i2bis.png" width="800px"/>
-<p>On accède également au tableau d'édition des métadonnées en passant par le menu <bl>EDITION</bl> puis <b>Métadonnées</b>.</p><br/>
+    <img class="center" src="img/capture/i6.png" width="800"/><br/><br/>
+    <p>Le tableau de trancription est divisé en quatre colonnes :
+    <ol>
+        <li>Locuteur - <i>Ce champ renseigne l'identifiant du locuteur ou l'identifiant de la structure de ligne
+            (dépendante du locuteur).</i></li>
+        <ul>
+            <li>Chaque nouveau locuteur doit être renseigné dans le tableau des participants</li>
+            <li>Chaque nouvelle valeur de structure doit être renseignée dans le tableau des structures</li>
+            <li>Visuellement, les structures supplémentaires s’imbriquent sous le locuteur (qui est la ligne
+                principale par défaut)
+            </li>
+        </ul>
+        <li>Start - <i>le temps de début</i> et</li>
+        <li>End - <i>le temps de fin</i></li>
+        <ul>
+            <li>Un clic permet d'obtenir le temps en millisecondes (par défaut)</li>
+            <li>L'affichage du nombre et du format pour les millisecondes est modifiable dans le menu paramètres.
+            </li>
+        </ul>
+        <li>Transcription - <i>la partie texte éditable</i></li>
+        <ul>
+            <li>Les nuances de gris sur les lignes correspondent aux locuteurs, il y a 3 nuances du gris foncé au
+                blanc: plus le gris est foncé, plus la fréquence du temps de parole du locuteur est élevée.
+            </li>
+            <li>La ligne sélectionnée est surlignée en bleu (en bleu clair pour une ligne dépendante)</li>
+        </ul>
+    </ol>
+    </p>
+    <div id="nb"><p>
+        Le positionnement sur une zone transcrite positionne la partition
+        (si possible c'est à dire si la transcription est liée temporellement)
+        et le temps du média.
+    </p></div>
+    <h2 id="0602">Edition des métadonnées</h2>
+    <p>Un clic sur le nom du fichier (encart bleu) situé en haut, dans la barre de menu, permet d'éditer les
+        métadonnées. </p>
+    <img class="center" src="img/capture/i2bis.png" width="800px"/>
+    <p>On accède également au tableau d'édition des métadonnées en passant par le menu
+        <bl>EDITION</bl>
+        puis <b>Métadonnées</b>.
+    </p>
+    <br/>
 
-<p>Le tableau s'affiche pour l'édition, et se ferme à l'aide de la croix grise située en haut à droite.<br/>
-Chaque ligne éditée du tableau s'enregistre <b>automatiquement</b>.
-Seules les parties grisées sont <b>éditables</b>.<br/>
-Ces champs permettent de rentrer les informations générales sur le document y compris sur les noms de fichiers,
-mais aussi de rentrer les informations sur les champs métadonnées
-<a href="http://localhost:8101/doc/dublin-core.html">Dublin-Core</a>.<br/>
-Pour obtenir des informations supplémentaires, passez votre souris sur la partie <b>Information</b> située à droite du tableau,
-une <b>infobulle</b> apparaît.
-</p>
+    <p>Le tableau s'affiche pour l'édition, et se ferme à l'aide de la croix grise située en haut à droite.<br/>
+        Chaque ligne éditée du tableau s'enregistre <b>automatiquement</b>.
+        Seules les parties grisées sont <b>éditables</b>.<br/>
+        Ces champs permettent de rentrer les informations générales sur le document y compris sur les noms de
+        fichiers,
+        mais aussi de rentrer les informations sur les champs métadonnées
+        <a href="http://localhost:8101/doc/dublin-core.html">Dublin-Core</a>.<br/>
+        Pour obtenir des informations supplémentaires, passez votre souris sur la partie <b>Information</b> située à
+        droite du tableau,
+        une <b>infobulle</b> apparaît.
+    </p>
 
-<p>Pour se déplacer :
-<ul><li>dans la colonne de droite, presser <b>TAB</b> </li>
-<li>vers la gauche, faire <b>Shift + TAB</b> </li></ul>
-</p>
-
-		<h2 id="0603">Edition des locuteurs</h2>
-<p>Un <b>clic droit</b> sur le locuteur (colonne de droite) dans le tableau de transcription,
-permet de choisir le nom du locuteur ou la valeur de la tier à définir pour la ligne courante.</p>
-<img id="ima" class="center" src="img/capture/i6.png" width="800px"/>
-<p>Une fois le clic droit activé dans le champ Locuteur (Locutor), un encart s'affiche proposant :
-	<ul>
-		<li>à gauche, les valeurs de la catégorie <b>Participant</b> (Person) - ici, nous avons 3 locuteurs : CHI, MOT et OBS</li>
-		<li>à droite, les valeurs de la catégorie <b>Structure</b> (Template) </li>
-		<li>il est possible d'ouvrir une division (+div+), de la fermer (-div-),
-		de coder un incident (+incident+) ou une pause (+pause+)</li>
-		<li><b>Cancel</b> ferme l'onglet</li>
-	</ul>
-</p>
-<p>Ces valeurs sont des raccourcis vers les valeurs autorisées dans les entêtes de fichier,
-renseignées au préalable. <br/>
-Si le code choisi n'est pas défini dans les noms de personnes ou tiers autorisés,
-le logiciel vous demande de changer la valeur et insère la valeur neutre "---".</p>
-<p>Voir <a href="#060203">Paramètres d'édition des locuteurs</a> pour insérer ou modifier les valeurs.</p>
-
-<p>Pour définir et renseigner un nouveau participant, sélectionner dans le menu <bl>EDITION</bl>, l'onglet <b>Participants</b>.<br/>
-Tout un ensemble de champs complémentaires est disponible pour fournir des informations sur un locuteur.
-</p>
-
-<p>Il est également possible d'inscrire directement un locuteur ou une tier enregistré au préalable à l'aide d'un raccourci clavier :
-<table>
-	<tr><th>Raccourcis clavier</th><th>Codage direct du locuteur</th></tr>
-	<tr><td>Ctrl + 1</td><td>premier locuteur</td></tr>
-	<tr><td>Ctrl + 2</td><td>deuxième locuteur</td></tr>
-	<tr><td>...</td><td>...</td></tr>
-	<tr><td>Ctrl + 9</td><td>neuvième locuteur</td></tr>
-	<tr><th colspan='2'>Codage direct du tier (champ décrivant un énoncé)</th></tr>
-	<tr><td>Ctrl + Alt + 1</td><td>première propriété des templates (tiers secondaires)</td></tr>
-	<tr><td>Ctrl + Alt + 2</td><td>deuxième propriété</td></tr>
-	<tr><td>...</td><td>...</td></tr>
-	<tr><td>Ctrl + Alt + 9</td><td>neuvième propriété</td></tr>
-</table></p>
-
-		<h2 id="0604">Edition des valeurs temporelles</h2>
-<p>Dans le tableau de transcription, il est possible d'éditer les valeurs temporelles de début et de fin en double cliquant sur la valeur à modifier.<br/>
-Un simple clic permet de visualiser le nombre de millisecondes.</p>
-<p>Il est possible de paramétrer le format d'affichage des données temporelles dans le menu <bl>PARAMETRES</bl> :
-	<ul>
-		<li>hms - segmentation lettrée</li>
-		<li>00:00 - n'affiche pas les heures</li>
-		<li>h:00:00 - indique explicitement le nombre d'heures</li>
-		<li>00:00:00 - par défaut</li>
-	</ul>
-</p>
-<p>Le chiffre de millisecondes à afficher est modifiable (de 0 à 3). Par défaut, on affiche 0 millisecondes.</p>
-
-		<h2 id="0605">Enregistrer la transcription (formats et conversions)</h2>
-<p> Vous pouvez à tout moment <b>sauvegarder</b> la transcription en cours :
-<ul>
-<li>avec le raccourci clavier <b>Ctrl + S</b> </li>
-<li>avec l'icône <i class="iconcur fa fa-save fa-lg"></i> situé dans la barre d'outils</li>
-<li>ou en accédant dans le menu <bl>FICHIERS</bl> à l'encart <b>Enregistrer</b>.<br/></li>
-</ul></p>
-<p>Vous pouvez <b>définir ou modifier l'emplacement</b> de votre fichier de transcription
-en accédant à l'encart <b>Enregistrer sous...</b> du menu <bl>FICHIERS</bl>,
-et ainsi <b>renommer</b> votre fichier.</p>
-
-<p>Les options d'exports sont disponibles dans le menu <bl>OUTILS</bl> sous l'onglet <b>Export</b>.<br/>
-Il est possible d'exporter la <b>totalité</b> du fichier ou seulement une <b>sélection</b>.</p>
-
-
-<h1 id="06">Méthodes de transcription</h1><hr/>
-	<h2 id="0701">Usages de transcription et commandes d'édition</h2>
-
-
-<p>La touche <b>Enter/Return</b> fonctionne de la manière suivante :<br/>
-	<ul>
-		<li><b>Alignement de la fin de l'énoncé avec le temps courant</b> puis <b>saut à la ligne suivante</b>.</li>
-		<li>Si on est en fin de fichier, alors insertion d'une ligne.</li>
-	</ul>
-Cette touche permet de <b>réaligner des lignes déjà transcrites</b>,
-son usage est principalement réservé au <b>réajustement du temps</b> d'un fichier déja transcrit. </p>
-<p>La touche <b>Return/Entrée</b> correspond au raccourci clavier : <b>Ctrl + M</b>, accessible via l'icône <i class="iconcur fa fa-outdent fa-lg"></i> de la barre d'outils.</p>
-<br/>
-<p>Certaines touches du clavier sont destinées à marquer les alignements temporels dans le tableau de transcription :</p>
-<table>
-	<thead><tr><th>Raccourcis clavier</th><th>Commandes d'édition</th></tr></thead>
-	<tbody><tr><td>Return (Entrée)</td><td>Fonction de remplacement (ou Ctrl + M), alignement de la fin de l'énoncé avec le temps courant puis saut à la ligne suivante; si on est en fin de fichier, alors insertion d'une ligne (ceci permet de réaligner des lignes déjà transcrites).</td></tr>
-	<tr><td>F4</td><td>Alignement du début de l'énoncé avec le temps courant</td></tr>
-	<tr><td>F5</td><td>Alignement de la fin de l'énoncé avec le temps courant</td></tr>
-	<tr><td>F6</td><td>Création (insertion) d'une nouvelle ligne sous le curseur sans insérer d'élément temporel ni de locuteur</td></tr>
-	<tr><td>Alt + F6</td><td>Insérer une ligne vide sous un locuteur en notant le temps courant</td></tr>
-	<tr><td>Ctrl + I</td><td>Insérer une ligne vide</td></tr>
-	<tr><td>Ctrl + Alt + I</td><td>Insérer une ligne vide avec le temps courant</td></tr>
-	<tr><td>Ctrl + M</td><td>Marquer le temps de la fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante</td></tr>
-	<tr><td>Ctrl + Alt + M</td><td>Marquer le temps de la fin de la ligne courante et le temps de début de la suivante</td></tr>
-	<tr><td>Ctrl + T</td><td>Aller au repère temporel</td></tr></tbody>
-	</table>
-</p>
-	<h2 id="0702">Commandes d'annulation</h2>
-<h4>Annuler la dernère action</h4>
-<p>La commande d'annulation (undo) annule la dernière action au moyen
-du raccourci clavier <b>Ctrl Z</b>.</p>
-
-<h4>Historique des dernières actions</h4>
-<p>En ouvrant le menu <bl>EDITION</bl>, puis <b>Undo</b>, on a accès à l'historique des dernières actions réalisées.</p>
-
-<h4>Reproduire la dernière action</h4>
-<p>Pour reproduire la dernière action (redo), le raccourci clavier est <b>Ctrl Y</b>.</p>
-
-<h1 id="07">Manipulation du clavier </h1><hr/>
-		<h2 id="0801">Commandes d'édition</h2>
-<p>TRJS est prévu pour la transcription et l'alignement rapide, et la manipulation intuitive de la vidéo/du son.
-Il est optimisé pour être utilisé facilement (et complètement) depuis le clavier, sans nécessité d'utiliser la souris.</p>
-
-			<h3 id="080101">Commandes d'édition principales</h3>
-<table>
-	<tr><th>Raccourci clavier</th><th>Fonctionnalité</th></tr>
-	<tr><th colspan="2">Commandes de lecture : Certaines touches du clavier sont destinées à manipuler le média</th></tr>
-	<tr><td>F1</td><td>Lecture simple et pause</td></tr>
-	<tr><td>Tab</td><td>Lecture à partir du début de la ligne courante, pause (ou tabulation)</td></tr>
-	<tr><td>Alt + F1</td><td>Lecture à partir de l'endroit où le curseur est situé, pause</td></tr>
-	<tr><td>Shift + Tab</td><td>Lecture à partir du média, pause</td></tr>
-	<tr><td>Shift + F1</td><td>Lecture à partir du début de la ligne courante</td></tr>
-	<tr><td>Escape</td><td>Pause</td></tr>
-	<tr><td>Alt + &larr; <br/>(ou F2)</td><td>Revenir en arrière (3 secondes par défaut) <br/>(La valeur de retour en arrière ou de saut en avant est modifiable dans le tableau des paramètres.)</td></tr>
-	<tr><td>Alt + &rarr; <br/>(ou F3)</td><td>Sauter en avant</td></tr>
-	<tr><td>Alt + F2</td><td>Agrandir la vidéo</td></tr>
-	<tr><td>Alt + F3</td><td>Rétrécir la vidéo</td></tr>
-	<tr><td>Alt + F4 <br/>(ou Ctrl + B)</td><td>Jouer la vidéo moins vite</td></tr>
-	<tr><td>Alt + F5 <br/>(ou Ctrl + E)</td><td>Jouer la vidéo plus vite</td></tr>
-	<tr><td>F7</td><td>Lecture de la ligne courante (où se situe le curseur dans la transcription)</td></tr>
-	<tr><td>Alt + F7</td><td>Lecture de la ligne courante, la ligne précédente et la suivante (3 lignes principales)</td></tr>
-	<tr><td>F8 </td><td>Lecture continue (à partir de l'endroit où se situe le curseur) </td></tr>
-	<tr><th colspan="2">Commandes d'édition : Certaines touches du clavier sont destinées à marquer les alignements temporels dans le tableau de transcription</th></tr>
-	<tr><td>Return (Entrée)</td><td>Si Return est en mode Remplacement (par défaut, ou Ctrl + M), alignement de la fin de l'énoncé avec le temps courant puis saut à la ligne suivante; si on est en fin de fichier, alors insertion d'une ligne (ce mode permet de réaligner des lignes déjà transcrites). <br/>Si Return est en mode Insertion (ou Alt + F6), insertion d'une ligne et notation du temps courant <br/>(Le comportement de Return peut être modifié dans le tableau des paramètres.)</td></tr>
-	<tr><td>F4</td><td>Alignement du début de l'énoncé avec le temps courant</td></tr>
-	<tr><td>F5</td><td>Alignement de la fin de l'énoncé avec le temps courant</td></tr>
-	<tr><td>F6</td><td>Création (insertion) d'une nouvelle ligne sous le curseur sans insérer d'élément temporel ni de locuteur</td></tr>
-	<tr><td>Alt + F6</td><td>Insérer une ligne vide sous un locuteur en notant le temps courant</td></tr>
-</table>
-			<h3 id="080102">Edition par raccourcis des locuteurs et autres tiers</h3>
-<table>
-	<tr><th>Raccourcis clavier</th><th>Codage direct du locuteur</th></tr>
-	<tr><td>Ctrl + 1</td><td>Premier locuteur</td></tr>
-	<tr><td>Ctrl + 2</td><td>Deuxième locuteur</td></tr>
-	<tr><td>...</td><td>...</td></tr>
-	<tr><td>Ctrl + 9</td><td>Neuvième locuteur</td></tr>
-	<tr><th colspan='2'>Codage direct du tier (champ décrivant un énoncé)</th></tr>
-	<tr><td>Ctrl + Alt + 1</td><td>Première propriété des templates (tiers secondaires)</td></tr>
-	<tr><td>Ctrl + Alt + 2</td><td>Deuxième propriété</td></tr>
-	<tr><td>...</td><td>...</td></tr>
-	<tr><td>Ctrl + Alt + 9</td><td>Neuvième propriété</td></tr>
-</table>
-			<h3 id="080103">Commandes d'édition spécifiques</h3>
-<table>
-	<tr><th>Raccourci clavier</th><th> Fonctionnalité </th></td>
-	<tr><th colspan="2">Commandes d'édition classiques</th></td>
-	<tr><td>Ctrl + O  </td><td>Ouvrir un fichier </td></tr>
-	<tr><td>Ctrl + Alt + O </td><td>Charger un média </td></tr>
-	<tr><td>Ctrl + S </td><td>Sauvegarder</td></tr>
-	<tr><td>Ctrl + F </td><td>Lancer une recherche </td></tr>
-	<tr><td>Ctrl + A </td><td>Tout sélectionnner </td></tr>
-	<tr><td>Ctrl + Y </td><td>Reproduire la dernière action </td></tr>
-	<tr><td>Ctrl + Z </td><td>Annuler la dernière action</td></tr>
-	<tr><th colspan="2">Commandes de déplacement</th></td>
-	<tr><td>Ctrl + L </td><td>Aller à un numéro de ligne</td></tr>
-	<tr><td>↑  </td><td>Aller à la ligne précédente </td></tr>
-	<tr><td>↓ </td><td>Aller à la ligne suivante</td></tr>
-	<tr><td>Alt + ↑ </td><td>Aller à la ligne principale précédente </td></tr>
-	<tr><td>Alt + ↓ </td><td>Aller à la ligne principale suivante</td></tr>
-	<tr><td>Page haut </td><td>Aller en haut de la page</td></tr>
-	<tr><td>Page bas </td><td>Aller en bas de la page</td></tr>
-	<tr><td>Ctrl + Home</td><td>Aller au début du fichier</td></tr>
-	<tr><td>Ctrl + End</td><td>Aller à la fin du fichier</td></tr>
-	<tr><th colspan="2">Commandes d'édition des alignements temporels</th></td>
-	<tr><td>Ctrl + I </td><td>Insérer une ligne vide</td></tr>
-	<tr><td>Ctrl + Alt + I </td><td>Insérer une ligne vide avec le temps courant </td></tr>
-	<tr><td>Ctrl + M  </td><td>Marquer le temps de la fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante</td></tr>
-	<tr><td>Ctrl + Alt + M  </td><td>marquer le temps de la fin de la ligne courante et le temps de début de la suivante</td></tr>
-	<tr><th colspan="2">Commandes d'édition de la transcription </th></td>
-	<tr><td>Ctrl + D</td><td>Supprimer une ligne </td></tr>
-	<tr><td>Ctrl + Alt + D</td><td>Supprimer une ligne et tous les tiers qui en dépendent</td></tr>
-	<tr><td>Ctrl + J </td><td>Joindre deux lignes (ligne courante et la suivante)</td></tr>
-	<tr><td>Ctrl + Alt + J  </td><td>Joindre deux lignes sous un même locuteur</td></tr>
-	<tr><td>Ctrl + R </td><td>Dupliquer une ligne</td></tr>
-	<tr><td>Ctrl + Alt + R  </td><td>Scinder une ligne en deux (à l'endroit où se trouve le curseur) sans indication temporelle </td></tr>
-	<tr><th colspan="2">Divisions du texte</th></td>
-	<tr><td>Ctrl + G   </td><td>Créer une division du texte (séquence ou saynète) </td></tr>
-	<tr><td>Ctrl + Alt + G  </td><td>Marquer la fin d'une division</td></tr>
-	<tr><td>Ctrl + Shift + G </td><td>Fermer toutes les divisions ouvertes </td></tr>
-	<tr><td>Ctrl + U  </td><td>Cacher les divisions</td></tr>
-	<tr><td>Ctrl + Alt + U </td><td>Montrer les divisions cachées</td></tr>
-	<tr><td>Ctrl + Shift + 1</td><td>Marquer la ligne courante comme début d'une division</td></tr>
-	<tr><td>Ctrl + Shift + 2 </td><td>Marquer la ligne courante comme fin d'une division</td></tr>
-	<tr><th colspan="2">Commandes média spécifiques</th></td>
-	<tr><td>Ctrl + B <br/>(ou Alt + F4)</td><td>Jouer le média plus lentement </td></tr>
-	<tr><td>Ctrl + E <br/>(ou Alt + F5) </td><td>Jouer le média plus rapidemement </td></tr>
-	<tr><td>Ctrl + Alt + B</td><td>Lecture à l'envers</td></tr>
-	<tr><td>Ctrl + Alt + E </td><td>Lecture à un rythme normal </td></tr>
-</table>
-		<h2 id="0802">Insertion de caractères phonologiques</h2>
-<p>TRJS permet d'insérer des caracatères API (pour le codage phonologique). <br/>
-En général, faire :
-<ul>
-	<li>Alt + Caractère SAMPA ou</li>
-	<li>Alt + Shift + Caractère SAMPA.</li>
-</ul>
-</p>
-<table>
-	<tr><th>Raccourci clavier</th><th>Correspondance API</th><th>Description</th></tr>
-	<tr><td>Alt + A</td><td>ɑ</td><td>Voyelle basse postérieure non arrondie</td></tr>
-	<tr><td>Alt + E</td><td>ɛ</td><td>Voyelle moyenne inférieure antérieure non arrondie</td></tr>
-	<tr><td>Alt + O</td><td>ɔ</td><td>Voyelle moyenne inférieure postérieure arrondie</td></tr>
-	<tr><td>Alt + 9</td><td>œ</td><td>Voyelle moyenne inférieure antérieure arrondie</td></tr>
-	<tr><td>Alt + 2</td><td>ø</td><td>Voyelle moyenne supérieure antérieure arrondie</td></tr>
-	<tr><td>Alt + @ (ou Alt + 0)</td><td>ə</td><td>Schwa</td></tr>
-	<tr><td>Alt + R</td><td>ʀ</td><td>Consonne roulée uvulaire voisée</td></tr>
-	<tr><td>Alt + S</td><td>ʃ</td><td>Consonne fricative post-alvéolaire sourde</td></tr>
-	<tr><td>Alt + Z</td><td>ʒ</td><td>Consonne fricative post-alvéolaire voisée</td></tr>
-	<tr><td>Alt + H</td><td>ɥ</td><td>Consonne spirante labio-palatale voisée</td></tr>
-	<tr><td>Alt + J</td><td>ɲ</td><td>Consonne occlusive nasale palatale voisée</td></tr>
-	<tr><td>Alt + N</td><td>ɳ</td><td>Consonne occlusive nasale rétroflexe voisée</td></tr>
-	<tr><td>Alt + Shift + N</td><td>ŋ</td><td>Consonne occlusive nasale vélaire voisée</td></tr>
-	<tr><td>Alt + T</td><td>θ</td><td>Consonne fricative dentale sourde </td></tr>
-	<tr><td>Alt + D</td><td>ð</td><td>Consonne injective alvéolaire voisée</td></tr>
-	<tr><td>Alt + I</td><td>ɪ</td><td>Voyelle haute inférieure antérieure non arrondie</td></tr>
-	<tr><td>Alt + Q</td><td>ɒ</td><td>Voyelle basse postérieure arrondie</td></tr>
-	<tr><td>Alt + V</td><td>ʌ</td><td>Voyelle moyenne inférieure postérieure non arrondie</td></tr>
-	<tr><td>Alt + U</td><td>ʊ</td><td>Voyelle haute inférieure postérieure arrondie</td></tr>
-	<tr><td>Alt + X</td><td>χ</td><td>Consonne fricative uvulaire sourde</td></tr>
-	<tr><td>Alt + :</td><td>ː</td><td>Long</td></tr>
-	<tr><td>Alt + Shift + A</td><td>ɑ̃</td><td>Voyelle nasale basse postérieure non arrondie</td></tr>
-	<tr><td>Alt + Shift + E</td><td>ɛ</td><td>Voyelle nasale moyenne inférieure antérieure non arrondie</td></tr>
-	<tr><td>Alt + Shift + 9</td><td>œ̃</td><td>Voyelle nasale moyenne inférieure antérieure arrondie</td></tr>
-	<tr><td>Alt + Shift + O</td><td>ɔ̃</td><td>Voyelle nasale moyenne inférieure postérieure arrondie</td></tr>
-	<tr><td>Alt + Shift + Q</td><td>æ</td><td>Voyelle pré-ouverte antérieure non arrondie</td></tr>
-</table>
-
-<h1 id="08">Organisation et fonctionnalités </h1><hr/>
-
-		<h2 id="0901">Paramètres</h2>
-<p>Dans le menu <bl>PARAMETRES</bl>, les paramètres suivants sont modifiables :</p>
-<table>
-	<thead><tr><th>Paramètre</th><th>Descriptif</th><th>Localisation</th></tr></thead>
-	<tbody><tr><td>Version</td><td>Deux versions sont pour le moment disponibles : Français et Anglais</td><td>Onglet <bl>LANGUE</bl></td></tr>
-	<tr><td>Visualisation de la partition</td><td>Coché par défaut</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>
-	<tr><td>Visualisation du signal sonore</td><td>Coché par défaut</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>
-	<tr><td>Affichage des numéros en début de ligne</td><td>Par défaut ils ne sont pas affichés</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>
-	<tr><td>Affichage des noms des participants</td><td>A la place des codes</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>
-	<tr><td>Affichage des temps des alignements</td><td>C'est-à-dire les temps de début et de fin, coché par défaut</td><td>Onglet <bl>AFFICHAGE</bl></td></tr>
-	<tr><td>Modes d'édition des zones d'affichage</td><td>3 modes sont disponibles : Libre, Contrôle (Standard), Bloqué</td><td>Onglet <bl>MODES D'EDITION</bl></td></tr>
-	<tr><td>Réorganisation dynamique des lignes</td><td></td><td>Onglet <bl>MODES D'EDITION</bl></td></tr>
-	<tr><td>Format pour les repères temporels</td><td>Renseigné par défaut en h:mm:ss</td><td>Onglet <bl>REGLAGES</bl></td></tr>
-	<tr><td>Nombre de chiffres pour les millisecondes</td><td>De 0 à 3</td><td>Onglet <bl>REGLAGES</bl></td></tr>
-	<tr><td>Valeur de retour en arrière</td><td>(Pour le raccourci clavier :  <img src="img/touches/computer_key_Alt_Left.png" width="35" height="35"/> ) en ms</td><td>Onglet <bl>REGLAGES</bl></td></tr>
-	<tr><td>Valeur de saut en avant</td><td>(Pour le raccourci clavier :  <img src="img/touches/computer_key_Alt_Right.png" width="35" height="35"/> ) en ms</td><td>Onglet <bl>REGLAGES</bl></td></tr>
-	<tr><td>Vérification de la transcription lors de la sauvegarde</td><td>Coché par défaut</td><td>Onglet <bl>VERIFICATION</bl></td></tr>
-	<tr><td>Nombre de versions précédentes conservées lors de la sauvergarde</td><td>De 1 à 3</td><td>Onglet <bl>VERIFICATION</bl></td></tr></tbody>
-</table>
-<p>Lorsqu'on passe la souris sur un paramètre, une <b>bulle d'information</b> apparaît pour rappeler sa <b>fonction principale</b>,
-ainsi que son raccourci clavier éventuel associé.</p>
-
-		<h2 id="0902">Outil de recherche</h2>
-<p>L'onglet de recherche s'affiche sous forme de panneau. On y accède par plusieurs moyens :
-<ul>
-	<li>en ouvrant le menu <bl>RECHERCHE</bl></li>
-	<li>en cliquant sur l'icône <i class="iconcur fa fa-search fa-lg"></i> de la barre d'outils</li>
-	<li>via le raccourci clavier : <b>Ctrl F</b></li>
-</ul>
- </p>
-<p>Il est possible d'effectuer plusieurs types de recherche dans le fichier courant :
-<ul>
-	<li><b>Rechercher</b> un mot ou une chaîne de caractères :</li>
+    <p>Pour se déplacer :
     <ul>
-		<li>dans le champ Locuteurs</li>
-		<li>dans le champ Transcription</li>
-	</ul>
-	<li><b>Remplacer</b> le résultat de la recherche</li>
-	<li><b>Montrer</b> les locuteurs ou les tiers :</li>
-	<ul>
-		<li>dans le champ Locuteurs (permet d'afficher seulement le locuteur/la tier sur laquelle on travaille)</li>
-		<li>dans le champ Transcription (permet d'afficher toutes les mentions d'un locuteur/une tier dans la transcription)</li>
-	</ul>
-	<li><b>Cacher</b> les locuteurs ou les tiers :</li>
-	<ul>
-		<li>dans le champ Locuteurs (permet de cacher les locuteurs/tiers désirés)</li>
-		<li>dans le champ Transcription</li>
-	</ul>
-	<li><b>Aller à un numéro de ligne</b> ou le raccourci clavier : <b>Ctrl L</b></li>
-	<li>Aller à un <b>repère temporel</b> ou le raccourci clavier : <b>Ctrl T</b></li>
-</ul>
-</p>
+        <li>dans la colonne de droite, presser <b>TAB</b></li>
+        <li>vers la gauche, faire <b>Shift + TAB</b></li>
+    </ul>
+    </p>
 
-<p><a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p>
+    <h2 id="0603">Edition des locuteurs</h2>
+    <p>Un <b>clic droit</b> sur le locuteur (colonne de droite) dans le tableau de transcription,
+        permet de choisir le nom du locuteur ou la valeur de la tier à définir pour la ligne courante.</p>
+    <img class="center" src="img/capture/i6.png" width="800px"/>
+    <p>Une fois le clic droit activé dans le champ Locuteur (Locutor), un encart s'affiche proposant :
+    <ul>
+        <li>à gauche, les valeurs de la catégorie <b>Participant</b> (Person) - ici, nous avons 3 locuteurs : CHI,
+            MOT et OBS
+        </li>
+        <li>à droite, les valeurs de la catégorie <b>Structure</b> (Template)</li>
+        <li>il est possible d'ouvrir une division (+div+), de la fermer (-div-),
+            de coder un incident (+incident+) ou une pause (+pause+)
+        </li>
+        <li><b>Cancel</b> ferme l'onglet</li>
+    </ul>
+    </p>
+    <p>Ces valeurs sont des raccourcis vers les valeurs autorisées dans les entêtes de fichier,
+        renseignées au préalable. <br/>
+        Si le code choisi n'est pas défini dans les noms de personnes ou tiers autorisés,
+        le logiciel vous demande de changer la valeur et insère la valeur neutre "---".</p>
+    <p>Voir <a href="#060203">Paramètres d'édition des locuteurs</a> pour insérer ou modifier les valeurs.</p>
+
+    <p>Pour définir et renseigner un nouveau participant, sélectionner dans le menu
+        <bl>EDITION</bl>
+        , l'onglet <b>Participants</b>.<br/>
+        Tout un ensemble de champs complémentaires est disponible pour fournir des informations sur un locuteur.
+    </p>
+
+    <p>Il est également possible d'inscrire directement un locuteur ou une tier enregistré au préalable à l'aide
+        d'un raccourci clavier :
+    <table>
+        <tr>
+            <th>Raccourcis clavier</th>
+            <th>Codage direct du locuteur</th>
+        </tr>
+        <tr>
+            <td>Ctrl + 1</td>
+            <td>premier locuteur</td>
+        </tr>
+        <tr>
+            <td>Ctrl + 2</td>
+            <td>deuxième locuteur</td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Ctrl + 9</td>
+            <td>neuvième locuteur</td>
+        </tr>
+        <tr>
+            <th colspan='2'>Codage direct du tier (champ décrivant un énoncé)</th>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + 1</td>
+            <td>première propriété des templates (tiers secondaires)</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + 2</td>
+            <td>deuxième propriété</td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + 9</td>
+            <td>neuvième propriété</td>
+        </tr>
+    </table>
+    </p>
+
+    <h2 id="0604">Edition des valeurs temporelles</h2>
+    <p>Dans le tableau de transcription, il est possible d'éditer les valeurs temporelles de début et de fin en
+        double cliquant sur la valeur à modifier.<br/>
+        Un simple clic permet de visualiser le nombre de millisecondes.</p>
+    <p>Il est possible de paramétrer le format d'affichage des données temporelles dans le menu
+        <bl>PARAMETRES</bl>
+        :
+    <ul>
+        <li>hms - segmentation lettrée</li>
+        <li>00:00 - n'affiche pas les heures</li>
+        <li>h:00:00 - indique explicitement le nombre d'heures</li>
+        <li>00:00:00 - par défaut</li>
+    </ul>
+    </p>
+    <p>Le chiffre de millisecondes à afficher est modifiable (de 0 à 3). Par défaut, on affiche 0 millisecondes.</p>
+
+    <h2 id="0605">Enregistrer la transcription (formats et conversions)</h2>
+    <p> Vous pouvez à tout moment <b>sauvegarder</b> la transcription en cours :
+    <ul>
+        <li>avec le raccourci clavier <b>Ctrl + S</b></li>
+        <li>avec l'icône <i class="iconcur fa fa-save fa-lg"></i> situé dans la barre d'outils</li>
+        <li>ou en accédant dans le menu
+            <bl>FICHIERS</bl>
+            à l'encart <b>Enregistrer</b>.<br/></li>
+    </ul>
+    </p>
+    <p>Vous pouvez <b>définir ou modifier l'emplacement</b> de votre fichier de transcription
+        en accédant à l'encart <b>Enregistrer sous...</b> du menu
+        <bl>FICHIERS</bl>
+        ,
+        et ainsi <b>renommer</b> votre fichier.
+    </p>
+
+    <p>Les options d'exports sont disponibles dans le menu
+        <bl>OUTILS</bl>
+        sous l'onglet <b>Export</b>.<br/>
+        Il est possible d'exporter la <b>totalité</b> du fichier ou seulement une <b>sélection</b>.
+    </p>
+
+
+    <h1 id="06">Méthodes de transcription</h1>
+    <hr/>
+    <h2 id="0701">Usages de transcription et commandes d'édition</h2>
+
+
+    <p>La touche <b>Enter/Return</b> fonctionne de la manière suivante :<br/>
+    <ul>
+        <li><b>Alignement de la fin de l'énoncé avec le temps courant</b> puis <b>saut à la ligne suivante</b>.</li>
+        <li>Si on est en fin de fichier, alors insertion d'une ligne.</li>
+    </ul>
+    Cette touche permet de <b>réaligner des lignes déjà transcrites</b>,
+    son usage est principalement réservé au <b>réajustement du temps</b> d'un fichier déja transcrit. </p>
+    <p>La touche <b>Return/Entrée</b> correspond au raccourci clavier : <b>Ctrl + M</b>, accessible via l'icône <i
+            class="iconcur fa fa-outdent fa-lg"></i> de la barre d'outils.</p>
+    <br/>
+    <p>Certaines touches du clavier sont destinées à marquer les alignements temporels dans le tableau de
+        transcription :</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Raccourcis clavier</th>
+            <th>Commandes d'édition</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Return (Entrée)</td>
+            <td>Fonction de remplacement (ou Ctrl + M), alignement de la fin de l'énoncé avec le temps courant puis
+                saut à la ligne suivante; si on est en fin de fichier, alors insertion d'une ligne (ceci permet de
+                réaligner des lignes déjà transcrites).
+            </td>
+        </tr>
+        <tr>
+            <td>F4</td>
+            <td>Alignement du début de l'énoncé avec le temps courant</td>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>Alignement de la fin de l'énoncé avec le temps courant</td>
+        </tr>
+        <tr>
+            <td>F6</td>
+            <td>Création (insertion) d'une nouvelle ligne sous le curseur sans insérer d'élément temporel ni de
+                locuteur
+            </td>
+        </tr>
+        <tr>
+            <td>Alt + F6</td>
+            <td>Insérer une ligne vide sous un locuteur en notant le temps courant</td>
+        </tr>
+        <tr>
+            <td>Ctrl + I</td>
+            <td>Insérer une ligne vide</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + I</td>
+            <td>Insérer une ligne vide avec le temps courant</td>
+        </tr>
+        <tr>
+            <td>Ctrl + M</td>
+            <td>Marquer le temps de la fin de la ligne courante principale et le temps de début de la suivante et
+                sauter à la ligne suivante
+            </td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + M</td>
+            <td>Marquer le temps de la fin de la ligne courante et le temps de début de la suivante</td>
+        </tr>
+        <tr>
+            <td>Ctrl + T</td>
+            <td>Aller au repère temporel</td>
+        </tr>
+        </tbody>
+    </table>
+    </p>
+    <h2 id="0702">Commandes d'annulation</h2>
+    <h4>Annuler la dernère action</h4>
+    <p>La commande d'annulation (undo) annule la dernière action au moyen
+        du raccourci clavier <b>Ctrl Z</b>.</p>
+
+    <h4>Historique des dernières actions</h4>
+    <p>En ouvrant le menu
+        <bl>EDITION</bl>
+        , puis <b>Undo</b>, on a accès à l'historique des dernières actions réalisées.
+    </p>
+
+    <h4>Reproduire la dernière action</h4>
+    <p>Pour reproduire la dernière action (redo), le raccourci clavier est <b>Ctrl Y</b>.</p>
+
+    <h1 id="07">Manipulation du clavier </h1>
+    <hr/>
+    <h2 id="0801">Commandes d'édition</h2>
+    <p>TRJS est prévu pour la transcription et l'alignement rapide, et la manipulation intuitive de la vidéo/du son.
+        Il est optimisé pour être utilisé facilement (et complètement) depuis le clavier, sans nécessité d'utiliser
+        la souris.</p>
+
+    <h3 id="080101">Commandes d'édition principales</h3>
+    <table>
+        <tr>
+            <th>Raccourci clavier</th>
+            <th>Fonctionnalité</th>
+        </tr>
+        <tr>
+            <th colspan="2">Commandes de lecture : Certaines touches du clavier sont destinées à manipuler le
+                média
+            </th>
+        </tr>
+        <tr>
+            <td>F1</td>
+            <td>Lecture simple et pause</td>
+        </tr>
+        <tr>
+            <td>Tab</td>
+            <td>Lecture à partir du début de la ligne courante, pause (ou tabulation)</td>
+        </tr>
+        <tr>
+            <td>Alt + F1</td>
+            <td>Lecture à partir de l'endroit où le curseur est situé, pause</td>
+        </tr>
+        <tr>
+            <td>Shift + Tab</td>
+            <td>Lecture à partir du média, pause</td>
+        </tr>
+        <tr>
+            <td>Shift + F1</td>
+            <td>Lecture à partir du début de la ligne courante</td>
+        </tr>
+        <tr>
+            <td>Escape</td>
+            <td>Pause</td>
+        </tr>
+        <tr>
+            <td>Alt + &larr; <br/>(ou F2)</td>
+            <td>Revenir en arrière (3 secondes par défaut) <br/>(La valeur de retour en arrière ou de saut en avant
+                est modifiable dans le tableau des paramètres.)
+            </td>
+        </tr>
+        <tr>
+            <td>Alt + &rarr; <br/>(ou F3)</td>
+            <td>Sauter en avant</td>
+        </tr>
+        <tr>
+            <td>Alt + F2</td>
+            <td>Agrandir la vidéo</td>
+        </tr>
+        <tr>
+            <td>Alt + F3</td>
+            <td>Rétrécir la vidéo</td>
+        </tr>
+        <tr>
+            <td>Alt + F4 <br/>(ou Ctrl + B)</td>
+            <td>Jouer la vidéo moins vite</td>
+        </tr>
+        <tr>
+            <td>Alt + F5 <br/>(ou Ctrl + E)</td>
+            <td>Jouer la vidéo plus vite</td>
+        </tr>
+        <tr>
+            <td>F7</td>
+            <td>Lecture de la ligne courante (où se situe le curseur dans la transcription)</td>
+        </tr>
+        <tr>
+            <td>Alt + F7</td>
+            <td>Lecture de la ligne courante, la ligne précédente et la suivante (3 lignes principales)</td>
+        </tr>
+        <tr>
+            <td>F8</td>
+            <td>Lecture continue (à partir de l'endroit où se situe le curseur)</td>
+        </tr>
+        <tr>
+            <th colspan="2">Commandes d'édition : Certaines touches du clavier sont destinées à marquer les
+                alignements temporels dans le tableau de transcription
+            </th>
+        </tr>
+        <tr>
+            <td>Return (Entrée)</td>
+            <td>Si Return est en mode Remplacement (par défaut, ou Ctrl + M), alignement de la fin de l'énoncé avec
+                le temps courant puis saut à la ligne suivante; si on est en fin de fichier, alors insertion d'une
+                ligne (ce mode permet de réaligner des lignes déjà transcrites). <br/>Si Return est en mode
+                Insertion (ou Alt + F6), insertion d'une ligne et notation du temps courant <br/>(Le comportement de
+                Return peut être modifié dans le tableau des paramètres.)
+            </td>
+        </tr>
+        <tr>
+            <td>F4</td>
+            <td>Alignement du début de l'énoncé avec le temps courant</td>
+        </tr>
+        <tr>
+            <td>F5</td>
+            <td>Alignement de la fin de l'énoncé avec le temps courant</td>
+        </tr>
+        <tr>
+            <td>F6</td>
+            <td>Création (insertion) d'une nouvelle ligne sous le curseur sans insérer d'élément temporel ni de
+                locuteur
+            </td>
+        </tr>
+        <tr>
+            <td>Alt + F6</td>
+            <td>Insérer une ligne vide sous un locuteur en notant le temps courant</td>
+        </tr>
+    </table>
+    <h3 id="080102">Edition par raccourcis des locuteurs et autres tiers</h3>
+    <table>
+        <tr>
+            <th>Raccourcis clavier</th>
+            <th>Codage direct du locuteur</th>
+        </tr>
+        <tr>
+            <td>Ctrl + 1</td>
+            <td>Premier locuteur</td>
+        </tr>
+        <tr>
+            <td>Ctrl + 2</td>
+            <td>Deuxième locuteur</td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Ctrl + 9</td>
+            <td>Neuvième locuteur</td>
+        </tr>
+        <tr>
+            <th colspan='2'>Codage direct du tier (champ décrivant un énoncé)</th>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + 1</td>
+            <td>Première propriété des templates (tiers secondaires)</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + 2</td>
+            <td>Deuxième propriété</td>
+        </tr>
+        <tr>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + 9</td>
+            <td>Neuvième propriété</td>
+        </tr>
+    </table>
+    <h3 id="080103">Commandes d'édition spécifiques</h3>
+    <table>
+        <tr>
+            <th>Raccourci clavier</th>
+            <th> Fonctionnalité</th>
+            </td>
+        <tr>
+            <th colspan="2">Commandes d'édition classiques</th>
+            </td>
+        <tr>
+            <td>Ctrl + O</td>
+            <td>Ouvrir un fichier</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + O</td>
+            <td>Charger un média</td>
+        </tr>
+        <tr>
+            <td>Ctrl + S</td>
+            <td>Sauvegarder</td>
+        </tr>
+        <tr>
+            <td>Ctrl + F</td>
+            <td>Lancer une recherche</td>
+        </tr>
+        <tr>
+            <td>Ctrl + A</td>
+            <td>Tout sélectionnner</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Y</td>
+            <td>Reproduire la dernière action</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Z</td>
+            <td>Annuler la dernière action</td>
+        </tr>
+        <tr>
+            <th colspan="2">Commandes de déplacement</th>
+            </td>
+        <tr>
+            <td>Ctrl + L</td>
+            <td>Aller à un numéro de ligne</td>
+        </tr>
+        <tr>
+            <td>↑</td>
+            <td>Aller à la ligne précédente</td>
+        </tr>
+        <tr>
+            <td>↓</td>
+            <td>Aller à la ligne suivante</td>
+        </tr>
+        <tr>
+            <td>Alt + ↑</td>
+            <td>Aller à la ligne principale précédente</td>
+        </tr>
+        <tr>
+            <td>Alt + ↓</td>
+            <td>Aller à la ligne principale suivante</td>
+        </tr>
+        <tr>
+            <td>Page haut</td>
+            <td>Aller en haut de la page</td>
+        </tr>
+        <tr>
+            <td>Page bas</td>
+            <td>Aller en bas de la page</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Home</td>
+            <td>Aller au début du fichier</td>
+        </tr>
+        <tr>
+            <td>Ctrl + End</td>
+            <td>Aller à la fin du fichier</td>
+        </tr>
+        <tr>
+            <th colspan="2">Commandes d'édition des alignements temporels</th>
+            </td>
+        <tr>
+            <td>Ctrl + I</td>
+            <td>Insérer une ligne vide</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + I</td>
+            <td>Insérer une ligne vide avec le temps courant</td>
+        </tr>
+        <tr>
+            <td>Ctrl + M</td>
+            <td>Marquer le temps de la fin de la ligne courante principale et le temps de début de la suivante et
+                sauter à la ligne suivante
+            </td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + M</td>
+            <td>marquer le temps de la fin de la ligne courante et le temps de début de la suivante</td>
+        </tr>
+        <tr>
+            <th colspan="2">Commandes d'édition de la transcription</th>
+            </td>
+        <tr>
+            <td>Ctrl + D</td>
+            <td>Supprimer une ligne</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + D</td>
+            <td>Supprimer une ligne et tous les tiers qui en dépendent</td>
+        </tr>
+        <tr>
+            <td>Ctrl + J</td>
+            <td>Joindre deux lignes (ligne courante et la suivante)</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + J</td>
+            <td>Joindre deux lignes sous un même locuteur</td>
+        </tr>
+        <tr>
+            <td>Ctrl + R</td>
+            <td>Dupliquer une ligne</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + R</td>
+            <td>Scinder une ligne en deux (à l'endroit où se trouve le curseur) sans indication temporelle</td>
+        </tr>
+        <tr>
+            <th colspan="2">Divisions du texte</th>
+            </td>
+        <tr>
+            <td>Ctrl + G</td>
+            <td>Créer une division du texte (séquence ou saynète)</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + G</td>
+            <td>Marquer la fin d'une division</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Shift + G</td>
+            <td>Fermer toutes les divisions ouvertes</td>
+        </tr>
+        <tr>
+            <td>Ctrl + U</td>
+            <td>Cacher les divisions</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + U</td>
+            <td>Montrer les divisions cachées</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Shift + 1</td>
+            <td>Marquer la ligne courante comme début d'une division</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Shift + 2</td>
+            <td>Marquer la ligne courante comme fin d'une division</td>
+        </tr>
+        <tr>
+            <th colspan="2">Commandes média spécifiques</th>
+            </td>
+        <tr>
+            <td>Ctrl + B <br/>(ou Alt + F4)</td>
+            <td>Jouer le média plus lentement</td>
+        </tr>
+        <tr>
+            <td>Ctrl + E <br/>(ou Alt + F5)</td>
+            <td>Jouer le média plus rapidemement</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + B</td>
+            <td>Lecture à l'envers</td>
+        </tr>
+        <tr>
+            <td>Ctrl + Alt + E</td>
+            <td>Lecture à un rythme normal</td>
+        </tr>
+    </table>
+    <h2 id="0802">Insertion de caractères phonologiques</h2>
+    <p>TRJS permet d'insérer des caracatères API (pour le codage phonologique). <br/>
+        En général, faire :
+    <ul>
+        <li>Alt + Caractère SAMPA ou</li>
+        <li>Alt + Shift + Caractère SAMPA.</li>
+    </ul>
+    </p>
+    <table>
+        <tr>
+            <th>Raccourci clavier</th>
+            <th>Correspondance API</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Alt + A</td>
+            <td>ɑ</td>
+            <td>Voyelle basse postérieure non arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + E</td>
+            <td>ɛ</td>
+            <td>Voyelle moyenne inférieure antérieure non arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + O</td>
+            <td>ɔ</td>
+            <td>Voyelle moyenne inférieure postérieure arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + 9</td>
+            <td>œ</td>
+            <td>Voyelle moyenne inférieure antérieure arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + 2</td>
+            <td>ø</td>
+            <td>Voyelle moyenne supérieure antérieure arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + @ (ou Alt + 0)</td>
+            <td>ə</td>
+            <td>Schwa</td>
+        </tr>
+        <tr>
+            <td>Alt + R</td>
+            <td>ʀ</td>
+            <td>Consonne roulée uvulaire voisée</td>
+        </tr>
+        <tr>
+            <td>Alt + S</td>
+            <td>ʃ</td>
+            <td>Consonne fricative post-alvéolaire sourde</td>
+        </tr>
+        <tr>
+            <td>Alt + Z</td>
+            <td>ʒ</td>
+            <td>Consonne fricative post-alvéolaire voisée</td>
+        </tr>
+        <tr>
+            <td>Alt + H</td>
+            <td>ɥ</td>
+            <td>Consonne spirante labio-palatale voisée</td>
+        </tr>
+        <tr>
+            <td>Alt + J</td>
+            <td>ɲ</td>
+            <td>Consonne occlusive nasale palatale voisée</td>
+        </tr>
+        <tr>
+            <td>Alt + N</td>
+            <td>ɳ</td>
+            <td>Consonne occlusive nasale rétroflexe voisée</td>
+        </tr>
+        <tr>
+            <td>Alt + Shift + N</td>
+            <td>ŋ</td>
+            <td>Consonne occlusive nasale vélaire voisée</td>
+        </tr>
+        <tr>
+            <td>Alt + T</td>
+            <td>θ</td>
+            <td>Consonne fricative dentale sourde</td>
+        </tr>
+        <tr>
+            <td>Alt + D</td>
+            <td>ð</td>
+            <td>Consonne injective alvéolaire voisée</td>
+        </tr>
+        <tr>
+            <td>Alt + I</td>
+            <td>ɪ</td>
+            <td>Voyelle haute inférieure antérieure non arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + Q</td>
+            <td>ɒ</td>
+            <td>Voyelle basse postérieure arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + V</td>
+            <td>ʌ</td>
+            <td>Voyelle moyenne inférieure postérieure non arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + U</td>
+            <td>ʊ</td>
+            <td>Voyelle haute inférieure postérieure arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + X</td>
+            <td>χ</td>
+            <td>Consonne fricative uvulaire sourde</td>
+        </tr>
+        <tr>
+            <td>Alt + :</td>
+            <td>ː</td>
+            <td>Long</td>
+        </tr>
+        <tr>
+            <td>Alt + Shift + A</td>
+            <td>ɑ̃</td>
+            <td>Voyelle nasale basse postérieure non arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + Shift + E</td>
+            <td>ɛ</td>
+            <td>Voyelle nasale moyenne inférieure antérieure non arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + Shift + 9</td>
+            <td>œ̃</td>
+            <td>Voyelle nasale moyenne inférieure antérieure arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + Shift + O</td>
+            <td>ɔ̃</td>
+            <td>Voyelle nasale moyenne inférieure postérieure arrondie</td>
+        </tr>
+        <tr>
+            <td>Alt + Shift + Q</td>
+            <td>æ</td>
+            <td>Voyelle pré-ouverte antérieure non arrondie</td>
+        </tr>
+    </table>
+
+    <h1 id="08">Organisation et fonctionnalités </h1>
+    <hr/>
+
+    <h2 id="0901">Paramètres</h2>
+    <p>Dans le menu
+        <bl>PARAMETRES</bl>
+        , les paramètres suivants sont modifiables :
+    </p>
+    <table>
+        <thead>
+        <tr>
+            <th>Paramètre</th>
+            <th>Descriptif</th>
+            <th>Localisation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Version</td>
+            <td>Deux versions sont pour le moment disponibles : Français et Anglais</td>
+            <td>Onglet
+                <bl>LANGUE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Visualisation de la partition</td>
+            <td>Coché par défaut</td>
+            <td>Onglet
+                <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Visualisation du signal sonore</td>
+            <td>Coché par défaut</td>
+            <td>Onglet
+                <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Affichage des numéros en début de ligne</td>
+            <td>Par défaut ils ne sont pas affichés</td>
+            <td>Onglet
+                <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Affichage des noms des participants</td>
+            <td>A la place des codes</td>
+            <td>Onglet
+                <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Affichage des temps des alignements</td>
+            <td>C'est-à-dire les temps de début et de fin, coché par défaut</td>
+            <td>Onglet
+                <bl>AFFICHAGE</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Modes d'édition des zones d'affichage</td>
+            <td>3 modes sont disponibles : Libre, Contrôle (Standard), Bloqué</td>
+            <td>Onglet
+                <bl>MODES D'EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Réorganisation dynamique des lignes</td>
+            <td></td>
+            <td>Onglet
+                <bl>MODES D'EDITION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Format pour les repères temporels</td>
+            <td>Renseigné par défaut en h:mm:ss</td>
+            <td>Onglet
+                <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Nombre de chiffres pour les millisecondes</td>
+            <td>De 0 à 3</td>
+            <td>Onglet
+                <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Valeur de retour en arrière</td>
+            <td>(Pour le raccourci clavier : <img src="img/touches/computer_key_Alt_Left.png" width="35"
+                                                  height="35"/> ) en ms
+            </td>
+            <td>Onglet
+                <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Valeur de saut en avant</td>
+            <td>(Pour le raccourci clavier : <img src="img/touches/computer_key_Alt_Right.png" width="35"
+                                                  height="35"/> ) en ms
+            </td>
+            <td>Onglet
+                <bl>REGLAGES</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Vérification de la transcription lors de la sauvegarde</td>
+            <td>Coché par défaut</td>
+            <td>Onglet
+                <bl>VERIFICATION</bl>
+            </td>
+        </tr>
+        <tr>
+            <td>Nombre de versions précédentes conservées lors de la sauvergarde</td>
+            <td>De 1 à 3</td>
+            <td>Onglet
+                <bl>VERIFICATION</bl>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>Lorsqu'on passe la souris sur un paramètre, une <b>bulle d'information</b> apparaît pour rappeler sa <b>fonction
+        principale</b>,
+        ainsi que son raccourci clavier éventuel associé.</p>
+
+    <h2 id="0902">Outil de recherche</h2>
+    <p>L'onglet de recherche s'affiche sous forme de panneau. On y accède par plusieurs moyens :
+    <ul>
+        <li>en ouvrant le menu
+            <bl>RECHERCHE</bl>
+        </li>
+        <li>en cliquant sur l'icône <i class="iconcur fa fa-search fa-lg"></i> de la barre d'outils</li>
+        <li>via le raccourci clavier : <b>Ctrl F</b></li>
+    </ul>
+    </p>
+    <p>Il est possible d'effectuer plusieurs types de recherche dans le fichier courant :
+    <ul>
+        <li><b>Rechercher</b> un mot ou une chaîne de caractères :</li>
+        <ul>
+            <li>dans le champ Locuteurs</li>
+            <li>dans le champ Transcription</li>
+        </ul>
+        <li><b>Remplacer</b> le résultat de la recherche</li>
+        <li><b>Montrer</b> les locuteurs ou les tiers :</li>
+        <ul>
+            <li>dans le champ Locuteurs (permet d'afficher seulement le locuteur/la tier sur laquelle on
+                travaille)
+            </li>
+            <li>dans le champ Transcription (permet d'afficher toutes les mentions d'un locuteur/une tier dans la
+                transcription)
+            </li>
+        </ul>
+        <li><b>Cacher</b> les locuteurs ou les tiers :</li>
+        <ul>
+            <li>dans le champ Locuteurs (permet de cacher les locuteurs/tiers désirés)</li>
+            <li>dans le champ Transcription</li>
+        </ul>
+        <li><b>Aller à un numéro de ligne</b> ou le raccourci clavier : <b>Ctrl L</b></li>
+        <li>Aller à un <b>repère temporel</b> ou le raccourci clavier : <b>Ctrl T</b></li>
+    </ul>
+    </p>
+
+    <p><a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p>
 </div>
-</main>
 
 <section id="menu">
-	<nav>
-<p><span>Navigation</span><br/>
-<a href="#01"> 1. Installation </a><br/>
-<a href="#02"> 2. Organisation et description</a><br/>
-<a href="#03"> 3. Ouvrir une transcription </a><br/>
-<a href="#04"> 4. Ouvrir un média </a><br/>
-<a href="#05"> 5. Edition de la transcription</a><br/>
-<a href="#06"> 6. Méthodes de transcription</a><br/>
-<a href="#07"> 7. Manipulation du clavier </a><br/>
-<a href="#08"> 8. Organisation et fonctionnalités </a><br/>
-<br/>
-<a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p><br/>
-	</nav>
+    <nav>
+        <p><span>Navigation</span><br/>
+            <a href="#01"> 1. Installation </a><br/>
+            <a href="#02"> 2. Organisation et description</a><br/>
+            <a href="#03"> 3. Ouvrir une transcription </a><br/>
+            <a href="#04"> 4. Ouvrir un média </a><br/>
+            <a href="#05"> 5. Edition de la transcription</a><br/>
+            <a href="#06"> 6. Méthodes de transcription</a><br/>
+            <a href="#07"> 7. Manipulation du clavier </a><br/>
+            <a href="#08"> 8. Organisation et fonctionnalités </a><br/>
+            <br/>
+            <a href="#top"><i class="fa fa-arrow-circle-up"></i> Haut de page</a></p><br/>
+    </nav>
 </section>
 
-	</body>
+</body>
 </html>

@@ -453,7 +453,9 @@ trjs.io = (function () {
             fsio.setMRU(name);
             serverLoadFile(name, function (err, data) {
                 if (err >= 1) {
-                    trjs.log.boxalert(trjs.messgs.errload + name);
+                    var s = trjs.messgs.errload + name;
+                    if (data.indexOf('ENOENT') >= 0) s += trjs.messgs.errloadnotexist;
+                    trjs.log.boxalert(s);
                 } else if (err === 0) {
                     var teimlfile = trjs.utils.headName(name) + "_txt" + version.SOFT_EXT;
                     var cvt = trjs.transcription.convertFromTxtToCsv(data);
@@ -469,7 +471,9 @@ trjs.io = (function () {
             fsio.setMRU(name);
             serverLoadFile(name, function (err, data) {
                 if (err >= 1) {
-                    trjs.log.boxalert(trjs.messgs.errload + name);
+                    var s = trjs.messgs.errload + name;
+                    if (data.indexOf('ENOENT') >= 0) s += trjs.messgs.errloadnotexist;
+                    trjs.log.boxalert(s);
                 } else if (err === 0) {
                     var teimlfile = trjs.utils.headName(name) + "_csv" + version.SOFT_EXT;
                     var cvt = trjs.transcription.readCsv(data);
@@ -536,7 +540,9 @@ trjs.io = (function () {
                 trjs.data.setNamesInWindow();
                 trjs.undo.clear();
             } else if (err > 1) {
-                trjs.log.boxalert(trjs.messgs.errload + name + data);
+                var s = trjs.messgs.errload + name;
+                if (data.indexOf('ENOENT') >= 0) s += trjs.messgs.errloadnotexist;
+                trjs.log.boxalert(s);
             } else if (err === 0) {
                 if (typeof data === 'object') {
                     trjs.data.doc = data;

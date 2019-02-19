@@ -499,9 +499,8 @@ trjs.messgs_eng = {
     savepref: "Save preferences",
     converr1: "Conversion error of file format ",
     converr2: " to format Tei Corpo (",
-    errload1: "Error ",
-    errload2: " loading the file : ",
     errload: "Error loading the file : ",
+    errloadnotexist: "<br/>The file does not exist.",
     unkform: "Unknown format for file ",
     mederrab: "You aborted the video playback.",
     mederrnet: "A network error caused the audio download to fail.",
@@ -570,21 +569,17 @@ trjs.messgs_eng = {
     annul: "Cancel",
     askforreorder: "Using automatic reordering changes radically the way time alignement edition is performed. Are you sure?",
 
-    cmdtab: "Tabulation or play from the transcription", // Tab
     cmdenter: "Store time to end of current line and begining of next line and jumps to next line. Also inserts a line if Inset mode in on or if at the end of the file", // return Key
     bin27: "Stop the playing of the media", // Esc
     bin33: "Move to page above", // Page Up
     bin34: "Move to page below", // Page Down
     bin38: "Move to line above", // Up
     bin40: "Move to line below", // Down
-    bin112: "Play from the media", // F1
     bin113: "Jump backwards a little bit", // F2
     bin114: "Jump formwards a little bit", // F3
     bin115: "Set the beginning of the line to the current time", // F4
     bin116: "Set the end of the line to the current time", // F5
     bin117: "Insert a blank line with current locutor", // F6
-    bin118: "Play all the current line", // F7
-    bin119: "Start playing continuously", // F8
 
     ctrlbin49: "Set line as 1st locutor", // Ctrl 1
     ctrlbin50: "Set line as 2nd locutor", // Ctrl 2
@@ -598,9 +593,7 @@ trjs.messgs_eng = {
 
     ctrlbin35: "Move to the end of file", // Ctrl End
     ctrlbin36: "Move to the begining of file", // Ctrl Home
-    ctrlbin66: "Play media slower", // Ctrl B
     ctrlbin68: "Delete current line", // Ctrl D
-    ctrlbin69: "Play media faster", // Ctrl E
     ctrlbin71: "Insert the start of a div", // Ctrl G
     ctrlbin73: "Insert an empty line", // Ctrl I
     ctrlbin74: "Join the current line with the next one", // Ctrl J
@@ -630,9 +623,7 @@ trjs.messgs_eng = {
     ctrlaltbin57: "Set line as 9th template", // Ctrl Alt 9
 
     ctrlaltbin65: "Select line", // Ctrl Alt A
-    ctrlaltbin66: "Play in reverse", // Ctrl Alt B
     ctrlaltbin68: "Delete the current group of lines", // Ctrl Alt D
-    ctrlaltbin69: "Play at normal rate", // Ctrl Alt E
     ctrlaltbin70: "Show search interface panel", // Ctrl F
     ctrlaltbin71: "Insert a closing div", // Ctrl Alt G
     ctrlaltbin73: "Insert a line with setting the current time", // Ctrl Alt I
@@ -663,16 +654,23 @@ trjs.messgs_eng = {
     altbin38: "Go up to the next main line", // Alt Up
     altbin39: "Jump forwards a little bit", // Alt Right
     altbin40: "Go down to the next main line", // Alt Down
-    playcurrent: "Play from the current position in the transcription", // Alt F1
     altbin113: "Reduce the size of the media", // Alt F2
     altbin114: "Increase the size of the media", // Alt F3
-    altbin115: "Play the media two times slower", // Alt F4
-    altbin116: "Play the media two times faster", // Alt F5
     altbin117: "Insert any empty line begining at the current time and with the current locutor information", // Alt F6
-    altbin118: "Play three main lines around the current one", // Alt F7
 
-    shiftbin9: "Play from the start of the current line", // Shift Tab
-    playpause: "Play from the current media time", // Shift F1
+    playContinuous: "Start playing continuously starting from the current line", // F8
+    playPauseCurrent: "Play/pause and go if necessary to the current position in the transcription", // Shift F9
+    playCurrentLine: "Play all the current line", // F7
+    playFaster: "Play media faster", // Shift F3
+    playFromMedia: "Jump to where the media is and play/pause", // Shift F8
+    playNormal: "Play at normal rate", // Shift F5
+    playPause: "Play from the current media time", // Alt Tab
+    playReverse: "Play in reverse",
+    playSlower: "Play media slower", // Shift F2
+    playStartLine: "Play from the start of the current line", // Shift Tab
+    playTab: "Tabulation or play from the transcription", // Tab
+    playThreeLines: "Play three main lines around the current one", // Alt F7
+    playFromWave: "Play from wave position", // Shift F1
 
 //	shiftbin114: "Specific function (trjs.keys.special1)" , // Shift F3
     shiftbin115: "Local save in HTML format", // Shift F4
@@ -1275,9 +1273,8 @@ trjs.messgs_fra = {
     savepref: "Enregistrer les préférences",
     converr1: "Erreur de conversion du fichier ",
     converr2: " vers le format Tei Corpo (",
-    errload1: "Erreur ",
-    errload2: " de chargement du fichier : ",
-    errload: "Erreur (2) de chargement du fichier : ",
+    errload: "Erreur de chargement du fichier : ",
+    errloadnotexist: "<br/>Le fichier n'existe pas.",
     unkform: "Format inconnu pour le fichier ",
     mederrab: "Vous avez stoppé la lecture de la vidéo.",
     mederrnet: "Une erreur de réseau a stoppé le téléchargement du fichier audio.",
@@ -1346,21 +1343,17 @@ trjs.messgs_fra = {
     annul: "Annuler",
     askforreorder: "La réorganisation automatique des lignes modifie profondément la manière d'aligner temporellement. Etes-vous sûr de vouloir l'utiliser ?",
 
-    cmdtab: "Lecture à partir du début de la ligne courante, pause (ou tab)", // Tab
     cmdenter: "Marquer le temps de fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante", // return Key
     bin27: "Pause", // Esc
     bin33: "Aller en haut de la page", // Page Up
     bin34: "Aller en bas de la page", // Page Down
     bin38: "Aller à la ligne précédente", // Up
     bin40: "Aller à la ligne suivante", // Down
-    bin112: "Lecture simple et pause", // F1
     bin113: "Revenir en arrière", // F2
     bin114: "Aller en avant", // F3
     bin115: "Alignement du début de l'énoncé avec le temps courant", // F4
     bin116: "Alignement de la fin de l'énoncé avec le temps courant", // F5
     bin117: "Insertion d'une nouvelle ligne avec le locuteur courant ", // F6
-    bin118: "Lecture de la ligne courante", // F7
-    bin119: "Lecture continue à partir de la ligne courante", // F8
 
     ctrlbin49: "Rappel du 1er locuteur", // Ctrl 1
     ctrlbin50: "Rappel du 2nd locuteur", // Ctrl 2
@@ -1374,9 +1367,7 @@ trjs.messgs_fra = {
 
     ctrlbin35: "Aller à la fin du fichier", // Ctrl End
     ctrlbin36: "Aller au début du fichier", // Ctrl Home
-    ctrlbin66: "Jouer le média plus lentement", // Ctrl B
     ctrlbin68: "Supprimer la ligne courante", // Ctrl D
-    ctrlbin69: "Jouer le média plus rapidement", // Ctrl E
     ctrlbin71: "Créer une division du texte (séquence ou saynète)", // Ctrl G
     ctrlbin73: "Insérer une ligne vide", // Ctrl I
     ctrlbin74: "Joindre deux lignes (ligne courante et la suivante)", // Ctrl J
@@ -1406,9 +1397,7 @@ trjs.messgs_fra = {
     ctrlaltbin57: "Rappel de la 9ème structure", // Ctrl Alt 9
 
     ctrlaltbin65: "Sélectionner la ligne", // Ctrl Alt A
-    ctrlaltbin66: "Lecture à l'envers", // Ctrl Alt B
     ctrlaltbin68: "Supprimer une ligne et tous celles qui en dépendent", // Ctrl Alt D
-    ctrlaltbin69: "Lecture à une rythme normal", // Ctrl Alt E
     ctrlaltbin70: "Faire une recherche", // Ctrl F
     ctrlaltbin71: "Marquer la fin d'une division", // Ctrl Alt G
     ctrlaltbin73: "Insérer une ligne vide avec le temps courant", // Ctrl Alt I
@@ -1438,16 +1427,23 @@ trjs.messgs_fra = {
     altbin38: "Aller à la ligne principale précédente", // Alt Up
     altbin39: "Aller en avant", // Alt Right
     altbin40: "Aller à la ligne principale suivante", // Alt Down
-    playcurrent: "Lecture à partir de l'endroit où le curseur est situé, pause", // Alt F1
     altbin113: "Réduire la taille de la vidéo", // Alt F2
     altbin114: "Agrandir la taille de la vidéo", // Alt F3
-    altbin115: "Jouer la vidéo moins vite", // Alt F4
-    altbin116: "Jouer la vidéo plus vite", // Alt F5
     altbin117: "Insérer une ligne vide sous un locuteur en notant le temps courant", // Alt F6
-    altbin118: "Jouer 3 lignes autour de la ligne courante", // Alt F7
 
-    shiftbin9: "Lecture à partir du début de la ligne courante", // Shift Tab
-    playpause: "Lecture à partir du temps du média, pause", // Shift F1
+    playContinuous: "Lecture continue à partir de la ligne courante", // F8
+    playPauseCurrent: "Lecture/stop et va si nécessaire à l'endroit où le curseur est situé", // Shift F9
+    playCurrentLine: "Lecture de la ligne courante", // F7
+    playFaster: "Jouer le média plus rapidement", // Shift F3
+    playFromMedia: "Sauter là où le média est et jouer ou arrêter", // Shift F8
+    playNormal: "Jouer le média normalement", // Shift F5
+    playPause: "Lecture à partir du temps du média, pause", // Alt Tab
+    playReverse: "Lecture à l'envers",
+    playSlower: "Jouer le média plus lentement", // Shift F2
+    playStartLine: "Lecture à partir du début de la ligne courante", // Shift Tab
+    playTab: "Lecture à partir du début de la ligne courante, pause (ou tab)", // Tab
+    playThreeLines: "Jouer 3 lignes autour de la ligne courante", // Alt F7
+    playFromWave: "Jouer à partir de la position sur le signal", // Shift F1
 
 //	shiftbin114: "specific function (trjs.keys.special1)" , // Shift F3
     shiftbin115: "Sauvegarde locale au format HTML", // Shift F4

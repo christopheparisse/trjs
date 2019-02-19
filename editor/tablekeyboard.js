@@ -1145,7 +1145,7 @@ trjs.keys.initBindings = function () {
     // key ctrl alt shift meta supl function_name
     // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
     // here supl = ""
-    trjs.bindingsDef.push([nkey("tab"), false, false, false, false, "", "tab"]); // Tab
+    trjs.bindingsDef.push([nkey("tab"), false, false, false, false, "", "playTab"]); // Tab
     trjs.bindingsDef.push([nkey("newline"), false, false, false, false, "", "enter"]); // return Key
     trjs.bindingsDef.push([nkey("enter"), false, false, false, false, "", "enter"]); // return Key
     trjs.bindingsDef.push([nkey("escape"), false, false, false, false, "", "escape"]); // Esc
@@ -1157,8 +1157,8 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("f4"), false, false, false, false, "", "setStart"]); // F4
     trjs.bindingsDef.push([nkey("f5"), false, false, false, false, "", "setEnd"]); // F5
     trjs.bindingsDef.push([nkey("f6"), false, false, false, false, "", "insertBlankLineLoc"]); // F6
-    trjs.bindingsDef.push([nkey("f7"), false, false, false, false, "", "runCurrentLine"]); // F7
-    trjs.bindingsDef.push([nkey("f8"), false, false, false, false, "", "goContinuous"]); // F8
+    trjs.bindingsDef.push([nkey("f7"), false, false, false, false, "", "playCurrentLine"]); // F7
+    trjs.bindingsDef.push([nkey("f8"), false, false, false, false, "", "playContinuous"]); // F8
 
     trjs.bindingsDef.push([nkey("lesser than"), false, false, false, false, "", "leftBracket"]); // <
     trjs.bindingsDef.push([nkey("greater than"), false, false, false, false, "", "rightBracket"]); // >
@@ -1232,25 +1232,25 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("right arrow"), false, true, false, false, "", "forwardStep"]); // Alt Right
     trjs.bindingsDef.push([nkey("down arrow"), false, true, false, false, "", "keyLocDown"]); // Alt Down
 
-    trjs.bindingsDef.push([nkey("f1"), false, true, false, false, "", "tab"]); // Alt F1
+    trjs.bindingsDef.push([nkey("f1"), false, true, false, false, "", "playTab"]); // Alt F1
     trjs.bindingsDef.push([nkey("f2"), false, true, false, false, "", "makeSmall"]); // Alt F2
     trjs.bindingsDef.push([nkey("f3"), false, true, false, false, "", "makeBig"]); // Alt F3
     trjs.bindingsDef.push([nkey("f6"), false, true, false, false, "", "insertWithTimeLoc"]); // Alt F6
-    trjs.bindingsDef.push([nkey("f7"), false, true, false, false, "", "runThreeLines"]); // Alt F7
+    trjs.bindingsDef.push([nkey("f7"), false, true, false, false, "", "playThreeLines"]); // Alt F7
     trjs.bindingsDef.push([nkey("f11"), false, true, false, false, "", "sort"]); // Alt F11
     trjs.bindingsDef.push([nkey("f12"), false, true, false, false, "", "undoList"]); // Alt F12
-    trjs.bindingsDef.push([nkey("tab"), false, true, false, false, "", "playWave"]); // Alt Tab
+    trjs.bindingsDef.push([nkey("tab"), false, true, false, false, "", "playPause"]); // Alt Tab
 
-    trjs.bindingsDef.push([nkey("tab"), false, false, true, false, "", "shiftTab"]); // Shift Tab
-    trjs.bindingsDef.push([nkey("f1"), false, false, true, false, "", "playPause"]); // Shift F1
+    trjs.bindingsDef.push([nkey("tab"), false, false, true, false, "", "playStartLine"]); // Shift Tab
+    trjs.bindingsDef.push([nkey("f1"), false, false, true, false, "", "playFromWave"]); // Shift F1
     trjs.bindingsDef.push([nkey("f2"), false, false, true, false, "", "playSlower" ]); // shift F2
     trjs.bindingsDef.push([nkey("f3"), false, false, true, false, "", "playFaster" ]); // shift F3
 //    trjs.bindingsDef.push([nkey("f4"), false, false, true, false, "", "playReverse" ]); // shift F4
     trjs.bindingsDef.push([nkey("f5"), false, false, true, false, "", "playNormal" ]); // shift F5
     trjs.bindingsDef.push([nkey("f6"), false, false, true, false, "", "insertBlankLineLocBefore"]); // Shift F6
     trjs.bindingsDef.push([nkey("f7"), false, false, true, false, "", "playPause"]); // Shift F7
-    trjs.bindingsDef.push([nkey("f8"), false, false, true, false, "", "playJump"]); // Shift F8
-    trjs.bindingsDef.push([nkey("f9"), false, false, true, false, "", "playCurrent"]); // Shift F9
+    trjs.bindingsDef.push([nkey("f8"), false, false, true, false, "", "playFromMedia"]); // Shift F8
+    trjs.bindingsDef.push([nkey("f9"), false, false, true, false, "", "playPauseCurrent"]); // Shift F9
 };
 
 trjs.apiBindings = [];
@@ -1532,7 +1532,6 @@ trjs.keys.functions = {
     "exportMStoSubtSrt": [ trjs.transcription.exportMStoSubtSrt, trjs.messgs.ctrlaltbin120, null],
     "generic": [ trjs.macros.generic, trjs.messgs.generic, null],
     "goCheck": [ trjs.check.goCheck, 'Check all file', null],
-    "goContinuous": [ trjs.events.goContinuous, trjs.messgs.bin119, null],
     "hideDiv": [ trjs.editor.hideDiv, trjs.messgs.ctrlbin85, null],
     "htmlSave": [ trjs.io.htmlSave, trjs.messgs.shiftbin115, null],
     "insertBlankLine": [ trjs.events.insertBlankLineAndRedraw, trjs.messgs.ctrlbin73, null],
@@ -1554,18 +1553,23 @@ trjs.keys.functions = {
     "forwardStep": [ trjs.media.forwardStep, trjs.messgs.altbin39, null],
     "pageDown": [ trjs.events.pageDown, trjs.messgs.bin34, null],
     "pageUp": [ trjs.events.pageUp, trjs.messgs.bin33, null],
-    "playCurrent": [ trjs.media.playCurrent, trjs.messgs.playcurrent, null],
-    "playFaster": [ trjs.media.playFaster, trjs.messgs.ctrlaltbin116, null],
-    "playJump": [ trjs.media.playJump, trjs.messgs.playcurrent, null],
-    "playNormal": [ trjs.media.playNormal, trjs.messgs.ctrlaltbin69, null],
-    "playPause": [ trjs.media.playPause, trjs.messgs.playpause, null],
-//    "playReverse": [ trjs.media.playReverse, trjs.messgs.ctrlaltbin66, null],
-    "playSlower": [ trjs.media.playSlower, trjs.messgs.ctrlaltbin115, null],
-    "playWave": [ trjs.media.playFromWave, "Play wave file", null],
+
+    "playContinuous": [ trjs.events.goContinuous, trjs.messgs.playContinuous, null],
+    "playPauseCurrent": [ trjs.media.playPauseCurrent, trjs.messgs.playPauseCurrent, null],
+    "playCurrentLine": [ trjs.events.runCurrentLine, trjs.messgs.playCurrentLine, null],
+    "playFaster": [ trjs.media.playFaster, trjs.messgs.playFaster, null],
+    "playFromMedia": [ trjs.media.playFromMedia, trjs.messgs.playFromMedia, null],
+    "playNormal": [ trjs.media.playNormal, trjs.messgs.playNormal, null],
+    "playPause": [ trjs.media.playPause, trjs.messgs.playPause, null],
+//    "playReverse": [ trjs.media.playReverse, trjs.messgs.playReverse, null],
+    "playSlower": [ trjs.media.playSlower, trjs.messgs.playSlower, null],
+    "playStartLine": [ trjs.media.playStartLine, trjs.messgs.playStartLine, null],
+    "playTab": [ trjs.events.playTab, trjs.messgs.playTab, null],
+    "playThreeLines": [ trjs.events.runThreeLines, trjs.messgs.playThreeLines, null],
+    "playFromWave": [ trjs.media.playFromWave, trjs.messgs.playFromWave, null],
+
     "redo": [ trjs.undo.redo, trjs.messgs.ctrlbin89, null],
     "replicateLine": [ trjs.events.replicateLineAndRedraw, trjs.messgs.ctrlbin82, null],
-    "runCurrentLine": [ trjs.events.runCurrentLine, trjs.messgs.bin118, null],
-    "runThreeLines": [ trjs.events.runThreeLines, trjs.messgs.altbin118, null],
     "save": [ trjs.editor.save, trjs.messgs.ctrlbin83, null],
     "selectAllMS": [ trjs.transcription.selectAllMS, trjs.messgs.ctrlaltbin65, null],
     "setDivMinus": [ trjs.events.setDivMinus, trjs.messgs.ctrlshiftbin50, null],
@@ -1596,7 +1600,7 @@ trjs.keys.functions = {
     "setStart": [ trjs.events.setStartAndRedraw, trjs.messgs.bin115, null],
     "setTimeReplace": [ trjs.events.setTimeReplaceAndRedraw, trjs.messgs.ctrlaltbin77, null],
     "setTimeReplaceLoc": [ trjs.events.setTimeReplaceLocAndRedraw, trjs.messgs.ctrlaltbin73, null],
-    "shiftTab": [ trjs.events.shiftTab, trjs.messgs.shiftbin9, null],
+    "playStartLine": [ trjs.events.playStartLine, trjs.messgs.playStartLine, null],
     "showDiv": [ trjs.editor.showDiv, trjs.messgs.ctrlaltbin85, null],
     "showLine": [ trjs.editor.showLine, trjs.messgs.ctrlbin76, null],
     "showSearch": [ trjs.editor.showSearch, trjs.messgs.ctrlaltbin70, null],
@@ -1604,7 +1608,6 @@ trjs.keys.functions = {
     "sort": [ trjs.transcription.sort, "sort all lines by times", null],
     "splitLine": [ trjs.events.splitLineAndRedraw, trjs.messgs.cmdsplitLine, null],
     "splitLineLoc": [ trjs.events.splitLineLocAndRedraw, trjs.messgs.cmdsplitLineLoc, null],
-    "tab": [ trjs.events.tab, trjs.messgs.cmdtab, null],
     "undo": [ trjs.undo.undo, trjs.messgs.ctrlbin90, null],
     "undoList": [ trjs.undo.undoList, "display undo/redo list", null],
     "zoomGlobalIn": [ trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin120, null],
