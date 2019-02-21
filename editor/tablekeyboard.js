@@ -224,6 +224,7 @@ trjs.keys.resetKeys = function() {
 trjs.keys.saveUserBindings = function () {
     trjs.keys.updated = false;
     trjs.local.put('bindingsUser', JSON.stringify(trjs.bindingsUser));
+    trjs.messgs_init();
 }
 
 trjs.keys.init = function () {
@@ -311,7 +312,7 @@ trjs.keys.storeChangeKeys = function() {
                 trjs.bindingsUser[k][BINDCTRL] = trjs.keys.keyChanging[i].ctrl;
                 trjs.bindingsUser[k][BINDALT] = trjs.keys.keyChanging[i].alt;
                 trjs.bindingsUser[k][BINDSHIFT] = trjs.keys.keyChanging[i].shift;
-                trjs.bindingsUser[k][BINDMETA] = trjs.keys.keyChanging[i].ctrl;
+                trjs.bindingsUser[k][BINDMETA] = trjs.keys.keyChanging[i].ctrl ? 'ctrl' : false;
                 trjs.bindingsUser[k][BINDSUPL] = trjs.keys.keyChanging[i].supl;
                 //console.log("copy bindings3:", trjs.bindingsUser[k]);
             }
@@ -538,6 +539,21 @@ trjs.keys.initKeyChanging = function () {
         };
         trjs.keys.keyChanging.push(kc);
     }
+};
+
+trjs.keys.funToKeyString = function (funame) {
+    for (var i in trjs.bindingsUser) {
+        if (trjs.bindingsUser[i][BINDFUN] === funame) {
+            var k = trjs.keyToName[trjs.bindingsUser[i][BINDKEY]];
+            var m = modifiers2ToString(trjs.bindingsUser[i][BINDCTRL] || trjs.bindingsUser[i][BINDMETA],
+                trjs.bindingsUser[i][BINDALT],
+                trjs.bindingsUser[i][BINDSHIFT],
+                trjs.bindingsUser[i][BINDSUPL]);
+            var s = trjs.bindingsUser[i][BINDSUPL];
+            return s ? (s + ' ' + m + ' ' + k) : (m + ' ' + k);
+        }
+    }
+    return trjs.messgs.nokeyfor + funame;
 };
 
 trjs.keys.toHtml = function () {
@@ -1534,11 +1550,11 @@ trjs.keys.functions = {
     "goCheck": [ trjs.check.goCheck, 'Check all file', null],
     "hideDiv": [ trjs.editor.hideDiv, trjs.messgs.ctrlbin85, null],
     "htmlSave": [ trjs.io.htmlSave, trjs.messgs.shiftbin115, null],
-    "insertBlankLine": [ trjs.events.insertBlankLineAndRedraw, trjs.messgs.ctrlbin73, null],
-    "insertBlankLineLoc": [ trjs.events.insertBlankLineLocAndRedraw, trjs.messgs.bin117, null],
-    "insertBlankLineLocBefore": [ trjs.events.insertBlankLineLocBeforeAndRedraw, trjs.messgs.shiftbin117, null],
-    "insertWithTime": [ trjs.events.insertWithTimeAndRedraw, trjs.messgs.ctrlbin77, null],
-    "insertWithTimeLoc": [ trjs.events.insertWithTimeLocAndRedraw, trjs.messgs.altbin117, null],
+    "insertBlankLine": [ trjs.events.insertBlankLineAndRedraw, trjs.messgs.insertBlankLine, null],
+    "insertBlankLineLoc": [ trjs.events.insertBlankLineLocAndRedraw, trjs.messgs.insertBlankLineLoc, null],
+    "insertBlankLineLocBefore": [ trjs.events.insertBlankLineLocBeforeAndRedraw, trjs.messgs.insertBlankLineLocBeforeAndRedraw, null],
+    "insertWithTime": [ trjs.events.insertWithTimeAndRedraw, trjs.messgs.insertWithTime, null],
+    "insertWithTimeLoc": [ trjs.events.insertWithTimeLocAndRedraw, trjs.messgs.insertWithTimeLoc, null],
     "italics": [ trjs.keys.italics, trjs.messgs.ctrlaltbin117, null],
     "joinLine": [ trjs.events.joinLine, trjs.messgs.ctrlbin74, null],
     "joinLineLoc": [ trjs.events.joinLineLoc, trjs.messgs.ctrlaltbin74, null],

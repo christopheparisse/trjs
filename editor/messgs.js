@@ -520,17 +520,18 @@ trjs.messgs_eng = {
     cannotdelete: "Impossible to delete a line here. New metadata could be inserted only before Dublin Core section.",
     cannotlast: 'Impossible to delete last line.',
 
-    int1: "Play/Pause: TAB",
-    int1bis: "Mark time and go next line: ENTER",
-    int2: "Set beginning of line to current time: F4",
-    int3: "Set end of line to current time: F5",
-    int4: "Insert a blank line: F6",
-    int5: "Play current line: F7",
-    int6: "Start playing continuously: F8",
+    int1: "Play/Pause",
+    int1bis: "Mark time and go next line",
+    int2: "Set beginning of line to current time",
+    int3: "Set end of line to current time",
+    int4: "Insert a blank line",
+    int5: "Play current line",
+    int6: "Start playing continuously",
     iconzoomin: "Zoom in",
     iconzoomout: "Zoom out",
     buttonpageleft: "Previous page",
     buttonpageright: "Next page",
+    nokeyfor: "no key for ",
 
     intp1: "Open transcription: Ctrl O",
     intp2: "Open media: Ctrl Alt O",
@@ -579,7 +580,7 @@ trjs.messgs_eng = {
     bin114: "Jump formwards a little bit", // F3
     bin115: "Set the beginning of the line to the current time", // F4
     bin116: "Set the end of the line to the current time", // F5
-    bin117: "Insert a blank line with current locutor", // F6
+    insertBlankLineLoc: "Insert a blank line with current locutor", // F6
 
     ctrlbin49: "Set line as 1st locutor", // Ctrl 1
     ctrlbin50: "Set line as 2nd locutor", // Ctrl 2
@@ -595,10 +596,10 @@ trjs.messgs_eng = {
     ctrlbin36: "Move to the begining of file", // Ctrl Home
     ctrlbin68: "Delete current line", // Ctrl D
     ctrlbin71: "Insert the start of a div", // Ctrl G
-    ctrlbin73: "Insert an empty line", // Ctrl I
+    insertBlankLine: "Insert an empty line", // Ctrl I
     ctrlbin74: "Join the current line with the next one", // Ctrl J
     ctrlbin76: "Go to line number", // Ctrl L
-    ctrlbin77: "Store time to end of current main line and begining of next line and jumps to next line", // Ctrl M
+    insertWithTime: "Store time to end of current main line and begining of next line and jumps to next line", // Ctrl M
     ctrlbin79: "Open a transcription", // Ctrl O
     ctrlbin82: "Duplicate current line", // Ctrl R
     ctrlbin83: "Save the current file", // Ctrl S
@@ -656,7 +657,7 @@ trjs.messgs_eng = {
     altbin40: "Go down to the next main line", // Alt Down
     altbin113: "Reduce the size of the media", // Alt F2
     altbin114: "Increase the size of the media", // Alt F3
-    altbin117: "Insert any empty line begining at the current time and with the current locutor information", // Alt F6
+    insertWithTimeLoc: "Insert any empty line begining at the current time and with the current locutor information", // Alt F6
 
     playContinuous: "Start playing continuously starting from the current line", // F8
     playPauseCurrent: "Play/pause and go if necessary to the current position in the transcription", // Shift F9
@@ -674,7 +675,7 @@ trjs.messgs_eng = {
 
 //	shiftbin114: "Specific function (trjs.keys.special1)" , // Shift F3
     shiftbin115: "Local save in HTML format", // Shift F4
-    shiftbin117: "Insert a blank line with current locutor before the current line", // shift F6
+    insertBlankLineLocBeforeAndRedraw: "Insert a blank line with current locutor before the current line", // shift F6
 
     api0: "Front closed unrounded vowel English see, Spanish sí, French vite, German mi.e.ten, Italian visto",
     api1: "(small capital I) Front closed unrounded vowel, but somewhat more centralised and relaxed English city, German mit",
@@ -1294,17 +1295,18 @@ trjs.messgs_fra = {
     cannotdelete: "Impossible de supprimer une ligne ici. Une nouvelle métadonnée ne peut être supprimée qu'après la section Dublin Core section seulement.",
     cannotlast: 'Impossible de supprimer la dernière ligne.',
 
-    int1: "Lecture simple/Pause: TAB",
+    int1: "Lecture simple/Pause",
     int1bis: "Marquer le temps et passer à la ligne suivante: ENTER",
     int2: "Saisir le temps de début: F4",
     int3: "Saisir le temps de fin: F5",
     int4: "Insérer une ligne vide: F6",
-    int5: "Lecture de la ligne courante: F7",
+    int5: "Lecture de la ligne courante",
     int6: "Lecture continue: F8",
     iconzoomin: "Zoom +",
     iconzoomout: "Zoom -",
     buttonpageleft: "Page précédente",
     buttonpageright: "Page suivante",
+    nokeyfor: "pas de clé pour ",
 
     intp1: "Ouvrir une transcription: Ctrl O",
     intp2: "Ouvrir un média: Ctrl Alt O",
@@ -1353,7 +1355,7 @@ trjs.messgs_fra = {
     bin114: "Aller en avant", // F3
     bin115: "Alignement du début de l'énoncé avec le temps courant", // F4
     bin116: "Alignement de la fin de l'énoncé avec le temps courant", // F5
-    bin117: "Insertion d'une nouvelle ligne avec le locuteur courant ", // F6
+    insertBlankLineLoc: "Insertion d'une nouvelle ligne avec le locuteur courant ", // F6
 
     ctrlbin49: "Rappel du 1er locuteur", // Ctrl 1
     ctrlbin50: "Rappel du 2nd locuteur", // Ctrl 2
@@ -1369,10 +1371,10 @@ trjs.messgs_fra = {
     ctrlbin36: "Aller au début du fichier", // Ctrl Home
     ctrlbin68: "Supprimer la ligne courante", // Ctrl D
     ctrlbin71: "Créer une division du texte (séquence ou saynète)", // Ctrl G
-    ctrlbin73: "Insérer une ligne vide", // Ctrl I
+    insertBlankLine: "Insérer une ligne vide", // Ctrl I
     ctrlbin74: "Joindre deux lignes (ligne courante et la suivante)", // Ctrl J
     ctrlbin76: "Aller au numéro de ligne...", // Ctrl L
-    ctrlbin77: "Marquer le temps de fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante", // Ctrl M
+    insertWithTime: "Marquer le temps de fin de la ligne courante principale et le temps de début de la suivante et sauter à la ligne suivante", // Ctrl M
     ctrlbin79: "Ouvrir une transcription", // Ctrl O
     ctrlbin82: "Dupliquer la ligne courante", // Ctrl R
     ctrlbin83: "Sauvegarder", // Ctrl S
@@ -1429,7 +1431,7 @@ trjs.messgs_fra = {
     altbin40: "Aller à la ligne principale suivante", // Alt Down
     altbin113: "Réduire la taille de la vidéo", // Alt F2
     altbin114: "Agrandir la taille de la vidéo", // Alt F3
-    altbin117: "Insérer une ligne vide sous un locuteur en notant le temps courant", // Alt F6
+    insertWithTimeLoc: "Insérer une ligne vide sous un locuteur en notant le temps courant", // Alt F6
 
     playContinuous: "Lecture continue à partir de la ligne courante", // F8
     playPauseCurrent: "Lecture/stop et va si nécessaire à l'endroit où le curseur est situé", // Shift F9
@@ -1447,7 +1449,7 @@ trjs.messgs_fra = {
 
 //	shiftbin114: "specific function (trjs.keys.special1)" , // Shift F3
     shiftbin115: "Sauvegarde locale au format HTML", // Shift F4
-    shiftbin117: "Inserer une ligne blanche au dessus de la ligne courante", // shift F6
+    insertBlankLineLocBeforeAndRedraw: "Inserer une ligne blanche au dessus de la ligne courante", // shift F6
 
     api0: "Voyelle antérieure fermée non arrondie English see, Spanish sí, French vite, German mi.e.ten, Italian visto",
     api1: "Voyelle quasi-antérieure non arrondie ",
@@ -1839,13 +1841,13 @@ trjs.messgs_init = function () {
     $('#preplace').attr('title', trjs.messgs.inforeplace);
     $('#fdownload').attr('title', trjs.messgs.infodownload);
 
-    $('#t1').attr('title', trjs.messgs.int1);
-    $('#t1bis').attr('title', trjs.messgs.int1bis);
-    $('#t2').attr('title', trjs.messgs.int2);
-    $('#t3').attr('title', trjs.messgs.int3);
-    $('#t4').attr('title', trjs.messgs.int4);
-    $('#t5').attr('title', trjs.messgs.int5);
-    $('#t6').attr('title', trjs.messgs.int6);
+    $('#t1').attr('title', trjs.messgs.int1 + ': ' + trjs.keys.funToKeyString("playTab"));
+    $('#t1bis').attr('title', trjs.messgs.int1bis + ': ' + trjs.keys.funToKeyString("enter"));
+    $('#t2').attr('title', trjs.messgs.int2 + ': ' + trjs.keys.funToKeyString("setStart"));
+    $('#t3').attr('title', trjs.messgs.int3 + ': ' + trjs.keys.funToKeyString("setEnd"));
+    $('#t4').attr('title', trjs.messgs.int4 + ': ' + trjs.keys.funToKeyString("insertBlankLineLoc"));
+    $('#t5').attr('title', trjs.messgs.int5 + ': ' + trjs.keys.funToKeyString("playCurrentLine"));
+    $('#t6').attr('title', trjs.messgs.int6 + ': ' + trjs.keys.funToKeyString("playContinuous"));
     $('#iconzoomin').attr('title', trjs.messgs.iconzoomin);
     $('#iconzoomout').attr('title', trjs.messgs.iconzoomout);
     $('#button-page-left').attr('title', trjs.messgs.buttonpageleft);

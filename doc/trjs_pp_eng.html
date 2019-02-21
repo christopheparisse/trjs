@@ -23,7 +23,7 @@
     <div id="menu2">
         <span><a href="#install"><i class="fa fa-download pl fa-5x"></i><br/>Install</a></span>
         <span><a href="#features"><i class="fa fa-laptop pl fa-5x"></i><br/>Main features</a></span>
-        <span><a href="#03"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Open a transcript</a></span>
+        <span><a href="#opentrs"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Open a transcript</a></span>
         <span><a href="#04"><i class="fa fa-file-movie-o pl fa-5x"></i><br/>Open a media</a></span>
         <span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Basic editing</a></span>
         <span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Transcription commands</a></span>
@@ -92,10 +92,23 @@
         For Linux systems, it is necessary to install starting from the sources. Java and FFMPEG should be installed
         separately.
         These library are necessary for file import/export and for wave visualisation and media conversion.
+        Some system libraries have to be added, if not present already:
+        sudo apt-get install libxext-dev libxtst-dev libxkbfile-dev
+        All this can be done with the following commands:
+    <pre>
+        sudo apt-get update
+        sudo apt-get install nodejs npm
+        sudo apt-get install libxext-dev libxtst-dev libxkbfile-dev
+        sudo apt-get install ffmpeg
+    </pre>
     </p>
     <p>
         Sources are available here: http://www.github.com/christopheparisse/trjs/ or
         download the file called "trjs-version-NUMBER.zip". (NUMBER is the version name, for example, 0.7.4).
+        Or use git clone.
+    <pre>
+         git clone http://www.github.com/christopheparisse/trjs.git
+    </pre>
         Once the downloaded files are unzipped or after using git clone with github, please do:
     <pre>
 	npm install
@@ -110,6 +123,13 @@
     <pre>
 	npm run electron
 	</pre>
+    Starting the command sh buildlinux.sh
+    will create a folder named release which contains a folder nammed Trjs-linux-x64<br/>.
+    This folder can be move and renammed. It contains the executable file and all parameters.
+    It is only necessary to start the "Trjs" file in this folder to start TRJS.
+    If Trjs-linux-x64 is moved, the source folder can be removed.
+    Or it can be kept for updating the software. To do this, change git clone
+    for git pull origin and repeat the whole process.
 
     <h1 id="features">Main features of TRJS</h1>
     <hr/>
@@ -137,6 +157,7 @@
         <li>The <a href="#partition">partition</a>, horizontal representation of the transcription.</li>
         <li>The <a href="#commands">media commands</a>, playing buttons and time code setting.</li>
         <li>The <a href="#transcription">transcription</a>, where it is possible to edit the text.</li>
+        <li>Set of <a href="#toolbox">toolboxes</a> for quick access.</li>
     </ol>
     </p>
     <h2 id="menubar">The menubar</h2>
@@ -170,30 +191,30 @@
         it appears when the cursor is above the video and disappears after three seconds when playing the video.<br/>
         There are the following options:
     <ol>
-        <li>Revenir en arrière (3 secondes par défaut : valeur modifiable dans le menu
+        <li>Go backwards (3 seconds by default : can be changed in the menu
             <bl>PARAMETRES</bl>
-            ) ou raccourci clavier : <b>Alt ←</b> (ou <b>F2</b>)
+            ) ou keyboard shorcut: <b>Alt ←</b>
         </li>
-        <li>Lecture simple/pause</li>
-        <li>Barre de <b>déplacement</b> horizontal dans le média, avec <b>position</b> indiquée en <i>hh:mm:ss</i></li>
-        <li>Affichage du temps complet du média</li>
-        <li>Volume (option muet)</li>
-        <li>Plein écran ou raccourci clavier : <b>ESC</b> pour revenir à une taille miniature</li>
-        <li>Sauter en avant ou raccourci clavier : <b>Alt →</b> (ou <b>F3</b>)</li>
+        <li>Playing media/pause</li>
+        <li>Horizontal <b>displacement</b> bar in the media, with <b>position</b> indicator in <i>hh:mm:ss</i></li>
+        <li>Display of exact media time</li>
+        <li>Volume (mute option)</li>
+        <li>Full screen or keyboard shorcut: <b>ESC</b> to go back to normal view</li>
+        <li>Go forwards or keyboard shortcut: <b>Alt →</b></li>
     </ol>
     </p>
+    <p>The video field can be resized with keyboard shortcuts: Alt+F2 makes it smaller, Alt+F3 makes it larger</p>
 
-    <h2 id="0304">Signal</h2>
-    <p>Le signal est une représentation sonore du média dans son intensité (densité d'énergie acoustique) en fonction du
-        temps en secondes et de la fréquence en Hertz.</p>
+    <h2 id="signal">Wave</h2>
+    <p>The intensity wave is a visual representation of the sound according to time and intensity.</p>
     <img class="center" src="img/capture/i2.png" width="800"/><br/><br/>
 
-    <h2 id="0305">Partition</h2>
+    <h2 id="partition">Partition</h2>
     <p>La partition est une représentation horizontale de la transcription (verticale) qui permet de visualiser
         intuitivement les chevauchements des tours de parole des locuteurs.</p>
     <img class="center" src="img/capture/i4.png" width="800"/><br/><br/>
 
-    <h2 id="0306">Boutons média</h2>
+    <h2 id="commands">Boutons média</h2>
     <p>Autour du champ média (audio ou vidéo) sont déployés des boutons, associés à des raccourcis claviers.</p><br/>
     <img class="center" src="img/capture/i5.png" width="800"/><br/>
     <p>Lorsqu'on passe la souris sur une icône, une <b>bulle d'information</b> apparaît pour rappeler la fonction
@@ -259,26 +280,24 @@
         </tr>
     </table>
 
-    <h2 id="0307">Transcription</h2>
+    <h2 id="transcription">Transcription</h2>
     <p>La transcription orthographique du signal est éditée sous forme de tableau déroulable
         (la barre de défilement vertical se trouve sur la droite).<br/>
         Le tableau de transcription est une visualisation verticale éditable du texte.</p><br/>
 
     <img class="center" src="img/capture/i6.png" width="800"/><br/><br/>
 
-    <h2 id="0308">Barres d'outils</h2>
+    <h2 id="toolbox">Barres d'outils</h2>
     <img class="center" src="img/capture/i7.png" width="800"/><br/><br/>
     <p>Les barres d'outils permettent d'accéder très rapidement aux principales commandes d'édition. <br/>
         Chaque icône est également définie par un raccourci clavier,
         qui s'affiche au moyen d'une <b>infobulle</b> lorsqu'on passe la souris par dessus.<br/>
         On peut <b>rétrécir ou déplacer</b> les barres d'outils.</p>
 
-    <h1 id="03">Ouvrir une transcription </h1>
+    <h1 id="opentrs">Ouvrir une transcription </h1>
     <hr/>
-    <h2 id="0401">Create a new transcription</h2>
-    <p>Dans le menu
-        <bl>FICHIERS</bl>
-        , sélectionner <b>Nouvelle transcription</b>.
+    <h2>Create a new transcription</h2>
+    <p>In the menu <bl>FILES</bl>, select <b>New transcript</b>.
     </p>
     <br/>
     Une fenêtre s'ouvre alors pour vous demander de choisir le fichier média associé (audio ou vidéo).
@@ -353,7 +372,7 @@
 
     <h1 id="05">Edition de la transcription </h1>
     <hr/>
-    <h2 id="0601">Structure de la transcription</h2>
+    <h2>Structure de la transcription</h2>
     <p>La transcription orthographique du signal est éditée sous forme de tableau déroulable (la barre de défilement
         vertical se trouve sur la droite).<br/>
         Le tableau de transcription est une visualisation verticale éditable du texte.</p>
@@ -390,7 +409,7 @@
         (si possible c'est à dire si la transcription est liée temporellement)
         et le temps du média.
     </p></div>
-    <h2 id="0602">Transcribing</h2>
+    <h2>Transcribing</h2>
     <p>Put the cursor on a locutor line. If this line does not containt any starting time mark,
         use the media to choose the desired starting time and then hit F4, this will set the starting time.You can
         also edit directly the starting time in the first column after the speaker name.<br/>
@@ -435,7 +454,7 @@
     </ul>
     </p>
 
-    <h2 id="0603">Edition des locuteurs</h2>
+    <h2>Edition des locuteurs</h2>
     <p>Un <b>clic droit</b> sur le locuteur (colonne de droite) dans le tableau de transcription,
         permet de choisir le nom du locuteur ou la valeur de la tier à définir pour la ligne courante.</p>
     <img class="center" src="img/capture/i6.png" width="800px"/>
@@ -508,7 +527,7 @@
     </table>
     </p>
 
-    <h2 id="0604">Edition des valeurs temporelles</h2>
+    <h2>Edition des valeurs temporelles</h2>
     <p>Dans le tableau de transcription, il est possible d'éditer les valeurs temporelles de début et de fin en double
         cliquant sur la valeur à modifier.<br/>
         Un simple clic permet de visualiser le nombre de millisecondes.</p>
@@ -524,7 +543,7 @@
     </p>
     <p>Le chiffre de millisecondes à afficher est modifiable (de 0 à 3). Par défaut, on affiche 0 millisecondes.</p>
 
-    <h2 id="0605">Enregistrer la transcription (formats et conversions)</h2>
+    <h2>Enregistrer la transcription (formats et conversions)</h2>
     <p> Vous pouvez à tout moment <b>sauvegarder</b> la transcription en cours :
     <ul>
         <li>avec le raccourci clavier <b>Ctrl + S</b></li>
@@ -550,7 +569,7 @@
 
     <h1 id="06">Méthodes de transcription</h1>
     <hr/>
-    <h2 id="0701">Usages de transcription et commandes d'édition</h2>
+    <h2>Usages de transcription et commandes d'édition</h2>
 
 
     <p>La touche <b>Enter/Return</b> fonctionne de la manière suivante :<br/>
@@ -795,10 +814,10 @@
         <tr>
             <th>Raccourci clavier</th>
             <th> Fonctionnalité</th>
-            </td>
+        </tr>
         <tr>
             <th colspan="2">Commandes d'édition classiques</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + O</td>
             <td>Ouvrir un fichier</td>
@@ -829,7 +848,7 @@
         </tr>
         <tr>
             <th colspan="2">Commandes de déplacement</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + L</td>
             <td>Aller à un numéro de ligne</td>
@@ -868,7 +887,7 @@
         </tr>
         <tr>
             <th colspan="2">Commandes d'édition des alignements temporels</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + I</td>
             <td>Insérer une ligne vide</td>
@@ -889,7 +908,7 @@
         </tr>
         <tr>
             <th colspan="2">Commandes d'édition de la transcription</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + D</td>
             <td>Supprimer une ligne</td>
@@ -916,7 +935,7 @@
         </tr>
         <tr>
             <th colspan="2">Divisions du texte</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + G</td>
             <td>Créer une division du texte (séquence ou saynète)</td>
@@ -947,7 +966,7 @@
         </tr>
         <tr>
             <th colspan="2">Commandes média spécifiques</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + B <br/>(ou Alt + F4)</td>
             <td>Jouer le média plus lentement</td>

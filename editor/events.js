@@ -17,9 +17,9 @@ trjs.events = (function () {
     /**
      * modify the content of the nth td in a jQuery DOM tr element
      * @method lineSetCell
-     * @param pointer to a jQuery DOM tr element
-     * @param td index
-     * @param value of the td
+     * @param line pointer to a jQuery DOM tr element
+     * @param col td index
+     * @param value value of the td
      */
     function lineSetCell(line, col, value) {
         var tds = line.children();
@@ -30,9 +30,9 @@ trjs.events = (function () {
     /**
      * find the content of the nth td in a jQuery DOM tr element
      * @method lineGetCell
-     * @param pointer to a jQuery DOM tr element
-     * @param td index
-     * @return string of the td
+     * @param line pointer to a jQuery DOM tr element
+     * @param col td index
+     * @return string value of the td
      */
     function lineGetCell(line, col) {
         if (!line) {
@@ -48,9 +48,9 @@ trjs.events = (function () {
     /**
      * modify the html content of the nth td in a jQuery DOM tr element
      * @method lineSetCellHtml
-     * @param pointer to a jQuery DOM tr element
-     * @param td index
-     * @param value of the td
+     * @param line pointer to a jQuery DOM tr element
+     * @param col td index
+     * @param value value of the td
      */
     function lineSetCellHtml(line, col, value) {
         var tds = line.children();
@@ -61,9 +61,9 @@ trjs.events = (function () {
     /**
      * find the html content of the nth td in a jQuery DOM tr element
      * @method lineGetCellHtml
-     * @param pointer to a jQuery DOM tr element
-     * @param td index
-     * @return value of the td
+     * @param line pointer to a jQuery DOM tr element
+     * @param col td index
+     * @return string value of the td
      */
     function lineGetCellHtml(line, col) {
         if (!line) {
@@ -89,11 +89,11 @@ trjs.events = (function () {
      * find which cell of the transcript table is selected
      * @method getSelectedCell
      * @return pointer to a jQuery DOM tr element
-     */
     function getSelectedCell() {
         var sel = document.activeElement;
         return $(sel);
     }
+    */
 
     /**
      * find the next main line
@@ -116,7 +116,7 @@ trjs.events = (function () {
     /**
      * find the last tier after a main line
      * @method getLastTierline
-     * @param a line
+     * @param sel line
      * @return line
      */
     function getLastTierline(sel) {
@@ -1015,10 +1015,16 @@ trjs.events = (function () {
         var type = trjs.transcription.typeTier(sel);
         if (type === 'prop') sel = getPreviousMainline(sel);
         type = trjs.transcription.typeTier(sel);
-        if (type === 'div') type = 'main loc';
+        var loc;
+        if (type === 'div') {
+            type = 'main loc';
+            loc = '---';
+        } else {
+            loc = lineGetCell(nextline, trjs.data.CODECOL);
+        }
         var nl = getLastTierline(sel);
         var linenumber = trjs.transcription.getLine(nl);
-        createRowAfterWith(nl, type, '---', '', '', "");
+        createRowAfterWith(nl, type, loc, '', '', "");
         trjs.undo.insertLine(linenumber);
         $('.transcription', getLastTierline(sel).next()).focus();
         return getLastTierline(sel).next();
@@ -1639,7 +1645,7 @@ trjs.events = (function () {
          console.log('keyCode '+ e.keyCode);
          console.log('charCode '+ e.charCode);
          */
-        var charCode = (typeof e.which === undefined) ? e.keyCode : e.which;
+        var charCode = e.which; // (typeof e.which === undefined) ? e.keyCode : e.which;
         var keyptr = trjs.keys.modifiersEvent(charCode, e);
         // console.log("keydown", charCode, e.altKey?"alt":"", keyptr);
         if (enter !== true && charCode === 13) return false;

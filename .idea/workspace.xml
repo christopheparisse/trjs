@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildmacos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/buildmacos.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/trjs_pp.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/trjs_pp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/trjs_pp_eng.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/trjs_pp_eng.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/media.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/messgs.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/messgs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/opensave.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/opensave.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/params.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/params.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,81 +19,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
+    <splitter split-orientation="vertical" split-proportion="0.51704997">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="7293">
+                  <caret line="571" column="7" selection-start-line="571" selection-start-column="7" selection-end-line="571" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/doc/trjs_pp.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
-                  <caret line="38" selection-start-line="38" selection-end-line="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/editor/media.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="321">
-                  <caret line="680" column="25" selection-start-line="680" selection-start-column="8" selection-end-line="680" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/editor/events.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="2487" column="24" selection-start-line="2487" selection-start-column="24" selection-end-line="2487" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/editor/version.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="175">
-                  <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/editor/editor.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="424">
-                  <caret line="236" column="33" selection-start-line="236" selection-start-column="23" selection-end-line="236" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/editor/messgs.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="664" column="75" lean-forward="true" selection-start-line="664" selection-start-column="63" selection-end-line="664" selection-end-column="75" />
-                  <folding>
-                    <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/editor/opensave.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="172">
-                  <caret line="542" column="43" selection-start-line="542" selection-start-column="43" selection-end-line="542" selection-end-column="43" />
+                <state relative-caret-position="1717">
+                  <caret line="899" column="13" selection-start-line="899" selection-start-column="13" selection-end-line="899" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -107,8 +43,39 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="241">
-                  <caret line="1244" column="99" lean-forward="true" selection-start-line="1244" selection-start-column="99" selection-end-line="1244" selection-end-column="99" />
+                <state relative-caret-position="118">
+                  <caret line="316" column="71" lean-forward="true" selection-start-line="316" selection-start-column="71" selection-end-line="316" selection-end-column="71" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/editor/events.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="396">
+                  <caret line="1714" column="12" selection-start-line="1714" selection-start-column="12" selection-end-line="1714" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/editor/editor.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="394">
+                  <caret line="181" selection-start-line="181" selection-end-line="181" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="242">
+                  <caret line="528" column="37" selection-start-line="528" selection-start-column="37" selection-end-line="528" selection-end-column="37" />
+                  <folding>
+                    <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -120,8 +87,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/editor/messgs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="1437" column="79" selection-start-line="1437" selection-start-column="79" selection-end-line="1437" selection-end-column="79" />
+                <state relative-caret-position="384">
+                  <caret line="1851" column="61" lean-forward="true" selection-start-line="1851" selection-start-column="61" selection-end-line="1851" selection-end-column="61" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
@@ -131,10 +98,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/editor/media.js">
+            <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="183" column="26" selection-start-line="183" selection-start-column="26" selection-end-line="183" selection-end-column="26" />
+                <state relative-caret-position="3003">
+                  <caret line="314" column="78" selection-start-line="314" selection-start-column="74" selection-end-line="314" selection-end-column="78" />
                 </state>
               </provider>
             </entry>
@@ -152,25 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ctrlaltbin69</find>
-      <find>ctrlaltbin66</find>
-      <find>ctrlaltbin115</find>
-      <find>play</find>
-      <find>lente</find>
-      <find>normal</find>
-      <find>jouer</find>
-      <find>three</find>
-      <find>playslower</find>
-      <find>altbin118</find>
-      <find>bin119</find>
-      <find>&quot;play</find>
-      <find>ctrlaltbin116</find>
-      <find>playcu</find>
-      <find>cmdtab</find>
-      <find>bin112</find>
-      <find>startline</find>
-      <find>playCurrent</find>
-      <find>shiftTab</find>
       <find>currentline</find>
       <find>pt</find>
       <find>playcurrent</find>
@@ -182,6 +130,25 @@
       <find>tab(</find>
       <find>preservedPages</find>
       <find>nbversions</find>
+      <find>.int1</find>
+      <find>&lt;bl</find>
+      <find>tablekeys</find>
+      <find>toH</find>
+      <find>insertBlankLineLoc</find>
+      <find>enter(</find>
+      <find>loc =</find>
+      <find>bin117</find>
+      <find>ctrlbin73</find>
+      <find>shiftbin117insertBlankLineLocBeforeAndRedraw</find>
+      <find>shiftbin117</find>
+      <find>ctrlbin77</find>
+      <find>altbin117</find>
+      <find>int1</find>
+      <find>bindingsUser</find>
+      <find>funToKeyString</find>
+      <find>int2</find>
+      <find>int1bis</find>
+      <find>SAVE</find>
     </findStrings>
     <replaceStrings>
       <replace>.help</replace>
@@ -268,23 +235,23 @@
         <option value="$PROJECT_DIR$/html/media.html" />
         <option value="$PROJECT_DIR$/buildmacos.sh" />
         <option value="$PROJECT_DIR$/editor/opensave.js" />
-        <option value="$PROJECT_DIR$/doc/trjs_pp_eng.html" />
-        <option value="$PROJECT_DIR$/doc/trjs_pp.html" />
         <option value="$PROJECT_DIR$/editor/media.js" />
-        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
-        <option value="$PROJECT_DIR$/editor/messgs.js" />
-        <option value="$PROJECT_DIR$/editor/events.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/editor/version.js" />
         <option value="$PROJECT_DIR$/editor/params.js" />
+        <option value="$PROJECT_DIR$/doc/trjs_pp.html" />
+        <option value="$PROJECT_DIR$/doc/trjs_pp_eng.html" />
+        <option value="$PROJECT_DIR$/editor/events.js" />
+        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
+        <option value="$PROJECT_DIR$/editor/messgs.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="503" />
-    <option name="y" value="72" />
-    <option name="width" value="1553" />
-    <option name="height" value="1282" />
+    <option name="x" value="777" />
+    <option name="y" value="43" />
+    <option name="width" value="1463" />
+    <option name="height" value="1353" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -474,17 +441,20 @@
       <workItem from="1550358948179" duration="670000" />
       <workItem from="1550562871122" duration="4962000" />
       <workItem from="1550586825743" duration="7058000" />
+      <workItem from="1550649684468" duration="478000" />
+      <workItem from="1550663124974" duration="4561000" />
+      <workItem from="1550731499938" duration="8231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="393468000" />
+    <option name="totallyTimeSpent" value="406738000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="503" y="72" width="1553" height="1282" extended-state="0" />
+    <frame x="777" y="43" width="1463" height="1353" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44671533" visible="true" weight="0.17297651" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44671533" visible="true" weight="0.17059639" />
       <window_info id="Structure" order="1" sideWeight="0.55328465" side_tool="true" weight="0.19010212" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -505,13 +475,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44671533" visible="true" weight="0.17297651" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.44671533" visible="true" weight="0.11199365" />
       <window_info id="Structure" order="1" sideWeight="0.55328465" side_tool="true" weight="0.19010212" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.25839415" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2579832" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32964602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39970717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -800,63 +770,41 @@
     <entry file="file://$PROJECT_DIR$/doc/trjs_pp_2017.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
+    <entry file="file://$PROJECT_DIR$/editor/params.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+        <state relative-caret-position="245">
+          <caret line="233" column="29" lean-forward="true" selection-start-line="233" selection-start-column="29" selection-end-line="233" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/help.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4725">
-          <caret line="315" column="47" selection-start-line="301" selection-start-column="4" selection-end-line="315" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/media.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="680" column="25" selection-start-line="680" selection-start-column="8" selection-end-line="680" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/trjs_pp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="346">
+          <caret line="423" selection-start-line="423" selection-end-line="423" />
+          <folding>
+            <element signature="e#1292#1298#1" expanded="true" />
+            <element signature="e#1213#1219#1" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ol#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ol#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ol#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#ol#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#1;n#ol#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#2;n#ol#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/opensave.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
+        <state relative-caret-position="608">
           <caret line="542" column="43" selection-start-line="542" selection-start-column="43" selection-end-line="542" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
+    <entry file="file://$PROJECT_DIR$/editor/version.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="1244" column="99" lean-forward="true" selection-start-line="1244" selection-start-column="99" selection-end-line="1244" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="664" column="75" lean-forward="true" selection-start-line="664" selection-start-column="63" selection-end-line="664" selection-end-column="75" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="2487" column="24" selection-start-line="2487" selection-start-column="24" selection-end-line="2487" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -867,24 +815,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/version.js">
+    <entry file="file://$PROJECT_DIR$/editor/media.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="608">
+          <caret line="680" column="25" selection-start-line="680" selection-start-column="8" selection-end-line="680" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/params.js">
+    <entry file="file://$PROJECT_DIR$/doc/trjs_pp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="233" column="29" lean-forward="true" selection-start-line="233" selection-start-column="29" selection-end-line="233" selection-end-column="29" />
+        <state relative-caret-position="1717">
+          <caret line="899" column="13" selection-start-line="899" selection-start-column="13" selection-end-line="899" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7293">
+          <caret line="571" column="7" selection-start-line="571" selection-start-column="7" selection-end-line="571" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/editor/editor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="236" column="33" selection-start-line="236" selection-start-column="23" selection-end-line="236" selection-end-column="33" />
+        <state relative-caret-position="394">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="1714" column="12" selection-start-line="1714" selection-start-column="12" selection-end-line="1714" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="316" column="71" lean-forward="true" selection-start-line="316" selection-start-column="71" selection-end-line="316" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/messgs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="528" column="37" selection-start-line="528" selection-start-column="37" selection-end-line="528" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -23,7 +23,7 @@
     <div id="menu2">
         <span><a href="#install"><i class="fa fa-download pl fa-5x"></i><br/>Installer</a></span>
         <span><a href="#features"><i class="fa fa-laptop pl fa-5x"></i><br/>Organisation et description</a></span>
-        <span><a href="#03"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Ouvrir une transcription </a></span>
+        <span><a href="#opentrs"><i class="fa fa-file-text-o pl fa-5x"></i><br/>Ouvrir une transcription </a></span>
         <span><a href="#04"><i class="fa fa-file-movie-o pl fa-5x"></i><br/>Ouvrir un média </a></span>
         <span><a href="#05"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Commencer à transcrire</a></span>
         <span><a href="#06"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Commandes pour la transcription</a></span>
@@ -57,11 +57,43 @@
                 </li>
                 <li>
                     Les sources sont disponibles ici: http://www.github.com/christopheparisse/trjs/
-                    Une fois l'archive décompressée ou récupérée avec git clone, faire:
+                    ou avec
+                    <pre>
+                    git clone http://www.github.com/christopheparisse/trjs.git
+                    </pre>
+                    Attention: cette installation nécessite des préalables. Notamment,
+                    l'installation séparée de Node.js, NPM, Java, FFMPEG et FFPASTE.
+                    Il faut aussi ajouter des bibliothèques systèmes si elles ne sont pas présentes:
+                    sudo apt-get install libxext-dev libxtst-dev libxkbfile-dev
+                    Il est donc possible de faire les commandes suivantes:
+                    <pre>
+                    sudo apt-get update
+                    sudo apt-get install nodejs npm
+                    sudo apt-get install libxext-dev libxtst-dev libxkbfile-dev
+                    sudo apt-get install ffmpeg
+                    </pre>
+                    <br/>
+                    Une fois l'archive décompressée ou récupérée avec git clone, aller dans le
+                    répertoire créé et faire:
+                    <pre>
                     npm install
-                    npm start
-                    L'installation à partir des sources nécessite l'installation séparé de Node.js, NPM, Java,
-                    FFMPEG et FFPASTE.
+                	npm run gulp
+                    </pre>
+                    Le correcteur lexical doit être bien installé pour
+                    fonctionner et de fermer normalement le programme.
+                    Pour cela faire au moins une fois:<br/>
+                    <pre>npm run rebuild</pre>
+                    Pour lancer le programme une fois installé, il suffit de faire:
+                    <pre>
+                    npm run electron
+                    </pre>
+                    Lancer la commande sh buildlinux.sh
+                    va créer un répertoire nommé release qui contient un répertoire nommé Trjs-linux-x64<br/>.
+                    Ce dernier répertoire peut être déplacé et renommé. Il contient la command exécutable et tous les
+                    paramètres. Il suffit de lancer le fichier de nom "Trjs" dans ce dossier pour lancer TRJS.
+                    Si le Trjs-linux-x64 est déplacé, le répertoire contenant les sources peut être effacé.
+                    Sinon il peut être conservé pour les mises à jour futures. Pour ce faire, remplacer git clone
+                    par la commande git pull origin et répéter le processus.
                 </li>
             </ul>
         </ul>
@@ -118,29 +150,31 @@
 
     <h1 id="features">Organisation et description de TRJS</h1>
     <hr/>
-    <h2 id="0301">Lancer TRJS</h2>
+    <h2>Lancer TRJS</h2>
     <p>Il suffit de faire double-clic sur l'icone du programme.</p>
     <p>Il est possible d'associer le programme à un type de fichier. Dans ce cas,
         il est conseillé d'utiliser l'extension .trjs pour les noms de fichiers pour éviter
         la confusion avec les fichiers d'extension .xml. L'utilisation de l'extension .xml
         ou .tei_corpo.xml reste tout à fait autorisée.</p>
 
-    <h2 id="0301">Présentation de la fenêtre TRJS</h2>
+    <h2>Présentation de la fenêtre TRJS</h2>
     <p>Après avoir lancé TRJS, le programme s'ouvre sur la fenêtre principale.<br/>
         Cette fenêtre s'articule en différentes parties, comme découpées ci-dessous:
-        <img class="center" src="img/capture/i1.png" width="800" alt="TRJS image" /><br/>
+        <img class="center" src="img/capture/fra-i1.png" width="800" alt="TRJS image"/><br/>
     <ol>
-        <li>La <a href="#0302">barre de menus</a>, avec accès aux paramètres et fonctionnalités.</li>
-        <li>Le <a href="#0303">champ média</a>, encadré des <a href="#0308">barres d'outils</a> pour l'édition de la
+        <li>La <a href="#menubar">barre de menus</a>, avec accès aux paramètres et fonctionnalités.</li>
+        <li>Le <a href="#mediafield">champ média</a>, encadré des <a href="#0308">barres d'outils</a> pour l'édition de
+            la
             transcription.
         </li>
-        <li>Le <a href="#0304">signal</a>, représentation sonore du média.</li>
-        <li>La <a href="#0305">partition</a>, représentation horizontale de la transcription.</li>
-        <li>Les <a href="#0306">commandes média</a>, boutons de lecture et d'édition de la transcription.</li>
-        <li>La <a href="#0307">transcription</a>, où on peut éditer notre texte.</li>
+        <li>Le <a href="#signal">signal</a>, représentation sonore du média.</li>
+        <li>La <a href="#partition">partition</a>, représentation horizontale de la transcription.</li>
+        <li>Les <a href="#commands">commandes média</a>, boutons de lecture et d'édition de la transcription.</li>
+        <li>La <a href="#transcription">transcription</a>, où on peut éditer notre texte.</li>
+        <li>Fenetres <a href="#toolbox">d'outils</a> d'accès rapide.</li>
     </ol>
     </p>
-    <h2 id="0302">La barre de menu : l'accès aux paramètres</h2>
+    <h2 id="menubar">La barre de menu : l'accès aux paramètres</h2>
     <p>La barre de menu est composée d'encarts cliquables :<br/><br/>
         <img class="center" src="img/capture/i2.png" width="800"/><br/><br/>
         L'onglet
@@ -168,7 +202,7 @@
     </p>
 
 
-    <h2 id="0303">Champ média</h2>
+    <h2 id="mediafield">Champ média</h2>
     <p>Le champ média contient la vidéo et/ou l'audio.</p><br/><br/>
     <img class="center" src="img/capture/imed.png" width="800"/><br/><br/>
     <p>La barre de lecture est propre au média (et dépendante du navigateur utilisé),
@@ -177,7 +211,7 @@
     <ol>
         <li>Revenir en arrière (3 secondes par défaut : valeur modifiable dans le menu
             <bl>PARAMETRES</bl>
-            ) ou raccourci clavier : <b>Alt ←</b> (ou <b>F2</b>)
+            ) ou raccourci clavier : <b>Alt ←</b>
         </li>
         <li>Lecture simple/pause</li>
         <li>Barre de <b>déplacement</b> horizontal dans le média, avec <b>position</b> indiquée en <i>hh:mm:ss</i>
@@ -185,27 +219,27 @@
         <li>Affichage du temps complet du média</li>
         <li>Volume (option muet)</li>
         <li>Plein écran ou raccourci clavier : <b>ESC</b> pour revenir à une taille miniature</li>
-        <li>Sauter en avant ou raccourci clavier : <b>Alt →</b> (ou <b>F3</b>)</li>
+        <li>Sauter en avant ou raccourci clavier : <b>Alt →</b></li>
     </ol>
     </p>
+    <p>La taille de la vidéo peut-être modifiée avec des raccourcis clavier : Alt+F2 plus petit, Alt+F3 plus grand</p>
 
-    <h2 id="0304">Signal</h2>
-    <p>Le signal est une représentation sonore du média dans son intensité (densité d'énergie acoustique) en
-        fonction du temps en secondes et de la fréquence en Hertz.</p>
+    <h2 id="signal">Signal</h2>
+    <p>Le signal est une représentation du média sonore dans son intensité en
+        fonction du temps en secondes.</p>
     <img class="center" src="img/capture/i2.png" width="800"/><br/><br/>
 
-    <h2 id="0305">Partition</h2>
+    <h2 id="partition">Partition</h2>
     <p>La partition est une représentation horizontale de la transcription (verticale) qui permet de visualiser
         intuitivement les chevauchements des tours de parole des locuteurs.</p>
     <img class="center" src="img/capture/i4.png" width="800"/><br/><br/>
 
-    <h2 id="0306">Boutons média</h2>
+    <h2 id="commands">Boutons média</h2>
     <p>Autour du champ média (audio ou vidéo) sont déployés des boutons, associés à des raccourcis claviers.</p>
     <br/>
     <img class="center" src="img/capture/i5.png" width="800"/><br/>
     <p>Lorsqu'on passe la souris sur une icône, une <b>bulle d'information</b> apparaît pour rappeler la fonction
-        principale de l'icône,
-        ainsi que son raccourci clavier associé.</p><br/>
+        principale de l'icône, ainsi que son raccourci clavier associé.</p><br/>
     <table>
         <tr>
             <th>Icône</th>
@@ -267,21 +301,21 @@
         </tr>
     </table>
 
-    <h2 id="0307">Transcription</h2>
+    <h2 id="transcription">Transcription</h2>
     <p>La transcription orthographique du signal est éditée sous forme de tableau déroulable
         (la barre de défilement vertical se trouve sur la droite).<br/>
         Le tableau de transcription est une visualisation verticale éditable du texte.</p><br/>
 
     <img class="center" src="img/capture/i6.png" width="800"/><br/><br/>
 
-    <h2 id="0308">Barres d'outils</h2>
+    <h2 id="toolbox">Barres d'outils</h2>
     <img class="center" src="img/capture/i7.png" width="800"/><br/><br/>
     <p>Les barres d'outils permettent d'accéder très rapidement aux principales commandes d'édition. <br/>
         Chaque icône est également définie par un raccourci clavier,
         qui s'affiche au moyen d'une <b>infobulle</b> lorsqu'on passe la souris par dessus.<br/>
         On peut <b>rétrécir ou déplacer</b> les barres d'outils.</p>
 
-    <h1 id="03">Ouvrir une transcription </h1>
+    <h1 id="opentrs">Ouvrir une transcription </h1>
     <hr/>
     <h2 id="0401">Créer une nouvelle transcription</h2>
     <p>Dans le menu
@@ -791,9 +825,10 @@
             <th>Raccourci clavier</th>
             <th> Fonctionnalité</th>
             </td>
+        </tr>
         <tr>
             <th colspan="2">Commandes d'édition classiques</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + O</td>
             <td>Ouvrir un fichier</td>
@@ -824,7 +859,6 @@
         </tr>
         <tr>
             <th colspan="2">Commandes de déplacement</th>
-            </td>
         <tr>
             <td>Ctrl + L</td>
             <td>Aller à un numéro de ligne</td>
@@ -863,7 +897,7 @@
         </tr>
         <tr>
             <th colspan="2">Commandes d'édition des alignements temporels</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + I</td>
             <td>Insérer une ligne vide</td>
@@ -884,7 +918,7 @@
         </tr>
         <tr>
             <th colspan="2">Commandes d'édition de la transcription</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + D</td>
             <td>Supprimer une ligne</td>
@@ -911,7 +945,7 @@
         </tr>
         <tr>
             <th colspan="2">Divisions du texte</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + G</td>
             <td>Créer une division du texte (séquence ou saynète)</td>
@@ -942,7 +976,7 @@
         </tr>
         <tr>
             <th colspan="2">Commandes média spécifiques</th>
-            </td>
+        </tr>
         <tr>
             <td>Ctrl + B <br/>(ou Alt + F4)</td>
             <td>Jouer le média plus lentement</td>
