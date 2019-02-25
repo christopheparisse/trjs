@@ -263,7 +263,9 @@ trjs.keys.init = function () {
     trjs.keys.skipModifierKey.push(nkey('ctrl'));
     trjs.keys.skipModifierKey.push(nkey('alt'));
     trjs.keys.skipModifierKey.push(nkey('caps lock'));
-    trjs.keys.skipModifierKey.push(nkey('cmd'));
+//    trjs.keys.skipModifierKey.push(nkey('cmd'));
+    trjs.keys.skipModifierKey.push(nkey('left window key'));
+    trjs.keys.skipModifierKey.push(nkey('right window key'));
 };
 
 trjs.keys.colorRed = function () {
@@ -337,6 +339,7 @@ trjs.keys.updateKCCtrl = function(element)
 {
     var val = element.target.checked;
     trjs.keys.kc.ctrl = val;
+    trjs.keys.kc.meta = val;
     trjs.keys.kc.changed = true;
 }
 trjs.keys.updateKCAlt = function(element)
@@ -412,7 +415,7 @@ trjs.keys.validateKey = function(kc, nth) {
     trjs.keys.keyChanging[nth].ctrl = kc.ctrl;
     trjs.keys.keyChanging[nth].alt = kc.alt;
     trjs.keys.keyChanging[nth].shift = kc.shift;
-//    trjs.keys.keyChanging[nth].meta = kc.meta;
+    trjs.keys.keyChanging[nth].meta = kc.meta;
     trjs.keys.keyChanging[nth].supl = kc.supl;
 
     if (trjs.keys.keyChanging[nth].key !== trjs.keyToName[NOKEY]) {
@@ -434,7 +437,7 @@ trjs.keys.validateKey = function(kc, nth) {
                 trjs.keys.keyChanging[k].ctrl = false;
                 trjs.keys.keyChanging[k].alt = false;
                 trjs.keys.keyChanging[k].shift = false;
-//                trjs.keys.keyChanging[k].meta = false;
+                trjs.keys.keyChanging[k].meta = false;
                 trjs.keys.keyChanging[k].supl = '';
                 //console.log("replace key", k);
             }
@@ -1077,8 +1080,8 @@ trjs.keyToName = {
     89: "y",
     90: "z",
     91: "left window key",
-    92: "right window key",
-    93: "select key",
+    93: "right window key",
+    // 93: "select key",
     96: "numpad 0",
     97: "numpad 1",
     98: "numpad 2",
@@ -1567,6 +1570,8 @@ trjs.keys.functions = {
     "openMedia": [ trjs.editor.openMedia, trjs.messgs.ctrlaltbin79, null],
     "openTranscript": [ trjs.editor.openTranscript, trjs.messgs.ctrlbin79, null],
     "forwardStep": [ trjs.media.forwardStep, trjs.messgs.altbin39, null],
+    "pageLeft": [ trjs.partition.pageleft, "go one page left", null],
+    "pageRight": [ trjs.partition.pageright, "go one page right", null],
     "pageDown": [ trjs.events.pageDown, trjs.messgs.bin34, null],
     "pageUp": [ trjs.events.pageUp, trjs.messgs.bin33, null],
 
@@ -1628,6 +1633,8 @@ trjs.keys.functions = {
     "undoList": [ trjs.undo.undoList, "display undo/redo list", null],
     "zoomGlobalIn": [ trjs.editor.zoomGlobalIn, trjs.messgs.ctrlbin120, null],
     "zoomGlobalOut": [ trjs.editor.zoomGlobalOut, trjs.messgs.ctrlbin119, null],
+    "zoomIn": [ trjs.dmz.zoomIn, "zoom in wave and partition", null],
+    "zoomOut": [ trjs.dmz.zoomOut, "zoom out wave and partition", null],
 
     "api.key(9)": [ function () { trjs.api.key(9); }, trjs.api.desc(9), trjs.api.keyValue(9)], // Alt 0 et Alt @
     "api.key(6)": [ function () { trjs.api.key(6); }, trjs.api.desc(6), trjs.api.keyValue(6)], // Alt 2

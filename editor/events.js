@@ -488,7 +488,7 @@ trjs.events = (function () {
         lineSetCell(sel, trjs.data.VTECOL, trjs.transcription.formatTime(t));
         trjs.undo.replaceTE(l, prev, t);
         // redraw wave if possible
-        setSelectedLine(sel);
+        // setSelectedLine(sel);
         // flash the number so that a feedback is seen
         lineNotify(sel, trjs.data.VTECOL, 'cyan');
         trjs.check.checkOverlap(sel);
@@ -1015,16 +1015,12 @@ trjs.events = (function () {
         var type = trjs.transcription.typeTier(sel);
         if (type === 'prop') sel = getPreviousMainline(sel);
         type = trjs.transcription.typeTier(sel);
-        var loc;
         if (type === 'div') {
             type = 'main loc';
-            loc = '---';
-        } else {
-            loc = lineGetCell(nextline, trjs.data.CODECOL);
         }
         var nl = getLastTierline(sel);
         var linenumber = trjs.transcription.getLine(nl);
-        createRowAfterWith(nl, type, loc, '', '', "");
+        createRowAfterWith(nl, type, '---', '', '', "");
         trjs.undo.insertLine(linenumber);
         $('.transcription', getLastTierline(sel).next()).focus();
         return getLastTierline(sel).next();
@@ -1647,7 +1643,7 @@ trjs.events = (function () {
          */
         var charCode = e.which; // (typeof e.which === undefined) ? e.keyCode : e.which;
         var keyptr = trjs.keys.modifiersEvent(charCode, e);
-        // console.log("keydown", charCode, e.altKey?"alt":"", keyptr);
+        console.log("keydown", charCode, e.ctrlKey?"ctrl":"noctrl", e.altKey?"alt":"noalt", e.shiftKey?"shift":"noshift", e.metaKey?"meta":"nometa", keyptr);
         if (enter !== true && charCode === 13) return false;
         if (trjs.param.server !== 'electron') {
             var m = $('#openfile').data('bs.modal');
@@ -1712,8 +1708,8 @@ trjs.events = (function () {
         } else if (specialEvent2 === true) {
             specialEvent2 = false;
             var f = trjs.tablekeysSE2[keyptr];
-            //console.log("F= ", f);
-            //console.log("SE2 " + charCode + ' ' + keyptr + ' ' + f);
+            console.log("F= ", f);
+            console.log("SE2 " + charCode + ' ' + keyptr + ' ' + f.name);
             if (f !== undefined) {
                 e.preventDefault();
                 return f(e, trjs.data.selectedLine);
