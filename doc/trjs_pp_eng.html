@@ -456,9 +456,11 @@
             RETURN key but with inserting a new line.<br/>
             To set the begining, it is possible to set the desired time using the media or the wave, and using F4 will set the choosen time at 
             the begining of the current line.<br/>
-            F5 can do the same for the end time. To set the end time, it is possible to set the desired time using the media or the wave, and using F5 will set the choosen time at 
+            F5 can do the same for the end time. To set the end time, it is possible to set the desired time using the media
+            or the wave, and using F5 will set the choosen time at
             the end of the current line.<br/>
-            A selection on the wave file can be used to set the start and end time at once: makes a selection on the wave and do shift+left click on the selection. This will set the start 
+            A selection on the wave file can be used to set the start and end time at once: makes a selection on the wave
+            and do shift+left click on the selection. This will set the start
             and end time to the current line.<br/>
         </p>
         </div>
@@ -479,33 +481,28 @@
             </li>
             <li><b>Cancel</b> close the small window.</li>
         </ul>
-        <p>Ces valeurs sont des raccourcis vers les valeurs autorisées dans les entêtes de fichier,
-            renseignées au préalable. <br/>
-            Si le code choisi n'est pas défini dans les noms de personnes ou tiers autorisés,
-            le logiciel vous demande de changer la valeur et insère la valeur neutre "---".</p>
-        <p>Voir <a href="#locedit">Paramètres d'édition des locuteurs</a> pour insérer ou modifier les valeurs.</p>
+        <p>The values that can be inserted are defined in the speakers and tiers editing section.
+            See <a href="#locedit">Edition of speakers and tiers</a> to add or modify these values.
+            <br/>
+            You can directly edit the speaker column. If the code choosen is not predefined, the
+            software will ask about editing the speaker metadata. The "---" value
+            can be used as an undefined value but this value is not legal unless defined as such
+            in the metadata.</p>
 
-        <p>Pour définir et renseigner un nouveau participant, sélectionner dans le menu
-            <em>EDITION</em>
-            , l'onglet <b>Participants</b>.<br/>
-            Tout un ensemble de champs complémentaires est disponible pour fournir des informations sur un locuteur.
-        </p>
-
-        <p>Il est également possible d'inscrire directement un locuteur ou une tier enregistré au préalable à l'aide
-            d'un raccourci clavier :
+        <p>It is also possible to change the speaker or the tier quickly using a keyboard shortcut.
         </p>
         <table>
             <tr>
-                <th>Raccourcis clavier</th>
-                <th>Codage direct du locuteur</th>
+                <th>Keyboard shorcut</th>
+                <th>Corresponding code for the speaker or tier</th>
             </tr>
             <tr>
                 <td>Ctrl + 1</td>
-                <td>premier locuteur</td>
+                <td>First speaker (see order xxx)</td>
             </tr>
             <tr>
                 <td>Ctrl + 2</td>
-                <td>deuxième locuteur</td>
+                <td>Second speaker</td>
             </tr>
             <tr>
                 <td>...</td>
@@ -513,18 +510,18 @@
             </tr>
             <tr>
                 <td>Ctrl + 9</td>
-                <td>neuvième locuteur</td>
+                <td>Ninth speaker</td>
             </tr>
             <tr>
-                <th colspan='2'>Codage direct du tier (champ décrivant un énoncé)</th>
+                <th colspan='2'>Coding the secondary tiers</th>
             </tr>
             <tr>
                 <td>Ctrl + Alt + 1</td>
-                <td>première propriété des templates (tiers secondaires)</td>
+                <td>First property of secondary tiers (see order xxx)</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + 2</td>
-                <td>deuxième propriété</td>
+                <td>Second proprerty</td>
             </tr>
             <tr>
                 <td>...</td>
@@ -532,48 +529,41 @@
             </tr>
             <tr>
                 <td>Ctrl + Alt + 9</td>
-                <td>neuvième propriété</td>
+                <td>Ninth proprerty</td>
             </tr>
         </table>
         </div>
         <div id="edittemp">
-        <h2>Edition des valeurs temporelles</h2>
-        <p>Dans le tableau de transcription, il est possible d'éditer les valeurs temporelles de début et de fin en
-            double
-            cliquant sur la valeur à modifier.<br/>
-            Un simple clic permet de visualiser le nombre de millisecondes.</p>
-        <p>Il est possible de paramétrer le format d'affichage des données temporelles dans le menu
-            <em>PARAMETRES</em>:
+        <h2>Editing the linking values (start and end time)</h2>
+        <p>Most of the time, the linking values are set automatically using the RETURN key or the F4 and F5 keys (see xxx).
+            However, it is also possible to edit the number directly in the transcription by clicking
+            on the value to edit.<br/>
+            Also, all values are stored in millisecond precision. If the decimal values are not all visible, clicking
+            on the value makes them visible.</p>
+        <p>The display format of the time references can be changed in the <em>PARAMETRES</em> (menu Tools -> Parameters):
         </p>
         <ul>
-            <li>hms - segmentation lettrée</li>
-            <li>00:00 - n'affiche pas les heures</li>
-            <li>h:00:00 - indique explicitement le nombre d'heures</li>
-            <li>00:00:00 - par défaut</li>
+            <li>hms - segmentation delimited with three letters (hour, minute, second)</li>
+            <li>00:00 - display only minutes and seconds</li>
+            <li>h:00:00 - display hour, minute and seconds</li>
+            <li>00:00:00 - default display</li>
         </ul>
-        <p>Le chiffre de millisecondes à afficher est modifiable (de 0 à 3). Par défaut, on affiche 0 millisecondes.</p>
+        <p>The number of digits to display for the millisecondes can be adjusted (de 0 à 3). By defaut, no millisecondes are displayed.</p>
         </div>
         <div id="save">
-        <h2>Enregistrer la transcription (formats et conversions)</h2>
-        <p> Vous pouvez à tout moment <b>sauvegarder</b> la transcription en cours :</p>
+        <h2>Saving the transcription (formats and conversions)</h2>
+        <p><b>Save</b> is available at every moment:</p>
         <ul>
-            <li>avec le raccourci clavier <b>Ctrl + S</b></li>
-            <li>avec l'icône <i class="iconcur fa fa-save fa-lg"></i> situé dans la barre d'outils</li>
-            <li>ou en accédant dans le menu
-                <em>FICHIERS</em>
-                à l'encart <b>Enregistrer</b>.<br/></li>
+            <li>With the keyboard shortcut <b>Ctrl + S</b></li>
+            <li>With the icon <i class="iconcur fa fa-save fa-lg"></i> in the toolbar</li>
+            <li>Using the menu <em>FILES</em> and <b>Save</b>.</li>
         </ul>
-        <p>Vous pouvez <b>définir ou modifier l'emplacement</b> de votre fichier de transcription
-            en accédant à l'encart <b>Enregistrer sous...</b> du menu
-            <em>FICHIERS</em>
-            ,
-            et ainsi <b>renommer</b> votre fichier.
+        <p>Saving with another name or in another location is possible by using the menu 
+            <em>FILES</em> and <b>Save as...</b>.
         </p>
 
-        <p>Les options d'exports sont disponibles dans le menu
-            <em>OUTILS</em>
-            sous l'onglet <b>Export</b>.<br/>
-            Il est possible d'exporter la <b>totalité</b> du fichier ou seulement une <b>sélection</b>.
+        <p>Export options are available in the menu <em>FILES</em> and <b>Export</b>.<br/>
+            It is possible to export only a part of the file, using the global selection (see here xxx).
         </p>
         </div>
     </div>
