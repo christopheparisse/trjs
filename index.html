@@ -136,10 +136,10 @@
         <br/><div role="tabpanel">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist" id="myTab2">
-                <li role="presentation" class="active"><a href="#pssearch" aria-controls="ssearch" role="tab" data-toggle="tab"><span id="sssearch"> Recherche</span></a></li>
-                <li role="presentation"><a href="#pssearchrepl" aria-controls="ssearchrepl" role="tab" data-toggle="tab"><span id="ssearchrepl"> Remplace</span></a></li>
-                <li role="presentation"><a href="#psdisplay" aria-controls="sdisplay" role="tab" data-toggle="tab"><span id="sdisplay"> Affichage</span></a></li>
-                <li role="presentation"><a href="#psgoto" aria-controls="sgoto" role="tab" data-toggle="tab"><span id="sgoto"> Aller à</span></a></li>
+                <li role="presentation" id="npssearch" class="active"><a href="#pssearch" aria-controls="ssearch" role="tab" data-toggle="tab"><span id="sssearch"> Recherche</span></a></li>
+                <li role="presentation" id="npssearchrepl"><a href="#pssearchrepl" aria-controls="ssearchrepl" role="tab" data-toggle="tab"><span id="ssearchrepl"> Remplace</span></a></li>
+                <li role="presentation" id="npsdisplay"><a href="#psdisplay" aria-controls="sdisplay" role="tab" data-toggle="tab"><span id="sdisplay"> Affichage</span></a></li>
+                <li role="presentation" id="npsgoto"><a href="#psgoto" aria-controls="sgoto" role="tab" data-toggle="tab"><span id="sgoto"> Aller à</span></a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
@@ -309,7 +309,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="input-group">
-                                <input id="goline" type="search" class="form-control" placeholder="..." />
+                                <input id="goline" type="search" class="form-control" placeholder="..." onchange='trjs.editor.userGoLine();' />
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" onclick='trjs.editor.userGoLine();'><i class="fa fa-check" ></i></button>
                                 </span>
@@ -322,7 +322,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="input-group">
-                                <input id="gotime" type="search" class="form-control" placeholder="..." />
+                                <input id="gotime" type="search" class="form-control" placeholder="..." onchange='trjs.editor.userGoTime();' />
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" onclick='trjs.editor.userGoTime();'><i class="fa fa-check" ></i></button>
                                 </span>
@@ -824,7 +824,7 @@
         <a href='http://www.bnf.fr/fr/professionnels/formats_catalogage/a.f_dublin_core.html'><span id="infodc">(info about Dublin-Core)</span></a>
     </div><br/>
     <table class="paramtable" id="metadata" onkeydown="trjs.template.eventKeydownTMMeta(event);">
-        <thead><td class="textcell">Type</td><td class="textcell">Property</td><td class="textcell">Value</td><td class="textcell">Info</td></thead>
+        <thead><th class="textcell">Type</th><th class="textcell">Property</th><th class="textcell">Value</th><td class="textcell">Info</th></thead>
     </table>
 </div>
 <div id="template-bench" class="roundshadow hidetjs benchfull">
@@ -835,11 +835,11 @@
     </div><br/>
     <h4 id="maintiers-span" class="modal-title">Main tiers</h4>
     <table class="paramtable" id="template-code" onkeydown="trjs.template.eventKeydownTMCode(event);">
-        <thead><td class="textcell">Code</td><td class="textcell">Speaker's name</td><td class="textcell">Content</td><td class="textcell">Description</td></thead>
+        <thead><th class="textcell">Code</th><th class="textcell">Speaker's name</th><th class="textcell">Content</th><th class="textcell">Description</th></thead>
     </table>
     <h4 id="deptiers-span" class="modal-title">Dependent tiers and tier types</h4>
     <table class="paramtable" id="template-tier" onkeydown="trjs.template.eventKeydownTMTier(event);">
-        <thead><td class="textcell">Tier</td><td class="textcell">Type</td><td class="textcell">Parent</td><td class="textcell">Speaker's name</td><td class="textcell">Content</td><td class="textcell">Description</td></thead>
+        <thead><th class="textcell">Tier</th><th class="textcell">Type</th><th class="textcell">Parent</th><th class="textcell">Speaker's name</th><th class="textcell">Content</th><th class="textcell">Description</th></thead>
     </table>
 </div>
 <div id="participant-bench" class="roundshadow hidetjs benchfull">
@@ -849,7 +849,7 @@
         <h4 id="participant-span" class="modal-title">List of speakers</h4>
     </div><br/>
     <table class="paramtable" id="participant" onkeydown="trjs.template.eventKeydownParticipant(event);">
-        <thead><td class="textcell">ID</td><td class="textcell">Name</td><td class="textcell">Age</td></thead>
+        <thead><th class="textcell">ID</th><th class="textcell">Name</th><th class="textcell">Age</th></thead>
     </table>
 </div>
 <!--
@@ -867,7 +867,7 @@
                     <h4 id="participant-span" class="modal-title">List of participants</h4>
                 </div><br/>
                 <table class="paramtable" id="participant" onkeydown="trjs.template.eventKeydownParticipant(event);">
-                    <thead><td class="textcell">ID</td><td class="textcell">Name</td><td class="textcell">Age</td></thead>
+                    <thead><th class="textcell">ID</th><th class="textcell">Name</th><th class="textcell">Age</th></thead>
                 </table>
             </div>
             <div class="modal-footer">

@@ -296,7 +296,7 @@ trjs.template = (function () {
         s += "<tr><td>time subdivision</td></tr>";
         s += "<tr><td>symbolic subdivision</td></tr>";
         s += "<tr><td>included in</td></tr>";
-        s += "<tr><td>point</td></tr>";
+        s += "<tr><td>point</th></td>";
         s += "<tfoot><th data-cancel=1>Cancel</th></tfoot>";
         s += "</table>";
         if (eltDefTierType !== null) {
@@ -336,7 +336,7 @@ trjs.template = (function () {
      * @return : none
      */
     function loadMetadata() {
-        var s = '<thead><td class="textcell1">Type</td><td class="textcell2"><span id="mprop"></span></td><td class="textcell3"><span id="mval"></span></td><td class="textcell4">Information</td></thead>';
+        var s = '<thead><th class="textcell1">Type</th><th class="textcell2"><span id="mprop"></span></th><th class="textcell3"><span id="mval"></span></th><th class="textcell4">Information</th></thead>';
         s += '<tbody>';
         s += stringLine4Val('codeMetadata', '<span id="tytitle">-</span>', '-', '', '<span id="infotytitle">-</span>', 'writehalf');
         s += stringLine4Val('codeMetadata', 'Transcription', '<span id="tyname">-</span>', '', '<span id="infotyname">-</span>', 'readonly'); // put 'readonly' if edit the filename in metadata is not permitted anymore
@@ -563,15 +563,15 @@ trjs.template = (function () {
      * @param hdata data stored in memory
      */
     function initTableCodes(data) {
-        var s = '<thead><td class="textcell1">'
+        var s = '<thead><th class="textcell1">'
             + '<span id="initTCcode">' + trjs.messgs.codecode + '</span>'
-            + '</td><td class="textcell4">'
+            + '</th><th class="textcell4">'
             + '<span id="initTCspeaker">' + trjs.messgs.codespeaker + '</span>'
-            + '</td><td class="textcell6">'
+            + '</th><th class="textcell6">'
             + '<span id="initTCcontent">' + trjs.messgs.codecontent + '</span>'
-            + '</td><td class="textcell5">'
+            + '</th><th class="textcell5">'
             + '<span id="initTCdesc">' + trjs.messgs.codedesc + '</span>'
-            + '</td></thead>';
+            + '</th></thead>';
         s += '<tbody>';
         if (data.length < 1) {
             s += stringLineCodes('---', '', '', '');
@@ -598,19 +598,19 @@ trjs.template = (function () {
      * @param hdata data stored in memory
      */
     function initTableTiers(data) {
-        var s = '<thead><td class="textcell1">'
+        var s = '<thead><th class="textcell1">'
             + '<span id="initTTtier">' + trjs.messgs.tierstier + '</span>'
-            + '</td><td class="textcell2">'
+            + '</th><th class="textcell2">'
             + '<span id="initTTtype">' + trjs.messgs.tierstype + '</span>'
-            + '</td><td class="textcell3">'
+            + '</th><th class="textcell3">'
             + '<span id="initTTparent">' + trjs.messgs.tiersparent + '</span>'
-            + '</td><td class="textcell4">'
+            + '</th><th class="textcell4">'
             + '<span id="initTTspeaker">' + trjs.messgs.tiersspeaker + '</span>'
-            + '</td><td class="textcell6">'
+            + '</th><th class="textcell6">'
             + '<span id="initTTcontent">' + trjs.messgs.tierscontent + '</span>'
-            + '</td><td class="textcell5">'
+            + '</th><th class="textcell5">'
             + '<span id="initTTdesc">' + trjs.messgs.tiersdesc + '</span>'
-            + '</td></thead>';
+            + '</th></thead>';
         s += '<tbody>';
         if (data.length < 1) {
             s += stringLineTiers('---', '', '', '', '', '');
@@ -1214,17 +1214,17 @@ trjs.template = (function () {
      * @param hdata data stored in memory
      */
     function initTablePersons(data) {
-        var s = '<thead><td class="textcell2"><span id="personID">ID</span></td>'
-            + '<td class="textcell3"><span id="personname">Name</span></td>'
-            + '<td class="textcell4"><span id="personage">Age</span></td>';
-        s += '<td class="textcell5"><span id="personrole">Role</span></td>'
-            + '<td class="textcell6"><span id="personsex">Sex</span></td>'
-            + '<td class="textcell7"><span id="personlanguage">Lang</span></td>'
-            + '<td class="textcell8"><span id="persongroup">Group</span></td>';
-        s += '<td class="textcell9"><span id="personSES">SES</span></td>'
-            + '<td class="textcell10"><span id="personeduc">Education</span></td>'
-            + '<td class="textcell11"><span id="personsrc">Source</span></td>'
-            + '<td class="textcell12"><span id="personinfo">Information</span></td></thead>';
+        var s = '<thead><th class="textcell2"><span id="personID">ID</span></th>'
+            + '<th class="textcell3"><span id="personname">Name</span></th>'
+            + '<th class="textcell4"><span id="personage">Age</span></th>';
+        s += '<th class="textcell5"><span id="personrole">Role</span></th>'
+            + '<th class="textcell6"><span id="personsex">Sex</span></th>'
+            + '<th class="textcell7"><span id="personlanguage">Lang</span></th>'
+            + '<th class="textcell8"><span id="persongroup">Group</span></th>';
+        s += '<th class="textcell9"><span id="personSES">SES</span></th>'
+            + '<th class="textcell10"><span id="personeduc">Education</span></th>'
+            + '<th class="textcell11"><span id="personsrc">Source</span></th>'
+            + '<th class="textcell12"><span id="personinfo">Information</span></th></thead>';
         s += '<tbody>';
         if (data.length < 1)
             s += stringLine11Val('-', '---', '',

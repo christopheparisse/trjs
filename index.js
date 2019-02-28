@@ -500,9 +500,9 @@ function createMenu() {
                 {
                     label: 'Toggle Developer Tools', accelerator: (function () {
                     if (process.platform == 'darwin')
-                        return 'Alt+Command+Z';
+                        return 'Alt+Command+I';
                     else
-                        return 'Ctrl+Shift+Z';
+                        return 'Ctrl+Shift+I';
                 })(),
                     click: function (item, focusedWindow) {
                         if (focusedWindow)

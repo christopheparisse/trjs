@@ -8,10 +8,10 @@
         <br/><div role="tabpanel">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist" id="myTab2">
-                <li role="presentation" class="active"><a href="#pssearch" aria-controls="ssearch" role="tab" data-toggle="tab"><span id="sssearch"> Recherche</span></a></li>
-                <li role="presentation"><a href="#pssearchrepl" aria-controls="ssearchrepl" role="tab" data-toggle="tab"><span id="ssearchrepl"> Remplace</span></a></li>
-                <li role="presentation"><a href="#psdisplay" aria-controls="sdisplay" role="tab" data-toggle="tab"><span id="sdisplay"> Affichage</span></a></li>
-                <li role="presentation"><a href="#psgoto" aria-controls="sgoto" role="tab" data-toggle="tab"><span id="sgoto"> Aller à</span></a></li>
+                <li role="presentation" id="npssearch" class="active"><a href="#pssearch" aria-controls="ssearch" role="tab" data-toggle="tab"><span id="sssearch"> Recherche</span></a></li>
+                <li role="presentation" id="npssearchrepl"><a href="#pssearchrepl" aria-controls="ssearchrepl" role="tab" data-toggle="tab"><span id="ssearchrepl"> Remplace</span></a></li>
+                <li role="presentation" id="npsdisplay"><a href="#psdisplay" aria-controls="sdisplay" role="tab" data-toggle="tab"><span id="sdisplay"> Affichage</span></a></li>
+                <li role="presentation" id="npsgoto"><a href="#psgoto" aria-controls="sgoto" role="tab" data-toggle="tab"><span id="sgoto"> Aller à</span></a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
@@ -181,7 +181,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="input-group">
-                                <input id="goline" type="search" class="form-control" placeholder="..." />
+                                <input id="goline" type="search" class="form-control" placeholder="..." onchange='trjs.editor.userGoLine();' />
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" onclick='trjs.editor.userGoLine();'><i class="fa fa-check" ></i></button>
                                 </span>
@@ -194,7 +194,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="input-group">
-                                <input id="gotime" type="search" class="form-control" placeholder="..." />
+                                <input id="gotime" type="search" class="form-control" placeholder="..." onchange='trjs.editor.userGoTime();' />
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" onclick='trjs.editor.userGoTime();'><i class="fa fa-check" ></i></button>
                                 </span>

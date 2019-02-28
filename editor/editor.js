@@ -1586,6 +1586,14 @@ trjs.editor = (function () {
         showElements: showElements,
         showLine: function (e) {
             showSearch();
+            $('#npssearch').attr('class', '');
+            $('#npssearchrepl').attr('class', '');
+            $('#npsdisplay').attr('class', '');
+            $('#npsgoto').attr('class', 'active');
+            $('#pssearch').attr('class', 'tab-pane');
+            $('#pssearchrepl').attr('class', 'tab-pane');
+            $('#psdisplay').attr('class', 'tab-pane');
+            $('#psgoto').attr('class', 'tab-pane active');
             $('#goline').focus()
         },
         showMetadata: showMetadata,
@@ -1595,11 +1603,27 @@ trjs.editor = (function () {
         showParticipant: showParticipant,
         showSearch: function (e) {
             showSearch();
+            $('#npssearch').attr('class', 'active');
+            $('#npssearchrepl').attr('class', '');
+            $('#npsdisplay').attr('class', '');
+            $('#npsgoto').attr('class', '');
+            $('#pssearch').attr('class', 'tab-pane active');
+            $('#pssearchrepl').attr('class', 'tab-pane');
+            $('#psdisplay').attr('class', 'tab-pane');
+            $('#psgoto').attr('class', 'tab-pane');
             $('#search-elts').focus();
         },
         showTemplate: showTemplate,
         showTime: function (e) {
             showSearch();
+            $('#npssearch').attr('class', '');
+            $('#npssearchrepl').attr('class', '');
+            $('#npsdisplay').attr('class', '');
+            $('#npsgoto').attr('class', 'active');
+            $('#pssearch').attr('class', 'tab-pane');
+            $('#pssearchrepl').attr('class', 'tab-pane');
+            $('#psdisplay').attr('class', 'tab-pane');
+            $('#psgoto').attr('class', 'tab-pane active');
             $('#gotime').focus()
         },
         toggleInsert: toggleInsert,

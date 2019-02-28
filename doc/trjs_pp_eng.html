@@ -340,15 +340,14 @@
         <div id="h2media">
             <h2 id="media">Read a media</h2>
             <hr/>
-            <h3 id="0501">Load a media</h3>
+            <h3>Load a media</h3>
             <p>In the menu <em>FILES</em>, select <b>Choose a media</b>.
                 If there is problem with the media, then it is loaded and visible. <br/>
                 In case of problem, for example compatibility format, it can be necessary
                 to convert the media.
             </p>
 
-            <h2 id="0503">Using the media</h2>
-            <h3 id="050301">Reading functions</h3>
+            <h3>Using the media</h3>
             <p>Several functions and keyboard shortcuts are avalaible, each with its functionnalities and specificities:</p>
             <table>
                 <tr>
@@ -386,7 +385,13 @@
                     <td>Continuous reading, following the transcription</td>
                     <td>Playing starts from the current point or starts from the beginning of the current line
                         if the media is out of the bounds of the current line</td>
-            </table>
+                </tr>
+                <tr>
+                    <td>Escape</td>
+                    <td>Pause</td>
+                    <td>Stops playing the media</td>
+                </tr>
+                </table>
         </div>
     </div>
 
@@ -454,8 +459,8 @@
             To insert new lines in the middle of the transcription hit F6 as much as necessary to insert blank lines
             in advance. Or you can hit CTRL+M instead of the RETURN key. This will perform the same operation as the
             RETURN key but with inserting a new line.<br/>
-            To set the begining, it is possible to set the desired time using the media or the wave, and using F4 will set the choosen time at 
-            the begining of the current line.<br/>
+            To set the beginning, it is possible to set the desired time using the media or the wave, and using F4 will set the choosen time at 
+            the beginning of the current line.<br/>
             F5 can do the same for the end time. To set the end time, it is possible to set the desired time using the media
             or the wave, and using F5 will set the choosen time at
             the end of the current line.<br/>
@@ -559,10 +564,15 @@
             <li>Using the menu <em>FILES</em> and <b>Save</b>.</li>
         </ul>
         <p>Saving with another name or in another location is possible by using the menu 
-            <em>FILES</em> and <b>Save as...</b>.
+            <em>FILES</em> and <b>Save as...</b>. In the saveas window, it is possible
+            to choose to save in <b>another format</b> by choosing a format in the bottom
+            part of the saving window. Possible formats are Trjs files, XMl files (same format as Trjs),
+            Chat files, Praat files, Elan files and Transcriber files.
+            Trjs/XML is a TEI format.
         </p>
 
         <p>Export options are available in the menu <em>FILES</em> and <b>Export</b>.<br/>
+            It is possible to export the whole file or part of the file as video media (see here xxx).<br/>
             It is possible to export only a part of the file, using the global selection (see here xxx).
         </p>
         </div>
@@ -570,86 +580,83 @@
     <div id="h1transcribing">
         <h1 id="transcribing">Command for transcribing</h1>
         <hr/>
-        <h2>Usages de transcription et commandes d'édition</h2>
-
-
-        <p>La touche <b>Enter/Return</b> fonctionne de la manière suivante :</p>
+        <h2>Using the transcription and editing commands</h2>
+        <p>The keyboard key <b>Enter/Return</b> has a special behavior:</p>
         <ul>
-            <li><b>Alignement de la fin de l'énoncé avec le temps courant</b> puis <b>saut à la ligne suivante</b>.</li>
-            <li>Si on est en fin de fichier, alors insertion d'une ligne.</li>
+            <li><b>It sets the time of the media to the end of the current line</b> and <b>go to the next line</b>.
+            Also, the starting time of the next line becomes the same as the end time of the previous line. So
+            this makes it easy to create two consecutive lines.</li>
+            <li>If the software is at the end of the file, instead of going to the next line, 
+                it creates a new line and go to this line.</li>
         </ul>
         <p>
-            Cette touche permet de <b>réaligner des lignes déjà transcrites</b>,
-            son usage est principalement réservé au <b>réajustement du temps</b> d'un fichier déja transcrit. </p>
-        <p>La touche <b>Return/Entrée</b> correspond au raccourci clavier : <b>Ctrl + M</b>, accessible via l'icône <i
-                class="iconcur fa fa-outdent fa-lg"></i> de la barre d'outils.</p>
+            This makes it possible to <b>realign already transcibed lines</b>.
+            It is also possible to align a file that was imported from a text format, and thus not linked.
+            It jumps over any secondary lines so that only the main lines are linked.
+        </p>
         <br/>
-        <p>Certaines touches du clavier sont destinées à marquer les alignements temporels dans le tableau de
-            transcription:</p>
+        <p>Some keyboard shorcuts can be used to edit or link the transcription:</p>
         <table>
             <thead>
             <tr>
-                <th>Raccourcis clavier</th>
-                <th>Commandes d'édition</th>
+                <th>Keyboard shortcut</th>
+                <th>Edition commands</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Return (Entrée)</td>
-                <td>Fonction de remplacement (ou Ctrl + M), alignement de la fin de l'énoncé avec le temps courant puis
-                    saut
-                    à la ligne suivante; si on est en fin de fichier, alors insertion d'une ligne (ceci permet de
-                    réaligner
-                    des lignes déjà transcrites).
+                <td>Return (Enter)</td>
+                <td>Sets the time of the media to the end of the current line and to 
+                    the starting time of the next line and go to the next line (jump over 
+                    any secondary lines). Insert lines at the end of the file.
                 </td>
             </tr>
             <tr>
                 <td>F4</td>
-                <td>Alignement du début de l'énoncé avec le temps courant</td>
+                <td>Sets the time of the media to the beginning of the current line</td>
             </tr>
             <tr>
                 <td>F5</td>
-                <td>Alignement de la fin de l'énoncé avec le temps courant</td>
+                <td>Sets the time of the media to the end of the current line</td>
             </tr>
             <tr>
                 <td>F6</td>
-                <td>Création (insertion) d'une nouvelle ligne sous le curseur sans insérer d'élément temporel ni de
-                    locuteur
+                <td>Insertion of a new line without temporal or speaker information (jump over 
+                    any secondary lines)
                 </td>
             </tr>
             <tr>
                 <td>Alt + F6</td>
-                <td>Insérer une ligne vide sous un locuteur en notant le temps courant</td>
+                <td>Insert any empty line begining at the current time and with the current locutor information</td>
             </tr>
             <tr>
                 <td>Ctrl + I</td>
-                <td>Insérer une ligne vide</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Alt + I</td>
-                <td>Insérer une ligne vide avec le temps courant</td>
+                <td>Insert any empty line</td>
             </tr>
             <tr>
                 <td>Ctrl + M</td>
-                <td>Marquer le temps de la fin de la ligne courante principale et le temps de début de la suivante et
-                    sauter
-                    à la ligne suivante
+                <td>Insert any empty line begining at the current time and with the current locutor information (jump over 
+                any secondary lines)
                 </td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + M</td>
-                <td>Marquer le temps de la fin de la ligne courante et le temps de début de la suivante</td>
+                <td>Sets the time of the media to the end of the current line and to 
+                    the starting time of the next line and go to the next line</td>
             </tr>
             <tr>
                 <td>Ctrl + T</td>
-                <td>Aller au repère temporel</td>
+                <td>Open a window on top of application window that makes it possible
+                    to go a specific line or to a specific time.
+                </td>
             </tr>
             </tbody>
         </table>
-        <h2 id="0702">Commandes d'annulation</h2>
-        <h4>Annuler la dernère action</h4>
-        <p>La commande d'annulation (undo) annule la dernière action au moyen
-            du raccourci clavier <b>Ctrl Z</b>.</p>
+        <h2>Undo and redo</h2>
+        <h4>Undo the last command</h4>
+        <p>The undo command cancels the last line editing, time setting, line creation, deleting, etc.
+            It call be called through the menu <em>EDIT</em> and <em>Undo</em> or 
+            directly with the shortcut <b>Ctrl Z</b>.</p>
 
         <h4>Historique des dernières actions</h4>
         <p>En ouvrant le menu
@@ -657,16 +664,78 @@
             , puis <b>Undo</b>, on a accès à l'historique des dernières actions réalisées.
         </p>
 
-        <h4>Reproduire la dernière action</h4>
-        <p>Pour reproduire la dernière action (redo), le raccourci clavier est <b>Ctrl Y</b>.</p>
+        <h4>Redo the last command</h4>
+        <p>The redo command cancels the undo.
+                It call be called through the menu <em>EDIT</em> and <em>Redo</em> or 
+                directly with the shortcut <b>Shift Ctrl Z</b>.</p>
     </div>
     <div id="h1metadatatiers">
         <h1 id="metadatatiers">Speakers, Tiers, Persons, and Metadata</h1>
         <div id="h2locedit">
             <h2 id="locedit">Speaker and tiers edition (transcription structure)</h2>
-        </div>
+            <p>The edition of speaker codes and tier names can be accessed using the menus <em>Tools</em> and then <b>Tiers</b>.
+            </p>
+            <p>The data can be edited in a dedicated part of the window that appears on the top of the window. 
+                It is called <em>document structure</em> and contains two parts.</p>
+            <h3>Main tiers</h3>
+            <p>The main lines contains the most basic and the top level information in a transcription.
+                Often they consist of the orthographic transcription and 
+                they correspond to what speaker says. However, they are not necessarily speakers, and they
+                can take any type of value. 
+             </p>
+            <ul>
+                <li><em>Code</em>: This makes it possible to specific the <b>code</b> for the speakers. 
+                The codes are used to specify the speaker nature in all transcriptions. So the same code is 
+                used across various transcriptions so that multiple files can be easily queried.
+                Also the code provides information about the role of the speaker.
+                For example, for speakers who are children under study the code can be CHI. For speakers that are adult parents, it
+                can be MOT (for mother) or FAT (for father) or ADU (for adults). For observers, it can be OBS.
+                For general speaker, it can be SPK (this is the default value).
+                </li>
+                <li><em>Speaker's name</em>: Each code in a transcription can correspond to a unique speaker.
+                Speakers information are handled <a href="#h2personal">below</a>. The speaker's name allows to make the correspondance between
+                the code and the speaker.</li>
+                <li><em>Content</em>: This field can be used to give specific information about the code in this transcription.</li>
+                <li><em>Description</em>: This field can be used to general information about the code in general (all transcription).</li>
+            </ul>
+            <h3>Dependent tiers and tier types</h3>
+            <p>They makes it possible to specify information about secondary lines or 
+               about the nature of the main lines. </p>
+            <ul>
+                <li><em>Tier</em>: This is the name of the <b>code</b> for this type of tiers.</li>
+                <li><em>Type</em>: This describes the temporal or structural relation between the secondary line and its parent line.
+                    Relation can be: <em>symbolic association</em>, <em>time subdivision</em>, <em>symbolic subdivision</em>, <em>symbolic subdivision</em>, <em>point</em></li>
+                <li><em>Parent</em>: This is the code name of the parent line.</li>
+                <li><em>Speaker's name</em>: Each code in a transcription can correspond to a unique speaker.
+                Speakers information are handled <a href="#h2personal">below</a>. The speaker's name allows to make the correspondance between
+                the code and the speaker.</li>
+                <li><em>Content</em>: This field can be used to give specific information about the code in this transcription.</li>
+                <li><em>Description</em>: This field can be used to general information about the code in general (all transcription).</li>
+                </li>
+            </ul>
+    </div>
         <div id="h2personal">
             <h2>Editing personal information about the speakers</h2>
+            <p>The edition of speaker information can be accessed using the menus <em>Tools</em> and 
+                then <em>Other information</em> and then <b>Speaker data</b>.<br/>
+                The data can be edited in a dedicated part of the window that appears on the top of the window. 
+                It is called <em>List of speakers</em>. Each line corresponds to a speaker and can contain 11 different values.
+            </p>
+            <ul>
+                <li><em>ID</em>: This is general unique <b>id reference</b> that corresponds to this speaker only.</li>
+                <li><em>Name</em>: This is speaker's name allows to make the correspondance between
+                code and speaker.</li>
+                <li><em>Age</em>: Age of the speaker.</li>
+                <li><em>Role</em>: Rôle of the speaker (helps to specific the information provided by "code").</li>
+                <li><em>Sex</em>: Gender of the speaker: F, M, or X.</li>
+                <li><em>Language</em>: A two or three letter code.</li>
+                <li><em>Group</em>: Information for the corpus.</li>
+                <li><em>SES</em>: Socio Economic Status.</li>
+                <li><em>Education</em>: Education level.</li>
+                <li><em>Source</em>: Information for the corpus.</li>
+                <li><em>Information</em>: This field can be used to provide information unspecified in the fiels above about the speaker.</li>
+                </li>
+            </ul>
         </div>
         <div id="h2metadata">
             <h2>Metadata editing</h2>
@@ -692,492 +761,313 @@
     <div id="h1keyboard">
         <h1 id="keyboard">Keyboard features</h1>
         <hr/>
-        <h2 id="0801">Commandes d'édition</h2>
-        <p>TRJS est prévu pour la transcription et l'alignement rapide, et la manipulation intuitive de la vidéo/du son.
-            Il est optimisé pour être utilisé facilement (et complètement) depuis le clavier, sans nécessité d'utiliser
-            la
-            souris.</p>
-
-        <h3 id="080101">Commandes d'édition principales</h3>
+        <h2>Editing commands</h2>
+        <p>TRJS was created to help people to transcribe quickly. To improve this speed there are many
+            commands that can be accessed with shortcut keys to improve speed.
+        </p>
         <table>
             <tr>
-                <th>Raccourci clavier</th>
-                <th>Fonctionnalité</th>
+                <th>Keyboard shortcut</th>
+                <th>Function</th>
             </tr>
             <tr>
-                <th colspan="2">Commandes de lecture : Certaines touches du clavier sont destinées à manipuler le
-                    média
-                </th>
-            </tr>
-            <tr>
-                <td>F1</td>
-                <td>Lecture simple et pause</td>
-            </tr>
-            <tr>
-                <td>Tab</td>
-                <td>Lecture à partir du début de la ligne courante, pause (ou tabulation)</td>
-            </tr>
-            <tr>
-                <td>Alt + F1</td>
-                <td>Lecture à partir de l'endroit où le curseur est situé, pause</td>
-            </tr>
-            <tr>
-                <td>Shift + Tab</td>
-                <td>Lecture à partir du média, pause</td>
-            </tr>
-            <tr>
-                <td>Shift + F1</td>
-                <td>Lecture à partir du début de la ligne courante</td>
-            </tr>
-            <tr>
-                <td>Escape</td>
-                <td>Pause</td>
-            </tr>
-            <tr>
-                <td>Alt + &larr; <br/>(ou F2)</td>
-                <td>Revenir en arrière (3 secondes par défaut) <br/>(La valeur de retour en arrière ou de saut en avant
-                    est
-                    modifiable dans le tableau des paramètres.)
-                </td>
-            </tr>
-            <tr>
-                <td>Alt + &rarr; <br/>(ou F3)</td>
-                <td>Sauter en avant</td>
-            </tr>
-            <tr>
-                <td>Alt + F2</td>
-                <td>Agrandir la vidéo</td>
-            </tr>
-            <tr>
-                <td>Alt + F3</td>
-                <td>Rétrécir la vidéo</td>
-            </tr>
-            <tr>
-                <td>Alt + F4 <br/>(ou Ctrl + B)</td>
-                <td>Jouer la vidéo moins vite</td>
-            </tr>
-            <tr>
-                <td>Alt + F5 <br/>(ou Ctrl + E)</td>
-                <td>Jouer la vidéo plus vite</td>
-            </tr>
-            <tr>
-                <td>F7</td>
-                <td>Lecture de la ligne courante (où se situe le curseur dans la transcription)</td>
-            </tr>
-            <tr>
-                <td>Alt + F7</td>
-                <td>Lecture de la ligne courante, la ligne précédente et la suivante (3 lignes principales)</td>
-            </tr>
-            <tr>
-                <td>F8</td>
-                <td>Lecture continue (à partir de l'endroit où se situe le curseur)</td>
-            </tr>
-            <tr>
-                <th colspan="2">Commandes d'édition : Certaines touches du clavier sont destinées à marquer les
-                    alignements
-                    temporels dans le tableau de transcription
-                </th>
-            </tr>
-            <tr>
-                <td>Return (Entrée)</td>
-                <td>Si Return est en mode Remplacement (par défaut, ou Ctrl + M), alignement de la fin de l'énoncé avec
-                    le
-                    temps courant puis saut à la ligne suivante; si on est en fin de fichier, alors insertion d'une
-                    ligne
-                    (ce mode permet de réaligner des lignes déjà transcrites). <br/>Si Return est en mode Insertion (ou
-                    Alt
-                    + F6), insertion d'une ligne et notation du temps courant <br/>(Le comportement de Return peut être
-                    modifié dans le tableau des paramètres.)
-                </td>
-            </tr>
-            <tr>
-                <td>F4</td>
-                <td>Alignement du début de l'énoncé avec le temps courant</td>
-            </tr>
-            <tr>
-                <td>F5</td>
-                <td>Alignement de la fin de l'énoncé avec le temps courant</td>
-            </tr>
-            <tr>
-                <td>F6</td>
-                <td>Création (insertion) d'une nouvelle ligne sous le curseur sans insérer d'élément temporel ni de
-                    locuteur
-                </td>
-            </tr>
-            <tr>
-                <td>Alt + F6</td>
-                <td>Insérer une ligne vide sous un locuteur en notant le temps courant</td>
-            </tr>
-        </table>
-        <h3 id="080102">Edition par raccourcis des locuteurs et autres tiers</h3>
-        <table>
-            <tr>
-                <th>Raccourcis clavier</th>
-                <th>Codage direct du locuteur</th>
-            </tr>
-            <tr>
-                <td>Ctrl + 1</td>
-                <td>Premier locuteur</td>
-            </tr>
-            <tr>
-                <td>Ctrl + 2</td>
-                <td>Deuxième locuteur</td>
-            </tr>
-            <tr>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>Ctrl + 9</td>
-                <td>Neuvième locuteur</td>
-            </tr>
-            <tr>
-                <th colspan='2'>Codage direct du tier (champ décrivant un énoncé)</th>
-            </tr>
-            <tr>
-                <td>Ctrl + Alt + 1</td>
-                <td>Première propriété des templates (tiers secondaires)</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Alt + 2</td>
-                <td>Deuxième propriété</td>
-            </tr>
-            <tr>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Alt + 9</td>
-                <td>Neuvième propriété</td>
-            </tr>
-        </table>
-        <h3 id="080103">Commandes d'édition spécifiques</h3>
-        <table>
-            <tr>
-                <th>Raccourci clavier</th>
-                <th> Fonctionnalité</th>
-            </tr>
-            <tr>
-                <th colspan="2">Commandes d'édition classiques</th>
+                <th colspan="2">Main commands</th>
             </tr>
             <tr>
                 <td>Ctrl + O</td>
-                <td>Ouvrir un fichier</td>
+                <td>Open a transcription</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + O</td>
-                <td>Charger un média</td>
+                <td>Open or update the media</td>
             </tr>
             <tr>
                 <td>Ctrl + S</td>
-                <td>Sauvegarder</td>
+                <td>Save</td>
             </tr>
             <tr>
                 <td>Ctrl + F</td>
-                <td>Lancer une recherche</td>
-            </tr>
-            <tr>
-                <td>Ctrl + A</td>
-                <td>Tout sélectionnner</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Y</td>
-                <td>Reproduire la dernière action</td>
+                <td>Search</td>
             </tr>
             <tr>
                 <td>Ctrl + Z</td>
-                <td>Annuler la dernière action</td>
+                <td>Undo last action</td>
             </tr>
             <tr>
-                <th colspan="2">Commandes de déplacement</th>
+                <th colspan="2">Moving commands</th>
             </tr>
             <tr>
                 <td>Ctrl + L</td>
-                <td>Aller à un numéro de ligne</td>
+                <td>Go to line number</td>
             </tr>
             <tr>
                 <td>↑</td>
-                <td>Aller à la ligne précédente</td>
+                <td>Go to previous line</td>
             </tr>
             <tr>
                 <td>↓</td>
-                <td>Aller à la ligne suivante</td>
+                <td>Go to next line</td>
             </tr>
             <tr>
                 <td>Alt + ↑</td>
-                <td>Aller à la ligne principale précédente</td>
+                <td>Go to previous utterance</td>
             </tr>
             <tr>
                 <td>Alt + ↓</td>
-                <td>Aller à la ligne principale suivante</td>
+                <td>Go to next utterance</td>
             </tr>
             <tr>
-                <td>Page haut</td>
-                <td>Aller en haut de la page</td>
+                <td>Page up</td>
+                <td>Go back one page</td>
             </tr>
             <tr>
-                <td>Page bas</td>
-                <td>Aller en bas de la page</td>
+                <td>Page down</td>
+                <td>Go forward one page</td>
             </tr>
             <tr>
                 <td>Ctrl + Home</td>
-                <td>Aller au début du fichier</td>
+                <td>Go to top of file</td>
             </tr>
             <tr>
                 <td>Ctrl + End</td>
-                <td>Aller à la fin du fichier</td>
+                <td>Go to bottom of file</td>
             </tr>
             <tr>
-                <th colspan="2">Commandes d'édition des alignements temporels</th>
-            </tr>
-            <tr>
-                <td>Ctrl + I</td>
-                <td>Insérer une ligne vide</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Alt + I</td>
-                <td>Insérer une ligne vide avec le temps courant</td>
-            </tr>
-            <tr>
-                <td>Ctrl + M</td>
-                <td>Marquer le temps de la fin de la ligne courante principale et le temps de début de la suivante et
-                    sauter
-                    à la ligne suivante
-                </td>
-            </tr>
-            <tr>
-                <td>Ctrl + Alt + M</td>
-                <td>marquer le temps de la fin de la ligne courante et le temps de début de la suivante</td>
-            </tr>
-            <tr>
-                <th colspan="2">Commandes d'édition de la transcription</th>
+                <th colspan="2">Commands for editing the transcription</th>
             </tr>
             <tr>
                 <td>Ctrl + D</td>
-                <td>Supprimer une ligne</td>
+                <td>Delete a line</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + D</td>
-                <td>Supprimer une ligne et tous les tiers qui en dépendent</td>
+                <td>Delete a main line and secondary lines</td>
             </tr>
             <tr>
                 <td>Ctrl + J</td>
-                <td>Joindre deux lignes (ligne courante et la suivante)</td>
+                <td>Join two lines (current one and next one)</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + J</td>
-                <td>Joindre deux lignes sous un même locuteur</td>
+                <td>Join two utterances under the same speaker</td>
             </tr>
             <tr>
                 <td>Ctrl + R</td>
-                <td>Dupliquer une ligne</td>
+                <td>Duplicate a line</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + R</td>
-                <td>Scinder une ligne en deux (à l'endroit où se trouve le curseur) sans indication temporelle</td>
+                <td>Split a line in two (at the insertion point) without temporal indication</td>
             </tr>
             <tr>
-                <th colspan="2">Divisions du texte</th>
+                <th colspan="2">Division of the text</th>
             </tr>
             <tr>
                 <td>Ctrl + G</td>
-                <td>Créer une division du texte (séquence ou saynète)</td>
+                <td>Create a text division (sequence or saynète)</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + G</td>
-                <td>Marquer la fin d'une division</td>
+                <td>Mark the end of a division</td>
             </tr>
             <tr>
                 <td>Ctrl + Shift + G</td>
-                <td>Fermer toutes les divisions ouvertes</td>
+                <td>Close all open divisions</td>
             </tr>
             <tr>
                 <td>Ctrl + U</td>
-                <td>Cacher les divisions</td>
+                <td>Hide the division</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + U</td>
-                <td>Montrer les divisions cachées</td>
+                <td>Show the hidden division</td>
             </tr>
             <tr>
                 <td>Ctrl + Shift + 1</td>
-                <td>Marquer la ligne courante comme début d'une division</td>
+                <td>Set current line as start of a division</td>
             </tr>
             <tr>
                 <td>Ctrl + Shift + 2</td>
-                <td>Marquer la ligne courante comme fin d'une division</td>
+                <td>Set current line as end of a division</td>
             </tr>
             <tr>
-                <th colspan="2">Commandes média spécifiques</th>
+                <th colspan="2">Specific media commands</th>
             </tr>
             <tr>
                 <td>Ctrl + B <br/>(ou Alt + F4)</td>
-                <td>Jouer le média plus lentement</td>
+                <td>Play media more slowly</td>
             </tr>
             <tr>
                 <td>Ctrl + E <br/>(ou Alt + F5)</td>
-                <td>Jouer le média plus rapidemement</td>
-            </tr>
-            <tr>
-                <td>Ctrl + Alt + B</td>
-                <td>Lecture à l'envers</td>
+                <td>Play media faster</td>
             </tr>
             <tr>
                 <td>Ctrl + Alt + E</td>
-                <td>Lecture à un rythme normal</td>
+                <td>Play media at normal speed</td>
             </tr>
         </table>
-        <h2 id="0802">Insertion de caractères phonologiques</h2>
-        <p>TRJS permet d'insérer des caracatères API (pour le codage phonologique). <br/>
-            En général, faire :</p>
+        <h2>Insertion of phonological characters (API)</h2>
+        <p>TRJS makes it easy to insert API characters. <br/>
+        The key codes for the character insertion are based on the SAMPA coding scheme, using the ALT 
+        special character to indicate that we use SAMPA characters:</p>
         <ul>
-            <li>Alt + Caractère SAMPA ou</li>
-            <li>Alt + Shift + Caractère SAMPA.</li>
+            <li>Alt + SAMPA character or</li>
+            <li>Alt + Shift + SAMPA character.</li>
         </ul>
         <table>
             <tr>
-                <th>Raccourci clavier</th>
-                <th>Correspondance API</th>
+                <th>Keyboard shorcut</th>
+                <th>API character</th>
                 <th>Description</th>
             </tr>
             <tr>
                 <td>Alt + A</td>
                 <td>ɑ</td>
-                <td>Voyelle basse postérieure non arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + E</td>
-                <td>ɛ</td>
-                <td>Voyelle moyenne inférieure antérieure non arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + O</td>
-                <td>ɔ</td>
-                <td>Voyelle moyenne inférieure postérieure arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + 9</td>
-                <td>œ</td>
-                <td>Voyelle moyenne inférieure antérieure arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + 2</td>
-                <td>ø</td>
-                <td>Voyelle moyenne supérieure antérieure arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + @ (ou Alt + 0)</td>
-                <td>ə</td>
-                <td>Schwa</td>
-            </tr>
-            <tr>
-                <td>Alt + R</td>
-                <td>ʀ</td>
-                <td>Consonne roulée uvulaire voisée</td>
-            </tr>
-            <tr>
-                <td>Alt + S</td>
-                <td>ʃ</td>
-                <td>Consonne fricative post-alvéolaire sourde</td>
-            </tr>
-            <tr>
-                <td>Alt + Z</td>
-                <td>ʒ</td>
-                <td>Consonne fricative post-alvéolaire voisée</td>
-            </tr>
-            <tr>
-                <td>Alt + H</td>
-                <td>ɥ</td>
-                <td>Consonne spirante labio-palatale voisée</td>
-            </tr>
-            <tr>
-                <td>Alt + J</td>
-                <td>ɲ</td>
-                <td>Consonne occlusive nasale palatale voisée</td>
-            </tr>
-            <tr>
-                <td>Alt + N</td>
-                <td>ɳ</td>
-                <td>Consonne occlusive nasale rétroflexe voisée</td>
-            </tr>
-            <tr>
-                <td>Alt + Shift + N</td>
-                <td>ŋ</td>
-                <td>Consonne occlusive nasale vélaire voisée</td>
-            </tr>
-            <tr>
-                <td>Alt + T</td>
-                <td>θ</td>
-                <td>Consonne fricative dentale sourde</td>
-            </tr>
-            <tr>
-                <td>Alt + D</td>
-                <td>ð</td>
-                <td>Consonne injective alvéolaire voisée</td>
-            </tr>
-            <tr>
-                <td>Alt + I</td>
-                <td>ɪ</td>
-                <td>Voyelle haute inférieure antérieure non arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + Q</td>
-                <td>ɒ</td>
-                <td>Voyelle basse postérieure arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + V</td>
-                <td>ʌ</td>
-                <td>Voyelle moyenne inférieure postérieure non arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + U</td>
-                <td>ʊ</td>
-                <td>Voyelle haute inférieure postérieure arrondie</td>
-            </tr>
-            <tr>
-                <td>Alt + X</td>
-                <td>χ</td>
-                <td>Consonne fricative uvulaire sourde</td>
-            </tr>
-            <tr>
-                <td>Alt + :</td>
-                <td>ː</td>
-                <td>Long</td>
+                <td>('d' with no upper tail) Back open unrounded vowel English arm, US English law, standard French âme</td>
             </tr>
             <tr>
                 <td>Alt + Shift + A</td>
                 <td>ɑ̃</td>
-                <td>Voyelle nasale basse postérieure non arrondie</td>
+                <td>Front half open rounded nasal vowel French brun</td>
+            </tr>
+            <tr>
+                <td>Alt + C</td>
+                <td>ç</td>
+                <td>Voiceless palatal fricative Standard German Ich</td>
+            </tr>
+            <tr>
+                <td>Alt + D</td>
+                <td>ð</td>
+                <td>Voiced dental fricative English this</td>
+            </tr>
+            <tr>
+                <td>Alt + E</td>
+                <td>ɛ</td>
+                <td>Front half open unrounded vowel English bed, French même,German Herr, Männer, Italian ferro, Catalan mes, Spanish perro</td>
             </tr>
             <tr>
                 <td>Alt + Shift + E</td>
                 <td>ɛ</td>
-                <td>Voyelle nasale moyenne inférieure antérieure non arrondie</td>
+                <td>Front half closed unrounded nasal vowel brin</td>
             </tr>
             <tr>
-                <td>Alt + Shift + 9</td>
-                <td>œ̃</td>
-                <td>Voyelle nasale moyenne inférieure antérieure arrondie</td>
+                <td>Alt + G</td>
+                <td>ɣ</td>
+                <td>Voiced velar fricative Greek γάλα ('milk')</td>
+            </tr>
+            <tr>
+                <td>Alt + H</td>
+                <td>ɥ</td>
+                <td>Labial-palatal approximant French huit</td>
+            </tr>
+            <tr>
+                <td>Alt + I</td>
+                <td>ɪ</td>
+                <td>(small capital I) Front closed unrounded vowel, but somewhat more centralised and relaxed English city, German mit</td>
+            </tr>
+            <tr>
+                <td>Alt + J</td>
+                <td>ɲ</td>
+                <td>Voiced palatal fricative Standard Spanish ayuda</td>
+            </tr>
+            <tr>
+                <td>Alt + N</td>
+                <td>ɳ</td>
+                <td>Velar nasal English ring, Italian bianco, Tagalog ngayón</td>
+            </tr>
+            <tr>
+                <td>Alt + Shift + N</td>
+                <td>ŋ</td>
+                <td>Velar nasal vowel</td>
+            </tr>
+            <tr>
+                <td>Alt + O</td>
+                <td>ɔ</td>
+                <td>(c mirrored to the left) Back half open rounded vowel British English law, caught, Italian cosa, Catalan dona, Spanish ojo, German Wort</td>
             </tr>
             <tr>
                 <td>Alt + Shift + O</td>
                 <td>ɔ̃</td>
-                <td>Voyelle nasale moyenne inférieure postérieure arrondie</td>
+                <td>Back closed rounded nasal vowel French ton</td>
             </tr>
             <tr>
-                <td>Alt + Shift + Q</td>
-                <td>æ</td>
-                <td>Voyelle pré-ouverte antérieure non arrondie</td>
+                <td>Alt + Q</td>
+                <td>ɒ</td>
+                <td>('b' with no upper tail) Back open rounded vowel British English not, cough</td>
             </tr>
-        </table>
+            <tr>
+                <td>Alt + R</td>
+                <td></td>
+                <td>Uvular trill Standard German Reich</td>
+            </tr>
+            <tr>
+                <td>Alt + Shift + R</td>
+                <td>ʀ</td>
+                <td>Parisian R</td>
+            </tr>
+            <tr>
+                <td>Alt + S</td>
+                <td>ʃ</td>
+                <td>Voiceless postalveolar fricative English she, French chemin</td>
+            </tr>
+            <tr>
+                <td>Alt + T</td>
+                <td>θ</td>
+                <td>Voiceless dental fricative English thing, Castilian Spanish caza</td>
+            </tr>
+            <tr>
+                <td>Alt + U</td>
+                <td>ʊ</td>
+                <td>(turned down small capital Greek omega) Back closed rounded vowel somewhat more centralised and relaxed English put, (non-US)Buddhist</td>
+            </tr>
+            <tr>
+                <td>Alt + V</td>
+                <td>ʌ</td>
+                <td>(turned down v) Back half open unrounded vowel RP and US English run, enough</td>
+            </tr>
+            <tr>
+                <td>Alt + X</td>
+                <td>χ</td>
+                <td>voiceless uvular fricative</td>
+            </tr>
+            <tr>
+                <td>Alt + Z</td>
+                <td>ʒ</td>
+                <td>Voiced postalveolar fricative French jour, English pleasure</td>
+            </tr>
+            <tr>
+                <td>Alt + 2</td>
+                <td>ø</td>
+                <td>(slashed o) Front half closed rounded vowel French deux (hence '2'), German Höhle</td>
+            </tr>
+            <tr>
+                <td>Alt + 9</td>
+                <td>œ</td>
+                <td>(ligature oe) Front half open rounded vowel French neuf (hence '9'), German Hölle</td>
+            </tr>
+            <tr>
+                <td>Alt + Shift + 9</td>
+                <td>œ̃</td>
+                <td>Front half open rounded nasal vowel French brun</td>
+            </tr>
+            <tr>
+                <td>Alt + @ (ou Alt + 0)</td>
+                <td>ə</td>
+                <td>(turned down e) Schwa central neutral unrounded vowel English about, winner,German bitte</td>
+            </tr>
+            <tr>
+                <td>Alt + :</td>
+                <td>ː</td>
+                <td>Lengthening of vowel</td>
+            </tr>
+            </table>
     </div>
     <div id="h1params">
         <h1 id="parameters">Parameters and other features</h1>
         <hr/>
 
         <h2>Parameters</h2>
-        <p>In the menu <em>PARAMETERS</em>, the follwing parameters can be adjusted:
+        <p>In the menu <em>PARAMETERS</em>, the following parameters can be adjusted:
         </p>
         <table>
             <thead>
@@ -1209,117 +1099,115 @@
                 <td><em>DISPLAY</em></td>
             </tr>
             <tr>
-                <td>Affichage des numéros en début de ligne</td>
-                <td>Par défaut ils ne sont pas affichés</td>
+                <td>Display numbers at the begining of the lines</td>
+                <td>By default they are not displayed.</td>
                 <td><em>DISPLAY</em></td>
             </tr>
             <tr>
-                <td>Affichage des noms des participants</td>
-                <td>A la place des codes</td>
+                <td>Display speaker's names</td>
+                <td>Choose to display either the codes (by default) or the speaker's name in the first column of the transcription.</td>
                 <td><em>DISPLAY</em></td>
             </tr>
             <tr>
-                <td>Affichage des temps des alignements</td>
-                <td>C'est-à-dire les temps de début et de fin, coché par défaut</td>
+                <td>Display linking times</td>
+                <td>The start and end linking times are displayed by default, but they can be hidden also.</td>
                 <td><em>DISPLAY</em></td>
             </tr>
             <tr>
-                <td>Modes d'édition des zones d'affichage</td>
-                <td>3 modes sont disponibles : Libre, Contrôle (Standard), Bloqué</td>
+                <td>Editing modes</td>
+                <td>Three modes are available: Control (default), Free, Blocked.<br/>
+                    In the <b>free</b> mode, selection of the transcription/partitition and of the wave/media are independent.
+                    <u>This mode makes it easy it to move around the file and transcribe quickly random points in the file</u>. Control mode is more appropriate 
+                    for a continuous transcription.<br/>
+                    In the <b>block</b> mode, selection of the wave/media changes the position of the transcription and vice-versa.
+                    <u>This mode is especially useful to navigate in the file quickly, especially using the media controls.</u><br/>
+                    In the <b>control</b> mode, selection of the transcription changes the position of the wave, but the reserve is not true.
+                    <u>This makes is possible to easily change the linking time for a transcription, but also to easily access to the wave from the transcription.</u>
+                </td>
                 <td><em>EDITING</em></td>
             </tr>
             <tr>
-                <td>Réorganisation dynamique des lignes</td>
-                <td></td>
-                <td>Onglet
-                    <em>MODES D'EDITION</em>
-                </td>
+                <td>Dynamic reorganisation of the lines</td>
+                <td>Line are reorganized according to temporal values of the starting point.</td>
+                <td><em>EDITION MODES</em></td>
             </tr>
             <tr>
-                <td>Format pour les repères temporels</td>
-                <td>Renseigné par défaut en h:mm:ss</td>
-                <td>Onglet
-                    <em>REGLAGES</em>
-                </td>
+                <td>Format time values</td>
+                <td>By default h:mm:ss</td>
+                <td><em>SETTINGS</em></td>
             </tr>
             <tr>
-                <td>Nombre de chiffres pour les millisecondes</td>
-                <td>De 0 à 3</td>
-                <td>Onglet
-                    <em>REGLAGES</em>
-                </td>
+                <td>Number of digits (milliseconds) for time values</td>
+                <td>From 0 to 3</td>
+                <td><em>SETTINGS</em></td>
             </tr>
             <tr>
-                <td>Valeur de retour en arrière</td>
-                <td>(Pour le raccourci clavier : <img class="key" src="img/touches/computer_key_Alt_Left.png" alt="altleft"/> )
-                    en ms
+                <td>Time for jumping forwards</td>
+                <td>(For the keyboard shortcut: <img class="key" src="img/touches/computer_key_Alt_Left.png" alt="altleft"/> )
+                    value in milliseconds
                 </td>
-                <td>Onglet
-                    <em>REGLAGES</em>
-                </td>
+                <td><em>SETTINGS</em></td>
             </tr>
             <tr>
-                <td>Valeur de saut en avant</td>
-                <td>(Pour le raccourci clavier : <img class="key" src="img/touches/computer_key_Alt_Right.png" alt="altright"/>
-                    ) en ms
+                <td>Time for jumping forwards</td>
+                <td>(For the keyboard shortcut: <img class="key" src="img/touches/computer_key_Alt_Right.png" alt="altright"/>
+                    value in milliseconds
                 </td>
-                <td>Onglet
-                    <em>REGLAGES</em>
-                </td>
+                <td><em>SETTINGS</em></td>
             </tr>
             <tr>
-                <td>Vérification de la transcription lors de la sauvegarde</td>
-                <td>Coché par défaut</td>
-                <td>Onglet
-                    <em>VERIFICATION</em>
-                </td>
+                <td>Checking the transcription when saving the file</td>
+                <td>Done by default</td>
+                <td><em>CHECKING</em></td>
             </tr>
             <tr>
-                <td>Nombre de versions précédentes conservées lors de la sauvergarde</td>
-                <td>De 1 à 3</td>
-                <td>Onglet
-                    <em>VERIFICATION</em>
-                </td>
+                <td>Type of transcription format</td>
+                <td>Transcription format can be: CHAT (see CHILDES), TEI (see TEI for SPOKEN language), or NONE.<br/>
+                Chat format by default</td>
+                <td><em>CHECKING</em></td>
+            </tr>
+            <tr>
+                <td>Number of previous versions of the file kept before deleting them</td>
+                <td>From 1 to 3</td>
+                <td><em>CHECKING</em></td>
+            </tr>
+            <tr>
+                <td>Number of previous filenames kept in the list of recent files</td>
+                <td>From 1 to 10</td>
+                <td><em>CHECKING</em></td>
             </tr>
             </tbody>
         </table>
-        <p>Lorsqu'on passe la souris sur un paramètre, une <b>bulle d'information</b> apparaît pour rappeler sa <b>fonction
-            principale</b>,
-            ainsi que son raccourci clavier éventuel associé.</p>
-
-        <h2 id="0902">Outil de recherche</h2>
-        <p>L'onglet de recherche s'affiche sous forme de panneau. On y accède par plusieurs moyens :</p>
+        <h2>Search/locate</h2>
+        <p>The search/locate function are presented in a panel on the top of the main window.
+            Access is done:</p>
         <ul>
-            <li>en ouvrant le menu
-                <em>RECHERCHE</em>
-            </li>
-            <li>en cliquant sur l'icône <i class="iconcur fa fa-search fa-lg"></i> de la barre d'outils</li>
-            <li>via le raccourci clavier : <b>Ctrl F</b></li>
+            <li>using the keyboard shortcuts(<b>Ctrl F</b>, <b>Ctrl L</b>, <b>Ctrl T</b>)</li>
+            <li>or the menu <em>Tools</em> and <em>Search</em>.</li>
+            <li>or clicking of the icon <i class="iconcur fa fa-search fa-lg"></i> in the toolbar</li>
         </ul>
-        <p>Il est possible d'effectuer plusieurs types de recherche dans le fichier courant :</p>
+        <p>Several types of search can be done in the current file:</p>
         <ul>
-            <li><b>Rechercher</b> un mot ou une chaîne de caractères :</li>
+            <li><b>Searching</b> for a word or a character string:</li>
             <ul>
-                <li>dans le champ Locuteurs</li>
-                <li>dans le champ Transcription</li>
+                <li>in the Speakers field</li>
+                <li>in the Transcription</li>
             </ul>
-            <li><b>Remplacer</b> le résultat de la recherche</li>
-            <li><b>Montrer</b> les locuteurs ou les tiers :</li>
+            <li><b>Remplace</b> the result of the search</li>
+            <li><b>Display</b> some speakers or some tiers:</li>
             <ul>
-                <li>dans le champ Locuteurs (permet d'afficher seulement le locuteur/la tier sur laquelle on
-                    travaille)
+                <li>in the Speaker part (allows to display only some speaker or tier)
                 </li>
-                <li>dans le champ Transcription (permet d'afficher toutes les mentions d'un locuteur/une tier dans la
-                    transcription)
+                <li>in the Transcription (allows to display only lines with some pattern)
                 </li>
             </ul>
-            <li><b>Cacher</b> les locuteurs ou les tiers :</li>
+            <li><b>Hide</b> speakers or tiers:</li>
             <ul>
-                <li>dans le champ Locuteurs (permet de cacher les locuteurs/tiers désirés)</li>
-                <li>dans le champ Transcription</li>
+                <li>in the Speaker part (allows to hide some speaker or tier)</li>
+                <li>in the Transcription (allows to hide lines with some pattern)</li>
             </ul>
-            <li><b>Aller à un numéro de ligne</b> ou le raccourci clavier : <b>Ctrl L</b></li>
-            <li>Aller à un <b>repère temporel</b> ou le raccourci clavier : <b>Ctrl T</b></li>
+            <li><b>Go to a line number</b>, shortcut: <b>Ctrl L</b></li>
+            <li><b>Go to a specific time (in the linking information)</b>, shortcut: <b>Ctrl T</b></li>
         </ul>
     </div>
     <p><a href="#top"><i class="fa fa-arrow-circle-up"></i> Top of page</a></p>

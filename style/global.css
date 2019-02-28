@@ -269,6 +269,9 @@ table, th, td {
 table.paramtable td  {
 	border: 1px solid #D5D5D5;
 }
+table.paramtable th {
+	background-color: #084B8A; color: white;
+}
 table thead {background-color: #084B8A; color: white;}
 table tr.div {background-color: #EEE; color: #F0888A;}
 

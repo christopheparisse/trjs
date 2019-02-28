@@ -864,115 +864,6 @@ trjs.keys.initMacrosBindings = function() {
 };
 
 /**
- * structure containing the api keys
- */
-trjs.api = {};
-
-trjs.api.key = function (k) {
-    trjs.macros.replaceSelectedText(trjs.api.table[k][1]);
-    return true;
-};
-
-trjs.api.keyValue = function (k) {
-    return trjs.api.table[k][1];
-};
-
-trjs.api.desc = function (k) {
-    return trjs.api.table[k][2];
-};
-
-/**
- * full api list table
- */
-trjs.api.table = [
-
-// vowels
-    /* 0 */ ["i", "i", trjs.messgs.api0],
-    /* 1 */ ["I", "ɪ", trjs.messgs.api1],
-    /* 2 */ ["e", "e", trjs.messgs.api2],
-    /* 3 */ ["E", "ɛ", trjs.messgs.api3],
-    /* 4 */ ["{", "æ", trjs.messgs.api4],
-    /* 5 */ ["y", "y", trjs.messgs.api5],
-    /* 6 */ ["2", "ø", trjs.messgs.api6],
-    /* 7 */ ["9", "œ", trjs.messgs.api7],
-    /* 8 */ ["1", "i", trjs.messgs.api8],
-    /* 9 */ ["@", "ə", trjs.messgs.api9],
-    /* 10 */ ["6", "ɐ", trjs.messgs.api10],
-    /* 11 */ ["3", "ɜ", trjs.messgs.api11],
-    /* 12 */ ["a", "a", trjs.messgs.api12],
-    /* 13 */ ["}", "ʉ", trjs.messgs.api13],
-    /* 14 */ ["8", "ɵ", trjs.messgs.api14],
-    /* 15 */ ["&", "ɶ", trjs.messgs.api15],
-    /* 16 */ ["M", "ɯ", trjs.messgs.api16],
-    /* 17 */ ["7", "ɤ", trjs.messgs.api17],
-    /* 18 */ ["V", "ʌ", trjs.messgs.api18],
-    /* 19 */ ["A", "ɑ", trjs.messgs.api19],
-    /* 20 */ ["u", "u", trjs.messgs.api20],
-    /* 21 */ ["U", "ʊ", trjs.messgs.api21],
-    /* 22 */ ["o", "o", trjs.messgs.api22],
-    /* 23 */ ["O", "ɔ", trjs.messgs.api23],
-    /* 24 */ ["Q", "ɒ", trjs.messgs.api24],
-// consonants
-    /* 25 */ ["p", "p", trjs.messgs.api25],
-    /* 26 */ ["b", "b", trjs.messgs.api26],
-    /* 27 */ ["t", "t", trjs.messgs.api27],
-    /* 28 */ ["d", "d", trjs.messgs.api28],
-    /* 29 */ ["ts", "ts", trjs.messgs.api29],
-    /* 30 */ ["dz", "dz", trjs.messgs.api30],
-    /* 31 */ ["tS", "tʃ", trjs.messgs.api31],
-    /* 32 */ ["dZ", "dʒ", trjs.messgs.api32],
-    /* 33 */ ["c", "c", trjs.messgs.api33],
-    /* 34 */ ["J\\", "ɟ", trjs.messgs.api34],
-    /* 35 */ ["k", "k", trjs.messgs.api35],
-    /* 36 */ ["g", "ɡ", trjs.messgs.api36],
-    /* 37 */ ["q", "q", trjs.messgs.api37],
-    /* 38 */ ["p\\", "ɸ", trjs.messgs.api38],
-    /* 39 */ ["B", "β", trjs.messgs.api39],
-    /* 40 */ ["f", "f", trjs.messgs.api40],
-    /* 41 */ ["v", "v", trjs.messgs.api41],
-    /* 42 */ ["T", "θ", trjs.messgs.api42],
-    /* 43 */ ["D", "ð", trjs.messgs.api43],
-    /* 44 */ ["s", "s", trjs.messgs.api44],
-    /* 45 */ ["z", "z", trjs.messgs.api45],
-    /* 46 */ ["S", "ʃ", trjs.messgs.api46],
-    /* 47 */ ["Z", "ʒ", trjs.messgs.api47],
-    /* 48 */ ["C", "ç", trjs.messgs.api48],
-    /* 49 */ ["j", "ʝ", trjs.messgs.api49],
-    /* 50 */ ["x", "x", trjs.messgs.api50],
-    /* 51 */ ["G", "ɣ", trjs.messgs.api51],
-    /* 52 */ ["x\\", "ɰ", trjs.messgs.api52],
-    /* 53 */ ["X\\", "ħ", trjs.messgs.api53],
-    /* 54 */ ["?\\", "ʕ", trjs.messgs.api54],
-    /* 55 */ ["h", "h", trjs.messgs.api55],
-    /* 56 */ ["h\\", "ɦ", trjs.messgs.api56],
-    /* 57 */ ["m", "m", trjs.messgs.api57],
-    /* 58 */ ["F", "ɱ", trjs.messgs.api58],
-    /* 59 */ ["n", "n", trjs.messgs.api59],
-    /* 60 */ ["J", "ɲ", trjs.messgs.api60],
-    /* 61 */ ["N", "ŋ", trjs.messgs.api61],
-    /* 62 */ ["l", "l", trjs.messgs.api62],
-    /* 63 */ ["L", "ʎ", trjs.messgs.api63],
-    /* 64 */ ["5", "ɫ", trjs.messgs.api64],
-    /* 65 */ ["4", "ɾ", trjs.messgs.api65],
-    /* 66 */ ["r", "r", trjs.messgs.api66],
-    /* 67 */ ["r\\", "ɹ", trjs.messgs.api67],
-    /* 68 */ ["R", "ʁ", trjs.messgs.api68],
-    /* 69 */ ["P", "ʋ", trjs.messgs.api69],
-    /* 70 */ ["w", "w", trjs.messgs.api70],
-    /* 71 */ ["H", "ɥ", trjs.messgs.api71],
-    /* 72 */ ["j", "j", trjs.messgs.api72],
-// others
-    /* 73 */ [":", "ː", trjs.messgs.api73],
-    /* 74 */ ["~", "~", trjs.messgs.api74],
-    /* 75 */ ["~E", "ɛ̃", trjs.messgs.api75],
-    /* 76 */ ["~9", "œ̃", trjs.messgs.api76],
-    /* 77 */ ["~O", "ɔ̃", trjs.messgs.api77],
-    /* 78 */ ["~A", "ɑ̃", trjs.messgs.api78],
-    /* 79 */ ["^R", "ʀ", trjs.messgs.api79],
-];
-
-
-/**
  * variable containing the code for api characters without modificator
  * @enum apiChars
  var apiChars = {
@@ -1202,7 +1093,7 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("i"), true, false, false, 'ctrl', "", "insertBlankLine"]); // Ctrl I
     trjs.bindingsDef.push([nkey("j"), true, false, false, 'ctrl', "", "joinLine"]); // Ctrl J
     trjs.bindingsDef.push([nkey("l"), true, false, false, 'ctrl', "", "showLine"]); // Ctrl L
-    trjs.bindingsDef.push([nkey("m"), true, false, false, 'ctrl', "", "insertWithTime"]); // Ctrl M
+    trjs.bindingsDef.push([nkey("m"), true, false, false, 'ctrl', "", "insertWithTimeLoc"]); // Ctrl M
     trjs.bindingsDef.push([nkey("o"), true, false, false, 'ctrl', "", "openTranscript"]); // Ctrl O
     trjs.bindingsDef.push([nkey("r"), true, false, false, 'ctrl', "", "replicateLine"]); // Ctrl R
     trjs.bindingsDef.push([nkey("s"), true, false, false, 'ctrl', "", "save"]); // Ctrl S
@@ -1225,7 +1116,6 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("e"), true, true, false, 'ctrl', "", "goCheck"]); // Ctrl Alt E
     // trjs.bindingsDef.push([70, true, false, false, 'ctrl', "", "showSearch"]); // Ctrl F
     trjs.bindingsDef.push([nkey("g"), true, true, false, 'ctrl', "", "setDivMinusInsert"]); // Ctrl Alt G
-    trjs.bindingsDef.push([nkey("i"), true, true, false, 'ctrl', "", "setTimeReplaceLoc"]); // Ctrl Alt I
     if (trjs.utils.isWindows()) {
         trjs.bindingsDef.push([nkey("h"), true, true, false, 'ctrl', "", "joinLineLoc"]); // Ctrl Alt H
     } else {
@@ -1254,7 +1144,7 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("f1"), false, true, false, false, "", "playTab"]); // Alt F1
     trjs.bindingsDef.push([nkey("f2"), false, true, false, false, "", "makeSmall"]); // Alt F2
     trjs.bindingsDef.push([nkey("f3"), false, true, false, false, "", "makeBig"]); // Alt F3
-    trjs.bindingsDef.push([nkey("f6"), false, true, false, false, "", "insertWithTimeLoc"]); // Alt F6
+    trjs.bindingsDef.push([nkey("f6"), false, true, false, false, "", "insertWithTime"]); // Alt F6
     trjs.bindingsDef.push([nkey("f7"), false, true, false, false, "", "playThreeLines"]); // Alt F7
     trjs.bindingsDef.push([nkey("f11"), false, true, false, false, "", "sort"]); // Alt F11
     trjs.bindingsDef.push([nkey("f12"), false, true, false, false, "", "undoList"]); // Alt F12
@@ -1272,37 +1162,148 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("f9"), false, false, true, false, "", "playPauseCurrent"]); // Shift F9
 };
 
+/**
+ * structure containing the api keys
+ */
+trjs.api = {};
+
+trjs.api.key = function (k) {
+    trjs.macros.replaceSelectedText(trjs.api.table[k][1]);
+    return true;
+};
+
+trjs.api.keyValue = function (k) {
+    return trjs.api.table[k][1];
+};
+
+trjs.api.desc = function (k) {
+    return trjs.api.table[k][2];
+};
+
+/**
+ * full api list table
+ */
+trjs.api.table = [
+
+// vowels
+    /* 0 */ ["i", "i", trjs.messgs.api0],
+    /* 1 */ ["I", "ɪ", trjs.messgs.api1],
+    /* 2 */ ["e", "e", trjs.messgs.api2],
+    /* 3 */ ["E", "ɛ", trjs.messgs.api3],
+    /* 4 */ ["{", "æ", trjs.messgs.api4],
+    /* 5 */ ["y", "y", trjs.messgs.api5],
+    /* 6 */ ["2", "ø", trjs.messgs.api6],
+    /* 7 */ ["9", "œ", trjs.messgs.api7],
+    /* 8 */ ["1", "i", trjs.messgs.api8],
+    /* 9 */ ["@", "ə", trjs.messgs.api9],
+    /* 10 */ ["6", "ɐ", trjs.messgs.api10],
+    /* 11 */ ["3", "ɜ", trjs.messgs.api11],
+    /* 12 */ ["a", "a", trjs.messgs.api12],
+    /* 13 */ ["}", "ʉ", trjs.messgs.api13],
+    /* 14 */ ["8", "ɵ", trjs.messgs.api14],
+    /* 15 */ ["&", "ɶ", trjs.messgs.api15],
+    /* 16 */ ["M", "ɯ", trjs.messgs.api16],
+    /* 17 */ ["7", "ɤ", trjs.messgs.api17],
+    /* 18 */ ["V", "ʌ", trjs.messgs.api18],
+    /* 19 */ ["A", "ɑ", trjs.messgs.api19],
+    /* 20 */ ["u", "u", trjs.messgs.api20],
+    /* 21 */ ["U", "ʊ", trjs.messgs.api21],
+    /* 22 */ ["o", "o", trjs.messgs.api22],
+    /* 23 */ ["O", "ɔ", trjs.messgs.api23],
+    /* 24 */ ["Q", "ɒ", trjs.messgs.api24],
+// consonants
+    /* 25 */ ["p", "p", trjs.messgs.api25],
+    /* 26 */ ["b", "b", trjs.messgs.api26],
+    /* 27 */ ["t", "t", trjs.messgs.api27],
+    /* 28 */ ["d", "d", trjs.messgs.api28],
+    /* 29 */ ["ts", "ts", trjs.messgs.api29],
+    /* 30 */ ["dz", "dz", trjs.messgs.api30],
+    /* 31 */ ["tS", "tʃ", trjs.messgs.api31],
+    /* 32 */ ["dZ", "dʒ", trjs.messgs.api32],
+    /* 33 */ ["c", "c", trjs.messgs.api33],
+    /* 34 */ ["J\\", "ɟ", trjs.messgs.api34],
+    /* 35 */ ["k", "k", trjs.messgs.api35],
+    /* 36 */ ["g", "ɡ", trjs.messgs.api36],
+    /* 37 */ ["q", "q", trjs.messgs.api37],
+    /* 38 */ ["p\\", "ɸ", trjs.messgs.api38],
+    /* 39 */ ["B", "β", trjs.messgs.api39],
+    /* 40 */ ["f", "f", trjs.messgs.api40],
+    /* 41 */ ["v", "v", trjs.messgs.api41],
+    /* 42 */ ["T", "θ", trjs.messgs.api42],
+    /* 43 */ ["D", "ð", trjs.messgs.api43],
+    /* 44 */ ["s", "s", trjs.messgs.api44],
+    /* 45 */ ["z", "z", trjs.messgs.api45],
+    /* 46 */ ["S", "ʃ", trjs.messgs.api46],
+    /* 47 */ ["Z", "ʒ", trjs.messgs.api47],
+    /* 48 */ ["C", "ç", trjs.messgs.api48],
+    /* 49 */ ["j", "ʝ", trjs.messgs.api49],
+    /* 50 */ ["x", "x", trjs.messgs.api50],
+    /* 51 */ ["G", "ɣ", trjs.messgs.api51],
+    /* 52 */ ["x\\", "ɰ", trjs.messgs.api52],
+    /* 53 */ ["X\\", "ħ", trjs.messgs.api53],
+    /* 54 */ ["?\\", "ʕ", trjs.messgs.api54],
+    /* 55 */ ["h", "h", trjs.messgs.api55],
+    /* 56 */ ["h\\", "ɦ", trjs.messgs.api56],
+    /* 57 */ ["m", "m", trjs.messgs.api57],
+    /* 58 */ ["F", "ɱ", trjs.messgs.api58],
+    /* 59 */ ["n", "n", trjs.messgs.api59],
+    /* 60 */ ["J", "ɲ", trjs.messgs.api60],
+    /* 61 */ ["N", "ŋ", trjs.messgs.api61],
+    /* 62 */ ["l", "l", trjs.messgs.api62],
+    /* 63 */ ["L", "ʎ", trjs.messgs.api63],
+    /* 64 */ ["5", "ɫ", trjs.messgs.api64],
+    /* 65 */ ["4", "ɾ", trjs.messgs.api65],
+    /* 66 */ ["r", "r", trjs.messgs.api66],
+    /* 67 */ ["r\\", "ɹ", trjs.messgs.api67],
+    /* 68 */ ["R", "ʁ", trjs.messgs.api68],
+    /* 69 */ ["P", "ʋ", trjs.messgs.api69],
+    /* 70 */ ["w", "w", trjs.messgs.api70],
+    /* 71 */ ["H", "ɥ", trjs.messgs.api71],
+    /* 72 */ ["j", "j", trjs.messgs.api72],
+// others
+    /* 73 */ [":", "ː", trjs.messgs.api73],
+    /* 74 */ ["~", "~", trjs.messgs.api74],
+    /* 75 */ ["~E", "ɛ̃", trjs.messgs.api75],
+    /* 76 */ ["~O", "ɔ̃", trjs.messgs.api76],
+    /* 77 */ ["~A", "ɑ̃", trjs.messgs.api77],
+    /* 78 */ ["~9", "œ̃", trjs.messgs.api78],
+    /* 79 */ ["^R", "ʀ", trjs.messgs.api79],
+    /* 80 */ ["X", "χ", trjs.messgs.api80],
+];
+
 trjs.apiBindings = [];
 
 trjs.keys.initApiBindings = function () {
     // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
     // here supl = "api"
-    trjs.bindingsDef.push([nkey("@"), false, true, false, false, "api", "api.key(9)"]); // Alt 0 et Alt @
+    trjs.bindingsDef.push([nkey("a"), false, true, false, false, "api", "api.key(19)"]); // Alt A
+    trjs.bindingsDef.push([nkey("a"), false, true, true, false, "api", "api.key(77)"]); // Shift Alt A
+    trjs.bindingsDef.push([nkey("c"), false, true, false, false, "api", "api.key(48)"]); // Alt C
+    trjs.bindingsDef.push([nkey("d"), false, true, false, false, "api", "api.key(43)"]); // Alt D
+    trjs.bindingsDef.push([nkey("e"), false, true, false, false, "api", "api.key(3)"]); // Alt E
+    trjs.bindingsDef.push([nkey("e"), false, true, true, false, "api", "api.key(75)"]); // Shift Alt E
+    trjs.bindingsDef.push([nkey("g"), false, true, false, false, "api", "api.key(51)"]); // Alt G
+    trjs.bindingsDef.push([nkey("i"), false, true, false, false, "api", "api.key(1)"]); // Alt I
+    trjs.bindingsDef.push([nkey("j"), false, true, false, false, "api", "api.key(60)"]); // Alt J
+    trjs.bindingsDef.push([nkey("n"), false, true, false, false, "api", "api.key(61)"]); // Alt N
+    trjs.bindingsDef.push([nkey("n"), false, true, true, false, "api", "api.key(74)"]); // Shift Alt N
+    trjs.bindingsDef.push([nkey("o"), false, true, false, false, "api", "api.key(23)"]); // Alt O
+    trjs.bindingsDef.push([nkey("o"), false, true, true, false, "api", "api.key(76)"]); // Shift Alt O
+    trjs.bindingsDef.push([nkey("q"), false, true, false, false, "api", "api.key(24)"]); // Alt Q
+    trjs.bindingsDef.push([nkey("r"), false, true, false, false, "api", "api.key(68)"]); // Alt R
+    trjs.bindingsDef.push([nkey("r"), false, true, true, false, "api", "api.key(79)"]); // Shift Alt R
+    trjs.bindingsDef.push([nkey("s"), false, true, false, false, "api", "api.key(46)"]); // Alt S
+    trjs.bindingsDef.push([nkey("t"), false, true, false, false, "api", "api.key(42)"]); // Alt T
+    trjs.bindingsDef.push([nkey("u"), false, true, false, false, "api", "api.key(21)"]); // Alt U
+    trjs.bindingsDef.push([nkey("v"), false, true, false, false, "api", "api.key(18)"]); // Alt V
+    trjs.bindingsDef.push([nkey("x"), false, true, true, false, "api", "api.key(80)"]); // Shift Alt X
+    trjs.bindingsDef.push([nkey("z"), false, true, false, false, "api", "api.key(47)"]); // Alt Z
+    trjs.bindingsDef.push([nkey("h"), false, true, false, false, "api", "api.key(71)"]); // Alt H
     trjs.bindingsDef.push([nkey("2"), false, true, false, false, "api", "api.key(6)"]); // Alt 2
     trjs.bindingsDef.push([nkey("9"), false, true, false, false, "api", "api.key(7)"]); // Alt 9
+    trjs.bindingsDef.push([nkey("9"), false, true, true, false, "api", "api.key(78)"]); // Shift Alt 9
+    trjs.bindingsDef.push([nkey("@"), false, true, false, false, "api", "api.key(9)"]); // Alt 0 et Alt @
     trjs.bindingsDef.push([nkey("semi-colon"), false, true, false, false, "api", "api.key(73)"]); // Alt :
-    trjs.bindingsDef.push([nkey("a"), false, true, false, false, "api", "api.key(19)"]); // Alt A
-    trjs.bindingsDef.push([nkey("d"), false, true, false, false, "api", "api.key(43)"]); // Alt D
-    trjs.bindingsDef.push([69, false, true, false, false, "api", "api.key(3)"]); // Alt E
-    trjs.bindingsDef.push([72, false, true, false, false, "api", "api.key(71)"]); // Alt H
-    trjs.bindingsDef.push([73, false, true, false, false, "api", "api.key(1)"]); // Alt I
-    trjs.bindingsDef.push([74, false, true, false, false, "api", "api.key(60)"]); // Alt J
-    trjs.bindingsDef.push([78, false, true, false, false, "api", "api.key(61)"]); // Alt N
-    trjs.bindingsDef.push([79, false, true, false, false, "api", "api.key(23)"]); // Alt O
-    trjs.bindingsDef.push([81, false, true, false, false, "api", "api.key(24)"]); // Alt Q
-    trjs.bindingsDef.push([82, false, true, false, false, "api", "api.key(68)"]); // Alt R
-    trjs.bindingsDef.push([83, false, true, false, false, "api", "api.key(46)"]); // Alt S
-    trjs.bindingsDef.push([84, false, true, false, false, "api", "api.key(42)"]); // Alt T
-    trjs.bindingsDef.push([85, false, true, false, false, "api", "api.key(21)"]); // Alt U
-    trjs.bindingsDef.push([86, false, true, false, false, "api", "api.key(18)"]); // Alt V
-    trjs.bindingsDef.push([88, false, true, false, false, "api", "api.key(51)"]); // Alt X
-    trjs.bindingsDef.push([90, false, true, false, false, "api", "api.key(47)"]); // Alt Z
-    trjs.bindingsDef.push([nkey("n"), false, true, true, false, "api", "api.key(74)"]); // Alt Shift N
-    trjs.bindingsDef.push([69, false, true, true, false, "api", "api.key(75)"]); // Shift Alt E
-    trjs.bindingsDef.push([57, false, true, true, false, "api", "api.key(76)"]); // Shift Alt 9
-    trjs.bindingsDef.push([79, false, true, true, false, "api", "api.key(77)"]); // Shift Alt O
-    trjs.bindingsDef.push([65, false, true, true, false, "api", "api.key(78)"]); // Shift Alt A
-    trjs.bindingsDef.push([82, false, true, true, false, "api", "api.key(79)"]); // Shift Alt R
 
 // liste des caractère nom de domaine internationaux pour le français : ß à á â ã ä å æ ç è é ê ë ì í î ï ñ ò ó ô õ ö ù ú û ü ý ÿ œ
 };
@@ -1636,32 +1637,34 @@ trjs.keys.functions = {
     "zoomIn": [ trjs.dmz.zoomIn, "zoom in wave and partition", null],
     "zoomOut": [ trjs.dmz.zoomOut, "zoom out wave and partition", null],
 
-    "api.key(9)": [ function () { trjs.api.key(9); }, trjs.api.desc(9), trjs.api.keyValue(9)], // Alt 0 et Alt @
+    "api.key(1)": [ function () { trjs.api.key(1); }, trjs.api.desc(1), trjs.api.keyValue(1)], // Alt I
+    "api.key(3)": [ function () { trjs.api.key(3); }, trjs.api.desc(3), trjs.api.keyValue(3)], // Alt E
     "api.key(6)": [ function () { trjs.api.key(6); }, trjs.api.desc(6), trjs.api.keyValue(6)], // Alt 2
     "api.key(7)": [ function () { trjs.api.key(7); }, trjs.api.desc(7), trjs.api.keyValue(7)], // Alt 9
-    "api.key(73)": [ function () { trjs.api.key(73); }, trjs.api.desc(73), trjs.api.keyValue(73)], // Alt :
+    "api.key(9)": [ function () { trjs.api.key(9); }, trjs.api.desc(9), trjs.api.keyValue(9)], // Alt 0 et Alt @
+    "api.key(18)": [ function () { trjs.api.key(18); }, trjs.api.desc(18), trjs.api.keyValue(18)], // Alt V
     "api.key(19)": [ function () { trjs.api.key(19); }, trjs.api.desc(19), trjs.api.keyValue(19)], // Alt A
+    "api.key(21)": [ function () { trjs.api.key(21); }, trjs.api.desc(21), trjs.api.keyValue(21)], // Alt U
+    "api.key(23)": [ function () { trjs.api.key(23); }, trjs.api.desc(23), trjs.api.keyValue(23)], // Alt O
+    "api.key(24)": [ function () { trjs.api.key(24); }, trjs.api.desc(24), trjs.api.keyValue(24)], // Shift Alt Q
     "api.key(43)": [ function () { trjs.api.key(43); }, trjs.api.desc(43), trjs.api.keyValue(43)], // Alt D
-    "api.key(3)": [ function () { trjs.api.key(3); }, trjs.api.desc(3), trjs.api.keyValue(3)], // Alt E
-    "api.key(71)": [ function () { trjs.api.key(71); }, trjs.api.desc(71), trjs.api.keyValue(71)], // Alt H
-    "api.key(1)": [ function () { trjs.api.key(1); }, trjs.api.desc(1), trjs.api.keyValue(1)], // Alt I
+    "api.key(42)": [ function () { trjs.api.key(42); }, trjs.api.desc(42), trjs.api.keyValue(42)], // Alt T
+    "api.key(46)": [ function () { trjs.api.key(46); }, trjs.api.desc(46), trjs.api.keyValue(46)], // Alt S
+    "api.key(47)": [ function () { trjs.api.key(47); }, trjs.api.desc(47), trjs.api.keyValue(47)], // Alt Z
+    "api.key(48)": [ function () { trjs.api.key(48); }, trjs.api.desc(48), trjs.api.keyValue(48)], // Alt C
+    "api.key(51)": [ function () { trjs.api.key(51); }, trjs.api.desc(51), trjs.api.keyValue(51)], // Alt X
     "api.key(60)": [ function () { trjs.api.key(60); }, trjs.api.desc(60), trjs.api.keyValue(60)], // Alt J
     "api.key(61)": [ function () { trjs.api.key(61); }, trjs.api.desc(61), trjs.api.keyValue(61)], // Alt N
-    "api.key(23)": [ function () { trjs.api.key(23); }, trjs.api.desc(23), trjs.api.keyValue(23)], // Alt O
-    "api.key(24)": [ function () { trjs.api.key(24); }, trjs.api.desc(24), trjs.api.keyValue(24)], // Alt Q
     "api.key(68)": [ function () { trjs.api.key(68); }, trjs.api.desc(68), trjs.api.keyValue(68)], // Alt R
-    "api.key(46)": [ function () { trjs.api.key(46); }, trjs.api.desc(46), trjs.api.keyValue(46)], // Alt S
-    "api.key(42)": [ function () { trjs.api.key(42); }, trjs.api.desc(42), trjs.api.keyValue(42)], // Alt T
-    "api.key(21)": [ function () { trjs.api.key(21); }, trjs.api.desc(21), trjs.api.keyValue(21)], // Alt U
-    "api.key(18)": [ function () { trjs.api.key(18); }, trjs.api.desc(18), trjs.api.keyValue(18)], // Alt V
-    "api.key(51)": [ function () { trjs.api.key(51); }, trjs.api.desc(51), trjs.api.keyValue(51)], // Alt X
-    "api.key(47)": [ function () { trjs.api.key(47); }, trjs.api.desc(47), trjs.api.keyValue(47)], // Alt Z
+    "api.key(71)": [ function () { trjs.api.key(71); }, trjs.api.desc(71), trjs.api.keyValue(71)], // Alt H
+    "api.key(73)": [ function () { trjs.api.key(73); }, trjs.api.desc(73), trjs.api.keyValue(73)], // Alt :
     "api.key(74)": [ function () { trjs.api.key(74); }, trjs.api.desc(74), trjs.api.keyValue(74)], // Alt Shift N
     "api.key(75)": [ function () { trjs.api.key(75); }, trjs.api.desc(75), trjs.api.keyValue(75)], // Shift Alt E
     "api.key(76)": [ function () { trjs.api.key(76); }, trjs.api.desc(76), trjs.api.keyValue(76)], // Shift Alt 9
     "api.key(77)": [ function () { trjs.api.key(77); }, trjs.api.desc(77), trjs.api.keyValue(77)], // Shift Alt O
     "api.key(78)": [ function () { trjs.api.key(78); }, trjs.api.desc(78), trjs.api.keyValue(78)], // Shift Alt A
     "api.key(79)": [ function () { trjs.api.key(79); }, trjs.api.desc(79), trjs.api.keyValue(79)], // Shift Alt R
+    "api.key(80)": [ function () { trjs.api.key(80); }, trjs.api.desc(80), trjs.api.keyValue(80)], // Shift Alt X
 
     "F1.key(0)": [ function () { trjs.F1.key(0); }, trjs.F1.desc(0), trjs.F1.keyValue(0)],
     "F1.key(1)": [ function () { trjs.F1.key(1); }, trjs.F1.desc(1), trjs.F1.keyValue(1)],
