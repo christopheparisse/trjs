@@ -1269,6 +1269,7 @@ trjs.api.table = [
     /* 78 */ ["~9", "œ̃", trjs.messgs.api78],
     /* 79 */ ["^R", "ʀ", trjs.messgs.api79],
     /* 80 */ ["X", "χ", trjs.messgs.api80],
+    /* 81 */ ["D", "ɖ", trjs.messgs.api81],
 ];
 
 trjs.apiBindings = [];
@@ -1280,11 +1281,14 @@ trjs.keys.initApiBindings = function () {
     trjs.bindingsDef.push([nkey("a"), false, true, true, false, "api", "api.key(77)"]); // Shift Alt A
     trjs.bindingsDef.push([nkey("c"), false, true, false, false, "api", "api.key(48)"]); // Alt C
     trjs.bindingsDef.push([nkey("d"), false, true, false, false, "api", "api.key(43)"]); // Alt D
+    trjs.bindingsDef.push([nkey("d"), false, true, true, false, "api", "api.key(81)"]); // Alt Shift D
     trjs.bindingsDef.push([nkey("e"), false, true, false, false, "api", "api.key(3)"]); // Alt E
     trjs.bindingsDef.push([nkey("e"), false, true, true, false, "api", "api.key(75)"]); // Shift Alt E
     trjs.bindingsDef.push([nkey("g"), false, true, false, false, "api", "api.key(51)"]); // Alt G
+    trjs.bindingsDef.push([nkey("h"), false, true, false, false, "api", "api.key(71)"]); // Alt H
     trjs.bindingsDef.push([nkey("i"), false, true, false, false, "api", "api.key(1)"]); // Alt I
     trjs.bindingsDef.push([nkey("j"), false, true, false, false, "api", "api.key(60)"]); // Alt J
+    trjs.bindingsDef.push([nkey("l"), false, true, false, false, "api", "api.key(63)"]); // Alt L
     trjs.bindingsDef.push([nkey("n"), false, true, false, false, "api", "api.key(61)"]); // Alt N
     trjs.bindingsDef.push([nkey("n"), false, true, true, false, "api", "api.key(74)"]); // Shift Alt N
     trjs.bindingsDef.push([nkey("o"), false, true, false, false, "api", "api.key(23)"]); // Alt O
@@ -1298,7 +1302,6 @@ trjs.keys.initApiBindings = function () {
     trjs.bindingsDef.push([nkey("v"), false, true, false, false, "api", "api.key(18)"]); // Alt V
     trjs.bindingsDef.push([nkey("x"), false, true, true, false, "api", "api.key(80)"]); // Shift Alt X
     trjs.bindingsDef.push([nkey("z"), false, true, false, false, "api", "api.key(47)"]); // Alt Z
-    trjs.bindingsDef.push([nkey("h"), false, true, false, false, "api", "api.key(71)"]); // Alt H
     trjs.bindingsDef.push([nkey("2"), false, true, false, false, "api", "api.key(6)"]); // Alt 2
     trjs.bindingsDef.push([nkey("9"), false, true, false, false, "api", "api.key(7)"]); // Alt 9
     trjs.bindingsDef.push([nkey("9"), false, true, true, false, "api", "api.key(78)"]); // Shift Alt 9
@@ -1655,6 +1658,7 @@ trjs.keys.functions = {
     "api.key(51)": [ function () { trjs.api.key(51); }, trjs.api.desc(51), trjs.api.keyValue(51)], // Alt X
     "api.key(60)": [ function () { trjs.api.key(60); }, trjs.api.desc(60), trjs.api.keyValue(60)], // Alt J
     "api.key(61)": [ function () { trjs.api.key(61); }, trjs.api.desc(61), trjs.api.keyValue(61)], // Alt N
+    "api.key(63)": [ function () { trjs.api.key(63); }, trjs.api.desc(63), trjs.api.keyValue(63)], // Alt L
     "api.key(68)": [ function () { trjs.api.key(68); }, trjs.api.desc(68), trjs.api.keyValue(68)], // Alt R
     "api.key(71)": [ function () { trjs.api.key(71); }, trjs.api.desc(71), trjs.api.keyValue(71)], // Alt H
     "api.key(73)": [ function () { trjs.api.key(73); }, trjs.api.desc(73), trjs.api.keyValue(73)], // Alt :
@@ -1665,6 +1669,7 @@ trjs.keys.functions = {
     "api.key(78)": [ function () { trjs.api.key(78); }, trjs.api.desc(78), trjs.api.keyValue(78)], // Shift Alt A
     "api.key(79)": [ function () { trjs.api.key(79); }, trjs.api.desc(79), trjs.api.keyValue(79)], // Shift Alt R
     "api.key(80)": [ function () { trjs.api.key(80); }, trjs.api.desc(80), trjs.api.keyValue(80)], // Shift Alt X
+    "api.key(81)": [ function () { trjs.api.key(81); }, trjs.api.desc(81), trjs.api.keyValue(81)], // Shift Alt D
 
     "F1.key(0)": [ function () { trjs.F1.key(0); }, trjs.F1.desc(0), trjs.F1.keyValue(0)],
     "F1.key(1)": [ function () { trjs.F1.key(1); }, trjs.F1.desc(1), trjs.F1.keyValue(1)],

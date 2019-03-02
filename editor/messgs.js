@@ -760,6 +760,7 @@ trjs.messgs_eng = {
     api78: "Front half open rounded nasal vowel French brun",
     api79: "R parisien",
     api80: "Voiceless uvular fricative",
+    api81: "voiced retroflex plosive Swedish hord",
 
     bincon: "Table of keys",
     apibincon: "Table of API keys",
@@ -1535,6 +1536,7 @@ trjs.messgs_fra = {
     api78: "Voyelle postérieure postérieure non arrondie nasale French brun",
     api79: "R parisien",
     api80: "Consonne fricative sourde uvulaire",
+    api81: "Consonne occlusive voisée retroflex Swedish hord",
 
     bincon: "Tableau des raccourcis claviers",
     apibincon: "Tableau des raccourcis claviers API",

@@ -658,10 +658,8 @@
             It call be called through the menu <em>EDIT</em> and <em>Undo</em> or 
             directly with the shortcut <b>Ctrl Z</b>.</p>
 
-        <h4>Historique des dernières actions</h4>
-        <p>En ouvrant le menu
-            <em>EDITION</em>
-            , puis <b>Undo</b>, on a accès à l'historique des dernières actions réalisées.
+        <h4>History of the last actions</h4>
+        <p>Opening th menu <em>EDIT</em> and <b>Undo list</b>, provides access to list of last actions which can be undone.
         </p>
 
         <h4>Redo the last command</h4>
@@ -941,6 +939,11 @@
                 <td>Voiced dental fricative English this</td>
             </tr>
             <tr>
+                <td>Alt + Shift + D</td>
+                <td>ɖ</td>
+                <td>voiced retroflex plosive Swedish hord</td>
+            </tr>
+            <tr>
                 <td>Alt + E</td>
                 <td>ɛ</td>
                 <td>Front half open unrounded vowel English bed, French même,German Herr, Männer, Italian ferro, Catalan mes, Spanish perro</td>
@@ -969,6 +972,11 @@
                 <td>Alt + J</td>
                 <td>ɲ</td>
                 <td>Voiced palatal fricative Standard Spanish ayuda</td>
+            </tr>
+            <tr>
+                <td>Alt + L</td>
+                <td>ʎ</td>
+                <td>Palatal lateral approximant Italian aglio, Catalan colla</td>
             </tr>
             <tr>
                 <td>Alt + N</td>
@@ -1061,6 +1069,49 @@
                 <td>Lengthening of vowel</td>
             </tr>
             </table>
+        <h2>Help on keyboard and editing the keyboard shortcuts</h2>
+        <p>It is possible to get help about the keyboard association. 
+        It is also possible to edit and change them including to associate macro functions.
+        This makes it possible to add new characters to the keyboard.<br/>
+        The keyboard functions are accessed with the menu <em>Help</em> and <em>Key Bindings</em>.
+        This displays four tabs with differents functions.</p>
+        <ul>
+            <li>Table of keys</li>
+            <li>Table of API keys</li>
+            <li>Table of F1/F2 keys</li>
+            <li>Changing key bindings</li>
+        </ul>
+        <p>In all tabs it is possible to search for a word or character string so that only a part 
+        of the shortcuts are presented. Also, for the first three tabs, it is possible to print 
+        the list of shortcuts.</p>
+        <p>In the first three tabs on the right, the prefix, the modifiers, the key, the value and the information
+         are presented (the prefix, the modifiers, the value, and the information can be empty). It is possible to sort by each field 
+         by clicking on the name on top of column.
+        </p>
+        <ul>
+            <li>Prefix are optional key functions to be used before using the key itself.
+            They do not have to be pressed at the same time as the key itself.</li>
+            <li>Modifiers correspond the use or not of the specific keys "Shift", "Ctrl/Cmd", "Alt". 
+            On Mac OSX (Apple computers) the use of Ctrl or Cmd is equivalent. It is possible to use whichever
+            key. Modifier keys have to be used a fraction of second before the main key and to be kept pressed 
+            when pressing the main key.</li>
+            <li>Key is the keyboard key.</li>
+            <li>Value: certain key asssociation will result in inserting a certain material
+            in the transcription. This is especially the case for API and F1/F2 functions.</li>
+            <li>Information describes the function of the key.</li>
+        </ul>
+        <p>In the last tab on the right, it is possible to change the association between a key and a function.
+            All changes must be saved by clicking on "Save the new key associations". Otherwise the changes will be ignored.
+            Clicking on "Reset the default keys" will erase the user defined associations and go back to the default association.
+            Only default association are presented in this help.<br/>
+            All the known functions of TRJS are listed on the left, including the functions which are not associated with a shortcut key.
+            To change a key association, it is necessary to click on "Edit".<br/>
+            <img class="center winwidth" src="img/capture/keyedit.png" alt="editing the key"/><br/>
+            This shows a window where it is possible to change the values for the prefix, the modifiers (CMD, ALT, SHIFT), and
+            the key itself. If validated using OK, the associated will be displayed but it is not saved.
+            To do this it is necessary to click on the "Save the new key associations" which is now in orange.
+            Not saving will cancel all the currently edited associations.
+        </p>
     </div>
     <div id="h1params">
         <h1 id="parameters">Parameters and other features</h1>

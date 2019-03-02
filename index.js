@@ -557,8 +557,9 @@ function createMenu() {
                     if (window) window.webContents.send('help', 'main');
                 }
             },
+            /*
             {
-                label: 'Offline Help',
+                label: 'General Help',
                 click: function () {
                     var sz = getWindowSize();
                     var win = new BrowserWindow({width: sz.width, height: sz.height});
@@ -572,13 +573,14 @@ function createMenu() {
                     // win.loadURL('https://github.com')
 
                     // Ou charge un fichier HTML local
-                    win.loadURL('file://' + __dirname + '/doc/trjs_doc.html');
+                    win.loadURL('file://' + __dirname + '/doc/index.html');
                     // var window = BrowserWindow.getFocusedWindow();
                     // if (window) window.webContents.send('help', 'main');
                 }
             },
+            */
             {
-                label: 'Offline First Steps Help',
+                label: 'Offline Help / First steps (English)',
                 click: function () {
                     var sz = getWindowSize();
                     var win = new BrowserWindow({width: sz.width, height: sz.height});
@@ -593,6 +595,26 @@ function createMenu() {
 
                     // Ou charge un fichier HTML local
                     win.loadURL('file://' + __dirname + '/doc/trjs_pp_eng.html');
+                    // var window = BrowserWindow.getFocusedWindow();
+                    // if (window) window.webContents.send('helpfirststeps', 'main');
+                }
+            },
+            {
+                label: 'Aide locale / premiers pas (Français)',
+                click: function () {
+                    var sz = getWindowSize();
+                    var win = new BrowserWindow({width: sz.width, height: sz.height});
+                    var p = win.getPosition();
+                    win.setPosition(p[0]+20, p[1]+20);
+                    win.on('closed', function() {
+                        win = null;
+                    });
+
+                    // Charge une URL distante
+                    // win.loadURL('https://github.com')
+
+                    // Ou charge un fichier HTML local
+                    win.loadURL('file://' + __dirname + '/doc/trjs_pp_fra.html');
                     // var window = BrowserWindow.getFocusedWindow();
                     // if (window) window.webContents.send('helpfirststeps', 'main');
                 }
