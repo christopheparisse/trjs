@@ -28,6 +28,8 @@
         <span><a href="#editing"><i class="fa fa-pencil-square-o pl fa-5x"></i><br/>Basic editing</a></span>
         <span><a href="#transcribing"><i class="fa fa-hand-o-up pl fa-5x"></i><br/>Transcription commands</a></span>
         <span><a href="#keyboard"><i class="fa fa-keyboard-o pl fa-5x"></i><br/>Keyboard features</a></span>
+        <span><a href="#macros"><i class="fa fa-building pl fa-5x"></i><br/>Macros</a></span>
+        <span><a href="#format"><i class="fa fa-book pl fa-5x"></i><br/>Formats</a></span>
         <span><a href="#parameters"><i class="fa fa-cogs pl fa-5x"></i><br/>Parameters and other features</a></span>
     </div>
     <br class="clear"/>
@@ -1112,6 +1114,217 @@
             To do this it is necessary to click on the "Save the new key associations" which is now in orange.
             Not saving will cancel all the currently edited associations.
         </p>
+        <p>It is possible to associate some characters with a keyboard key. To do this use, the macro function described in here and create new
+            macros of type any value. In this way, it is possible to associate keys with any Unicode characters. See
+            <a href="https://unicode-table.com/en/">https://unicode-table.com/en/</a> or 
+            <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">https://en.wikipedia.org/wiki/List_of_Unicode_characters</a>
+            for a list of all possible Unicode values (many pages on the web provide allows to copy easily a Unicode character in the clipboard).
+            So it is possible to use any possible characters in TRJS. 
+            <!--
+            For example, you could the Phoenician alphabet as described here
+            <a href="https://en.wikipedia.org/wiki/Phoenician_alphabet#Unicode">https://en.wikipedia.org/wiki/Phoenician_alphabet#Unicode</a> and like Alt+A with 𐤀, Alt+B with 𐤁, etc.
+            -->
+            For example, you could Miscellaneous Symbols in the wikipedia page and associate Alt+K with a cup of coffee ☕.
+        </p>
+    </div>
+    <div id="h1macros">
+		<h1 id="macros">Macros</h1>
+		<hr/>
+		<p>Macros make it possible to insert quickly a string of characters according to the user choice.
+            There is no limit to the number of macros that can be used. The macros can be associated
+            with a keyboard shorcut so that their use is even faster.
+            A subset of macros is predefined to be used with the CHAT format or the CORLI/IRCOM/Spoken language
+            format. It is possible to define any type of macro even when choosing to use also the CLAN or IRCOM
+            subsets.
+		</p>
+		<h2>Creating/editing macros</h2>
+		<p>Macros can be created and edited so that they contains any type of
+            characters. There are tools that make it possible to create semi-predefined
+            macros with the desired format.
+		<ul>
+		    <li>CHAT mode (macros that help creating easily CHAT codes - cf. childes.talkbank.org)</li>
+		    <li>XML TEI mode (macros that help to use the CORLI/IRCOM format) and generated automatically
+                a file in XML TEI format.
+		    </li>
+		</ul>
+		</p>
+		<p>Creation, edition and insertion of macros are available in the menu
+            <em>Tools</em> / <em>Macros</em>. The window that opens allows to edit a new
+            macro or find an existing macro and change it.
+            It is also possible to associate a keyboard shortcut.
+		</p>
+
+		<h3>Creating a macro</h3>
+		<p>The following steps have to be done in this strict order:</p>
+		<ol>
+		    <li>Select "new macro" in the field "Find"</li>
+		    <li>Type a name not yet used in the field "Name for the new macro"
+                This means a name that is not found in the list "Find". If you use a name already used,
+                the new name will erase the old one.
+		    </li>
+		    <li>Select a type of macro in the field "Type". The choice of redefined macro type values depends
+		        of the edition mode (CHAT/TEI/other). All modes have the "Any value" macro type
+		        which makes it possible to insert any characters without constraints.
+		    </li>
+		    <li>The content of each macro is defined by three elements:
+		        <ol>
+		            <li>The macro type. It contains predefined values. For exemple, for a silence of specific length
+		                in CHAT format, it is "(" and ")". The macro type "Any value"
+		                does not add any element.
+		            </li>
+		            <li>The value of the macro: this is the first (optional) argument of the macro. This value is
+                        added in the predefined value of the macro (according to the predefined type). For example, for a silence of
+                        specific length in the format CHAT, this value could be that of the length of a silence.
+                        Associated with "(" and ")", it will create the final value. For the macro type "Any value"
+                        this value corresponds exactly to the added element.
+		            </li>
+		            <li>Some predefined macros contain two potential value locations.
+                        The field complement (second argument) allows to fill the second places.
+		            </li>
+		        </ol>
+		    </li>
+		    <li>
+		        <ul>
+		            <li>So depending on the type of macro, the type, then the field "Value" and finally optionally the 
+                        field "Complement" will be integrated in the macro.
+		            </li>
+		            <li>The CHAT type makes it easy to insert CHAT codes.</li>
+		            <li>
+		                <ul>
+		                    <li>Any value: insert the content of "Value".</li>
+		                    <li>Repetition: insert [/] - no argument.</li>
+		                </ul>
+		            </li>
+		            <li>The TEI XML type makes it easy to insert IRCOM / CORLI codes that will be
+                        automatically converted to XML / TEI format. In addition, this editing mode allows you to insert
+                        any XML codes. The "Value" field usually encodes the contents of the code for the
+                        transcription of spoken language, the "complement" field encodes the field subtype when necessary.
+		            </li>
+		            <li>
+		                <ul>
+		                    <li>Any value: insert the content of "Value".</li>
+		                    <li>Noise: insert [%1 /%2 /N] - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                    <li>Event: insert [%1 /%2 /E] - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                    <li>Abbreviation: insert {%1 /%2 /A} - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                    <li>Variante: insert {%1 /%2 /VAR} - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                    <li>Language: insert { /%2 /LG:%1} - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                    <li>Comment: insert [%1 /%2 /COM] - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                    <li>Vocal: insert {%1 /VOC} - %1 is replaced by Value.</li>
+		                    <li>Short pause: insert # .</li>
+		                    <li>Middle pause: insert ## .</li>
+		                    <li>Long pause: insert ### .</li>
+		                    <li>Very long pause: insert #%1# - Valeur est inséré à la place de %1.</li>
+		                    <li>Lexical: insert {%1 /%2 /LEX} - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                    <li>Entities: insert {%1 /%2 /NE} - %1 is replaced by Value, %2 is replaced by Complement.</li>
+		                </ul>
+		            </li>
+		        </ul>
+		    </li>
+		    <li>
+		        <ul>
+		            <li>
+		                A macro can be associated with a keyboard sortcut by clicking on "Shortcut"
+                        This opens a window that contains the following fields:
+		            </li>
+		            <li>
+		                <ol>
+		                    <li>Name of the macro (non editable here)</li>
+		                    <li>Prefix followed by a drop-down choice: None (--), F1, or F2. Typing a prefix
+                                does not need typing CTRL, CMD, ALT, or SHIFT</li>
+		                    <li>CMD/CTRL: if checked then this key will have to be pressed after typing the prefix.</li>
+		                    <li>ALT: if checked then this key will have to be pressed after typing the prefix.</li>
+		                    <li>SHIFT: if checked then this key will have to be pressed after typing the prefix.</li>
+		                    <li>Value of the keyboard key to operate.</li>
+		                    <li>Hit ok to validate the shortcut, or cancel to cancel the operation.</li>
+		                    <li>If the selected key combination is already used, a message will be displayed and will give you
+                                the ability to cancel or confirm.</li>
+		                </ol>
+		            </li>
+		        </ul>
+		    </li>
+		    <li>The created macro can be saved for future use by clicking "Save".</li>
+		    <li>The macro can be inserted directly into the document where the cursor was by clicking on "Insert".</li>
+		    <li>Clicking OK closes the macro editing window.</li>
+		</ol>
+
+		<h2>Using the macros.</h2>
+		<ul>
+		    <li>Macros can be used either by activating a stored key combination, or by opening the macro menu.
+		    </li>
+		    <li>Choose one of the saved macros by selecting it from the "Find" list. The parameters related to the macro
+            will be displayed.</li>
+            <li>It is possible to change the parameters of the displayed macro.</li>
+            <li>Insert the selected macro by clicking on "Insert". Any changes above will be inserted
+            within the text with the macro. Changes will not be saved unless you click on "Save".</li>
+		</ul>
+    </div>
+    <div id="h1format">
+		<h1 id="format">Format of transcripts</h1>
+		<hr/>
+		<h2>Formats</h2>
+		<p>There are several formats that can be used for the transcription of spoken data.
+            TRJS offers several editing modes that result in differences in the format
+            of the main transcription lines. These modes affect the nature of the predefined macros
+            of the user, the format verification of the main lines, and on how TRJS handles
+            the characters &lt; et &gt;.
+		</p>
+		<ul>
+		    <li>CHAT mode (CHAT format - cf. childes.talkbank.org) - special characters &lt; et &gt; are coded as XML entities.</li>
+		    <li>XML TEI mode (format for representing IRCOM codes). This mode allows the insertion of characters &lt; and &gt;
+                in their original form so as to create XML tags within the transcriptions.
+		    </li>
+		    <li>Raw mode: no constraints and verfication of the main lines.
+                Special characters &lt; and &gt; are encoded as XML entities.
+		    </li>
+		</ul>
+		<p>The format is selected by choosing the "Tools" menu then "Parameters" then the "Verification" tab then finally choose the
+            type of transcription (CHAT, XML TEI, None)
+		</p>
+		<h2>Control of main lines</h2>
+		<p>Some format checks of the transcript content can be done live or at the time of saving the files.
+            These controls are based on the type of format.
+            Checks on alignment marks are always done. Controls on the format of
+            transcripts are made according to the chosen transcription format.
+		</p>
+		<p>The current line is controlled using the ALT + e key. A message indicates the possible error and
+            also manifests by the presence of crosses around the speaker's name. If a correction is made, the display will disappear.
+            If no correction is made, the crosses will not be
+            not saved when saving the file. It is therefore only a visual information.
+		</p>
+		<h2>Control of temporal links</h2>
+		<p>It is illogical to have a temporal alignment that covers another one for the same speaker.
+            Therefore, when such cases are encountered, the name of the speaker is indicated by the display of crosses around
+            the name of the speaker.
+		</p>
+		<h2>Control of transcripts</h2>
+		<p>An error on the format CHAT or on the use of the characters &lt; and &gt; will bring an error message.
+            Also, the name of the speaker is indicated by the display of crosses around
+            the name of the speaker.
+		</p>
+		<h2>Equivalences between IRCOM format and XML TEI format</h2>
+		<p>IRCOM format codes are automatically converted to the TEI XML encoding format when
+            saving data. Conversely, reading a file in TEI XML format will generate IRCOM codes.
+		</p>
+		<ul>
+		    <li>List of equivalences</li>
+		    <li>Noise: [A /B /N] - &lt;incident type="noise" subtype="B"&gt; A &lt;/incident&gt;</li>
+		    <li>Event: [A /B /E] - &lt;incident type="para" subtype="previous"&gt;  A &lt;/incident&gt;</li>
+		    <li>Abbreviation: {A /B /A} - &lt;choice&gt;&lt;abbr type="acronym"&gt;A&lt;/abbr&gt;&lt;expan&gt;B&lt;/expan&gt;&lt;/choice&gt;</li>
+		    <li>Variante: {A /B /VAR} - &lt;choice&gt;&lt;orig&gt;A&lt;/orig&gt;&lt;reg&gt;B&lt;/reg&gt;&lt;/choice&gt;</li>
+		    <li>Variante phonologique: {A /B /VARPHO} - &lt;choice type="pho"&gt;&lt;orig&gt;A&lt;/orig&gt;&lt;reg&gt;B&lt;/reg&gt;&lt;/choice&gt;</li>
+		    <li>Language: {B /LG:A} - &lt;seg type="language" subtype="A"&gt;B&lt;/seg&gt;</li>
+		    <li>API: {A /API} - &lt;seg type="API"&gt;A&lt;/seg&gt;</li>
+		    <li>Comment: [A /B /COM] - &lt;incident type="comment" subtype="B"&gt; A &lt;/incident&gt;</li>
+		    <li>Vocal: {A /B /VOC} - &lt;vocal type="B"/&gt;&gt;A&lt;/vocal&gt;</li>
+		    <li>Gesture: [A /B /GES] - &lt;kinesic type="B"/&gt;&gt;A&lt;/kinesic&gt;</li>
+		    <li>Short pause: # &lt;pause type="short"/&gt;</li>
+		    <li>Middle pause: ## &lt;pause type="long"/&gt;</li>
+		    <li>Long pause: ### &lt;pause type="verylong"/&gt;</li>
+		    <li>Very long pause: #A - &lt;pause type="chrono" dur="1.2"/&gt;</li>
+		    <li>Lexical: {A /B /LEX} - &lt;seg type="lexical" subtype="B"&gt;A&lt;/seg&gt;</u></li>
+		    <li>Entities: {A /B /NE} - &lt;rs type="entities" subtype="B"&gt;A&lt;/rs&gt;</li>
+		    <li>Choice: {A,B,C,D /C} - &lt;choice&gt;&lt;seg&gt;A&lt;/seg&gt;&lt;seg&gt; B&lt;/seg&gt;&lt;seg&gt; C&lt;/seg&gt;&lt;seg&gt; D&lt;/seg&gt;&lt;/choice&gt;</li>
+		</ul>
     </div>
     <div id="h1params">
         <h1 id="parameters">Parameters and other features</h1>
