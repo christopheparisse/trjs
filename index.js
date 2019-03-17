@@ -589,7 +589,11 @@ function createMenu() {
                     win.on('closed', function() {
                         win = null;
                     });
-
+                    win.on('close', function (e) {
+                        // console.log('close on offline help');
+                        // save old location of help ??
+                    });
+                
                     // Charge une URL distante
                     // win.loadURL('https://github.com')
 

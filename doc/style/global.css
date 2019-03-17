@@ -23,12 +23,14 @@
 			background-color: white;
 			}*/
 		#main {
-			width: 75%;
+			width: 85%;
 			height: auto;
 			float: left;
 			margin-top: 5%;
 			padding-top: 1%;
 			margin-bottom: 3%;
+			margin-left: 3%;
+			margin-right: 3%;
 			background-color: white; /*#ECEEFE; #EFF5FB;*/
 			margin-left: 6%;
 			}
