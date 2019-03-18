@@ -748,14 +748,20 @@ trjs.editor = (function () {
      * jumps to the help page.
      * @method goHelp
      */
-    function goHelpFirstSteps() {
+    function goHelpFirstSteps(lg) {
         trjs.io.innerSave();
         // location.href = "http://modyco.inist.fr/transcriberjs/doku.php?id=start";
+        /*
         if (trjs.param.language === 'eng')
             fsio.openExternal("http://ct3.ortolang.fr/trjs/documentation/trjs_pp_eng.html");
         else
             fsio.openExternal("http://ct3.ortolang.fr/trjs/documentation/trjs_pp_fra.html");
         // window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
+        */
+        if (lg === 'eng')
+            fsio.openExternal('file://' + __dirname + '/doc/trjs_pp_eng.html');
+        else
+            fsio.openExternal('file://' + __dirname + '/doc/trjs_pp_fra.html');
     }
 
     /**

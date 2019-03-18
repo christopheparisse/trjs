@@ -582,6 +582,9 @@ function createMenu() {
             {
                 label: 'Offline Help / First steps (English)',
                 click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    if (window) window.webContents.send('helpfirststeps-eng', 'main');
+                    /*
                     var sz = getWindowSize();
                     var win = new BrowserWindow({width: sz.width, height: sz.height});
                     var p = win.getPosition();
@@ -599,13 +602,15 @@ function createMenu() {
 
                     // Ou charge un fichier HTML local
                     win.loadURL('file://' + __dirname + '/doc/trjs_pp_eng.html');
-                    // var window = BrowserWindow.getFocusedWindow();
-                    // if (window) window.webContents.send('helpfirststeps', 'main');
+                    */
                 }
             },
             {
                 label: 'Aide locale / premiers pas (Français)',
                 click: function () {
+                    var window = BrowserWindow.getFocusedWindow();
+                    if (window) window.webContents.send('helpfirststeps-fra', 'main');
+                    /*
                     var sz = getWindowSize();
                     var win = new BrowserWindow({width: sz.width, height: sz.height});
                     var p = win.getPosition();
@@ -619,8 +624,7 @@ function createMenu() {
 
                     // Ou charge un fichier HTML local
                     win.loadURL('file://' + __dirname + '/doc/trjs_pp_fra.html');
-                    // var window = BrowserWindow.getFocusedWindow();
-                    // if (window) window.webContents.send('helpfirststeps', 'main');
+                    */
                 }
             },
             {type: 'separator'},

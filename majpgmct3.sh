@@ -12,7 +12,7 @@ cp trjs-v0.7.5a.zip ~/ownCloud/betatrjs
 cd /devlopt/prod-trjs
 scp doc/trjs_pp_fra.html parisse@ct3.ortolang.fr:/applis/trjs/doc/
 scp doc/trjs_pp_eng.html parisse@ct3.ortolang.fr:/applis/trjs/doc/
-scp doc/trjs_doc_fra.html parisse@ct3.ortolang.fr:/applis/trjs/doc/
+scp doc/trjs_doc.html parisse@ct3.ortolang.fr:/applis/trjs/doc/
 scp doc/index.html parisse@ct3.ortolang.fr:/applis/trjs/doc/
 scp doc/doc.css parisse@ct3.ortolang.fr:/applis/trjs/doc/
 rsync -auv doc/img parisse@ct3.ortolang.fr:/applis/trjs/doc/
