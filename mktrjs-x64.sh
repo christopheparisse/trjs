@@ -30,3 +30,12 @@ cp -v ./package.json $1/trjs-x64/app
 #cp -v ./trjsclient.html $1/trjs-x64/app
 #cp -v ./trjsread.html $1/trjs-x64/app
 #cp -v ./trjsdistant.html $1/trjs-x64/app
+mkdir $1/trjs-x64/doc
+cp -R ./doc/fonts $1/trjs-x64/doc
+cp -R ./doc/img $1/trjs-x64/doc
+cp -R ./doc/js $1/trjs-x64/doc
+cp -R ./doc/style $1/trjs-x64/doc
+cp ./doc/doc.css $1/trjs-x64/doc
+cp ./doc/trjs_doc_fra.html $1/trjs-x64/doc
+cp ./doc/trjs_pp_fra.html $1/trjs-x64/doc
+cp ./doc/trjs_pp_eng.html $1/trjs-x64/doc

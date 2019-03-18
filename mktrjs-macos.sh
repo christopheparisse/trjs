@@ -31,3 +31,12 @@ cp ./package.json $1/trjs-macos/trjs-macos-app
 #cp ./trjsclient.html $1/trjs-macos/trjs-macos-app
 #cp ./trjsread.html $1/trjs-macos/trjs-macos-app
 #cp ./trjsdistant.html $1/trjs-macos/trjs-macos-app
+mkdir $1/trjs-macos/doc
+cp -R ./doc/fonts $1/trjs-macos/doc
+cp -R ./doc/img $1/trjs-macos/doc
+cp -R ./doc/js $1/trjs-macos/doc
+cp -R ./doc/style $1/trjs-macos/doc
+cp ./doc/doc.css $1/trjs-macos/doc
+cp ./doc/trjs_doc_fra.html $1/trjs-macos/doc
+cp ./doc/trjs_pp_fra.html $1/trjs-macos/doc
+cp ./doc/trjs_pp_eng.html $1/trjs-macos/doc
