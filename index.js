@@ -1,4 +1,5 @@
 'use strict';
+var version = require('./editor/version');
 var electron = require('electron');
 // Module to control application life.
 var app = electron.app;
@@ -608,7 +609,7 @@ function createMenu() {
                     // win.loadURL('https://github.com')
 
                     // Ou charge un fichier HTML local
-                    win.loadURL('file://' + __dirname + '/doc/trjs_pp_eng.html');
+                    win.loadURL('file://' + version.trjsLoc() + '/doc/trjs_pp_eng.html');
                 }
             },
             {
@@ -634,7 +635,7 @@ function createMenu() {
                     // win.loadURL('https://github.com')
 
                     // Ou charge un fichier HTML local
-                    win.loadURL('file://' + __dirname + '/doc/trjs_pp_fra.html');
+                    win.loadURL('file://' + version.trjsLoc() + '/doc/trjs_pp_fra.html');
                 }
             },
             {type: 'separator'},
