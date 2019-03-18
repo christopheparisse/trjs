@@ -535,6 +535,7 @@ function createMenu() {
                     if (window) window.webContents.send('helpedit', 'main');
                 }
             },
+            /*
             {
                 label: 'Import and export',
                 click: function () {
@@ -542,6 +543,7 @@ function createMenu() {
                     if (window) window.webContents.send('helpimportexport', 'main');
                 }
             },
+            */
             {
                 label: 'Parameters and special features',
                 click: function () {
@@ -581,14 +583,19 @@ function createMenu() {
             */
             {
                 label: 'Offline Help / First steps (English)',
-                click: function () {
+                click: function (e) {
+                    /*
                     var window = BrowserWindow.getFocusedWindow();
                     if (window) window.webContents.send('helpfirststeps-eng', 'main');
-                    /*
+                    */
                     var sz = getWindowSize();
-                    var win = new BrowserWindow({width: sz.width, height: sz.height});
-                    var p = win.getPosition();
-                    win.setPosition(p[0]+20, p[1]+20);
+                    var p = BrowserWindow.getFocusedWindow().getPosition();
+                    var win = new BrowserWindow({
+                        width: sz.width, 
+                        height: sz.height,
+                        x: p[0]+20,
+                        y: p[1]+20
+                    });
                     win.on('closed', function() {
                         win = null;
                     });
@@ -602,19 +609,23 @@ function createMenu() {
 
                     // Ou charge un fichier HTML local
                     win.loadURL('file://' + __dirname + '/doc/trjs_pp_eng.html');
-                    */
                 }
             },
             {
                 label: 'Aide locale / premiers pas (Français)',
                 click: function () {
+                    /*
                     var window = BrowserWindow.getFocusedWindow();
                     if (window) window.webContents.send('helpfirststeps-fra', 'main');
-                    /*
+                    */
                     var sz = getWindowSize();
-                    var win = new BrowserWindow({width: sz.width, height: sz.height});
-                    var p = win.getPosition();
-                    win.setPosition(p[0]+20, p[1]+20);
+                    var p = BrowserWindow.getFocusedWindow().getPosition();
+                    var win = new BrowserWindow({
+                        width: sz.width, 
+                        height: sz.height,
+                        x: p[0]+20,
+                        y: p[1]+20
+                    });
                     win.on('closed', function() {
                         win = null;
                     });
@@ -624,7 +635,6 @@ function createMenu() {
 
                     // Ou charge un fichier HTML local
                     win.loadURL('file://' + __dirname + '/doc/trjs_pp_fra.html');
-                    */
                 }
             },
             {type: 'separator'},
