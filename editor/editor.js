@@ -758,10 +758,13 @@ trjs.editor = (function () {
             fsio.openExternal("http://ct3.ortolang.fr/trjs/documentation/trjs_pp_fra.html");
         // window.open("http://modyco.inist.fr/transcriberjs/", '_blank');
         */
-        if (lg === 'eng')
-            fsio.openExternal('file://' + __dirname + '/doc/trjs_pp_eng.html');
-        else
-            fsio.openExternal('file://' + __dirname + '/doc/trjs_pp_fra.html');
+        if (lg === 'eng') {
+            fsio.openExternal('file://' + version.trjsLoc() + '/doc/trjs_pp_eng.html');
+            // fsio.openExternal('file://' + __dirname + '/doc/trjs_pp_eng.html');
+        } else {
+            fsio.openExternal('file://' + version.trjsLoc() + '/doc/trjs_pp_fra.html');
+            // fsio.openExternal('file://' + __dirname + '/doc/trjs_pp_fra.html');
+        }
     }
 
     /**
