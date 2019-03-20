@@ -10,6 +10,6 @@ md Trjs-win32-ia32\resources\tools
 xcopy /s/y/c tools\*.* Trjs-win32-ia32\resources\tools
 md Trjs-win32-ia32\resources\doc
 xcopy /s/y/c doc\*.* Trjs-win32-ia32\resources\doc
-cd \devlopt\trjs
+cd \devlopt\prod-trjs
 "C:\Program Files (x86)\NSIS\Bin\makensis.exe" transcriberjs-x64.nsi
 "C:\Program Files (x86)\NSIS\Bin\makensis.exe" transcriberjs-x86.nsi
