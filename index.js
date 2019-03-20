@@ -158,7 +158,7 @@ function startWindow(arg) {
     }
 
     // Open the DevTools.
-    wnd.webContents.openDevTools();
+    // wnd.webContents.openDevTools();
 
     // Emitted when the window is closing.
     wnd.on('close', function (e) {
