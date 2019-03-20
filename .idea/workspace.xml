@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d66e9f4e-699d-4aaa-b192-22bb14b20254" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor/tablekeyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/tablekeyboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,20 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="348" column="37" lean-forward="true" selection-start-line="348" selection-start-column="37" selection-end-line="348" selection-end-column="37" />
+            <state relative-caret-position="906">
+              <caret line="223" selection-start-line="223" selection-end-line="223" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/editor/events.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="2280" column="25" selection-start-line="2280" selection-start-column="14" selection-end-line="2280" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/doc.css">
+        <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2850">
-              <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
+            <state relative-caret-position="465">
+              <caret line="160" column="35" lean-forward="true" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -44,9 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>funToKeyString</find>
-      <find>int2</find>
-      <find>int1bis</find>
       <find>SAVE</find>
       <find>&lt;bl</find>
       <find>tablekeysSE2</find>
@@ -74,6 +83,9 @@
       <find>encombre</find>
       <find>grey</find>
       <find>gris</find>
+      <find>initBindings</find>
+      <find>loadUserBindings</find>
+      <find>console.log</find>
     </findStrings>
     <replaceStrings>
       <replace>TRJS</replace>
@@ -161,22 +173,22 @@
         <option value="$PROJECT_DIR$/editor/params.js" />
         <option value="$PROJECT_DIR$/editor/messgs.js" />
         <option value="$PROJECT_DIR$/editor/version.js" />
-        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/html/media.html" />
-        <option value="$PROJECT_DIR$/editor/events.js" />
         <option value="$PROJECT_DIR$/doc/doc.css" />
         <option value="$PROJECT_DIR$/doc/trjs_pp.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/doc/trjs_pp_eng.html" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/editor/tablekeyboard.js" />
+        <option value="$PROJECT_DIR$/editor/events.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="73" />
-    <option name="y" value="23" />
-    <option name="width" value="1848" />
-    <option name="height" value="1394" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="116" />
+    <option name="y" value="70" />
+    <option name="width" value="1264" />
+    <option name="height" value="1089" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -194,16 +206,6 @@
               <item name="prod-trjs" type="b2602c69:ProjectViewProjectNode" />
               <item name="prod-trjs" type="462c0819:PsiDirectoryNode" />
               <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prod-trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prod-trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prod-trjs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prod-trjs" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -384,18 +386,21 @@
       <workItem from="1551049817878" duration="12081000" />
       <workItem from="1551108865562" duration="2982000" />
       <workItem from="1552899741197" duration="103000" />
+      <workItem from="1553006986901" duration="449000" />
+      <workItem from="1553007469184" duration="443000" />
+      <workItem from="1553070040139" duration="3110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="430213000" />
+    <option name="totallyTimeSpent" value="434215000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <frame x="116" y="70" width="1264" height="1089" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44379562" visible="true" weight="0.15091342" />
-      <window_info id="Structure" order="1" sideWeight="0.5562044" side_tool="true" visible="true" weight="0.15091342" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6950852" visible="true" weight="0.17457764" />
+      <window_info id="Structure" order="1" sideWeight="0.30491474" side_tool="true" visible="true" weight="0.17457764" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Gulp" order="4" side_tool="true" />
@@ -673,9 +678,7 @@
     <entry file="file://$PROJECT_DIR$/buildpc.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/trjs_pp_2017.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/trjs_pp_2017.html" />
     <entry file="file://$PROJECT_DIR$/editor/params.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -727,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maj.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -758,20 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="1583" column="39" selection-start-line="1583" selection-start-column="30" selection-end-line="1583" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="491" column="8" selection-start-line="491" selection-start-column="8" selection-end-line="491" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -779,24 +761,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/trjs_pp.html">
+    <entry file="file://$PROJECT_DIR$/doc/trjs_pp.html" />
+    <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5280">
-          <caret line="352" selection-start-line="352" selection-end-line="352" />
+        <state relative-caret-position="368">
+          <caret line="348" column="37" selection-start-line="348" selection-start-column="37" selection-end-line="348" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/doc.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2850">
-          <caret line="190" column="1" selection-start-line="190" selection-start-column="1" selection-end-line="190" selection-end-column="1" />
+        <state relative-caret-position="602">
+          <caret line="197" column="1" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/trjs_pp_eng.html">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="348" column="37" lean-forward="true" selection-start-line="348" selection-start-column="37" selection-end-line="348" selection-end-column="37" />
+        <state relative-caret-position="465">
+          <caret line="160" column="35" lean-forward="true" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/tablekeyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="906">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="2280" column="25" selection-start-line="2280" selection-start-column="14" selection-end-line="2280" selection-end-column="25" />
         </state>
       </provider>
     </entry>

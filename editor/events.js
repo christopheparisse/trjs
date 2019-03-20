@@ -401,8 +401,8 @@ trjs.events = (function () {
             setSelectedLine(sel);
             var start = lineGetCell(sel, trjs.data.TSCOL);
             if (!start && Number(start) !== 0) {
-                console.log("gc", start);
-                console.log("gc stop at start");
+                // console.log("gc", start);
+                // console.log("gc stop at start");
                 trjs.log.alert("cannot run current line with no time start: use TAB (playpause function)");
                 return;
             }
@@ -605,13 +605,13 @@ trjs.events = (function () {
         var start = lineGetCell(prevline, trjs.data.TSCOL);
         var end = lineGetCell(nextline, trjs.data.TECOL);
         if (!start && Number(start) !== 0) {
-            console.log("r3", start, end);
+            // console.log("r3", start, end);
             console.log("stop at start");
             trjs.log.alert("cannot run current line with no time start: use TAB (playpause function)");
             return;
         }
         if (!end && Number(end) !== 0) {
-            console.log("r3", start, end);
+            // console.log("r3", start, end);
             console.log("stop at end");
             trjs.log.alert("cannot run current line with no time end: use TAB (playpause function)");
             return;
@@ -1541,7 +1541,7 @@ trjs.events = (function () {
             // if (e.transcript !== true) return false;
             e.preventDefault();
         }
-        console.log("tab:", trjs.param.synchro.witch());
+        // console.log("tab:", trjs.param.synchro.witch());
         if (trjs.param.isContinuousPlaying == true) {
             trjs.media.endContinuousPlay();
             return true;
@@ -1643,7 +1643,7 @@ trjs.events = (function () {
          */
         var charCode = e.which; // (typeof e.which === undefined) ? e.keyCode : e.which;
         var keyptr = trjs.keys.modifiersEvent(charCode, e);
-        console.log("keydown", charCode, e.ctrlKey?"ctrl":"noctrl", e.altKey?"alt":"noalt", e.shiftKey?"shift":"noshift", e.metaKey?"meta":"nometa", keyptr);
+        // console.log("keydown", charCode, e.ctrlKey?"ctrl":"noctrl", e.altKey?"alt":"noalt", e.shiftKey?"shift":"noshift", e.metaKey?"meta":"nometa", keyptr);
         if (enter !== true && charCode === 13) return false;
         if (trjs.param.server !== 'electron') {
             var m = $('#openfile').data('bs.modal');
@@ -1696,8 +1696,8 @@ trjs.events = (function () {
         if (specialEvent1 === true) {
             specialEvent1 = false;
             var f = trjs.tablekeysSE1[keyptr];
-            //console.log("F= ", f);
-            //console.log("SE1 " + charCode + ' ' + keyptr + ' ' + f);
+            // console.log("F= ", f);
+            // console.log("SE1 " + charCode + ' ' + keyptr + ' ' + f);
             if (f !== undefined) {
                 e.preventDefault();
                 return f(e, trjs.data.selectedLine);
@@ -1708,8 +1708,8 @@ trjs.events = (function () {
         } else if (specialEvent2 === true) {
             specialEvent2 = false;
             var f = trjs.tablekeysSE2[keyptr];
-            console.log("F= ", f);
-            console.log("SE2 " + charCode + ' ' + keyptr + ' ' + f.name);
+            // console.log("F= ", f);
+            // console.log("SE2 " + charCode + ' ' + keyptr + ' ' + f.name);
             if (f !== undefined) {
                 e.preventDefault();
                 return f(e, trjs.data.selectedLine);
@@ -1719,7 +1719,7 @@ trjs.events = (function () {
             return false;
         } else {
             var f = trjs.tablekeys[keyptr];
-            //console.log("F= ", f);
+            // console.log("F= ", f);
             // console.log("normal " + charCode + ' ' + keyptr + ' ' + f);
             if (f !== undefined) {
                 e.preventDefault();
@@ -2039,7 +2039,7 @@ trjs.events = (function () {
             return; // it's ok (lexicon)
         }
         var type = trjs.transcription.findCode(event.target.textContent);
-        console.log("checkLoc3: " + type + ' ' + event.target.textContent);
+        // console.log("checkLoc3: " + type + ' ' + event.target.textContent);
         if (type === '---') {
             trjs.log.alert('You have to create code names for users and templates before using them. <b>'
                 + event.target.textContent + '</b> cannot be used unless you edit persons or templates first.', 'high');

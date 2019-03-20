@@ -195,17 +195,29 @@ function loadUserBindings() {
     var bu = trjs.local.get('bindingsUser');
     if (bu) {
         var v = JSON.parse(bu);
-        trjs.bindingsUser = v;
-    } else {
-        trjs.bindingsUser = [];
-        // BINDKEY BINDCTRL BINDALT BINDSHIFT BINDMETA BINDSUPL BINDFUN
-        for (var i = 0; i < trjs.bindingsDef.length; i++) {
-            trjs.bindingsUser.push([ trjs.bindingsDef[i][BINDKEY],
-                trjs.bindingsDef[i][BINDCTRL], trjs.bindingsDef[i][BINDALT],
-                trjs.bindingsDef[i][BINDSHIFT], (trjs.bindingsDef[i][BINDMETA] === 'ctrl'
-                    ? true : trjs.bindingsDef[i][BINDMETA]),
-                trjs.bindingsDef[i][BINDSUPL], trjs.bindingsDef[i][BINDFUN] ]);
+        // tests if TAB is set, otherwise this is strange and it is better to reset the keys.
+        for (var i=0; i < v.length; v++) {
+            if (v[i][BINDFUN] === "playTab") {
+                if (v[i][BINDKEY] === "") {
+                    // TAB is not set, so reset all keys
+                    trjs.keys.resetKeys();
+                    console.log("Tab not set: reset of keys");
+                    return;
+                } else {
+                    // TAB set this is ok
+                    trjs.bindingsUser = v;
+                    console.log("init keys was ok");
+                    return;
+                }
+            }
         }
+        // TAB was not found at all
+        // this should not happen normally
+        // but at least we try to reset the normal keys
+        trjs.keys.resetKeys();
+        console.log("bizarre reset of keys");
+    } else {
+        trjs.keys.resetKeys();
     }
 }
 
@@ -241,7 +253,7 @@ trjs.keys.init = function () {
 
     // LOAD USER BINDINGS IF THERE EXIST ELSE COPY bindingsDef to bindingsUser
     loadUserBindings();
-    // add unbinded functions to the list so that the user can change the bindings
+    // add unbounded functions to the list so that the user can change the bindings
     trjs.keys.noBindings();
 
     trjs.keys.specialChar1 = trjs.keys.modifiersEvent(nkey("f1"), {
@@ -1038,7 +1050,7 @@ trjs.keys.nkey = nkey;
 
 /*
  * default binding table
- * the binding table is for the user internationauxrface and can be inserted in the real binding table trjs.tablekeys
+ * the binding table is for the user interface and can be inserted in the real binding table trjs.tablekeys
  * the trjs.keys.init function allows to initialize or reinitialize the keys.
  * for the future it would be good to allow to store and modify this list of bindings
  */
