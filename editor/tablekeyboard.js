@@ -201,7 +201,7 @@ function loadUserBindings() {
                 if (v[i][BINDKEY] === "") {
                     // TAB is not set, so reset all keys
                     trjs.keys.resetKeys();
-                    console.log("Tab not set: reset of keys");
+                    console.log("Tab found not set: reset of keys");
                     return;
                 } else {
                     // TAB set this is ok
@@ -215,7 +215,7 @@ function loadUserBindings() {
         // this should not happen normally
         // but at least we try to reset the normal keys
         trjs.keys.resetKeys();
-        console.log("bizarre reset of keys");
+        console.log("Tab not found: reset of keys");
     } else {
         trjs.keys.resetKeys();
     }
