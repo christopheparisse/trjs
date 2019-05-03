@@ -106,6 +106,12 @@ trjs.init.electronkeyboard = function () {
     ipcRenderer.on('copymsel', function(event, arg) {
         trjs.transcription.copyMultipleSelection();
     });
+    ipcRenderer.on('copyclipboardmainlines', function(event, arg) {
+        trjs.transcription.exportMStoClipboard('+l1 -t -n');
+    });
+    ipcRenderer.on('copyclipboardalldata', function(event, arg) {
+        trjs.transcription.exportMStoClipboard('+t');
+    });
     ipcRenderer.on('pastemsel', function(event, arg) {
         trjs.transcription.pasteMultipleSelection();
     });

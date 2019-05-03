@@ -288,9 +288,13 @@ trjs.io = (function () {
      * save current file on the downloading area as a text file
      * @method exportText
      */
-    function exportText(style) {
+    function exportText(style, all) {
         $("#openexports").modal('hide');
-        var s = trjs.transcription.saveTranscriptToText(false, false, style);
+        if (all !== 'all') {
+            var s = trjs.transcription.saveTranscriptToText(true, false, style);
+        } else {
+            var s = trjs.transcription.saveTranscriptToText(false, false, style);
+        }
         saveExportFile(s, "text/plain;charset=utf-8", ".txt", 'Text Files', ['txt', 'text'], 'TXT');
     }
 

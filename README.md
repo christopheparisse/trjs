@@ -1,40 +1,38 @@
 # TRJS - TranscriberJS
 
-**Clone and run for a quick way to see an Electron in action.**
+To install TRJS from sources, you have to:
 
-This is a minimal Electron application based on 
-the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start) 
-within the Electron documentation.
+1- install node.js and npm
 
-**Use this app along with the [Electron API Demos](http://electron.atom.io/#get-started) 
-app for API code examples to help you get started.**
-
-A basic Electron application needs just these files:
-
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `index.js` - Starts the app and creates a browser window to render HTML. 
-This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
-
-You can learn more about each of these components within 
-the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start).
-
-## To Use
-
-To clone and run this repository you'll need [Git](https://git-scm.com) 
-and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) 
-installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies and run the app
-npm install && npm start
+2- Download this repository (trjs), unzip it or better clone it with
+```
+git clone https://github.com/christopheparisse/trjs.git
 ```
 
-Learn more about Electron and its API in 
-the [documentation](http://electron.atom.io/docs/latest).
+3- Download a distribution of Java and FFMPEG. FFMPEG excecutables should be copied into 
+./tools (named ffmpeg, ffprobe, ffmpeg-x64.exe, ffprobe-x64.exe). Java runtimes shoudl be 
+copied into ./tools/java-osx (for MacOS) and ./tools/java-x64 (for Windows x64)
+ 
+4- Run the following commands 
+```
+npm install
+npm run rebuild
+```
 
-#### License [CC0 (Public Domain)](LICENSE.md)
+5- Start the program
+```
+npm start
+```
+
+6- Build the standalone application
+```
+sh ver.sh
+sh mktrjs-macos.sh pathtobuild
+sh buildmacos.sh pathtobuild
+```
+
+This should create the application for MacOS.
+
+For windows, use mktrjs-x64.sh (under ubuntu shell) and buildpc.bat (under windows).
+It uses the NSIS software. Ubuntu shell is not mandatory, but you should then 
+create a .bat file that does the same thing than mktrjs-x64.sh

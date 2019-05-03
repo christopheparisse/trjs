@@ -1685,6 +1685,20 @@ trjs.transcription = (function () {
          */
     }
 
+    function exportMStoClipboard(format, all) {
+        $("#openexports").modal('hide');
+        if (all === 'all' || trjs.data.selectedPart === false || trjs.data.selectedPart === 'all') {
+            var s = saveTranscriptToText(false, false, format);
+            var test = require('electron');
+            var clipboard = require('electron').clipboard;
+            clipboard.writeText(s);
+        } else {
+            var s = saveTranscriptToText(true, true, format);
+            var clipboard = require('electron').clipboard;
+            clipboard.writeText(s);
+        }
+    }
+
     function exportMStoSubt(format, all) {
         $("#openexports").modal('hide');
         if (all === 'all' || trjs.data.selectedPart === false || trjs.data.selectedPart === 'all') {
@@ -2075,10 +2089,25 @@ trjs.transcription = (function () {
      * @method saveTranscriptToText
      * @return string with the data
      */
-    function saveTranscriptToText(partof, reset, time) {
+    function saveTranscriptToText(partof, reset, format) {
         /*
          * saving the text part of the file
          */
+        // parameters for format
+        var p = format.split(' ');
+        var time = false;
+        var mainlinesonly = false;
+        var numbers = true;
+        for (var pi in p) {
+            switch(p[pi]) {
+                case "+l1": mainlinesonly = true; break;
+                case "+lall": mainlinesonly = false; break;
+                case "+t": time = true; break;
+                case "-t": time = false; break;
+                case "+n": numbers = true; break;
+                case "-n": numbers = false; break;
+            }
+        }
         var tablelines = trjs.transcription.tablelines();
         var tmin = 0;
         if (trjs.data.selectedPart === false) {
@@ -2108,6 +2137,7 @@ trjs.transcription = (function () {
                 itrans = trjs.check.cleanErrors(itrans);
             }
             if (type === 'prop') {
+                if (mainlinesonly) continue;
                 s += '\t';
                 var level = trjs.data.imbrication[iloc];
                 if (level) {
@@ -2118,7 +2148,7 @@ trjs.transcription = (function () {
                     s += '    ';
             } else {
                 nl++;
-                s += nl + '\t';
+                if (numbers) s += nl + '\t';
             }
             s += iloc + '\t';
             s += transcriptExpand(itrans) + '\t';
@@ -2502,6 +2532,7 @@ trjs.transcription = (function () {
         cutMultipleSelection: cutMultipleSelection,
         deselectAllMS: deselectAllMS,
         doShiftTimeLinks: doShiftTimeLinks,
+        exportMStoClipboard: exportMStoClipboard,
         exportMStoCsv: exportMStoCsv,
         exportMStoMedia: exportMStoMedia,
         exportMStoMediaSubt: exportMStoMediaSubt,

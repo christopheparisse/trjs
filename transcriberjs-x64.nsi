@@ -12,10 +12,10 @@
 ;--------------------------------
 
 ; The name of the installer
-Name "trjs-install-v0.7.5b-x64"
+Name "trjs-install-v0.7.6-x64"
 
 ; The file to write
-OutFile "trjs-v0.7.5b-x64.exe"
+OutFile "trjs-v0.7.6-x64.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES64\trjs"
@@ -41,7 +41,7 @@ UninstPage instfiles
 ;--------------------------------
 
 ; The stuff to install
-Section "trjs 64bits v0.7.5b (required)"
+Section "trjs 64bits v0.7.6 (required)"
 
   SectionIn RO
 

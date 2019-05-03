@@ -1,3 +1,3 @@
 git add . 
-git commit -m "version 0.7.5b"
+git commit -m "version 0.7.6"
 git push origin master

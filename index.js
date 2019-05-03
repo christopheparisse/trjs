@@ -367,6 +367,18 @@ function createMenu() {
                         if (window) window.webContents.send('pastemsel', 'main');
                     }
                 },
+                {
+                    label: 'Copy lines into Clipboard (mainlines only)', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('copyclipboardmainlines', 'main');
+                    }
+                },
+                {
+                    label: 'Copy lines into Clipboard (all data)', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('copyclipboardalldata', 'main');
+                    }
+                },
             ]
         },
         {

@@ -735,14 +735,14 @@
                                 <div class="col-md-3 col-md-pull-9"><span id="exportmenufile">Export to... </span></div>
                             </div><div class="row">
                                 <div class="col-md-9 col-md-push-3">
-                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText(true);"><i class="fa fa-download"></i></button>
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText('+t', 'all');"><i class="fa fa-download"></i></button>
                                     &nbsp;<span id="fexporttexttime">to Text - with time marks (.txt)</span>
                                 </div>
                                 <div class="col-md-3 col-md-pull-9"></div>
                             </div><div class="row">
                                 <div class="col-md-9 col-md-push-3">
-                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText(false);"><i class="fa fa-download"></i></button>
-                                    &nbsp;<span id="fexporttextnotime">to Text - without time marks (.txt)</span>
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText('-t -n', 'all');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttextnotime">to Text - without time marks and line numbers (.txt)</span>
                                 </div>
                                 <div class="col-md-3 col-md-pull-9"></div>
                             </div><div class="row">
@@ -828,8 +828,52 @@
                             <div class="row">
                                 <div class="col-md-9 col-md-push-3">
                                     <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoTei();">
-                                    <i class="fa fa-download"></i></button>
+                                        <i class="fa fa-download"></i></button>
                                     <span id="fmulttotei"> Export selection to TEI (.tei_corpo.xml)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoClipboard('+t');">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttoclipboard"> Export selection to Clipboard</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" onclick="trjs.transcription.exportMStoClipboard('+l1 -t -n');">
+                                    <i class="fa fa-download"></i></button>
+                                    <span id="fmulttoclipboardmainlines"> Export selection to Clipboard (mainline only)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText('+t');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttexttimeselect">Export selection to Text - with time marks (.txt)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText('-t -n');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttextnotimeselect">Export selection to Text - without time marks (.txt)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText('+l1 +t');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttexttimeselectmainlines">Export selection to Text (mainlines only) - with time marks (.txt)</span>
+                                </div>
+                                <div class="col-md-3 col-md-pull-9"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 col-md-push-3">
+                                    <button type="button" class="btn btn-primary" onclick="trjs.io.exportText('+l1 -t -n');"><i class="fa fa-download"></i></button>
+                                    &nbsp;<span id="fexporttextnotimeselectmainlines">Export selection to Text (mainlines only) - without time marks (.txt)</span>
                                 </div>
                                 <div class="col-md-3 col-md-pull-9"></div>
                             </div>

@@ -19,7 +19,7 @@ version.version = "v-loading";
 version.appName = 'TRJS';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
-version.date = new Date(2019, 2, 20); // year, month, day : warning minus 1 (-1) for months : january === 0
+version.date = new Date(2019, 4, 5); // year, month, day : warning minus 1 (-1) for months : january === 0
 
 version.preservedPages = 3;
 
