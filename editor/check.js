@@ -21,9 +21,9 @@ trjs.check = (function () {
                     for (var i = 0; i < messg.length; i++)
                         ret.push({ message: messg[i][2], line: messg[i][0], column: messg[i][1] });
                     callback({ value: 'error', list: ret });
-                    console.log('NotGood:', messg, ret);
+                    // console.log('NotGood:', messg, ret);
                 } else {
-                    callback({ value: 'ok' });
+                    // callback({ value: 'ok' });
                     // console.log('Perfect:', messg);
                 }
             });
@@ -163,7 +163,7 @@ trjs.check = (function () {
      */
     function goCheck() {
         var tablelines = trjs.transcription.tablelines();
-        console.log(tablelines);
+        // console.log(tablelines);
         checklines(tablelines, false);
     }
 
@@ -232,7 +232,7 @@ trjs.check = (function () {
      */
     function checkCurrentLine(e, sel) {
         if (sel === undefined) sel = trjs.data.selectedLine;
-        console.log("checkCurrentLine", sel);
+        // console.log("checkCurrentLine", sel);
         checklines([sel], true);
     }
 
@@ -412,7 +412,7 @@ trjs.check = (function () {
         t = t.replace(/<error.*?>/g, '');
         t = t.replace(/<\/error>/g, '');
         t = t.replace(/&nbsp;/g, ' ');
-        console.log("cleanOut: ",t);
+        // console.log("cleanOut: ",t);
         return t;
     }
 

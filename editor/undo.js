@@ -486,7 +486,7 @@ return {
         if (line < 1 || line > tablelines.length) {
             console.log('erroneous line number', line);
         } else {
-        	console.log('undo: check ', line);
+        	// console.log('undo: check ', line);
             trjs.check.checkCurrentLine(undefined, $(tablelines[line - 1]));
 		}
 		return replace(trjs.data.TRCOL, line, old, code);

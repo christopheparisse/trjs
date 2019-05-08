@@ -175,6 +175,10 @@ trjs.events = (function () {
     function createRowAfterWith(sel, type, loc, ts, te, tr) {
         trjs.param.change(true);
         var ln = trjs.transcription.getLine(sel);
+        if (isNaN(ln)) {
+            console.log("no a valid line pointer");
+            return; // probably bad selection (not a transcription line)
+        }
         ln++;
         var s = trjs.transcription.stringLineTranscript(type, loc, ts, te, trjs.transcription.formatTime(ts), trjs.transcription.formatTime(te), tr, ln);
         sel.after(s); // inserts after current sibbling
@@ -851,6 +855,10 @@ trjs.events = (function () {
     function insertLineLoc(ptr, copy) {
         for (var i = 0; i < copy.length; i++) {
             var line = trjs.transcription.getLine(ptr);
+            if (isNaN(line)) {
+                trjs.log.alert("No proper selection before copy. Please select a line with cursor.");
+                return; // probably bad selection (not a transcription line)
+            }
             trjs.undo.insertLine(line);
             trjs.undo.replaceCode(line + 1, '', copy[i][0]);
             trjs.undo.replaceTS(line + 1, '', copy[i][1]);

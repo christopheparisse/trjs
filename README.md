@@ -16,7 +16,8 @@ copied into ./tools/java-osx (for MacOS) and ./tools/java-x64 (for Windows x64)
 4- Run the following commands 
 ```
 npm install
-npm run rebuild
+npm update
+npm rebuild
 ```
 
 5- Start the program
@@ -26,6 +27,13 @@ npm start
 
 6- Build the standalone application
 ```
+npm run rebuild
+npm build
+npm git
+npm dist
+
+or
+
 sh ver.sh
 sh mktrjs-macos.sh pathtobuild
 sh buildmacos.sh pathtobuild

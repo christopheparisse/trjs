@@ -11,6 +11,10 @@ body {
 	*/
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+body.busy-cursor {
+	cursor: wait;
+}
+
 .b {font-weight: bold;}
 #r {text-align: right;}
 .green {color: green;}

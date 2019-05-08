@@ -92,7 +92,7 @@ trjs.init.electronkeyboard = function () {
         trjs.undo.redo();
     });
     ipcRenderer.on('showhidemsel', function(event, arg) {
-        trjs.transcription.setMultipleSelection();
+        trjs.transcription.setMS();
     });
     ipcRenderer.on('selectmsel', function(event, arg) {
         trjs.transcription.selectAllMS();
@@ -101,19 +101,25 @@ trjs.init.electronkeyboard = function () {
         trjs.transcription.deselectAllMS();
     });
     ipcRenderer.on('cutmsel', function(event, arg) {
-        trjs.transcription.cutMultipleSelection();
+        trjs.transcription.cutMS('all');
     });
     ipcRenderer.on('copymsel', function(event, arg) {
-        trjs.transcription.copyMultipleSelection();
-    });
-    ipcRenderer.on('copyclipboardmainlines', function(event, arg) {
-        trjs.transcription.exportMStoClipboard('+l1 -t -n');
-    });
-    ipcRenderer.on('copyclipboardalldata', function(event, arg) {
-        trjs.transcription.exportMStoClipboard('+t');
+        trjs.transcription.copyMS('all');
     });
     ipcRenderer.on('pastemsel', function(event, arg) {
-        trjs.transcription.pasteMultipleSelection();
+        trjs.transcription.pasteMS('all');
+    });
+    ipcRenderer.on('copymainlines', function(event, arg) {
+        trjs.transcription.copyMS('ln');
+    });
+    ipcRenderer.on('copyuserlines', function(event, arg) {
+        trjs.transcription.copyMS('ht');
+    });
+    ipcRenderer.on('pastemainlines', function(event, arg) {
+        trjs.transcription.pasteMS('ln');
+    });
+    ipcRenderer.on('pasteuserlines', function(event, arg) {
+        trjs.transcription.pasteMS('ht');
     });
     ipcRenderer.on('parameters', function(event, arg) {
         trjs.editor.showParams();

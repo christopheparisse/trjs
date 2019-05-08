@@ -474,7 +474,11 @@ fsio.exportMedia = function(args, doneFunction, failFunction) {
 };
 
 var openFromMenu = function(menuItem, browserWindow, event) {
-    fsio.openTranscript(0, menuItem.label);
+    trjs.init.testNotSave( function(yesno) {
+        if (yesno === true ) {  // the user does not want to save the modified file or the file is not modified since last save
+            fsio.openTranscript(0, menuItem.label);
+        }
+    });
 }
 
 fsio.setMRU = function(name) {

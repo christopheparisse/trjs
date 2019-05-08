@@ -367,16 +367,29 @@ function createMenu() {
                         if (window) window.webContents.send('pastemsel', 'main');
                     }
                 },
+                {type: 'separator'},
                 {
                     label: 'Copy lines into Clipboard (mainlines only)', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
-                        if (window) window.webContents.send('copyclipboardmainlines', 'main');
+                        if (window) window.webContents.send('copymainlines', 'main');
                     }
                 },
                 {
-                    label: 'Copy lines into Clipboard (all data)', click: function () {
+                    label: 'Copy lines into Clipboard ((code + mainline)', click: function () {
                         var window = BrowserWindow.getFocusedWindow();
-                        if (window) window.webContents.send('copyclipboardalldata', 'main');
+                        if (window) window.webContents.send('copyuserlines', 'main');
+                    }
+                },
+                {
+                    label: 'Copy Clipboard into lines (mainlines only)', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('pastemainlines', 'main');
+                    }
+                },
+                {
+                    label: 'Copy Clipboard into lines (code + mainline)', click: function () {
+                        var window = BrowserWindow.getFocusedWindow();
+                        if (window) window.webContents.send('pasteuserlines', 'main');
                     }
                 },
             ]

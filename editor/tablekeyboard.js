@@ -1124,6 +1124,7 @@ trjs.keys.initBindings = function () {
 
     trjs.bindingsDef.push([nkey("a"), true, true, false, 'ctrl', "", "selectAllMS"]); // Ctrl Alt A
     trjs.bindingsDef.push([nkey("b"), true, true, false, 'ctrl', "", "splitLine"]); // Ctrl Alt B
+    trjs.bindingsDef.push([nkey("c"), true, true, false, 'ctrl', "", "copyMS"]); // Ctrl Alt C
     trjs.bindingsDef.push([nkey("d"), true, true, false, 'ctrl', "", "deleteLineLoc"]); // Ctrl Alt D
     trjs.bindingsDef.push([nkey("e"), true, true, false, 'ctrl', "", "goCheck"]); // Ctrl Alt E
     // trjs.bindingsDef.push([70, true, false, false, 'ctrl', "", "showSearch"]); // Ctrl F
@@ -1138,11 +1139,9 @@ trjs.keys.initBindings = function () {
     trjs.bindingsDef.push([nkey("o"), true, true, false, 'ctrl', "", "openMedia"]); // Ctrl Alt O
     trjs.bindingsDef.push([nkey("r"), true, true, false, 'ctrl', "", "splitLine"]); // Ctrl Alt R
     trjs.bindingsDef.push([nkey("u"), true, true, false, 'ctrl', "", "showDiv"]); // Ctrl Alt U
+    trjs.bindingsDef.push([nkey("v"), true, true, false, 'ctrl', "", "pasteMS"]); // Ctrl Alt V
+    trjs.bindingsDef.push([nkey("x"), true, true, false, 'ctrl', "", "cutMS"]); // Ctrl Alt X
 
-    //trjs.bindingsDef.push([119, true, true, false, 'ctrl', "", "setMultipleSelection"]); // Ctrl Alt F8
-    //trjs.bindingsDef.push([120, true, true, false, 'ctrl', "", "exportMStoSubtSrt"]); // Ctrl Alt F9
-    //trjs.bindingsDef.push([121, true, true, false, 'ctrl', "", "exportMStoSubtAss"]); // Ctrl Alt F10
-    //trjs.bindingsDef.push([122, true, true, false, 'ctrl', "", "exportMStoMediaSubt"]); // Ctrl Alt F11
     trjs.bindingsDef.push([nkey("f12"), true, true, false, 'ctrl', "", "exportMStoMedia"]); // Ctrl Alt F12
 
     trjs.bindingsDef.push([nkey("f1"), false, true, true, false, "", "generic"]); // Alt Shift F1
@@ -1412,6 +1411,9 @@ trjs.keys.initF1Bindings = function () {
     trjs.bindingsDef.push([nkey("n"), false, false, false, false, "F1", "F1.key(29)"]); //
     trjs.bindingsDef.push([nkey("r"), false, false, false, false, "F1", "F1.key(30)"]); //
     trjs.bindingsDef.push([nkey("c"), false, false, false, false, "F1", "F1.key(31)"]); //
+
+    trjs.bindingsDef.push( [nkey("v"), true, false, false, false, "F1", "pasteMSuserlines" ]); // F1 ctrl v
+    trjs.bindingsDef.push( [nkey("w"), true, false, false, false, "F1", "setMS" ]); // F1 ctrl w
 };
 
 trjs.F2 = {};
@@ -1491,6 +1493,8 @@ trjs.keys.initF2Bindings = function () {
     trjs.bindingsDef.push( [nkey("8"), true, false, false, false, "F2", "setNthTier8" ]); // F2 ctrl 8
     trjs.bindingsDef.push( [nkey("9"), true, false, false, false, "F2", "setNthTier9" ]); // F2 ctrl 9
 
+    trjs.bindingsDef.push( [nkey("v"), true, false, false, false, "F2", "pasteMSmainlines" ]); // F2 ctrl v
+
     trjs.bindingsDef.push( [nkey("f5"), false, true, false, false, "F2", "colorRed" ]); // 'RED' ] ); // F2 alt F5
     trjs.bindingsDef.push( [nkey("f6"), false, true, false, false, "F2", "colorGreen" ]); // 'GREEN' ] ); // F2 alt F6
     trjs.bindingsDef.push( [nkey("f7"), false, true, false, false, "F2", "colorBlue" ]); // 'BLUE' ] ); // F2 alt F7
@@ -1498,11 +1502,6 @@ trjs.keys.initF2Bindings = function () {
     trjs.bindingsDef.push( [nkey("f9"), false, true, false, false, "F2", "italics" ]); // 'ITALICS' ] ); // F2 alt F9
     trjs.bindingsDef.push( [nkey("f10"), false, true, false, false, "F2", "emphasis" ]); // 'EMPHASIS' ] ); // F2 alt F10
 
-    //trjs.bindingsDef.push([119, true, true, false, 'ctrl', "F2", "setMultipleSelection"]); // Ctrl Alt F8
-    //trjs.bindingsDef.push([120, true, true, false, 'ctrl', "F2", "exportMStoSubtSrt"]); // Ctrl Alt F9
-    //trjs.bindingsDef.push([121, true, true, false, 'ctrl', "F2", "exportMStoSubtAss"]); // Ctrl Alt F10
-    //trjs.bindingsDef.push([122, true, true, false, 'ctrl', "F2", "exportMStoMediaSubt"]); // Ctrl Alt F11
-    //trjs.bindingsDef.push([nkey("f12"), false, false, false, false, trjs.transcription.exportMStoMedia, trjs.messgs.ctrlaltbin123]); // Ctrl Alt F12
 };
 
 trjs.keys.noBindings = function() {
@@ -1554,10 +1553,15 @@ trjs.keys.functions = {
     "colorBlue": [ trjs.keys.colorBlue, trjs.messgs.ctrlaltbin115, null],
     "colorGreen": [ trjs.keys.colorGreen, trjs.messgs.ctrlaltbin114, null],
     "colorRed": [ trjs.keys.colorRed, trjs.messgs.ctrlaltbin113, null],
+    "copyMS": [ function() { trjs.transcription.copyMS('all'); }, "Copy to Clipboard speaker, time and lines information", null],
+    "copyMSmainlines": [ function() { trjs.transcription.copyMS('ln'); }, "Copy to Clipboard mainlines information", null],
+    "copyMSuserlines": [ function() { trjs.transcription.copyMS('ht'); }, "Copy to Clipboard speaker, and lines information", null],
     "ctrlEnd": [ trjs.events.ctrlEnd, trjs.messgs.ctrlbin35, null],
     "ctrlHome": [ trjs.events.ctrlHome, trjs.messgs.ctrlbin36, null],
+    "cutMS": [ trjs.transcription.cutMS, "cut all lines with multiple selection", null],
     "deleteLine": [ trjs.events.deleteLineAndRedraw, trjs.messgs.ctrlbin68, null],
     "deleteLineLoc": [ trjs.events.deleteLineLocAndRedraw, trjs.messgs.ctrlaltbin68, null],
+    "deselectAllMS": [ trjs.transcription.deselectAllMS, "deselect all multilines markings", null],
     "emphasis": [ trjs.keys.emphasis, trjs.messgs.ctrlaltbin118, null],
     "enter": [ trjs.events.enter, trjs.messgs.cmdenter, null],
     "escape": [ trjs.events.escape, trjs.messgs.bin27, null],
@@ -1590,6 +1594,9 @@ trjs.keys.functions = {
     "pageRight": [ trjs.partition.pageright, "go one page right", null],
     "pageDown": [ trjs.events.pageDown, trjs.messgs.bin34, null],
     "pageUp": [ trjs.events.pageUp, trjs.messgs.bin33, null],
+    "pasteMS": [ function() { trjs.transcription.pasteMS('all'); }, "Paste from Clipboard speaker, time and lines information", null],
+    "pasteMSmainlines": [ function() { trjs.transcription.pasteMS('ln'); }, "Paste from Clipboard mainlines information", null],
+    "pasteMSuserlines": [ function() { trjs.transcription.pasteMS('ht'); }, "Paste from Clipboard speaker and lines information", null],
 
     "playContinuous": [ trjs.events.goContinuous, trjs.messgs.playContinuous, null],
     "playPauseCurrent": [ trjs.media.playPauseCurrent, trjs.messgs.playPauseCurrent, null],
@@ -1615,7 +1622,7 @@ trjs.keys.functions = {
     "setDivPlus": [ trjs.events.setDivPlus, trjs.messgs.ctrlshiftbin49, null],
     "setDivPlusInsert": [ trjs.events.setDivPlusInsert, trjs.messgs.ctrlbin71, null],
     "setEnd": [ trjs.events.setEndAndRedraw, trjs.messgs.bin116, null],
-    "setMultipleSelection": [ trjs.transcription.setMultipleSelection, trjs.messgs.ctrlaltbin119, null],
+    "setMS": [ trjs.transcription.setMS, trjs.messgs.ctrlaltbin119, null],
     "setNthLoc1": [ trjs.events.setNthLoc1, trjs.messgs.ctrlbin49, null],
     "setNthLoc2": [ trjs.events.setNthLoc2, trjs.messgs.ctrlbin50, null],
     "setNthLoc3": [ trjs.events.setNthLoc3, trjs.messgs.ctrlbin51, null],

@@ -300,9 +300,9 @@ trjs.transcription = (function () {
 
     /**
      * set multiple selection input
-     * @method setMultipleSelection
+     * @method setMS
      */
-    function setMultipleSelection() {
+    function setMS() {
         if (trjs.data.multipleSelect === true) {
             trjs.data.multipleSelect = false;
             $('table td.info').hide();
@@ -313,22 +313,44 @@ trjs.transcription = (function () {
         }
     }
 
-    function copyMultipleSelection() {
+    function defaultNumber(n) {
+        if (n === '' || n === null || n === undefined) return '-';
+        return n;
+    }
+
+    function invDefaultNumber(n) {
+        if (n === '-') return '';
+        var tn = Number(n);
+        if (isNaN(tn)) return '';
+        return n;
+    }
+
+    function copyMS(style) {
         trjs.data.copyMS = [];
         trjs.data.copyMSLines = [];
         var tablelines = trjs.transcription.tablelines();
         // console.log(d + ' ' + f + ' ' + v);
+        var s = '';
         for (var i = 0; i < tablelines.length; i++) {
             var td = $(tablelines[i]).find('td.info');
             if (td[0].data_select === true) {
                 trjs.data.copyMS.push(i + 1);
-                trjs.data.copyMSLines.push(trjs.events.copyLine($(tablelines[i])));
+                var l = trjs.events.copyLine($(tablelines[i]));
+                trjs.data.copyMSLines.push(l);
+                if (style === 'ln')
+                    s += l[3] + '\r\n';
+                else if (style === 'ht')
+                    s += l[0] + ' ' + l[3] + '\r\n';
+                else
+                    s += l[0] + ' ' + defaultNumber(l[1]) + ' ' + defaultNumber(l[2]) + ' ' + l[3] + '\r\n';
             }
         }
+        var clipboard = require('electron').clipboard;
+        clipboard.writeText(s);
     }
 
-    function cutMultipleSelection() {
-        copyMultipleSelection();
+    function cutMS() {
+        copyMS();
         var tablelines = trjs.transcription.tablelines();
         for (var i = tablelines.length - 1; i >= 0; i--) {
             var td = $(tablelines[i]).find('td.info');
@@ -338,10 +360,80 @@ trjs.transcription = (function () {
         }
     }
 
-    function pasteMultipleSelection() {
+    /*
+    function pasteMS() {
         var sel = trjs.data.selectedLine;
         trjs.events.insertLineLoc(sel, trjs.data.copyMSLines);
         $('table td.info').show();
+    }
+    */
+
+    /**
+     * copy the content of the clipboard into the current transcription
+     * @param style format of each line in the clipboard : 'ht' (head + tail), 'ln' (just lines no codenames), 'time2' (codename + start + end + trans)
+     */
+    function pasteMS(style) {
+        var copyMSLines = [];
+        // each element of copyMSLines correspond to a line of transcription
+        // it must have the following format: an array with [0] = codename, [1] = timestart, [2] = timeend, [3] = transcription
+
+        // get clipboard content
+        var clipboard = require('electron').clipboard;
+        var rawText = clipboard.readText();
+        if (rawText.length === 0) return;
+        // convert to copyMSLines format
+        var lines = rawText.match(/[^\r\n]+/g); // split into lines
+        if (lines === null) return;
+        for (var ln in lines) {
+            switch(style) {
+                case 'ht':
+                    var headtail = lines[ln].match(/(\S*)\s+(.*)/);
+                    if (headtail !== null) {
+                        // there are at least two words so the first is the codename and the second the transcription
+                        copyMSLines.push([headtail[1], '', '', headtail[2]]);
+                    } else {
+                        // only the transcription
+                        copyMSLines.push(['', '', '', lines[ln]]);
+                    }
+                    break;
+                case 'ln':
+                    copyMSLines.push(['', '', '', lines[ln]]);
+                    break;
+                case 'all':
+                default:
+                    var p4 = lines[ln].match(/(\S*)\s+(\S*)\s+(\S*)\s+(.*)/);
+                    if (p4 !== null) {
+                        // there are at least four words so the first is the codename, the second the start time, the third the end time, and the last the transcription
+                        copyMSLines.push([p4[1], invDefaultNumber(p4[2]), invDefaultNumber(p4[3]), p4[4]]);
+                    } else {
+                        // only the transcription
+                        copyMSLines.push(['', '', '', lines[ln]]);
+                    }
+                    break;
+            }
+        }
+        document.body.classList.add('busy-cursor');
+        setTimeout( function () { finishExportClipboardtoMS(copyMSLines , trjs.data.selectedLine); }, 500);
+    }
+
+    function finishExportClipboardtoMS(copyMSLines, sel) {
+        // paste into the transcription after the current line
+        trjs.events.insertLineLoc(sel, copyMSLines);
+        $('table td.info').show();
+        document.body.classList.remove('busy-cursor');
+    }
+
+    function exportMStoClipboard(format, all) {
+        $("#openexports").modal('hide');
+        if (all === 'all' || trjs.data.selectedPart === false || trjs.data.selectedPart === 'all') {
+            var s = saveTranscriptToText(false, false, format);
+            var clipboard = require('electron').clipboard;
+            clipboard.writeText(s);
+        } else {
+            var s = saveTranscriptToText(true, true, format);
+            var clipboard = require('electron').clipboard;
+            clipboard.writeText(s);
+        }
     }
 
     /**
@@ -358,7 +450,7 @@ trjs.transcription = (function () {
 
     /**
      * save current file on the downloading area
-     * @method localSave
+     * @method exportMStoCsv
      */
     function exportMStoCsv() {
         var s = saveTranscriptToCsvString(true);
@@ -1685,20 +1777,6 @@ trjs.transcription = (function () {
          */
     }
 
-    function exportMStoClipboard(format, all) {
-        $("#openexports").modal('hide');
-        if (all === 'all' || trjs.data.selectedPart === false || trjs.data.selectedPart === 'all') {
-            var s = saveTranscriptToText(false, false, format);
-            var test = require('electron');
-            var clipboard = require('electron').clipboard;
-            clipboard.writeText(s);
-        } else {
-            var s = saveTranscriptToText(true, true, format);
-            var clipboard = require('electron').clipboard;
-            clipboard.writeText(s);
-        }
-    }
-
     function exportMStoSubt(format, all) {
         $("#openexports").modal('hide');
         if (all === 'all' || trjs.data.selectedPart === false || trjs.data.selectedPart === 'all') {
@@ -2527,9 +2605,9 @@ trjs.transcription = (function () {
         clickMS: clickMS,
         codeTier: codeTier,
         convertFromTxtToCsv: convertFromTxtToCsv,
-        copyMultipleSelection: copyMultipleSelection,
         createDivEditField: createDivEditField,
-        cutMultipleSelection: cutMultipleSelection,
+        copyMS: copyMS,
+        cutMS: cutMS,
         deselectAllMS: deselectAllMS,
         doShiftTimeLinks: doShiftTimeLinks,
         exportMStoClipboard: exportMStoClipboard,
@@ -2559,7 +2637,7 @@ trjs.transcription = (function () {
         loadNewGrid: loadNewGrid,
         nbMissingDiv: nbMissingDiv,
         newTable: newTable,
-        pasteMultipleSelection: pasteMultipleSelection,
+        pasteMS: pasteMS,
         print: function (range) {
             trjs.utils.printByID('transcript');
         },
@@ -2571,7 +2649,7 @@ trjs.transcription = (function () {
         saveTranscriptToHtml: saveTranscriptToHtml,
         selectAllMS: selectAllMS,
         setCode: setCode,
-        setMultipleSelection: setMultipleSelection,
+        setMS: setMS,
         stringLineTranscript: stringLineTranscript,
         sort: sort,
         tablelines: function () {
