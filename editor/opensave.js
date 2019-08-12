@@ -234,7 +234,9 @@ trjs.io = (function () {
      * save the exported string to a format
      */
     function saveExportFile(s, mime, ext, extInfo, extFiles, extBOLD) {
-        if (trjs.param.server !== 'electron' || trjs.param.exportSaveAs === true) {
+        if (mime === 'appplication/docx' || mime === 'appplication/xlsx') {
+            saveAs(s, (trjs.data.recordingName() ? trjs.data.recordingName() : "export") + ext);
+        } else if (trjs.param.server !== 'electron' || trjs.param.exportSaveAs === true) {
             // {type: 'text/css'});
             var blob = new Blob([s], {
                 type: mime
