@@ -51,11 +51,11 @@
     "electron": "^2.0.18",
     "electron-builder": "^20.44.4",
     "electron-packager": "12.1.0",
-    "electron-rebuild": "^1.8.5",
+    "electron-rebuild": "^1.8.6",
     "gulp": "4.0.0",
     "gulp-concat": "2.6.1",
     "gulp-html-tag-include": "1.0.1",
-    "gulp-preprocess": "^3.0.2",
+    "gulp-preprocess": "^3.0.3",
     "pegjs": "^0.10.0"
   }
 }
