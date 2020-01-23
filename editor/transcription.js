@@ -2075,7 +2075,7 @@ trjs.transcription = (function () {
                 s += iloc + ': ' + itrans + "\n";
             }
         } else { // some or all locs and some (or all) tiers
-            for (var i = 0; i < tablelines.length; i++) {
+            for (var i = 0; i < tablelines.length; ) {
                 if (partof === true) {
                     var td = $(tablelines[i]).find('td.info');
                     if (td[0].data_select !== true) {

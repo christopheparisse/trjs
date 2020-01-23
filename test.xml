@@ -1,0 +1,944 @@
+<div type="Situation" subtype="jouer avec le soft">
+    <head>
+        <note type="start">#T0</note>
+        <note type="start">#T1</note>
+    </head>
+    <annotationBlock start="#T2" end="#T3" who="ref@SP" xml:id="u0">
+        <u>KAB_AM_NARR_01_0001</u>
+        <spanGrp type="tx@SP">
+            <span>BI-435
+                <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                    <span target="#a1018" xml:id="a2033">BI-435
+                        <spanGrp type="mb@SP">
+                            <span target="#a2033" xml:id="a4874"/>
+                        </spanGrp>
+                    </span>
+                </spanGrp>
+            </span>
+        </spanGrp>
+        <spanGrp type="mot@SP">
+            <span>BI-435
+                <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                    <span target="#a2033" xml:id="a4874"/>
+                </spanGrp>
+                <spanGrp type="mb@SP">
+                    <span></span>
+                </spanGrp>
+            </span>
+        </spanGrp>
+    </annotationBlock>
+    <annotationBlock start="#T3" end="#T4" who="ref@SP" xml:id="u1">
+        <u>KAB_AM_NARR_01_0002</u>
+        <spanGrp type="tx@SP">
+            <span>θuraʔaminaɴ /
+            </span>
+        </spanGrp>
+        <spanGrp type="mot@SP">
+            <span>tura
+            </span>
+        </spanGrp>
+        <spanGrp type="mot@SP">
+            <span>amina
+        </spanGrp>
+        <spanGrp type="mot@SP">
+        </spanGrp>
+    </span>
+</spanGrp><spanGrp type="ft@SP">
+<span>Now Amina,</annotationBlock>
+<annotationBlock start="#T4" end="#T5" who="ref@SP" xml:id="u2">
+    <u>KAB_AM_NARR_01_0003</u>
+    <spanGrp type="tx@SP">
+        <span>amidawiɣ θamaʃaɦut͡s /
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1020" xml:id="a2037">admidd
+                    <spanGrp type="mb@SP">
+                        <span target="#a2037" xml:id="a4884">ad
+                            <spanGrp type="ge@SP">
+                                <span target="#a4884" xml:id="a4913">POT</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4884" xml:id="a4942">PTCL</span>
+                            </spanGrp>
+                        </span>
+                        <span target="#a2037" xml:id="a4885">=am
+                            <spanGrp type="ge@SP">
+                                <span target="#a4885" xml:id="a4914">ABSV2SG.F</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4885" xml:id="a4943">PRO</span>
+                            </spanGrp>
+                        </span>
+                        <span target="#a2037" xml:id="a4886">=dd
+                            <spanGrp type="ge@SP">
+                                <span target="#a4886" xml:id="a4915">PROX</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4886" xml:id="a4944">PTCL</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1020" xml:id="a2038">awiɣ
+                    <spanGrp type="mb@SP">
+                        <span target="#a2038" xml:id="a4887">awi
+                            <spanGrp type="ge@SP">
+                                <span target="#a4887" xml:id="a4916">bring\AOR</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4887" xml:id="a4945">V14</span>
+                            </spanGrp>
+                        </span>
+                        <span target="#a2038" xml:id="a4888">-ɣ
+                            <spanGrp type="ge@SP">
+                                <span target="#a4888" xml:id="a4917">SBJ1SG</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4888" xml:id="a4946">PRO</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1020" xml:id="a2039">tamaʃaɦuƫ
+                    <spanGrp type="mb@SP">
+                        <span target="#a2039" xml:id="a4889">tamaʃaɦuƫ
+                            <spanGrp type="ge@SP">
+                                <span target="#a4889" xml:id="a4918">tale\ABS.SG.F</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4889" xml:id="a4947">N.OV</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1020" xml:id="a2040">/
+                    <spanGrp type="mb@SP">
+                        <span target="#a2040" xml:id="a4890">/
+                            <spanGrp type="ge@SP">
+                                <span target="#a4890" xml:id="a4919">/</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4890" xml:id="a4948">/</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>admidd
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2037" xml:id="a4884">ad
+                    <spanGrp type="ge@SP">
+                        <span target="#a4884" xml:id="a4913">POT</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4884" xml:id="a4942">PTCL</span>
+                    </spanGrp>
+                </span>
+                <span target="#a2037" xml:id="a4885">=am
+                    <spanGrp type="ge@SP">
+                        <span target="#a4885" xml:id="a4914">ABSV2SG.F</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4885" xml:id="a4943">PRO</span>
+                    </spanGrp>
+                </span>
+                <span target="#a2037" xml:id="a4886">=dd
+                    <spanGrp type="ge@SP">
+                        <span target="#a4886" xml:id="a4915">PROX</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4886" xml:id="a4944">PTCL</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>ad
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4884" xml:id="a4913">POT</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4884" xml:id="a4942">PTCL</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>POT
+                            <spanGrp type="rx@SP">
+                                <span>PTCL</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>=am
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4885" xml:id="a4914">ABSV2SG.F</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4885" xml:id="a4943">PRO</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>ABSV2SG.F
+                            <spanGrp type="rx@SP">
+                                <span>PRO</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>=dd
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4886" xml:id="a4915">PROX</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4886" xml:id="a4944">PTCL</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>PROX
+                            <spanGrp type="rx@SP">
+                                <span>PTCL</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>awiɣ
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2038" xml:id="a4887">awi
+                    <spanGrp type="ge@SP">
+                        <span target="#a4887" xml:id="a4916">bring\AOR</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4887" xml:id="a4945">V14</span>
+                    </spanGrp>
+                </span>
+                <span target="#a2038" xml:id="a4888">-ɣ
+                    <spanGrp type="ge@SP">
+                        <span target="#a4888" xml:id="a4917">SBJ1SG</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4888" xml:id="a4946">PRO</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>awi
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4887" xml:id="a4916">bring\AOR</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4887" xml:id="a4945">V14</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>bring\AOR
+                            <spanGrp type="rx@SP">
+                                <span>V14</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>-ɣ
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4888" xml:id="a4917">SBJ1SG</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4888" xml:id="a4946">PRO</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>SBJ1SG
+                            <spanGrp type="rx@SP">
+                                <span>PRO</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>tamaʃaɦuƫ
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2039" xml:id="a4889">tamaʃaɦuƫ
+                    <spanGrp type="ge@SP">
+                        <span target="#a4889" xml:id="a4918">tale\ABS.SG.F</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4889" xml:id="a4947">N.OV</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>tamaʃaɦuƫ
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4889" xml:id="a4918">tale\ABS.SG.F</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4889" xml:id="a4947">N.OV</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>tale\ABS.SG.F
+                            <spanGrp type="rx@SP">
+                                <span>N.OV</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>/
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2040" xml:id="a4890">/
+                    <spanGrp type="ge@SP">
+                        <span target="#a4890" xml:id="a4919">/</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4890" xml:id="a4948">/</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>/
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4890" xml:id="a4919">/</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4890" xml:id="a4948">/</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>/
+                            <spanGrp type="rx@SP">
+                                <span>/</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+</span>
+</spanGrp><spanGrp type="ft@SP">
+<span>I will offer you a tale,</annotationBlock>
+<annotationBlock start="#T5" end="#T6" who="ref@SP" xml:id="u3">
+    <u>KAB_AM_NARR_01_0004</u>
+    <spanGrp type="tx@SP">
+        <span>ənsəβʕa θəqʃiʃin //
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1021" xml:id="a2041">n
+                    <spanGrp type="mb@SP">
+                        <span target="#a2041" xml:id="a4891">n
+                            <spanGrp type="ge@SP">
+                                <span target="#a4891" xml:id="a4920">GEN</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4891" xml:id="a4949">PREP</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1021" xml:id="a2042">səbʕa
+                    <spanGrp type="mb@SP">
+                        <span target="#a2042" xml:id="a4892">səbʕa
+                            <spanGrp type="ge@SP">
+                                <span target="#a4892" xml:id="a4921">seven</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4892" xml:id="a4950">NUM</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1021" xml:id="a2043">təqʃiʃin
+                    <spanGrp type="mb@SP">
+                        <span target="#a2043" xml:id="a4893">təqʃiʃin
+                            <spanGrp type="ge@SP">
+                                <span target="#a4893" xml:id="a4922">girl\ANN.PL.F</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4893" xml:id="a4951">N.OV</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1021" xml:id="a2044">//
+                    <spanGrp type="mb@SP">
+                        <span target="#a2044" xml:id="a4894">//
+                            <spanGrp type="ge@SP">
+                                <span target="#a4894" xml:id="a4923">//</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4894" xml:id="a4952">//</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>n
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2041" xml:id="a4891">n
+                    <spanGrp type="ge@SP">
+                        <span target="#a4891" xml:id="a4920">GEN</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4891" xml:id="a4949">PREP</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>n
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4891" xml:id="a4920">GEN</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4891" xml:id="a4949">PREP</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>GEN
+                            <spanGrp type="rx@SP">
+                                <span>PREP</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>səbʕa
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2042" xml:id="a4892">səbʕa
+                    <spanGrp type="ge@SP">
+                        <span target="#a4892" xml:id="a4921">seven</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4892" xml:id="a4950">NUM</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>səbʕa
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4892" xml:id="a4921">seven</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4892" xml:id="a4950">NUM</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>seven
+                            <spanGrp type="rx@SP">
+                                <span>NUM</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>təqʃiʃin
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2043" xml:id="a4893">təqʃiʃin
+                    <spanGrp type="ge@SP">
+                        <span target="#a4893" xml:id="a4922">girl\ANN.PL.F</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4893" xml:id="a4951">N.OV</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>təqʃiʃin
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4893" xml:id="a4922">girl\ANN.PL.F</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4893" xml:id="a4951">N.OV</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>girl\ANN.PL.F
+                            <spanGrp type="rx@SP">
+                                <span>N.OV</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>//
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2044" xml:id="a4894">//
+                    <spanGrp type="ge@SP">
+                        <span target="#a4894" xml:id="a4923">//</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4894" xml:id="a4952">//</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>//
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4894" xml:id="a4923">//</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4894" xml:id="a4952">//</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>//
+                            <spanGrp type="rx@SP">
+                                <span>//</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+</span>
+</spanGrp><spanGrp type="ft@SP">
+<span>that of the seven girls.</annotationBlock>
+<annotationBlock start="#T6" end="#T7" who="ref@SP" xml:id="u4">
+    <u>KAB_AM_NARR_01_0005</u>
+    <spanGrp type="tx@SP">
+        <span>1314
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1022" xml:id="a15662">1314</span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>1314</span>
+    </spanGrp>
+</annotationBlock>
+<annotationBlock start="#T7" end="#T8" who="ref@SP" xml:id="u5">
+    <u>KAB_AM_NARR_01_0006</u>
+    <spanGrp type="tx@SP">
+        <span>amaʃaɦu //
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1023" xml:id="a2046">amaʃaɦu
+                    <spanGrp type="mb@SP">
+                        <span target="#a2046" xml:id="a4895">amaʃaɦu
+                            <spanGrp type="ge@SP">
+                                <span target="#a4895" xml:id="a4924">tale\ABS.SG.M</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4895" xml:id="a4953">N.OV</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1023" xml:id="a2047">//
+                    <spanGrp type="mb@SP">
+                        <span target="#a2047" xml:id="a4896">//
+                            <spanGrp type="ge@SP">
+                                <span target="#a4896" xml:id="a4925">//</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4896" xml:id="a4954">//</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>amaʃaɦu
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2046" xml:id="a4895">amaʃaɦu
+                    <spanGrp type="ge@SP">
+                        <span target="#a4895" xml:id="a4924">tale\ABS.SG.M</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4895" xml:id="a4953">N.OV</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>amaʃaɦu
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4895" xml:id="a4924">tale\ABS.SG.M</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4895" xml:id="a4953">N.OV</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>tale\ABS.SG.M
+                            <spanGrp type="rx@SP">
+                                <span>N.OV</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>//
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2047" xml:id="a4896">//
+                    <spanGrp type="ge@SP">
+                        <span target="#a4896" xml:id="a4925">//</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4896" xml:id="a4954">//</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>//
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4896" xml:id="a4925">//</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4896" xml:id="a4954">//</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>//
+                            <spanGrp type="rx@SP">
+                                <span>//</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+</span>
+</spanGrp><spanGrp type="ft@SP">
+<span>"O Tale,</annotationBlock>
+<annotationBlock start="#T8" end="#T9" who="ref@SP" xml:id="u6">
+    <u>KAB_AM_NARR_01_0007</u>
+    <spanGrp type="tx@SP">
+        <span>519
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1024" xml:id="a2048">519</span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>519</span>
+    </spanGrp>
+</annotationBlock>
+<annotationBlock start="#T9" end="#T10" who="ref@SP" xml:id="u7">
+    <u>KAB_AM_NARR_01_0008</u>
+    <spanGrp type="tx@SP">
+        <span>BI-399
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1025" xml:id="a2049">BI-399</span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>BI-399</span>
+    </spanGrp>
+</annotationBlock>
+<annotationBlock start="#T10" end="#T11" who="ref@SP" xml:id="u8">
+    <u>KAB_AM_NARR_01_0009</u>
+    <spanGrp type="tx@SP">
+        <span>windd innanaɦu //
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1026" xml:id="a2050">windd
+                    <spanGrp type="mb@SP">
+                        <span target="#a2050" xml:id="a4897">win
+                            <spanGrp type="ge@SP">
+                                <span target="#a4897" xml:id="a4926">the_one\SG.M</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4897" xml:id="a4955">INDF.PRO</span>
+                            </spanGrp>
+                        </span>
+                        <span target="#a2050" xml:id="a4898">=dd
+                            <spanGrp type="ge@SP">
+                                <span target="#a4898" xml:id="a4927">PROX</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4898" xml:id="a4956">PTCL</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1026" xml:id="a2051">innan
+                    <spanGrp type="mb@SP">
+                        <span target="#a2051" xml:id="a4899">i-
+                            <spanGrp type="ge@SP">
+                                <span target="#a4899" xml:id="a4928">RELSBJ.POS</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4899" xml:id="a4957">CIRC1</span>
+                            </spanGrp>
+                        </span>
+                        <span target="#a2051" xml:id="a4900">nna
+                            <spanGrp type="ge@SP">
+                                <span target="#a4900" xml:id="a4929">say\PFV</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4900" xml:id="a4958">V13%</span>
+                            </spanGrp>
+                        </span>
+                        <span target="#a2051" xml:id="a4901">-n
+                            <spanGrp type="ge@SP">
+                                <span target="#a4901" xml:id="a4930">RELSBJ.POS</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4901" xml:id="a4959">CIRC2</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1026" xml:id="a2052">aɦu
+                    <spanGrp type="mb@SP">
+                        <span target="#a2052" xml:id="a4902">aɦu
+                            <spanGrp type="ge@SP">
+                                <span target="#a4902" xml:id="a4931">aɦu</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4902" xml:id="a4960">INTJ</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+                <span target="#a1026" xml:id="a2053">//
+                    <spanGrp type="mb@SP">
+                        <span target="#a2053" xml:id="a4903">//
+                            <spanGrp type="ge@SP">
+                                <span target="#a4903" xml:id="a4932">//</span>
+                            </spanGrp>
+                            <spanGrp type="rx@SP">
+                                <span target="#a4903" xml:id="a4961">//</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>windd
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2050" xml:id="a4897">win
+                    <spanGrp type="ge@SP">
+                        <span target="#a4897" xml:id="a4926">the_one\SG.M</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4897" xml:id="a4955">INDF.PRO</span>
+                    </spanGrp>
+                </span>
+                <span target="#a2050" xml:id="a4898">=dd
+                    <spanGrp type="ge@SP">
+                        <span target="#a4898" xml:id="a4927">PROX</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4898" xml:id="a4956">PTCL</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>win
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4897" xml:id="a4926">the_one\SG.M</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4897" xml:id="a4955">INDF.PRO</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>the_one\SG.M
+                            <spanGrp type="rx@SP">
+                                <span>INDF.PRO</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>=dd
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4898" xml:id="a4927">PROX</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4898" xml:id="a4956">PTCL</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>PROX
+                            <spanGrp type="rx@SP">
+                                <span>PTCL</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>innan
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2051" xml:id="a4899">i-
+                    <spanGrp type="ge@SP">
+                        <span target="#a4899" xml:id="a4928">RELSBJ.POS</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4899" xml:id="a4957">CIRC1</span>
+                    </spanGrp>
+                </span>
+                <span target="#a2051" xml:id="a4900">nna
+                    <spanGrp type="ge@SP">
+                        <span target="#a4900" xml:id="a4929">say\PFV</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4900" xml:id="a4958">V13%</span>
+                    </spanGrp>
+                </span>
+                <span target="#a2051" xml:id="a4901">-n
+                    <spanGrp type="ge@SP">
+                        <span target="#a4901" xml:id="a4930">RELSBJ.POS</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4901" xml:id="a4959">CIRC2</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>i-
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4899" xml:id="a4928">RELSBJ.POS</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4899" xml:id="a4957">CIRC1</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>RELSBJ.POS
+                            <spanGrp type="rx@SP">
+                                <span>CIRC1</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>nna
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4900" xml:id="a4929">say\PFV</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4900" xml:id="a4958">V13%</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>say\PFV
+                            <spanGrp type="rx@SP">
+                                <span>V13%</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>-n
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4901" xml:id="a4930">RELSBJ.POS</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4901" xml:id="a4959">CIRC2</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>RELSBJ.POS
+                            <spanGrp type="rx@SP">
+                                <span>CIRC2</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>aɦu
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2052" xml:id="a4902">aɦu
+                    <spanGrp type="ge@SP">
+                        <span target="#a4902" xml:id="a4931">aɦu</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4902" xml:id="a4960">INTJ</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>aɦu
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4902" xml:id="a4931">aɦu</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4902" xml:id="a4960">INTJ</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>aɦu
+                            <spanGrp type="rx@SP">
+                                <span>INTJ</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>//
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mb@SP">
+                <span target="#a2053" xml:id="a4903">//
+                    <spanGrp type="ge@SP">
+                        <span target="#a4903" xml:id="a4932">//</span>
+                    </spanGrp>
+                    <spanGrp type="rx@SP">
+                        <span target="#a4903" xml:id="a4961">//</span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+            <spanGrp type="mb@SP">
+                <span>//
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="ge@SP">
+                        <span target="#a4903" xml:id="a4932">//</span>
+                    </spanGrp>
+                    <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="rx@SP">
+                        <span target="#a4903" xml:id="a4961">//</span>
+                    </spanGrp>
+                    <spanGrp type="ge@SP">
+                        <span>//
+                            <spanGrp type="rx@SP">
+                                <span>//</span>
+                            </spanGrp>
+                        </span>
+                    </spanGrp>
+                </span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+</span>
+</spanGrp><spanGrp type="ft@SP">
+<span>He who says "ahu",</annotationBlock>
+<annotationBlock start="#T11" end="#T1" who="ref@SP" xml:id="u9">
+    <u>KAB_AM_NARR_01_0010</u>
+    <spanGrp type="tx@SP">
+        <span>333
+            <spanGrp xmlns="http://www.tei-c.org/ns/1.0" type="mot@SP">
+                <span target="#a1027" xml:id="a2054">333</span>
+            </spanGrp>
+        </span>
+    </spanGrp>
+    <spanGrp type="mot@SP">
+        <span>333</span>
+    </spanGrp>
+</annotationBlock>
+</div>
