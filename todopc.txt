@@ -1,0 +1,12 @@
+npm install
+npm update
+npm rebuild
+npm run rebuild
+gulp
+npm run electron ; for test
+--goto ubuntu
+sh buildpc.sh
+-- goto to pc
+buildwin.bat
+-- goto ubuntu
+sh majpgmwin.sh
