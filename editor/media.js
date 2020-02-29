@@ -85,7 +85,7 @@ trjs.media = (function () {
     function ctrlFromTo() {
         setMedia();
         if (media.currentTime >= media.endplay && media.endplay !== -1) {
-            console.log("pause ctrlFromTo");
+            // console.log("pause ctrlFromTo");
             media.pause();
             setTimer('standard');
             media.lastPosition = media.currentTime;
@@ -117,12 +117,12 @@ trjs.media = (function () {
             return;
         }
         if (media.currentTime >= media.endplay && media.endplay !== -1) {
-            console.log("in>", media.currentTime, media.endplay, media.currentElement, media.nextElement);
+            // console.log("in>", media.currentTime, media.endplay, media.currentElement, media.nextElement);
             if (media.nextElement === null) {
                 endContinuousPlay();
                 return;
             }
-            console.log("go on!");
+            // console.log("go on!");
             dehighlight(media.currentElement);
             highlight(media.nextElement);
             media.currentElement = media.nextElement;
@@ -147,7 +147,7 @@ trjs.media = (function () {
                 media.nextElement = nxt;
             }
             // display the current and remaining times
-            console.log("out>", media.currentTime, media.endplay, media.currentElement, media.nextElement);
+            // console.log("out>", media.currentTime, media.endplay, media.currentElement, media.nextElement);
         }
         adjustRealInfo.show(media);
     }
@@ -264,7 +264,7 @@ trjs.media = (function () {
      * @param {jquery-object} headline to be highlighted
      */
     function runFromTo(start, end, s1, s2, s3) {
-        console.log("pause runFromTo");
+        // console.log("pause runFromTo");
         media.pause();
         media.currentTime = start;
         media.endplay = end;
@@ -372,7 +372,7 @@ trjs.media = (function () {
      */
     function endContinuousPlay() {
         setMedia();
-        console.log("pause endContinuousPlay");
+        // console.log("pause endContinuousPlay");
         if (media.pause) media.pause();
         dehighlight(media.currentElement);
         media.lastPosition = media.currentTime;

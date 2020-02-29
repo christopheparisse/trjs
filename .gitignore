@@ -18,6 +18,7 @@
 *.rar
 *.tar
 *.zip
+*.exe
 
 # Logs and databases #
 ######################

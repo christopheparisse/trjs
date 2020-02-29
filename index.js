@@ -25,6 +25,16 @@ process.argsOpenFile = null;
 //var process = require(process);
 //console.log(process.argv);
 
+app.requestSingleInstanceLock()
+app.on('second-instance', (event, argv, cwd) => {
+    argv.push('--secondInstance');
+    process.argsOpenFile = commandLine;
+    console.log('secondInstance', argv, cwd);
+    var nth = createWindow();
+    // process.listWindows[nth].webContents.send('readtranscript', 'path');
+});
+
+/*
 var secondInstance = app.makeSingleInstance(function(commandLine, workingDirectory) {
     // Someone tried to run a second instance, we should focus our window.
     commandLine.push('--secondInstance');
@@ -32,23 +42,23 @@ var secondInstance = app.makeSingleInstance(function(commandLine, workingDirecto
     console.log('secondInstance', commandLine, workingDirectory);
     var nth = createWindow();
     // process.listWindows[nth].webContents.send('readtranscript', 'path');
-    /*
-    if (process.mainWindow) {
-        if (process.mainWindow.isMinimized()) process.mainWindow.restore();
-        process.mainWindow.focus();
-        if (commandLine.length>1 && commandLine[1] !== 'index.js') {
-            process.mainWindow.webContents.send('readtranscript', commandLine[1]);
-        } else if (commandLine.length>2) {
-            process.mainWindow.webContents.send('readtranscript', commandLine[2]);
-        }
-    }
-    */
+
+    // if (process.mainWindow) {
+    //     if (process.mainWindow.isMinimized()) process.mainWindow.restore();
+    //     process.mainWindow.focus();
+    //     if (commandLine.length>1 && commandLine[1] !== 'index.js') {
+    //         process.mainWindow.webContents.send('readtranscript', commandLine[1]);
+    //     } else if (commandLine.length>2) {
+    //         process.mainWindow.webContents.send('readtranscript', commandLine[2]);
+    //     }
+    // }
 });
 
 if (secondInstance) {
     //app.quit();
     return;
 }
+*/
 
 app.on('open-file', function(event, path) {
     console.log('open-file', event, path);
@@ -146,7 +156,16 @@ function startWindow(arg) {
     oneWindow = true;
 
     var sz = getWindowSize();
-    var wnd = new BrowserWindow({width: sz.width, height: sz.height});
+    var wnd = new BrowserWindow(
+        {
+            width: sz.width,
+            height: sz.height,
+            webPreferences: {
+                nodeIntegration: true
+            }
+        }
+    );
+        
     var p = wnd.getPosition();
     wnd.setPosition(p[0]+20, p[1]+20);
 
@@ -590,7 +609,14 @@ function createMenu() {
                 label: 'General Help',
                 click: function () {
                     var sz = getWindowSize();
-                    var win = new BrowserWindow({width: sz.width, height: sz.height});
+                    var win = new BrowserWindow(
+                        {
+                            width: sz.width,
+                            height: sz.height,
+                            webPreferences: {
+                                nodeIntegration: true
+                            }
+                        });
                     var p = win.getPosition();
                     win.setPosition(p[0]+20, p[1]+20);
                     win.on('closed', function() {
@@ -620,10 +646,13 @@ function createMenu() {
                         width: sz.width, 
                         height: sz.height,
                         x: p[0]+20,
-                        y: p[1]+20
+                        y: p[1]+20,
+                        webPreferences: {
+                            nodeIntegration: true
+                        }
                     });
                     win.on('closed', function() {
-                        win = null;
+                    win = null;
                     });
                     win.on('close', function (e) {
                         // console.log('close on offline help');
@@ -650,7 +679,10 @@ function createMenu() {
                         width: sz.width, 
                         height: sz.height,
                         x: p[0]+20,
-                        y: p[1]+20
+                        y: p[1]+20,
+                        webPreferences: {
+                            nodeIntegration: true
+                        }
                     });
                     win.on('closed', function() {
                         win = null;

@@ -1,7 +1,7 @@
 {
   "name": "trjs",
   "productName": "Trjs",
-  "version": "0.7.7c",
+  "version": "0.7.7d",
   "description": "Oral transcription editor",
   "scripts": {
     "start": "gulp ; electron index.js",
@@ -33,29 +33,29 @@
   },
   "homepage": "http://ct3.ortolang.fr/trjs",
   "dependencies": {
-    "ajv": "^6.10.2",
-    "asar": "^0.14.6",
-    "async": "^2.6.3",
-    "electron-spellchecker": "1.1.2",
-    "electron-store": "^2.0.0",
-    "fs-temp": "^1.1.2",
-    "g": "^2.0.1",
-    "glob": "7.1.2",
-    "hoek": "^5.0.4",
-    "load-json-file": "^5.3.0",
-    "mime": "^2.4.4",
-    "minimist": "1.2.0",
-    "xmldom": "0.1.27"
+    "ajv": "latest",
+    "asar": "latest",
+    "async": "latest",
+    "electron-spellchecker": "latest",
+    "electron-store": "latest",
+    "fs-temp": "latest",
+    "g": "latest",
+    "glob": "latest",
+    "hoek": "latest",
+    "load-json-file": "latest",
+    "mime": "latest",
+    "minimist": "latest",
+    "xmldom": "latest"
   },
   "devDependencies": {
-    "electron": "^2.0.18",
-    "electron-builder": "^20.44.4",
-    "electron-packager": "12.1.0",
-    "electron-rebuild": "^1.8.6",
-    "gulp": "4.0.0",
-    "gulp-concat": "2.6.1",
-    "gulp-html-tag-include": "1.0.1",
-    "gulp-preprocess": "^3.0.3",
-    "pegjs": "^0.10.0"
+    "electron": "latest",
+    "electron-builder": "latest",
+    "electron-packager": "latest",
+    "electron-rebuild": "latest",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-html-tag-include": "latest",
+    "gulp-preprocess": "latest",
+    "pegjs": "latest"
   }
 }

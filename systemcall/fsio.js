@@ -191,7 +191,7 @@ fsio.convertMedia = function(code, fname) {
 
 fsio.__chooseOpenFile = function(title, filters, callback) {
     try {
-        var fl = remote.dialog.showOpenDialog({
+        var fl = remote.dialog.showOpenDialogSync({
             title: title,
             filters: filters,
             properties: [ 'openFile' ]
@@ -208,7 +208,7 @@ fsio.__chooseOpenFile = function(title, filters, callback) {
 
 fsio.__chooseSaveFile = function(title, filters, callback) {
     try {
-        var fl = remote.dialog.showSaveDialog({
+        var fl = remote.dialog.showSaveDialogSync({
             title: 'Save transcription file',
             defaultPath: '',
             filters: filters
