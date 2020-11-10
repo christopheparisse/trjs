@@ -1,7 +1,7 @@
 {
   "name": "trjs",
   "productName": "Trjs",
-  "version": "0.7.7d",
+  "version": "0.7.8",
   "description": "Oral transcription editor",
   "scripts": {
     "start": "gulp ; electron index.js",
