@@ -6,6 +6,11 @@ var app = electron.app;
 var Store = require('electron-store');
 var store = new Store();
 
+// Module to create native browser window.
+var BrowserWindow = electron.BrowserWindow;
+// Menu
+const { Menu, MenuItem } = require('electron');
+
 app.stopExit = true;
 var isReady = false;
 var oneWindow = false;
@@ -66,7 +71,7 @@ app.on('open-file', function(event, path) {
     function openFile() {
         process.macosxOpenFile = path;
         var nth = createWindow();
-        process.listWindows[nth].webContents.send('readtranscript', path);
+        process.listWindows[nth].webContents.send('readtranscript', path);        
     }
 
     function waitForReady() {
@@ -81,11 +86,6 @@ app.on('open-file', function(event, path) {
     waitForReady();
 
 });
-
-// Module to create native browser window.
-var BrowserWindow = electron.BrowserWindow;
-// Menu
-var Menu = electron.Menu;
 
 function createWindow(arg) {
     for (var i in process.listWindows) {
@@ -161,7 +161,9 @@ function startWindow(arg) {
             width: sz.width,
             height: sz.height,
             webPreferences: {
-                nodeIntegration: true
+                nodeIntegration: true,
+                enableRemoteModule: true,
+                spellcheck: true
             }
         }
     );
@@ -210,6 +212,32 @@ function startWindow(arg) {
     wnd.webContents.on('will-navigate', function(event, url) {
         event.preventDefault();
         //console.log('will-navigate', event, url);
+    });
+
+    // wnd.session.setSpellCheckerLanguages(['en-US', 'fr']);
+
+    wnd.webContents.on('context-menu', (event, params) => {
+        const menu = new Menu();
+        
+        // Add each spelling suggestion
+        for (const suggestion of params.dictionarySuggestions) {
+            menu.append(new MenuItem({
+            label: suggestion,
+            click: () => wnd.webContents.replaceMisspelling(suggestion)
+            }))
+        }
+        
+        // Allow users to add the misspelled word to the dictionary
+        if (params.misspelledWord) {
+            menu.append(
+            new MenuItem({
+                label: 'Add to dictionary',
+                click: () => wnd.webContents.session.addWordToSpellCheckerDictionary(params.misspelledWord)
+            })
+            )
+        }
+        
+        menu.popup()
     });
 
     return wnd;
@@ -614,7 +642,9 @@ function createMenu() {
                             width: sz.width,
                             height: sz.height,
                             webPreferences: {
-                                nodeIntegration: true
+                                nodeIntegration: true,
+                                enableRemoteModule: true,
+                                spellcheck: true
                             }
                         });
                     var p = win.getPosition();
@@ -648,7 +678,9 @@ function createMenu() {
                         x: p[0]+20,
                         y: p[1]+20,
                         webPreferences: {
-                            nodeIntegration: true
+                            nodeIntegration: true,
+                            enableRemoteModule: true,
+                            spellcheck: true
                         }
                     });
                     win.on('closed', function() {
@@ -681,7 +713,9 @@ function createMenu() {
                         x: p[0]+20,
                         y: p[1]+20,
                         webPreferences: {
-                            nodeIntegration: true
+                            nodeIntegration: true,
+                            enableRemoteModule: true,
+                            spellcheck: true
                         }
                     });
                     win.on('closed', function() {

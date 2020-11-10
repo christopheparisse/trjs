@@ -198,7 +198,6 @@ trjs.editor = (function () {
             trjs.log.alert("Langue sélectionnée pour l'orthographe: Français");
         }
         trjs.param.saveStorage();
-        trjs.param.spelling();
     }
 
     /**
@@ -953,7 +952,10 @@ trjs.editor = (function () {
         //console.log(trjs.param.location);
         //console.log(trjs.param.server);
         if (trjs.param.server === 'electron') {
-            var remote = require('electron').remote;
+            var elec = require('electron');
+            console.log(elec);
+            remote = elec.remote;
+            console.log(remote);
             if (remote.process.macosxOpenFile) {
                 console.log("open_file: ", remote.process.argsOpenFile);
                 console.log("open_file: ", remote.process.macosxOpenFile);

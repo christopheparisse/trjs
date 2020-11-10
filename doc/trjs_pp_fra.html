@@ -116,7 +116,9 @@
             Il est donc possible de faire les commandes suivantes:
             <pre>
     sudo apt-get update
-    sudo apt-get install nodejs npm
+    sudo apt-get install openjdk-8-jre # si java n'est pas installé (version 8 minimum)
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    sudo apt-get install nodejs # la version de nodejs fournie par défaut ne suffit pas
     sudo apt-get install libxext-dev libxtst-dev libxkbfile-dev
     sudo apt-get install ffmpeg
     </pre>
@@ -127,10 +129,6 @@
     npm install
     npm run gulp
     </pre>
-            Le correcteur lexical doit être bien installé pour
-            fonctionner et de fermer normalement le programme.
-            Pour cela faire au moins une fois:<br />
-            <pre>npm run rebuild</pre>
             Pour lancer le programme une fois installé, il suffit de faire:
             <pre>
     npm run electron

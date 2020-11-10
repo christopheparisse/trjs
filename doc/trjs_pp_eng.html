@@ -103,8 +103,9 @@
         </p>
         <pre>
         sudo apt-get update
-        sudo apt-get install openjdk-8-jre
-        sudo apt-get install nodejs npm
+        sudo apt-get install openjdk-8-jre # if java is not installed (version 8 minimum)
+        curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+        sudo apt-get install nodejs # the default version of nodejs is not sufficient
         sudo apt-get install libxext-dev libxtst-dev libxkbfile-dev
         sudo apt-get install ffmpeg
         </pre>
@@ -122,8 +123,6 @@
         npm run gulp
         npm run electron
         </pre>
-        <p>To use the lexical checker it is necessary to run at least once:</p>
-        <pre>npm run rebuild</pre>
         <p>To run the software once install, it is only necessary to use:</p>
         <pre>
         npm run electron

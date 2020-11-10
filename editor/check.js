@@ -7,7 +7,7 @@
 'use strict';
 
 var gramchat = require("./editor/checkclanmain.js");
-var chatter = require('./node/chatter.js');
+var chatter = require('./external/chatter.js');
 
 trjs.check = (function () {
     function testChatlines(text, callback) {
