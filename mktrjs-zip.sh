@@ -4,7 +4,7 @@ cp -R ./doc $1/trjs-zip
 cp -R ./editor $1/trjs-zip
 cp -R ./html $1/trjs-zip
 cp -R ./js $1/trjs-zip
-cp -R ./node $1/trjs-zip
+cp -R ./external $1/trjs-zip
 cp -R ./node_modules $1/trjs-zip
 cp -R ./style $1/trjs-zip
 cp -R ./systemcall $1/trjs-zip
@@ -23,7 +23,7 @@ cp ./index.js $1/trjs-zip
 cp ./README.md $1/trjs-zip
 cp ./trjslocal.html $1/trjs-zip
 cp ./gulpfile.js $1/trjs-zip
-cp ./renderer.js $1/trjs-zip
+# cp ./renderer.js $1/trjs-zip
 cp ./trjsclient.html $1/trjs-zip
 cp ./trjsread.html $1/trjs-zip
 cp ./index.html $1/trjs-zip
