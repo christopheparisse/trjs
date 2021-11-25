@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE TEI SYSTEM "http://ct3.ortolang.fr/tei-corpo/tei_corpo.dtd">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="fra">
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Fichier TEI obtenu à partir du fichier CLAN C:\devlopt\prod-trjs\test\names.cha</title>
+</titleStmt>
+<publicationStmt>
+                    <distributor xmlns="http://www.tei-c.org/ns/1.0">tei_corpo</distributor>
+                </publicationStmt>
+<notesStmt>
+<note type="COMMENTS_DESC">
+</note>
+<note type="METADATA_DESC">
+<note>
+<note type="property">Titre</note>
+<note type="type">DublinCore</note>
+<note type="value">Fichier TEI obtenu à partir du fichier CLAN C:\devlopt\prod-trjs\test\names.cha</note>
+<note type="info">Titre du document</note>
+</note>
+<note>
+<note type="property">Créateur</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Créateur du document</note>
+</note>
+<note>
+<note type="property">Sujet</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Sujet et mots-clefs</note>
+</note>
+<note>
+<note type="property">Description</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Description du document</note>
+</note>
+<note>
+<note type="property">Editeur</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Editeur du document</note>
+</note>
+<note>
+<note type="property">-</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">-</note>
+</note>
+<note>
+<note type="property">Date</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Date d'un événement dans le cycle de vie du document</note>
+</note>
+<note>
+<note type="property">Type de ressource</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Nature ou genre du contenu</note>
+</note>
+<note>
+<note type="property">Format</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Format du document</note>
+</note>
+<note>
+<note type="property">Identifiant de la ressource</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Identificateur non ambigu</note>
+</note>
+<note>
+<note type="property">Source</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Ressource dont dérive le document</note>
+</note>
+<note>
+<note type="property">Langue</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Langue du document</note>
+</note>
+<note>
+<note type="property">Relation</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Lien vers une ressource liée</note>
+</note>
+<note>
+<note type="property">Couverture</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">Portée du document</note>
+</note>
+<note>
+<note type="property">-</note>
+<note type="type">DublinCore</note>
+<note type="value"></note>
+<note type="info">-</note>
+</note>
+</note>
+<note type="TEMPLATE_DESC">
+<note>
+<note type="code">BIBI</note>
+<note type="contentType"></note>
+<note type="parent">none</note>
+<note type="description"></note>
+</note>
+<note>
+<note type="code">SP01</note>
+<note type="contentType"></note>
+<note type="parent">none</note>
+<note type="description"></note>
+</note>
+<note>
+<note type="code">HAHA</note>
+<note type="contentType"></note>
+<note type="parent">none</note>
+<note type="description"></note>
+</note>
+<note>
+<note type="code">---</note>
+<note type="contentType"></note>
+<note type="parent">none</note>
+<note type="description"></note>
+</note>
+<note>
+<note type="code">---</note>
+<note type="type"></note>
+<note type="parent">none</note>
+<note type="contentType"></note>
+<note type="description"></note>
+</note>
+</note>
+</notesStmt>
+<sourceDesc>
+<recordingStmt><recording>
+<media url="C:/devlopt/prod-trjs/test//" mimeType="" />
+<date dur=""></date>
+</recording>
+</recordingStmt>
+</sourceDesc>
+</fileDesc>
+<profileDesc>
+<settingDesc>
+<place>
+<placeName></placeName>
+</place>
+</settingDesc>
+<langUsage><language ident="fra">fra</language></langUsage><particDesc><listPerson>
+<person
+role="Investigator"
+sex="9"
+source="change_corpus_later"
+>
+<persName>Chris</persName>
+<langKnowledge>
+<langKnown>fra</langKnown>
+</langKnowledge><altGrp></altGrp></person><person
+role="Adult"
+sex="9"
+source="change_corpus_later"
+>
+<persName>Alfred</persName>
+<langKnowledge>
+<langKnown>fra</langKnown>
+</langKnowledge><altGrp><alt type="SP01" /></altGrp></person><person
+role="Adult"
+sex="1"
+source="mycorpus"
+>
+<persName>John</persName>
+<langKnowledge>
+<langKnown>fra</langKnown>
+</langKnowledge><altGrp><alt type="HAHA" /></altGrp></person></listPerson></particDesc>
+</profileDesc>
+<encodingDesc version="0.9.1" subversion="trjs">
+<appInfo>
+<application ident="TRJS" />
+</appInfo>
+</encodingDesc>
+<revisionDesc>
+<list>
+<item>original TRJS</item>
+<item>lastsave: Tue Nov 23 2021 11:27:35 GMT+0100 (heure normale d’Europe centrale)</item>
+<item>url: C:/devlopt/prod-trjs/test/trjs4.trjs</item>
+<item>name: Fichier TEI obtenu à partir du fichier CLAN C:\devlopt\prod-trjs\test\names.cha</item>
+</list>
+</revisionDesc>
+</teiHeader>
+<text>
+<timeline unit="s">
+<when absolute="0" xml:id="T0"/>
+</timeline>
+<body>
+<div type="#" >
+<annotationBlock who="BIBI" xml:id="u0" >
+<u>Johbonjour.</u>
+</annotationBlock>
+<annotationBlock who="SP01" xml:id="u1" >
+<u>au revoir.</u>
+</annotationBlock>
+<annotationBlock who="HAHA" xml:id="u2" >
+<u>0haha</u>
+</annotationBlock>
+</div>
+</body>
+</text>
+</TEI>

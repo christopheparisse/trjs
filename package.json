@@ -4,7 +4,7 @@
   "version": "0.7.8",
   "description": "Oral transcription editor",
   "scripts": {
-    "start": "gulp ; electron index.js",
+    "start": "gulp & electron index.js",
     "gulp": "gulp",
     "express": "node external/trjsexpress.js",
     "electron": "electron index.js",

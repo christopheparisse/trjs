@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <publicationStmt>
+                    <distributor>tei_corpo</distributor>
+                </publicationStmt>
+                <title>
+                    <desc>Fichier TEI obtenu à partir du fichier CLAN C:\devlopt\prod-trjs\test\names.cha</desc>
+                </title>
+            </titleStmt>
+            <notesStmt>
+                <note type="COMMENTS_DESC"/>
+                <note type="TEMPLATE_DESC">
+                    <note>
+                        <note type="type">-</note>
+                        <note type="parent">-</note>
+                        <note type="code">BIBI</note>
+                    </note>
+                    <note>
+                        <note type="type">-</note>
+                        <note type="parent">-</note>
+                        <note type="code">SP01</note>
+                    </note>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <recordingStmt>
+                    <recording>
+                        <media dur-iso="0.0"/>
+                    </recording>
+                </recordingStmt>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <settingDesc>
+                <setting xml:id="d0">
+                    <activity/>
+                </setting>
+            </settingDesc>
+            <langUsage>
+                <language ident="fra">fra</language>
+            </langUsage>
+            <particDesc>
+                <listPerson>
+                    <person role="Investigator" source="change_corpus_later">
+                        <persName>Chris</persName>
+                        <altGrp>
+                            <alt type="BIBI"/>
+                        </altGrp>
+                        <langKnowledge>
+                            <langKnown tag="fra">fra</langKnown>
+                        </langKnowledge>
+                        <age value="40.0">40.0</age>
+                    </person>
+                    <person role="Adult" source="change_corpus_later">
+                        <persName>Alfred</persName>
+                        <altGrp>
+                            <alt type="SP01"/>
+                        </altGrp>
+                        <langKnowledge>
+                            <langKnown tag="fra">fra</langKnown>
+                        </langKnowledge>
+                        <age value="40.0">40.0</age>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
+        <encodingDesc style="0.9.1">
+            <appInfo>
+                <application ident="TeiCorpo" version="1.4.41">
+                    <desc>Transcription converted with TeiCorpo to TEI_CORPO - Soft: 1.4.41</desc>
+                </application>
+            </appInfo>
+            <transcriptionDesc ident="clan" version="1.0">
+                <desc>standard CHAT format</desc>
+            </transcriptionDesc>
+        </encodingDesc>
+        <revisionDesc>
+            <list>
+                <item>
+                    2021-10-01:08:14:12
+                    <desc>date</desc>
+                </item>
+                <item>
+                    C:\devlopt\prod-trjs\test\names.cha
+                    <desc>from</desc>
+                </item>
+                <item>
+                    C:\devlopt\prod-trjs\test\names.tei_corpo.xml
+                    <desc>to</desc>
+                </item>
+                <head>
+                    <note type="access">C:\devlopt\prod-trjs\test/</note>
+                    <note type="filename">names.tei_corpo.xml</note>
+                </head>
+                <item>
+                    C:\devlopt\prod-trjs\test\names.tei_corpo.xml
+                    <desc>docname</desc>
+                </item>
+            </list>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <timeline unit="s">
+            <when absolute="0" xml:id="T0"/>
+        </timeline>
+        <body>
+            <div subtype="d0">
+                <head>
+                    <note type="start"/>
+                    <note type="end"/>
+                </head>
+                <annotationBlock who="BIBI" xml:id="au0">
+                    <u>
+                        <seg>bonjour. </seg>
+                    </u>
+                </annotationBlock>
+                <annotationBlock who="SP01" xml:id="au1">
+                    <u>
+                        <seg>au revoir. </seg>
+                    </u>
+                </annotationBlock>
+            </div>
+        </body>
+    </text>
+</TEI>
