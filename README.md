@@ -27,10 +27,10 @@ npm start
 
 6- Build the standalone application
 ```
-npm run rebuild
-npm build
-npm git
-npm dist
+npm rebuild
+npm run build
+npm run git
+npm run dist
 
 or
 
@@ -41,6 +41,6 @@ sh buildmacos.sh pathtobuild
 
 This should create the application for MacOS.
 
-For windows, use mktrjs-x64.sh (under ubuntu shell) and buildpc.bat (under windows).
+For windows, use mktrjs-x64.sh (under ubuntu shell) and buildwin.bat (under windows).
 It uses the NSIS software. Ubuntu shell is not mandatory, but you should then 
 create a .bat file that does the same thing than mktrjs-x64.sh

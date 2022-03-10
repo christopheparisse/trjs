@@ -19,12 +19,14 @@ version.version = "v-loading";
 version.appName = 'TRJS';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
-version.date = new Date("2020-01-24T20:00:00");
+version.date = new Date("2021-12-02T12:00:00");
 // year, month, day : warning minus 1 (-1) for months : january === 0
 
 version.preservedPages = 3;
 
 version.setVersion = function () {
+    return "0.7.8b";
+    /*
     var loadJsonFile = require('load-json-file');
 
     loadJsonFile(version.ffmpegdirLoc() + '/package.json').then(function (json) {
@@ -34,6 +36,7 @@ version.setVersion = function () {
         version.version = 'v-in progress';
         document.title = trjs.messgs.namesoftware + ' ' + version.version;
     });
+    */
 }
 
 /*

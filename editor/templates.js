@@ -233,10 +233,14 @@ trjs.template = (function () {
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
             var iname = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 1));
-
-            trjs.data.codesnames[icode] = iname;
-            if (!allnames[iname]) {
-                trjs.log.alert('Name: ' + iname + ' does not exist');
+            if (iname !== "") {
+                trjs.data.codesnames[icode] = iname;
+                if (!allnames[iname]) {
+                    trjs.log.alert('Name: ' + iname + ' does not exist');
+                    // creates a new person with that name
+                    createPartipant(iname);
+                    allnames[iname] = 'participant';
+                }
             }
         }
         table = $("#template-tier");
@@ -244,10 +248,14 @@ trjs.template = (function () {
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
             var iname = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 3));
-
-            trjs.data.codesnames[icode] = iname;
-            if (!allnames[iname]) {
-                trjs.log.alert('Name of tier: ' + iname + ' does not exist');
+            if (iname !== "") {
+                trjs.data.codesnames[icode] = iname;
+                if (!allnames[iname]) {
+                    trjs.log.alert('Name: ' + iname + ' does not exist');
+                    // creates a new person with that name
+                    createPartipant(iname);
+                    allnames[iname] = 'participant';
+                }
             }
         }
     }
@@ -1589,17 +1597,32 @@ trjs.template = (function () {
         return s;
     }
 
+    function participantPattern(name) {
+        var s = '<tr><td class="textcell1" contenteditable="true">xxx</td><td class="textcell2" contenteditable="true">';
+        if (name) s += name;
+        s += '</td><td class="textcell3" contenteditable="true"></td><td class="textcell4" contenteditable="true"></td>';
+        s += '<td class="textcell5" contenteditable="true"></td><td class="textcell6" contenteditable="true"></td><td class="textcell7" contenteditable="true"></td><td class="textcell8" contenteditable="true"></td>';
+        s += '<td class="textcell9" contenteditable="true"></td><td class="textcell10" contenteditable="true"></td><td class="textcell11" contenteditable="true"></td><td class="textcell12" contenteditable="true"></td>';
+        s += '</tr>';
+        return s;
+    }
+
     /**
      * handle keys pressed down in the transcript editor and metadata editor
      * @method eventKeydownParticipant
      * @param {event} e
      */
     function eventKeydownParticipant(e) {
-        var s = '<tr><td class="textcell1" contenteditable="true">xxx</td><td class="textcell2" contenteditable="true"></td><td class="textcell3" contenteditable="true"></td><td class="textcell4" contenteditable="true"></td>';
-        s += '<td class="textcell5" contenteditable="true"></td><td class="textcell6" contenteditable="true"></td><td class="textcell7" contenteditable="true"></td><td class="textcell8" contenteditable="true"></td>';
-        s += '<td class="textcell9" contenteditable="true"></td><td class="textcell10" contenteditable="true"></td><td class="textcell11" contenteditable="true"></td><td class="textcell12" contenteditable="true"></td>';
-        s += '</tr>';
+        var s = participantPattern();
         eventKeydownBasic(e, s);
+    }
+
+    function createPartipant(name) {
+        var s = participantPattern(name);
+        var participantTable = $('#participant tbody');
+        console.log("before:", participantTable);
+        participantTable.append(s); // inserts at the end
+        console.log("after:", participantTable);
     }
 
     /**
