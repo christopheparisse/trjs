@@ -4,7 +4,7 @@ mkdir $1/trjs-x86/app
 cp -vR ./doc $1/trjs-x86/app
 cp -vR ./editor $1/trjs-x86/app
 cp -vR ./js $1/trjs-x86/app
-cp -vR ./node $1/trjs-x86/app
+cp -vR ./external $1/trjs-x86/app
 cp -vR ./node_modules $1/trjs-x86/app
 cp -vR ./style $1/trjs-x86/app
 cp -vR ./systemcall $1/trjs-x86/app
