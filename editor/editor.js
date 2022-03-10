@@ -132,16 +132,16 @@ trjs.editor = (function () {
             trjs.palette.file(true);
         } else {
             trjs.palette.file(false);
-            // var remote = require('electron').remote;
-            var remote = require('@electron/remote');
+            var remote = require('electron').remote;
+            // var remote = require('@electron/remote');
             var mpf = remote.process.localmenu.getMenuItemById('palettefile');
             mpf.checked = false;
         }
         if (trjs.param.paletteEdit) {
             trjs.palette.edit(true);
         } else {
-            var remote = require('@electron/remote');
-            // var remote = require('electron').remote;
+            var remote = require('electron').remote;
+            // var remote = require('@electron/remote');
             var mpf = remote.process.localmenu.getMenuItemById('paletteedit');
             mpf.checked = false;
             trjs.palette.edit(false);
@@ -954,10 +954,10 @@ trjs.editor = (function () {
         //console.log(trjs.param.location);
         //console.log(trjs.param.server);
         if (trjs.param.server === 'electron') {
-            // var elec = require('electron');
-            // console.log(elec);
-            // remote = elec.remote;
-            var remote = require('@electron/remote');
+            var elec = require('electron');
+            console.log(elec);
+            remote = elec.remote;
+            // var remote = require('@electron/remote');
             console.log(remote);
             if (remote.process.macosxOpenFile) {
                 console.log("open_file: ", remote.process.argsOpenFile);
