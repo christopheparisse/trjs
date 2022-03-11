@@ -25,7 +25,7 @@ version.date = new Date("2021-12-02T12:00:00");
 version.preservedPages = 3;
 
 version.setVersion = function () {
-    return "0.7.8b";
+    version.version = "0.7.8bx";
     /*
     var loadJsonFile = require('load-json-file');
 
