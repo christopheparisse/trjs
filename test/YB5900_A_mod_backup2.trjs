@@ -122,6 +122,12 @@
 <note type="description"></note>
 </note>
 <note>
+<note type="code">---</note>
+<note type="contentType"></note>
+<note type="parent">none</note>
+<note type="description"></note>
+</note>
+<note>
 <note type="code">RD</note>
 <note type="contentType"></note>
 <note type="parent">none</note>
@@ -163,33 +169,29 @@ sex="9"
 >
 <persName>---</persName>
 <altGrp></altGrp></person><person
-sex="9"
+xml:id="xxx"
 >
 <persName>alpha</persName>
 <altGrp><alt type="SPK1" /></altGrp></person><person
-sex="9"
+xml:id="xxx"
 >
 <persName>bion</persName>
 <altGrp></altGrp></person><person
-sex="9"
+xml:id="xxx"
 >
 <persName>biondy</persName>
 <altGrp><alt type="SPK2" /></altGrp></person><person
-sex="9"
+xml:id="xxx"
 >
 <persName>e</persName>
 <altGrp></altGrp></person><person
-sex="9"
+xml:id="xxx"
 >
 <persName>electron</persName>
 <altGrp><alt type="SPK3" /></altGrp></person><person
-sex="9"
->
-<persName>joli</persName>
-<altGrp></altGrp></person><person
 xml:id="xxx"
 >
-<persName>jolieee</persName>
+<persName>joli</persName>
 <altGrp><alt type="RD" /></altGrp></person></listPerson></particDesc>
 </profileDesc>
 <encodingDesc version="0.9.1" subversion="trjs">
@@ -200,8 +202,8 @@ xml:id="xxx"
 <revisionDesc>
 <list>
 <item>original TRJS</item>
-<item>lastsave: Fri Mar 11 2022 11:17:38 GMT+0100 (Central European Standard Time)</item>
-<item>url: /Users/cp/devlopt/prod-trjs/test/YB5900_A_mod.trjs</item>
+<item>lastsave: Thu Mar 10 2022 15:08:08 GMT+0100 (heure normale d’Europe centrale)</item>
+<item>url: C:/devlopt/prod-trjs/test/YB5900_A.trjs</item>
 <item>name: new</item>
 </list>
 </revisionDesc>

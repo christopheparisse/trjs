@@ -4,7 +4,7 @@ mkdir trjs-macos-app
 cp -R ./doc $1/trjs-macos/trjs-macos-app
 cp -R ./editor $1/trjs-macos/trjs-macos-app
 cp -R ./js $1/trjs-macos/trjs-macos-app
-cp -R ./node $1/trjs-macos/trjs-macos-app
+cp -R ./external $1/trjs-macos/trjs-macos-app
 cp -R ./node_modules $1/trjs-macos/trjs-macos-app
 cp -R ./style $1/trjs-macos/trjs-macos-app
 cp -R ./systemcall $1/trjs-macos/trjs-macos-app
