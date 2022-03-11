@@ -1,4 +1,4 @@
-cd /Users/cp/devlopt/builds
+cd ../builds
 cd trjs-macos/Trjs-darwin-x64
 # zip -r ../../trjs-v0.7.8b-macos.zip Trjs.app
 ditto -ck --rsrc --sequesterRsrc --keepParent Trjs.app ../../trjs-v0.7.8b-macos.zip
@@ -9,7 +9,7 @@ cp trjs-v0.7.8b-macos.zip ~/ownCloud/betatrjs
 zip -r trjs-v0.7.8b.zip trjs-zip
 scp trjs-v0.7.8b.zip parisse@vheborto-ct3.inist.fr:/applis/download/
 cp trjs-v0.7.8b.zip ~/ownCloud/betatrjs
-cd /Users/cp/devlopt/prod-trjs
+cd ../prod-trjs
 scp doc/trjs_pp_fra.html parisse@vheborto-ct3.inist.fr:/applis/trjs/doc/
 scp doc/trjs_pp_eng.html parisse@vheborto-ct3.inist.fr:/applis/trjs/doc/
 scp doc/trjs_doc.html parisse@vheborto-ct3.inist.fr:/applis/trjs/doc/

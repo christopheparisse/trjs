@@ -34,7 +34,13 @@ npm run dist
 
 or
 
+sh buildallmac.sh /Users/cp/devlopt/builds == pathtobuild
+
+or 
+
 sh ver.sh
+sh mktrjs-macos.sh pathtobuild
+// creates sources zip 
 sh mktrjs-macos.sh pathtobuild
 sh buildmacos.sh pathtobuild
 ```
