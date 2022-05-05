@@ -50,3 +50,6 @@ This should create the application for MacOS.
 For windows, use mktrjs-x64.sh (under ubuntu shell) and buildwin.bat (under windows).
 It uses the NSIS software. Ubuntu shell is not mandatory, but you should then 
 create a .bat file that does the same thing than mktrjs-x64.sh
+
+sh buildpc.sh (under ubuntu shell)
+buildwin.bat (under windows shell)

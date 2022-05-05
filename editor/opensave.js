@@ -1347,7 +1347,7 @@ trjs.io = (function () {
                 // $("#save-server-response").html(data);
                 trjs.log.boxalert(trjs.messgs.exporttrans + format + trjs.messgs.exportname + fname);
             }, function (data) {
-                trjs.log.boxalert(trjs.messgs.exporterror + " " + format + " " + data);
+                trjs.log.boxalert(trjs.messgs.exporterror + " " + format + " " + fname + " " + data);
             });
         }
         $("#openexports").modal('hide');

@@ -187,9 +187,14 @@ sex="9"
 >
 <persName>joli</persName>
 <altGrp></altGrp></person><person
-xml:id="xxx"
+sex="9"
 >
 <persName>jolieee</persName>
+<altGrp></altGrp></person><person
+xml:id="xxx"
+sex="1"
+>
+<persName>jolieees</persName>
 <altGrp><alt type="RD" /></altGrp></person></listPerson></particDesc>
 </profileDesc>
 <encodingDesc version="0.9.1" subversion="trjs">
@@ -200,8 +205,8 @@ xml:id="xxx"
 <revisionDesc>
 <list>
 <item>original TRJS</item>
-<item>lastsave: Fri Mar 11 2022 11:17:16 GMT+0100 (Central European Standard Time)</item>
-<item>url: /Users/cp/devlopt/prod-trjs/test/YB5900_A_mod.trjs</item>
+<item>lastsave: Fri Mar 11 2022 17:34:21 GMT+0100 (heure normale d’Europe centrale)</item>
+<item>url: C:/devlopt/prod-trjs/test/YB5900_A_mod.trjs</item>
 <item>name: new</item>
 </list>
 </revisionDesc>
@@ -1484,7 +1489,7 @@ xml:id="xxx"
 <annotationBlock start="#T13" end="#T14" who="SPK1" xml:id="u7" >
 <u>euh</u>
 </annotationBlock>
-<annotationBlock start="#T15" end="#T16" who="RD" xml:id="u8" >
+<annotationBlock start="#T15" end="#T16" who="jolieee" xml:id="u8" >
 <u>ça va c&#39;est bon ?</u>
 </annotationBlock>
 <annotationBlock start="#T17" end="#T18" who="SPK2" xml:id="u9" >
@@ -2022,7 +2027,7 @@ xml:id="xxx"
 <u>bah</u>
 </annotationBlock>
 <annotationBlock start="#T232" end="#T233" who="SPK2" xml:id="u187" >
-<u>Ouda elle [ pron=*emménage/unknown]       ici ça va</u>
+<u>Ouda elle [ pron=*emménage/unknown]        ici ça va</u>
 </annotationBlock>
 <annotationBlock start="#T234" end="#T235" who="SPK2" xml:id="u188" >
 <u>ça</u>
@@ -2190,7 +2195,7 @@ xml:id="xxx"
 <u>Australie je m&#39;en fous [ rire/unknown]</u>
 </annotationBlock>
 <annotationBlock start="#T295" end="#T296" who="SPK2" xml:id="u243" >
-<u>[ rire/unknown]      tu auras pas le temps de passer nous voir à</u>
+<u>[ rire/unknown]       tu auras pas le temps de passer nous voir à</u>
 </annotationBlock>
 <annotationBlock start="#T296" end="#T297" who="SPK2" xml:id="u244" >
 <u>au Maroc ?</u>
@@ -2208,7 +2213,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T301" end="#T302" who="SPK2" xml:id="u249" >
-<u>[ pron=pi/unknown]      tu as</u>
+<u>[ pron=pi/unknown]       tu as</u>
 </annotationBlock>
 <annotationBlock start="#T302" end="#T303" who="SPK2" xml:id="u250" >
 <u>vous aurez</u>
@@ -2286,7 +2291,7 @@ xml:id="xxx"
 <u>bah la</u>
 </annotationBlock>
 <annotationBlock start="#T329" end="#T330" who="SPK2" xml:id="u275" >
-<u>[ pron=pi/unknown]      m&#39;a promis d&#39;aller à</u>
+<u>[ pron=pi/unknown]       m&#39;a promis d&#39;aller à</u>
 </annotationBlock>
 <annotationBlock start="#T330" end="#T331" who="SPK2" xml:id="u276" >
 <u>en mois d&#39;août</u>
@@ -2505,7 +2510,7 @@ xml:id="xxx"
 <u>si maintenant</u>
 </annotationBlock>
 <annotationBlock start="#T409" end="#T410" who="SPK1" xml:id="u348" >
-<u>[ pron=pi/unknown]      quelques temps</u>
+<u>[ pron=pi/unknown]       quelques temps</u>
 </annotationBlock>
 <annotationBlock start="#T410" end="#T411" who="SPK1" xml:id="u349" >
 <u></u>
@@ -2853,7 +2858,7 @@ xml:id="xxx"
 <u>le</u>
 </annotationBlock>
 <annotationBlock start="#T543" end="#T544" who="SPK2" xml:id="u464" >
-<u>[ pron=pi/unknown]     aussi</u>
+<u>[ pron=pi/unknown]      aussi</u>
 </annotationBlock>
 <annotationBlock start="#T544" end="#T545" who="SPK2" xml:id="u465" >
 <u>il est marié ici</u>
@@ -3006,7 +3011,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T599" end="#T600" who="SPK2" xml:id="u515" >
-<u>[ pron=pi/unknown]     je l&#39;ai</u>
+<u>[ pron=pi/unknown]      je l&#39;ai</u>
 </annotationBlock>
 <annotationBlock start="#T600" end="#T601" who="SPK2" xml:id="u516" >
 <u>perdu de vue je ne sais pas</u>
@@ -3231,7 +3236,7 @@ xml:id="xxx"
 <u>aussi il a joué le foot euh</u>
 </annotationBlock>
 <annotationBlock start="#T684" end="#T685" who="SPK2" xml:id="u590" >
-<u>euh [ pron=pi/unknown]     avec l&#39;équipe euh [ pron=pi/unknown]</u>
+<u>euh [ pron=pi/unknown]      avec l&#39;équipe euh [ pron=pi/unknown]</u>
 </annotationBlock>
 <annotationBlock start="#T685" end="#T686" who="SPK2" xml:id="u591" >
 <u>l&#39;équipe de euh de euh</u>
@@ -3297,7 +3302,7 @@ xml:id="xxx"
 <u>non pas Ahmed Ahmed il est [ pron=pi/unknown]</u>
 </annotationBlock>
 <annotationBlock start="#T709" end="#T710" who="SPK1" xml:id="u612" >
-<u>ah c&#39;est [ pron=pi/unknown]     enfin</u>
+<u>ah c&#39;est [ pron=pi/unknown]      enfin</u>
 </annotationBlock>
 <annotationBlock start="#T711" end="#T712" who="SPK2" xml:id="u613" >
 <u>c&#39;est [ pron=pi/unknown]</u>
@@ -3699,7 +3704,7 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T872" end="#T873" who="SPK1" xml:id="u746" >
-<u>il a [ pron=pi/unknown]     enfin</u>
+<u>il a [ pron=pi/unknown]      enfin</u>
 </annotationBlock>
 <annotationBlock start="#T873" end="#T874" who="SPK1" xml:id="u747" >
 <u>après chacun son histoire</u>
@@ -4029,7 +4034,7 @@ xml:id="xxx"
 <u>mon meilleur copain d&#39;enfance</u>
 </annotationBlock>
 <annotationBlock start="#T988" end="#T989" who="SPK1" xml:id="u856" >
-<u>[ pron=pi/unknown]    il était fort en maths et tout</u>
+<u>[ pron=pi/unknown]     il était fort en maths et tout</u>
 </annotationBlock>
 <annotationBlock start="#T989" end="#T990" who="SPK1" xml:id="u857" >
 <u>[ i/unknown]</u>
@@ -4407,7 +4412,7 @@ xml:id="xxx"
 <u>là à</u>
 </annotationBlock>
 <annotationBlock start="#T1121" end="#T1122" who="SPK2" xml:id="u982" >
-<u>à [ pron=pi/unknown]    je ne sais pas</u>
+<u>à [ pron=pi/unknown]     je ne sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T1122" end="#T1123" who="SPK1" xml:id="u983" >
 <u>qui ça ?</u>
@@ -4536,7 +4541,7 @@ xml:id="xxx"
 <u>je n&#39;ai pas envie de le voir</u>
 </annotationBlock>
 <annotationBlock start="#T1165" end="#T1166" who="SPK1" xml:id="u1025" >
-<u>[ pron=ch/unknown]    tout ça</u>
+<u>[ pron=ch/unknown]     tout ça</u>
 </annotationBlock>
 <annotationBlock start="#T1166" end="#T1167" who="SPK1" xml:id="u1026" >
 <u>[ i/unknown]</u>

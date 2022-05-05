@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Trans SYSTEM "trans-14.dtd">
+<Trans audio_filename="YB5900P7" xml:lang="eng">
+<Speakers>
+<Speaker id="kk3" name="SPK3"/>
+<Speaker id="sss1" name="John"/>
+<Speaker id="spk2" name="Arthur"/>
+<Speaker id="rd" name="RD2"/>
+</Speakers>
+<Episode>
+<Section endTime="1088.362" startTime="0" type="report">
+<Turn endTime="4.708" speaker="spk2 sss1" startTime="0">
+<Sync time="0"/>
+<Who nb="2"/>c'est pas grave<Sync time="0.113"/>
+<Who nb="1"/>[ pron=pi/unknown]<Sync time="0.603"/>
+<Who nb="1"/>[ rire/unknown]<Sync time="1.959"/>
+<Who nb="2"/>je leur ai envoyé un message<Sync time="2.114"/>
+<Who nb="1"/>[ pron=pi/unknown]<Sync time="3.039"/>
+<Who nb="1"/>mh mh<Sync time="3.498"/>
+<Sync time="4.302"/>
+<Who nb="2"/>euh</Turn>
+<Turn endTime="5.514" speaker="rd" startTime="4.798">
+<Sync time="4.798"/>ça va c'est bon ?</Turn>
+<Turn endTime="6.244" speaker="spk2" startTime="5.554">
+<Sync time="5.554"/>
+</Turn>
+<Turn endTime="7.605" speaker="kk3 spk2" startTime="6.244">
+<Sync time="6.244"/>
+<Who nb="2"/>[ r/unknown]<Sync time="7.067"/>
+<Who nb="1"/>ça tourne</Turn>
+<Turn endTime="9.329" speaker="kk3 spk2 sss1" startTime="7.783">
+<Sync time="7.783"/>
+<Who nb="3"/>ça tourne ?<Sync time="7.871"/>
+<Who nb="1"/>allez-y quand vous voulez<Sync time="8.594"/>
+<Who nb="1"/>c'est quand vous voulez<Sync time="8.793"/>
+<Who nb="2"/>pron=pi</Turn>
+<Turn endTime="10.639" speaker="kk3 sss1" startTime="9.549">
+<Sync time="9.549"/>
+<Who nb="1"/>prenez votre temps hein<Sync time="9.880"/>
+<Who nb="2"/>c'est bon</Turn>
+<Turn endTime="12.802" speaker="sss1" startTime="10.904">
+<Sync time="10.904"/>je leur ai envoyé un message pour leur dire que</Turn>
+<Turn endTime="14.0" speaker="spk2 sss1" startTime="13.312">
+<Sync time="13.312"/>
+<Who nb="2"/>pron=pi<Sync time="13.0"/>
+<Who nb="1"/>pron=pi</Turn>
+<Turn endTime="15.380" speaker="spk2" startTime="14.608">
+<Sync time="14.608"/>ouais ouais<Sync time="15.057"/>ouais</Turn>
+<Turn endTime="17.775" speaker="sss1" startTime="15.648">
+<Sync time="15.648"/>du coup tu tu retournes quand alors au Maroc ?</Turn>
+<Turn endTime="19.950" speaker="spk2" startTime="17.775">
+<Sync time="17.775"/>
+<Sync time="18.9080"/>oui</Turn>
+<Turn endTime="19.9510" speaker="sss1" startTime="19.950">
+<Sync time="19.950"/>tu retournes quand ?</Turn>
+<Turn endTime="21.1720" speaker="spk2 sss1" startTime="20.9440">
+<Sync time="20.9440"/>
+<Who nb="2"/>tu<Sync time="21.171"/>
+<Who nb="1"/>bah</Turn>
+<Turn endTime="25.168" speaker="spk2" startTime="21.8040">
+<Sync time="21.8040"/>vers la euh<Sync time="23.068"/>la fin du mois<Sync time="23.899"/>sept<Sync time="24.678"/>
+</Turn>
+<Turn endTime="29.405" speaker="spk2 sss1" startTime="25.301">
+<Sync time="25.301"/>
+<Who nb="2"/>d'accord<Sync time="25.316"/>
+<Who nb="1"/>ou déb<Sync time="25.623"/>
+<Who nb="1"/>ou début mois sept<Sync time="26.265"/>
+<Who nb="2"/>d'accord<Sync time="27.136"/>
+<Who nb="2"/>du coup tu vas reprendre le travail ou ?<Sync time="28.743"/>
+<Who nb="1"/>
+</Turn>
+<Turn endTime="32.672" speaker="spk2" startTime="29.500">
+<Sync time="29.500"/>moi je sais pas je vais<Sync time="30.981"/>peut être changer de travail</Turn>
+<Turn endTime="33.0940" speaker="spk2 sss1" startTime="32.762">
+<Sync time="32.762"/>
+<Who nb="2"/>ouais<Sync time="33.093"/>
+<Who nb="1"/>ouais ouais</Turn>
+<Turn endTime="36.803" speaker="sss1" startTime="33.0940">
+<Sync time="33.0940"/>c'est compliqué comme t'es à la retraite et tu continues de bosser</Turn>
+<Turn endTime="39.691" speaker="spk2 sss1" startTime="36.922">
+<Sync time="36.922"/>
+<Who nb="1"/>c'est difficile aussi de trouvé un emploie<Sync time="38.448"/>
+<Who nb="2"/>ouais</Turn>
+<Turn endTime="41.675" speaker="sss1" startTime="39.691">
+<Sync time="39.691"/>ouais<Sync time="40.018"/>après tu connais du monde<Sync time="40.870"/>ça va c'est déjà ça</Turn>
+<Turn endTime="43.771" speaker="spk2" startTime="41.908">
+<Sync time="41.908"/>ça c'est sûr ça c'est sûr</Turn>
+<Turn endTime="48.2240" speaker="spk2 sss1" startTime="43.771">
+<Sync time="43.771"/>
+<Who nb="2"/>ouais<Sync time="44.600"/>bah<Sync time="44.930"/>
+<Who nb="1"/>et je vais du du côté jeudi là<Sync time="47.557"/>
+<Who nb="2"/>d'accord<Sync time="48.223"/>
+<Who nb="1"/>oui là y'a des euh des copains à moi</Turn>
+<Turn endTime="53.426" speaker="spk2" startTime="51.0460">
+<Sync time="51.0460"/>
+<Sync time="51.796"/>ils vont m'aider à trouver un emplois</Turn>
+<Turn endTime="63.727" speaker="sss1" startTime="53.426">
+<Sync time="53.426"/>ah c'est bien c'est bien<Sync time="55.291"/>
+<Sync time="55.515"/>bah moi c'est pareil tu sais genre euh<Sync time="57.251"/>pour trouver du boulot c'est pas évident<Sync time="58.948"/>quand même si t'es jeune même si tu connais du monde<Sync time="61.222"/>
+<Sync time="61.850"/>non c'est compliqué partout<Sync time="62.830"/>pour tout le monde</Turn>
+<Turn endTime="67.317" speaker="spk2 sss1" startTime="63.727">
+<Sync time="63.727"/>
+<Who nb="1"/>oui si c'est un peu difficile<Sync time="65.664"/>pron=pi<Sync time="65.714"/>
+<Who nb="2"/>bah oui pour tout le monde</Turn>
+<Turn endTime="70.176" speaker="sss1" startTime="67.317">
+<Sync time="67.317"/>ah ça fait deux ans euh<Sync time="68.117"/>casiment que j'ai pas bossé euh<Sync time="69.656"/>
+</Turn>
+<Turn endTime="75.183" speaker="spk2" startTime="70.176">
+<Sync time="70.176"/>et moi aussi je pense à<Sync time="72.172"/>à ma fille la petite là<Sync time="73.527"/>
+</Turn>
+<Turn endTime="75.995" speaker="sss1" startTime="75.183">
+<Sync time="75.183"/>qu'est-ce qu'elle a ?</Turn>
+<Turn endTime="82.765" speaker="spk2" startTime="75.995">
+<Sync time="75.995"/>bah maintenant elle est<Sync time="77.638"/>elle est plus loin de chez moi voilà<Sync time="79.257"/>elle est à euh Montpellier<Sync time="81.502"/>donc c'est</Turn>
+<Turn endTime="82.780" speaker="sss1" startTime="82.765">
+<Sync time="82.765"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="87.390" speaker="spk2" startTime="82.780">
+<Sync time="82.780"/>c'est difficile de la joindre aussi<Sync time="84.638"/>
+<Sync time="85.097"/>je ne sais pas que euh<Sync time="86.649"/>
+</Turn>
+<Turn endTime="87.878" speaker="sss1" startTime="87.413">
+<Sync time="87.413"/>ouais t'inquiète pas pour elle euh</Turn>
+<Turn endTime="89.209" speaker="spk2" startTime="87.878">
+<Sync time="87.878"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="95.233" speaker="sss1" startTime="89.209">
+<Sync time="89.209"/>elle fait ses trucs euh t'inquiète pas<Sync time="90.741"/>
+<Sync time="91.283"/>t'as pas à t'inquiéter elle est avec son mec et tout ça va<Sync time="93.952"/>
+</Turn>
+<Turn endTime="95.569" speaker="spk2" startTime="95.233">
+<Sync time="95.233"/>oui</Turn>
+<Turn endTime="96.183" speaker="sss1" startTime="95.569">
+<Sync time="95.569"/>[ tx/unknown]</Turn>
+<Turn endTime="107.592" speaker="spk2" startTime="96.183">
+<Sync time="96.183"/>
+<Sync time="96.910"/>de toute les façons euh<Sync time="98.169"/>je rentre et euh<Sync time="99.280"/>
+<Sync time="99.734"/>Jawad euh<Sync time="101.551"/>Samia<Sync time="102.482"/>
+<Sync time="103.474"/>et euh<Sync time="104.413"/>
+<Sync time="105.388"/>je ne sais pas [ rire/unknown]<Sync time="107.035"/>
+</Turn>
+<Turn endTime="118.119" speaker="sss1" startTime="107.592">
+<Sync time="107.592"/>bah<Sync time="108.023"/>ouais mais c'est comme ça tu sais euh<Sync time="109.604"/>dans tout la famille tout le monde est partie euh<Sync time="111.648"/>même toi quand t'as vécu avec ton père<Sync time="113.275"/>lui il était en France toi t'étais au Maroc<Sync time="115.784"/>tes frères ils sont partis les autres<Sync time="117.150"/>c'est comme ça c'est la vie</Turn>
+<Turn endTime="118.784" speaker="spk2" startTime="118.119">
+<Sync time="118.119"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="121.460" speaker="sss1" startTime="118.784">
+<Sync time="118.784"/>faut que chacun fasse sa vie après<Sync time="120.522"/>
+</Turn>
+<Turn endTime="122.633" speaker="spk2" startTime="121.460">
+<Sync time="121.460"/>oui mais<Sync time="122.227"/>
+</Turn>
+<Turn endTime="134.106" speaker="sss1" startTime="122.633">
+<Sync time="122.633"/>tu sais on peut pas rester<Sync time="123.900"/>tous ensemble tout le temps c'est comme ça<Sync time="125.675"/>le monde est comme ça maintenant<Sync time="127.143"/>tout le monde part des gens ils restent<Sync time="128.983"/>toute façon même même si on était restés au Maroc euh<Sync time="131.906"/>un moment donné faut que chacun fasse sa vie</Turn>
+<Turn endTime="136.055" speaker="spk2" startTime="134.106">
+<Sync time="134.106"/>ça c'est sûr<Sync time="135.427"/>ça c'est sûr</Turn>
+<Turn endTime="142.656" speaker="sss1" startTime="136.055">
+<Sync time="136.055"/>après c'est comme ça tu sais<Sync time="137.469"/>chacun après chacun ses problèmes euh<Sync time="139.422"/>
+<Sync time="139.968"/>tu te maris tu fais tes enfants et tout<Sync time="141.586"/>tu pars<Sync time="142.028"/>tu restes pas avec tes parents quoi</Turn>
+<Turn endTime="143.684" speaker="spk2" startTime="142.656">
+<Sync time="142.656"/>[ bb/unknown]</Turn>
+<Turn endTime="145.662" speaker="sss1" startTime="143.684">
+<Sync time="143.684"/>
+</Turn>
+<Turn endTime="146.803" speaker="spk2" startTime="145.986">
+<Sync time="145.986"/>ouais ouais</Turn>
+<Turn endTime="152.302" speaker="sss1" startTime="146.803">
+<Sync time="146.803"/>après le plus important c'est d'être solidaire euh<Sync time="148.556"/>je sais pas de<Sync time="149.525"/>de s'entraider de se voir de temps en temps quand on peut</Turn>
+<Turn endTime="157.010" speaker="spk2" startTime="152.302">
+<Sync time="152.302"/>mais c'est<Sync time="153.552"/>aussi difficile de<Sync time="154.938"/>de rester tout seul<Sync time="156.175"/>tout la vie hein</Turn>
+<Turn endTime="159.174" speaker="spk2 sss1" startTime="157.010">
+<Sync time="157.010"/>
+<Who nb="2"/>bah oui<Sync time="157.406"/>
+<Who nb="1"/>on est grands on est retraités</Turn>
+<Turn endTime="189.857" speaker="sss1" startTime="159.174">
+<Sync time="159.174"/>ah bah après euh<Sync time="160.172"/>
+<Sync time="161.549"/>après c'est la vie tu sais c'est comme tout le monde<Sync time="163.322"/>
+<Sync time="164.761"/>puis voilà<Sync time="165.525"/>
+<Sync time="166.315"/>donc euh<Sync time="166.766"/>moi je sais pas pour l'instant je sais pas<Sync time="168.262"/>je reste ici je vois<Sync time="169.026"/>si je trouve quelque chose pour la saison<Sync time="170.690"/>
+<Sync time="171.672"/>je reste encore quelques temps ensuite euh<Sync time="173.426"/>soit je rentre à Paris soit je sais pas<Sync time="174.985"/>toute façon j'ai pas de femme j'ai pas de gosses euh<Sync time="177.291"/>
+<Sync time="179.224"/>si j'ai besoin de partir quelque part je partirais<Sync time="181.304"/>sinon je reste encore quelques années en France<Sync time="183.284"/>si je trouve pas de boulot<Sync time="184.312"/>si ça continue comme ça<Sync time="185.552"/>je partirais ailleurs<Sync time="187.222"/>Canada ou je sais pas<Sync time="188.184"/>
+</Turn>
+<Turn endTime="189.8580" speaker="spk2 sss1" startTime="189.857">
+<Sync time="189.857"/>
+<Who nb="2"/>bah<Sync time="189.857"/>
+<Who nb="1"/>et tu penses</Turn>
+<Turn endTime="192.767" speaker="spk2" startTime="190.9130">
+<Sync time="190.9130"/>tu penses y aller au Canada ?</Turn>
+<Turn endTime="199.6160" speaker="sss1" startTime="192.767">
+<Sync time="192.767"/>bah oui pourquoi pas attend<Sync time="194.046"/>il y a pas de boulot enfin<Sync time="195.074"/>si ça se complique de plus en plus euh<Sync time="196.919"/>
+<Sync time="197.894"/>donc euh<Sync time="198.614"/>
+<Sync time="199.615"/>pron=pi</Turn>
+<Turn endTime="202.624" speaker="spk2" startTime="199.6160">
+<Sync time="199.6160"/>et vous allez laisser les soeurs ?<Sync time="201.084"/>
+<Sync time="201.856"/>toutes seules ?</Turn>
+<Turn endTime="207.866" speaker="sss1" startTime="202.624">
+<Sync time="202.624"/>
+<Sync time="203.118"/>ouais mais bon<Sync time="203.669"/>après je t'ai dit euh<Sync time="204.677"/>chacun il faut qu'il fasse sa vie quoi<Sync time="206.361"/>c'est c'est comme ça hein<Sync time="207.402"/>
+</Turn>
+<Turn endTime="209.102" speaker="spk2" startTime="207.866">
+<Sync time="207.866"/>ouais ouais<Sync time="208.705"/>
+</Turn>
+<Turn endTime="209.623" speaker="sss1" startTime="209.102">
+<Sync time="209.102"/>c'est comme ça</Turn>
+<Turn endTime="217.894" speaker="spk2" startTime="209.623">
+<Sync time="209.623"/>pron=pi<Sync time="210.260"/>bah<Sync time="210.757"/>Ouda elle [ pron=*emménage/unknown] ici ça va<Sync time="212.869"/>ça<Sync time="213.394"/>[ r/unknown]<Sync time="213.606"/>avec ses enfants<Sync time="214.973"/>
+<Sync time="215.384"/>ils mènent la vie et<Sync time="216.723"/>convenablement</Turn>
+<Turn endTime="221.511" speaker="sss1" startTime="217.894">
+<Sync time="217.894"/>ouais<Sync time="218.419"/>et voilà et<Sync time="219.458"/>parce que enfin<Sync time="220.731"/>
+</Turn>
+<Turn endTime="223.241" speaker="spk2" startTime="221.511">
+<Sync time="221.511"/>elle s'entend avec son maris</Turn>
+<Turn endTime="223.916" speaker="sss1" startTime="223.241">
+<Sync time="223.241"/>ah</Turn>
+<Turn endTime="224.509" speaker="spk2" startTime="223.916">
+<Sync time="223.916"/>ouais</Turn>
+<Turn endTime="227.311" speaker="sss1" startTime="224.509">
+<Sync time="224.509"/>bah moi aussi il faut je fasse ma vie quoi j'ai 32 balles euh<Sync time="227.210"/>il faut que [ rire/unknown]</Turn>
+<Turn endTime="228.025" speaker="spk2" startTime="227.311">
+<Sync time="227.311"/>[ rire/unknown]</Turn>
+<Turn endTime="230.571" speaker="spk2 sss1" startTime="228.261">
+<Sync time="228.261"/>
+<Who nb="1"/>ça c'est sûr<Sync time="228.353"/>
+<Who nb="2"/>que je trouve une femme il faut que j'ai des gosses je sais pas</Turn>
+<Turn endTime="243.806" speaker="sss1" startTime="230.571">
+<Sync time="230.571"/>ouais il serait temps quoi<Sync time="231.807"/>
+<Sync time="233.253"/>donc euh ça commence par la situation<Sync time="235.198"/>si t'as pas une situation<Sync time="236.481"/>c'est de plus en plus compliqué<Sync time="237.764"/>
+<Sync time="239.047"/>déjà alors euh<Sync time="240.220"/>si tu bouges pas euh<Sync time="241.360"/>bah tu restes tu stagnes quoi<Sync time="242.974"/>
+</Turn>
+<Turn endTime="244.712" speaker="spk2" startTime="243.806">
+<Sync time="243.806"/>ouais ouais [ pron=ch/unknown]</Turn>
+<Turn endTime="247.350" speaker="sss1" startTime="244.712">
+<Sync time="244.712"/>regarde rien que toi t'as bougé combien de fois dans ta vie euh</Turn>
+<Turn endTime="248.524" speaker="spk2" startTime="247.350">
+<Sync time="247.350"/>
+</Turn>
+<Turn endTime="251.161" speaker="sss1" startTime="248.524">
+<Sync time="248.524"/>t'es en France ou Belgique euh<Sync time="249.963"/>tout ça enfin</Turn>
+<Turn endTime="251.339" speaker="spk2" startTime="251.161">
+<Sync time="251.161"/>ouais mais</Turn>
+<Turn endTime="253.646" speaker="sss1" startTime="251.339">
+<Sync time="251.339"/>c'est pas pour rien c'est pour euh<Sync time="252.432"/>changer de vie quoi</Turn>
+<Turn endTime="256.170" speaker="spk2" startTime="253.646">
+<Sync time="253.646"/>ça c'est sûr ça c'est sûr<Sync time="255.124"/>[ bb/unknown]</Turn>
+<Turn endTime="256.989" speaker="sss1" startTime="256.170">
+<Sync time="256.170"/>donc voilà</Turn>
+<Turn endTime="258.047" speaker="spk2" startTime="256.989">
+<Sync time="256.989"/>ouais ouais<Sync time="257.664"/>
+</Turn>
+<Turn endTime="274.912" speaker="sss1" startTime="258.047">
+<Sync time="258.047"/>donc euh<Sync time="259.134"/>c'est comme je t'ai dit euh<Sync time="259.845"/>voilà je vais regarder<Sync time="261.188"/>je tente un peu<Sync time="262.071"/>je postule machin si je trouve pas<Sync time="263.693"/>je partirais ailleurs j'attends encore quelques temps<Sync time="266.429"/>
+<Sync time="267.465"/>au plus tard 1 an si je<Sync time="268.857"/>si ça continue comme ça je partirais ailleurs<Sync time="270.686"/>
+<Sync time="271.348"/>je m'en fous après euh<Sync time="272.343"/>j'irais à Dubai j'irais au Canada<Sync time="273.974"/>j'irais au</Turn>
+<Turn endTime="278.239" speaker="spk2 sss1" startTime="274.912">
+<Sync time="274.912"/>
+<Who nb="2"/>Australie je m'en fous [ rire/unknown]<Sync time="275.580"/>
+<Who nb="1"/>[ rire/unknown] tu auras pas le temps de passer nous voir à</Turn>
+<Turn endTime="278.953" speaker="spk2" startTime="278.239">
+<Sync time="278.239"/>au Maroc ?</Turn>
+<Turn endTime="279.476" speaker="sss1" startTime="278.953">
+<Sync time="278.953"/>
+</Turn>
+<Turn endTime="282.573" speaker="spk2" startTime="279.476">
+<Sync time="279.476"/>euh là pour l'instant c'est<Sync time="280.976"/>cette cette année ça va être compliquée</Turn>
+<Turn endTime="283.426" speaker="sss1" startTime="282.573">
+<Sync time="282.573"/>
+</Turn>
+<Turn endTime="288.156" speaker="spk2" startTime="283.426">
+<Sync time="283.426"/>[ pron=pi/unknown] tu as<Sync time="284.903"/>vous aurez<Sync time="285.747"/>le temps d'y aller quoi<Sync time="287.057"/>
+</Turn>
+<Turn endTime="289.746" speaker="spk2 sss1" startTime="288.229">
+<Sync time="288.229"/>
+<Who nb="2"/>après<Sync time="288.156"/>
+<Who nb="1"/>pron=pi<Sync time="288.912"/>
+<Who nb="1"/>
+</Turn>
+<Turn endTime="308.730" speaker="sss1" startTime="289.746">
+<Sync time="289.746"/>en vrai c'est compliqué c'est pas juste par rapport au travail<Sync time="292.409"/>
+<Sync time="293.053"/>c'est<Sync time="293.736"/>c'est aussi le fait que<Sync time="294.867"/>
+<Sync time="295.540"/>en vrai j'aime plus retourner au Maroc<Sync time="297.112"/>
+<Sync time="297.560"/>j'aime plus trop retourner au Maroc<Sync time="298.987"/>je me sens<Sync time="299.978"/>
+<Sync time="300.642"/>je sais pas<Sync time="301.238"/>
+<Sync time="301.696"/>les gens ils pensent que euh<Sync time="302.934"/>enfin<Sync time="303.379"/>qui<Sync time="303.779"/>je sais pas pourquoi les gens ils aiment bien y retourner moi j'aime pas<Sync time="306.146"/>
+<Sync time="306.950"/>je sais pas je me sens mieux ici je sais pas</Turn>
+<Turn endTime="314.229" speaker="spk2" startTime="308.730">
+<Sync time="308.730"/>bah la<Sync time="309.578"/>[ pron=pi/unknown] m'a promis d'aller à<Sync time="311.385"/>en mois d'août<Sync time="312.557"/>au Maroc<Sync time="313.623"/>
+</Turn>
+<Turn endTime="325.116" speaker="sss1" startTime="314.229">
+<Sync time="314.229"/>ah ouais<Sync time="314.939"/>bah ouais<Sync time="315.631"/>
+<Sync time="315.908"/>après chacun<Sync time="316.934"/>
+<Sync time="317.543"/>moi je sais pas pour l'instant<Sync time="318.721"/>j'ai pas trop envie d'y retourner<Sync time="319.963"/>
+<Sync time="320.335"/>ouais je retourne à chaque fois pour vous voir toi et maman<Sync time="322.522"/>mais sinon<Sync time="323.220"/>
+<Sync time="323.605"/>franchement j'ai pas trop envie de</Turn>
+<Turn endTime="328.418" speaker="spk2 sss1" startTime="325.116">
+<Sync time="325.116"/>
+<Who nb="2"/>
+<Sync time="325.511"/>pron=pi<Sync time="325.617"/>
+<Who nb="1"/>mais elle a déjà fait la sélection ici à Montpellier</Turn>
+<Turn endTime="329.731" speaker="spk2" startTime="328.418">
+<Sync time="328.418"/>
+<Sync time="328.804"/>là à Montpellier</Turn>
+<Turn endTime="330.180" speaker="sss1" startTime="329.731">
+<Sync time="329.731"/>ouais</Turn>
+<Turn endTime="334.354" speaker="spk2" startTime="330.180">
+<Sync time="330.180"/>
+<Sync time="330.721"/>et je ne sais pas si<Sync time="331.977"/>
+<Sync time="332.743"/>va être accepter<Sync time="333.899"/>je ne sais pas</Turn>
+<Turn endTime="335.023" speaker="sss1" startTime="334.354">
+<Sync time="334.354"/>à la fac ?</Turn>
+<Turn endTime="335.923" speaker="spk2" startTime="335.023">
+<Sync time="335.023"/>à la fac ouais</Turn>
+<Turn endTime="339.386" speaker="sss1" startTime="335.983">
+<Sync time="335.983"/>bah c'est bien<Sync time="336.731"/>c'est bien<Sync time="337.371"/>bah il y a pas de raison qu'elle ne soit pas acceptée</Turn>
+<Turn endTime="340.678" speaker="spk2" startTime="339.386">
+<Sync time="339.386"/>ouais<Sync time="340.018"/>[ i/unknown]</Turn>
+<Turn endTime="356.875" speaker="sss1" startTime="340.678">
+<Sync time="340.678"/>pas de raison<Sync time="341.349"/>
+<Sync time="343.472"/>du coup on verra bah<Sync time="344.521"/>plus tard si<Sync time="345.678"/>
+<Sync time="346.979"/>quand tu arrêteras travailler on verra si il y a moyen<Sync time="349.462"/>si moi j'ai une situation et tout<Sync time="351.006"/>si je reste en France<Sync time="351.894"/>
+<Sync time="352.510"/>ou ailleurs<Sync time="353.242"/>
+<Sync time="353.702"/>on verra si<Sync time="354.553"/>vous pouvez venir pron=pi<Sync time="355.578"/>toi et maman quoi<Sync time="356.354"/>
+</Turn>
+<Turn endTime="368.071" speaker="spk2" startTime="356.875">
+<Sync time="356.875"/>ouais mais<Sync time="358.082"/>fac façon il m'a<Sync time="359.712"/>invité d'aller à<Sync time="360.969"/>visiter là<Sync time="362.319"/>Montpellier<Sync time="363.009"/>
+<Sync time="363.460"/>il m'a dit qu'il va m'emmener à<Sync time="364.658"/>la plage je ne sais pas<Sync time="366.273"/>
+<Sync time="366.962"/>pron=pi</Turn>
+<Turn endTime="369.842" speaker="sss1" startTime="368.071">
+<Sync time="368.071"/>ah ouais d'accord<Sync time="368.985"/>ouais tu parles de [ pron=pi/unknown]</Turn>
+<Turn endTime="372.856" speaker="spk2 sss1" startTime="369.889">
+<Sync time="369.889"/>
+<Who nb="1"/>oui<Sync time="369.842"/>
+<Who nb="2"/>moi je te parle de toi et de maman<Sync time="371.095"/>
+<Who nb="1"/>ah de moi ?<Sync time="371.878"/>
+<Who nb="2"/>ouais<Sync time="372.088"/>
+<Who nb="1"/>[ rire/unknown]</Turn>
+<Turn endTime="377.320" speaker="sss1" startTime="372.856">
+<Sync time="372.856"/>je te disais que euh<Sync time="374.028"/>
+<Sync time="374.977"/>vu que c'est compliqué<Sync time="375.981"/>là-bas aussi<Sync time="376.723"/>
+</Turn>
+<Turn endTime="378.320" speaker="spk2 sss1" startTime="377.320">
+<Sync time="377.320"/>
+<Who nb="1"/>ouais<Sync time="377.453"/>
+<Who nb="2"/>si maintenant</Turn>
+<Turn endTime="398.955" speaker="sss1" startTime="378.320">
+<Sync time="378.320"/>[ pron=pi/unknown] quelques temps<Sync time="380.020"/>
+<Sync time="380.720"/>bah<Sync time="381.680"/>t'es plus trop jeune hein<Sync time="382.851"/>
+<Sync time="383.308"/>[ pron=pi/unknown]<Sync time="384.150"/>
+<Sync time="385.136"/>d'ici quelques temps si<Sync time="386.710"/>enfin<Sync time="387.323"/>
+<Sync time="387.972"/>pour que vous soyez encore mieux enfin<Sync time="389.901"/>vous soyez plus seul quoi<Sync time="391.076"/>
+<Sync time="391.630"/>on ferait mieux de<Sync time="393.090"/>que vous vous je sais pas<Sync time="394.022"/>que vous<Sync time="394.497"/>puissiez rester ici<Sync time="395.957"/>on va voir pour les papiers tout ça si il y a moyen<Sync time="397.931"/>que vous puissiez rester ici</Turn>
+<Turn endTime="401.427" speaker="spk2" startTime="398.955">
+<Sync time="398.955"/>oui c'est difficile<Sync time="399.884"/>c'est difficile<Sync time="400.766"/>maintenant de</Turn>
+<Turn endTime="404.006" speaker="spk2 sss1" startTime="401.427">
+<Sync time="401.427"/>
+<Who nb="2"/>c'est difficile mais c'est pas<Sync time="402.397"/>
+<Who nb="1"/>de faire un regroupement quoi</Turn>
+<Turn endTime="404.613" speaker="spk2" startTime="404.006">
+<Sync time="404.006"/>
+</Turn>
+<Turn endTime="428.332" speaker="sss1" startTime="404.613">
+<Sync time="404.613"/>c'est difficile mais c'est<Sync time="405.478"/>pas impossible quoi c'est<Sync time="406.563"/>il y a toujours des solutions<Sync time="407.558"/>
+<Sync time="408.511"/>je pense que euh<Sync time="409.217"/>pour euh<Sync time="409.728"/>les personnes enfin<Sync time="410.768"/>vous êtes pas très<Sync time="411.418"/>non plus [ rire/unknown]<Sync time="412.373"/>
+<Sync time="412.660"/>vous êtes pas<Sync time="413.456"/>
+<Sync time="413.947"/>vous êtes pas très<Sync time="414.950"/>
+<Sync time="415.472"/>vous êtes encore en forme quoi tous les deux<Sync time="417.157"/>
+<Sync time="417.613"/>donc euh<Sync time="418.166"/>d'ici quelques temps<Sync time="419.204"/>
+<Sync time="419.661"/>on va on verra si il y a moyen<Sync time="421.251"/>
+<Sync time="421.800"/>de faire quelque chose pour vous<Sync time="423.041"/>pour obtenir des papiers comme ça vous venez tout le temps ici euh<Sync time="425.637"/>au lieu de galérer d'avoir un visa tous les ans tout ça</Turn>
+<Turn endTime="429.989" speaker="spk2" startTime="428.332">
+<Sync time="428.332"/>ouais c'est bien<Sync time="429.237"/>c'est bien</Turn>
+<Turn endTime="431.095" speaker="spk2 sss1" startTime="430.238">
+<Sync time="430.238"/>
+<Who nb="2"/>bah oui<Sync time="429.989"/>
+<Who nb="1"/>ça me ferait plaisir aussi</Turn>
+<Turn endTime="431.883" speaker="sss1" startTime="431.095">
+<Sync time="431.095"/>bah oui</Turn>
+<Turn endTime="432.977" speaker="spk2 sss1" startTime="432.152">
+<Sync time="432.152"/>
+<Who nb="1"/>de rester avec vous<Sync time="431.883"/>
+<Who nb="2"/>je je sais bien</Turn>
+<Turn endTime="435.349" speaker="spk2" startTime="433.641">
+<Sync time="433.641"/>vous êtes loin de moi et</Turn>
+<Turn endTime="436.285" speaker="sss1" startTime="435.349">
+<Sync time="435.349"/>je sais bien</Turn>
+<Turn endTime="438.976" speaker="spk2" startTime="436.285">
+<Sync time="436.285"/>
+<Sync time="437.720"/>ça nous arrange tous</Turn>
+<Turn endTime="442.129" speaker="sss1" startTime="438.976">
+<Sync time="438.976"/>mh<Sync time="439.530"/>en fait toi pourquoi t'es reparti au Maroc euh ?</Turn>
+<Turn endTime="443.979" speaker="spk2 sss1" startTime="442.129">
+<Sync time="442.129"/>
+<Who nb="2"/>t'as t'avais vécu ici<Sync time="443.569"/>
+<Who nb="1"/>oui à Lyon<Sync time="443.569"/>
+<Who nb="2"/>pron=pi</Turn>
+<Turn endTime="444.818" speaker="spk2" startTime="444.571">
+<Sync time="444.571"/>
+</Turn>
+<Turn endTime="445.877" speaker="spk2 sss1" startTime="444.818">
+<Sync time="444.818"/>
+<Who nb="2"/>pourquoi t'es reparti ?<Sync time="445.168"/>
+<Who nb="1"/>j'avais pas</Turn>
+<Turn endTime="449.041" speaker="spk2" startTime="445.877">
+<Sync time="445.877"/>pas de papiers<Sync time="446.654"/>et mon père m'a pas m'a empêché de rester</Turn>
+<Turn endTime="449.691" speaker="sss1" startTime="449.041">
+<Sync time="449.041"/>[ bb/unknown]</Turn>
+<Turn endTime="451.973" speaker="spk2 sss1" startTime="449.952">
+<Sync time="449.952"/>
+<Who nb="1"/>ah c'est ça qui est<Sync time="450.149"/>
+<Who nb="2"/>[ rire/unknown]<Sync time="450.803"/>
+<Who nb="2"/>si tu serais resté en<Sync time="451.114"/>
+<Who nb="1"/>[ rire/unknown]</Turn>
+<Turn endTime="453.951" speaker="sss1" startTime="452.150">
+<Sync time="452.150"/>on serait là la troisième génération</Turn>
+<Turn endTime="455.211" speaker="spk2" startTime="453.951">
+<Sync time="453.951"/>[ rire/unknown]<Sync time="454.566"/>et ouais</Turn>
+<Turn endTime="457.173" speaker="sss1" startTime="455.211">
+<Sync time="455.211"/>ouais<Sync time="455.616"/>[ tx/unknown]<Sync time="456.188"/>après voilà</Turn>
+<Turn endTime="458.279" speaker="spk2" startTime="457.173">
+<Sync time="457.173"/>
+<Sync time="457.870"/>[ bb/unknown]</Turn>
+<Turn endTime="460.587" speaker="sss1" startTime="458.279">
+<Sync time="458.279"/>c'est bizarre on a toujours été relié à la France<Sync time="460.011"/>[ tx/unknown]</Turn>
+<Turn endTime="462.339" speaker="spk2" startTime="460.587">
+<Sync time="460.587"/>ça c'est sûr<Sync time="461.361"/>ça c'est sûr</Turn>
+<Turn endTime="462.906" speaker="sss1" startTime="462.339">
+<Sync time="462.339"/>ouais</Turn>
+<Turn endTime="465.874" speaker="spk2" startTime="462.906">
+<Sync time="462.906"/>mon père est installé ici depuis l'année 63<Sync time="465.486"/>
+</Turn>
+<Turn endTime="467.893" speaker="spk2 sss1" startTime="466.144">
+<Sync time="466.144"/>
+<Who nb="2"/>ouais d'accord<Sync time="465.874"/>
+<Who nb="1"/>il a été ici il a été maçon</Turn>
+<Turn endTime="469.868" speaker="sss1" startTime="467.893">
+<Sync time="467.893"/>et il a été retraité mon compère ici ?</Turn>
+<Turn endTime="471.008" speaker="spk2 sss1" startTime="469.868">
+<Sync time="469.868"/>
+<Who nb="1"/>oui il est retraité d'ici<Sync time="469.868"/>
+<Who nb="2"/>pron=pi</Turn>
+<Turn endTime="471.677" speaker="spk2" startTime="471.381">
+<Sync time="471.381"/>
+</Turn>
+<Turn endTime="472.743" speaker="spk2 sss1" startTime="471.677">
+<Sync time="471.677"/>
+<Who nb="2"/>ouais<Sync time="472.006"/>
+<Who nb="1"/>puis il est rentré au Maroc et [ pron=pi/unknown]<Sync time="472.165"/>
+<Who nb="2"/>[ tx/unknown]</Turn>
+<Turn endTime="474.497" speaker="spk2" startTime="473.715">
+<Sync time="473.715"/>[ i/unknown]</Turn>
+<Turn endTime="475.953" speaker="sss1" startTime="474.497">
+<Sync time="474.497"/>mais pourquoi il est rentré lui aussi ?<Sync time="475.761"/>
+</Turn>
+<Turn endTime="479.847" speaker="spk2 sss1" startTime="475.953">
+<Sync time="475.953"/>
+<Who nb="2"/>après la retraite<Sync time="476.304"/>
+<Who nb="1"/>oui mais c'est aussi après la retraite aussi<Sync time="477.788"/>
+<Who nb="2"/>ah ouais d'accord<Sync time="478.292"/>
+<Who nb="1"/>il faisait aussi le va et vient ici</Turn>
+<Turn endTime="480.593" speaker="sss1" startTime="479.847">
+<Sync time="479.847"/>
+<Sync time="480.144"/>ah ouais</Turn>
+<Turn endTime="482.190" speaker="spk2" startTime="480.593">
+<Sync time="480.593"/>et oui après la retraite</Turn>
+<Turn endTime="487.803" speaker="sss1" startTime="482.190">
+<Sync time="482.190"/>putain je savais pas toutes ces histoires<Sync time="483.470"/>je savais je savais qu'il avait<Sync time="484.579"/>vécu ici mais je savais qu'il a été retraité<Sync time="486.339"/>j'étais pas sûr<Sync time="487.484"/>
+</Turn>
+<Turn endTime="492.438" speaker="spk2" startTime="487.803">
+<Sync time="487.803"/>et aussi ton oncle le<Sync time="489.367"/>le<Sync time="489.990"/>[ pron=pi/unknown] aussi<Sync time="491.101"/>il est marié ici<Sync time="492.145"/>
+</Turn>
+<Turn endTime="493.145" speaker="spk2 sss1" startTime="492.642">
+<Sync time="492.642"/>
+<Who nb="2"/>ouais<Sync time="492.438"/>
+<Who nb="1"/>à Lyon</Turn>
+<Turn endTime="494.912" speaker="spk2" startTime="493.145">
+<Sync time="493.145"/>
+<Sync time="493.635"/>il a deux filles<Sync time="494.487"/>
+</Turn>
+<Turn endTime="494.9130" speaker="sss1" startTime="494.912">
+<Sync time="494.912"/>ouais ouais je sais ouais</Turn>
+<Turn endTime="502.334" speaker="spk2" startTime="495.2190">
+<Sync time="495.2190"/>il s'est séparé<Sync time="496.117"/>
+<Sync time="496.432"/>je ne sais pas il avait un problème avec sa femme et<Sync time="498.982"/>
+<Sync time="500.207"/>
+<Sync time="500.797"/>et maintenant il vit tout seul aussi</Turn>
+<Turn endTime="509.137" speaker="sss1" startTime="502.334">
+<Sync time="502.334"/>ouais<Sync time="502.962"/>je lui j'ai plus nouvelle une fois quand je suis arrivé en France<Sync time="505.798"/>je je l'ai appelé il m'a dit de<Sync time="507.440"/>de passer le voir si j'ai envie et tout</Turn>
+<Turn endTime="510.183" speaker="spk2" startTime="509.137">
+<Sync time="509.137"/>ouais<Sync time="509.864"/>
+</Turn>
+<Turn endTime="512.519" speaker="sss1" startTime="510.183">
+<Sync time="510.183"/>mais sinon<Sync time="510.825"/>plus de nouvelles lui n'a jamais appelé</Turn>
+<Turn endTime="518.022" speaker="spk2" startTime="512.519">
+<Sync time="512.519"/>oui sa femme elle aussi était<Sync time="514.413"/>bien elle était gentille et tout ça mais je ne sais pas<Sync time="517.238"/>[ i/unknown]</Turn>
+<Turn endTime="523.046" speaker="spk2 sss1" startTime="518.022">
+<Sync time="518.022"/>
+<Who nb="2"/>ouais<Sync time="518.006"/>
+<Who nb="1"/>ce qu'il avait comme problème je je<Sync time="519.826"/>
+<Who nb="1"/>je ne sais pas ça je ne sais pas<Sync time="520.819"/>
+<Who nb="2"/>je parlais avec une de ses filles il y a pas très longtemps</Turn>
+<Turn endTime="524.785" speaker="spk2" startTime="523.046">
+<Sync time="523.046"/>
+<Sync time="523.684"/>oui elle a deux filles</Turn>
+<Turn endTime="527.145" speaker="spk2 sss1" startTime="524.785">
+<Sync time="524.785"/>
+<Who nb="2"/>ouais sur internet<Sync time="525.080"/>
+<Who nb="1"/>[ pron=pi/unknown]<Sync time="525.760"/>
+<Who nb="2"/>ouais ouais je parlais avec la</Turn>
+<Turn endTime="528.512" speaker="sss1" startTime="527.145">
+<Sync time="527.145"/>la plus jeune<Sync time="527.874"/>
+</Turn>
+<Turn endTime="529.8260" speaker="spk2" startTime="528.512">
+<Sync time="528.512"/>bah elle qui étudie en<Sync time="529.825"/>en faculté [ pron=*fac/unknown]</Turn>
+<Turn endTime="531.780" speaker="sss1" startTime="530.5320">
+<Sync time="530.5320"/>ouais celle qui est à la fac ouais</Turn>
+<Turn endTime="532.355" speaker="spk2" startTime="531.780">
+<Sync time="531.780"/>[ bb/unknown]</Turn>
+<Turn endTime="535.867" speaker="spk2 sss1" startTime="532.355">
+<Sync time="532.355"/>
+<Who nb="1"/>et l'autre je ne sais pas qu'est-ce qu'elle qu'est-ce qu'il fait [ pron=pi/unknown]<Sync time="533.935"/>
+<Who nb="2"/>commerce euh<Sync time="534.871"/>
+<Who nb="2"/>euh je crois qu'elle</Turn>
+<Turn endTime="538.291" speaker="sss1" startTime="535.867">
+<Sync time="535.867"/>je crois elle bosse dans un hôtel ou je ne sais pas trop quoi</Turn>
+<Turn endTime="539.115" speaker="spk2" startTime="538.291">
+<Sync time="538.291"/>ouais c'est ça</Turn>
+<Turn endTime="539.736" speaker="sss1" startTime="539.115">
+<Sync time="539.115"/>
+<Sync time="539.312"/>ouais</Turn>
+<Turn endTime="545.989" speaker="spk2" startTime="539.736">
+<Sync time="539.736"/>je l'avais eu<Sync time="540.518"/>aussi au [ pron=pi/unknown]<Sync time="541.770"/>
+<Sync time="542.142"/>[ pron=pi/unknown] je l'ai<Sync time="543.760"/>perdu de vue je ne sais pas<Sync time="545.263"/>[ i/unknown]</Turn>
+<Turn endTime="553.034" speaker="sss1" startTime="545.989">
+<Sync time="545.989"/>après tu sais<Sync time="546.918"/>pour elle c'est compliqué parce que euh<Sync time="548.423"/>enfin<Sync time="549.058"/>
+<Sync time="549.823"/>c'est pas comme nous tu vois<Sync time="550.863"/>genre euh<Sync time="551.447"/>c'est la faute de leur père aussi de mon oncle</Turn>
+<Turn endTime="556.774" speaker="spk2 sss1" startTime="553.034">
+<Sync time="553.034"/>
+<Who nb="1"/>ouais ouais<Sync time="553.345"/>
+<Who nb="2"/>enfin que elles elles ont aucun liens avec le Maroc en vrai<Sync time="555.851"/>
+<Who nb="2"/>ouais<Sync time="556.041"/>
+<Who nb="1"/>ouais c'est ça</Turn>
+<Turn endTime="558.008" speaker="spk2" startTime="556.774">
+<Sync time="556.774"/>c'est ça c'est<Sync time="557.339"/>
+</Turn>
+<Turn endTime="568.605" speaker="sss1" startTime="558.008">
+<Sync time="558.008"/>pour elles ça leur fait bizarre de<Sync time="559.545"/>
+<Sync time="560.274"/>quand tu leur parle du Maroc des origines tout ça<Sync time="562.903"/>je trouve ça bizarre<Sync time="563.926"/>
+<Sync time="564.290"/>tu vois nous on est liés parce que nous enfin<Sync time="566.103"/>
+<Sync time="566.463"/>moi je je suis né là-bas donc euh<Sync time="568.213"/>
+</Turn>
+<Turn endTime="571.083" speaker="spk2 sss1" startTime="568.605">
+<Sync time="568.605"/>
+<Who nb="1"/>ça c'est sûr<Sync time="568.943"/>
+<Who nb="2"/>je serais lié à vie avec le Maroc mais pour elle</Turn>
+<Turn endTime="571.753" speaker="sss1" startTime="571.083">
+<Sync time="571.083"/>
+</Turn>
+<Turn endTime="572.560" speaker="spk2" startTime="571.753">
+<Sync time="571.753"/>c'est difficile</Turn>
+<Turn endTime="575.991" speaker="sss1" startTime="572.560">
+<Sync time="572.560"/>bah oui<Sync time="573.161"/>elle comprend pas tu vois<Sync time="574.116"/>elle est française euh<Sync time="575.298"/>a mille pour cent</Turn>
+<Turn endTime="576.681" speaker="spk2" startTime="575.991">
+<Sync time="575.991"/>et Tarek ?</Turn>
+<Turn endTime="577.535" speaker="sss1" startTime="576.681">
+<Sync time="576.681"/>
+</Turn>
+<Turn endTime="580.032" speaker="spk2" startTime="577.535">
+<Sync time="577.535"/>le fils de ton oncle euh</Turn>
+<Turn endTime="581.756" speaker="spk2 sss1" startTime="580.198">
+<Sync time="580.198"/>
+<Who nb="1"/>pron=pi<Sync time="580.032"/>
+<Who nb="2"/>c'est différent c'est différent parce que euh</Turn>
+<Turn endTime="586.921" speaker="sss1" startTime="581.756">
+<Sync time="581.756"/>tu vois c'est déjà c'est pas<Sync time="582.980"/>
+<Sync time="583.696"/>enfin eux ils<Sync time="584.546"/>enfin ils y allaient souvent au Maroc<Sync time="585.898"/>eux ils parlaient ensemble</Turn>
+<Turn endTime="587.684" speaker="spk2" startTime="586.921">
+<Sync time="586.921"/>ah c'est ça ?</Turn>
+<Turn endTime="589.748" speaker="sss1" startTime="587.684">
+<Sync time="587.684"/>dans la maison ils parlaient français<Sync time="589.256"/>
+</Turn>
+<Turn endTime="594.345" speaker="spk2" startTime="589.748">
+<Sync time="589.748"/>mais ouais ouais ouais<Sync time="591.150"/>[ bb/unknown]<Sync time="592.709"/>surtout j'aime Lyon moi aussi</Turn>
+<Turn endTime="598.495" speaker="spk2 sss1" startTime="594.345">
+<Sync time="594.345"/>
+<Who nb="1"/>j'aime Lyon et<Sync time="595.563"/>
+<Who nb="2"/>bah<Sync time="595.583"/>
+<Who nb="1"/>les [ pron=pi/unknown]<Sync time="596.648"/>
+<Who nb="1"/>[ rire/unknown]<Sync time="597.194"/>
+<Who nb="2"/>on essayera d'y aller un jour</Turn>
+<Turn endTime="598.995" speaker="sss1" startTime="598.495">
+<Sync time="598.495"/>
+</Turn>
+<Turn endTime="599.836" speaker="spk2 sss1" startTime="598.995">
+<Sync time="598.995"/>
+<Who nb="1"/>si tu sais<Sync time="599.203"/>
+<Who nb="2"/>pron=pi</Turn>
+<Turn endTime="600.550" speaker="sss1" startTime="599.836">
+<Sync time="599.836"/>ouais tu vois</Turn>
+<Turn endTime="602.140" speaker="spk2" startTime="600.550">
+<Sync time="600.550"/>Ahmed aussi aussi est mignon</Turn>
+<Turn endTime="602.771" speaker="sss1" startTime="602.140">
+<Sync time="602.140"/>mh</Turn>
+<Turn endTime="605.357" speaker="spk2" startTime="602.771">
+<Sync time="602.771"/>pron=pi<Sync time="604.079"/>[ rire/unknown]<Sync time="604.826"/>[ e/unknown]</Turn>
+<Turn endTime="606.564" speaker="spk2 sss1" startTime="605.357">
+<Sync time="605.357"/>
+<Who nb="1"/>ouais<Sync time="605.609"/>
+<Who nb="2"/>l'équipe de Lyon ouais</Turn>
+<Turn endTime="607.034" speaker="spk2" startTime="606.564">
+<Sync time="606.564"/>ouais</Turn>
+<Turn endTime="609.580" speaker="sss1" startTime="607.034">
+<Sync time="607.034"/>moi j'ai jamais été à Lyon<Sync time="608.097"/>je ne sais pas ça doit être une belle vie apparemment</Turn>
+<Turn endTime="610.386" speaker="spk2" startTime="609.580">
+<Sync time="609.580"/>mais bien sûr</Turn>
+<Turn endTime="612.701" speaker="sss1" startTime="610.386">
+<Sync time="610.386"/>mais bien sûr<Sync time="610.526"/>enfin après les gens ils disent que c'est une belle ville<Sync time="612.287"/>
+</Turn>
+<Turn endTime="614.656" speaker="spk2 sss1" startTime="612.701">
+<Sync time="612.701"/>
+<Who nb="1"/>pron=pi<Sync time="613.197"/>
+<Who nb="2"/>parmi la plus belle de France alors</Turn>
+<Turn endTime="621.130" speaker="spk2" startTime="614.656">
+<Sync time="614.656"/>aussi il a joué le foot euh<Sync time="616.270"/>euh [ pron=pi/unknown] avec l'équipe euh [ pron=pi/unknown]<Sync time="618.678"/>l'équipe de euh de euh<Sync time="619.823"/>enfin [ pron=pi/unknown]</Turn>
+<Turn endTime="621.741" speaker="sss1" startTime="621.130">
+<Sync time="621.130"/>ouais ouais</Turn>
+<Turn endTime="629.810" speaker="spk2" startTime="621.741">
+<Sync time="621.741"/>et puis<Sync time="622.673"/>il s'est intégré euh<Sync time="624.032"/>
+<Sync time="624.449"/>chez eux il y a<Sync time="625.575"/>maintenant il doit il<Sync time="626.718"/>enfin attendre deux ans je pense il aura sa [ pron=pi/unknown]</Turn>
+<Turn endTime="630.246" speaker="sss1" startTime="629.810">
+<Sync time="629.810"/>ouais</Turn>
+<Turn endTime="630.755" speaker="spk2" startTime="630.246">
+<Sync time="630.246"/>ouais</Turn>
+<Turn endTime="632.255" speaker="sss1" startTime="630.755">
+<Sync time="630.755"/>il est<Sync time="631.300"/>il est plus jeune que toi lui ?</Turn>
+<Turn endTime="634.334" speaker="spk2 sss1" startTime="632.255">
+<Sync time="632.255"/>
+<Who nb="1"/>oui il est plus jeune que moi<Sync time="633.242"/>
+<Who nb="2"/>t'étais le plus vieux toi ?</Turn>
+<Turn endTime="637.232" speaker="sss1" startTime="634.334">
+<Sync time="634.334"/>ouais<Sync time="635.022"/>[ rire/unknown]<Sync time="635.369"/>t'es encore plus vieux que mon oncle celui que</Turn>
+<Turn endTime="637.866" speaker="spk2" startTime="637.232">
+<Sync time="637.232"/>[ pf/unknown]</Turn>
+<Turn endTime="643.166" speaker="spk2 sss1" startTime="637.866">
+<Sync time="637.866"/>
+<Who nb="2"/>Ahmed là [ pron=pi/unknown]<Sync time="638.135"/>
+<Who nb="1"/>non pas Ahmed Ahmed il est [ pron=pi/unknown]<Sync time="640.169"/>
+<Who nb="2"/>ah c'est [ pron=pi/unknown] enfin<Sync time="640.719"/>
+<Who nb="1"/>c'est [ pron=pi/unknown]<Sync time="641.066"/>
+<Who nb="2"/>t'es<Sync time="641.453"/>
+<Who nb="2"/>t'es pas le plus vieux alors<Sync time="642.347"/>
+<Who nb="1"/>il y en a non<Sync time="642.674"/>
+<Who nb="2"/>t'es</Turn>
+<Turn endTime="643.808" speaker="spk2" startTime="643.166">
+<Sync time="643.166"/>non pas du tout</Turn>
+<Turn endTime="645.521" speaker="spk2 sss1" startTime="643.808">
+<Sync time="643.808"/>
+<Who nb="1"/>pas du tout<Sync time="644.473"/>
+<Who nb="2"/>pron=pi<Sync time="644.533"/>
+<Who nb="1"/>mais lui aussi à</Turn>
+<Turn endTime="646.730" speaker="spk2" startTime="645.521">
+<Sync time="645.521"/>il a vécu à Lyon</Turn>
+<Turn endTime="647.094" speaker="sss1" startTime="646.730">
+<Sync time="646.730"/>
+</Turn>
+<Turn endTime="650.165" speaker="spk2 sss1" startTime="647.094">
+<Sync time="647.094"/>
+<Who nb="2"/>ah vous avez tous vécu ici en fait<Sync time="648.181"/>
+<Who nb="1"/>ouais<Sync time="648.924"/>
+<Who nb="2"/>c'est dommage que vous soyez partis<Sync time="649.311"/>
+<Who nb="1"/>pendant un moment</Turn>
+<Turn endTime="654.873" speaker="spk2" startTime="650.257">
+<Sync time="650.257"/>[ r/unknown]<Sync time="650.624"/>il y a un moment on euh<Sync time="652.349"/>on vit en France sans papiers sans<Sync time="654.283"/>
+</Turn>
+<Turn endTime="656.616" speaker="spk2 sss1" startTime="654.873">
+<Sync time="654.873"/>
+<Who nb="2"/>si t'avais juste ta carte<Sync time="655.196"/>
+<Who nb="1"/>on prenait le visa mais on n'avait</Turn>
+<Turn endTime="658.093" speaker="spk2" startTime="657.052">
+<Sync time="657.052"/>il y avait pas de visa</Turn>
+<Turn endTime="658.795" speaker="spk2 sss1" startTime="658.093">
+<Sync time="658.093"/>
+<Who nb="1"/>mais on respectait les les parents<Sync time="656.281"/>
+<Who nb="2"/>ah il y a pas de ?<Sync time="657.282"/>
+<Who nb="2"/>de visa à l'époque</Turn>
+<Turn endTime="663.149" speaker="spk2" startTime="660.142">
+<Sync time="660.142"/>quand on nous dise d'y aller et de retourner donc euh</Turn>
+<Turn endTime="664.778" speaker="sss1" startTime="663.149">
+<Sync time="663.149"/>ouais<Sync time="663.666"/>
+</Turn>
+<Turn endTime="668.172" speaker="spk2 sss1" startTime="664.778">
+<Sync time="664.778"/>
+<Who nb="1"/>j'ai pas eu l'occasion de rester<Sync time="665.471"/>
+<Who nb="2"/>que mon grand-père il a dit euh<Sync time="666.929"/>
+<Who nb="2"/>pourquoi il a dit ça ?<Sync time="667.186"/>
+<Who nb="1"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="668.869" speaker="spk2" startTime="668.172">
+<Sync time="668.172"/>[ rire/unknown]</Turn>
+<Turn endTime="671.275" speaker="spk2 sss1" startTime="668.869">
+<Sync time="668.869"/>
+<Who nb="2"/>pourquoi il a dit ça ?<Sync time="669.314"/>
+<Who nb="1"/>on respect [ pron=pi/unknown]<Sync time="669.645"/>
+<Who nb="2"/>il voulez pas que vous restiez ici<Sync time="670.301"/>
+<Who nb="1"/>il veut il veut</Turn>
+<Turn endTime="672.576" speaker="spk2" startTime="671.275">
+<Sync time="671.275"/>il veut pas qu'on reste ici</Turn>
+<Turn endTime="673.215" speaker="sss1" startTime="672.576">
+<Sync time="672.576"/>pourquoi ?</Turn>
+<Turn endTime="675.024" speaker="spk2" startTime="673.215">
+<Sync time="673.215"/>bah je ne sais pas c'est sa pensée à</Turn>
+<Turn endTime="676.933" speaker="spk2 sss1" startTime="675.024">
+<Sync time="675.024"/>
+<Who nb="1"/>à cette époque là<Sync time="675.247"/>
+<Who nb="2"/>ah ouais c'est vrai après à cette époque ouais</Turn>
+<Turn endTime="677.321" speaker="spk2" startTime="676.933">
+<Sync time="676.933"/>ouais</Turn>
+<Turn endTime="679.208" speaker="sss1" startTime="677.321">
+<Sync time="677.321"/>je ne sais pas comment ils pensaient mais<Sync time="678.689"/>
+</Turn>
+<Turn endTime="680.345" speaker="spk2" startTime="679.208">
+<Sync time="679.208"/>maintenant<Sync time="679.809"/>[ mic/unknown]</Turn>
+<Turn endTime="683.934" speaker="spk2 sss1" startTime="680.345">
+<Sync time="680.345"/>
+<Who nb="1"/>on a eu de la chance que vous vous êtes installés ici<Sync time="682.764"/>
+<Who nb="2"/>ouais bizarrement euh</Turn>
+<Turn endTime="684.965" speaker="sss1" startTime="683.934">
+<Sync time="683.934"/>les choses sont bien faites hein</Turn>
+<Turn endTime="685.238" speaker="spk2" startTime="684.965">
+<Sync time="684.965"/>ouais</Turn>
+<Turn endTime="685.387" speaker="sss1" startTime="685.238">
+<Sync time="685.238"/>
+</Turn>
+<Turn endTime="686.215" speaker="spk2" startTime="685.387">
+<Sync time="685.387"/>c'est retourné</Turn>
+<Turn endTime="686.880" speaker="sss1" startTime="686.215">
+<Sync time="686.215"/>ouais</Turn>
+<Turn endTime="688.382" speaker="spk2" startTime="686.880">
+<Sync time="686.880"/>ouais<Sync time="687.565"/>
+</Turn>
+<Turn endTime="691.339" speaker="sss1" startTime="688.382">
+<Sync time="688.382"/>on s'est retrouvés ici nous<Sync time="689.326"/>alors que euh<Sync time="690.098"/>c'était le grand-père que</Turn>
+<Turn endTime="692.519" speaker="spk2" startTime="691.339">
+<Sync time="691.339"/>ouais<Sync time="691.982"/>
+</Turn>
+<Turn endTime="693.056" speaker="sss1" startTime="692.519">
+<Sync time="692.519"/>ouais</Turn>
+<Turn endTime="699.366" speaker="spk2" startTime="693.056">
+<Sync time="693.056"/>et dernièrement j'ai rencontré un copain qui a<Sync time="695.907"/>qui s'est installé à [ pron=pi/unknown]<Sync time="697.268"/>[ r/unknown]<Sync time="697.698"/>aussi il a fait aussi la pharmacie</Turn>
+<Turn endTime="702.418" speaker="sss1" startTime="699.366">
+<Sync time="699.366"/>
+<Sync time="701.333"/>il a travaillé aussi dans la pharmacie ?</Turn>
+<Turn endTime="714.884" speaker="spk2" startTime="702.556">
+<Sync time="702.556"/>il a travaillé<Sync time="703.537"/>oui oui du Maroc aussi<Sync time="702.525"/>enfin c'est un copain<Sync time="703.273"/>du Maroc ou ?<Sync time="705.055"/>il a étudier ici à<Sync time="706.675"/>
+<Sync time="706.916"/>enfin il a fait son entretien à Toulouse<Sync time="709.010"/>
+<Sync time="709.287"/>lui parle la suite il a<Sync time="710.871"/>
+<Sync time="711.109"/>il a<Sync time="711.711"/>euh<Sync time="712.520"/>remonté vers la<Sync time="713.770"/>euh<Sync time="713.961"/>vers la pharmacie<Sync time="714.818"/>
+</Turn>
+<Turn endTime="716.605" speaker="spk2 sss1" startTime="714.884">
+<Sync time="714.884"/>
+<Who nb="2"/>ouais<Sync time="715.108"/>
+<Who nb="1"/>il a fait des études et puis</Turn>
+<Turn endTime="717.925" speaker="sss1" startTime="716.605">
+<Sync time="716.605"/>un copain c'est un</Turn>
+<Turn endTime="718.760" speaker="spk2" startTime="717.925">
+<Sync time="717.925"/>c'est un copain à moi</Turn>
+<Turn endTime="719.355" speaker="sss1" startTime="718.760">
+<Sync time="718.760"/>ah ouais d'accord</Turn>
+<Turn endTime="721.479" speaker="spk2" startTime="719.355">
+<Sync time="719.355"/>qui a travaillé avec moi aussi en<Sync time="721.135"/>au Maroc</Turn>
+<Turn endTime="722.213" speaker="sss1" startTime="721.479">
+<Sync time="721.479"/>ah ouais</Turn>
+<Turn endTime="723.002" speaker="spk2 sss1" startTime="722.213">
+<Sync time="722.213"/>
+<Who nb="2"/>[ pron=pi/unknown]<Sync time="722.233"/>
+<Who nb="1"/>et par la suite</Turn>
+<Turn endTime="727.576" speaker="spk2" startTime="723.002">
+<Sync time="723.002"/>lui il a continué ici là il a sa retraite et<Sync time="725.507"/>on s'est rencontré dernièrement là</Turn>
+<Turn endTime="728.884" speaker="sss1" startTime="727.576">
+<Sync time="727.576"/>mh<Sync time="727.899"/>mh le monde est petit</Turn>
+<Turn endTime="731.405" speaker="spk2" startTime="728.884">
+<Sync time="728.884"/>ouais<Sync time="729.419"/>
+<Sync time="729.753"/>ça c'est sûr<Sync time="730.679"/>
+</Turn>
+<Turn endTime="749.891" speaker="sss1" startTime="731.405">
+<Sync time="731.405"/>moi j'ai une fois<Sync time="732.177"/>
+<Sync time="732.924"/>j'étais dans un bus à Paris<Sync time="734.332"/>
+<Sync time="735.103"/>je venais juste d'arriver en France enfin après quelques mois<Sync time="737.556"/>quelques mois après que je sois arrivé<Sync time="738.980"/>je monte dans un bus<Sync time="740.003"/>
+<Sync time="740.837"/>et j'ai un mec qui vient me parler je me dis c'est qui lui pourquoi il me parle je le connais<Sync time="744.140"/>je connaissais personne à l'époque<Sync time="745.225"/>
+<Sync time="745.922"/>en fait le mec<Sync time="746.597"/>on a grandi ensemble<Sync time="747.630"/>
+<Sync time="748.089"/>c'est un gars de mon quartier<Sync time="749.530"/>
+</Turn>
+<Turn endTime="751.642" speaker="spk2 sss1" startTime="749.891">
+<Sync time="749.891"/>
+<Who nb="1"/>c'est pas vrai ?<Sync time="750.369"/>
+<Who nb="2"/>enfin il habite à</Turn>
+<Turn endTime="754.319" speaker="sss1" startTime="751.642">
+<Sync time="751.642"/>à quelques pâtés de maisons de chez nous<Sync time="753.110"/>
+</Turn>
+<Turn endTime="755.164" speaker="spk2" startTime="754.319">
+<Sync time="754.319"/>il s'appelle comment lui ?</Turn>
+<Turn endTime="762.176" speaker="spk2 sss1" startTime="755.309">
+<Sync time="755.309"/>
+<Who nb="2"/>[ pron=pi/unknown]<Sync time="755.164"/>
+<Who nb="1"/>je connais moi aussi ?<Sync time="756.137"/>
+<Who nb="2"/>oh tu tu<Sync time="756.893"/>
+<Who nb="2"/>tu dois le connaître de vue après les noms tu sais<Sync time="758.467"/>
+<Who nb="1"/>oui oui c'est une jeune comme vous maintenant<Sync time="760.071"/>
+<Who nb="2"/>ouais c'est un jeune hein<Sync time="760.817"/>
+<Who nb="1"/>mh mh comme toi<Sync time="761.455"/>
+<Who nb="2"/>il a mon âge là</Turn>
+<Turn endTime="762.840" speaker="sss1" startTime="762.176">
+<Sync time="762.176"/>
+</Turn>
+<Turn endTime="763.214" speaker="spk2" startTime="762.840">
+<Sync time="762.840"/>ouais</Turn>
+<Turn endTime="774.155" speaker="sss1" startTime="763.214">
+<Sync time="763.214"/>il a [ pron=pi/unknown] enfin<Sync time="764.126"/>après chacun son histoire<Sync time="764.989"/>en vrai<Sync time="765.490"/>
+<Sync time="766.530"/>chacun son histoire mais<Sync time="767.993"/>
+<Sync time="769.233"/>ouais mais en vrai quand tu demandes euh<Sync time="770.801"/>aux personnes tout ce qu'ils sont devenus euh<Sync time="772.273"/>enfin<Sync time="772.973"/>la ma ma génération</Turn>
+<Turn endTime="774.671" speaker="spk2" startTime="774.155">
+<Sync time="774.155"/>ouais</Turn>
+<Turn endTime="786.992" speaker="sss1" startTime="774.671">
+<Sync time="774.671"/>tous mes potes qui sont venus soit<Sync time="776.083"/>
+<Sync time="776.679"/>ils se sont mariés<Sync time="777.695"/>
+<Sync time="777.933"/>euh enfin<Sync time="778.819"/>qui sont<Sync time="779.540"/>qui ont fait un regroupement familial pour revenir en France<Sync time="781.852"/>
+<Sync time="782.558"/>soit ceux qui sont venus faire leurs études ici<Sync time="784.907"/>
+<Sync time="785.380"/>toujours les mêmes histoires<Sync time="786.502"/>
+</Turn>
+<Turn endTime="787.847" speaker="spk2 sss1" startTime="786.992">
+<Sync time="786.992"/>
+<Who nb="2"/>toujours les même problèmes euh<Sync time="787.207"/>
+<Who nb="1"/>ouais</Turn>
+<Turn endTime="792.479" speaker="sss1" startTime="788.723">
+<Sync time="788.723"/>
+<Sync time="789.255"/>problème de papiers<Sync time="790.508"/>les problèmes de<Sync time="791.236"/>tout ça<Sync time="791.611"/>toujours là<Sync time="792.390"/>
+</Turn>
+<Turn endTime="794.240" speaker="spk2 sss1" startTime="792.479">
+<Sync time="792.479"/>
+<Who nb="2"/>ils ont tous les mêmes problèmes<Sync time="792.495"/>
+<Who nb="1"/>ouais c'est<Sync time="793.864"/>
+<Who nb="2"/>c'est un truc de malade<Sync time="793.887"/>
+<Who nb="1"/>ouais</Turn>
+<Turn endTime="796.066" speaker="spk2" startTime="794.240">
+<Sync time="794.240"/>[ pron=pi/unknown]<Sync time="795.528"/>
+</Turn>
+<Turn endTime="825.982" speaker="sss1" startTime="796.066">
+<Sync time="796.066"/>tous<Sync time="796.505"/>tous les mêmes problèmes<Sync time="797.491"/>il y a pas de euh<Sync time="798.636"/>
+<Sync time="798.779"/>cas exceptionnels<Sync time="799.791"/>
+<Sync time="800.317"/>j'ai deux potes<Sync time="801.438"/>
+<Sync time="801.886"/>c c'est des mecs du quartier tu dois être les connaître sûrement<Sync time="804.232"/>après les noms euh<Sync time="805.135"/>
+<Sync time="806.654"/>ça sert rien de te le dire mais<Sync time="807.692"/>de tête tu dois tu dois les connaître je suis sûr<Sync time="809.313"/>
+<Sync time="809.769"/>c'était des amis d'enfance<Sync time="811.117"/>il y en a un il a fait<Sync time="812.484"/>
+<Sync time="813.485"/>je ne sais pas il a eu un doctorat dans<Sync time="815.088"/>
+<Sync time="815.954"/>je ne sais pas quoi<Sync time="816.508"/>tout ce qui est réseau je ne sais pas quoi<Sync time="817.899"/>il a même travaillé pour un programme de la Nasa je ne sais pas<Sync time="820.031"/>il a fait des études de malade<Sync time="821.156"/>
+<Sync time="821.936"/>et lui aussi il a galéré pour les papiers tout ça<Sync time="824.329"/>et finalement là il est rentré au Maroc<Sync time="825.746"/>
+</Turn>
+<Turn endTime="826.907" speaker="spk2" startTime="825.982">
+<Sync time="825.982"/>et il rentré au Maroc ?</Turn>
+<Turn endTime="830.644" speaker="sss1" startTime="826.907">
+<Sync time="826.907"/>bah parce que euh<Sync time="827.353"/>ça fait 10 ans qu'il était en France<Sync time="828.867"/>
+<Sync time="829.109"/>lui il est venu à l'âge de 18 ans</Turn>
+<Turn endTime="831.138" speaker="spk2" startTime="830.644">
+<Sync time="830.644"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="832.996" speaker="sss1" startTime="831.138">
+<Sync time="831.138"/>juste après le bac<Sync time="831.628"/>
+</Turn>
+<Turn endTime="833.380" speaker="spk2 sss1" startTime="832.996">
+<Sync time="832.996"/>
+<Who nb="2"/>et<Sync time="833.055"/>
+<Who nb="1"/>ouais</Turn>
+<Turn endTime="851.726" speaker="sss1" startTime="834.025">
+<Sync time="834.025"/>et du coup comme<Sync time="835.140"/>même après toutes ces années<Sync time="836.294"/>d'études tout ça<Sync time="837.335"/>il a fait que étudier<Sync time="838.440"/>
+<Sync time="838.613"/>il a même enseigné à la fac<Sync time="839.791"/>une fac à Paris<Sync time="840.701"/>
+<Sync time="841.317"/>au final il est<Sync time="842.323"/>il s'est retrouvé parce que<Sync time="843.481"/>
+<Sync time="844.507"/>il s'est retrouvé sans<Sync time="845.682"/>enfin en vrai chaque année il renouvelait par rapport à ses études<Sync time="848.245"/>
+<Sync time="848.590"/>et comme il a eu son doctorat<Sync time="849.743"/>
+<Sync time="850.008"/>en fait il a plus le droit de rester en France<Sync time="851.531"/>
+</Turn>
+<Turn endTime="852.249" speaker="spk2" startTime="851.726">
+<Sync time="851.726"/>oui</Turn>
+<Turn endTime="861.293" speaker="sss1" startTime="852.249">
+<Sync time="852.249"/>et du coup euh<Sync time="853.198"/>il est rentré<Sync time="853.993"/>
+<Sync time="855.173"/>donc ceux qui sont venu pour les études euh<Sync time="857.243"/>et qui sont restés c'est gens<Sync time="858.716"/>[ i/unknown]<Sync time="859.226"/>en fait la seule solution c'est de se marier en fait</Turn>
+<Turn endTime="863.243" speaker="spk2 sss1" startTime="861.293">
+<Sync time="861.293"/>
+<Who nb="1"/>ouais ça c'est sûr<Sync time="861.941"/>
+<Who nb="2"/>pour avoir des papiers sinon</Turn>
+<Turn endTime="899.666" speaker="sss1" startTime="863.243">
+<Sync time="863.243"/>
+<Sync time="864.236"/>j'en connais un autre euh<Sync time="865.502"/>enfin<Sync time="865.920"/>c'était mon<Sync time="866.535"/>meilleur pote euh<Sync time="867.573"/>
+<Sync time="868.553"/>c'était mon<Sync time="869.018"/>mon meilleur copain d'enfance<Sync time="870.088"/>[ pron=pi/unknown] il était fort en maths et tout<Sync time="871.590"/>[ i/unknown]<Sync time="872.499"/>bref<Sync time="873.208"/>et<Sync time="873.864"/>il<Sync time="874.150"/>
+<Sync time="874.404"/>lui [ pron=pi/unknown]<Sync time="875.777"/>par contre euh je l'ai ren<Sync time="876.629"/>je l'ai<Sync time="877.261"/>[ i/unknown]<Sync time="878.463"/>je l'ai<Sync time="879.326"/>je l'ai eu sur internet<Sync time="880.352"/>c'est comme ça qu'on est<Sync time="881.553"/>revu<Sync time="882.256"/>
+<Sync time="882.459"/>enfin on s'était donné rendez-vous à Paris et tout<Sync time="884.334"/>[ bb/unknown]<Sync time="885.250"/>lui pour<Sync time="885.821"/>enfin il a fait des études et tout<Sync time="887.340"/>quand il a fini<Sync time="887.998"/>il a fait des grandes études<Sync time="888.946"/>[ i/unknown]<Sync time="889.922"/>quand il a fini euh<Sync time="891.082"/>lui il s'est marié enfin<Sync time="892.127"/>parce que sinon il aurait pu<Sync time="893.492"/>
+<Sync time="894.397"/>une fois que tu finis tes études euh<Sync time="896.071"/>
+<Sync time="896.721"/>je ne sais pas comment ça se passe mais<Sync time="897.976"/>t'es obligé de retourner<Sync time="899.054"/>
+</Turn>
+<Turn endTime="900.424" speaker="spk2 sss1" startTime="899.666">
+<Sync time="899.666"/>
+<Who nb="1"/>ouais<Sync time="899.904"/>
+<Who nb="2"/>parce que t'as</Turn>
+<Turn endTime="903.672" speaker="sss1" startTime="900.424">
+<Sync time="900.424"/>sinon c'est<Sync time="901.137"/>
+<Sync time="901.730"/>t'as pas le droit des rester quoi<Sync time="902.744"/>
+</Turn>
+<Turn endTime="904.415" speaker="spk2" startTime="903.672">
+<Sync time="903.672"/>et comment ?</Turn>
+<Turn endTime="907.650" speaker="sss1" startTime="904.415">
+<Sync time="904.415"/>
+<Sync time="904.948"/>bah je ne sais pas après ça dépend si t'as un bon métier</Turn>
+<Turn endTime="911.104" speaker="spk2 sss1" startTime="907.650">
+<Sync time="907.650"/>
+<Who nb="2"/>enfin je crois c'est très compliqué<Sync time="908.981"/>
+<Who nb="1"/>c'est<Sync time="909.348"/>
+<Who nb="1"/>c'est compliqué hein<Sync time="910.116"/>
+<Who nb="2"/>c'est très très compliqué</Turn>
+<Turn endTime="932.477" speaker="sss1" startTime="911.104">
+<Sync time="911.104"/>
+<Sync time="911.886"/>mais en tout cas comme je t'ai dit c'est<Sync time="913.545"/>
+<Sync time="914.517"/>tous les gens que j'ai rencontré<Sync time="915.818"/>ceux qui sont immigrés comme moi ou<Sync time="917.457"/>
+<Sync time="918.055"/>ils ont tous les mêmes problèmes<Sync time="919.241"/>
+<Sync time="919.621"/>tous<Sync time="920.101"/>
+<Sync time="920.947"/>problème de papiers<Sync time="921.959"/>problèmes avec euh<Sync time="923.015"/>les femmes tout ça<Sync time="923.999"/>
+<Sync time="924.438"/>parce que c'est une mentalité là-bas<Sync time="925.906"/>tu viens ici c'est une autre chose<Sync time="927.702"/>
+<Sync time="928.759"/>t'as le temps de<Sync time="929.399"/>[ i/unknown]<Sync time="929.730"/>c'est pour ça que euh<Sync time="930.623"/>moi je me sens plus<Sync time="931.806"/>
+</Turn>
+<Turn endTime="933.478" speaker="spk2" startTime="932.477">
+<Sync time="932.477"/>plus à l'aise ?</Turn>
+<Turn endTime="944.422" speaker="sss1" startTime="933.478">
+<Sync time="933.478"/>
+<Sync time="933.747"/>moi je me sens bien intégré parce que euh<Sync time="935.399"/>
+<Sync time="936.862"/>il y a certaines choses que euh<Sync time="938.458"/>[ mic/unknown]<Sync time="939.307"/>que j'accepte de euh<Sync time="940.514"/>de moi-même enfin<Sync time="941.275"/>même avant de venir euh<Sync time="942.601"/>ici enfin<Sync time="943.570"/>
+</Turn>
+<Turn endTime="946.772" speaker="spk2 sss1" startTime="944.422">
+<Sync time="944.422"/>
+<Who nb="2"/>je ne sais pas comment t'expliquer ça<Sync time="945.354"/>
+<Who nb="1"/>ouais c'est bien c'est bien</Turn>
+<Turn endTime="947.079" speaker="spk2" startTime="946.772">
+<Sync time="946.772"/>
+</Turn>
+<Turn endTime="948.266" speaker="spk2 sss1" startTime="947.079">
+<Sync time="947.079"/>
+<Who nb="1"/>c'est bien<Sync time="947.417"/>
+<Who nb="2"/>après je vais</Turn>
+<Turn endTime="965.834" speaker="sss1" startTime="948.266">
+<Sync time="948.266"/>
+<Sync time="949.089"/>là ça fait 4 ans<Sync time="950.304"/>
+<Sync time="950.539"/>si je pars pas<Sync time="951.332"/>moi je dis ça je dis rien<Sync time="952.536"/>
+<Sync time="952.994"/>mais si je reste ici euh<Sync time="954.117"/>je vais<Sync time="954.674"/>j'aurais le droit de demander la nationalité française<Sync time="956.828"/>
+<Sync time="957.326"/>d'ici<Sync time="958.225"/>[ i/unknown]<Sync time="958.915"/>là ça fait quoi ?<Sync time="959.500"/>ça fait 4 ans que je suis ici<Sync time="960.607"/>
+<Sync time="961.491"/>ça fait un peu plus de 4 ans en fait<Sync time="962.972"/>[ i/unknown]<Sync time="963.664"/>donc euh d'ici la fin de l'année j'aurais le droit<Sync time="965.459"/>
+</Turn>
+<Turn endTime="966.689" speaker="spk2 sss1" startTime="965.834">
+<Sync time="965.834"/>
+<Who nb="1"/>bah on vous l'avez fait déjà<Sync time="966.138"/>
+<Who nb="2"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="969.545" speaker="sss1" startTime="967.366">
+<Sync time="967.366"/>ouais bah<Sync time="967.912"/>ça va vite après hein<Sync time="968.950"/>
+</Turn>
+<Turn endTime="972.252" speaker="spk2" startTime="969.545">
+<Sync time="969.545"/>mais alors là c'est pas mes ?<Sync time="971.148"/>
+<Sync time="971.740"/>bientôt ?</Turn>
+<Turn endTime="972.754" speaker="sss1" startTime="972.252">
+<Sync time="972.252"/>
+</Turn>
+<Turn endTime="973.166" speaker="spk2" startTime="972.754">
+<Sync time="972.754"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="977.174" speaker="sss1" startTime="973.166">
+<Sync time="973.166"/>ouais je crois<Sync time="974.022"/>
+<Sync time="974.317"/>je crois ouais ouais c'est ce qu'elle m'a dit ouais<Sync time="975.875"/>
+<Sync time="976.429"/>mh<Sync time="976.982"/>
+</Turn>
+<Turn endTime="979.483" speaker="spk2" startTime="977.174">
+<Sync time="977.174"/>et on va voir euh<Sync time="978.357"/>la nationalité</Turn>
+<Turn endTime="981.902" speaker="sss1" startTime="979.483">
+<Sync time="979.483"/>ouais<Sync time="979.801"/>ouais je sais c'est bien ça<Sync time="980.975"/>
+</Turn>
+<Turn endTime="987.979" speaker="spk2" startTime="981.902">
+<Sync time="981.902"/>t'as pas de nouvelles de l'autre là<Sync time="983.512"/>le type qui habite euh<Sync time="985.591"/>
+<Sync time="986.103"/>là à<Sync time="986.901"/>à [ pron=pi/unknown] je ne sais pas</Turn>
+<Turn endTime="988.479" speaker="sss1" startTime="987.979">
+<Sync time="987.979"/>qui ça ?</Turn>
+<Turn endTime="989.725" speaker="spk2" startTime="988.479">
+<Sync time="988.479"/>le français là</Turn>
+<Turn endTime="991.156" speaker="sss1" startTime="989.725">
+<Sync time="989.725"/>
+<Sync time="989.983"/>français ?<Sync time="990.555"/>
+</Turn>
+<Turn endTime="993.545" speaker="spk2" startTime="991.156">
+<Sync time="991.156"/>oui<Sync time="991.453"/>qui était chez nous là<Sync time="992.534"/>la dernière fois au Maroc</Turn>
+<Turn endTime="994.613" speaker="sss1" startTime="993.545">
+<Sync time="993.545"/>
+</Turn>
+<Turn endTime="996.071" speaker="spk2" startTime="994.613">
+<Sync time="994.613"/>dont je t'ai parlé au téléphone</Turn>
+<Turn endTime="996.851" speaker="sss1" startTime="996.071">
+<Sync time="996.071"/>
+</Turn>
+<Turn endTime="999.757" speaker="spk2" startTime="996.851">
+<Sync time="996.851"/>celui qui a<Sync time="998.493"/>qui était chez Jawad</Turn>
+<Turn endTime="1004.619" speaker="sss1" startTime="999.757">
+<Sync time="999.757"/>
+<Sync time="1000.442"/>ah oui lui il est bizarre<Sync time="1001.668"/>non non non je n'ai pas envie d'avoir de ses nouvelles<Sync time="1003.559"/>
+</Turn>
+<Turn endTime="1007.879" speaker="spk2" startTime="1004.619">
+<Sync time="1004.619"/>ouais<Sync time="1005.097"/>
+<Sync time="1005.858"/>bah je pensais qu'il allait retourner au Maroc</Turn>
+<Turn endTime="1014.237" speaker="sss1" startTime="1007.879">
+<Sync time="1007.879"/>je ne sais pas<Sync time="1008.516"/>je m'en fous ce qu'il fait<Sync time="1009.762"/>il me doit de l'argent et tout<Sync time="1010.754"/>j'ai travaillé pour lui pendant<Sync time="1012.395"/>je ne sais pas combien de temps<Sync time="1013.108"/>il m'a jamais payé<Sync time="1013.921"/>
+</Turn>
+<Turn endTime="1014.984" speaker="spk2" startTime="1014.237">
+<Sync time="1014.237"/>c'est pas vrai ?</Turn>
+<Turn endTime="1036.645" speaker="sss1" startTime="1014.984">
+<Sync time="1014.984"/>si<Sync time="1015.423"/>
+<Sync time="1015.729"/>en fait j'aurais<Sync time="1016.422"/>à l'époque quand je l'ai rencontré<Sync time="1017.630"/>
+<Sync time="1018.420"/>je travaillais<Sync time="1019.431"/>dans une société<Sync time="1020.214"/>j'étais commercial dans une<Sync time="1021.185"/>bon<Sync time="1021.620"/>c'était au Maroc<Sync time="1021.688"/>au Maroc ?<Sync time="1022.321"/>oui bah oui<Sync time="1023.006"/>ici je l'ai jamais vu<Sync time="1023.768"/>je n'ai pas envie de le voir<Sync time="1024.381"/>[ pron=ch/unknown] tout ça<Sync time="1024.675"/>[ i/unknown]<Sync time="1025.546"/>je travaillais<Sync time="1026.119"/>il est venu me voir il m'a dit<Sync time="1027.078"/>ouais euh<Sync time="1028.083"/>[ i/unknown]<Sync time="1028.464"/>si tu veux euh<Sync time="1029.328"/>je vais créer ma société et tout tu bosses pour moi<Sync time="1031.280"/>[ i/unknown]<Sync time="1031.561"/>j'ai quitté mon boulot et tout<Sync time="1032.881"/>[ mic/unknown]<Sync time="1033.373"/>
+<Sync time="1033.575"/>et j'ai bossé pour lui<Sync time="1034.554"/>et au final<Sync time="1035.623"/>il m'a jamais payé<Sync time="1036.490"/>
+</Turn>
+<Turn endTime="1037.451" speaker="spk2" startTime="1036.645">
+<Sync time="1036.645"/>ça c'est pas vrai</Turn>
+<Turn endTime="1046.574" speaker="sss1" startTime="1037.451">
+<Sync time="1037.451"/>si<Sync time="1037.823"/>c'est un arnaqueur lui<Sync time="1038.726"/>
+<Sync time="1039.233"/>j'ai bossé pour lui pendant je ne sais pas combien de temps euh<Sync time="1041.206"/>à chaque fois il me disait<Sync time="1041.887"/>ouais je te paye plus je te paye plus tard<Sync time="1043.444"/>
+<Sync time="1043.858"/>parce que là ça démarre pas<Sync time="1045.113"/>je ne sais pas quoi et<Sync time="1045.809"/>
+</Turn>
+<Turn endTime="1047.448" speaker="spk2 sss1" startTime="1046.574">
+<Sync time="1046.574"/>
+<Who nb="1"/>et c'est resté comme ça ?<Sync time="1046.730"/>
+<Who nb="2"/>bah non</Turn>
+<Turn endTime="1050.280" speaker="sss1" startTime="1047.713">
+<Sync time="1047.713"/>
+<Sync time="1048.068"/>ouais non lui il est bizarre<Sync time="1049.174"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="1052.606" speaker="spk2 sss1" startTime="1050.280">
+<Sync time="1050.280"/>
+<Who nb="2"/>ce mec il est [ pron=pi/unknown]<Sync time="1050.503"/>
+<Who nb="1"/>bah il m'a dit que j'étais invité la dernière fois</Turn>
+<Turn endTime="1054.218" speaker="spk2" startTime="1052.606">
+<Sync time="1052.606"/>de venir avec euh Medhi chez moi</Turn>
+<Turn endTime="1054.507" speaker="sss1" startTime="1054.218">
+<Sync time="1054.218"/>
+</Turn>
+<Turn endTime="1056.229" speaker="spk2" startTime="1054.507">
+<Sync time="1054.507"/>bah il l'a dit au Maroc<Sync time="1055.774"/>[ i/unknown]</Turn>
+<Turn endTime="1057.828" speaker="sss1" startTime="1056.229">
+<Sync time="1056.229"/>ah j'ai pas envie d'aller chez lui de toute façon</Turn>
+<Turn endTime="1060.202" speaker="spk2" startTime="1057.828">
+<Sync time="1057.828"/>
+<Sync time="1058.509"/>moi non<Sync time="1059.258"/>je ne sais pas moi</Turn>
+<Turn endTime="1064.917" speaker="sss1" startTime="1060.202">
+<Sync time="1060.202"/>non i il<Sync time="1060.527"/>il est pas nette lui<Sync time="1061.390"/>
+<Sync time="1062.416"/>moi je je<Sync time="1063.384"/>[ i/unknown]<Sync time="1063.948"/>je l'aime pas trop ce mec</Turn>
+<Turn endTime="1069.501" speaker="spk2" startTime="1064.917">
+<Sync time="1064.917"/>mais<Sync time="1065.357"/>pourtant il s'entend avec Samia et<Sync time="1067.477"/>et le reste<Sync time="1068.228"/>
+<Sync time="1068.675"/>je ne sais pas<Sync time="1069.263"/>
+</Turn>
+<Turn endTime="1079.831" speaker="sss1" startTime="1069.501">
+<Sync time="1069.501"/>moi [ pf/unknown]<Sync time="1070.036"/>après<Sync time="1070.701"/>il fait ce qu'il veut<Sync time="1071.232"/>enfin<Sync time="1071.907"/>chacun fait ce qu'il veut<Sync time="1072.675"/>mais moi c'est mon avis<Sync time="1073.625"/>parce que j'ai travaillé avec lui<Sync time="1074.739"/>[ i/unknown]<Sync time="1075.107"/>moi je le voyais tous les jours<Sync time="1076.033"/>
+<Sync time="1076.565"/>tu sais il ment et tout<Sync time="1077.533"/>même aux clients et tout<Sync time="1078.501"/>il leur mentait tout le temps et tout<Sync time="1079.581"/>
+</Turn>
+<Turn endTime="1081.458" speaker="spk2 sss1" startTime="1079.831">
+<Sync time="1079.831"/>
+<Who nb="2"/>non mais il est bizarre ce mec<Sync time="1080.287"/>
+<Who nb="1"/>bah il aura des problèmes</Turn>
+<Turn endTime="1083.282" speaker="spk2" startTime="1081.458">
+<Sync time="1081.458"/>il aura affaire à des gens là-bas ah</Turn>
+<Turn endTime="1083.560" speaker="sss1" startTime="1083.282">
+<Sync time="1083.282"/>
+</Turn>
+<Turn endTime="1084.640" speaker="spk2 sss1" startTime="1083.560">
+<Sync time="1083.560"/>
+<Who nb="2"/>oh mais là de toute façon<Sync time="1083.865"/>
+<Who nb="1"/>[ pron=pi/unknown]</Turn>
+<Turn endTime="1087.937" speaker="sss1" startTime="1084.801">
+<Sync time="1084.801"/>
+<Sync time="1085.091"/>de toute façon c'est bon<Sync time="1085.863"/>il travaille plus maintenant il est ici hein<Sync time="1087.275"/>
+</Turn>
+<Turn endTime="1088.362" speaker="spk2" startTime="1087.937">
+<Sync time="1087.937"/>oh non il est retourné au Maroc</Turn>
+</Section>
+</Episode>
+</Trans>

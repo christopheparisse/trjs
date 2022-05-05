@@ -174,7 +174,7 @@ trjs.template = (function () {
     }
 
     function stringLineCodes(code, name, ct, inf) {
-        return '<tr><td class="textcell1 cedit" contenteditable="true" onblur="trjs.template.checkCodeName(event); trjs.template.imbricationLevels(event);">' + trjs.dataload.checkstring(code)
+        return '<tr><td class="textcell1 cedit" contenteditable="true" previous="' + trjs.dataload.checkstring(code) + '" onblur="trjs.template.checkCodeName(event); trjs.template.imbricationLevels(event);">' + trjs.dataload.checkstring(code)
             + '</td><td class="textcell4 cedit" contenteditable="true" onblur="trjs.template.checkCodeName(event);">' + trjs.dataload.checkstring(name)
             + '</td><td class="textcell6 cedit" contenteditable="true" onblur="trjs.template.checkContentType(event);">' + trjs.dataload.checkstring(ct)
             + '</td><td class="textcell5 cedit" contenteditable="true">' + trjs.dataload.checkstring(inf)
@@ -219,10 +219,26 @@ trjs.template = (function () {
         eventKeydownBasic(e, stringLineTiers('---', '', '', '', '', ''));
     }
 
+    function testandchange(p, elt) {
+        var newcode = trjs.dataload.checkstring(trjs.events.lineGetCell($(elt), p));
+        var oldname = trjs.dataload.checkstring(trjs.events.lineGetCellAttr($(elt), p, 'previous'));
+        if (oldname !== newcode) {
+            // replace the old codes by the new code
+            if (oldname !== '') {
+                var listtablelines = trjs.transcription.tablelines();
+                for (var i = 0; i < listtablelines.length; i++) {
+                    var listcode = trjs.dataload.checkstring(trjs.events.lineGetCell($(listtablelines[i]), trjs.data.CODECOL));
+                    if (listcode === oldname)
+                    trjs.events.lineSetCell($(listtablelines[i]), trjs.data.CODECOL, newcode);
+                }
+            }
+            trjs.events.lineSetCellAttr($(elt), p, 'previous', newcode);
+            trjs.param.change(true);
+        }
+    }
     function checkCodeName(e) {
         var table = $("#participant");
         var allnames = {};
-        trjs.data.codesnames = {};
         var tablelines = $('tr', table[0]);
         for (var i = 1; i < tablelines.length; i++) {
             allnames[trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 1))] = 'participant';  // names
@@ -230,9 +246,26 @@ trjs.template = (function () {
 
         table = $("#template-code");
         tablelines = $('tr', table[0]);
+        // first check if new codes or new names exists
+        // and correct if really wanted.
+        for (var i = 1; i < tablelines.length; i++) {
+            // test the modification of the code element
+            testandchange(0, tablelines[i]);
+            // test the modification of the name element
+            testandchange(1, tablelines[i]);
+        }
+
+        trjs.data.codesnames = {};
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
             var iname = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 1));
+            if (iname === '') {
+                trjs.log.alert('Name for: ' + icode + ' does not exist');
+                iname = icode;
+                trjs.events.lineSetCell($(tablelines[i]), 1, iname);
+                // indiquer la mise à jour.
+                trjs.param.change(true);
+            }
             if (iname !== "") {
                 trjs.data.codesnames[icode] = iname;
                 if (!allnames[iname]) {
@@ -240,6 +273,7 @@ trjs.template = (function () {
                     // creates a new person with that name
                     createPartipant(iname);
                     allnames[iname] = 'participant';
+                    trjs.param.change(true);
                 }
             }
         }
@@ -1620,9 +1654,9 @@ trjs.template = (function () {
     function createPartipant(name) {
         var s = participantPattern(name);
         var participantTable = $('#participant tbody');
-        console.log("before:", participantTable);
+        //console.log("before:", participantTable);
         participantTable.append(s); // inserts at the end
-        console.log("after:", participantTable);
+        //console.log("after:", participantTable);
     }
 
     /**

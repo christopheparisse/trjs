@@ -389,6 +389,7 @@ trjs.editor = (function () {
      * @method setLocNames
      */
     function setLocNames() {
+        trjs.template.checkCodeName();
         if ($('#show-names').prop('checked') === true) {
             trjs.param.locnames = true;
             $('#param-locnames').show();

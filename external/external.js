@@ -283,9 +283,9 @@ exports.tei_to_format = function (format, transcript, output, callback) {
     try {
         if (version.debug(__filename)) console.log('TEI_TO_FORMAT ' + format + ' ' + output);
         // CREATE TEMP FiLE for transcript
-        var dirpath = filelookup.getUserHome() + '/temp';
+        var dirpath = filelookup.getUserHome().replace(/\\/g, '/') + '/temp';
         // console.log('test de ' + dirpath);
-        if (!fs.existsSync(dirpath)) fs.mkdir(dirpath);
+        if (!fs.existsSync(dirpath)) fs.mkdirSync(dirpath);
         var tempfn = dirpath + '/temporary' + version.SOFT_EXT;
         if (version.debug(__filename)) console.log('ecriture de ' + tempfn);
         fs.writeFileSync(tempfn, transcript);
@@ -344,6 +344,7 @@ exports.tei_to_format = function (format, transcript, output, callback) {
 exports.create_dir = function (dir, file, callback) {
     try {
         var dest = dir + '/' + file;
+        dest = dest.replace(/\\/g, '/');
         if (fs.existsSync(dest)) {
             callback(1, 'error: folder ' + dest + ' exists already ');
             return;

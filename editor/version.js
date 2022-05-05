@@ -19,13 +19,12 @@ version.version = "v-loading";
 version.appName = 'TRJS';
 version.versionLexFind = 'v0.2.0';
 version.versionMediaTools = 'v0.1.0';
-version.date = new Date("2021-12-02T12:00:00");
-// year, month, day : warning minus 1 (-1) for months : january === 0
+version.date = new Date("2022-05-05T12:00:00");
 
 version.preservedPages = 3;
 
 version.setVersion = function () {
-    version.version = "0.7.8bx";
+    version.version = "0.7.8c";
     /*
     var loadJsonFile = require('load-json-file');
 

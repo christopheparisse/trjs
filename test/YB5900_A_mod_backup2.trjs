@@ -122,12 +122,6 @@
 <note type="description"></note>
 </note>
 <note>
-<note type="code">---</note>
-<note type="contentType"></note>
-<note type="parent">none</note>
-<note type="description"></note>
-</note>
-<note>
 <note type="code">RD</note>
 <note type="contentType"></note>
 <note type="parent">none</note>
@@ -169,29 +163,33 @@ sex="9"
 >
 <persName>---</persName>
 <altGrp></altGrp></person><person
-xml:id="xxx"
+sex="9"
 >
 <persName>alpha</persName>
 <altGrp><alt type="SPK1" /></altGrp></person><person
-xml:id="xxx"
+sex="9"
 >
 <persName>bion</persName>
 <altGrp></altGrp></person><person
-xml:id="xxx"
+sex="9"
 >
 <persName>biondy</persName>
 <altGrp><alt type="SPK2" /></altGrp></person><person
-xml:id="xxx"
+sex="9"
 >
 <persName>e</persName>
 <altGrp></altGrp></person><person
-xml:id="xxx"
+sex="9"
 >
 <persName>electron</persName>
 <altGrp><alt type="SPK3" /></altGrp></person><person
-xml:id="xxx"
+sex="9"
 >
 <persName>joli</persName>
+<altGrp></altGrp></person><person
+sex="9"
+>
+<persName>jolieee</persName>
 <altGrp><alt type="RD" /></altGrp></person></listPerson></particDesc>
 </profileDesc>
 <encodingDesc version="0.9.1" subversion="trjs">
@@ -202,8 +200,8 @@ xml:id="xxx"
 <revisionDesc>
 <list>
 <item>original TRJS</item>
-<item>lastsave: Thu Mar 10 2022 15:08:08 GMT+0100 (heure normale d’Europe centrale)</item>
-<item>url: C:/devlopt/prod-trjs/test/YB5900_A.trjs</item>
+<item>lastsave: Fri Mar 11 2022 17:32:34 GMT+0100 (heure normale d’Europe centrale)</item>
+<item>url: C:/devlopt/prod-trjs/test/YB5900_A_mod.trjs</item>
 <item>name: new</item>
 </list>
 </revisionDesc>
@@ -1463,19 +1461,19 @@ xml:id="xxx"
 </timeline>
 <body>
 <annotationBlock start="#T0" end="#T1" who="SPK1" xml:id="u0" >
-<u>c&#39;est pas grave</u>
+<u>c'est pas grave</u>
 </annotationBlock>
 <annotationBlock start="#T2" end="#T3" who="SPK2" xml:id="u1" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T4" end="#T5" who="SPK2" xml:id="u2" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1" end="#T6" who="SPK1" xml:id="u3" >
 <u>je leur ai envoyé un message</u>
 </annotationBlock>
 <annotationBlock start="#T7" end="#T8" who="SPK2" xml:id="u4" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T9" end="#T10" who="SPK2" xml:id="u5" >
 <u>mh mh</u>
@@ -1487,13 +1485,13 @@ xml:id="xxx"
 <u>euh</u>
 </annotationBlock>
 <annotationBlock start="#T15" end="#T16" who="RD" xml:id="u8" >
-<u>ça va c&#39;est bon ?</u>
+<u>ça va c'est bon ?</u>
 </annotationBlock>
 <annotationBlock start="#T17" end="#T18" who="SPK2" xml:id="u9" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T18" end="#T19" who="SPK2" xml:id="u10" >
-<u>[ r/unknown]</u>
+<u><incident type="unknown">r</incident></u>
 </annotationBlock>
 <annotationBlock start="#T20" end="#T21" who="SPK3" xml:id="u11" >
 <u>ça tourne</u>
@@ -1505,7 +1503,7 @@ xml:id="xxx"
 <u>allez-y quand vous voulez</u>
 </annotationBlock>
 <annotationBlock start="#T26" end="#T27" who="SPK3" xml:id="u14" >
-<u>c&#39;est quand vous voulez</u>
+<u>c'est quand vous voulez</u>
 </annotationBlock>
 <annotationBlock start="#T28" end="#T29" who="SPK2" xml:id="u15" >
 <u>pron=pi</u>
@@ -1514,7 +1512,7 @@ xml:id="xxx"
 <u>prenez votre temps hein</u>
 </annotationBlock>
 <annotationBlock start="#T32" end="#T33" who="SPK1" xml:id="u17" >
-<u>c&#39;est bon</u>
+<u>c'est bon</u>
 </annotationBlock>
 <annotationBlock start="#T34" end="#T35" who="SPK1" xml:id="u18" >
 <u>je leur ai envoyé un message pour leur dire que</u>
@@ -1562,7 +1560,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T56" end="#T57" who="SPK1" xml:id="u33" >
-<u>d&#39;accord</u>
+<u>d'accord</u>
 </annotationBlock>
 <annotationBlock start="#T58" end="#T59" who="SPK2" xml:id="u34" >
 <u>ou déb</u>
@@ -1571,7 +1569,7 @@ xml:id="xxx"
 <u>ou début mois sept</u>
 </annotationBlock>
 <annotationBlock start="#T62" end="#T63" who="SPK1" xml:id="u36" >
-<u>d&#39;accord</u>
+<u>d'accord</u>
 </annotationBlock>
 <annotationBlock start="#T64" end="#T65" who="SPK1" xml:id="u37" >
 <u>du coup tu vas reprendre le travail ou ?</u>
@@ -1592,10 +1590,10 @@ xml:id="xxx"
 <u>ouais ouais</u>
 </annotationBlock>
 <annotationBlock start="#T73" end="#T74" who="SPK1" xml:id="u43" >
-<u>c&#39;est compliqué comme t&#39;es à la retraite et tu continues de bosser</u>
+<u>c'est compliqué comme t'es à la retraite et tu continues de bosser</u>
 </annotationBlock>
 <annotationBlock start="#T75" end="#T76" who="SPK2" xml:id="u44" >
-<u>c&#39;est difficile aussi de trouvé un emploie</u>
+<u>c'est difficile aussi de trouvé un emploie</u>
 </annotationBlock>
 <annotationBlock start="#T77" end="#T78" who="SPK1" xml:id="u45" >
 <u>ouais</u>
@@ -1607,10 +1605,10 @@ xml:id="xxx"
 <u>après tu connais du monde</u>
 </annotationBlock>
 <annotationBlock start="#T82" end="#T83" who="SPK1" xml:id="u48" >
-<u>ça va c&#39;est déjà ça</u>
+<u>ça va c'est déjà ça</u>
 </annotationBlock>
 <annotationBlock start="#T84" end="#T85" who="SPK2" xml:id="u49" >
-<u>ça c&#39;est sûr ça c&#39;est sûr</u>
+<u>ça c'est sûr ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T85" end="#T86" who="SPK1" xml:id="u50" >
 <u>ouais</u>
@@ -1622,43 +1620,43 @@ xml:id="xxx"
 <u>et je vais du du côté jeudi là</u>
 </annotationBlock>
 <annotationBlock start="#T89" end="#T90" who="SPK1" xml:id="u53" >
-<u>d&#39;accord</u>
+<u>d'accord</u>
 </annotationBlock>
 <annotationBlock start="#T91" end="#T91" who="SPK2" xml:id="u54" >
-<u>oui là y&#39;a des euh des copains à moi</u>
+<u>oui là y'a des euh des copains à moi</u>
 </annotationBlock>
 <annotationBlock start="#T92" end="#T93" who="SPK2" xml:id="u55" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T93" end="#T94" who="SPK2" xml:id="u56" >
-<u>ils vont m&#39;aider à trouver un emplois</u>
+<u>ils vont m'aider à trouver un emplois</u>
 </annotationBlock>
 <annotationBlock start="#T94" end="#T95" who="SPK1" xml:id="u57" >
-<u>ah c&#39;est bien c&#39;est bien</u>
+<u>ah c'est bien c'est bien</u>
 </annotationBlock>
 <annotationBlock start="#T95" end="#T96" who="SPK1" xml:id="u58" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T96" end="#T97" who="SPK1" xml:id="u59" >
-<u>bah moi c&#39;est pareil tu sais genre euh</u>
+<u>bah moi c'est pareil tu sais genre euh</u>
 </annotationBlock>
 <annotationBlock start="#T97" end="#T98" who="SPK1" xml:id="u60" >
-<u>pour trouver du boulot c&#39;est pas évident</u>
+<u>pour trouver du boulot c'est pas évident</u>
 </annotationBlock>
 <annotationBlock start="#T99" end="#T100" who="SPK1" xml:id="u61" >
-<u>quand même si t&#39;es jeune même si tu connais du monde</u>
+<u>quand même si t'es jeune même si tu connais du monde</u>
 </annotationBlock>
 <annotationBlock start="#T100" end="#T101" who="SPK1" xml:id="u62" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T101" end="#T102" who="SPK1" xml:id="u63" >
-<u>non c&#39;est compliqué partout</u>
+<u>non c'est compliqué partout</u>
 </annotationBlock>
 <annotationBlock start="#T102" end="#T103" who="SPK1" xml:id="u64" >
 <u>pour tout le monde</u>
 </annotationBlock>
 <annotationBlock start="#T103" end="#T104" who="SPK2" xml:id="u65" >
-<u>oui si c&#39;est un peu difficile</u>
+<u>oui si c'est un peu difficile</u>
 </annotationBlock>
 <annotationBlock start="#T105" end="#T106" who="SPK2" xml:id="u66" >
 <u>pron=pi</u>
@@ -1670,7 +1668,7 @@ xml:id="xxx"
 <u>ah ça fait deux ans euh</u>
 </annotationBlock>
 <annotationBlock start="#T108" end="#T109" who="SPK1" xml:id="u69" >
-<u>casiment que j&#39;ai pas bossé euh</u>
+<u>casiment que j'ai pas bossé euh</u>
 </annotationBlock>
 <annotationBlock start="#T109" end="#T110" who="SPK1" xml:id="u70" >
 <u></u>
@@ -1685,7 +1683,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T113" end="#T114" who="SPK1" xml:id="u74" >
-<u>qu&#39;est-ce qu&#39;elle a ?</u>
+<u>qu'est-ce qu'elle a ?</u>
 </annotationBlock>
 <annotationBlock start="#T114" end="#T115" who="SPK2" xml:id="u75" >
 <u>bah maintenant elle est</u>
@@ -1697,13 +1695,13 @@ xml:id="xxx"
 <u>elle est à euh Montpellier</u>
 </annotationBlock>
 <annotationBlock start="#T117" end="#T118" who="SPK2" xml:id="u78" >
-<u>donc c&#39;est</u>
+<u>donc c'est</u>
 </annotationBlock>
 <annotationBlock start="#T118" end="#T119" who="SPK1" xml:id="u79" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T119" end="#T120" who="SPK2" xml:id="u80" >
-<u>c&#39;est difficile de la joindre aussi</u>
+<u>c'est difficile de la joindre aussi</u>
 </annotationBlock>
 <annotationBlock start="#T120" end="#T121" who="SPK2" xml:id="u81" >
 <u></u>
@@ -1715,19 +1713,19 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T125" end="#T126" who="SPK1" xml:id="u84" >
-<u>ouais t&#39;inquiète pas pour elle euh</u>
+<u>ouais t'inquiète pas pour elle euh</u>
 </annotationBlock>
 <annotationBlock start="#T126" end="#T127" who="SPK2" xml:id="u85" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T127" end="#T128" who="SPK1" xml:id="u86" >
-<u>elle fait ses trucs euh t&#39;inquiète pas</u>
+<u>elle fait ses trucs euh t'inquiète pas</u>
 </annotationBlock>
 <annotationBlock start="#T128" end="#T129" who="SPK1" xml:id="u87" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T129" end="#T130" who="SPK1" xml:id="u88" >
-<u>t&#39;as pas à t&#39;inquiéter elle est avec son mec et tout ça va</u>
+<u>t'as pas à t'inquiéter elle est avec son mec et tout ça va</u>
 </annotationBlock>
 <annotationBlock start="#T130" end="#T131" who="SPK1" xml:id="u89" >
 <u></u>
@@ -1736,7 +1734,7 @@ xml:id="xxx"
 <u>oui</u>
 </annotationBlock>
 <annotationBlock start="#T132" end="#T133" who="SPK1" xml:id="u91" >
-<u>[ tx/unknown]</u>
+<u><incident type="unknown">tx</incident></u>
 </annotationBlock>
 <annotationBlock start="#T133" end="#T134" who="SPK2" xml:id="u92" >
 <u></u>
@@ -1766,7 +1764,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T142" end="#T143" who="SPK2" xml:id="u101" >
-<u>je ne sais pas [ rire/unknown]</u>
+<u>je ne sais pas <incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T143" end="#T144" who="SPK2" xml:id="u102" >
 <u></u>
@@ -1775,25 +1773,25 @@ xml:id="xxx"
 <u>bah</u>
 </annotationBlock>
 <annotationBlock start="#T145" end="#T146" who="SPK1" xml:id="u104" >
-<u>ouais mais c&#39;est comme ça tu sais euh</u>
+<u>ouais mais c'est comme ça tu sais euh</u>
 </annotationBlock>
 <annotationBlock start="#T146" end="#T147" who="SPK1" xml:id="u105" >
 <u>dans tout la famille tout le monde est partie euh</u>
 </annotationBlock>
 <annotationBlock start="#T147" end="#T148" who="SPK1" xml:id="u106" >
-<u>même toi quand t&#39;as vécu avec ton père</u>
+<u>même toi quand t'as vécu avec ton père</u>
 </annotationBlock>
 <annotationBlock start="#T148" end="#T149" who="SPK1" xml:id="u107" >
-<u>lui il était en France toi t&#39;étais au Maroc</u>
+<u>lui il était en France toi t'étais au Maroc</u>
 </annotationBlock>
 <annotationBlock start="#T149" end="#T150" who="SPK1" xml:id="u108" >
 <u>tes frères ils sont partis les autres</u>
 </annotationBlock>
 <annotationBlock start="#T150" end="#T151" who="SPK1" xml:id="u109" >
-<u>c&#39;est comme ça c&#39;est la vie</u>
+<u>c'est comme ça c'est la vie</u>
 </annotationBlock>
 <annotationBlock start="#T151" end="#T152" who="SPK2" xml:id="u110" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T152" end="#T153" who="SPK1" xml:id="u111" >
 <u>faut que chacun fasse sa vie après</u>
@@ -1811,7 +1809,7 @@ xml:id="xxx"
 <u>tu sais on peut pas rester</u>
 </annotationBlock>
 <annotationBlock start="#T157" end="#T158" who="SPK1" xml:id="u116" >
-<u>tous ensemble tout le temps c&#39;est comme ça</u>
+<u>tous ensemble tout le temps c'est comme ça</u>
 </annotationBlock>
 <annotationBlock start="#T158" end="#T159" who="SPK1" xml:id="u117" >
 <u>le monde est comme ça maintenant</u>
@@ -1826,13 +1824,13 @@ xml:id="xxx"
 <u>un moment donné faut que chacun fasse sa vie</u>
 </annotationBlock>
 <annotationBlock start="#T162" end="#T163" who="SPK2" xml:id="u121" >
-<u>ça c&#39;est sûr</u>
+<u>ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T163" end="#T164" who="SPK2" xml:id="u122" >
-<u>ça c&#39;est sûr</u>
+<u>ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T164" end="#T165" who="SPK1" xml:id="u123" >
-<u>après c&#39;est comme ça tu sais</u>
+<u>après c'est comme ça tu sais</u>
 </annotationBlock>
 <annotationBlock start="#T165" end="#T166" who="SPK1" xml:id="u124" >
 <u>chacun après chacun ses problèmes euh</u>
@@ -1850,7 +1848,7 @@ xml:id="xxx"
 <u>tu restes pas avec tes parents quoi</u>
 </annotationBlock>
 <annotationBlock start="#T170" end="#T171" who="SPK2" xml:id="u129" >
-<u>[ bb/unknown]</u>
+<u><incident type="unknown">bb</incident></u>
 </annotationBlock>
 <annotationBlock start="#T171" end="#T172" who="SPK1" xml:id="u130" >
 <u></u>
@@ -1859,16 +1857,16 @@ xml:id="xxx"
 <u>ouais ouais</u>
 </annotationBlock>
 <annotationBlock start="#T174" end="#T175" who="SPK1" xml:id="u132" >
-<u>après le plus important c&#39;est d&#39;être solidaire euh</u>
+<u>après le plus important c'est d'être solidaire euh</u>
 </annotationBlock>
 <annotationBlock start="#T175" end="#T176" who="SPK1" xml:id="u133" >
 <u>je sais pas de</u>
 </annotationBlock>
 <annotationBlock start="#T176" end="#T177" who="SPK1" xml:id="u134" >
-<u>de s&#39;entraider de se voir de temps en temps quand on peut</u>
+<u>de s'entraider de se voir de temps en temps quand on peut</u>
 </annotationBlock>
 <annotationBlock start="#T177" end="#T178" who="SPK2" xml:id="u135" >
-<u>mais c&#39;est</u>
+<u>mais c'est</u>
 </annotationBlock>
 <annotationBlock start="#T178" end="#T179" who="SPK2" xml:id="u136" >
 <u>aussi difficile de</u>
@@ -1892,7 +1890,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T186" end="#T187" who="SPK1" xml:id="u143" >
-<u>après c&#39;est la vie tu sais c&#39;est comme tout le monde</u>
+<u>après c'est la vie tu sais c'est comme tout le monde</u>
 </annotationBlock>
 <annotationBlock start="#T187" end="#T188" who="SPK1" xml:id="u144" >
 <u></u>
@@ -1907,7 +1905,7 @@ xml:id="xxx"
 <u>donc euh</u>
 </annotationBlock>
 <annotationBlock start="#T191" end="#T192" who="SPK1" xml:id="u148" >
-<u>moi je sais pas pour l&#39;instant je sais pas</u>
+<u>moi je sais pas pour l'instant je sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T192" end="#T193" who="SPK1" xml:id="u149" >
 <u>je reste ici je vois</u>
@@ -1925,13 +1923,13 @@ xml:id="xxx"
 <u>soit je rentre à Paris soit je sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T197" end="#T198" who="SPK1" xml:id="u154" >
-<u>toute façon j&#39;ai pas de femme j&#39;ai pas de gosses euh</u>
+<u>toute façon j'ai pas de femme j'ai pas de gosses euh</u>
 </annotationBlock>
 <annotationBlock start="#T198" end="#T199" who="SPK1" xml:id="u155" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T200" end="#T201" who="SPK1" xml:id="u156" >
-<u>si j&#39;ai besoin de partir quelque part je partirais</u>
+<u>si j'ai besoin de partir quelque part je partirais</u>
 </annotationBlock>
 <annotationBlock start="#T201" end="#T202" who="SPK1" xml:id="u157" >
 <u>sinon je reste encore quelques années en France</u>
@@ -1997,13 +1995,13 @@ xml:id="xxx"
 <u>ouais mais bon</u>
 </annotationBlock>
 <annotationBlock start="#T222" end="#T223" who="SPK1" xml:id="u178" >
-<u>après je t&#39;ai dit euh</u>
+<u>après je t'ai dit euh</u>
 </annotationBlock>
 <annotationBlock start="#T223" end="#T224" who="SPK1" xml:id="u179" >
-<u>chacun il faut qu&#39;il fasse sa vie quoi</u>
+<u>chacun il faut qu'il fasse sa vie quoi</u>
 </annotationBlock>
 <annotationBlock start="#T224" end="#T225" who="SPK1" xml:id="u180" >
-<u>c&#39;est c&#39;est comme ça hein</u>
+<u>c'est c'est comme ça hein</u>
 </annotationBlock>
 <annotationBlock start="#T225" end="#T226" who="SPK1" xml:id="u181" >
 <u></u>
@@ -2015,7 +2013,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T228" end="#T229" who="SPK1" xml:id="u184" >
-<u>c&#39;est comme ça</u>
+<u>c'est comme ça</u>
 </annotationBlock>
 <annotationBlock start="#T229" end="#T230" who="SPK2" xml:id="u185" >
 <u>pron=pi</u>
@@ -2024,13 +2022,13 @@ xml:id="xxx"
 <u>bah</u>
 </annotationBlock>
 <annotationBlock start="#T232" end="#T233" who="SPK2" xml:id="u187" >
-<u>Ouda elle [ pron=*emménage/unknown]       ici ça va</u>
+<u>Ouda elle <incident type="unknown">pron=*emménage</incident>       ici ça va</u>
 </annotationBlock>
 <annotationBlock start="#T234" end="#T235" who="SPK2" xml:id="u188" >
 <u>ça</u>
 </annotationBlock>
 <annotationBlock start="#T235" end="#T236" who="SPK2" xml:id="u189" >
-<u>[ r/unknown]</u>
+<u><incident type="unknown">r</incident></u>
 </annotationBlock>
 <annotationBlock start="#T236" end="#T237" who="SPK2" xml:id="u190" >
 <u>avec ses enfants</u>
@@ -2057,7 +2055,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T246" end="#T247" who="SPK2" xml:id="u198" >
-<u>elle s&#39;entend avec son maris</u>
+<u>elle s'entend avec son maris</u>
 </annotationBlock>
 <annotationBlock start="#T247" end="#T248" who="SPK1" xml:id="u199" >
 <u>ah</u>
@@ -2066,19 +2064,19 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T249" end="#T250" who="SPK1" xml:id="u201" >
-<u>bah moi aussi il faut je fasse ma vie quoi j&#39;ai 32 balles euh</u>
+<u>bah moi aussi il faut je fasse ma vie quoi j'ai 32 balles euh</u>
 </annotationBlock>
 <annotationBlock start="#T250" end="#T251" who="SPK1" xml:id="u202" >
-<u>il faut que [ rire/unknown]</u>
+<u>il faut que <incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T251" end="#T252" who="SPK2" xml:id="u203" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T253" end="#T254" who="SPK2" xml:id="u204" >
-<u>ça c&#39;est sûr</u>
+<u>ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T255" end="#T256" who="SPK1" xml:id="u205" >
-<u>que je trouve une femme il faut que j&#39;ai des gosses je sais pas</u>
+<u>que je trouve une femme il faut que j'ai des gosses je sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T256" end="#T257" who="SPK1" xml:id="u206" >
 <u>ouais il serait temps quoi</u>
@@ -2090,10 +2088,10 @@ xml:id="xxx"
 <u>donc euh ça commence par la situation</u>
 </annotationBlock>
 <annotationBlock start="#T259" end="#T260" who="SPK1" xml:id="u209" >
-<u>si t&#39;as pas une situation</u>
+<u>si t'as pas une situation</u>
 </annotationBlock>
 <annotationBlock start="#T260" end="#T261" who="SPK1" xml:id="u210" >
-<u>c&#39;est de plus en plus compliqué</u>
+<u>c'est de plus en plus compliqué</u>
 </annotationBlock>
 <annotationBlock start="#T261" end="#T262" who="SPK1" xml:id="u211" >
 <u></u>
@@ -2111,16 +2109,16 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T266" end="#T267" who="SPK2" xml:id="u216" >
-<u>ouais ouais [ pron=ch/unknown]</u>
+<u>ouais ouais <incident type="unknown">pron=ch</incident></u>
 </annotationBlock>
 <annotationBlock start="#T267" end="#T268" who="SPK1" xml:id="u217" >
-<u>regarde rien que toi t&#39;as bougé combien de fois dans ta vie euh</u>
+<u>regarde rien que toi t'as bougé combien de fois dans ta vie euh</u>
 </annotationBlock>
 <annotationBlock start="#T268" end="#T269" who="SPK2" xml:id="u218" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T269" end="#T270" who="SPK1" xml:id="u219" >
-<u>t&#39;es en France ou Belgique euh</u>
+<u>t'es en France ou Belgique euh</u>
 </annotationBlock>
 <annotationBlock start="#T270" end="#T271" who="SPK1" xml:id="u220" >
 <u>tout ça enfin</u>
@@ -2129,16 +2127,16 @@ xml:id="xxx"
 <u>ouais mais</u>
 </annotationBlock>
 <annotationBlock start="#T272" end="#T273" who="SPK1" xml:id="u222" >
-<u>c&#39;est pas pour rien c&#39;est pour euh</u>
+<u>c'est pas pour rien c'est pour euh</u>
 </annotationBlock>
 <annotationBlock start="#T273" end="#T274" who="SPK1" xml:id="u223" >
 <u>changer de vie quoi</u>
 </annotationBlock>
 <annotationBlock start="#T274" end="#T275" who="SPK2" xml:id="u224" >
-<u>ça c&#39;est sûr ça c&#39;est sûr</u>
+<u>ça c'est sûr ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T275" end="#T276" who="SPK2" xml:id="u225" >
-<u>[ bb/unknown]</u>
+<u><incident type="unknown">bb</incident></u>
 </annotationBlock>
 <annotationBlock start="#T276" end="#T277" who="SPK1" xml:id="u226" >
 <u>donc voilà</u>
@@ -2153,7 +2151,7 @@ xml:id="xxx"
 <u>donc euh</u>
 </annotationBlock>
 <annotationBlock start="#T280" end="#T281" who="SPK1" xml:id="u230" >
-<u>c&#39;est comme je t&#39;ai dit euh</u>
+<u>c'est comme je t'ai dit euh</u>
 </annotationBlock>
 <annotationBlock start="#T281" end="#T282" who="SPK1" xml:id="u231" >
 <u>voilà je vais regarder</u>
@@ -2165,7 +2163,7 @@ xml:id="xxx"
 <u>je postule machin si je trouve pas</u>
 </annotationBlock>
 <annotationBlock start="#T284" end="#T285" who="SPK1" xml:id="u234" >
-<u>je partirais ailleurs j&#39;attends encore quelques temps</u>
+<u>je partirais ailleurs j'attends encore quelques temps</u>
 </annotationBlock>
 <annotationBlock start="#T285" end="#T286" who="SPK1" xml:id="u235" >
 <u></u>
@@ -2180,19 +2178,19 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T290" end="#T291" who="SPK1" xml:id="u239" >
-<u>je m&#39;en fous après euh</u>
+<u>je m'en fous après euh</u>
 </annotationBlock>
 <annotationBlock start="#T291" end="#T292" who="SPK1" xml:id="u240" >
-<u>j&#39;irais à Dubai j&#39;irais au Canada</u>
+<u>j'irais à Dubai j'irais au Canada</u>
 </annotationBlock>
 <annotationBlock start="#T292" end="#T293" who="SPK1" xml:id="u241" >
-<u>j&#39;irais au</u>
+<u>j'irais au</u>
 </annotationBlock>
 <annotationBlock start="#T293" end="#T294" who="SPK1" xml:id="u242" >
-<u>Australie je m&#39;en fous [ rire/unknown]</u>
+<u>Australie je m'en fous <incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T295" end="#T296" who="SPK2" xml:id="u243" >
-<u>[ rire/unknown]      tu auras pas le temps de passer nous voir à</u>
+<u><incident type="unknown">rire</incident>      tu auras pas le temps de passer nous voir à</u>
 </annotationBlock>
 <annotationBlock start="#T296" end="#T297" who="SPK2" xml:id="u244" >
 <u>au Maroc ?</u>
@@ -2201,7 +2199,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T298" end="#T299" who="SPK2" xml:id="u246" >
-<u>euh là pour l&#39;instant c&#39;est</u>
+<u>euh là pour l'instant c'est</u>
 </annotationBlock>
 <annotationBlock start="#T299" end="#T300" who="SPK2" xml:id="u247" >
 <u>cette cette année ça va être compliquée</u>
@@ -2210,13 +2208,13 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T301" end="#T302" who="SPK2" xml:id="u249" >
-<u>[ pron=pi/unknown]      tu as</u>
+<u><incident type="unknown">pron=pi</incident>      tu as</u>
 </annotationBlock>
 <annotationBlock start="#T302" end="#T303" who="SPK2" xml:id="u250" >
 <u>vous aurez</u>
 </annotationBlock>
 <annotationBlock start="#T303" end="#T304" who="SPK2" xml:id="u251" >
-<u>le temps d&#39;y aller quoi</u>
+<u>le temps d'y aller quoi</u>
 </annotationBlock>
 <annotationBlock start="#T304" end="#T305" who="SPK2" xml:id="u252" >
 <u></u>
@@ -2231,28 +2229,28 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T310" end="#T311" who="SPK1" xml:id="u256" >
-<u>en vrai c&#39;est compliqué c&#39;est pas juste par rapport au travail</u>
+<u>en vrai c'est compliqué c'est pas juste par rapport au travail</u>
 </annotationBlock>
 <annotationBlock start="#T311" end="#T312" who="SPK1" xml:id="u257" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T312" end="#T313" who="SPK1" xml:id="u258" >
-<u>c&#39;est</u>
+<u>c'est</u>
 </annotationBlock>
 <annotationBlock start="#T313" end="#T314" who="SPK1" xml:id="u259" >
-<u>c&#39;est aussi le fait que</u>
+<u>c'est aussi le fait que</u>
 </annotationBlock>
 <annotationBlock start="#T314" end="#T315" who="SPK1" xml:id="u260" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T315" end="#T316" who="SPK1" xml:id="u261" >
-<u>en vrai j&#39;aime plus retourner au Maroc</u>
+<u>en vrai j'aime plus retourner au Maroc</u>
 </annotationBlock>
 <annotationBlock start="#T316" end="#T317" who="SPK1" xml:id="u262" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T317" end="#T318" who="SPK1" xml:id="u263" >
-<u>j&#39;aime plus trop retourner au Maroc</u>
+<u>j'aime plus trop retourner au Maroc</u>
 </annotationBlock>
 <annotationBlock start="#T318" end="#T319" who="SPK1" xml:id="u264" >
 <u>je me sens</u>
@@ -2276,7 +2274,7 @@ xml:id="xxx"
 <u>qui</u>
 </annotationBlock>
 <annotationBlock start="#T325" end="#T326" who="SPK1" xml:id="u271" >
-<u>je sais pas pourquoi les gens ils aiment bien y retourner moi j&#39;aime pas</u>
+<u>je sais pas pourquoi les gens ils aiment bien y retourner moi j'aime pas</u>
 </annotationBlock>
 <annotationBlock start="#T326" end="#T327" who="SPK1" xml:id="u272" >
 <u></u>
@@ -2288,10 +2286,10 @@ xml:id="xxx"
 <u>bah la</u>
 </annotationBlock>
 <annotationBlock start="#T329" end="#T330" who="SPK2" xml:id="u275" >
-<u>[ pron=pi/unknown]      m&#39;a promis d&#39;aller à</u>
+<u><incident type="unknown">pron=pi</incident>      m'a promis d'aller à</u>
 </annotationBlock>
 <annotationBlock start="#T330" end="#T331" who="SPK2" xml:id="u276" >
-<u>en mois d&#39;août</u>
+<u>en mois d'août</u>
 </annotationBlock>
 <annotationBlock start="#T331" end="#T332" who="SPK2" xml:id="u277" >
 <u>au Maroc</u>
@@ -2315,10 +2313,10 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T338" end="#T339" who="SPK1" xml:id="u284" >
-<u>moi je sais pas pour l&#39;instant</u>
+<u>moi je sais pas pour l'instant</u>
 </annotationBlock>
 <annotationBlock start="#T339" end="#T340" who="SPK1" xml:id="u285" >
-<u>j&#39;ai pas trop envie d&#39;y retourner</u>
+<u>j'ai pas trop envie d'y retourner</u>
 </annotationBlock>
 <annotationBlock start="#T340" end="#T341" who="SPK1" xml:id="u286" >
 <u></u>
@@ -2333,7 +2331,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T344" end="#T345" who="SPK1" xml:id="u290" >
-<u>franchement j&#39;ai pas trop envie de</u>
+<u>franchement j'ai pas trop envie de</u>
 </annotationBlock>
 <annotationBlock start="#T345" end="#T346" who="SPK1" xml:id="u291" >
 <u></u>
@@ -2375,19 +2373,19 @@ xml:id="xxx"
 <u>à la fac ouais</u>
 </annotationBlock>
 <annotationBlock start="#T360" end="#T361" who="SPK1" xml:id="u304" >
-<u>bah c&#39;est bien</u>
+<u>bah c'est bien</u>
 </annotationBlock>
 <annotationBlock start="#T361" end="#T362" who="SPK1" xml:id="u305" >
-<u>c&#39;est bien</u>
+<u>c'est bien</u>
 </annotationBlock>
 <annotationBlock start="#T362" end="#T363" who="SPK1" xml:id="u306" >
-<u>bah il y a pas de raison qu&#39;elle ne soit pas acceptée</u>
+<u>bah il y a pas de raison qu'elle ne soit pas acceptée</u>
 </annotationBlock>
 <annotationBlock start="#T363" end="#T364" who="SPK2" xml:id="u307" >
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T364" end="#T365" who="SPK2" xml:id="u308" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T365" end="#T366" who="SPK1" xml:id="u309" >
 <u>pas de raison</u>
@@ -2408,7 +2406,7 @@ xml:id="xxx"
 <u>quand tu arrêteras travailler on verra si il y a moyen</u>
 </annotationBlock>
 <annotationBlock start="#T371" end="#T372" who="SPK1" xml:id="u315" >
-<u>si moi j&#39;ai une situation et tout</u>
+<u>si moi j'ai une situation et tout</u>
 </annotationBlock>
 <annotationBlock start="#T372" end="#T373" who="SPK1" xml:id="u316" >
 <u>si je reste en France</u>
@@ -2438,10 +2436,10 @@ xml:id="xxx"
 <u>ouais mais</u>
 </annotationBlock>
 <annotationBlock start="#T381" end="#T382" who="SPK2" xml:id="u325" >
-<u>fac façon il m&#39;a</u>
+<u>fac façon il m'a</u>
 </annotationBlock>
 <annotationBlock start="#T382" end="#T383" who="SPK2" xml:id="u326" >
-<u>invité d&#39;aller à</u>
+<u>invité d'aller à</u>
 </annotationBlock>
 <annotationBlock start="#T383" end="#T384" who="SPK2" xml:id="u327" >
 <u>visiter là</u>
@@ -2453,7 +2451,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T386" end="#T387" who="SPK2" xml:id="u330" >
-<u>il m&#39;a dit qu&#39;il va m&#39;emmener à</u>
+<u>il m'a dit qu'il va m'emmener à</u>
 </annotationBlock>
 <annotationBlock start="#T387" end="#T388" who="SPK2" xml:id="u331" >
 <u>la plage je ne sais pas</u>
@@ -2465,10 +2463,10 @@ xml:id="xxx"
 <u>pron=pi</u>
 </annotationBlock>
 <annotationBlock start="#T390" end="#T391" who="SPK1" xml:id="u334" >
-<u>ah ouais d&#39;accord</u>
+<u>ah ouais d'accord</u>
 </annotationBlock>
 <annotationBlock start="#T391" end="#T392" who="SPK1" xml:id="u335" >
-<u>ouais tu parles de [ pron=pi/unknown]</u>
+<u>ouais tu parles de <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T393" end="#T394" who="SPK2" xml:id="u336" >
 <u>oui</u>
@@ -2483,7 +2481,7 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T399" end="#T400" who="SPK2" xml:id="u340" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T400" end="#T401" who="SPK1" xml:id="u341" >
 <u>je te disais que euh</u>
@@ -2492,7 +2490,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T403" end="#T404" who="SPK1" xml:id="u343" >
-<u>vu que c&#39;est compliqué</u>
+<u>vu que c'est compliqué</u>
 </annotationBlock>
 <annotationBlock start="#T404" end="#T405" who="SPK1" xml:id="u344" >
 <u>là-bas aussi</u>
@@ -2507,7 +2505,7 @@ xml:id="xxx"
 <u>si maintenant</u>
 </annotationBlock>
 <annotationBlock start="#T409" end="#T410" who="SPK1" xml:id="u348" >
-<u>[ pron=pi/unknown]      quelques temps</u>
+<u><incident type="unknown">pron=pi</incident>      quelques temps</u>
 </annotationBlock>
 <annotationBlock start="#T410" end="#T411" who="SPK1" xml:id="u349" >
 <u></u>
@@ -2516,19 +2514,19 @@ xml:id="xxx"
 <u>bah</u>
 </annotationBlock>
 <annotationBlock start="#T412" end="#T413" who="SPK1" xml:id="u351" >
-<u>t&#39;es plus trop jeune hein</u>
+<u>t'es plus trop jeune hein</u>
 </annotationBlock>
 <annotationBlock start="#T413" end="#T414" who="SPK1" xml:id="u352" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T414" end="#T415" who="SPK1" xml:id="u353" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T415" end="#T416" who="SPK1" xml:id="u354" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T416" end="#T417" who="SPK1" xml:id="u355" >
-<u>d&#39;ici quelques temps si</u>
+<u>d'ici quelques temps si</u>
 </annotationBlock>
 <annotationBlock start="#T417" end="#T418" who="SPK1" xml:id="u356" >
 <u>enfin</u>
@@ -2564,16 +2562,16 @@ xml:id="xxx"
 <u>que vous puissiez rester ici</u>
 </annotationBlock>
 <annotationBlock start="#T428" end="#T429" who="SPK2" xml:id="u367" >
-<u>oui c&#39;est difficile</u>
+<u>oui c'est difficile</u>
 </annotationBlock>
 <annotationBlock start="#T429" end="#T430" who="SPK2" xml:id="u368" >
-<u>c&#39;est difficile</u>
+<u>c'est difficile</u>
 </annotationBlock>
 <annotationBlock start="#T430" end="#T431" who="SPK2" xml:id="u369" >
 <u>maintenant de</u>
 </annotationBlock>
 <annotationBlock start="#T431" end="#T432" who="SPK1" xml:id="u370" >
-<u>c&#39;est difficile mais c&#39;est pas</u>
+<u>c'est difficile mais c'est pas</u>
 </annotationBlock>
 <annotationBlock start="#T433" end="#T434" who="SPK2" xml:id="u371" >
 <u>de faire un regroupement quoi</u>
@@ -2582,10 +2580,10 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T435" end="#T436" who="SPK1" xml:id="u373" >
-<u>c&#39;est difficile mais c&#39;est</u>
+<u>c'est difficile mais c'est</u>
 </annotationBlock>
 <annotationBlock start="#T436" end="#T437" who="SPK1" xml:id="u374" >
-<u>pas impossible quoi c&#39;est</u>
+<u>pas impossible quoi c'est</u>
 </annotationBlock>
 <annotationBlock start="#T437" end="#T438" who="SPK1" xml:id="u375" >
 <u>il y a toujours des solutions</u>
@@ -2606,7 +2604,7 @@ xml:id="xxx"
 <u>vous êtes pas très</u>
 </annotationBlock>
 <annotationBlock start="#T443" end="#T444" who="SPK1" xml:id="u381" >
-<u>non plus [ rire/unknown]</u>
+<u>non plus <incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T444" end="#T445" who="SPK1" xml:id="u382" >
 <u></u>
@@ -2633,7 +2631,7 @@ xml:id="xxx"
 <u>donc euh</u>
 </annotationBlock>
 <annotationBlock start="#T452" end="#T453" who="SPK1" xml:id="u390" >
-<u>d&#39;ici quelques temps</u>
+<u>d'ici quelques temps</u>
 </annotationBlock>
 <annotationBlock start="#T453" end="#T454" who="SPK1" xml:id="u391" >
 <u></u>
@@ -2651,13 +2649,13 @@ xml:id="xxx"
 <u>pour obtenir des papiers comme ça vous venez tout le temps ici euh</u>
 </annotationBlock>
 <annotationBlock start="#T458" end="#T459" who="SPK1" xml:id="u396" >
-<u>au lieu de galérer d&#39;avoir un visa tous les ans tout ça</u>
+<u>au lieu de galérer d'avoir un visa tous les ans tout ça</u>
 </annotationBlock>
 <annotationBlock start="#T459" end="#T460" who="SPK2" xml:id="u397" >
-<u>ouais c&#39;est bien</u>
+<u>ouais c'est bien</u>
 </annotationBlock>
 <annotationBlock start="#T460" end="#T461" who="SPK2" xml:id="u398" >
-<u>c&#39;est bien</u>
+<u>c'est bien</u>
 </annotationBlock>
 <annotationBlock start="#T462" end="#T463" who="SPK1" xml:id="u399" >
 <u>bah oui</u>
@@ -2690,10 +2688,10 @@ xml:id="xxx"
 <u>mh</u>
 </annotationBlock>
 <annotationBlock start="#T474" end="#T475" who="SPK1" xml:id="u409" >
-<u>en fait toi pourquoi t&#39;es reparti au Maroc euh ?</u>
+<u>en fait toi pourquoi t'es reparti au Maroc euh ?</u>
 </annotationBlock>
 <annotationBlock start="#T475" end="#T476" who="SPK1" xml:id="u410" >
-<u>t&#39;as t&#39;avais vécu ici</u>
+<u>t'as t'avais vécu ici</u>
 </annotationBlock>
 <annotationBlock start="#T477" end="#T478" who="SPK2" xml:id="u411" >
 <u>oui à Lyon</u>
@@ -2705,37 +2703,37 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T481" end="#T482" who="SPK1" xml:id="u414" >
-<u>pourquoi t&#39;es reparti ?</u>
+<u>pourquoi t'es reparti ?</u>
 </annotationBlock>
 <annotationBlock start="#T483" end="#T484" who="SPK2" xml:id="u415" >
-<u>j&#39;avais pas</u>
+<u>j'avais pas</u>
 </annotationBlock>
 <annotationBlock start="#T484" end="#T485" who="SPK2" xml:id="u416" >
 <u>pas de papiers</u>
 </annotationBlock>
 <annotationBlock start="#T485" end="#T486" who="SPK2" xml:id="u417" >
-<u>et mon père m&#39;a pas m&#39;a empêché de rester</u>
+<u>et mon père m'a pas m'a empêché de rester</u>
 </annotationBlock>
 <annotationBlock start="#T486" end="#T487" who="SPK1" xml:id="u418" >
-<u>[ bb/unknown]</u>
+<u><incident type="unknown">bb</incident></u>
 </annotationBlock>
 <annotationBlock start="#T488" end="#T489" who="SPK2" xml:id="u419" >
-<u>ah c&#39;est ça qui est</u>
+<u>ah c'est ça qui est</u>
 </annotationBlock>
 <annotationBlock start="#T490" end="#T491" who="SPK1" xml:id="u420" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T492" end="#T493" who="SPK1" xml:id="u421" >
 <u>si tu serais resté en</u>
 </annotationBlock>
 <annotationBlock start="#T494" end="#T495" who="SPK2" xml:id="u422" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T496" end="#T497" who="SPK1" xml:id="u423" >
 <u>on serait là la troisième génération</u>
 </annotationBlock>
 <annotationBlock start="#T497" end="#T498" who="SPK2" xml:id="u424" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T498" end="#T499" who="SPK2" xml:id="u425" >
 <u>et ouais</u>
@@ -2744,7 +2742,7 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T500" end="#T501" who="SPK1" xml:id="u427" >
-<u>[ tx/unknown]</u>
+<u><incident type="unknown">tx</incident></u>
 </annotationBlock>
 <annotationBlock start="#T501" end="#T502" who="SPK1" xml:id="u428" >
 <u>après voilà</u>
@@ -2753,31 +2751,31 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T503" end="#T504" who="SPK2" xml:id="u430" >
-<u>[ bb/unknown]</u>
+<u><incident type="unknown">bb</incident></u>
 </annotationBlock>
 <annotationBlock start="#T504" end="#T505" who="SPK1" xml:id="u431" >
-<u>c&#39;est bizarre on a toujours été relié à la France</u>
+<u>c'est bizarre on a toujours été relié à la France</u>
 </annotationBlock>
 <annotationBlock start="#T505" end="#T506" who="SPK1" xml:id="u432" >
-<u>[ tx/unknown]</u>
+<u><incident type="unknown">tx</incident></u>
 </annotationBlock>
 <annotationBlock start="#T506" end="#T507" who="SPK2" xml:id="u433" >
-<u>ça c&#39;est sûr</u>
+<u>ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T507" end="#T508" who="SPK2" xml:id="u434" >
-<u>ça c&#39;est sûr</u>
+<u>ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T508" end="#T509" who="SPK1" xml:id="u435" >
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T509" end="#T510" who="SPK2" xml:id="u436" >
-<u>mon père est installé ici depuis l&#39;année 63</u>
+<u>mon père est installé ici depuis l'année 63</u>
 </annotationBlock>
 <annotationBlock start="#T510" end="#T511" who="SPK2" xml:id="u437" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T512" end="#T513" who="SPK1" xml:id="u438" >
-<u>ouais d&#39;accord</u>
+<u>ouais d'accord</u>
 </annotationBlock>
 <annotationBlock start="#T511" end="#T514" who="SPK2" xml:id="u439" >
 <u>il a été ici il a été maçon</u>
@@ -2786,7 +2784,7 @@ xml:id="xxx"
 <u>et il a été retraité mon compère ici ?</u>
 </annotationBlock>
 <annotationBlock start="#T515" end="#T516" who="SPK2" xml:id="u441" >
-<u>oui il est retraité d&#39;ici</u>
+<u>oui il est retraité d'ici</u>
 </annotationBlock>
 <annotationBlock start="#T515" end="#T517" who="SPK1" xml:id="u442" >
 <u>pron=pi</u>
@@ -2798,13 +2796,13 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T520" end="#T521" who="SPK2" xml:id="u445" >
-<u>puis il est rentré au Maroc et [ pron=pi/unknown]</u>
+<u>puis il est rentré au Maroc et <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T522" end="#T523" who="SPK1" xml:id="u446" >
-<u>[ tx/unknown]</u>
+<u><incident type="unknown">tx</incident></u>
 </annotationBlock>
 <annotationBlock start="#T521" end="#T524" who="SPK2" xml:id="u447" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T524" end="#T525" who="SPK1" xml:id="u448" >
 <u>mais pourquoi il est rentré lui aussi ?</u>
@@ -2816,10 +2814,10 @@ xml:id="xxx"
 <u>après la retraite</u>
 </annotationBlock>
 <annotationBlock start="#T528" end="#T529" who="SPK2" xml:id="u451" >
-<u>oui mais c&#39;est aussi après la retraite aussi</u>
+<u>oui mais c'est aussi après la retraite aussi</u>
 </annotationBlock>
 <annotationBlock start="#T530" end="#T531" who="SPK1" xml:id="u452" >
-<u>ah ouais d&#39;accord</u>
+<u>ah ouais d'accord</u>
 </annotationBlock>
 <annotationBlock start="#T532" end="#T533" who="SPK2" xml:id="u453" >
 <u>il faisait aussi le va et vient ici</u>
@@ -2837,13 +2835,13 @@ xml:id="xxx"
 <u>putain je savais pas toutes ces histoires</u>
 </annotationBlock>
 <annotationBlock start="#T537" end="#T538" who="SPK1" xml:id="u458" >
-<u>je savais je savais qu&#39;il avait</u>
+<u>je savais je savais qu'il avait</u>
 </annotationBlock>
 <annotationBlock start="#T538" end="#T539" who="SPK1" xml:id="u459" >
-<u>vécu ici mais je savais qu&#39;il a été retraité</u>
+<u>vécu ici mais je savais qu'il a été retraité</u>
 </annotationBlock>
 <annotationBlock start="#T539" end="#T540" who="SPK1" xml:id="u460" >
-<u>j&#39;étais pas sûr</u>
+<u>j'étais pas sûr</u>
 </annotationBlock>
 <annotationBlock start="#T540" end="#T541" who="SPK1" xml:id="u461" >
 <u></u>
@@ -2855,7 +2853,7 @@ xml:id="xxx"
 <u>le</u>
 </annotationBlock>
 <annotationBlock start="#T543" end="#T544" who="SPK2" xml:id="u464" >
-<u>[ pron=pi/unknown]     aussi</u>
+<u><incident type="unknown">pron=pi</incident>     aussi</u>
 </annotationBlock>
 <annotationBlock start="#T544" end="#T545" who="SPK2" xml:id="u465" >
 <u>il est marié ici</u>
@@ -2882,7 +2880,7 @@ xml:id="xxx"
 <u>ouais ouais je sais ouais</u>
 </annotationBlock>
 <annotationBlock start="#T553" end="#T554" who="SPK2" xml:id="u473" >
-<u>il s&#39;est séparé</u>
+<u>il s'est séparé</u>
 </annotationBlock>
 <annotationBlock start="#T554" end="#T555" who="SPK2" xml:id="u474" >
 <u></u>
@@ -2903,13 +2901,13 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T560" end="#T561" who="SPK1" xml:id="u480" >
-<u>je lui j&#39;ai plus nouvelle une fois quand je suis arrivé en France</u>
+<u>je lui j'ai plus nouvelle une fois quand je suis arrivé en France</u>
 </annotationBlock>
 <annotationBlock start="#T561" end="#T562" who="SPK1" xml:id="u481" >
-<u>je je l&#39;ai appelé il m&#39;a dit de</u>
+<u>je je l'ai appelé il m'a dit de</u>
 </annotationBlock>
 <annotationBlock start="#T562" end="#T563" who="SPK1" xml:id="u482" >
-<u>de passer le voir si j&#39;ai envie et tout</u>
+<u>de passer le voir si j'ai envie et tout</u>
 </annotationBlock>
 <annotationBlock start="#T563" end="#T564" who="SPK2" xml:id="u483" >
 <u>ouais</u>
@@ -2921,7 +2919,7 @@ xml:id="xxx"
 <u>mais sinon</u>
 </annotationBlock>
 <annotationBlock start="#T566" end="#T567" who="SPK1" xml:id="u486" >
-<u>plus de nouvelles lui n&#39;a jamais appelé</u>
+<u>plus de nouvelles lui n'a jamais appelé</u>
 </annotationBlock>
 <annotationBlock start="#T567" end="#T568" who="SPK2" xml:id="u487" >
 <u>oui sa femme elle aussi était</u>
@@ -2930,13 +2928,13 @@ xml:id="xxx"
 <u>bien elle était gentille et tout ça mais je ne sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T569" end="#T570" who="SPK2" xml:id="u489" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T570" end="#T571" who="SPK1" xml:id="u490" >
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T572" end="#T573" who="SPK2" xml:id="u491" >
-<u>ce qu&#39;il avait comme problème je je</u>
+<u>ce qu'il avait comme problème je je</u>
 </annotationBlock>
 <annotationBlock start="#T573" end="#T574" who="SPK2" xml:id="u492" >
 <u>je ne sais pas ça je ne sais pas</u>
@@ -2954,7 +2952,7 @@ xml:id="xxx"
 <u>ouais sur internet</u>
 </annotationBlock>
 <annotationBlock start="#T580" end="#T581" who="SPK2" xml:id="u497" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T579" end="#T582" who="SPK1" xml:id="u498" >
 <u>ouais ouais je parlais avec la</u>
@@ -2969,28 +2967,28 @@ xml:id="xxx"
 <u>bah elle qui étudie en</u>
 </annotationBlock>
 <annotationBlock start="#T585" end="#T585" who="SPK2" xml:id="u502" >
-<u>en faculté [ pron=*fac/unknown]</u>
+<u>en faculté <incident type="unknown">pron=*fac</incident></u>
 </annotationBlock>
 <annotationBlock start="#T586" end="#T587" who="SPK1" xml:id="u503" >
 <u>ouais celle qui est à la fac ouais</u>
 </annotationBlock>
 <annotationBlock start="#T587" end="#T588" who="SPK2" xml:id="u504" >
-<u>[ bb/unknown]</u>
+<u><incident type="unknown">bb</incident></u>
 </annotationBlock>
 <annotationBlock start="#T588" end="#T589" who="SPK2" xml:id="u505" >
-<u>et l&#39;autre je ne sais pas qu&#39;est-ce qu&#39;elle qu&#39;est-ce qu&#39;il fait [ pron=pi/unknown]</u>
+<u>et l'autre je ne sais pas qu'est-ce qu'elle qu'est-ce qu'il fait <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T590" end="#T591" who="SPK1" xml:id="u506" >
 <u>commerce euh</u>
 </annotationBlock>
 <annotationBlock start="#T589" end="#T592" who="SPK1" xml:id="u507" >
-<u>euh je crois qu&#39;elle</u>
+<u>euh je crois qu'elle</u>
 </annotationBlock>
 <annotationBlock start="#T592" end="#T593" who="SPK1" xml:id="u508" >
 <u>je crois elle bosse dans un hôtel ou je ne sais pas trop quoi</u>
 </annotationBlock>
 <annotationBlock start="#T593" end="#T594" who="SPK2" xml:id="u509" >
-<u>ouais c&#39;est ça</u>
+<u>ouais c'est ça</u>
 </annotationBlock>
 <annotationBlock start="#T594" end="#T595" who="SPK1" xml:id="u510" >
 <u></u>
@@ -2999,28 +2997,28 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T596" end="#T597" who="SPK2" xml:id="u512" >
-<u>je l&#39;avais eu</u>
+<u>je l'avais eu</u>
 </annotationBlock>
 <annotationBlock start="#T597" end="#T598" who="SPK2" xml:id="u513" >
-<u>aussi au [ pron=pi/unknown]</u>
+<u>aussi au <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T598" end="#T599" who="SPK2" xml:id="u514" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T599" end="#T600" who="SPK2" xml:id="u515" >
-<u>[ pron=pi/unknown]     je l&#39;ai</u>
+<u><incident type="unknown">pron=pi</incident>     je l'ai</u>
 </annotationBlock>
 <annotationBlock start="#T600" end="#T601" who="SPK2" xml:id="u516" >
 <u>perdu de vue je ne sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T601" end="#T602" who="SPK2" xml:id="u517" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T602" end="#T603" who="SPK1" xml:id="u518" >
 <u>après tu sais</u>
 </annotationBlock>
 <annotationBlock start="#T603" end="#T604" who="SPK1" xml:id="u519" >
-<u>pour elle c&#39;est compliqué parce que euh</u>
+<u>pour elle c'est compliqué parce que euh</u>
 </annotationBlock>
 <annotationBlock start="#T604" end="#T605" who="SPK1" xml:id="u520" >
 <u>enfin</u>
@@ -3029,13 +3027,13 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T606" end="#T607" who="SPK1" xml:id="u522" >
-<u>c&#39;est pas comme nous tu vois</u>
+<u>c'est pas comme nous tu vois</u>
 </annotationBlock>
 <annotationBlock start="#T607" end="#T608" who="SPK1" xml:id="u523" >
 <u>genre euh</u>
 </annotationBlock>
 <annotationBlock start="#T608" end="#T609" who="SPK1" xml:id="u524" >
-<u>c&#39;est la faute de leur père aussi de mon oncle</u>
+<u>c'est la faute de leur père aussi de mon oncle</u>
 </annotationBlock>
 <annotationBlock start="#T609" end="#T610" who="SPK2" xml:id="u525" >
 <u>ouais ouais</u>
@@ -3047,10 +3045,10 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T614" end="#T615" who="SPK2" xml:id="u528" >
-<u>ouais c&#39;est ça</u>
+<u>ouais c'est ça</u>
 </annotationBlock>
 <annotationBlock start="#T615" end="#T616" who="SPK2" xml:id="u529" >
-<u>c&#39;est ça c&#39;est</u>
+<u>c'est ça c'est</u>
 </annotationBlock>
 <annotationBlock start="#T616" end="#T617" who="SPK2" xml:id="u530" >
 <u></u>
@@ -3083,7 +3081,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T626" end="#T627" who="SPK2" xml:id="u540" >
-<u>ça c&#39;est sûr</u>
+<u>ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T628" end="#T629" who="SPK1" xml:id="u541" >
 <u>je serais lié à vie avec le Maroc mais pour elle</u>
@@ -3092,7 +3090,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T630" end="#T631" who="SPK2" xml:id="u543" >
-<u>c&#39;est difficile</u>
+<u>c'est difficile</u>
 </annotationBlock>
 <annotationBlock start="#T631" end="#T632" who="SPK1" xml:id="u544" >
 <u>bah oui</u>
@@ -3119,10 +3117,10 @@ xml:id="xxx"
 <u>pron=pi</u>
 </annotationBlock>
 <annotationBlock start="#T638" end="#T641" who="SPK1" xml:id="u552" >
-<u>c&#39;est différent c&#39;est différent parce que euh</u>
+<u>c'est différent c'est différent parce que euh</u>
 </annotationBlock>
 <annotationBlock start="#T641" end="#T642" who="SPK1" xml:id="u553" >
-<u>tu vois c&#39;est déjà c&#39;est pas</u>
+<u>tu vois c'est déjà c'est pas</u>
 </annotationBlock>
 <annotationBlock start="#T642" end="#T643" who="SPK1" xml:id="u554" >
 <u></u>
@@ -3137,7 +3135,7 @@ xml:id="xxx"
 <u>eux ils parlaient ensemble</u>
 </annotationBlock>
 <annotationBlock start="#T646" end="#T647" who="SPK2" xml:id="u558" >
-<u>ah c&#39;est ça ?</u>
+<u>ah c'est ça ?</u>
 </annotationBlock>
 <annotationBlock start="#T647" end="#T648" who="SPK1" xml:id="u559" >
 <u>dans la maison ils parlaient français</u>
@@ -3149,25 +3147,25 @@ xml:id="xxx"
 <u>mais ouais ouais ouais</u>
 </annotationBlock>
 <annotationBlock start="#T650" end="#T651" who="SPK2" xml:id="u562" >
-<u>[ bb/unknown]</u>
+<u><incident type="unknown">bb</incident></u>
 </annotationBlock>
 <annotationBlock start="#T651" end="#T652" who="SPK2" xml:id="u563" >
-<u>surtout j&#39;aime Lyon moi aussi</u>
+<u>surtout j'aime Lyon moi aussi</u>
 </annotationBlock>
 <annotationBlock start="#T652" end="#T653" who="SPK2" xml:id="u564" >
-<u>j&#39;aime Lyon et</u>
+<u>j'aime Lyon et</u>
 </annotationBlock>
 <annotationBlock start="#T654" end="#T655" who="SPK1" xml:id="u565" >
 <u>bah</u>
 </annotationBlock>
 <annotationBlock start="#T653" end="#T656" who="SPK2" xml:id="u566" >
-<u>les [ pron=pi/unknown]</u>
+<u>les <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T656" end="#T657" who="SPK2" xml:id="u567" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T658" end="#T659" who="SPK1" xml:id="u568" >
-<u>on essayera d&#39;y aller un jour</u>
+<u>on essayera d'y aller un jour</u>
 </annotationBlock>
 <annotationBlock start="#T659" end="#T660" who="SPK1" xml:id="u569" >
 <u></u>
@@ -3191,22 +3189,22 @@ xml:id="xxx"
 <u>pron=pi</u>
 </annotationBlock>
 <annotationBlock start="#T667" end="#T668" who="SPK2" xml:id="u576" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T668" end="#T669" who="SPK2" xml:id="u577" >
-<u>[ e/unknown]</u>
+<u><incident type="unknown">e</incident></u>
 </annotationBlock>
 <annotationBlock start="#T669" end="#T670" who="SPK2" xml:id="u578" >
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T671" end="#T672" who="SPK1" xml:id="u579" >
-<u>l&#39;équipe de Lyon ouais</u>
+<u>l'équipe de Lyon ouais</u>
 </annotationBlock>
 <annotationBlock start="#T672" end="#T673" who="SPK2" xml:id="u580" >
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T673" end="#T674" who="SPK1" xml:id="u581" >
-<u>moi j&#39;ai jamais été à Lyon</u>
+<u>moi j'ai jamais été à Lyon</u>
 </annotationBlock>
 <annotationBlock start="#T674" end="#T675" who="SPK1" xml:id="u582" >
 <u>je ne sais pas ça doit être une belle vie apparemment</u>
@@ -3218,7 +3216,7 @@ xml:id="xxx"
 <u>mais bien sûr</u>
 </annotationBlock>
 <annotationBlock start="#T678" end="#T679" who="SPK1" xml:id="u585" >
-<u>enfin après les gens ils disent que c&#39;est une belle ville</u>
+<u>enfin après les gens ils disent que c'est une belle ville</u>
 </annotationBlock>
 <annotationBlock start="#T679" end="#T680" who="SPK1" xml:id="u586" >
 <u></u>
@@ -3233,13 +3231,13 @@ xml:id="xxx"
 <u>aussi il a joué le foot euh</u>
 </annotationBlock>
 <annotationBlock start="#T684" end="#T685" who="SPK2" xml:id="u590" >
-<u>euh [ pron=pi/unknown]     avec l&#39;équipe euh [ pron=pi/unknown]</u>
+<u>euh <incident type="unknown">pron=pi</incident>     avec l'équipe euh <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T685" end="#T686" who="SPK2" xml:id="u591" >
-<u>l&#39;équipe de euh de euh</u>
+<u>l'équipe de euh de euh</u>
 </annotationBlock>
 <annotationBlock start="#T686" end="#T687" who="SPK2" xml:id="u592" >
-<u>enfin [ pron=pi/unknown]</u>
+<u>enfin <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T687" end="#T688" who="SPK1" xml:id="u593" >
 <u>ouais ouais</u>
@@ -3248,7 +3246,7 @@ xml:id="xxx"
 <u>et puis</u>
 </annotationBlock>
 <annotationBlock start="#T689" end="#T690" who="SPK2" xml:id="u595" >
-<u>il s&#39;est intégré euh</u>
+<u>il s'est intégré euh</u>
 </annotationBlock>
 <annotationBlock start="#T690" end="#T691" who="SPK2" xml:id="u596" >
 <u></u>
@@ -3260,7 +3258,7 @@ xml:id="xxx"
 <u>maintenant il doit il</u>
 </annotationBlock>
 <annotationBlock start="#T693" end="#T694" who="SPK2" xml:id="u599" >
-<u>enfin attendre deux ans je pense il aura sa [ pron=pi/unknown]</u>
+<u>enfin attendre deux ans je pense il aura sa <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T694" end="#T695" who="SPK1" xml:id="u600" >
 <u>ouais</u>
@@ -3278,43 +3276,43 @@ xml:id="xxx"
 <u>oui il est plus jeune que moi</u>
 </annotationBlock>
 <annotationBlock start="#T700" end="#T701" who="SPK1" xml:id="u605" >
-<u>t&#39;étais le plus vieux toi ?</u>
+<u>t'étais le plus vieux toi ?</u>
 </annotationBlock>
 <annotationBlock start="#T701" end="#T702" who="SPK1" xml:id="u606" >
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T702" end="#T703" who="SPK1" xml:id="u607" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T704" end="#T705" who="SPK1" xml:id="u608" >
-<u>t&#39;es encore plus vieux que mon oncle celui que</u>
+<u>t'es encore plus vieux que mon oncle celui que</u>
 </annotationBlock>
 <annotationBlock start="#T705" end="#T706" who="SPK2" xml:id="u609" >
-<u>[ pf/unknown]</u>
+<u><incident type="unknown">pf</incident></u>
 </annotationBlock>
 <annotationBlock start="#T706" end="#T707" who="SPK1" xml:id="u610" >
-<u>Ahmed là [ pron=pi/unknown]</u>
+<u>Ahmed là <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T708" end="#T709" who="SPK2" xml:id="u611" >
-<u>non pas Ahmed Ahmed il est [ pron=pi/unknown]</u>
+<u>non pas Ahmed Ahmed il est <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T709" end="#T710" who="SPK1" xml:id="u612" >
-<u>ah c&#39;est [ pron=pi/unknown]     enfin</u>
+<u>ah c'est <incident type="unknown">pron=pi</incident>     enfin</u>
 </annotationBlock>
 <annotationBlock start="#T711" end="#T712" who="SPK2" xml:id="u613" >
-<u>c&#39;est [ pron=pi/unknown]</u>
+<u>c'est <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T710" end="#T713" who="SPK1" xml:id="u614" >
-<u>t&#39;es</u>
+<u>t'es</u>
 </annotationBlock>
 <annotationBlock start="#T713" end="#T714" who="SPK1" xml:id="u615" >
-<u>t&#39;es pas le plus vieux alors</u>
+<u>t'es pas le plus vieux alors</u>
 </annotationBlock>
 <annotationBlock start="#T715" end="#T716" who="SPK2" xml:id="u616" >
 <u>il y en a non</u>
 </annotationBlock>
 <annotationBlock start="#T714" end="#T717" who="SPK1" xml:id="u617" >
-<u>t&#39;es</u>
+<u>t'es</u>
 </annotationBlock>
 <annotationBlock start="#T717" end="#T718" who="SPK2" xml:id="u618" >
 <u>non pas du tout</u>
@@ -3341,13 +3339,13 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T727" end="#T728" who="SPK1" xml:id="u626" >
-<u>c&#39;est dommage que vous soyez partis</u>
+<u>c'est dommage que vous soyez partis</u>
 </annotationBlock>
 <annotationBlock start="#T729" end="#T730" who="SPK2" xml:id="u627" >
 <u>pendant un moment</u>
 </annotationBlock>
 <annotationBlock start="#T728" end="#T731" who="SPK2" xml:id="u628" >
-<u>[ r/unknown]</u>
+<u><incident type="unknown">r</incident></u>
 </annotationBlock>
 <annotationBlock start="#T731" end="#T732" who="SPK2" xml:id="u629" >
 <u>il y a un moment on euh</u>
@@ -3359,10 +3357,10 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T734" end="#T735" who="SPK1" xml:id="u632" >
-<u>si t&#39;avais juste ta carte</u>
+<u>si t'avais juste ta carte</u>
 </annotationBlock>
 <annotationBlock start="#T736" end="#T737" who="SPK2" xml:id="u633" >
-<u>on prenait le visa mais on n&#39;avait</u>
+<u>on prenait le visa mais on n'avait</u>
 </annotationBlock>
 <annotationBlock start="#T738" end="#T739" who="SPK2" xml:id="u634" >
 <u>il y avait pas de visa</u>
@@ -3374,10 +3372,10 @@ xml:id="xxx"
 <u>ah il y a pas de ?</u>
 </annotationBlock>
 <annotationBlock start="#T743" end="#T744" who="SPK1" xml:id="u637" >
-<u>de visa à l&#39;époque</u>
+<u>de visa à l'époque</u>
 </annotationBlock>
 <annotationBlock start="#T745" end="#T746" who="SPK2" xml:id="u638" >
-<u>quand on nous dise d&#39;y aller et de retourner donc euh</u>
+<u>quand on nous dise d'y aller et de retourner donc euh</u>
 </annotationBlock>
 <annotationBlock start="#T746" end="#T747" who="SPK1" xml:id="u639" >
 <u>ouais</u>
@@ -3386,7 +3384,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T748" end="#T749" who="SPK2" xml:id="u641" >
-<u>j&#39;ai pas eu l&#39;occasion de rester</u>
+<u>j'ai pas eu l'occasion de rester</u>
 </annotationBlock>
 <annotationBlock start="#T750" end="#T751" who="SPK1" xml:id="u642" >
 <u>que mon grand-père il a dit euh</u>
@@ -3395,16 +3393,16 @@ xml:id="xxx"
 <u>pourquoi il a dit ça ?</u>
 </annotationBlock>
 <annotationBlock start="#T753" end="#T754" who="SPK2" xml:id="u644" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T754" end="#T755" who="SPK2" xml:id="u645" >
-<u>[ rire/unknown]</u>
+<u><incident type="unknown">rire</incident></u>
 </annotationBlock>
 <annotationBlock start="#T755" end="#T756" who="SPK1" xml:id="u646" >
 <u>pourquoi il a dit ça ?</u>
 </annotationBlock>
 <annotationBlock start="#T757" end="#T758" who="SPK2" xml:id="u647" >
-<u>on respect [ pron=pi/unknown]</u>
+<u>on respect <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T759" end="#T760" who="SPK1" xml:id="u648" >
 <u>il voulez pas que vous restiez ici</u>
@@ -3413,19 +3411,19 @@ xml:id="xxx"
 <u>il veut il veut</u>
 </annotationBlock>
 <annotationBlock start="#T762" end="#T763" who="SPK2" xml:id="u650" >
-<u>il veut pas qu&#39;on reste ici</u>
+<u>il veut pas qu'on reste ici</u>
 </annotationBlock>
 <annotationBlock start="#T763" end="#T764" who="SPK1" xml:id="u651" >
 <u>pourquoi ?</u>
 </annotationBlock>
 <annotationBlock start="#T764" end="#T765" who="SPK2" xml:id="u652" >
-<u>bah je ne sais pas c&#39;est sa pensée à</u>
+<u>bah je ne sais pas c'est sa pensée à</u>
 </annotationBlock>
 <annotationBlock start="#T765" end="#T766" who="SPK2" xml:id="u653" >
 <u>à cette époque là</u>
 </annotationBlock>
 <annotationBlock start="#T767" end="#T768" who="SPK1" xml:id="u654" >
-<u>ah ouais c&#39;est vrai après à cette époque ouais</u>
+<u>ah ouais c'est vrai après à cette époque ouais</u>
 </annotationBlock>
 <annotationBlock start="#T768" end="#T769" who="SPK2" xml:id="u655" >
 <u>ouais</u>
@@ -3440,7 +3438,7 @@ xml:id="xxx"
 <u>maintenant</u>
 </annotationBlock>
 <annotationBlock start="#T772" end="#T773" who="SPK2" xml:id="u659" >
-<u>[ mic/unknown]</u>
+<u><incident type="unknown">mic</incident></u>
 </annotationBlock>
 <annotationBlock start="#T773" end="#T774" who="SPK2" xml:id="u660" >
 <u>on a eu de la chance que vous vous êtes installés ici</u>
@@ -3458,7 +3456,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T779" end="#T780" who="SPK2" xml:id="u665" >
-<u>c&#39;est retourné</u>
+<u>c'est retourné</u>
 </annotationBlock>
 <annotationBlock start="#T780" end="#T781" who="SPK1" xml:id="u666" >
 <u>ouais</u>
@@ -3470,13 +3468,13 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T783" end="#T784" who="SPK1" xml:id="u669" >
-<u>on s&#39;est retrouvés ici nous</u>
+<u>on s'est retrouvés ici nous</u>
 </annotationBlock>
 <annotationBlock start="#T784" end="#T785" who="SPK1" xml:id="u670" >
 <u>alors que euh</u>
 </annotationBlock>
 <annotationBlock start="#T785" end="#T786" who="SPK1" xml:id="u671" >
-<u>c&#39;était le grand-père que</u>
+<u>c'était le grand-père que</u>
 </annotationBlock>
 <annotationBlock start="#T786" end="#T787" who="SPK2" xml:id="u672" >
 <u>ouais</u>
@@ -3488,13 +3486,13 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T789" end="#T790" who="SPK2" xml:id="u675" >
-<u>et dernièrement j&#39;ai rencontré un copain qui a</u>
+<u>et dernièrement j'ai rencontré un copain qui a</u>
 </annotationBlock>
 <annotationBlock start="#T790" end="#T791" who="SPK2" xml:id="u676" >
-<u>qui s&#39;est installé à [ pron=pi/unknown]</u>
+<u>qui s'est installé à <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T791" end="#T792" who="SPK2" xml:id="u677" >
-<u>[ r/unknown]</u>
+<u><incident type="unknown">r</incident></u>
 </annotationBlock>
 <annotationBlock start="#T792" end="#T793" who="SPK2" xml:id="u678" >
 <u>aussi il a fait aussi la pharmacie</u>
@@ -3512,7 +3510,7 @@ xml:id="xxx"
 <u>oui oui du Maroc aussi</u>
 </annotationBlock>
 <annotationBlock start="#T800" end="#T801" who="SPK2" xml:id="u683" >
-<u>enfin c&#39;est un copain</u>
+<u>enfin c'est un copain</u>
 </annotationBlock>
 <annotationBlock start="#T801" end="#T802" who="SPK2" xml:id="u684" >
 <u>du Maroc ou ?</u>
@@ -3560,13 +3558,13 @@ xml:id="xxx"
 <u>il a fait des études et puis</u>
 </annotationBlock>
 <annotationBlock start="#T818" end="#T819" who="SPK1" xml:id="u699" >
-<u>un copain c&#39;est un</u>
+<u>un copain c'est un</u>
 </annotationBlock>
 <annotationBlock start="#T819" end="#T820" who="SPK2" xml:id="u700" >
-<u>c&#39;est un copain à moi</u>
+<u>c'est un copain à moi</u>
 </annotationBlock>
 <annotationBlock start="#T820" end="#T821" who="SPK1" xml:id="u701" >
-<u>ah ouais d&#39;accord</u>
+<u>ah ouais d'accord</u>
 </annotationBlock>
 <annotationBlock start="#T821" end="#T822" who="SPK2" xml:id="u702" >
 <u>qui a travaillé avec moi aussi en</u>
@@ -3578,7 +3576,7 @@ xml:id="xxx"
 <u>ah ouais</u>
 </annotationBlock>
 <annotationBlock start="#T824" end="#T825" who="SPK1" xml:id="u705" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T826" end="#T827" who="SPK2" xml:id="u706" >
 <u>et par la suite</u>
@@ -3587,7 +3585,7 @@ xml:id="xxx"
 <u>lui il a continué ici là il a sa retraite et</u>
 </annotationBlock>
 <annotationBlock start="#T828" end="#T829" who="SPK2" xml:id="u708" >
-<u>on s&#39;est rencontré dernièrement là</u>
+<u>on s'est rencontré dernièrement là</u>
 </annotationBlock>
 <annotationBlock start="#T829" end="#T830" who="SPK1" xml:id="u709" >
 <u>mh</u>
@@ -3602,25 +3600,25 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T833" end="#T834" who="SPK2" xml:id="u713" >
-<u>ça c&#39;est sûr</u>
+<u>ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T834" end="#T835" who="SPK2" xml:id="u714" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T835" end="#T836" who="SPK1" xml:id="u715" >
-<u>moi j&#39;ai une fois</u>
+<u>moi j'ai une fois</u>
 </annotationBlock>
 <annotationBlock start="#T836" end="#T837" who="SPK1" xml:id="u716" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T837" end="#T838" who="SPK1" xml:id="u717" >
-<u>j&#39;étais dans un bus à Paris</u>
+<u>j'étais dans un bus à Paris</u>
 </annotationBlock>
 <annotationBlock start="#T838" end="#T839" who="SPK1" xml:id="u718" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T839" end="#T840" who="SPK1" xml:id="u719" >
-<u>je venais juste d&#39;arriver en France enfin après quelques mois</u>
+<u>je venais juste d'arriver en France enfin après quelques mois</u>
 </annotationBlock>
 <annotationBlock start="#T840" end="#T841" who="SPK1" xml:id="u720" >
 <u>quelques mois après que je sois arrivé</u>
@@ -3632,10 +3630,10 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T843" end="#T844" who="SPK1" xml:id="u723" >
-<u>et j&#39;ai un mec qui vient me parler je me dis c&#39;est qui lui pourquoi il me parle je le connais</u>
+<u>et j'ai un mec qui vient me parler je me dis c'est qui lui pourquoi il me parle je le connais</u>
 </annotationBlock>
 <annotationBlock start="#T844" end="#T845" who="SPK1" xml:id="u724" >
-<u>je connaissais personne à l&#39;époque</u>
+<u>je connaissais personne à l'époque</u>
 </annotationBlock>
 <annotationBlock start="#T845" end="#T846" who="SPK1" xml:id="u725" >
 <u></u>
@@ -3650,13 +3648,13 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T849" end="#T850" who="SPK1" xml:id="u729" >
-<u>c&#39;est un gars de mon quartier</u>
+<u>c'est un gars de mon quartier</u>
 </annotationBlock>
 <annotationBlock start="#T850" end="#T851" who="SPK1" xml:id="u730" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T851" end="#T852" who="SPK2" xml:id="u731" >
-<u>c&#39;est pas vrai ?</u>
+<u>c'est pas vrai ?</u>
 </annotationBlock>
 <annotationBlock start="#T853" end="#T854" who="SPK1" xml:id="u732" >
 <u>enfin il habite à</u>
@@ -3668,10 +3666,10 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T856" end="#T857" who="SPK2" xml:id="u735" >
-<u>il s&#39;appelle comment lui ?</u>
+<u>il s'appelle comment lui ?</u>
 </annotationBlock>
 <annotationBlock start="#T858" end="#T859" who="SPK1" xml:id="u736" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T857" end="#T860" who="SPK2" xml:id="u737" >
 <u>je connais moi aussi ?</u>
@@ -3683,10 +3681,10 @@ xml:id="xxx"
 <u>tu dois le connaître de vue après les noms tu sais</u>
 </annotationBlock>
 <annotationBlock start="#T864" end="#T865" who="SPK2" xml:id="u740" >
-<u>oui oui c&#39;est une jeune comme vous maintenant</u>
+<u>oui oui c'est une jeune comme vous maintenant</u>
 </annotationBlock>
 <annotationBlock start="#T866" end="#T867" who="SPK1" xml:id="u741" >
-<u>ouais c&#39;est un jeune hein</u>
+<u>ouais c'est un jeune hein</u>
 </annotationBlock>
 <annotationBlock start="#T865" end="#T868" who="SPK2" xml:id="u742" >
 <u>mh mh comme toi</u>
@@ -3701,7 +3699,7 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T872" end="#T873" who="SPK1" xml:id="u746" >
-<u>il a [ pron=pi/unknown]     enfin</u>
+<u>il a <incident type="unknown">pron=pi</incident>     enfin</u>
 </annotationBlock>
 <annotationBlock start="#T873" end="#T874" who="SPK1" xml:id="u747" >
 <u>après chacun son histoire</u>
@@ -3722,7 +3720,7 @@ xml:id="xxx"
 <u>ouais mais en vrai quand tu demandes euh</u>
 </annotationBlock>
 <annotationBlock start="#T879" end="#T880" who="SPK1" xml:id="u753" >
-<u>aux personnes tout ce qu&#39;ils sont devenus euh</u>
+<u>aux personnes tout ce qu'ils sont devenus euh</u>
 </annotationBlock>
 <annotationBlock start="#T880" end="#T881" who="SPK1" xml:id="u754" >
 <u>enfin</u>
@@ -3797,16 +3795,16 @@ xml:id="xxx"
 <u>ils ont tous les mêmes problèmes</u>
 </annotationBlock>
 <annotationBlock start="#T906" end="#T907" who="SPK2" xml:id="u778" >
-<u>ouais c&#39;est</u>
+<u>ouais c'est</u>
 </annotationBlock>
 <annotationBlock start="#T905" end="#T908" who="SPK1" xml:id="u779" >
-<u>c&#39;est un truc de malade</u>
+<u>c'est un truc de malade</u>
 </annotationBlock>
 <annotationBlock start="#T909" end="#T910" who="SPK2" xml:id="u780" >
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T910" end="#T911" who="SPK2" xml:id="u781" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T911" end="#T912" who="SPK2" xml:id="u782" >
 <u></u>
@@ -3830,13 +3828,13 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T918" end="#T919" who="SPK1" xml:id="u789" >
-<u>j&#39;ai deux potes</u>
+<u>j'ai deux potes</u>
 </annotationBlock>
 <annotationBlock start="#T919" end="#T920" who="SPK1" xml:id="u790" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T920" end="#T921" who="SPK1" xml:id="u791" >
-<u>c c&#39;est des mecs du quartier tu dois être les connaître sûrement</u>
+<u>c c'est des mecs du quartier tu dois être les connaître sûrement</u>
 </annotationBlock>
 <annotationBlock start="#T921" end="#T922" who="SPK1" xml:id="u792" >
 <u>après les noms euh</u>
@@ -3854,7 +3852,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T926" end="#T927" who="SPK1" xml:id="u797" >
-<u>c&#39;était des amis d&#39;enfance</u>
+<u>c'était des amis d'enfance</u>
 </annotationBlock>
 <annotationBlock start="#T927" end="#T928" who="SPK1" xml:id="u798" >
 <u>il y en a un il a fait</u>
@@ -3899,16 +3897,16 @@ xml:id="xxx"
 <u>bah parce que euh</u>
 </annotationBlock>
 <annotationBlock start="#T941" end="#T942" who="SPK1" xml:id="u812" >
-<u>ça fait 10 ans qu&#39;il était en France</u>
+<u>ça fait 10 ans qu'il était en France</u>
 </annotationBlock>
 <annotationBlock start="#T942" end="#T943" who="SPK1" xml:id="u813" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T943" end="#T944" who="SPK1" xml:id="u814" >
-<u>lui il est venu à l&#39;âge de 18 ans</u>
+<u>lui il est venu à l'âge de 18 ans</u>
 </annotationBlock>
 <annotationBlock start="#T944" end="#T945" who="SPK2" xml:id="u815" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T945" end="#T946" who="SPK1" xml:id="u816" >
 <u>juste après le bac</u>
@@ -3929,7 +3927,7 @@ xml:id="xxx"
 <u>même après toutes ces années</u>
 </annotationBlock>
 <annotationBlock start="#T953" end="#T954" who="SPK1" xml:id="u822" >
-<u>d&#39;études tout ça</u>
+<u>d'études tout ça</u>
 </annotationBlock>
 <annotationBlock start="#T954" end="#T955" who="SPK1" xml:id="u823" >
 <u>il a fait que étudier</u>
@@ -3950,13 +3948,13 @@ xml:id="xxx"
 <u>au final il est</u>
 </annotationBlock>
 <annotationBlock start="#T960" end="#T961" who="SPK1" xml:id="u829" >
-<u>il s&#39;est retrouvé parce que</u>
+<u>il s'est retrouvé parce que</u>
 </annotationBlock>
 <annotationBlock start="#T961" end="#T962" who="SPK1" xml:id="u830" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T962" end="#T963" who="SPK1" xml:id="u831" >
-<u>il s&#39;est retrouvé sans</u>
+<u>il s'est retrouvé sans</u>
 </annotationBlock>
 <annotationBlock start="#T963" end="#T964" who="SPK1" xml:id="u832" >
 <u>enfin en vrai chaque année il renouvelait par rapport à ses études</u>
@@ -3992,16 +3990,16 @@ xml:id="xxx"
 <u>donc ceux qui sont venu pour les études euh</u>
 </annotationBlock>
 <annotationBlock start="#T974" end="#T975" who="SPK1" xml:id="u843" >
-<u>et qui sont restés c&#39;est gens</u>
+<u>et qui sont restés c'est gens</u>
 </annotationBlock>
 <annotationBlock start="#T975" end="#T976" who="SPK1" xml:id="u844" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T976" end="#T977" who="SPK1" xml:id="u845" >
-<u>en fait la seule solution c&#39;est de se marier en fait</u>
+<u>en fait la seule solution c'est de se marier en fait</u>
 </annotationBlock>
 <annotationBlock start="#T977" end="#T978" who="SPK2" xml:id="u846" >
-<u>ouais ça c&#39;est sûr</u>
+<u>ouais ça c'est sûr</u>
 </annotationBlock>
 <annotationBlock start="#T979" end="#T980" who="SPK1" xml:id="u847" >
 <u>pour avoir des papiers sinon</u>
@@ -4010,13 +4008,13 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T981" end="#T982" who="SPK1" xml:id="u849" >
-<u>j&#39;en connais un autre euh</u>
+<u>j'en connais un autre euh</u>
 </annotationBlock>
 <annotationBlock start="#T982" end="#T983" who="SPK1" xml:id="u850" >
 <u>enfin</u>
 </annotationBlock>
 <annotationBlock start="#T983" end="#T984" who="SPK1" xml:id="u851" >
-<u>c&#39;était mon</u>
+<u>c'était mon</u>
 </annotationBlock>
 <annotationBlock start="#T984" end="#T985" who="SPK1" xml:id="u852" >
 <u>meilleur pote euh</u>
@@ -4025,16 +4023,16 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T986" end="#T987" who="SPK1" xml:id="u854" >
-<u>c&#39;était mon</u>
+<u>c'était mon</u>
 </annotationBlock>
 <annotationBlock start="#T987" end="#T988" who="SPK1" xml:id="u855" >
-<u>mon meilleur copain d&#39;enfance</u>
+<u>mon meilleur copain d'enfance</u>
 </annotationBlock>
 <annotationBlock start="#T988" end="#T989" who="SPK1" xml:id="u856" >
-<u>[ pron=pi/unknown]    il était fort en maths et tout</u>
+<u><incident type="unknown">pron=pi</incident>    il était fort en maths et tout</u>
 </annotationBlock>
 <annotationBlock start="#T989" end="#T990" who="SPK1" xml:id="u857" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T990" end="#T991" who="SPK1" xml:id="u858" >
 <u>bref</u>
@@ -4049,25 +4047,25 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T994" end="#T995" who="SPK1" xml:id="u862" >
-<u>lui [ pron=pi/unknown]</u>
+<u>lui <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T995" end="#T996" who="SPK1" xml:id="u863" >
-<u>par contre euh je l&#39;ai ren</u>
+<u>par contre euh je l'ai ren</u>
 </annotationBlock>
 <annotationBlock start="#T996" end="#T997" who="SPK1" xml:id="u864" >
-<u>je l&#39;ai</u>
+<u>je l'ai</u>
 </annotationBlock>
 <annotationBlock start="#T997" end="#T998" who="SPK1" xml:id="u865" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T998" end="#T999" who="SPK1" xml:id="u866" >
-<u>je l&#39;ai</u>
+<u>je l'ai</u>
 </annotationBlock>
 <annotationBlock start="#T999" end="#T1000" who="SPK1" xml:id="u867" >
-<u>je l&#39;ai eu sur internet</u>
+<u>je l'ai eu sur internet</u>
 </annotationBlock>
 <annotationBlock start="#T1000" end="#T1001" who="SPK1" xml:id="u868" >
-<u>c&#39;est comme ça qu&#39;on est</u>
+<u>c'est comme ça qu'on est</u>
 </annotationBlock>
 <annotationBlock start="#T1001" end="#T1002" who="SPK1" xml:id="u869" >
 <u>revu</u>
@@ -4076,10 +4074,10 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1003" end="#T1004" who="SPK1" xml:id="u871" >
-<u>enfin on s&#39;était donné rendez-vous à Paris et tout</u>
+<u>enfin on s'était donné rendez-vous à Paris et tout</u>
 </annotationBlock>
 <annotationBlock start="#T1004" end="#T1005" who="SPK1" xml:id="u872" >
-<u>[ bb/unknown]</u>
+<u><incident type="unknown">bb</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1005" end="#T1006" who="SPK1" xml:id="u873" >
 <u>lui pour</u>
@@ -4094,13 +4092,13 @@ xml:id="xxx"
 <u>il a fait des grandes études</u>
 </annotationBlock>
 <annotationBlock start="#T1009" end="#T1010" who="SPK1" xml:id="u877" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1010" end="#T1011" who="SPK1" xml:id="u878" >
 <u>quand il a fini euh</u>
 </annotationBlock>
 <annotationBlock start="#T1011" end="#T1012" who="SPK1" xml:id="u879" >
-<u>lui il s&#39;est marié enfin</u>
+<u>lui il s'est marié enfin</u>
 </annotationBlock>
 <annotationBlock start="#T1012" end="#T1013" who="SPK1" xml:id="u880" >
 <u>parce que sinon il aurait pu</u>
@@ -4118,7 +4116,7 @@ xml:id="xxx"
 <u>je ne sais pas comment ça se passe mais</u>
 </annotationBlock>
 <annotationBlock start="#T1017" end="#T1018" who="SPK1" xml:id="u885" >
-<u>t&#39;es obligé de retourner</u>
+<u>t'es obligé de retourner</u>
 </annotationBlock>
 <annotationBlock start="#T1018" end="#T1019" who="SPK1" xml:id="u886" >
 <u></u>
@@ -4127,16 +4125,16 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T1021" end="#T1022" who="SPK1" xml:id="u888" >
-<u>parce que t&#39;as</u>
+<u>parce que t'as</u>
 </annotationBlock>
 <annotationBlock start="#T1022" end="#T1023" who="SPK1" xml:id="u889" >
-<u>sinon c&#39;est</u>
+<u>sinon c'est</u>
 </annotationBlock>
 <annotationBlock start="#T1023" end="#T1024" who="SPK1" xml:id="u890" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1024" end="#T1025" who="SPK1" xml:id="u891" >
-<u>t&#39;as pas le droit des rester quoi</u>
+<u>t'as pas le droit des rester quoi</u>
 </annotationBlock>
 <annotationBlock start="#T1025" end="#T1026" who="SPK1" xml:id="u892" >
 <u></u>
@@ -4148,31 +4146,31 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1028" end="#T1029" who="SPK1" xml:id="u895" >
-<u>bah je ne sais pas après ça dépend si t&#39;as un bon métier</u>
+<u>bah je ne sais pas après ça dépend si t'as un bon métier</u>
 </annotationBlock>
 <annotationBlock start="#T1029" end="#T1030" who="SPK1" xml:id="u896" >
-<u>enfin je crois c&#39;est très compliqué</u>
+<u>enfin je crois c'est très compliqué</u>
 </annotationBlock>
 <annotationBlock start="#T1031" end="#T1032" who="SPK2" xml:id="u897" >
-<u>c&#39;est</u>
+<u>c'est</u>
 </annotationBlock>
 <annotationBlock start="#T1032" end="#T1033" who="SPK2" xml:id="u898" >
-<u>c&#39;est compliqué hein</u>
+<u>c'est compliqué hein</u>
 </annotationBlock>
 <annotationBlock start="#T1034" end="#T1035" who="SPK1" xml:id="u899" >
-<u>c&#39;est très très compliqué</u>
+<u>c'est très très compliqué</u>
 </annotationBlock>
 <annotationBlock start="#T1035" end="#T1036" who="SPK1" xml:id="u900" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1036" end="#T1037" who="SPK1" xml:id="u901" >
-<u>mais en tout cas comme je t&#39;ai dit c&#39;est</u>
+<u>mais en tout cas comme je t'ai dit c'est</u>
 </annotationBlock>
 <annotationBlock start="#T1037" end="#T1038" who="SPK1" xml:id="u902" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1038" end="#T1039" who="SPK1" xml:id="u903" >
-<u>tous les gens que j&#39;ai rencontré</u>
+<u>tous les gens que j'ai rencontré</u>
 </annotationBlock>
 <annotationBlock start="#T1039" end="#T1040" who="SPK1" xml:id="u904" >
 <u>ceux qui sont immigrés comme moi ou</u>
@@ -4205,22 +4203,22 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1049" end="#T1050" who="SPK1" xml:id="u914" >
-<u>parce que c&#39;est une mentalité là-bas</u>
+<u>parce que c'est une mentalité là-bas</u>
 </annotationBlock>
 <annotationBlock start="#T1050" end="#T1051" who="SPK1" xml:id="u915" >
-<u>tu viens ici c&#39;est une autre chose</u>
+<u>tu viens ici c'est une autre chose</u>
 </annotationBlock>
 <annotationBlock start="#T1051" end="#T1052" who="SPK1" xml:id="u916" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1052" end="#T1053" who="SPK1" xml:id="u917" >
-<u>t&#39;as le temps de</u>
+<u>t'as le temps de</u>
 </annotationBlock>
 <annotationBlock start="#T1053" end="#T1054" who="SPK1" xml:id="u918" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1054" end="#T1055" who="SPK1" xml:id="u919" >
-<u>c&#39;est pour ça que euh</u>
+<u>c'est pour ça que euh</u>
 </annotationBlock>
 <annotationBlock start="#T1055" end="#T1056" who="SPK1" xml:id="u920" >
 <u>moi je me sens plus</u>
@@ -4229,7 +4227,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1057" end="#T1058" who="SPK2" xml:id="u922" >
-<u>plus à l&#39;aise ?</u>
+<u>plus à l'aise ?</u>
 </annotationBlock>
 <annotationBlock start="#T1058" end="#T1059" who="SPK1" xml:id="u923" >
 <u></u>
@@ -4244,10 +4242,10 @@ xml:id="xxx"
 <u>il y a certaines choses que euh</u>
 </annotationBlock>
 <annotationBlock start="#T1062" end="#T1063" who="SPK1" xml:id="u927" >
-<u>[ mic/unknown]</u>
+<u><incident type="unknown">mic</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1063" end="#T1064" who="SPK1" xml:id="u928" >
-<u>que j&#39;accepte de euh</u>
+<u>que j'accepte de euh</u>
 </annotationBlock>
 <annotationBlock start="#T1064" end="#T1065" who="SPK1" xml:id="u929" >
 <u>de moi-même enfin</u>
@@ -4262,16 +4260,16 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1068" end="#T1069" who="SPK1" xml:id="u933" >
-<u>je ne sais pas comment t&#39;expliquer ça</u>
+<u>je ne sais pas comment t'expliquer ça</u>
 </annotationBlock>
 <annotationBlock start="#T1070" end="#T1071" who="SPK2" xml:id="u934" >
-<u>ouais c&#39;est bien c&#39;est bien</u>
+<u>ouais c'est bien c'est bien</u>
 </annotationBlock>
 <annotationBlock start="#T1071" end="#T1072" who="SPK2" xml:id="u935" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1072" end="#T1073" who="SPK2" xml:id="u936" >
-<u>c&#39;est bien</u>
+<u>c'est bien</u>
 </annotationBlock>
 <annotationBlock start="#T1074" end="#T1075" who="SPK1" xml:id="u937" >
 <u>après je vais</u>
@@ -4301,16 +4299,16 @@ xml:id="xxx"
 <u>je vais</u>
 </annotationBlock>
 <annotationBlock start="#T1083" end="#T1084" who="SPK1" xml:id="u946" >
-<u>j&#39;aurais le droit de demander la nationalité française</u>
+<u>j'aurais le droit de demander la nationalité française</u>
 </annotationBlock>
 <annotationBlock start="#T1084" end="#T1085" who="SPK1" xml:id="u947" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1085" end="#T1086" who="SPK1" xml:id="u948" >
-<u>d&#39;ici</u>
+<u>d'ici</u>
 </annotationBlock>
 <annotationBlock start="#T1086" end="#T1087" who="SPK1" xml:id="u949" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1087" end="#T1088" who="SPK1" xml:id="u950" >
 <u>là ça fait quoi ?</u>
@@ -4325,19 +4323,19 @@ xml:id="xxx"
 <u>ça fait un peu plus de 4 ans en fait</u>
 </annotationBlock>
 <annotationBlock start="#T1091" end="#T1092" who="SPK1" xml:id="u954" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1092" end="#T1093" who="SPK1" xml:id="u955" >
-<u>donc euh d&#39;ici la fin de l&#39;année j&#39;aurais le droit</u>
+<u>donc euh d'ici la fin de l'année j'aurais le droit</u>
 </annotationBlock>
 <annotationBlock start="#T1093" end="#T1094" who="SPK1" xml:id="u956" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1094" end="#T1095" who="SPK2" xml:id="u957" >
-<u>bah on vous l&#39;avez fait déjà</u>
+<u>bah on vous l'avez fait déjà</u>
 </annotationBlock>
 <annotationBlock start="#T1096" end="#T1097" who="SPK1" xml:id="u958" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1098" end="#T1099" who="SPK1" xml:id="u959" >
 <u>ouais bah</u>
@@ -4349,7 +4347,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1101" end="#T1102" who="SPK2" xml:id="u962" >
-<u>mais alors là c&#39;est pas mes ?</u>
+<u>mais alors là c'est pas mes ?</u>
 </annotationBlock>
 <annotationBlock start="#T1102" end="#T1103" who="SPK2" xml:id="u963" >
 <u></u>
@@ -4361,7 +4359,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1105" end="#T1106" who="SPK2" xml:id="u966" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1106" end="#T1107" who="SPK1" xml:id="u967" >
 <u>ouais je crois</u>
@@ -4370,7 +4368,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1108" end="#T1109" who="SPK1" xml:id="u969" >
-<u>je crois ouais ouais c&#39;est ce qu&#39;elle m&#39;a dit ouais</u>
+<u>je crois ouais ouais c'est ce qu'elle m'a dit ouais</u>
 </annotationBlock>
 <annotationBlock start="#T1109" end="#T1110" who="SPK1" xml:id="u970" >
 <u></u>
@@ -4391,13 +4389,13 @@ xml:id="xxx"
 <u>ouais</u>
 </annotationBlock>
 <annotationBlock start="#T1115" end="#T1116" who="SPK1" xml:id="u976" >
-<u>ouais je sais c&#39;est bien ça</u>
+<u>ouais je sais c'est bien ça</u>
 </annotationBlock>
 <annotationBlock start="#T1116" end="#T1117" who="SPK1" xml:id="u977" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1117" end="#T1118" who="SPK2" xml:id="u978" >
-<u>t&#39;as pas de nouvelles de l&#39;autre là</u>
+<u>t'as pas de nouvelles de l'autre là</u>
 </annotationBlock>
 <annotationBlock start="#T1118" end="#T1119" who="SPK2" xml:id="u979" >
 <u>le type qui habite euh</u>
@@ -4409,7 +4407,7 @@ xml:id="xxx"
 <u>là à</u>
 </annotationBlock>
 <annotationBlock start="#T1121" end="#T1122" who="SPK2" xml:id="u982" >
-<u>à [ pron=pi/unknown]    je ne sais pas</u>
+<u>à <incident type="unknown">pron=pi</incident>    je ne sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T1122" end="#T1123" who="SPK1" xml:id="u983" >
 <u>qui ça ?</u>
@@ -4439,7 +4437,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1131" end="#T1132" who="SPK2" xml:id="u992" >
-<u>dont je t&#39;ai parlé au téléphone</u>
+<u>dont je t'ai parlé au téléphone</u>
 </annotationBlock>
 <annotationBlock start="#T1132" end="#T1133" who="SPK1" xml:id="u993" >
 <u></u>
@@ -4457,7 +4455,7 @@ xml:id="xxx"
 <u>ah oui lui il est bizarre</u>
 </annotationBlock>
 <annotationBlock start="#T1137" end="#T1138" who="SPK1" xml:id="u998" >
-<u>non non non je n&#39;ai pas envie d&#39;avoir de ses nouvelles</u>
+<u>non non non je n'ai pas envie d'avoir de ses nouvelles</u>
 </annotationBlock>
 <annotationBlock start="#T1138" end="#T1139" who="SPK1" xml:id="u999" >
 <u></u>
@@ -4469,31 +4467,31 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1141" end="#T1142" who="SPK2" xml:id="u1002" >
-<u>bah je pensais qu&#39;il allait retourner au Maroc</u>
+<u>bah je pensais qu'il allait retourner au Maroc</u>
 </annotationBlock>
 <annotationBlock start="#T1142" end="#T1143" who="SPK1" xml:id="u1003" >
 <u>je ne sais pas</u>
 </annotationBlock>
 <annotationBlock start="#T1143" end="#T1144" who="SPK1" xml:id="u1004" >
-<u>je m&#39;en fous ce qu&#39;il fait</u>
+<u>je m'en fous ce qu'il fait</u>
 </annotationBlock>
 <annotationBlock start="#T1144" end="#T1145" who="SPK1" xml:id="u1005" >
-<u>il me doit de l&#39;argent et tout</u>
+<u>il me doit de l'argent et tout</u>
 </annotationBlock>
 <annotationBlock start="#T1145" end="#T1146" who="SPK1" xml:id="u1006" >
-<u>j&#39;ai travaillé pour lui pendant</u>
+<u>j'ai travaillé pour lui pendant</u>
 </annotationBlock>
 <annotationBlock start="#T1146" end="#T1147" who="SPK1" xml:id="u1007" >
 <u>je ne sais pas combien de temps</u>
 </annotationBlock>
 <annotationBlock start="#T1147" end="#T1148" who="SPK1" xml:id="u1008" >
-<u>il m&#39;a jamais payé</u>
+<u>il m'a jamais payé</u>
 </annotationBlock>
 <annotationBlock start="#T1148" end="#T1149" who="SPK1" xml:id="u1009" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1149" end="#T1150" who="SPK2" xml:id="u1010" >
-<u>c&#39;est pas vrai ?</u>
+<u>c'est pas vrai ?</u>
 </annotationBlock>
 <annotationBlock start="#T1150" end="#T1151" who="SPK1" xml:id="u1011" >
 <u>si</u>
@@ -4502,10 +4500,10 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1152" end="#T1153" who="SPK1" xml:id="u1013" >
-<u>en fait j&#39;aurais</u>
+<u>en fait j'aurais</u>
 </annotationBlock>
 <annotationBlock start="#T1153" end="#T1154" who="SPK1" xml:id="u1014" >
-<u>à l&#39;époque quand je l&#39;ai rencontré</u>
+<u>à l'époque quand je l'ai rencontré</u>
 </annotationBlock>
 <annotationBlock start="#T1154" end="#T1155" who="SPK1" xml:id="u1015" >
 <u></u>
@@ -4517,13 +4515,13 @@ xml:id="xxx"
 <u>dans une société</u>
 </annotationBlock>
 <annotationBlock start="#T1157" end="#T1158" who="SPK1" xml:id="u1018" >
-<u>j&#39;étais commercial dans une</u>
+<u>j'étais commercial dans une</u>
 </annotationBlock>
 <annotationBlock start="#T1158" end="#T1159" who="SPK1" xml:id="u1019" >
 <u>bon</u>
 </annotationBlock>
 <annotationBlock start="#T1159" end="#T1160" who="SPK1" xml:id="u1020" >
-<u>c&#39;était au Maroc</u>
+<u>c'était au Maroc</u>
 </annotationBlock>
 <annotationBlock start="#T1161" end="#T1162" who="SPK1" xml:id="u1021" >
 <u>au Maroc ?</u>
@@ -4532,28 +4530,28 @@ xml:id="xxx"
 <u>oui bah oui</u>
 </annotationBlock>
 <annotationBlock start="#T1163" end="#T1164" who="SPK1" xml:id="u1023" >
-<u>ici je l&#39;ai jamais vu</u>
+<u>ici je l'ai jamais vu</u>
 </annotationBlock>
 <annotationBlock start="#T1164" end="#T1165" who="SPK1" xml:id="u1024" >
-<u>je n&#39;ai pas envie de le voir</u>
+<u>je n'ai pas envie de le voir</u>
 </annotationBlock>
 <annotationBlock start="#T1165" end="#T1166" who="SPK1" xml:id="u1025" >
-<u>[ pron=ch/unknown]    tout ça</u>
+<u><incident type="unknown">pron=ch</incident>    tout ça</u>
 </annotationBlock>
 <annotationBlock start="#T1166" end="#T1167" who="SPK1" xml:id="u1026" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1167" end="#T1168" who="SPK1" xml:id="u1027" >
 <u>je travaillais</u>
 </annotationBlock>
 <annotationBlock start="#T1168" end="#T1169" who="SPK1" xml:id="u1028" >
-<u>il est venu me voir il m&#39;a dit</u>
+<u>il est venu me voir il m'a dit</u>
 </annotationBlock>
 <annotationBlock start="#T1169" end="#T1170" who="SPK1" xml:id="u1029" >
 <u>ouais euh</u>
 </annotationBlock>
 <annotationBlock start="#T1170" end="#T1171" who="SPK1" xml:id="u1030" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1171" end="#T1172" who="SPK1" xml:id="u1031" >
 <u>si tu veux euh</u>
@@ -4562,43 +4560,43 @@ xml:id="xxx"
 <u>je vais créer ma société et tout tu bosses pour moi</u>
 </annotationBlock>
 <annotationBlock start="#T1173" end="#T1174" who="SPK1" xml:id="u1033" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1174" end="#T1175" who="SPK1" xml:id="u1034" >
-<u>j&#39;ai quitté mon boulot et tout</u>
+<u>j'ai quitté mon boulot et tout</u>
 </annotationBlock>
 <annotationBlock start="#T1175" end="#T1176" who="SPK1" xml:id="u1035" >
-<u>[ mic/unknown]</u>
+<u><incident type="unknown">mic</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1176" end="#T1177" who="SPK1" xml:id="u1036" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1177" end="#T1178" who="SPK1" xml:id="u1037" >
-<u>et j&#39;ai bossé pour lui</u>
+<u>et j'ai bossé pour lui</u>
 </annotationBlock>
 <annotationBlock start="#T1178" end="#T1179" who="SPK1" xml:id="u1038" >
 <u>et au final</u>
 </annotationBlock>
 <annotationBlock start="#T1179" end="#T1180" who="SPK1" xml:id="u1039" >
-<u>il m&#39;a jamais payé</u>
+<u>il m'a jamais payé</u>
 </annotationBlock>
 <annotationBlock start="#T1180" end="#T1181" who="SPK1" xml:id="u1040" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1181" end="#T1182" who="SPK2" xml:id="u1041" >
-<u>ça c&#39;est pas vrai</u>
+<u>ça c'est pas vrai</u>
 </annotationBlock>
 <annotationBlock start="#T1182" end="#T1183" who="SPK1" xml:id="u1042" >
 <u>si</u>
 </annotationBlock>
 <annotationBlock start="#T1183" end="#T1184" who="SPK1" xml:id="u1043" >
-<u>c&#39;est un arnaqueur lui</u>
+<u>c'est un arnaqueur lui</u>
 </annotationBlock>
 <annotationBlock start="#T1184" end="#T1185" who="SPK1" xml:id="u1044" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1185" end="#T1186" who="SPK1" xml:id="u1045" >
-<u>j&#39;ai bossé pour lui pendant je ne sais pas combien de temps euh</u>
+<u>j'ai bossé pour lui pendant je ne sais pas combien de temps euh</u>
 </annotationBlock>
 <annotationBlock start="#T1186" end="#T1187" who="SPK1" xml:id="u1046" >
 <u>à chaque fois il me disait</u>
@@ -4619,7 +4617,7 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1192" end="#T1193" who="SPK2" xml:id="u1052" >
-<u>et c&#39;est resté comme ça ?</u>
+<u>et c'est resté comme ça ?</u>
 </annotationBlock>
 <annotationBlock start="#T1194" end="#T1195" who="SPK1" xml:id="u1053" >
 <u>bah non</u>
@@ -4631,13 +4629,13 @@ xml:id="xxx"
 <u>ouais non lui il est bizarre</u>
 </annotationBlock>
 <annotationBlock start="#T1198" end="#T1199" who="SPK1" xml:id="u1056" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1199" end="#T1200" who="SPK1" xml:id="u1057" >
-<u>ce mec il est [ pron=pi/unknown]</u>
+<u>ce mec il est <incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1201" end="#T1202" who="SPK2" xml:id="u1058" >
-<u>bah il m&#39;a dit que j&#39;étais invité la dernière fois</u>
+<u>bah il m'a dit que j'étais invité la dernière fois</u>
 </annotationBlock>
 <annotationBlock start="#T1202" end="#T1203" who="SPK2" xml:id="u1059" >
 <u>de venir avec euh Medhi chez moi</u>
@@ -4646,13 +4644,13 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1204" end="#T1205" who="SPK2" xml:id="u1061" >
-<u>bah il l&#39;a dit au Maroc</u>
+<u>bah il l'a dit au Maroc</u>
 </annotationBlock>
 <annotationBlock start="#T1205" end="#T1206" who="SPK2" xml:id="u1062" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1206" end="#T1207" who="SPK1" xml:id="u1063" >
-<u>ah j&#39;ai pas envie d&#39;aller chez lui de toute façon</u>
+<u>ah j'ai pas envie d'aller chez lui de toute façon</u>
 </annotationBlock>
 <annotationBlock start="#T1207" end="#T1208" who="SPK2" xml:id="u1064" >
 <u></u>
@@ -4676,16 +4674,16 @@ xml:id="xxx"
 <u>moi je je</u>
 </annotationBlock>
 <annotationBlock start="#T1214" end="#T1215" who="SPK1" xml:id="u1071" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1215" end="#T1216" who="SPK1" xml:id="u1072" >
-<u>je l&#39;aime pas trop ce mec</u>
+<u>je l'aime pas trop ce mec</u>
 </annotationBlock>
 <annotationBlock start="#T1216" end="#T1217" who="SPK2" xml:id="u1073" >
 <u>mais</u>
 </annotationBlock>
 <annotationBlock start="#T1217" end="#T1218" who="SPK2" xml:id="u1074" >
-<u>pourtant il s&#39;entend avec Samia et</u>
+<u>pourtant il s'entend avec Samia et</u>
 </annotationBlock>
 <annotationBlock start="#T1218" end="#T1219" who="SPK2" xml:id="u1075" >
 <u>et le reste</u>
@@ -4700,28 +4698,28 @@ xml:id="xxx"
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1222" end="#T1223" who="SPK1" xml:id="u1079" >
-<u>moi [ pf/unknown]</u>
+<u>moi <incident type="unknown">pf</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1223" end="#T1224" who="SPK1" xml:id="u1080" >
 <u>après</u>
 </annotationBlock>
 <annotationBlock start="#T1224" end="#T1225" who="SPK1" xml:id="u1081" >
-<u>il fait ce qu&#39;il veut</u>
+<u>il fait ce qu'il veut</u>
 </annotationBlock>
 <annotationBlock start="#T1225" end="#T1226" who="SPK1" xml:id="u1082" >
 <u>enfin</u>
 </annotationBlock>
 <annotationBlock start="#T1226" end="#T1227" who="SPK1" xml:id="u1083" >
-<u>chacun fait ce qu&#39;il veut</u>
+<u>chacun fait ce qu'il veut</u>
 </annotationBlock>
 <annotationBlock start="#T1227" end="#T1228" who="SPK1" xml:id="u1084" >
-<u>mais moi c&#39;est mon avis</u>
+<u>mais moi c'est mon avis</u>
 </annotationBlock>
 <annotationBlock start="#T1228" end="#T1229" who="SPK1" xml:id="u1085" >
-<u>parce que j&#39;ai travaillé avec lui</u>
+<u>parce que j'ai travaillé avec lui</u>
 </annotationBlock>
 <annotationBlock start="#T1229" end="#T1230" who="SPK1" xml:id="u1086" >
-<u>[ i/unknown]</u>
+<u><incident type="unknown">i</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1230" end="#T1231" who="SPK1" xml:id="u1087" >
 <u>moi je le voyais tous les jours</u>
@@ -4757,13 +4755,13 @@ xml:id="xxx"
 <u>oh mais là de toute façon</u>
 </annotationBlock>
 <annotationBlock start="#T1243" end="#T1244" who="SPK2" xml:id="u1098" >
-<u>[ pron=pi/unknown]</u>
+<u><incident type="unknown">pron=pi</incident></u>
 </annotationBlock>
 <annotationBlock start="#T1242" end="#T1245" who="SPK1" xml:id="u1099" >
 <u></u>
 </annotationBlock>
 <annotationBlock start="#T1245" end="#T1246" who="SPK1" xml:id="u1100" >
-<u>de toute façon c&#39;est bon</u>
+<u>de toute façon c'est bon</u>
 </annotationBlock>
 <annotationBlock start="#T1246" end="#T1247" who="SPK1" xml:id="u1101" >
 <u>il travaille plus maintenant il est ici hein</u>

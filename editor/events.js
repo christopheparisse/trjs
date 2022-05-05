@@ -46,6 +46,38 @@ trjs.events = (function () {
     }
 
     /**
+     * modify an attribute of the nth td in a jQuery DOM tr element
+     * @method lineSetCellAttr
+     * @param line pointer to a jQuery DOM tr element
+     * @param col td index
+     * @param value value of the td
+     */
+     function lineSetCellAttr(line, col, att, value) {
+        var tds = line.children();
+        //console.log(tds);
+        $(tds[col]).attr(att, value);
+    }
+
+    /**
+     * find an attribute of the nth td in a jQuery DOM tr element
+     * @method lineGetCellAttr
+     * @param line pointer to a jQuery DOM tr element
+     * @param col td index
+     * @return string value of the td
+     */
+    function lineGetCellAttr(line, col, att) {
+        if (!line) {
+            console.log('line is null');
+            console.trace();
+            return '';
+        }
+        var tds = line.children();
+        //console.log(tds);
+        return $(tds[col]).attr(att);
+    }
+
+
+    /**
      * modify the html content of the nth td in a jQuery DOM tr element
      * @method lineSetCellHtml
      * @param line pointer to a jQuery DOM tr element
@@ -2102,7 +2134,7 @@ trjs.events = (function () {
         var table = $("#template-code");
         var tablelines = $('tr', table[0]);
         for (var i = 1; i < tablelines.length; i++) {
-            var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
+            var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), (trjs.param.locnames === true ? 1 : 0)));
         //m.push(icode.toUpperCase());
             m.push(icode);
         }
@@ -2389,8 +2421,10 @@ trjs.events = (function () {
         keyLocUp: keyLocUp,
         keyLocDown: keyLocDown,
         lineGetCell: lineGetCell,
+        lineGetCellAttr: lineGetCellAttr,
         lineGetCellHtml: lineGetCellHtml,
         lineSetCell: lineSetCell,
+        lineSetCellAttr: lineSetCellAttr,
         lineSetCellHtml: lineSetCellHtml,
         pageUp: pageUp,
         pageDown: pageDown,

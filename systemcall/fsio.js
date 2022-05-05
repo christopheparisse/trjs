@@ -434,9 +434,9 @@ fsio.updateClean = function(args, doneFunction, failFunction) {
 fsio.exportMediaSubt = function(args, doneFunction, failFunction) {
     var tempfn = 'init function';
     try {
-        var dirpath = filelookup.getUserHome() + '/temp';
+        var dirpath = filelookup.getUserHome().replace(/\\/g, '/') + '/temp';
         //console.log('test de ' + dirpath);
-        if (!fs.existsSync(dirpath)) fs.mkdir(dirpath);
+        if (!fs.existsSync(dirpath)) fs.mkdirSync(dirpath);
         tempfn = version.generateName(dirpath, 'subtitles', args['type'] === 'srt' ? '.srt' : '.ass').replace(/\\/g, '/');
         // if (version.debug(__filename))
         //console.log('ecriture de ' + tempfn);
