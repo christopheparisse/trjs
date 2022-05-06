@@ -1683,7 +1683,12 @@ trjs.transcription = (function () {
         vts = formatTime(data[data.length - 1]['ts']);
         vte = formatTime(data[data.length - 1]['te']);
         if (data[data.length - 1]['type'] !== 'div') // add last if not a div
-            s += stringLineTranscript(data[data.length - 1]['type'], data[data.length - 1]['loc'], data[data.length - 1]['ts'], data[data.length - 1]['te'],
+            var locval = data[data.length - 1]['loc'];
+            if (trjs.param.locnames === true && data[data.length - 1]['type'] === 'loc') {
+                var ll = trjs.template.codeToName(locval);
+                if (ll) locval = ll;
+            }
+            s += stringLineTranscript(data[data.length - 1]['type'], locval, data[data.length - 1]['ts'], data[data.length - 1]['te'],
                 vts, vte, data[data.length - 1]['tx'], data.length);
         // console.log(s);
         $('#transcript').html(s);
