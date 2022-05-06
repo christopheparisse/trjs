@@ -19,6 +19,7 @@
 *.tar
 *.zip
 *.exe
+*.mp4
 *.mp3
 *.wav
 *.mov
