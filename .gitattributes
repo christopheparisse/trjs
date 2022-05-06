@@ -3,6 +3,7 @@
 
 # These files are checked out using CRLF locally
 *.bat eol=crlf
+*.batmodel eol=crlf
 
 # These files should be with LF
 *.xml eol=lf
@@ -15,3 +16,8 @@
 *.correct eol=lf
 *.cmdi eol=lf
 *.psfx eol=lf
+*.js eol=lf
+*.ts eol=lf
+*.html eol=lf
+*.shmodel eol=lf
+*.md eol=lf
