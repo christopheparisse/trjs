@@ -2068,7 +2068,7 @@ trjs.events = (function () {
         trjs.undo.code.check(event);  // stores undo information
         event.preventDefault();
         //console.log("checkLoc1");
-        if (eltClickLoc != null) {
+        if (eltClickLoc !== null) {
             //console.log("checkLoc2");
             // under firefox on windows onblur is called before the click on the context menu
             return;
@@ -2135,14 +2135,12 @@ trjs.events = (function () {
         var tablelines = $('tr', table[0]);
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), (trjs.param.locnames === true ? 1 : 0)));
-        //m.push(icode.toUpperCase());
             m.push(icode);
         }
         table = $("#template-tier");
         tablelines = $('tr', table[0]);
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
-        //t.push(icode.toLowerCase());
             t.push(icode);
         }
         var l = m.length > t.length ? m.length : t.length;

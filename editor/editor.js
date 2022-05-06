@@ -52,7 +52,7 @@ trjs.editor = (function () {
             : version.version + ' - ' + datestring;
         var copyright = trjs.messgs.about;
         var libraries = trjs.messgs.aboutlib;
-        bootbox.alert(version.appName + " 2013-2017<br />Version " + vn
+        bootbox.alert(version.appName + " 2013-2022<br />Version " + vn
                 + " <br />Auteur: Christophe Parisse - cparisse@u-paris10.fr<br/>"
                 + copyright + '<br />' + libraries,
             function () {
@@ -389,6 +389,12 @@ trjs.editor = (function () {
      * @method setLocNames
      */
     function setLocNames() {
+        if (trjs.template.checkLocNamesBijection() === false) {
+            trjs.log.boxalert('Cannot use names as codes for speakers because there is the same name for different speakers (codes). Please change the names if you want to use names as codes.');
+            $('#show-names').prop('checked', false);
+            trjs.param.locnames = false;
+            return;
+        }
         trjs.template.checkCodeName();
         if ($('#show-names').prop('checked') === true) {
             trjs.param.locnames = true;

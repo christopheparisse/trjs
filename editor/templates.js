@@ -175,7 +175,7 @@ trjs.template = (function () {
 
     function stringLineCodes(code, name, ct, inf) {
         return '<tr><td class="textcell1 cedit" contenteditable="true" previous="' + trjs.dataload.checkstring(code) + '" onblur="trjs.template.checkCodeName(event); trjs.template.imbricationLevels(event);">' + trjs.dataload.checkstring(code)
-            + '</td><td class="textcell4 cedit" contenteditable="true" onblur="trjs.template.checkCodeName(event);">' + trjs.dataload.checkstring(name)
+            + '</td><td class="textcell4 cedit" contenteditable="true" previous="' + trjs.dataload.checkstring(name) + '" onblur="trjs.template.checkCodeName(event);">' + trjs.dataload.checkstring(name)
             + '</td><td class="textcell6 cedit" contenteditable="true" onblur="trjs.template.checkContentType(event);">' + trjs.dataload.checkstring(ct)
             + '</td><td class="textcell5 cedit" contenteditable="true">' + trjs.dataload.checkstring(inf)
             + '</td></tr>';
@@ -219,42 +219,88 @@ trjs.template = (function () {
         eventKeydownBasic(e, stringLineTiers('---', '', '', '', '', ''));
     }
 
-    function testandchange(p, elt) {
+    function checkLocNamesBijection() {
+        var table = $("#template-code");
+        var tablelines = $('tr', table[0]);
+        var uniques = {};
+        for (var i = 1; i < tablelines.length; i++) {
+            var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
+            var iname = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 1));
+            if (iname === '') return false; // all names must filled to use names for codes
+            if (uniques[icode] !== undefined || uniques[iname] !== undefined) {
+                // if there was a previous code or name with anything in it
+                return false;
+            }
+            uniques[icode] = iname;
+            uniques[iname] = icode;
+        }
+        return true;
+    }
+
+    function checkLocNamesInitBijection() {
+        var uniques = {};
+        for (var i in trjs.data.codesnames) {
+            if (uniques[i] !== undefined || uniques[trjs.data.codesnames[i]] !== undefined) {
+                // if there was a previous code or name with anything in it
+                return false;
+            }
+            uniques[i] = trjs.data.codesnames[i];
+            uniques[trjs.data.codesnames[i]] = i;
+        }
+        return true;
+    }
+
+    function testandchange(p, elt, propagateintext, propagateinnames) {
         var newcode = trjs.dataload.checkstring(trjs.events.lineGetCell($(elt), p));
-        var oldname = trjs.dataload.checkstring(trjs.events.lineGetCellAttr($(elt), p, 'previous'));
-        if (oldname !== newcode) {
+        var oldcode = trjs.dataload.checkstring(trjs.events.lineGetCellAttr($(elt), p, 'previous'));
+        console.log('testandchange', p, '(', newcode, ') (', oldcode, ')', elt);
+        if (oldcode !== newcode) {
             // replace the old codes by the new code
-            if (oldname !== '') {
-                var listtablelines = trjs.transcription.tablelines();
-                for (var i = 0; i < listtablelines.length; i++) {
-                    var listcode = trjs.dataload.checkstring(trjs.events.lineGetCell($(listtablelines[i]), trjs.data.CODECOL));
-                    if (listcode === oldname)
-                    trjs.events.lineSetCell($(listtablelines[i]), trjs.data.CODECOL, newcode);
+            trjs.log.alert('change of ' + oldcode + ' to ' + newcode);
+            if (oldcode !== '') {
+                if (propagateintext === true) {
+                    trjs.log.alert('change propagated int the text');
+                    var listtablelines = trjs.transcription.tablelines();
+                    for (var i = 0; i < listtablelines.length; i++) {
+                        var listcode = trjs.dataload.checkstring(trjs.events.lineGetCell($(listtablelines[i]), trjs.data.CODECOL));
+                        if (listcode === oldcode) trjs.events.lineSetCell($(listtablelines[i]), trjs.data.CODECOL, newcode);
+                    }
+                }
+                if (propagateinnames === true) {
+                    var tabnames = $('#participant');
+                    var tablenames = $('tr', tabnames[0]);
+                    for (var i = 1; i < tablenames.length; i++) {
+                        var oldname = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablenames[i]), 1));
+                        if (oldname === oldcode) trjs.events.lineSetCell($(tablenames[i]), 1, newcode);
+                    }
                 }
             }
             trjs.events.lineSetCellAttr($(elt), p, 'previous', newcode);
             trjs.param.change(true);
         }
     }
+
     function checkCodeName(e) {
-        var table = $("#participant");
-        var allnames = {};
+        var table = $("#template-code");
         var tablelines = $('tr', table[0]);
+        // first check if new codes or new names exists
+        // and correct if really wanted.
+        for (var i = 1; i < tablelines.length; i++) {
+            // test the modification of the code element
+            testandchange(0, tablelines[i], !trjs.param.locnames, false);
+            // test the modification of the name element
+            testandchange(1, tablelines[i], trjs.param.locnames, true);
+        }
+
+        table = $("#participant");
+        tablelines = $('tr', table[0]);
+        var allnames = {};
         for (var i = 1; i < tablelines.length; i++) {
             allnames[trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 1))] = 'participant';  // names
         }
 
         table = $("#template-code");
         tablelines = $('tr', table[0]);
-        // first check if new codes or new names exists
-        // and correct if really wanted.
-        for (var i = 1; i < tablelines.length; i++) {
-            // test the modification of the code element
-            testandchange(0, tablelines[i]);
-            // test the modification of the name element
-            testandchange(1, tablelines[i]);
-        }
-
         trjs.data.codesnames = {};
         for (var i = 1; i < tablelines.length; i++) {
             var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
@@ -291,6 +337,15 @@ trjs.template = (function () {
                     allnames[iname] = 'participant';
                 }
             }
+        }
+        // check whether the new codes and names can be used in the case of displaying names for codes
+        if (trjs.param.locnames === true && trjs.template.checkLocNamesBijection() === false) {
+            trjs.log.boxalert('The changes cannot be used with using names as codes (no more one to one equivalence between codes and names). Using names is disabled. Please edit names and codes if you want use names again.');
+            trjs.param.locnames = false;
+            $('#show-names').prop('checked', trjs.param.locnames);
+            trjs.transcription.updateLocNames();
+            trjs.param.saveStorage();
+            return;
         }
     }
 
@@ -1774,6 +1829,8 @@ trjs.template = (function () {
         checkCodeType: checkCodeType,
         checkTierType: checkTierType,
         checkContentType: checkContentType,
+        checkLocNamesBijection: checkLocNamesBijection,
+        checkLocNamesInitBijection: checkLocNamesInitBijection,
         codeToName: codeToName,
         definedTierType: definedTierType,
         codeToNameInit: codeToNameInit,

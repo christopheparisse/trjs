@@ -19,6 +19,9 @@
 *.tar
 *.zip
 *.exe
+*.mp3
+*.wav
+*.mov
 
 # Logs and databases #
 ######################

@@ -161,16 +161,28 @@
 <person
 sex="9"
 >
+<persName>Thom</persName>
+<altGrp><alt type="S4" /></altGrp></person><person
+sex="9"
+>
 <persName>Céline</persName>
 <altGrp><alt type="SPK1" /></altGrp></person><person
 sex="9"
 >
-<persName>Louis</persName>
-<altGrp><alt type="SPK3" /></altGrp></person><person
+<persName>Thoma</persName>
+<altGrp></altGrp></person><person
 sex="9"
 >
+<persName>Thom</persName>
+<altGrp><alt type="S4" /></altGrp></person><person
+sex="9"
+>
+<persName>Louis</persName>
+<altGrp><alt type="SPK3" /></altGrp></person><person
+xml:id="xxx"
+>
 <persName>Thomas</persName>
-<altGrp><alt type="SPK2" /><alt type="S4" /></altGrp></person></listPerson></particDesc>
+<altGrp><alt type="SPK2" /></altGrp></person></listPerson></particDesc>
 </profileDesc>
 <encodingDesc version="0.9.1" subversion="trjs">
 <appInfo>
@@ -180,7 +192,7 @@ sex="9"
 <revisionDesc>
 <list>
 <item>original TRJS</item>
-<item>lastsave: Fri May 06 2022 13:26:54 GMT+0200 (heure d’été d’Europe centrale)</item>
+<item>lastsave: Fri May 06 2022 12:03:26 GMT+0200 (heure d’été d’Europe centrale)</item>
 <item>url: .//test//Essai.trjs</item>
 <item>name: new</item>
 </list>

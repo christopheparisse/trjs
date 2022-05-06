@@ -161,8 +161,20 @@
 <person
 sex="9"
 >
+<persName>Thomas</persName>
+<altGrp><alt type="SPK2" /><alt type="S4" /></altGrp></person><person
+sex="9"
+>
 <persName>Céline</persName>
 <altGrp><alt type="SPK1" /></altGrp></person><person
+sex="9"
+>
+<persName>Thoma</persName>
+<altGrp></altGrp></person><person
+sex="9"
+>
+<persName>Thomas</persName>
+<altGrp><alt type="SPK2" /><alt type="S4" /></altGrp></person><person
 sex="9"
 >
 <persName>Louis</persName>
@@ -180,7 +192,7 @@ sex="9"
 <revisionDesc>
 <list>
 <item>original TRJS</item>
-<item>lastsave: Fri May 06 2022 13:26:54 GMT+0200 (heure d’été d’Europe centrale)</item>
+<item>lastsave: Fri May 06 2022 12:04:23 GMT+0200 (heure d’été d’Europe centrale)</item>
 <item>url: .//test//Essai.trjs</item>
 <item>name: new</item>
 </list>

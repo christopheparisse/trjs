@@ -728,6 +728,13 @@ trjs.transcription = (function () {
                     trjs.template.readTemplates(trjs.data.doc);
                     trjs.template.readMetadata(trjs.data.doc);
                     trjs.template.readPersons(trjs.data.doc);
+                    // check whether the locnames option (display names instead of codes) can be used.
+                    console.log('check locnames in loadintogrid', trjs.param.locnames, trjs.template.checkLocNamesBijection() );
+                    if (trjs.param.locnames === true && trjs.template.checkLocNamesInitBijection() === false) {
+                        trjs.log.alert('Cannot use names for codes (not a bijection between codes and names');
+                        trjs.param.locnames = false;
+                        $('#show-names').prop('checked', trjs.param.locnames);
+                    }
                     processed = 10;
                     $("#transcript-name").text('10%');
                     return;
@@ -1509,7 +1516,7 @@ trjs.transcription = (function () {
             var table = $("#template-code");
             var tablelines = $('tr', table[0]);
             for (var i = 1; i < tablelines.length; i++) {
-                var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), 0));
+                var icode = trjs.dataload.checkstring(trjs.events.lineGetCell($(tablelines[i]), (trjs.param.locnames === true ? 1 : 0)));
                 if (icode === loc) {
                     return 'loc';
                 }

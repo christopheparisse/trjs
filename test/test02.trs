@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Trans SYSTEM "trans-14.dtd">
+<Trans audio_filename="Chelsy et Camille_01.03.2022" version="1" xml:lang="FR">
+    <Speakers>
+        <Speaker id="CHE" name="ChelsyQA"/>
+        <Speaker id="CAM" name="Camille12"/>
+    </Speakers>
+    <Episode>
+        <Section endTime="704.326" startTime="51.060" type="report">
+            <Turn endTime="51.0610" speaker="CHE" startTime="51.060">
+                <Sync time="51.060"/>tu commences</Turn>
+            <Turn endTime="58.484" speaker="CAM" startTime="51.0610">
+                <Sync time="51.0610"/>bof c'est si tu veux de toute façon je sais pas si c'était particulier pour moi mais</Turn>
+            <Turn endTime="62.257" speaker="CHE" startTime="58.484">
+                <Sync time="58.484"/>tu as fait une terminale quoi déjà</Turn>
+            <Turn endTime="74.791" speaker="CAM" startTime="62.257">
+                <Sync time="62.257"/>ES j'étais pas une L j'étais pas une petite L moi<Sync time="62.463"/>non bah du coup je suis arrivée à la fac<Sync time="68.854"/>euh bah d'un côté je trouvais ça cool parce que<Sync time="72.475"/>je sais pas j'étais</Turn>
+            <Turn endTime="76.324" speaker="CHE" startTime="74.791">
+                <Sync time="74.791"/>plus une enfant</Turn>
+            <Turn endTime="82.357" speaker="CAM" startTime="76.324">
+                <Sync time="76.324"/>ouais tu es seule et d’un côté tu te dis ça y est je suis autonome<Sync time="80.164"/>puis après tu te rends compte que bon pas trop</Turn>
+            <Turn endTime="82.3580" speaker="CHE" startTime="82.357">
+                <Sync time="82.357"/>ouais</Turn>
+            <Turn endTime="94.948" speaker="CAM" startTime="82.3580">
+                <Sync time="82.3580"/>en fait quand même c’est la galère mais mouais ç- bah ç- ça allait<Sync time="87.583"/>puis après j’ai rencontré des gens beaucoup de gens quand même dans la licence bah tu sais j’ai rencontré Lyess</Turn>
+            <Turn endTime="95.293" speaker="CHE" startTime="94.948">
+                <Sync time="94.948"/>ouais</Turn>
+            <Turn endTime="97.581" speaker="CAM" startTime="95.293">
+                <Sync time="95.293"/>donc euh tout de suite ça m’a mise dans euh</Turn>
+            <Turn endTime="99.347" speaker="CHE" startTime="97.581">
+                <Sync time="97.581"/>tu l'as rencontré à la fac</Turn>
+            <Turn endTime="100.000" speaker="CAM" startTime="99.347">
+                <Sync time="99.347"/>oui</Turn>
+            <Turn endTime="100.0010" speaker="CHE" startTime="100.000">
+                <Sync time="100.000"/>ah je savais pas</Turn>
+            <Turn endTime="105.511" speaker="CAM" startTime="100.0010">
+                <Sync time="100.0010"/>bah oui pendant un cours le le le cours d’anglais là voilà</Turn>
+            <Turn endTime="105.5120" speaker="CHE" startTime="105.511">
+                <Sync time="105.511"/>oh</Turn>
+            <Turn endTime="115.488" speaker="CAM" startTime="105.5120">
+                <Sync time="105.5120"/>hm hm donc ça a vraiment enfin d’un côté ça a vraiment changé<Sync time="109.622"/>parce que vraiment passer de mon lycée à Pont-à-Mousson où c’était toujours les mêmes gens et cætera à Nancy</Turn>
+            <Turn endTime="116.493" speaker="CHE" startTime="115.488">
+                <Sync time="115.488"/>ouais</Turn>
+            <Turn endTime="122.026" speaker="CAM" startTime="116.493">
+                <Sync time="116.493"/>où je rencontre des nouvelles personnes par contre j’ai pas déménagé c’est pour ça le train euh toujours le train</Turn>
+            <Turn endTime="152.943" speaker="CHE" startTime="122.026">
+                <Sync time="122.026"/>ouais j’ai connu ça aussi en bah du coup en terminale enfin au lycée j’étais au lycée pas loin de chez moi<Sync time="129.420"/>donc je prenais juste le bus bah de chez moi j’avais quoi dix ouais une dizaine de kilomètres et après devoir euh<Sync time="139.262"/>devoir monter jusqu’à Nancy enfin c’est pas non plus super loin mais euh<Sync time="143.548"/>mais du coup j’avais ma voiture et au début je voulais pas je voulais pas faire les trajets Toul Nancy en voiture</Turn>
+            <Turn endTime="153.970" speaker="CAM" startTime="152.943">
+                <Sync time="152.943"/>hm</Turn>
+            <Turn endTime="156.539" speaker="CHE" startTime="153.970">
+                <Sync time="153.970"/>parce que bah pour des raisons évidentes de il y a de la place nulle part</Turn>
+            <Turn endTime="156.717" speaker="CAM" startTime="156.539">
+                <Sync time="156.539"/>oui oui oui oui</Turn>
+            <Turn endTime="163.911" speaker="CHE" startTime="156.717">
+                <Sync time="156.717"/>et du coup bah j'ai pris le bus et c'est vrai que être dépendant du bus c'est chiant enfin</Turn>
+            <Turn endTime="172.682" speaker="CAM" startTime="163.911">
+                <Sync time="163.911"/>bah surtout que je crois que tu nous avais déjà parlé ou Méline et que genre pour arriver à huit heures c'était chaud ou des trucs comme ça</Turn>
+            <Turn endTime="177.541" speaker="CAM CHE" startTime="172.682">
+                <Sync time="172.682"/>
+                <Who nb="2"/>ouais ouais ouais puis en plus le peu qu'il y ait un peu d'embouteillage sur le<Sync time="176.540"/>bah ça c'est pareil avec la voiture mais si tu prends celui de cinq minutes trop en avance tu es trop en avance mais s'il y a des embouteillages tu es bien<Sync time="177.528"/>
+                <Who nb="1"/>oui oui</Turn>
+            <Turn endTime="213.099" speaker="CHE" startTime="184.645">
+                <Sync time="184.645"/>mais ouais enfin c'est vrai que c'est chiant<Sync time="187.179"/>après se retrouver lâchée enfin un peu lâchée dans une grande ville c'est c'est pas mal<Sync time="195.067"/>enfin on a pas trop l'habitude du coup enfin tu vois avant le avant le avant la fac je me disais waouh mais ça va être trop bien quand je vais être à la fac<Sync time="205.705"/>je vais avoir des heures de trou je vais pouvoir aller faire les magasins et tout<Sync time="209.874"/>puis finalement vu la masse de travail que tu as euh c'est c'est juste pas possible</Turn>
+            <Turn endTime="216.089" speaker="CAM" startTime="213.099">
+                <Sync time="213.099"/>oui des des des magasins oui oui oui c'est euh</Turn>
+            <Turn endTime="251.713" speaker="CHE" startTime="216.089">
+                <Sync time="216.089"/>mais sinon euh sinon bah pareil c'était assez facile la transition<Sync time="222.308"/>euh beh du coup j'étais aussi chez mes parents à part en fin de L2 je crois euh<Sync time="228.915"/>mon copain qui habitait sur Metz est venu à Nancy du coup il a pris un appart<Sync time="233.596"/>du coup j'étais les weekends chez lui ou quand je commençais trop tôt<Sync time="237.099"/>tu vois quand je commençais à huit heures je m'arrangeais pour dormir le la veille chez lui pour être pas très loin<Sync time="242.367"/>du coup là c'était pratique j'étais à genre vingt minutes à pied de la fac<Sync time="247.286"/>du coup là c'était pratique mais sinon euh sinon ouais c'était</Turn>
+            <Turn endTime="254.194" speaker="CAM CHE" startTime="251.713">
+                <Sync time="251.713"/>
+                <Who nb="2"/>bah j'ai eu la chance d'avoir Méline parce que enfin franchement j'aurais été euh j'aurais été un peu larguée mais euh<Sync time="253.509"/>
+                <Who nb="1"/>hum</Turn>
+            <Turn endTime="260.678" speaker="CAM" startTime="259.461">
+                <Sync time="259.461"/>ouais c'était son ton soutien euh moral psychologique::</Turn>
+            <Turn endTime="268.979" speaker="CHE" startTime="260.678">
+                <Sync time="260.678"/>ah ouais clairement tout euh ouais ouais tout soutien quoi<Sync time="265.526"/>Méline je comprends pas Méline je stresse</Turn>
+            <Turn endTime="271.135" speaker="CAM" startTime="268.979">
+                <Sync time="268.979"/>bah tu sais moi j'avais Sophie dès là L1</Turn>
+            <Turn endTime="271.484" speaker="CHE" startTime="271.135">
+                <Sync time="271.135"/>ouais</Turn>
+            <Turn endTime="276.983" speaker="CAM CHE" startTime="271.484">
+                <Sync time="271.484"/>
+                <Who nb="1"/>beh de toute façon vous étiez là vous étiez témoins de notre rencontre alors euh voilà mais t'as bien vu que<Sync time="273.629"/>
+                <Who nb="2"/>oui c'est vrai qu'on a assisté à la rencontre</Turn>
+            <Turn endTime="281.703" speaker="CAM" startTime="276.983">
+                <Sync time="276.983"/>dès qu'il y avait un truc que je comprenais pas j'étais là Sophie qu'est-ce qu'on est censé faire qu'est-ce qu'il se passe</Turn>
+            <Turn endTime="283.945" speaker="CHE" startTime="281.703">
+                <Sync time="281.703"/>ben j'étais un peu pareille avec Méline</Turn>
+            <Turn endTime="300.267" speaker="CAM CHE" startTime="283.945">
+                <Sync time="283.945"/>
+                <Who nb="1"/>mais sinon ouais le la grande ville Nancy ça t'a pas:: je sais pas<Sync time="289.412"/>
+                <Who nb="2"/>non<Sync time="289.647"/>
+                <Who nb="1"/>parce que après moi je sais que j'ai eu droit à en fait ma mère connaît Nancy vu qu'elle y travaille<Sync time="294.505"/>
+                <Who nb="1"/>et ma soeur elle euh elle a fait ses études à la fac puis elle était doctorante en plus donc elle m'a elle m'a fait visiter la fac avant<Sync time="299.719"/>
+                <Who nb="2"/>ah ouais ok</Turn>
+            <Turn endTime="307.870" speaker="CAM" startTime="303.013">
+                <Sync time="303.013"/>donc quand je suis arrivée tu vois je connaissais déjà donc j'ai pas non plus eu ce truc de beh j'arrive dans un endroit je connais pas du tout</Turn>
+            <Turn endTime="309.966" speaker="CAM CHE" startTime="307.870">
+                <Sync time="307.870"/>
+                <Who nb="1"/>tu sais le jour de la rentrée où tu peux stresser parce que parce que tu as jamais vu mais euh<Sync time="309.346"/>
+                <Who nb="2"/>ouais ouais</Turn>
+            <Turn endTime="323.834" speaker="CHE" startTime="312.120">
+                <Sync time="312.120"/>et genre euh ben je sais pas toi mais au début de voir le oui enfin le campus aussi gros je me suis dit waouh je vais jamais m'en sortir dans les salles<Sync time="322.826"/>et puis c'est venu tout seul</Turn>
+            <Turn endTime="325.864" speaker="CAM" startTime="324.418">
+                <Sync time="324.418"/>maintenant ça va</Turn>
+            <Turn endTime="351.125" speaker="CAM CHE" startTime="325.864">
+                <Sync time="325.864"/>
+                <Who nb="2"/>enfin encore une fois heureusement qu'il y avait Méline parce que<Sync time="327.184"/>
+                <Who nb="1"/>oui oui oui oui oui le premier jour où euh tu sais pas<Sync time="329.787"/>
+                <Who nb="2"/>parce que clairement moi l'emploi du temps j'ai jamais su que ce soti là L1 la L2 la L3 même le master j'ai jamais su euh où j'étais ni j'ai jamais connu mon emploi du temps j'ai jamais appris du coup ça c'était un peu<Sync time="344.661"/>
+                <Who nb="1"/>bah je je sais que ouais parce que dans notre conversation c'est toujours on est en quelle salle euh voilà<Sync time="348.314"/>
+                <Who nb="2"/>ouais on est où<Sync time="350.378"/>
+                <Who nb="1"/>ouais<Sync time="350.378"/>
+                <Who nb="2"/>ouais</Turn>
+            <Turn endTime="359.797" speaker="CAM" startTime="351.125">
+                <Sync time="351.125"/>bah après euh moi je crois que la grandeur de tu sais du campus je me suis dit waouh c'est super grand et tout</Turn>
+            <Turn endTime="360.201" speaker="CHE" startTime="359.797">
+                <Sync time="359.797"/>ouais</Turn>
+            <Turn endTime="364.160" speaker="CAM" startTime="360.497">
+                <Sync time="360.497"/>puis maintenant bah je suis habituée et puis je j'ai l'impression que c'est petit comparé à d'autres universités</Turn>
+            <Turn endTime="378.899" speaker="CAM CHE" startTime="364.284">
+                <Sync time="364.284"/>
+                <Who nb="2"/>ouais<Sync time="364.160"/>
+                <Who nb="1"/>je me dis juste bah en fait non c'est petit ça va<Sync time="366.520"/>
+                <Who nb="2"/>ouais tu te dis fin- que final- enfin du moment où on a pris nos habitudes j'ai trouvé que ça allait<Sync time="371.170"/>
+                <Who nb="1"/>enfin parce que maintenant on connaît genre on sait le bâtiment A le bâtiment J on fait vraiment la distinction et on sait qu'il y en a où on va jamais<Sync time="373.687"/>
+                <Who nb="2"/>ouais<Sync time="376.717"/>
+                <Who nb="2"/>ouais<Sync time="377.108"/>
+                <Who nb="1"/>et toi tu sais ça ben::</Turn>
+            <Turn endTime="393.272" speaker="CHE" startTime="378.899">
+                <Sync time="378.899"/>mais tu sais aussi ce qui m'a:: ce qui m'a paru un peu:: bizarre genre un peu difficulté de la fac par rapport au lycée<Sync time="388.313"/>c'est euh les cours vraiment les intitulés des cours</Turn>
+            <Turn endTime="395.115" speaker="CAM" startTime="393.272">
+                <Sync time="393.272"/>oui ça a rien à voir</Turn>
+            <Turn endTime="395.935" speaker="CHE" startTime="395.115">
+                <Sync time="395.115"/>mais::</Turn>
+            <Turn endTime="405.300" speaker="CAM CHE" startTime="395.935">
+                <Sync time="395.935"/>
+                <Who nb="1"/>tu sais pas dans quoi tu vas bah après c'est parce que c'est plus:: spécial<Sync time="396.893"/>
+                <Who nb="2"/>ouais tu sais pas dans quoi tu vas<Sync time="401.909"/>
+                <Who nb="1"/>parce que tu sais euh bah depuis même depuis la la la primaire tu fais français maths et histoire voilà<Sync time="404.305"/>
+                <Who nb="2"/>plus spécifique</Turn>
+            <Turn endTime="411.303" speaker="CAM" startTime="408.862">
+                <Sync time="408.862"/>et là d'un coup tu arrives dans des trucs euh</Turn>
+            <Turn endTime="427.031" speaker="CHE" startTime="411.303">
+                <Sync time="411.303"/>ouais dans des cours bien précis des trucs ouais j'ai trouvé ça j'ai trouvé ça un peu compliqué<Sync time="418.248"/>même par rapport au choix d'orientation du coup parce que tu te dis je veux faire telle licence<Sync time="423.222"/>et quand tu regardes la plaquette des de la licence ben il y a ça ça ça comme cours</Turn>
+            <Turn endTime="444.721" speaker="CAM CHE" startTime="427.031">
+                <Sync time="427.031"/>
+                <Who nb="2"/>tu sais pas toujours à quoi ça correspond<Sync time="427.988"/>
+                <Who nb="1"/>oui tu sais pas ouais ouais parce que toi quand tu es entrée dans la licence tu savais pas quel métier tu voulais faire ou::<Sync time="433.030"/>
+                <Who nb="2"/>non pas vraiment moi de base j'étais partie pour euh faire un master MEEF être professeure des écoles<Sync time="438.064"/>
+                <Who nb="1"/>oui bah oui du coup c'est les enfants toujours tu voulais être prof avec des enfants ouais c'était ça ouais<Sync time="442.239"/>
+                <Who nb="2"/>ouais ouais ouais</Turn>
+            <Turn endTime="450.203" speaker="CAM" startTime="445.429">
+                <Sync time="445.429"/>non parce que moi du coup je suis vraiment rentrée à la fac en me disant je veux être prof de FLE</Turn>
+            <Turn endTime="451.253" speaker="CHE" startTime="450.203">
+                <Sync time="450.203"/>ah ouais</Turn>
+            <Turn endTime="451.560" speaker="CAM" startTime="451.253">
+                <Sync time="451.253"/>hm</Turn>
+            <Turn endTime="460.087" speaker="CAM CHE" startTime="451.560">
+                <Sync time="451.560"/>
+                <Who nb="2"/>ah ouais que moi prof de FLE au lycée je savais même pas ce que c'était<Sync time="455.566"/>
+                <Who nb="1"/>bah après j'avais peut-être pas le mot FLE tu vois mais j'étais là prof de français pour les étrangers</Turn>
+            <Turn endTime="461.015" speaker="CHE" startTime="460.087">
+                <Sync time="460.087"/>ah ouais ok</Turn>
+            <Turn endTime="479.366" speaker="CAM" startTime="461.015">
+                <Sync time="461.015"/>mais ouais du coup beh en fait beh c'est ma soeur elle m'a dit beh tu peux faire euh le master FLE<Sync time="467.151"/>j'étais là ok bah faut faire quoi faut faire enfin tu sais du coup je me suis renseignée<Sync time="471.577"/>au lycée ils étaient là ah ben faut faire euh peut-être une double licence français et anglais<Sync time="477.681"/>j'étais là jamais de ma vie je fais ça</Turn>
+            <Turn endTime="479.946" speaker="CHE" startTime="479.366">
+                <Sync time="479.366"/>ok</Turn>
+            <Turn endTime="486.255" speaker="CAM" startTime="479.946">
+                <Sync time="479.946"/>et puis j'en ai reparlé à ma soeur elle me dit bah non tu fais sciences du langage<Sync time="483.032"/>et je suis arrivée en sciences du langage</Turn>
+            <Turn endTime="506.463" speaker="CHE" startTime="486.255">
+                <Sync time="486.255"/>moi j'ai fait sciences du langage parce que la soeur d'une copine était en master MEEF quand euh nous on rentrait à la fac<Sync time="494.227"/>et euh et du coup elle était passée par une licence sciences du langage<Sync time="497.985"/>du coup je lui avais un peu demandé comment ça s'était passé et tout<Sync time="500.521"/>et euh et du coup bah par rapport à l'intitulé des cours elle m'avait un peu expliqué ce qu'il y avait dedans</Turn>
+            <Turn endTime="518.044" speaker="CAM CHE" startTime="506.463">
+                <Sync time="506.463"/>
+                <Who nb="2"/>donc c'est vrai que pour se projeter c'était un peu plus facile mais euh<Sync time="509.049"/>
+                <Who nb="1"/>hm ouais parce que en plus du coup y'a pas de L1 sciences de l'éducation<Sync time="513.454"/>
+                <Who nb="2"/>non<Sync time="513.454"/>
+                <Who nb="1"/>mais s'il y avait eu L1 sciences de l'éducation<Sync time="515.596"/>
+                <Who nb="2"/>bah je pense que je serais partie en L1 sciences de l'éducation du coup<Sync time="518.033"/>
+                <Who nb="1"/>ouais</Turn>
+            <Turn endTime="523.212" speaker="CHE" startTime="518.517">
+                <Sync time="518.517"/>et euh et peut-être que j'aurais regretté peut-être</Turn>
+            <Turn endTime="524.608" speaker="CAM" startTime="523.212">
+                <Sync time="523.212"/>ouais parce que tu es bien dans ton truc</Turn>
+            <Turn endTime="538.313" speaker="CHE" startTime="524.608">
+                <Sync time="524.608"/>parce que tu sais que je m'étais inscrite en L3 sciences de l'éduc<Sync time="527.773"/>je m'y étais inscrite et euh et finalement euh finalement bah j'avais envoyé ma candidature et tout et au dernier moment euh</Turn>
+            <Turn endTime="542.566" speaker="CAM CHE" startTime="538.313">
+                <Sync time="538.313"/>
+                <Who nb="2"/>je me suis dit bah non en fait je je reste en sciences du langage parce que<Sync time="541.325"/>
+                <Who nb="1"/>je reste avec Méline</Turn>
+            <Turn endTime="559.012" speaker="CHE" startTime="542.844">
+                <Sync time="542.844"/>ouais je reste déjà je reste avec Méline et euh je reste en sciences du langage parce que<Sync time="548.533"/>je me suis tu vois à un moment j'ai fait un petit point et je me suis projetée<Sync time="552.622"/>je me suis dit mais est-ce que tu tu as envie de faire le enfin un métier je veux dire qui</Turn>
+            <Turn endTime="581.256" speaker="CAM CHE" startTime="559.012">
+                <Sync time="559.012"/>
+                <Who nb="2"/>qui est fixe tu vois dans le sens où je peux pas changer pas quand je veux mais<Sync time="560.636"/>
+                <Who nb="1"/>hm<Sync time="564.949"/>
+                <Who nb="2"/>y'a pas de possibilité d'avoir un autre public d'avoir peut-être des adultes d'enseigner bah comme là le FLE en entreprise ou enfin<Sync time="568.462"/>
+                <Who nb="1"/>ouais ouais ouais<Sync time="573.883"/>
+                <Who nb="1"/>oui c'est vrai qu'en FLE tu es vachement plus libre tu as ce truc au moins de bon j'en ai marre des adultes je peux faire un tr- oui c'est vrai<Sync time="576.261"/>
+                <Who nb="2"/>ouais c'est ouais c'est diver- c'est diversifié de ouais</Turn>
+            <Turn endTime="584.344" speaker="CAM" startTime="582.617">
+                <Sync time="582.617"/>alors que oui en MEEF euh</Turn>
+            <Turn endTime="594.415" speaker="CHE" startTime="584.344">
+                <Sync time="584.344"/>et je me suis dit en fait euh le truc qui me<Sync time="586.960"/>je pensais aussi j'ai beaucoup pensé à mes anciennes maîtresses au primaire<Sync time="590.923"/>et je me suis dit ça doit être quand même compliqué enfin d'un côté tu dois être fière</Turn>
+            <Turn endTime="599.323" speaker="CAM CHE" startTime="594.415">
+                <Sync time="594.415"/>
+                <Who nb="2"/>de voir tes de voir tes élèves évoluer mais d'un autre côté bah toi tu stagnes en fait<Sync time="598.359"/>
+                <Who nb="1"/>hm</Turn>
+            <Turn endTime="605.751" speaker="CHE" startTime="601.561">
+                <Sync time="601.561"/>toujours le même métier toujours la même classe parce que bien souvent quand tu arrives dans une école</Turn>
+            <Turn endTime="628.650" speaker="CAM CHE" startTime="605.751">
+                <Sync time="605.751"/>
+                <Who nb="2"/>tu peux pas te permettre de dire bah euh toi la maîtresse euh tu bouges c'est moi qui prends cette classe-là<Sync time="610.401"/>
+                <Who nb="1"/>oui oui oui oui oui<Sync time="611.835"/>
+                <Who nb="2"/>donc du coup tu es un peu mise euh là où il y a de la place<Sync time="614.049"/>
+                <Who nb="1"/>oui et puis quand quand oui et puis quand tu arrives ouais tu as vraiment pas le choix<Sync time="617.522"/>
+                <Who nb="2"/>ouais c'est ça<Sync time="617.452"/>
+                <Who nb="1"/>et puis après quand tu évoluies quand tu évolues<Sync time="619.869"/>
+                <Who nb="1"/>tu tu ouais c'est tu sais les les petits derniers tu dis ouais bah vous vous prenez les trucs qu'on veut pas euh ouais voilà c'est ça oui<Sync time="624.583"/>
+                <Who nb="2"/>ouais ouais ouais ouais c'est ça euh qui restent ouais c'est ça</Turn>
+            <Turn endTime="634.454" speaker="CHE" startTime="628.835">
+                <Sync time="628.835"/>et du coup je me suis dit waouh ça doit peut-être être un peu euh un peu ennuyant comme</Turn>
+            <Turn endTime="637.371" speaker="CAM" startTime="634.454">
+                <Sync time="634.454"/>ouais bah oui oui oui c'est en fait c'est plus oui c'est ça c'est plus fixe</Turn>
+            <Turn endTime="641.163" speaker="CHE" startTime="637.371">
+                <Sync time="637.371"/>après euh travailler avec les enfants c'est jamais trop ennuyant hein mais euh</Turn>
+            <Turn endTime="648.062" speaker="CAM CHE" startTime="641.163">
+                <Sync time="641.163"/>
+                <Who nb="1"/>je vois bien avec les adultes que bon<Sync time="644.914"/>
+                <Who nb="2"/>ouais c'est déjà du travail<Sync time="646.493"/>
+                <Who nb="1"/>c'est déjà bien alors euh avec des enfants</Turn>
+            <Turn endTime="656.764" speaker="CHE" startTime="648.062">
+                <Sync time="648.062"/>ouais bah je pense que tu je sais pas comment tu le prends toi dans ton dans ton stage<Sync time="652.216"/>mais euh avec les enfants j'ai l'impression qu'il y a plus de police tu sais</Turn>
+            <Turn endTime="665.058" speaker="CAM CHE" startTime="656.764">
+                <Sync time="656.764"/>
+                <Who nb="2"/>fais pas ci fais ça arrête de parler concentre-toi<Sync time="658.245"/>
+                <Who nb="1"/>alors pour l'instant ça va c'est ce que je me disais que justement j'aimais bien les adultes parce que j'avais moins à faire la police</Turn>
+            <Turn endTime="665.709" speaker="CHE" startTime="665.058">
+                <Sync time="665.058"/>ok</Turn>
+            <Turn endTime="667.498" speaker="CAM" startTime="665.709">
+                <Sync time="665.709"/>sauf que là ça commence un peu à::</Turn>
+            <Turn endTime="668.931" speaker="CHE" startTime="667.498">
+                <Sync time="667.498"/>ah ouais</Turn>
+            <Turn endTime="675.078" speaker="CAM" startTime="668.931">
+                <Sync time="668.931"/>bah y'en a deux ils suivent moins euh bon je du coup bon c'est un peu tu sais</Turn>
+            <Turn endTime="678.192" speaker="CAM CHE" startTime="675.078">
+                <Sync time="675.078"/>
+                <Who nb="1"/>non ne va pas sur ton téléphone puis cinq minutes après ne va pas sur ton téléphone<Sync time="677.124"/>
+                <Who nb="2"/>ah oui ok</Turn>
+            <Turn endTime="686.229" speaker="CAM" startTime="679.265">
+                <Sync time="679.265"/>range ton téléphone et bon bah puis surtout enfin genre moi je suis là j'ai vingt-trois ans il en a quarante</Turn>
+            <Turn endTime="687.037" speaker="CHE" startTime="686.229">
+                <Sync time="686.229"/>ah ouais</Turn>
+            <Turn endTime="689.315" speaker="CAM" startTime="687.037">
+                <Sync time="687.037"/>donc tu es tu ranges ton téléphone</Turn>
+            <Turn endTime="691.555" speaker="CHE" startTime="689.315">
+                <Sync time="689.315"/>ah ouais ça doit être compliqué</Turn>
+            <Turn endTime="696.134" speaker="CAM" startTime="691.555">
+                <Sync time="691.555"/>pff ouais bah après c'est ça c'est que quand tu es je pense avec des enfants tu as plus vraiment ce statut de</Turn>
+            <Turn endTime="699.554" speaker="CAM CHE" startTime="696.134">
+                <Sync time="696.134"/>
+                <Who nb="1"/>je suis l'adulte tu m'écoutes alors que là c'est bah je suis la prof<Sync time="697.438"/>
+                <Who nb="2"/>ouais ouais je pense</Turn>
+            <Turn endTime="702.203" speaker="CAM" startTime="700.722">
+                <Sync time="700.722"/>peut-être que j'ai l'âge de ta fille mais</Turn>
+            <Turn endTime="704.326" speaker="CAM CHE" startTime="702.203">
+                <Sync time="702.203"/>
+                <Who nb="1"/>mais tu m'écoutes quand même<Sync time="702.203"/>
+                <Who nb="2"/>mais tu m'écoutes quand même</Turn>
+        </Section>
+    </Episode>
+</Trans>
