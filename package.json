@@ -34,7 +34,7 @@
   "dependencies": {
     "ajv": "6.10.2",
     "asar": "0.14.6",
-    "async": "2.6.3",
+    "async": "2.6.4",
     "electron-store": "2.0.0",
     "fs-temp": "1.1.2",
     "g": "2.0.1",
