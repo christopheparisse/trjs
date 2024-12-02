@@ -42,7 +42,7 @@
     "hoek": "5.0.4",
     "load-json-file": "5.3.0",
     "mime": "2.4.4",
-    "minimist": "1.2.0",
+    "minimist": "1.2.6",
     "xmldom": "0.1.27"
   },
   "devDependencies": {
